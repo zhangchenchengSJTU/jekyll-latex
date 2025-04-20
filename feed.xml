@@ -201,7 +201,15 @@ $$
 &lt;iframe class=&quot;quiver-embed&quot; src=&quot;https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcbWF0aHNjciBDIl0sWzAsMSwiXFxtYXRoYmIgQV9rICJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxXSxbMiwzXSxbMyw0XSxbMSw0XSxbNSw3LCIiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV0sWzIsOSwiIiwyLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XV0=&amp;amp;embed&quot; width=&quot;432&quot; height=&quot;304&quot; style=&quot;border-radius: 8px; border: none;&quot;&gt;&lt;/iframe&gt;
 &lt;/center&gt;
 
-图像大小容易失衡, 建议使用 &lt;code&gt;mathcha&lt;/code&gt; 画图, 输出矩阵, 或直接插入图片.
+图像大小容易失衡, 建议使用 &lt;code&gt;mathcha&lt;/code&gt; 画图, 输出矩阵, 例如
+$$
+\begin{bmatrix}
+M &amp;amp; →  &amp;amp; F( M) &amp;amp; ↠  &amp;amp; C( M)\\
+h⇣ \  &amp;amp;  &amp;amp; g⇣ \  &amp;amp;  &amp;amp; f⇣ \ \\
+Ω ( N) &amp;amp; →  &amp;amp; P( M) &amp;amp; ↠  &amp;amp; N
+\end{bmatrix}.
+$$
+或者, 直接插入图片也行.
 &lt;/div&gt;
 
 &lt;div class=&quot;example&quot;&gt;
@@ -215,7 +223,25 @@ $$
 
 &lt;div class=&quot;example&quot;&gt;
 (Block).
-支持 Definition, Theorem, Lemma, Proof, Solution, Example, Remark, Note, Corollary, Proposition, Slogan.
+支持 Definition, Theorem, Lemma, Proof, Solution, Example, Remark, Note, Corollary, Proposition, Slogan. 实现方式如下:
+&lt;ol&gt;
+&lt;li&gt;
+在 &lt;code&gt;/_sass/main.scss&lt;/code&gt; 中定义 solution 的样式 (包含前, 中, 后, 以及 QED 正方形).
+&lt;/li&gt;
+&lt;li&gt;
+在 &lt;code&gt;/_plugins/latex.rb&lt;/code&gt; 中定义 solution 公式块环境, 此处使用  {% sol %} {% endsol %} .
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+(我的写作界面).
+
+下图左是简陋的 markdown 编辑器 (&lt;code&gt;VScode&lt;/code&gt;, 配 Unicode-math 输入, 类似 &lt;a href=&quot;https://live.lean-lang.org/&quot;&gt;L∃∀N&lt;/a&gt;), 下图右是 &lt;code&gt;edge&lt;/code&gt; 浏览器. 一般来说, 左侧 $\texttt{ctrl + S}$ 保存, 右侧 $\texttt{ctrl + R}$ 直接刷新即可, 用时不超过一秒.
+&lt;figure class=&quot;image&quot;&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/czhang271828/imgs/New_img//n_imgimage-20250421023038224.png&quot; alt=&quot;&quot; /&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;/div&gt;
 
 &lt;h3 id=&quot;示例&quot;&gt;示例&lt;/h3&gt;
@@ -254,7 +280,7 @@ This is a corollary.
 &lt;/div&gt;
 
 &lt;div class=&quot;definition&quot;&gt;
-This is a definition. 作者有意将 &lt;code&gt;bottom-margin&lt;/code&gt; 调整至 into &lt;code&gt;2em&lt;/code&gt;.
+This is a definition. 作者有意将 &lt;code&gt;bottom-margin&lt;/code&gt; 调整至 &lt;code&gt;2em&lt;/code&gt;.
 &lt;/div&gt;
 
 &lt;div class=&quot;example&quot;&gt;
@@ -264,6 +290,7 @@ This is an example.
 &lt;div class=&quot;solution&quot;&gt;
 This is a solution.
 &lt;/div&gt;
+
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
           <link>https://zhangchenchengsjtu.github.io/website/posts/template</link>

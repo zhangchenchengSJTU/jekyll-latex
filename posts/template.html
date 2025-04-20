@@ -57,7 +57,7 @@
 	<aside class="logo">
   
 
-  <a href="https://zhangchenchengsjtu.github.io/">
+  <a href="https://zhangchenchengsjtu.github.io/website/">
     <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
   </a>
   <span class="logo-prompt">Back to Home</span>
@@ -144,7 +144,15 @@ $$
 <iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcbWF0aHNjciBDIl0sWzAsMSwiXFxtYXRoYmIgQV9rICJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxXSxbMiwzXSxbMyw0XSxbMSw0XSxbNSw3LCIiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV0sWzIsOSwiIiwyLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XV0=&amp;embed" width="432" height="304" style="border-radius: 8px; border: none;"></iframe>
 </center>
 
-图像大小容易失衡, 建议使用 <code>mathcha</code> 画图, 输出矩阵, 或直接插入图片.
+图像大小容易失衡, 建议使用 <code>mathcha</code> 画图, 输出矩阵, 例如
+$$
+\begin{bmatrix}
+M &amp; →  &amp; F( M) &amp; ↠  &amp; C( M)\\
+h⇣ \  &amp;  &amp; g⇣ \  &amp;  &amp; f⇣ \ \\
+Ω ( N) &amp; →  &amp; P( M) &amp; ↠  &amp; N
+\end{bmatrix}.
+$$
+或者, 直接插入图片也行.
 </div>
 
 <div class="example">
@@ -158,7 +166,25 @@ $$
 
 <div class="example">
 (Block).
-支持 Definition, Theorem, Lemma, Proof, Solution, Example, Remark, Note, Corollary, Proposition, Slogan.
+支持 Definition, Theorem, Lemma, Proof, Solution, Example, Remark, Note, Corollary, Proposition, Slogan. 实现方式如下:
+<ol>
+<li>
+在 <code>/_sass/main.scss</code> 中定义 solution 的样式 (包含前, 中, 后, 以及 QED 正方形).
+</li>
+<li>
+在 <code>/_plugins/latex.rb</code> 中定义 solution 公式块环境, 此处使用  {% sol %} {% endsol %} .
+</li>
+</ol>
+</div>
+
+<div class="example">
+(我的写作界面).
+
+下图左是简陋的 markdown 编辑器 (<code>VScode</code>, 配 Unicode-math 输入, 类似 <a href="https://live.lean-lang.org/">L∃∀N</a>), 下图右是 <code>edge</code> 浏览器. 一般来说, 左侧 $\texttt{ctrl + S}$ 保存, 右侧 $\texttt{ctrl + R}$ 直接刷新即可, 用时不超过一秒.
+<figure class="image">
+  <img src="https://raw.githubusercontent.com/czhang271828/imgs/New_img//n_imgimage-20250421023038224.png" alt="" />
+  <figcaption></figcaption>
+</figure>
 </div>
 
 <h3 id="示例">示例</h3>
@@ -197,7 +223,7 @@ This is a corollary.
 </div>
 
 <div class="definition">
-This is a definition. 作者有意将 <code>bottom-margin</code> 调整至 into <code>2em</code>.
+This is a definition. 作者有意将 <code>bottom-margin</code> 调整至 <code>2em</code>.
 </div>
 
 <div class="example">
@@ -207,6 +233,7 @@ This is an example.
 <div class="solution">
 This is a solution.
 </div>
+
 
 
   </article>
