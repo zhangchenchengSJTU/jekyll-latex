@@ -45,23 +45,32 @@ $$
 特别地, 右伴随函子 $C(-)$ 无关逼近的选取.
 <br>
 对后一命题, 仅证明 $C(-) = \mathrm{Tr}(Ω_1(\mathrm{Tr}(-)))$. 给定左逼近对应的右正合列
+
 $$
 M → Q → C(M) → 0,
 $$
+
 取任意投射表现 (不必极小) 诱导的四项正合列
+
 $$
 0 → M^∗ → P_0^∗ \overset α → P_1^∗ → \widetilde{\mathrm{Tr}(M)} → 0.
 $$
+
 注意到 $\operatorname{im}α$ 与 $Ω_1(\mathrm{Tr}(M))$ 在稳定范畴中相等, 而
+
 $$
 \operatorname{coim}α = \operatorname{cok}[M^∗ ↪ P_0^∗]
 = \operatorname{cok}[Q^∗ ↠ M^∗ ↪ P_0^∗]
 $$
+
 由 $C(M) = \operatorname{cok}[P_0 ↠ M → Q]$, 从而 $\mathrm{Tr}(C(M))$ 与 $\operatorname{coim}α$ 在稳定范畴中同构. 最后由 $\mathrm{Tr}$ 是稳定等价, 得
+
 $$
 Ω_1(\mathrm{Tr}(M)) ≃ \operatorname{im}α ≃ \operatorname{coim}α ≃ \mathrm{Tr}(C(M))\quad \text{稳定范畴中}.
 $$
+
 因此 $C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$ (稳定范畴中).
+
 $$
 \begin{bmatrix}
  &  &  &  & \widetilde{Ω _{1}\widetilde{\mathrm{Tr}( M)}} &  &  &  & \\
@@ -71,5 +80,6 @@ M^{*} & ↪  & P_{0}^{*} & ↠  & \operatorname{(co)im}, & ↪  & P_{1}^{*} & �
 Q^{*} &  &  &  &  &  &  &  &
 \end{bmatrix}
 $$
+
 以上是证明涉及的对象.
 {% endpf %}
