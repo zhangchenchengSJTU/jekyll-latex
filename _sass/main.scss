@@ -399,11 +399,67 @@ dl dd {
   counter-increment: theorem;
   display: block;
   margin: 12px 0;
-  font-style: italic;
+  font-style: normal;
 }
 
 .theorem::before {
   content: 'Theorem ' counter(theorem) '. ';
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Slogan */
+.slogan {
+  counter-increment: slogan;
+  display: block;
+  margin: 12px 0;
+  font-style: bold;
+}
+
+.slogan::before {
+  content: '🚩 ';
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Question */
+.question {
+  counter-increment: question;
+  display: block;
+  margin: 12px 0;
+  font-style: normal;
+}
+
+.question::before {
+  content: '⁉️ ';
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Note */
+.note {
+  counter-increment: note;
+  display: block;
+  margin: 12px 0;
+  font-style: normal;
+}
+
+.note::before {
+  content: '📚 ';
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Example */
+.example {
+  counter-increment: example;
+  display: block;
+  margin: 12px 0;
+  font-style: normal;
+}
+
+.example::before {
+  content: 'Example ' counter(example) '. ';
   font-weight: bold;
   font-style: normal;
 }
@@ -413,11 +469,25 @@ dl dd {
   counter-increment: theorem;
   display: block;
   margin: 12px 0;
-  font-style: italic;
+  font-style: normal;
 }
 
 .lemma::before {
   content: 'Lemma ' counter(theorem) '. ';
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Corollary */
+.corollary {
+  counter-increment: theorem;
+  display: block;
+  margin: 12px 0;
+  font-style: normal;
+}
+
+.corollary::before {
+  content: 'Corollary ' counter(theorem) '. ';
   font-weight: bold;
   font-style: normal;
 }
@@ -443,16 +513,52 @@ dl dd {
   bottom: -2px;
 }
 
+/* Solution */
+.solution {
+  display: block;
+  margin: 12px 0;
+  font-style: normal;
+  position: relative;
+}
+
+.solution::before {
+  content: 'Solution. ' attr(title);
+  font-style: italic;
+}
+
+.solution:after {
+  content: '◾️';
+  filter: var(--proof-symbol-filter);
+  position: absolute;
+  right: -12px;
+  bottom: -2px;
+}
+
 /* Definition */
 .definition {
   counter-increment: definition;
   display: block;
   margin: 12px 0;
+  margin-bottom: 2em;  /* 调整 definition 模块空行高度 */
   font-style: normal;
 }
 
 .definition::before {
   content: 'Definition ' counter(definition) '. ';
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Proposition */
+.proposition {
+  counter-increment: proposition;
+  display: block;
+  margin: 12px 0;
+  font-style: normal;
+}
+
+.proposition::before {
+  content: 'Proposition ' counter(proposition) '. ';
   font-weight: bold;
   font-style: normal;
 }
