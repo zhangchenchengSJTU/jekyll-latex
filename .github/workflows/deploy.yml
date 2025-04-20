@@ -1,0 +1,32 @@
+name: Deploy Generated Site
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+
+      - name: Install Dependencies
+        run: |
+          gem install jekyll
+          bundle install
+
+      - name: Build Site
+        run: |
+          jekyll build --plugins _plugins
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          keep_files: false # 完全覆盖旧内容
