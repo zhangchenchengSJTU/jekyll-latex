@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+  <title>Notes for Classical Tilting Theory
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="Tilting 理论">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="http://localhost:4000/assets/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:4000/assets/touch-icon.png">
+<link rel="stylesheet" href="http://localhost:4000/assets/core.css">
+<link rel="canonical" href="http://localhost:4000/posts/Notes_on_Tilting">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="http://localhost:4000/feed.xml" />
+
+
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          [
+            '$', '$'
+          ],
+          [
+            '\\(', '\\)'
+          ]
+        ]
+      }
+    };
+  </script>
+  <script
+    async
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="latex-dark">
+
+	<aside class="logo">
+  
+
+  <a href="http://localhost:4000/">
+    <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
+  </a>
+  <span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+	<main>
+  <article>
+    <div class="center">
+      <h1>Notes for Classical Tilting Theory</h1>
+      <p class="author">
+        Chencheng Zhang
+        <br/>
+        April 20, 2025
+      </p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 id="tilting-理论">Tilting 理论</h2>
+
+<h3 id="经典-tilting-投射维度为--1">经典 Tilting: 投射维度为 $≤ 1$</h3>
+
+<h4 id="torsion-pair-确定的对象类">Torsion Pair 确定的对象类</h4>
+
+<p><strong>Def</strong> (垂直). 使用 $⟂_o$ 表示关于 $\mathrm{Hom}(-,-)$ 的垂直, $⟂$ 表示关于 $\mathrm{Ext}^1(-,-)$ 的垂直. 使用 $(-)^⟂$, $(-)^o$, $^⟂(-)$ 以及 $^o(-)$ 表示对象类的左右垂直类.</p>
+
+<p><strong>Def</strong> (对象类生成的对象类). 给定 (非空) 对象类 $𝒳$.</p>
+
+<ol>
+  <li>$𝐚𝐝𝐝(𝒳)$ 是 $𝒳$ 中对象关于直和与直和项的闭包.</li>
+  <li>$𝐟𝐢𝐥(𝒳)$ 是 $𝒳$ 中对象关于扩张 (合成列) 的闭包.</li>
+  <li>$𝐬𝐮𝐛(𝒳)$ 是 $𝒳$ 中对象关于子对象的闭包.</li>
+  <li>$𝐜𝐨𝐠(𝒳) = 𝐬𝐮𝐛(𝐚𝐝𝐝(𝒳))$ 是 $𝒳$ 中对象关于直和与子对象的闭包.</li>
+  <li>$𝐅(𝒳) = 𝐟𝐢𝐥(𝐬𝐮𝐛(𝒳)) = (^o𝒳)^o$ 是 $𝒳$ 关于子对象和扩张的闭包.</li>
+  <li>$𝐪𝐮𝐨𝐭(𝒳)$ 是 $𝒳$ 中对象关于商对象的闭包.</li>
+  <li>$𝐠𝐞𝐧(𝒳) = 𝐪𝐮𝐨𝐭(𝐟𝐢𝐥(𝒳))$ 是 $𝒳$ 中对象关于直和与商对象的闭包.</li>
+  <li>$𝐓(𝒳) = 𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒳)) = {}^o(𝒳^o)$ 是 $𝒳$ 关于商对象和扩张的闭包.</li>
+</ol>
+
+<p><strong>Remark</strong> 对 $𝐦𝐨𝐝_A$, 对 $𝐚𝐝𝐝$ 封闭的对象类是有限生成的.</p>
+
+<p><strong>Def</strong> (Torsion pair). 称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.</p>
+
+<ol>
+  <li>$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.</li>
+  <li>存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$.</li>
+  <li>存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$.</li>
+  <li>${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.</li>
+  <li>$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.</li>
+  <li>$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.</li>
+  <li>任意 $𝒯$-滤过对象属于 $𝒯$.</li>
+  <li>任意 $ℱ$-滤过对象属于 $ℱ$.</li>
+</ol>
+
+<p><strong>Lemma</strong> 此时, 典范正合列 $0 → tM → M → fM → 0$ 在同构意义下唯一.</p>
+
+<ol>
+  <li>$t$ 是右正合的左伴随函子, $𝒯$ 是余反射的.</li>
+  <li>$f$ 是左伴随的右正合函子, $ℱ$ 是反射的.</li>
+</ol>
+
+<p><strong>Lemma</strong> ($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象). 给定对象 $X$ 与 $M$.</p>
+
+<ol>
+  <li>$M ∈ 𝐠𝐞𝐧(X)$ 当且仅当赋值 $(M, X) ⊗_{\mathrm{End}(X)} X → M$ 是满的.</li>
+  <li>$M ∈ 𝐜𝐨𝐠(X)$ 当且仅当余赋值 $M → ((M, X), X)$ 是单的.</li>
+</ol>
+
+<p><strong>Lemma</strong> ($𝐓$ 与 $𝐅$ 中的对象). 给定对象 $X$ 与 $M$.</p>
+
+<ol>
+  <li>$M ∈ 𝐓(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐪𝐮𝐨𝐭(X)$.</li>
+  <li>$M ∈ 𝐅(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐚𝐝𝐝(X)$.</li>
+</ol>
+
+<p><strong>Lemma</strong> $𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.</p>
+
+<ol>
+  <li>若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧, X^o)$ 是 torsion pair.</li>
+  <li>若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.</li>
+</ol>
+
+<p><strong>Thm</strong> (垂直条件). 以下刻画 torsion pair $(𝒯, ℱ)$ 中满足 $\mathrm{Ext}^1$-垂直的对象. 记 $t$ 与 $f$ 是相应的子函子与商函子.</p>
+
+<ol>
+  <li>$𝒯 ∩ (^⟂ 𝒯) = 𝒯 ∩ τ ⁻¹ ℱ$.</li>
+  <li>$𝒯 ∩ (𝒯^⟂) = 𝒯 ∩ t(𝐢𝐧𝐣)$.</li>
+  <li>$ℱ ∩ (ℱ^⟂) = ℱ ∩ τ 𝒯$.</li>
+  <li>$ℱ ∩ (^⟂ ℱ) = ℱ ∩ f(𝐩𝐫𝐨𝐣)$.</li>
+</ol>
+
+<h4 id="局部-tilting-模-两类-torsion-pair">局部 Tilting 模: 两类 torsion pair</h4>
+
+<p><strong>Def</strong> (忠实模). 称 $M ∈ 𝐦𝐨𝐝_A$ 忠实, 若以下等价命题成立.</p>
+
+<ol>
+  <li>对任意 $a ≠ 0$ 总有 $M ⋅ a ≠ 0$.</li>
+  <li>同态 $A → \mathrm{End}(M)^{\mathrm{op}}$ 是单的.</li>
+  <li>$A ∈ 𝐜𝐨𝐠(M)$.</li>
+  <li>$DA ∈ 𝐠𝐞𝐧(M)$.</li>
+</ol>
+
+<p><strong>Def</strong> (局部 Tilting 模). 称 $T$ 是局部 tilting 的, 若 $p.\dim T ≤ 1$ 且 $\mathrm{Ext}^1(T,T)=0$.</p>
+
+<p><strong>Thm</strong> (局部 tilting 模诱导的 torsion pair). 给定局部 tilting 模 $T$.</p>
+
+<ol>
+  <li>$(𝐠𝐞𝐧(T), T^o)$ 是 torsion pair.</li>
+  <li>$(T^⟂, 𝐜𝐨𝐠(τT))$ 是 torsion pair.</li>
+  <li>$𝐠𝐞𝐧(T) ⊆ T^⟂$.</li>
+  <li>以上两个 torsion pair, 均有 $T ∈ 𝒯 ∩ {}^⟂𝒯 = 𝒯 ∩ τ⁻¹ ℱ$.</li>
+</ol>
+
+<p><strong>Note</strong> 内射模属于 $T^⟂$. 若投射模属于 $𝐠𝐞𝐧(T)$, 则其属于 $𝐚𝐝𝐝(T)$.</p>
+
+<h4 id="tilting-模诱导的-torsion-pair">Tilting 模诱导的 torsion pair</h4>
+
+<p><strong>Def</strong> 给定局部 tilting 模 $T$, 以下是 $T$ 成为 tilting 模的等价条件.</p>
+
+<ol>
+  <li>$A$ 相对 $𝐚𝐝𝐝(T)$ 的内射分解 (余消解) 是至多 $1$ 维的, 即, 存在 ses $0 → A → T’ → T’’ → 0$, 其中 $T$, $T’’$ 属于 $𝐚𝐝𝐝(T)$.</li>
+  <li>$𝐠𝐞𝐧(T) = T^⟂$.</li>
+  <li>$T^o = 𝐜𝐨𝐠(τT)$.</li>
+  <li>$^⟂(T^⟂) = 𝐚𝐝𝐝(T)$.</li>
+  <li>任意 $M ∈ T^⟂$ 存在满的右 $𝐚𝐝𝐝(T)$-逼近 $π : T^n ↠ M$, 且 $\ker π ∈ T^⟂$.</li>
+</ol>
+
+<p><strong>Lemma</strong> 对 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$.</p>
+
+<ol>
+  <li>$^⟂𝒯 = 𝐚𝐝𝐝(T)$.</li>
+  <li>$M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.</li>
+  <li>内射对象必属于 $𝒯$.</li>
+  <li>投射对象若属于 $𝒯$, 则属于 $𝐚𝐝𝐝(T)$.</li>
+  <li>投射内射对象必属于 $𝐚𝐝𝐝(T)$.</li>
+</ol>
+
+<p><strong>Thm</strong> (Bongartz). 局部 tilting 模是 tilting 模的直和项.</p>
+
+<h4 id="brenner-butler-理论">Brenner-Butler 理论</h4>
+
+<p><strong>Lemma</strong> 考虑函子 $(T,-) : 𝐦𝐨𝐝_A → 𝐦𝐨𝐝_{\mathrm{End}(T)^{\mathrm{op}}}$.</p>
+
+<ol>
+  <li>$𝐚𝐝𝐝(T) → 𝐩𝐫𝐨𝐣(\mathrm{End}(T)^{\mathrm{op}})$ 给出范畴等价. 此处 $T$ 可以是任意模.</li>
+  <li>$T$ 的直和项无重数, 当且仅当 $\mathrm{End}(T)$ 是基本代数.</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>若 $T$ 是 tilting 模, 则 $(T,-)</td>
+          <td>_𝒯$ 是全忠实的.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>若 $T$ 是 tilting 模, 则 $\mathrm{Ext}^1(T,-)</td>
+          <td>_𝒯$ 也是全忠实的.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ol>
+
+<p><strong>Def</strong> (Tilted 代数). 给定 tilting 模 $T ∈ 𝐦𝐨𝐝_A$, 记 $B:=\mathrm{End}(T)$ 是诱导的 tilted 代数.</p>
+
+<p><strong>Lemma</strong> $T$ 是 $(B,A)$-双模. 特别地, 代数 $A$ 与 $B$ 的关系如下.</p>
+
+<ol>
+  <li>$T$ 视作 $B^{\mathrm{op}}$-模也是 tilting 模.</li>
+  <li>代数同态的合成 $A → B^{\mathrm{op}} → \mathrm{End}(_BT)^{\mathrm{op}}$ 是同构.</li>
+  <li>中心 $Z(A) ≃ Z(B)$ 同构, 因此 $A$ 与 $B$ 具有相同的连通性.</li>
+</ol>
+
+<p><strong>Thm</strong> (对偶 torsion pair). 给定 tilting 模 $T ∈ 𝐦𝐨𝐝_A$, 记 $B:= \mathrm{End}(T_A)$.</p>
+
+<ol>
+  <li>$𝐦𝐨𝐝_A$ 中的 torsion pair $(𝒯, ℱ)$ 如下:
+    <ol>
+      <li>$𝒯 = 𝐠𝐞𝐧(T_A) = T_A^⟂$,</li>
+      <li>$ℱ = 𝐜𝐨𝐠 (τ T_A) = T_A^o$.</li>
+    </ol>
+  </li>
+  <li>$𝐦𝐨𝐝_B$ 中的 torsion pair $(𝒳, 𝒴)$ 如下:
+    <ol>
+      <li>$𝒳 = D(𝐜𝐨𝐠(τ{}_BT)) = D(_BT^o)$,</li>
+      <li>$𝒴 = D(𝐠𝐞𝐧(_BT)) = D(_BT^⟂)$.</li>
+    </ol>
+  </li>
+  <li>省略对偶符号, 则
+    <ol>
+      <li>$𝒳 = \ker \mathrm{Hom}_B(-,DT) = \ker (- ⊗_B T)$,</li>
+      <li>$𝒴 = \ker \mathrm{Ext}_B^1(-, DT) = \ker \mathrm{Tor}_1^B(- , T)$.</li>
+    </ol>
+  </li>
+</ol>
+
+<p><strong>Remark</strong> 习惯上, 置 $𝒯 := 𝒯(T_A) ⊆ 𝐦𝐨𝐝_A$ 以及 $𝒳 := 𝒳(T_A) ⊆ 𝐦𝐨𝐝_B$.</p>
+
+<p><strong>Lemma</strong> $𝐦𝐨𝐝_B$ 范畴存在对偶的逼近结论.</p>
+
+<ol>
+  <li>(原). 任意 $M_A ∈ 𝒯$ 存在满的右 $𝐚𝐝𝐝(T_A)$-逼近 $π : T_A^n ↠ M_A$, 且 $\ker π ∈ 𝒯$.</li>
+  <li>(新). 任意 $Y_B ∈ 𝒴$ 存在单的左 $𝐚𝐝𝐝((DT)_B)$-逼近 $ι: Y_B ↪ (DT)_B^m$, 且 $\operatorname{cok}ι ∈ 𝒴$.</li>
+  <li>(原). $M_A ∈ 𝒯$ 的充要条件是典范态射 $(T, M) ⊗ T → M$ 是 $𝐦𝐨𝐝_A$-同构.</li>
+  <li>(新). $Y_B ∈ 𝒴$ 的充要条件是典范态射 $(T, Y ⊗_B T) → Y$ 是 $𝐦𝐨𝐝_B$-同构.</li>
+</ol>
+
+<p><strong>Thm</strong> (BB 导出等价). 给定资料 $(A,T,B)$.</p>
+
+<ol>
+  <li>$\mathrm{Hom}_A(T,-) : 𝒯 ⇆ 𝒴 : (-⊗_BT)$ 是范畴等价 (视作拟逆).</li>
+  <li>$\mathrm{Ext}^1_A(T,-) : ℱ ⇆ 𝒳 : \mathrm{Tor}_1^B(-, T)$ 是范畴等价 (视作拟逆).</li>
+  <li>$𝐑^∙\mathrm{Hom}_A(T,-) : D^b(𝐦𝐨𝐝_A) ⇆ D^b(𝐦𝐨𝐝_B) : 𝐋 ^∙(-⊗_BT)$ 是导出等价.</li>
+</ol>
+
+<p><strong>Thm</strong> (BB 同调公式). 给定上述函子.</p>
+
+<ol>
+  <li>零次导出的核 (像) 是一次导出的像 (核).</li>
+  <li>$𝐦𝐨𝐝_A$ 中 ses $0 → (T,M) ⊗_B T → M → \mathrm{Tor}_1^B(\mathrm{Ext}_A^1(T,M), T) → 0$, 即 $M$ 的 $(t,f)$ 序列.</li>
+  <li>$𝐦𝐨𝐝_B$ 中 ses $0 → \mathrm{Ext}_A^1(T, X ⊗ _BT) → X → (T, X ⊗ _BT) → 0$, 即 $X$ 的 $(t,f)$ 序列.</li>
+</ol>
+
+<h4 id="同调维度">同调维度</h4>
+
+<p><strong>Lemma</strong> ($𝒯$, $𝒴$ 与投射维数). 对 $M ∈ 𝒯$.</p>
+
+<ol>
+  <li>若 $p.\dim M ≠ 1$, 则 $p.\dim M = p.\dim (T,M)$.</li>
+  <li>若 $p.\dim M = 1$, 则 $p.\dim (T,M) ∈ {0,1}$.</li>
+</ol>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Thm</strong> (整体维数). $</td>
+      <td>gl.\dim A - gl.\dim B</td>
+      <td>≤ 1$.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- **Lemma** ($𝒯$, $𝒴$ 与内射维数). 需要细化. -->
+
+<p><strong>Thm</strong> (Happel 的导出等价定理). 假定 Abel 范畴有足够投射. 某对象 $T$ 满足 $\mathrm{Ext}_𝒜^{≥ 1}(T,T) =0$. 记 $B = \mathrm{End}(T)$.</p>
+
+<ol>
+  <li>$(T,-)_𝒜: 𝐚𝐝𝐝(T) ⇆ 𝐩𝐫𝐨𝐣(B) : (- ⊗ _BT)$ 是范畴等价.</li>
+  <li>复合 $K^b(𝐚𝐝𝐝(T)) ↣ K^b (𝒜) → D^b𝒜$ 全忠实.</li>
+  <li>若任意对象的 $𝐚𝐝𝐝(T)$-余消解维数有限, 则上述复合是等价.</li>
+  <li>若 $𝒜$ 投射维数有限, 则典范函子 $K^b(𝐩𝐫𝐨𝐣(𝒜)) → D^b(𝒜)$ 是等价. 此时有导出等价 $D^b(𝒜) ≃ D^b(B)$.</li>
+</ol>
+
+<h4 id="遗传范畴的-torsion-pair">遗传范畴的 torsion pair</h4>
+
+<p><strong>Note</strong> 本节的范畴要求有足够投射对象, 且 tilting 对象 $T$ 使得一切 $(T,X)$ 均是有限生成右 $\mathrm{End}(T)$-模. 一个较弱的条件是 $\mathrm{Hom}$-群有限维.</p>
+
+<p><strong>Def</strong> (遗传范畴). 称 Abel 范畴遗传, 若米田积意义下的 $\mathrm{Ext}^2(-,-)$ 函子消失.</p>
+
+<p><strong>Thm</strong> 遗传范畴中的满单分解均可补全作推出拉回方块.</p>
+
+<p><strong>Thm</strong> 遗传范畴中, $X^∙$ 与 $H^∙(X)$ 导出等价.</p>
+
+<p><strong>Def</strong> (遗传范畴的 Tilting 对象). 称 $T ∈ 𝒜$ 是 tilting 对象, 若 $T$ 生成的 Serre 子范畴是 $𝒜$, 且 $\mathrm{Ext}^1(T,T)=0$.</p>
+
+<p><strong>Remark</strong> 遗传对应 $p.\dim T ≤ 1$, $T$ 生成 Serre 子范畴的条件对应 $A$ 的 $𝐚𝐝𝐝(T)$-余消解维度 $≤1$.</p>
+
+<p><strong>Thm</strong> (遗传范畴的 torsion pair). 对上述遗传范畴与 tilting 对象 $T$.</p>
+
+<ol>
+  <li>$(\ker \mathrm{Ext}^0(T,-), \ker \mathrm{Ext}^1(T,-))$ 是 torsion pair, 记作 $(𝒯, ℱ)$.</li>
+  <li>BB 导出等价给出 $(𝒳 , 𝒴) ≃ (ℱ[1], 𝒯)$.</li>
+  <li>若 $B$ 遗传, 则 $(𝒯, ℱ)$ 可裂.</li>
+</ol>
+
+<p><strong>Thm</strong> (可裂 torsion pair 的等价定义). 称 Abel 范畴 $𝒜$ 中的 torsion pair $(𝒯, ℱ)$ 可裂, 若以下等价命题成立.</p>
+
+<ol>
+  <li>$𝒯∪ℱ$ 包含一切不可分解对象.</li>
+  <li>$\mathrm{Ext}_𝒜^1(ℱ, 𝒯) = 0$.</li>
+  <li>$𝒯$ 关于 $τ⁻¹$ 封闭.</li>
+  <li>$ℱ$ 关于 $τ$ 封闭.</li>
+</ol>
+
+
+
+  </article>
+
+  <div class="page-navigation">
+    
+      <a
+        class="next"
+        href="http://localhost:4000/posts/template"
+        title="NEXT: LaTeX Template (version 1.0)">&lt;&lt;</a>
+      <span>
+        &middot;
+      </span>
+    
+    <a
+      class="home"
+      href="http://localhost:4000"
+      title="Back to Homepage">Home</a>
+    
+      <span>
+        &middot;
+      </span>
+      <a
+        class="prev"
+        href="http://localhost:4000/posts/exists_left_proj_app"
+        title="PREV: 存在左 $𝐩𝐫𝐨𝐣$-逼近">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    Chencheng Zhang</span>
+</div>
+
+</body>
+
+
+</html>

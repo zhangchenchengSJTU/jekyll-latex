@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+  <title>Torsionless 模的等价定义
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="  (Torsionless 判别法).给定 $η_M : M → M^{∗ ∗}$. 以下条件等价.  $η_M$ 是单的.$M$ 是 $A^n$ 的子对象.$\mathrm{Ext}^1(\mathrm{Tr}(M), A) = 0$.">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="http://localhost:4000/assets/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:4000/assets/touch-icon.png">
+<link rel="stylesheet" href="http://localhost:4000/assets/core.css">
+<link rel="canonical" href="http://localhost:4000/posts/Torsion_Less">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="http://localhost:4000/feed.xml" />
+
+
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          [
+            '$', '$'
+          ],
+          [
+            '\\(', '\\)'
+          ]
+        ]
+      }
+    };
+  </script>
+  <script
+    async
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="latex-dark">
+
+	<aside class="logo">
+  
+
+  <a href="http://localhost:4000/">
+    <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
+  </a>
+  <span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+	<main>
+  <article>
+    <div class="center">
+      <h1>Torsionless 模的等价定义</h1>
+      <p class="author">
+        Chencheng Zhang
+        <br/>
+        April 19, 2025
+      </p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="theorem">
+  <p>(Torsionless 判别法).
+给定 $η_M : M → M^{∗ ∗}$. 以下条件等价.</p>
+  <ol>
+<li>
+$η_M$ 是单的.
+</li>
+<li>
+$M$ 是 $A^n$ 的子对象.
+</li>
+<li>
+$\mathrm{Ext}^1(\mathrm{Tr}(M), A) = 0$.
+</li>
+</ol>
+</div>
+
+<div class="proof">
+  <p>考虑四项正合列
+\(0 → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → N ⊗ M → (M^∗, N) → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → 0.\)
+将 $N$ 替换作 $A$, 得 3. 与 1. 等价.
+<br />
+<br />
+若 $η_M$ 单, 则 $M ↪ M^{∗∗} ↪ \mathrm{Hom}<em>{𝐒𝐞𝐭𝐬}(M^∗, A)$, 因此 $η_M$ 是 $∏ A$ 子空间. 由 <a href="https://arxiv.org/abs/2105.00701"> Chase 引理</a>, 投射模对任意积封闭当且仅当环是 Artin 的, 从而 $∏</em>{M^∗} A$ 是投射模. 由 $M$ 有限生成, 其必然是有限生成投射模的子模.
+<br />
+若 $M$ 是 $A^n$ 的子对象, 记嵌入映射 $ι$. 由 $ι^{∗ ∗ } ∘ η_M = η_{A^n} ∘ ι$ 单, 得 $η_M$ 单.</p>
+</div>
+
+<div class="note">
+  <p>证明 1. 至 2. 可避免使用 Chase 引理. 取 $M^∗$ 的投射盖 $P$, 则
+\((M^∗, A) ↪ (P,A) ↪ A^n\)
+即为所求之单射.</p>
+</div>
+
+
+  </article>
+
+  <div class="page-navigation">
+    
+      <a
+        class="next"
+        href="http://localhost:4000/posts/exists_left_proj_app"
+        title="NEXT: 存在左 $𝐩𝐫𝐨𝐣$-逼近">&lt;&lt;</a>
+      <span>
+        &middot;
+      </span>
+    
+    <a
+      class="home"
+      href="http://localhost:4000"
+      title="Back to Homepage">Home</a>
+    
+      <span>
+        &middot;
+      </span>
+      <a
+        class="prev"
+        href="http://localhost:4000/posts/Left_proj_approx"
+        title="PREV: 左投射逼近的等价命题">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    Chencheng Zhang</span>
+</div>
+
+</body>
+
+
+</html>
