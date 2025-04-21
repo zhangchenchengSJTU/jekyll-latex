@@ -822,7 +822,7 @@ $$
 &lt;/div&gt;
 
 &lt;div class=&quot;proposition&quot;&gt;
-特别地, 有如下结论 (&lt;a href=&quot;/posts/Top_surjective&quot;&gt;证明&lt;/a&gt;).
+特别地, 有如下结论 (&lt;a href=&quot;Top_surjective&quot;&gt;证明&lt;/a&gt;).
 $\mathrm{Top}(f)$ 满当且仅当 $f$ 满; $\mathrm{Soc}(f)$ 单当且仅当 $f$ 单.
 &lt;/div&gt;
 
