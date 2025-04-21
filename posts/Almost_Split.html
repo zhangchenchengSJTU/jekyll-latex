@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+  <title>几乎可裂态射的结构
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="(几乎可裂态射的结构). 以下是左右几乎可裂态射的结构.左几乎可裂态射的来源 $s(f)$ 是不可约的.左几乎可裂态射 $f$ 是单的, 当且仅当 $s(f) ∉ 𝐢𝐧𝐣$.左几乎可裂态射 $s(f) ∈ 𝐢𝐧𝐣$, 则形如 $I → \mathrm{Bot}(I) ⊕ \cdots$.右几乎可裂态射的去向 $t...">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
+<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
+<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Almost_Split">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+
+
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          [
+            '$', '$'
+          ],
+          [
+            '\\(', '\\)'
+          ]
+        ]
+      }
+    };
+  </script>
+  <script
+    async
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="latex-dark">
+
+	<aside class="logo">
+  
+
+  <a href="https://zhangchenchengsjtu.github.io/">
+    <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
+  </a>
+  <span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+	<main>
+  <article>
+    <div class="center">
+      <h1>几乎可裂态射的结构</h1>
+      <p class="author">
+        Chencheng Zhang
+        <br/>
+        April 21, 2025
+      </p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="theorem">
+(几乎可裂态射的结构). 以下是左右几乎可裂态射的结构.
+<ol>
+<li>
+左几乎可裂态射的来源 $s(f)$ 是不可约的.
+</li>
+<li>
+左几乎可裂态射 $f$ 是单的, 当且仅当 $s(f) ∉ 𝐢𝐧𝐣$.
+</li>
+<li>
+左几乎可裂态射 $s(f) ∈ 𝐢𝐧𝐣$, 则形如 $I → \mathrm{Bot}(I) ⊕ \cdots$.
+</li>
+<li>
+右几乎可裂态射的去向 $t(f)$ 是不可约的.
+</li>
+<li>
+右几乎可裂态射 $f$ 是满的, 当且仅当 $t(f) ∉ 𝐩𝐫𝐨𝐣$.
+</li>
+<li>
+右几乎可裂态射 $t(f) ∈ 𝐩𝐫𝐨𝐣$, 则形如 $\cdots ⊕ \mathrm{Rad}(X) → X$.
+</li>
+</ol>
+</div>
+
+<div class="proof">
+由对称性, 只需证明前三条.  
+
+<br />  
+<br />  
+
+假定存在 $X_1 ⊕ X_2 \xrightarrow{(f_1 \ f_2)} Z$ 类型的几乎可裂态射 (假定 $X_i ≠ 0$), 则非可裂单的 $p_i : X_1 ⊕ X_2 → x_i$ 通过 $(f_1 \ f_2)$ 分解, 得 $r_i$. 注意到
+$$
+X_1 ⊕ X_2 \xrightarrow{(f_1 \ f_2)} Z \xrightarrow{(r_1 \ r_2)} X_1 ⊕ X_2
+$$
+同构, 从而 $(f_1 \ f_2)$ 是可裂单, 矛盾.
+
+<br />  
+<br />  
+
+今假定 $f$ 不是单的, 则必有 $s(f) ∉ 𝐢𝐧𝐣$. 若左几乎可裂态射 $f$ 非单, 则有左正合列
+$$
+0 → K → X → Y .  
+$$
+今断言 $X$ 是内射对象. 若不然, 则存在 $X$ 无法提升的单态射 $U ↪ V$, 此时推出方块 $▤$ 中的态射 $X  ⇢  E$ 不是可裂单, 从而被 $X → Y$ 分解:
+$$
+\begin{bmatrix}
+ &amp;  &amp;  &amp;  &amp; Y\\
+ &amp;  &amp;  &amp; ↗  &amp; ⤈ \\
+K &amp; ↪  &amp; X &amp; ⇢ &amp; E\\
+ &amp;  &amp; ↑  &amp; ▤  &amp; ⇡ \\
+ &amp;  &amp; U &amp; ↪  &amp; V
+\end{bmatrix}.  
+$$
+由 Abel 范畴的性质, 单射的推出仍是单的, 因此
+$$
+0 = \ker [X → E] ↩ \ker [X → Y] = K ≠ 0.  
+$$
+这给出矛盾, 从而 $X$ 必然是内射对象.
+
+<br />
+<br />
+
+给定内射对象 $I$. 对任意非可裂单 $a : I → X$, 态射 $I → X → I$ 的余像是总是 $\mathrm{Bot}(I)$ 的商, 因此 $a$ 必通过 $I ↠ \mathrm{Bot}(I)$ 分解. 这说明 $I ↠ \mathrm{Bot}(I)$ 是左几乎可裂. 
+<br />
+下对一切内射模出发的左几乎可裂态射作说明: 若存在另一左几乎可裂态射 $I → J$, 则存在
+
+$$
+[I ↠ \mathrm{Bot}(I)] = [I ↠ \mathrm{Bot}(I) → J → \mathrm{Bot}(I)].
+$$
+
+因此 $\mathrm{Bot}(I)$ 是 $J$ 的直和项.
+
+</div>
+
+
+  </article>
+
+  <div class="page-navigation">
+    
+      <a
+        class="next"
+        href="https://zhangchenchengsjtu.github.io/website/posts/mid"
+        title="NEXT: 期中考试试卷与解答">&lt;&lt;</a>
+      <span>
+        &middot;
+      </span>
+    
+    <a
+      class="home"
+      href="https://zhangchenchengsjtu.github.io/website"
+      title="Back to Homepage">Home</a>
+    
+      <span>
+        &middot;
+      </span>
+      <a
+        class="prev"
+        href="https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx"
+        title="PREV: 合冲-逼近伴随 (稳定范畴中)">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    Chencheng Zhang</span>
+</div>
+
+</body>
+
+
+</html>

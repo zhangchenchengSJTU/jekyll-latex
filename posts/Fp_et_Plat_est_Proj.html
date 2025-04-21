@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+  <title>Finitely Presented Flat is Projective
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="(有限表现 + 平坦 = 投射).给定 Karoubi 的, 本质小的加法范畴 $𝒞$. 若 $F ∈ 𝐦𝐨𝐝_𝒞$ 平坦, 则 $F$ 投射.">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
+<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
+<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Fp_et_Plat_est_Proj">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+
+
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          [
+            '$', '$'
+          ],
+          [
+            '\\(', '\\)'
+          ]
+        ]
+      }
+    };
+  </script>
+  <script
+    async
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="latex-dark">
+
+	<aside class="logo">
+  
+
+  <a href="https://zhangchenchengsjtu.github.io/">
+    <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
+  </a>
+  <span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+	<main>
+  <article>
+    <div class="center">
+      <h1>Finitely Presented Flat is Projective</h1>
+      <p class="author">
+        Chencheng Zhang
+        <br/>
+        April 21, 2025
+      </p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="theorem">
+(有限表现 + 平坦 = 投射).
+给定 Karoubi 的, 本质小的加法范畴 $𝒞$. 若 $F ∈ 𝐦𝐨𝐝_𝒞$ 平坦, 则 $F$ 投射.
+</div>
+
+<div class="proof">
+记 $F = \mathrm{cok}(h_{X \xrightarrow f Y})$. 考虑对偶
+
+$$
+𝔇 : 𝐌𝐨𝐝_{𝒞} → 𝐌𝐨𝐝_{𝒞^{\mathrm{op}}},\quad L ↦ (L(∙), C). 
+$$
+
+其中 $C$ 是 $𝐌𝐨𝐝_k$ 中的内射余生成元. 往证 $F$ 提升一切满态射 $α : L → R$, 也就是证明单态射
+
+$$
+𝔇 𝖭𝖺𝗍[F, R]\xrightarrow {𝔇 α} 𝔇  𝖭𝖺𝗍[F, L]. 
+$$
+
+对可表函子 $h_X$,
+
+$$
+𝔇 𝖭𝖺𝗍[h_X, L] ≃ 𝔇LX = (LX, C)≃ h_X(∙) ⊗ (L(∙), C). 
+$$
+
+此时,
+
+$$
+\begin{bmatrix}
+𝔇 (RX) &amp; ≃  &amp; h_{X} ⊗ (R,C) &amp; ↪  &amp; h_{X} ⊗ (L,C) &amp; ≃  &amp; 𝔇 (LX)\\
+↓  &amp;  &amp; ↓  &amp;  &amp; ↓  &amp;  &amp; ↓ \\
+𝔇 (RY) &amp; ≃  &amp; h_{Y} ⊗ (R,C) &amp; ↪ &amp; h_{Y} ⊗ (L,C) &amp; ≃  &amp; 𝔇 (LY)\\
+↓  &amp;  &amp; ↓  &amp;  &amp; ↓  &amp;  &amp; ↓ \\
+𝔇 ([F,R]) &amp; ≃  &amp; F⊗ (R,C) &amp; \dashrightarrow  &amp; F⊗ (L,C) &amp; ≃  &amp; 𝔇 ([F,L])
+\end{bmatrix}.
+$$
+
+依照蛇引理, $𝔇([F,R]) ↪ 𝔇([F,L])$ 是单态射, 从而 $F$ 提升一切满态射. 依照 $F$ 投射, 有限表现, 以及范畴 Karoubi, 得 $F$ 可表.  
+</div>
+
+<div class="note">
+这一证明完全照抄模范畴的结论.
+</div>
+
+
+  </article>
+
+  <div class="page-navigation">
+    
+      <a
+        class="next"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Lazard_thm"
+        title="NEXT: Proof of Lazard's Theorem">&lt;&lt;</a>
+      <span>
+        &middot;
+      </span>
+    
+    <a
+      class="home"
+      href="https://zhangchenchengsjtu.github.io/website"
+      title="Back to Homepage">Home</a>
+    
+      <span>
+        &middot;
+      </span>
+      <a
+        class="prev"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Fp_Proj_Plat"
+        title="PREV: $𝐅𝐩 → 𝐏𝐥𝐚𝐭 → 𝐏𝐫𝐨𝐣$">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    Chencheng Zhang</span>
+</div>
+
+</body>
+
+
+</html>
