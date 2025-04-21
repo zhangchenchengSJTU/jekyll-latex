@@ -1,3 +1,11 @@
+> [!NOTE] 
+>
+> 使用 `bundle exec jekyll serve --watch` 在本地 `http://127.0.0.1:4000/website/` 查看网站. 此时网址是 `localhost:...`
+>
+> 使用 `bundle exec jekyll build` 建立网站, 此时网址是 `github.io....`. 继而发布.
+>
+> GiiHub Page 部署大概延迟三分钟.
+
 # jekyll-latex
 
 <p align="center">
