@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+  <title>Notes for AR theory
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="Abstract本篇速记总结一些常见的公式, 主要来源于ERTAA vol 1, ETAA, 等. 目录如下. ">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
+<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
+<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/AR-notes">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+
+
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          [
+            '$', '$'
+          ],
+          [
+            '\\(', '\\)'
+          ]
+        ]
+      }
+    };
+  </script>
+  <script
+    async
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="latex-dark">
+
+	<aside class="logo">
+  
+
+  <a href="https://zhangchenchengsjtu.github.io/">
+    <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
+  </a>
+  <span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+	<main>
+  <article>
+    <div class="center">
+      <h1>Notes for AR theory</h1>
+      <p class="author">
+        Chencheng Zhang
+        <br/>
+        April 19, 2025
+      </p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="abstract"><h5>Abstract</h5><p>
+本篇速记总结一些常见的公式, 主要来源于<a href="https://www.cambridge.org/core/books/elements-of-the-representation-theory-of-associative-algebras/AA8066B5809D0F556A540400AD3A419C">ERTAA vol 1</a>, <a href="https://www.cambridge.org/core/books/representation-theory-of-artin-algebras/B7452F28EDADF450BF1059A6FB6D68A4">ETAA</a>, 等. 目录如下. 
+</p></div>
+
+<ul id="markdown-toc">
+  <li><a href="#artin-代数的要件" id="markdown-toc-artin-代数的要件">Artin 代数的要件</a>    <ul>
+      <li><a href="#模格" id="markdown-toc-模格">模格</a></li>
+    </ul>
+  </li>
+  <li><a href="#稳定范畴等价" id="markdown-toc-稳定范畴等价">稳定范畴等价</a>    <ul>
+      <li><a href="#对偶函子" id="markdown-toc-对偶函子">对偶函子</a></li>
+      <li><a href="#判别法" id="markdown-toc-判别法">判别法</a></li>
+      <li><a href="#逼近" id="markdown-toc-逼近">逼近</a></li>
+    </ul>
+  </li>
+  <li><a href="#维度" id="markdown-toc-维度">维度</a>    <ul>
+      <li><a href="#著名定理" id="markdown-toc-著名定理">著名定理</a></li>
+      <li><a href="#q-二次型" id="markdown-toc-q-二次型">$q$-二次型</a></li>
+      <li><a href="#coxeter-反射" id="markdown-toc-coxeter-反射">Coxeter 反射</a></li>
+    </ul>
+  </li>
+  <li><a href="#几乎可裂-ses" id="markdown-toc-几乎可裂-ses">几乎可裂 ses</a>    <ul>
+      <li><a href="#两种构造态射的方式-不可约-极小几乎可裂" id="markdown-toc-两种构造态射的方式-不可约-极小几乎可裂">两种构造态射的方式: 不可约, 极小几乎可裂</a></li>
+      <li><a href="#几乎可裂-ses-的等价定义" id="markdown-toc-几乎可裂-ses-的等价定义">几乎可裂 ses 的等价定义</a></li>
+      <li><a href="#函子语言" id="markdown-toc-函子语言">函子语言</a></li>
+    </ul>
+  </li>
+  <li><a href="#ar-定理" id="markdown-toc-ar-定理">AR 定理</a></li>
+</ul>
+
+<h3 id="artin-代数的要件">Artin 代数的要件</h3>
+
+<h4 id="模格">模格</h4>
+
+<p>给定域 $k$ 上的 Artin 代数, 则有限表现模 $M ∈ 𝐦𝐨𝐝_A$ 的所有子对象构成模格 (商对象亦然). 使用</p>
+
+<ol>
+  <li>$(∩ , +)$ 表示子对象模格,</li>
+  <li>$(∧ , ∨)$ 表示商对象模格.</li>
+</ol>
+
+<p>此处 $∩$ (更小的子对象) 与 $∨$ (更大的商对象) 由拉回定义; $+$ (更大的子对象) 与 $∧$ (更小的商对象) 由推出定义.</p>
+
+<p>继而定义如下加法函子 $\mathrm{Rad}$, $\mathrm{Top}$, $\mathrm{Soc}$, $\mathrm{Bot}$.</p>
+
+<ol>
+  <li>(R1). $\mathrm{Rad}(X)$, 是极大真子模的 $∩$.</li>
+  <li>(R2). $\mathrm{Rad}(X)$, $L + \mathrm{Rad}(X) = X$ 当且仅当 $L = X$.</li>
+  <li>(B1). $\mathrm{Top}(X)$, 是极小真商模的 $∧$.</li>
+  <li>(B2). $\mathrm{Top}(X)$, $N ∨ \mathrm{Top}(X) = X$ 当且仅当 $N = X$.</li>
+  <li>(S1). $\mathrm{Soc}(X)$, 是单子对象的 $+$, 亦即极大半单子对象.</li>
+  <li>(S2). $\mathrm{Soc}(X)$, 是极大本性子模, 本性子对象与非零子对象的 $∩$ 非零.</li>
+  <li>(T1). $\mathrm{Bot}(X)$, 单商对象的 $∨$, 亦即极大半满商对象.</li>
+  <li>(T2). $\mathrm{Bot}(X)$, 是极大本性商模, 本性商对象与非零商对象的 $∧$ 非零.</li>
+</ol>
+
+<p>此时有典范 ses:</p>
+
+\[0 → \mathrm{Rad}(X) → X → \mathrm{Top}(X) → 0,\]
+
+<p>以及</p>
+
+\[0 → \mathrm{Soc} → X → \mathrm{Bot}(X) → 0.\]
+
+<div class="definition">
+(本性子, 商模格).
+任意给定 $X$, 则 $X$ 属于以下两类模格.
+<ol>
+<li>
+模格
+
+$$
+P(X) ↠ \cdots ↠ X ↠ \cdots ↠ \mathrm{Top}(X),
+$$
+
+该模格同构于 $\mathrm{Rad}(P(X))$ 的子对象模格.
+</li>
+<li>
+模格
+
+$$
+\mathrm{Soc}(X) ↪ \cdots ↪ X ↪ \cdots ↪ I(X),
+$$
+
+该模格同构于 $\mathrm{Bot}(I(X))$ 的商对象模格.
+</li>
+</ol>
+</div>
+
+<p>特别地, 投射盖 $P(X)$ 与内射包 $I(X)$ 唯一.</p>
+
+<p>以下引理通过模格结构, 细化了将态射的满单分解.</p>
+
+<div class="theorem">
+(满单分解).
+
+任意给定态射 $f : X → Y$.
+<ol>
+<li>
+(投射盖, 满满单). 态射 $f$ 分解如下:
+$$
+X ↠ P(\operatorname{coim} f)\underset {P(X)}⊔ X ↠ \operatorname{coim} f ↪ Y.
+$$
+第一处满射模格间的, 商去了部分生成基. 第二处满射是模格内的, 商去了部分生成关系.
+</li><li>
+(内射包, 满单单). 态射 $f$ 分解如下:
+$$
+X ↠ \operatorname{im}(f) ↪ I(\operatorname{im}(f))\underset{\operatorname{im}(f)} × Y ↪ Y.
+$$
+第二处单射模格间的, 商去了部分 $k$-对偶生成基. 第一处单射是模格内的, 商去了部分 $k$-生成关系.
+</li>
+</ol>
+</div>
+
+<div class="proposition">
+特别地, 有如下结论 (<a href="Top_surjective">证明</a>).
+$\mathrm{Top}(f)$ 满当且仅当 $f$ 满; $\mathrm{Soc}(f)$ 单当且仅当 $f$ 单.
+</div>
+
+<div class="definition">
+(投射盖).
+
+给定投射模出发的满态射 $π : P ↠ X$ 是投射盖. 称之投射盖, 若以下等价条件成立.
+<ol>
+<li>
+(M1). $\ker π ↪ \mathrm{Rad}(P)$.
+</li>
+<li>
+(M2). $\mathrm{Top}(P) = \mathrm{Top}(X)$.
+</li>
+<li>
+(M3). 满满单分解的出发的首尾两项同构.
+</li>
+<li>
+(L1). 任意 $P' ↠ X$ 类型的态射通过 $π$ 分解.
+</li>
+<li>
+(L2). $π$ 右极小, 换言之, $α ∘ π = π$ 当且仅当 $α$ 是同构.
+</li>
+<li>
+(L3). $π ∘ -$ 保持并反射满射.
+</li>
+</ol>
+</div>
+
+<div class="note">
+M1-M3 本质在说 $π$ 是 $[P ↠ \mathrm{Top}(P)]$ 模格内的态射; L1-L3 本质在说极小性.
+</div>
+
+<div class="definition">
+(内射包). 定义对偶, 此处从略. 
+</div>
+
+<h3 id="稳定范畴等价">稳定范畴等价</h3>
+
+<h4 id="对偶函子">对偶函子</h4>
+
+<div class="definition">
+(线性空间的 $k$-对偶).
+
+反变正合函子 $D = (-, k)$ 给出反变等价 (对偶) $𝐦𝐨𝐝_A ↔ 𝐦𝐨𝐝_{A^{\mathrm{op}}}$.
+</div>
+
+<div class="slogan">
+函子 $D$ 颠倒单射与满射, 投射对象与内射对象, 投射分解与内射分解, 以及左投射逼近与右内射逼近等等.
+</div>
+
+<div class="definition">
+($A$-对偶).
+
+左正合反变函子 $(-)^∗ : 𝐦𝐨𝐝_A ↔ 𝐦𝐨𝐝_{A^{\mathrm{op}}}$, 保持投射对象 (限制在 $𝐩𝐫𝐨𝐣$ 上是等价).
+</div>
+
+<div class="definition">
+(中山函子).
+
+右正合反变函子 $ν := D(-^∗) ≃ - ⊗_A DA$, 颠倒投射对象与内射对象 (等价 $ν : 𝐩𝐫𝐨𝐣 ≃ 𝐢𝐧𝐣$).
+</div>
+
+<div class="note">
+中山函子的右伴随是 $(-, DA)_A$, 亦即 $(D(-), A)_{A^{\mathrm{op}}}$.  
+</div>
+
+<div class="theorem">
+$𝐦𝐨𝐝_A$ 中不可分解投射对象, 不可分解内射对象, 单对象一一对应. 通过 $\mathrm{Top}(-)$, $\mathrm{Soc}(-)$, $I(-)$ 以及 $P(-)$ 实现对应.
+$$
+\begin{bmatrix}
+ &amp; P(-) &amp;  &amp; \mathrm{Soc} &amp; \\
+𝐩𝐫𝐨𝐣 &amp; \leftrightarrows  &amp; 𝐬𝐞𝐦𝐢𝐬𝐢𝐦𝐩 &amp; \leftrightarrows  &amp; 𝐢𝐧𝐣\\
+ &amp; \mathrm{Soc} &amp;  &amp; I( -) &amp;
+\end{bmatrix}.
+$$
+</div>
+
+<div class="definition">
+(AR 转置 $\mathrm{Tr}$ 与平移 $τ$).
+给定不可分解对象 $X$ 的极小投射表现 $X ≃ \operatorname{cok}(f)$, 记 $\mathrm{Tr}(M) := \operatorname{cok}(f^∗)$, 即 $(-,A)$ 对偶范畴中的投射表现. 使用图表说明: 
+$$
+\begin{bmatrix}
+ &amp;  &amp; P_{1} &amp; \rightarrow  &amp; P_{0} &amp; \twoheadrightarrow  &amp; X\\[6pt]
+\mathrm{Tr}( X) &amp; \twoheadleftarrow  &amp; P_{1}^{*} &amp; \leftarrow  &amp; P_{0}^{*} &amp; \hookleftarrow  &amp; X^{*}\\[6pt]
+D\mathrm{Tr}( X) &amp; \hookrightarrow  &amp; \nu P_{1} &amp; \rightarrow  &amp; \nu P_{0} &amp; \twoheadrightarrow  &amp; \nu X
+\end{bmatrix}.
+$$
+记 $τ(-) := \mathrm{Tr}D (-)$.
+</div>
+
+<p>AR 转置具有以下熟知性质.</p>
+
+<ol>
+  <li>选取极小内射分解, 则 $\mathrm{Tr} D ≃ τ⁻¹$.</li>
+  <li>投射模被 $\mathrm{Tr}$ 与 $τ$ 消灭.</li>
+  <li>内射模被 $\mathrm{Tr}D$ 与 $τ⁻¹$ 消灭.</li>
+  <li>若选取的并非极小投射分解, 则构造出的 $\mathrm{Tr}(X)$ 与 $τ$ 与相差投射的直和项.</li>
+  <li>$\mathrm{Tr}$ 保持不可分解非投射对象. 特别地, $\mathrm{Tr}^2 = \mathrm{id}$.</li>
+</ol>
+
+<p>将以上事实总结作以下定理.</p>
+
+<div class="theorem">
+(AR 转置与稳定等价).
+$\mathrm{Tr}$ 将投射对象映至 $0$, 对 $𝐦𝐨𝐝_A$ 与 $𝐦𝐨𝐝_{A^{\mathrm{op}}}$ 的不可分解的非投射对象, $\mathrm{Tr}$ 是双射, 且 $\mathrm{Tr}^2 = \operatorname{id}$. 特别地, $\underline{𝐦𝐨𝐝_A} ≃ \underline{𝐦𝐨𝐝_{A^{\mathrm{op}}}}$ 是投射稳定等价. 
+
+<br />
+
+类似地, $τ : \underline{𝐦𝐨𝐝_A} ≃ \overline{𝐦𝐨𝐝_A} : τ⁻¹$ 是稳定等价. 对 $𝐦𝐨𝐝$ 不可分解对象而言, 以下是双射对应
+$$
+\begin{bmatrix}
+ &amp; τ  &amp; \\
+𝐬𝐢𝐦𝐩 ∖ 𝐢𝐧𝐣 &amp; ⇆  &amp; 𝐬𝐢𝐦𝐩 ∖ 𝐩𝐫𝐨𝐣\\
+ &amp; τ ^{-1} &amp;
+\end{bmatrix}.
+$$
+$τ$ 映投射对象为 $0$, 映非投射对象为非内射对象; $τ⁻¹$ 映内射对象为 $0$, 映非内射对象为非投射对象.
+</div>
+
+<h4 id="判别法">判别法</h4>
+
+<div class="theorem">
+(投射对象判别法). 
+
+以下是 $P$ 构成投射对象的充要条件.
+
+<ol>
+<li>
+(L1). $P ∈ 𝐚𝐝𝐝 (A)$.
+</li>
+<li>
+(E1). $(P,-)$ 正合.
+</li>
+<li>
+(E2). $\mathrm{Ext}^{≥ 1}(P, -)$ 消失.
+</li>
+<li>
+(E3). 映至 $P$ 的满射可裂.
+</li>
+<li>
+(B1). $P ⊗ -$ 保持单射.
+</li>
+<li>
+(B2). $P ⊗ -$ 将 $A^{\mathrm{op}}$ 中理想的包含对应至单射.
+</li>
+<li>
+(B3). $(-, DP)$ 将 $A^{\mathrm{op}}$ 中理想的包含对应至满射.
+</li>
+</ol>
+
+</div>
+
+<div class="note">
+以上 L1 来自自由遗忘伴随, E1-E3 来自正合性, B1-B3 是 Baer 判别法. 内射判别法是对偶的.
+</div>
+
+<div class="theorem">
+(Torsionless 判别法, <a href="/posts/Torsion_Less">证明</a>). 
+
+给定 $η_M : M → M^{∗ ∗}$. 以下条件等价.
+<ol>
+<li>
+$η_M$ 是单的.
+</li>
+<li>
+$M$ 是 $A^n$ 的子对象.
+</li>
+<li>
+$\mathrm{Ext}^1(\mathrm{Tr}(M), A) = 0$.
+</li>
+</ol>
+</div>
+
+<div class="lemma">
+四项正合列 (<a href="404">待补</a>)
+$$
+0 → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → N ⊗ M → (M^∗, N) → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → 0.
+$$
+中间项是余赋值
+$$
+N ⊗ M → (M^∗, N),\quad \left[∑\limits_{\text{finite sum}} n_i ⊗ m_i\right] ↦ \begin{bmatrix}
+   M^\ast &amp; \to &amp; N\\ 
+   f &amp; \mapsto &amp; \sum n_i \otimes f(m_i)
+\end{bmatrix}.
+$$
+</div>
+
+<h4 id="逼近">逼近</h4>
+
+<div class="definition">
+(左逼近, 预包络). 称 $f : M → N$ 是左 $𝒳$-逼近, 若 $(f, 𝒳)$ 是满的. 等价地, 任意 $M → X ∈ 𝒳$ 通过 $f$ 分解.
+
+</div>
+
+<div class="note">
+同一概念的三种描述: 左逼近 (右逼近), 预包括 (预覆盖) 以及 $(-, M)|_𝒳$-满 ($(M, -)|_𝒳$-满).
+</div>
+
+<p>若对象类 $𝒳$ 是 $𝐩𝐫𝐨𝐣$ 或 $𝐢𝐧𝐣$, 则称之投射逼近或内射逼近.</p>
+
+<div class="theorem">
+(左投射逼近, <a href="/posts/Left_proj_approx">证明</a>).
+给定 ses $0 → L \overset i → P → N → 0$, $P$ 投射. 以下等价.
+<ol>
+<li>
+$i$ 是左投射逼近.
+</li>
+<li>
+$i^∗$ 是满的.
+</li>
+<li>
+$\mathrm{Ext}^1(N, A) = 0$.
+</li>
+</ol>
+</div>
+
+<div class="proposition">
+(未命名, <a href="/posts/exists_left_proj_app">证明</a>).
+对 Artin 代数, $M ∈ 𝐦𝐨𝐝_A$ 存在左投射逼近, 以及左极小投射逼近.
+
+<br />
+<br />
+
+特别地, 左投射逼近 $M → P$ 未必是单的, 但存在分解 $M → M^{∗ ∗ } ↪ P$. 特别地, $M^{∗ ∗}$ 是 torsionless 模.
+</div>
+
+<div class="lemma">
+$M^{∗ ∗}$ 是 torsionless 模.
+</div>
+
+<div class="definition">
+(合冲). 给定 $M$, 定义 $Ω(M) := \ker [P(M) ↠ M]$, 以及 $℧(M) := \operatorname{cok} [M ↪ I(M)]$.
+</div>
+
+<p>对一般存在足够投射与内射的范畴, 投射盖与内射包未必存在; $Ω$ 与 $℧$ 在稳定范畴中是良定义的.</p>
+
+<p>归纳地, 记 $P_{≥ 0}(M) ↠ M$ 是极小投射分解, $M ↪ I^{≥ 0}(M)$ 是极小内射分解. 定义如下.</p>
+
+<ol>
+  <li>$℧^k(M) := \mathrm{im}[I^{k-1}(M) → I^{k} (M)]$, 其中 $k ≥ 1$.</li>
+  <li>$Ω_k(M) := \mathrm{im}[P_k(M) → P_{n-1}(M)]$, 其中 $k ≥ 1$.</li>
+  <li>$Ω_0(M) := ℧^0 (M) := M$.</li>
+</ol>
+
+<p>定义合冲 $Ω$ 与 $℧$ 时, $𝐩𝐫𝐨𝐣$ 只能在左, $𝐢𝐧𝐣$ 只能在右; 为构造 $X^∙ → P^∙$ 与 $I_∙ → X_∙$ 类型的长 正合列 (且需要更好的性质), 此处引入左投射逼近与右内射逼近.</p>
+
+<ol>
+  <li>记 $C(M)$ 是左极小投射逼近的余核.</li>
+  <li>记 $K(M)$ 是右极小投射逼近和核.</li>
+  <li>记 $C_{k + 1}(M) := C(C_k(M))$, $C_0(M) = M$.</li>
+  <li>记 $K^{k + 1}(M) := K(K^k(M))$, $K_0(M) = M$.</li>
+</ol>
+
+<div class="theorem">
+(逼近与合冲在稳定范畴中伴随, <a href="/posts/syzygy_und_approx">证明</a>). 
+
+$Ω_∙$ 与 $C_∙$ 是稳定投射范畴的伴随函子; $℧^∙$ 与 $K^∙$ 是稳定内范畴的伴随函子.
+<ol>
+<li>
+$C_k: \underline{𝐦𝐨𝐝_A} ⇆ \underline{𝐦𝐨𝐝_A} : Ω_k$ 是左右伴随.
+</li>
+<li>
+$℧^k: \overline{𝐦𝐨𝐝_A} ⇆ \overline{𝐦𝐨𝐝_A} : K^k$ 是左右伴随.
+</li>
+<li>
+$C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$.
+</li>
+<li>
+$K^k ≃ τ(℧^k(τ⁻¹))$.
+</li>
+</ol>
+</div>
+
+<div class="note">
+伴随函子的交换图如下 ($↕ := \mathrm{Tr}$, $⇕ := D\mathrm{Tr}D$):
+$$
+\begin{bmatrix}
+\underline{𝐦𝐨𝐝_{A^{\mathrm{op}}}} &amp; \substack{C\\⟶ \\⊥\\⟵ \\Ω}  &amp; \underline{𝐦𝐨𝐝_{A^{\mathrm{op}}}} &amp; \overset D ↔  &amp; \overline{𝐦𝐨𝐝_{A}} &amp; \substack{K\\⟵ \\⊤\\⟶ \\℧}  &amp; \overline{𝐦𝐨𝐝_{A}}\\
+↕  &amp;  &amp; ↕  &amp;  &amp; ⇕  &amp;  &amp; ⇕ \\
+\underline{𝐦𝐨𝐝_{A}} &amp; \substack{Ω\\ ⟶\\⊤\\⟵ \\C} &amp; \underline{𝐦𝐨𝐝_{A}} &amp; \underset D ↔  &amp; \overline{𝐦𝐨𝐝_{A^{\mathrm{op}}}} &amp;  \substack{℧\\⟵ \\⊥\\⟶ \\K}   &amp; \overline{𝐦𝐨𝐝_{A^{\mathrm{op}}}}
+\end{bmatrix}
+$$
+</div>
+
+<div class="definition">
+(反射子范畴). 称全子范畴 $i: 𝒞 ↣ 𝒜$ 是反射 (余范畴) 的, 若 $i$ 是右伴随 (左伴随).
+</div>
+
+<p>考虑函子像所在的全子范畴, 此时</p>
+
+<ol>
+  <li>$Ω_k(\underline{𝐦𝐨𝐝_A}) ↣ \cdots ↣ Ω_1 (\underline{𝐦𝐨𝐝_A}) ↣ \underline{𝐦𝐨𝐝_A}$ 是一列余反射子范畴.</li>
+  <li>$℧^k(\overline{𝐦𝐨𝐝_A}) ↣ \cdots ↣ ℧^1 (\overline{𝐦𝐨𝐝_A}) ↣ \overline{𝐦𝐨𝐝_A}$ 是一列反射子范畴.</li>
+</ol>
+
+<div class="theorem">
+($Ω_1$ 与 $℧^1$, <a href="/posts/stable_subquot">证明</a>).
+实际上, $Ω_1(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$ 是投射对象之子对象的稳定范畴. $℧^1(\overline{𝐦𝐨𝐝_A}) ≃ \overline{𝐪𝐮𝐨𝐭(A)}$ 是投射对象之商对象的稳定范畴.
+</div>
+
+<h3 id="维度">维度</h3>
+
+<div class="note">
+Under construction?
+</div>
+
+<h4 id="著名定理">著名定理</h4>
+
+<p><strong>Thm</strong> (Schur).</p>
+
+<p><strong>Thm</strong> (Weddeburn-Artin).</p>
+
+<p><strong>Thm</strong> (Jordan-Hölder).</p>
+
+<p><strong>Thm</strong> (Zassenhaus).</p>
+
+<h4 id="q-二次型">$q$-二次型</h4>
+
+<h4 id="coxeter-反射">Coxeter 反射</h4>
+
+<h3 id="几乎可裂-ses">几乎可裂 ses</h3>
+
+<h4 id="两种构造态射的方式-不可约-极小几乎可裂">两种构造态射的方式: 不可约, 极小几乎可裂</h4>
+
+<div class="definition">
+(Radical). 对 $\mathrm{Hom}$-有限的 Abel 范畴 $𝒜$, 称 $f ∈ \mathrm{Rad}(X,Y)$, 当且仅当 $\operatorname{id}_X ∉ \operatorname{im}(f, X)$. 等价命题省略.
+<br />
+<br />
+归纳地, $\mathrm{Rad}^{k+1} = \mathrm{Rad}^{k} ∘ \mathrm{Rad}$. 注意: $\mathrm{Rad}^{k}$ 随 $k$ 增加递减.
+</div>
+
+<div class="note">
+实际上, 将 $𝒜$ 视作广义的 $k$-代数, $\mathrm{Rad}$ 就是环的 Radical.
+</div>
+
+<div class="lemma">
+(不可约态射). 称 $f ∈ \mathrm{Hom}(X, Y)$ 不可约, 若以下等价命题成立.
+<ol>
+<li>
+(态射分解). $f$ 本身不可裂. 若 $f = a ∘ b$, 则必有 $a$ 可裂单, 或 $b$ 可裂满.
+</li>
+<li>
+(范畴 $\mathrm{Rad}$). $\mathrm{Rad}^1(X, Y) ∖ \mathrm{Rad}^2(X, Y)$.
+</li>
+</ol>
+特别地, 不可分解对象间的不可约态射是单或满的.
+</div>
+
+<div class="definition">
+(不可约空间). 不可约态射集的线性化, 即商 $\mathrm{Irr}(X,Y) := \frac{\mathrm{Rad}(X,Y)}{\mathrm{Rad}^2(X,Y)}$.
+</div>
+
+<div class="definition">
+(左, 右几乎可裂).
+
+称 $f : L → X$ 是左几乎可裂的, 若 $f$ 不是可裂单, 且任意 $L$ 出发的非可裂单通过 $f$ 分解. 右几乎可裂对偶.
+</div>
+
+<p>左可裂即存在左逆, 也就是可裂单. 几乎可裂态射是可裂态射的次位.</p>
+
+<p><strong>Thm</strong> 几乎可裂态射的结构.</p>
+
+<ol>
+  <li>左几乎可裂态射的来源 $s(f)$ 是不可约的.</li>
+  <li>左几乎可裂态射 $f$ 是单的, 当且仅当 $s(f) ∉ 𝐢𝐧𝐣$.</li>
+  <li>左几乎可裂态射 $s(f) ∈ 𝐢𝐧𝐣$, 则形如 $I ↠ \mathrm{Bot}(I)$.</li>
+  <li>右几乎可裂态射的去向 $t(f)$ 是不可约的.</li>
+  <li>右几乎可裂态射 $f$ 是满的, 当且仅当 $t(f) ∉ 𝐩𝐫𝐨𝐣$.</li>
+  <li>右几乎可裂态射 $t(f) ∈ 𝐩𝐫𝐨𝐣$, 则形如 $\mathrm{Rad}(X) → X$.</li>
+</ol>
+
+<p><strong>Def</strong> (左, 右极小). 称 $f$ 左极小, 若 $α ∘ f = f$ 蕴含 $α$ 是同构. 右极小定义对偶.</p>
+
+<p><strong>Thm</strong> (不可约态射恰是极小几乎可裂态射的直和项). 给定 $f$, 以下等价.</p>
+
+<ol>
+  <li>$f$ 不可约.</li>
+  <li>$f ∈ \mathrm{Rad} ∖ \mathrm{Rad}^2$.</li>
+  <li>可以给 $t(f)$ 添加若干直和项, 使得 $\binom{f}{f’}$ 左极小几乎可裂.</li>
+  <li>可以给 $s(f)$ 添加若干直和项, 使得 $(f \ f’’)$ 右极小几乎可裂.</li>
+</ol>
+
+<h4 id="几乎可裂-ses-的等价定义">几乎可裂 ses 的等价定义</h4>
+
+<p><strong>Thm</strong> 给定不可列 ses $0 → L \xrightarrow f M \xrightarrow g N → 0$, 以下是几乎可裂 ses 的等价定义:</p>
+
+<ol>
+  <li>$f$ 是左极小几乎可裂态射;</li>
+  <li>$g$ 是右极小几乎可裂态射;</li>
+  <li>$f$ 左几乎可裂, $N$ 不可分解;</li>
+  <li>$g$ 右几乎可裂, $L$ 不可分解;</li>
+  <li>$L$ 与 $N$ 不可分解,且 $f$ 与 $g$ 不可约;</li>
+  <li>ses 形如 $0 → τ N → ⨁ E_i → N → 0$.</li>
+</ol>
+
+<p><strong>Lemma</strong> 若下式不出现 $0$, 则有 $k$-线性同构 $\mathrm{Irr}(τ M, τ N) ≃ \mathrm{Irr}(τ N, M) ≃ \mathrm{Irr}(M, N) ≃ \mathrm{Irr}(N, τ ⁻¹ M) ≃ \mathrm{Irr}(τ ⁻¹ M, τ ⁻¹ N)$.</p>
+
+<h4 id="函子语言">函子语言</h4>
+
+<p><strong>Def</strong> ($k$-函子范畴). 由 $k$-代数 $A$, 则 $𝐦𝐨𝐝_A$ 是 $k$-范畴. 考虑以下全忠实的嵌入.</p>
+
+<ol>
+  <li>(预层). $h_∙ : 𝐦𝐨𝐝_A ↣ 𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k),\quad X ↦ (-,X)$.</li>
+  <li>(余预层). $h^∙ : 𝐦𝐨𝐝_A ↣ 𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A, 𝐌𝐨𝐝_k)^{\mathrm{op}},\quad X ↦ (X,-)$.</li>
+</ol>
+
+<p><strong>Note</strong> $\operatorname{im}h_∙$ 在 $𝐅𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A, 𝐌𝐨𝐝_k)$ 中关于余核封闭的最小子范畴等价于 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k)$, 同时这也是 Abel 范畴. $\operatorname{im} h^∙$ 类似.</p>
+
+<p><strong>Thm</strong> (伴随). $h_∙$ 有左伴随 $\operatorname{cok}h_φ ↦ \operatorname{cok}φ$, 从而是反射子范畴; $h^∙$ 有右伴随 $\ker h^φ ↦ \operatorname{ker}φ$, 从而是余反射子范畴.</p>
+
+<p><strong>Lemma</strong> ($k$-米田引理). 对上述两个范畴, 可表函子是投射对象.</p>
+
+<p><strong>Thm</strong> ($k$-函子对应). 以预层 $𝐦𝐨𝐝_A ↣ 𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k)$ 为例.</p>
+
+<ol>
+  <li>对任意 Abel $k$-范畴 $𝒜$, $𝐦𝐨𝐝_A → 𝒜$ 类型的 $k$ 函子唯一提升作 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k) → 𝒜$ 类型的右正合函子. 特别地, $𝒜 = 𝐦𝐨𝐝_A$ 时, 上述分解是伴随的余单位.</li>
+  <li>对任意 Abel $k$-范畴 $𝒜$, 保持 $𝐦𝐨𝐝_A$ 中弱正合列的 $𝐦𝐨𝐝_A → 𝒜$ 类型的 $k$ 函子唯一提升作 $𝒜 → 𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A, 𝐌𝐨𝐝_k)^{\mathrm{op}}$ 类型的正合函子.</li>
+</ol>
+
+<p><strong>Thm</strong> (几乎可裂映射的函子表述). 给定 $f : X → Y$, 则有以下结论.</p>
+
+<ol>
+  <li>$f$ 非可裂单, 当且仅当 $\operatorname{im} (f,X) ⊆ \mathrm{Rad}(X,X)$;</li>
+  <li>$f$ 非可裂满, 当且仅当 $\operatorname{im} (X,f) ⊆ \mathrm{Rad}(Y,Y)$;</li>
+  <li>$f$ 是左几乎可裂, 当且仅当 $(-, f)$ 是 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k)$ 中的投射表现;</li>
+  <li>左几乎额可裂态射 $f$ 是极小的, 当且仅当 $(-, f)$ 是 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k)$ 中的极小投射表现;</li>
+  <li>$f$ 是右几乎可裂, 当且仅当 $(f, -)$ 是 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A, 𝐌𝐨𝐝_k)^{\mathrm{op}}$ 中的投射表现;</li>
+  <li>右几乎可裂态射 $f$ 是极小的, 当且仅当 $(f, -)$ 是 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A, 𝐌𝐨𝐝_k)^{\mathrm{op}}$ 中的极小投射表现.</li>
+</ol>
+
+<h3 id="ar-定理">AR 定理</h3>
+
+<p><strong>Lemma</strong> (缺陷公式). 对 ses $θ : 0 → A → B → C → 0$, 以下是函子的长正合列 $0 → (-, θ) → θ ⊗ \mathrm{Tr}(-) → 0$.</p>
+
+<p><strong>Lemma</strong> ($\mathrm{Tor}_{1,2}(Y, \mathrm{Tr}(X))$, 稳定 $\mathrm{Hom}$). 存在函子的四项正合列 $0 → \mathrm{Tor}_2(Y, \mathrm{Tr}(X)) → Y ⊗ X^∗ → (X, Y) → \mathrm{Tor}_1(Y, \mathrm{Tr}(X)) → 0$. 此处 $\mathrm{Tor}_1(Y, \mathrm{Tr}(X)) ≃ \underline {(X,Y)}$.</p>
+
+<p><strong>Lemma</strong> ($\mathrm{Tor}<em>{≥ 3}(Y, \mathrm{Tr}(X))$). $\mathrm{Tor}</em>{n+3}(Y, \mathrm{Tr}(X)) ≃ \mathrm{Tor}_{n+1}(Y, X^∗)$.</p>
+
+<p><strong>Lemma</strong> ($\mathrm{Ext}^{1,2}(\mathrm{Tr}(M), N)$, AB 公式). 存在函子的四项正合列 $0 → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → N ⊗ M → (M^∗, N) → \mathrm{Ext}^2(\mathrm{Tr}(M), N) → 0$. 此处 $\mathrm{Ext}^1(\mathrm{Tr}(M), N) ≃ \underline {(M,N)}$.</p>
+
+<p><strong>Lemma</strong> ($\mathrm{Ext}^{≥ 3}(\mathrm{Tr}(M), N)$). $\mathrm{Ext}^{n + 3}(\mathrm{Tr}(M), N) ≃ \mathrm{Ext}^{n}(\mathrm{Tr}(M), N)$.</p>
+
+<p><strong>Lemma</strong> (AR 公式). 以下是自然同构. $D\underline{(τ⁻¹ N, M)} ≃ \mathrm{Ext}^1(M, N) ≃ D\overline{(N, τM)}$.</p>
+
+<ol>
+  <li>若 $p.\dim M = 1$, 则 $τ M$ 投射, 故 $\mathrm{Ext}^1(M,N) ≃ D(N, τ M)$.</li>
+  <li>若 $i.\dim N = 1$, 则 $τ⁻¹ N$ 内射, 故 $\mathrm{Ext}^1(M,N) ≃ D(τ⁻¹ N, M)$.</li>
+</ol>
+
+
+
+  </article>
+
+  <div class="page-navigation">
+    
+      <a
+        class="next"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Left_proj_approx"
+        title="NEXT: 左投射逼近的等价命题">&lt;&lt;</a>
+      <span>
+        &middot;
+      </span>
+    
+    <a
+      class="home"
+      href="https://zhangchenchengsjtu.github.io/website"
+      title="Back to Homepage">Home</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    Chencheng Zhang</span>
+</div>
+
+</body>
+
+
+</html>
