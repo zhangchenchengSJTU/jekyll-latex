@@ -7,12 +7,12 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
-  <title>$𝐅𝐩 → 𝐏𝐥𝐚𝐭 → 𝐏𝐫𝐨𝐣$
+  <title>米田嵌入是上同调函子
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="(有限表现 → 投射 通过平坦对象分解).假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.">
+<meta name="description" content="反变的米田嵌入 $𝒯^{\mathrm{op}} → 𝐅𝐮𝐧𝐜𝐭(𝒞, 𝐌𝐨𝐝_k)$ 是上同调函子. ">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -21,7 +21,7 @@
 <link rel="icon" href="http://localhost:4000/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="http://localhost:4000/website/assets/touch-icon.png">
 <link rel="stylesheet" href="http://localhost:4000/website/assets/core.css">
-<link rel="canonical" href="http://localhost:4000/website/posts/Fp_Proj_Plat">
+<link rel="canonical" href="http://localhost:4000/website/posts/Yoneda_Homological">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -67,7 +67,7 @@
 	<main>
   <article>
     <div class="center">
-      <h1>$𝐅𝐩 → 𝐏𝐥𝐚𝐭 → 𝐏𝐫𝐨𝐣$</h1>
+      <h1>米田嵌入是上同调函子</h1>
       <p class="author">
         Chencheng Zhang
         <br/>
@@ -78,31 +78,26 @@
 
     <div class="divider"></div>
 
-    <div class="proposition">
-(有限表现 → 投射 通过平坦对象分解).
-假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.
+    <div class="lemma">
+反变的米田嵌入 $𝒯^{\mathrm{op}} → 𝐅𝐮𝐧𝐜𝐭(𝒞, 𝐌𝐨𝐝_k)$ 是上同调函子. 
 </div>
 
 <div class="proof">
-若 $F = \mathrm{cok}(h_X\xrightarrow {h_f} h_Y)$, 仅需证明存在满射 $PZ → [F,P]$ (此情形下, 下交换图底行正合).
+只需证明一切 $(-,W)_{𝒯}$ 是上同调函子. 任意给定三角 $X^∙ ∈ \triangle$, 上链复形 $(X^∙ , W)_{𝒯} ∈ C(k)$ 在 $n$ 处的正合性描述作以下命题:
+
+<ol>
+对 $f^n : X^n → W$, 复合态射 $[X^{n-1} → X^n → W] = 0$, 当且仅当 $f^n$ 通过 $[X^n → X^{n+1}]$ 分解. 
+</ol>
+
+对 $\{f^{n-1},f^n,f^{n+1}\}$ 使用二推三原则, 研究以下三角射即可: 
 
 $$
 \begin{bmatrix}
-𝖭𝖺𝗍(F,P) &amp; ↪ &amp; 𝖭𝖺𝗍(h_{Y} ,P) &amp; \xrightarrow{h_{f}^{∗ }} &amp; 𝖭𝖺𝗍(h_{X} ,P)\\
-↟  &amp;  &amp; ∥  &amp;  &amp; ∥ \\
-PZ &amp; ⇢ &amp; PY &amp; \xrightarrow{Pf} &amp; PX \\ 
-∥ &amp;  &amp; ∥ &amp;  &amp; ∥ \\
-P ⊗ h^Z &amp; \xrightarrow{h^g} &amp; P ⊗ h^Y &amp; \xrightarrow{h^f} &amp; P ⊗ h^X
-\end{bmatrix}.
+X^{\bullet } &amp;:&amp; \cdots  &amp; \rightarrow  &amp; X^{n-1} &amp; \rightarrow  &amp; X^{n} &amp; \rightarrow  &amp; X^{n} +1 &amp; \rightarrow  &amp; \cdots \\
+\downarrow &amp; &amp;  &amp;  &amp; \downarrow  &amp;  &amp; \downarrow  &amp;  &amp; \downarrow  &amp;  &amp; \\
+W^{\bullet }&amp;: &amp; 0 &amp; \rightarrow  &amp; W &amp; = &amp; W &amp; \rightarrow  &amp; 0 &amp; \rightarrow  &amp; \cdots 
+\end{bmatrix}. 
 $$
-
-由于 $P$ 平坦, 故 
-
-$$
-𝖭𝖺𝗍(F,P) ≃ P ⊗ \ker(h^Y \xrightarrow{h^f} h^X).
-$$
-
-此时取 $Z \xrightarrow {g^{\mathrm{op}}} Y$ 为 $Y\xrightarrow{f^{\mathrm{op}}}X$ 的弱核即可.
 </div>
 
 
@@ -112,8 +107,8 @@ $$
     
       <a
         class="next"
-        href="http://localhost:4000/website/posts/Fp_et_Plat_est_Proj"
-        title="NEXT: Finitely Presented Flat is Projective">&lt;&lt;</a>
+        href="http://localhost:4000/website/posts/Homological_Wk_Ker"
+        title="NEXT: 上同调函子保持弱核">&lt;&lt;</a>
       <span>
         &middot;
       </span>
@@ -128,8 +123,8 @@ $$
       </span>
       <a
         class="prev"
-        href="http://localhost:4000/website/posts/Finitely_Presented_Functor"
-        title="PREV: Equivalent Definitions of Finitely Presented Functor">&gt;&gt;</a>
+        href="http://localhost:4000/website/posts/Plat_et_Proj_Cover_Proj"
+        title="PREV: $𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴">&gt;&gt;</a>
     
   </div>
 </main>

@@ -3,7 +3,36 @@
   <channel>
     <title>Jekyll Latex</title>
     <description>A pretty good Jekyll theme</description>
-    <link>https://zhangchenchengsjtu.github.io/website</link>
+    <link>http://localhost:4000/website</link>
+    
+      
+        <item>
+          <title>米田嵌入是上同调函子</title>
+          <description>&lt;div class=&quot;lemma&quot;&gt;
+反变的米田嵌入 $𝒯^{\mathrm{op}} → 𝐅𝐮𝐧𝐜𝐭(𝒞, 𝐌𝐨𝐝_k)$ 是上同调函子. &lt;a href=&quot;Yoneda_Homological&quot;&gt;证明&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+只需证明一切 $(-,W)_{𝒯}$ 是上同调函子. 任意给定三角 $X^∙ ∈ \triangle$, 上链复形 $(X^∙ , W)_{𝒯} ∈ C(k)$ 在 $n$ 处的正合性描述作以下命题:
+
+* 对 $f^n : X^n → W$, 复合态射 $[X^{n-1} → X^n → W] = 0$, 当且仅当 $f^n$ 通过 $[X^n → X^{n+1}]$ 分解. 
+
+对 $\{f^{n-1},f^n,f^{n+1}\}$ 使用二推三原则, 研究以下三角射即可: 
+
+$$
+\begin{bmatrix}
+X^{\bullet } &amp;amp;:&amp;amp; \cdots  &amp;amp; \rightarrow  &amp;amp; X^{n-1} &amp;amp; \rightarrow  &amp;amp; X^{n} &amp;amp; \rightarrow  &amp;amp; X^{n} +1 &amp;amp; \rightarrow  &amp;amp; \cdots \\
+\downarrow &amp;amp; &amp;amp;  &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \\
+W^{\bullet }&amp;amp;: &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; W &amp;amp; = &amp;amp; W &amp;amp; \rightarrow  &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; \cdots 
+\end{bmatrix}. 
+$$
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-21T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Yoneda_Homological</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Yoneda_Homological</guid>
+        </item>
+      
     
       
         <item>
@@ -51,8 +80,8 @@ $$
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Lazard_thm</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Lazard_thm</guid>
+          <link>http://localhost:4000/website/posts/Lazard_thm</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Lazard_thm</guid>
         </item>
       
     
@@ -103,8 +132,8 @@ $$
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Fp_et_Plat_est_Proj</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Fp_et_Plat_est_Proj</guid>
+          <link>http://localhost:4000/website/posts/Fp_et_Plat_est_Proj</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Fp_et_Plat_est_Proj</guid>
         </item>
       
     
@@ -139,8 +168,8 @@ $$
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Fp_Proj_Plat</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Fp_Proj_Plat</guid>
+          <link>http://localhost:4000/website/posts/Fp_Proj_Plat</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Fp_Proj_Plat</guid>
         </item>
       
     
@@ -247,8 +276,8 @@ $$
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Finitely_Presented_Functor</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Finitely_Presented_Functor</guid>
+          <link>http://localhost:4000/website/posts/Finitely_Presented_Functor</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Finitely_Presented_Functor</guid>
         </item>
       
     
@@ -283,8 +312,9 @@ $$
 
 &lt;p&gt;&lt;em&gt;Solution&lt;/em&gt;. 第一问是&lt;a href=&quot;https://czhang271828.github.io/Linear-algebra/2024%20%E7%A7%8B-%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/2023/mess%20-%20%E5%89%AF%E6%9C%AC/%E5%B0%8F%E6%B5%8B%E8%AF%95%E5%8D%B7.pdf&quot;&gt;原题 (去年试卷第三题)&lt;/a&gt;的弱化版本 (少了一次求导), 思路完全相同. 考虑换元 ($x := y + 1$) 即可. 此时&lt;/p&gt;
 
-&lt;p&gt;\(g(y) := f(x) = f(y+1) = \frac{(y+1)^p - 1}{(y+1) - 1} = y^{p-1} + \binom{p}{1} y^{p-2} + \cdots + \binom{p}{p-1} y^0.\)
-依照 Eisenstein 判别法, 非最高次项均是 $p$ 的倍数, 常数项不是 $p^2$ 的倍数. 因此 $g$ 与 $f$ 均不可约.&lt;/p&gt;
+\[g(y) := f(x) = f(y+1) = \frac{(y+1)^p - 1}{(y+1) - 1} = y^{p-1} + \binom{p}{1} y^{p-2} + \cdots + \binom{p}{p-1} y^0.\]
+
+&lt;p&gt;依照 EisenStein 判别法, 非最高次项均是 $p$ 的倍数, 常数项不是 $p^2$ 的倍数. 因此 $g$ 与 $f$ 均不可约.&lt;/p&gt;
 
 &lt;p&gt;第二问是&lt;a href=&quot;https://czhang271828.github.io/Linear-algebra/Notes/27Feb%20(%E4%B9%A0%E9%A2%98%E8%AF%BE)/27Feb2025%20(rmy%20%E7%8F%AD).pdf&quot;&gt;原题 (Mar27 习题课)&lt;/a&gt;.&lt;/p&gt;
 
@@ -302,7 +332,7 @@ $$
     &lt;p&gt;(10 points). Assume that $a,b ∈ ℂ$ are two complex numbers. Prove the following two subspaces of $ℂ[x]$,&lt;/p&gt;
 
 \[\begin{aligned}
- &amp;amp; V_a=\{f(x) \in \mathbb{C}[x] \mid f(a)=0\}, \\
+ &amp;amp; V_a=\{f(x) \in \mathbb{C}[x] \mid f(a)=0\}, \\[6pt]
  &amp;amp; V_b=\{g(x) \in \mathbb{C}[x] \mid g(b)=0\} ,
  \end{aligned}\]
 
@@ -361,17 +391,17 @@ $$
     &lt;p&gt;There exists some $α ∈ V$ such that $α ∉ V_1 ∪ V_2 ∪ \cdots ∪ V_s$;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;there exists a basis of $V, ε _1, ε _2, \ldots, ε _n$, such that&lt;/p&gt;
+    &lt;p&gt;There exists a basis of $V, ε _1, ε _2, \ldots, ε _n$, such that&lt;/p&gt;
 
-\[\left\{ε _1, ε _2, \cdots, ε _n\right\} ⋂ \left(V_1 ∪  V_2 ∪  \cdots ∪  V_s\right)=∅.\]
+\[\left\{ε _1, ε _2, \ldots, ε _n\right\} ⋂ \left(V_1 ∪  V_2 ∪  \cdots ∪  V_s\right)=∅.\]
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;em&gt;Solution&lt;/em&gt;. 对任意 $x ∈ 𝔽$ 构造 Vandermonde (列) 向量&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Solution&lt;/em&gt;. 对任意 $x ∈ 𝔽$ 构造 VanDerMonde (列) 向量&lt;/p&gt;
 
 \[\{v (x) = (1,x,x^2,\ldots, x^{n-1}) ∣ x ∈ 𝔽\},\]
 
-&lt;p&gt;这一无限集是线性无关组.&lt;/p&gt;
+&lt;p&gt;这一无限集中的任意 $n$ 个向量是线性无关的.&lt;/p&gt;
 
 &lt;p&gt;第一问: 每个 $V_i$ 只能包含有限个 $v(x)$.&lt;/p&gt;
 
@@ -443,8 +473,8 @@ $$
 
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/mid</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/mid</guid>
+          <link>http://localhost:4000/website/posts/mid</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/mid</guid>
         </item>
       
     
@@ -526,8 +556,8 @@ $$
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Almost_Split</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Almost_Split</guid>
+          <link>http://localhost:4000/website/posts/Almost_Split</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Almost_Split</guid>
         </item>
       
     
@@ -614,8 +644,8 @@ $$
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</guid>
+          <link>http://localhost:4000/website/posts/syzygy_und_approx</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/syzygy_und_approx</guid>
         </item>
       
     
@@ -632,8 +662,8 @@ $Ω_1(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$ 是投射对�
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</guid>
+          <link>http://localhost:4000/website/posts/stable_subquot</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/stable_subquot</guid>
         </item>
       
     
@@ -653,8 +683,8 @@ $$
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</guid>
+          <link>http://localhost:4000/website/posts/Top_surjective</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Top_surjective</guid>
         </item>
       
     
@@ -818,8 +848,8 @@ This is a solution.
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/template</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/template</guid>
+          <link>http://localhost:4000/website/posts/template</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/template</guid>
         </item>
       
     
@@ -1080,24 +1110,8 @@ $$
 &lt;p&gt;采用记号 $(𝒯, [1], \triangle)$ 表示三角范畴, 平移, 以及好三角类. 使用上链复形 $X^∙$ 表示一个好三角. 对 Abel 范畴 $𝒜$, 称函子 $F:𝒯^{\mathrm{op}} → 𝒜$ 是上同调的, 当且仅当 $F$ 将 $\triangle$ 映作长正合列.&lt;/p&gt;
 
 &lt;div class=&quot;lemma&quot;&gt;
-反变的米田嵌入 $𝒯^{\mathrm{op}} → 𝐅𝐮𝐧𝐜𝐭(𝒞, 𝐌𝐨𝐝_k)$ 是上同调函子. 
+反变的米田嵌入 $𝒯^{\mathrm{op}} → 𝐅𝐮𝐧𝐜𝐭(𝒞, 𝐌𝐨𝐝_k)$ 是上同调函子. &lt;a href=&quot;Yoneda_Homological&quot;&gt;证明&lt;/a&gt;
 &lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt; 只需证明一切 $(-,W)&lt;em&gt;{𝒯}$ 是上同调函子. 任意给定三角 $X^∙ ∈ \triangle$, 上链复形 $(X^∙ , W)&lt;/em&gt;{𝒯} ∈ C(k)$ 在 $n$ 处的正合性描述作以下命题:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;对 $f^n : X^n → W$, 复合态射 $[X^{n-1} → X^n → W] = 0$, 当且仅当 $f^n$ 通过 $[X^n → X^{n+1}]$ 分解.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;对 ${f^{n-1},f^n,f^{n+1}}$ 使用二推三原则, 研究以下三角射即可:&lt;/p&gt;
-
-\[\begin{bmatrix}
-X^{\bullet } &amp;amp;:&amp;amp; \cdots  &amp;amp; \rightarrow  &amp;amp; X^{n-1} &amp;amp; \rightarrow  &amp;amp; X^{n} &amp;amp; \rightarrow  &amp;amp; X^{n} +1 &amp;amp; \rightarrow  &amp;amp; \cdots \\
-\downarrow &amp;amp; &amp;amp;  &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \\
-W^{\bullet }&amp;amp;: &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; W &amp;amp; = &amp;amp; W &amp;amp; \rightarrow  &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; \cdots 
-\end{bmatrix}.\]
-
-&lt;p&gt;$\square$&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Prop&lt;/strong&gt; 给定三角范畴. 对任意 $X^∙ ∈ \triangle$, $X^n → X^{n+1}$ 的三角核 $X^{n-1} → X^n$ 是弱核.&lt;/p&gt;
 
@@ -1219,8 +1233,8 @@ W^{\bullet }&amp;amp;: &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; W &amp;amp; 
 &lt;p&gt;&lt;strong&gt;Rmk&lt;/strong&gt; 以上实际上是在取 $\cdots → X \xrightarrow f X$ 的同伦极限.&lt;/p&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Reflexive_sub_cat</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Reflexive_sub_cat</guid>
+          <link>http://localhost:4000/website/posts/Reflexive_sub_cat</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Reflexive_sub_cat</guid>
         </item>
       
     
@@ -1500,8 +1514,8 @@ W^{\bullet }&amp;amp;: &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; W &amp;amp; 
 
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting</guid>
+          <link>http://localhost:4000/website/posts/Notes_on_Tilting</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Notes_on_Tilting</guid>
         </item>
       
     
@@ -1543,8 +1557,8 @@ $$
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/exists_left_proj_app</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/exists_left_proj_app</guid>
+          <link>http://localhost:4000/website/posts/exists_left_proj_app</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/exists_left_proj_app</guid>
         </item>
       
     
@@ -1592,8 +1606,8 @@ $$
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Torsion_Less</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Torsion_Less</guid>
+          <link>http://localhost:4000/website/posts/Torsion_Less</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Torsion_Less</guid>
         </item>
       
     
@@ -1625,8 +1639,8 @@ $$
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Left_proj_approx</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Left_proj_approx</guid>
+          <link>http://localhost:4000/website/posts/Left_proj_approx</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Left_proj_approx</guid>
         </item>
       
     
@@ -2288,8 +2302,8 @@ $f$ 是右几乎可裂, 当且仅当 $(f, -)$ 是 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨
 
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/AR-notes</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR-notes</guid>
+          <link>http://localhost:4000/website/posts/AR-notes</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/AR-notes</guid>
         </item>
       
     

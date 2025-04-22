@@ -7,12 +7,12 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
-  <title>$𝐅𝐩 → 𝐏𝐥𝐚𝐭 → 𝐏𝐫𝐨𝐣$
+  <title>上同调函子保持弱核
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="(有限表现 → 投射 通过平坦对象分解).假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.">
+<meta name="description" content="(上) 同调函子保持弱核.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -21,7 +21,7 @@
 <link rel="icon" href="http://localhost:4000/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="http://localhost:4000/website/assets/touch-icon.png">
 <link rel="stylesheet" href="http://localhost:4000/website/assets/core.css">
-<link rel="canonical" href="http://localhost:4000/website/posts/Fp_Proj_Plat">
+<link rel="canonical" href="http://localhost:4000/website/posts/Homological_Wk_Ker">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -67,56 +67,48 @@
 	<main>
   <article>
     <div class="center">
-      <h1>$𝐅𝐩 → 𝐏𝐥𝐚𝐭 → 𝐏𝐫𝐨𝐣$</h1>
+      <h1>上同调函子保持弱核</h1>
       <p class="author">
         Chencheng Zhang
         <br/>
-        April 21, 2025
+        April 22, 2025
       </p>
 
     </div>
 
     <div class="divider"></div>
 
-    <div class="proposition">
-(有限表现 → 投射 通过平坦对象分解).
-假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.
+    <div class="lemma">
+(上) 同调函子保持弱核.
 </div>
 
 <div class="proof">
-若 $F = \mathrm{cok}(h_X\xrightarrow {h_f} h_Y)$, 仅需证明存在满射 $PZ → [F,P]$ (此情形下, 下交换图底行正合).
+只看共变情形. 给定同调函子 $f: 𝒯 → 𝒜$, 则有右正合函子
+
+$$
+F: 𝐦𝐨𝐝_𝒯 → 𝒜 ,\quad \mathrm{cok}(h_φ) ↦ \mathrm{cok}(F(φ)).  
+$$
+
+这一函子在相差一个范畴等价的意义下是唯一的. 
+<br />
+对好三角 $W \xrightarrow u X \xrightarrow v Y$ 与 $X$ 处弱正合的态射列 $K \xrightarrow i X \xrightarrow v Y$, 以上两处复合态射都是 $0$. 依照弱核的泛性质, 存在 $α : W ⇆ K : β$ 使得 $i ∘ α = u$ 与 $u ∘ β = i$. 
 
 $$
 \begin{bmatrix}
-𝖭𝖺𝗍(F,P) &amp; ↪ &amp; 𝖭𝖺𝗍(h_{Y} ,P) &amp; \xrightarrow{h_{f}^{∗ }} &amp; 𝖭𝖺𝗍(h_{X} ,P)\\
-↟  &amp;  &amp; ∥  &amp;  &amp; ∥ \\
-PZ &amp; ⇢ &amp; PY &amp; \xrightarrow{Pf} &amp; PX \\ 
-∥ &amp;  &amp; ∥ &amp;  &amp; ∥ \\
-P ⊗ h^Z &amp; \xrightarrow{h^g} &amp; P ⊗ h^Y &amp; \xrightarrow{h^f} &amp; P ⊗ h^X
+K &amp; \xrightarrow{i} &amp; X &amp; \xrightarrow{v} &amp; Y\\
+α ⇅ β  &amp;  &amp; ∥  &amp;  &amp; ∥ \\
+W &amp; \xrightarrow{u} &amp; X &amp; \xrightarrow{v} &amp; Y
 \end{bmatrix}.
 $$
 
-由于 $P$ 平坦, 故 
-
-$$
-𝖭𝖺𝗍(F,P) ≃ P ⊗ \ker(h^Y \xrightarrow{h^f} h^X).
-$$
-
-此时取 $Z \xrightarrow {g^{\mathrm{op}}} Y$ 为 $Y\xrightarrow{f^{\mathrm{op}}}X$ 的弱核即可.
+因此 $\mathrm{im}(Fi) = \mathrm{im}(Fu) = \ker(Fv)$. 这说明同调函子 $F$ 保持弱核. 
 </div>
+
 
 
   </article>
 
   <div class="page-navigation">
-    
-      <a
-        class="next"
-        href="http://localhost:4000/website/posts/Fp_et_Plat_est_Proj"
-        title="NEXT: Finitely Presented Flat is Projective">&lt;&lt;</a>
-      <span>
-        &middot;
-      </span>
     
     <a
       class="home"
@@ -128,8 +120,8 @@ $$
       </span>
       <a
         class="prev"
-        href="http://localhost:4000/website/posts/Finitely_Presented_Functor"
-        title="PREV: Equivalent Definitions of Finitely Presented Functor">&gt;&gt;</a>
+        href="http://localhost:4000/website/posts/Yoneda_Homological"
+        title="PREV: 米田嵌入是上同调函子">&gt;&gt;</a>
     
   </div>
 </main>

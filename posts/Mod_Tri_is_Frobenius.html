@@ -7,12 +7,12 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
-  <title>$𝐅𝐩 → 𝐏𝐥𝐚𝐭 → 𝐏𝐫𝐨𝐣$
+  <title>$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="(有限表现 → 投射 通过平坦对象分解).假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.">
+<meta name="description" content="(证明).$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴. ">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -21,7 +21,7 @@
 <link rel="icon" href="http://localhost:4000/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="http://localhost:4000/website/assets/touch-icon.png">
 <link rel="stylesheet" href="http://localhost:4000/website/assets/core.css">
-<link rel="canonical" href="http://localhost:4000/website/posts/Fp_Proj_Plat">
+<link rel="canonical" href="http://localhost:4000/website/posts/Mod_Tri_is_Frobenius">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -67,7 +67,7 @@
 	<main>
   <article>
     <div class="center">
-      <h1>$𝐅𝐩 → 𝐏𝐥𝐚𝐭 → 𝐏𝐫𝐨𝐣$</h1>
+      <h1>$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴</h1>
       <p class="author">
         Chencheng Zhang
         <br/>
@@ -78,31 +78,13 @@
 
     <div class="divider"></div>
 
-    <div class="proposition">
-(有限表现 → 投射 通过平坦对象分解).
-假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.
+    <div class="theorem">
+(<a href="Mod_Tri_is_Frobenius">证明</a>).
+$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴. 
 </div>
 
 <div class="proof">
-若 $F = \mathrm{cok}(h_X\xrightarrow {h_f} h_Y)$, 仅需证明存在满射 $PZ → [F,P]$ (此情形下, 下交换图底行正合).
-
-$$
-\begin{bmatrix}
-𝖭𝖺𝗍(F,P) &amp; ↪ &amp; 𝖭𝖺𝗍(h_{Y} ,P) &amp; \xrightarrow{h_{f}^{∗ }} &amp; 𝖭𝖺𝗍(h_{X} ,P)\\
-↟  &amp;  &amp; ∥  &amp;  &amp; ∥ \\
-PZ &amp; ⇢ &amp; PY &amp; \xrightarrow{Pf} &amp; PX \\ 
-∥ &amp;  &amp; ∥ &amp;  &amp; ∥ \\
-P ⊗ h^Z &amp; \xrightarrow{h^g} &amp; P ⊗ h^Y &amp; \xrightarrow{h^f} &amp; P ⊗ h^X
-\end{bmatrix}.
-$$
-
-由于 $P$ 平坦, 故 
-
-$$
-𝖭𝖺𝗍(F,P) ≃ P ⊗ \ker(h^Y \xrightarrow{h^f} h^X).
-$$
-
-此时取 $Z \xrightarrow {g^{\mathrm{op}}} Y$ 为 $Y\xrightarrow{f^{\mathrm{op}}}X$ 的弱核即可.
+上同调函子通过米田嵌入分解, 从而 $𝐦𝐨𝐝_{𝒯^{\mathrm{op}}}^{\mathrm{op}} ≃ 𝐦𝐨𝐝_𝒯$. 从而可表函子既是投射对象, 又是内射对象 (反范畴的投射对象). 由于 $𝐦𝐨𝐝_𝒯$ 存在足够投射对象, 故投射对象就是内射对象.
 </div>
 
 
@@ -112,8 +94,8 @@ $$
     
       <a
         class="next"
-        href="http://localhost:4000/website/posts/Fp_et_Plat_est_Proj"
-        title="NEXT: Finitely Presented Flat is Projective">&lt;&lt;</a>
+        href="http://localhost:4000/website/posts/Yoneda_Homological"
+        title="NEXT: 米田嵌入是上同调函子">&lt;&lt;</a>
       <span>
         &middot;
       </span>
@@ -128,8 +110,8 @@ $$
       </span>
       <a
         class="prev"
-        href="http://localhost:4000/website/posts/Finitely_Presented_Functor"
-        title="PREV: Equivalent Definitions of Finitely Presented Functor">&gt;&gt;</a>
+        href="http://localhost:4000/website/posts/Lazard_thm"
+        title="PREV: Proof of Lazard's Theorem">&gt;&gt;</a>
     
   </div>
 </main>

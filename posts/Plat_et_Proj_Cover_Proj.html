@@ -7,12 +7,12 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
-  <title>$𝐅𝐩 → 𝐏𝐥𝐚𝐭 → 𝐏𝐫𝐨𝐣$
+  <title>$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="(有限表现 → 投射 通过平坦对象分解).假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.">
+<meta name="description" content="若平坦对象具有投射盖, 则其必然是投射对象.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -21,7 +21,7 @@
 <link rel="icon" href="http://localhost:4000/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="http://localhost:4000/website/assets/touch-icon.png">
 <link rel="stylesheet" href="http://localhost:4000/website/assets/core.css">
-<link rel="canonical" href="http://localhost:4000/website/posts/Fp_Proj_Plat">
+<link rel="canonical" href="http://localhost:4000/website/posts/Plat_et_Proj_Cover_Proj">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -67,7 +67,7 @@
 	<main>
   <article>
     <div class="center">
-      <h1>$𝐅𝐩 → 𝐏𝐥𝐚𝐭 → 𝐏𝐫𝐨𝐣$</h1>
+      <h1>$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴</h1>
       <p class="author">
         Chencheng Zhang
         <br/>
@@ -78,31 +78,37 @@
 
     <div class="divider"></div>
 
-    <div class="proposition">
-(有限表现 → 投射 通过平坦对象分解).
-假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.
+    <div class="theorem">
+若平坦对象具有投射盖, 则其必然是投射对象.
 </div>
 
 <div class="proof">
-若 $F = \mathrm{cok}(h_X\xrightarrow {h_f} h_Y)$, 仅需证明存在满射 $PZ → [F,P]$ (此情形下, 下交换图底行正合).
+记 $P \overset π ↠ F$ 是平坦对象的投射盖, 其中 $F = \varinjlim P_i$ 是有限生成投射对象的滤过余极限. 取定所有拉回
 
 $$
 \begin{bmatrix}
-𝖭𝖺𝗍(F,P) &amp; ↪ &amp; 𝖭𝖺𝗍(h_{Y} ,P) &amp; \xrightarrow{h_{f}^{∗ }} &amp; 𝖭𝖺𝗍(h_{X} ,P)\\
-↟  &amp;  &amp; ∥  &amp;  &amp; ∥ \\
-PZ &amp; ⇢ &amp; PY &amp; \xrightarrow{Pf} &amp; PX \\ 
-∥ &amp;  &amp; ∥ &amp;  &amp; ∥ \\
-P ⊗ h^Z &amp; \xrightarrow{h^g} &amp; P ⊗ h^Y &amp; \xrightarrow{h^f} &amp; P ⊗ h^X
-\end{bmatrix}.
+&amp;P_i ⊕ Q_i &amp; \xrightarrow{(1 \ 0)}&amp; P_i \\ 
+\substack{g_i}&amp;↓ &amp;  &amp; ↓ &amp;\substack {f_i}\\ 
+&amp;P &amp; \overset π ↠ &amp; F \\ 
+\end{bmatrix}. 
 $$
 
-由于 $P$ 平坦, 故 
+依照拉回的泛性质, $g_i$ 自动构成滤过系统. 依照 $∐ (P_i ⊕ Q_i) ↠ ∐ P_i$, 得推出拉回方块 
 
 $$
-𝖭𝖺𝗍(F,P) ≃ P ⊗ \ker(h^Y \xrightarrow{h^f} h^X).
+\begin{bmatrix}
+ &amp;  &amp; ∐ (P_{i} ⊕ Q_{i}) &amp; ↠   &amp; ∐ P_{i}\\
+ &amp;  &amp; ↓  &amp;  &amp; ↓ \\
+∗   &amp; ↪   &amp; ∑ \operatorname{im} g_{i} &amp; ↠   &amp; Σ  \operatorname{im} f_{i}\\
+↓   &amp; \text{PBPO} &amp; ↓   &amp;  &amp; ∥  \\
+\ker π   &amp; ↪   &amp; P &amp; ↠   &amp; F
+\end{bmatrix}. 
 $$
 
-此时取 $Z \xrightarrow {g^{\mathrm{op}}} Y$ 为 $Y\xrightarrow{f^{\mathrm{op}}}X$ 的弱核即可.
+依照投射盖的定义, $∑ \operatorname{im}g_i ↪ P$ 是同构, $∗ → \ker π$ 亦是同构. 因此滤过系统 $\{g_i\}$ 的滤过余极限即 $P$. 
+<br />
+<br />
+以上得到滤过系统的态射 $\{f_i\} ↪ \{g_i\} ↠ \{f_i\}$ 这甚至是链可裂的. 依照余极限的泛性质, 存在形变收缩 $F → P → F$, 因此 $F$ 是投射对象. 
 </div>
 
 
@@ -112,8 +118,8 @@ $$
     
       <a
         class="next"
-        href="http://localhost:4000/website/posts/Fp_et_Plat_est_Proj"
-        title="NEXT: Finitely Presented Flat is Projective">&lt;&lt;</a>
+        href="http://localhost:4000/website/posts/Yoneda_Homological"
+        title="NEXT: 米田嵌入是上同调函子">&lt;&lt;</a>
       <span>
         &middot;
       </span>
@@ -128,8 +134,8 @@ $$
       </span>
       <a
         class="prev"
-        href="http://localhost:4000/website/posts/Finitely_Presented_Functor"
-        title="PREV: Equivalent Definitions of Finitely Presented Functor">&gt;&gt;</a>
+        href="http://localhost:4000/website/posts/Mod_Tri_is_Frobenius"
+        title="PREV: $𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴">&gt;&gt;</a>
     
   </div>
 </main>

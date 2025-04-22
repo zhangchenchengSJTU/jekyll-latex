@@ -7,12 +7,12 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
-  <title>$𝐅𝐩 → 𝐏𝐥𝐚𝐭 → 𝐏𝐫𝐨𝐣$
+  <title>有可数积或可数余积的三角范畴必 Karoubi
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="(有限表现 → 投射 通过平坦对象分解).假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.">
+<meta name="description" content="(有可数积或可数余积的三角范畴必 Karoubi, 证明).三角范畴 Karoubi 的一个充分条件: 若三角范畴有可数积或可数余积, 则 Karoubi. ">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -21,7 +21,7 @@
 <link rel="icon" href="http://localhost:4000/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="http://localhost:4000/website/assets/touch-icon.png">
 <link rel="stylesheet" href="http://localhost:4000/website/assets/core.css">
-<link rel="canonical" href="http://localhost:4000/website/posts/Fp_Proj_Plat">
+<link rel="canonical" href="http://localhost:4000/website/posts/Countable_Karoubi">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -67,7 +67,7 @@
 	<main>
   <article>
     <div class="center">
-      <h1>$𝐅𝐩 → 𝐏𝐥𝐚𝐭 → 𝐏𝐫𝐨𝐣$</h1>
+      <h1>有可数积或可数余积的三角范畴必 Karoubi</h1>
       <p class="author">
         Chencheng Zhang
         <br/>
@@ -78,31 +78,29 @@
 
     <div class="divider"></div>
 
-    <div class="proposition">
-(有限表现 → 投射 通过平坦对象分解).
-假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.
+    <div class="lemma">
+(有可数积或可数余积的三角范畴必 Karoubi, <a href="Countable_Karoubi">证明</a>).
+三角范畴 Karoubi 的一个充分条件: 若三角范畴有可数积或可数余积, 则 Karoubi. 
 </div>
 
 <div class="proof">
-若 $F = \mathrm{cok}(h_X\xrightarrow {h_f} h_Y)$, 仅需证明存在满射 $PZ → [F,P]$ (此情形下, 下交换图底行正合).
+范畴 Karoubi, 当且仅当其反范畴亦然. 不妨假定 $𝒯$ 有可数积, 对幂等自同态 $f ∈ \mathrm{End}(X)$ 定义
 
 $$
-\begin{bmatrix}
-𝖭𝖺𝗍(F,P) &amp; ↪ &amp; 𝖭𝖺𝗍(h_{Y} ,P) &amp; \xrightarrow{h_{f}^{∗ }} &amp; 𝖭𝖺𝗍(h_{X} ,P)\\
-↟  &amp;  &amp; ∥  &amp;  &amp; ∥ \\
-PZ &amp; ⇢ &amp; PY &amp; \xrightarrow{Pf} &amp; PX \\ 
-∥ &amp;  &amp; ∥ &amp;  &amp; ∥ \\
-P ⊗ h^Z &amp; \xrightarrow{h^g} &amp; P ⊗ h^Y &amp; \xrightarrow{h^f} &amp; P ⊗ h^X
-\end{bmatrix}.
+∏_ℕX \xrightarrow[:=-e_L] {1-f+fL}∏_ℕX ,\quad ∏_ℕX \xrightarrow[:=-e_R] {1-f+fR}∏_ℕX. 
 $$
 
-由于 $P$ 平坦, 故 
+此处 $L$ 是左移算子 (满), $R$ 是右移算子 (满). 计算知 
 
 $$
-𝖭𝖺𝗍(F,P) ≃ P ⊗ \ker(h^Y \xrightarrow{h^f} h^X).
+e_Le_R = 1,\quad e_Re_L = 1-(f,0,\ldots).
 $$
 
-此时取 $Z \xrightarrow {g^{\mathrm{op}}} Y$ 为 $Y\xrightarrow{f^{\mathrm{op}}}X$ 的弱核即可.
+在三角范畴中, $e_L$ 可裂满, 从而 $\ker (e_L)$ 存在, 因此 $(1-f)$ 存在核. 对称地, $𝒯$ Karoubi.  
+</div>
+
+<div class="note">
+以上实际上是在取 $\cdots → X \xrightarrow f X$ 的同伦极限.
 </div>
 
 
@@ -112,8 +110,8 @@ $$
     
       <a
         class="next"
-        href="http://localhost:4000/website/posts/Fp_et_Plat_est_Proj"
-        title="NEXT: Finitely Presented Flat is Projective">&lt;&lt;</a>
+        href="http://localhost:4000/website/posts/Finitely_Presented_Functor"
+        title="NEXT: Equivalent Definitions of Finitely Presented Functor">&lt;&lt;</a>
       <span>
         &middot;
       </span>
@@ -128,8 +126,8 @@ $$
       </span>
       <a
         class="prev"
-        href="http://localhost:4000/website/posts/Finitely_Presented_Functor"
-        title="PREV: Equivalent Definitions of Finitely Presented Functor">&gt;&gt;</a>
+        href="http://localhost:4000/website/posts/Coreflexive_Contravariantly_Finite"
+        title="PREV: 余反射子范畴与反变有限子范畴">&gt;&gt;</a>
     
   </div>
 </main>
