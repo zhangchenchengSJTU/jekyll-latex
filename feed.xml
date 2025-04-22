@@ -74,13 +74,21 @@ $$
     
       
         <item>
-          <title>$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴</title>
-          <description>&lt;div class=&quot;theorem&quot;&gt;
+          <title>具有投射盖的平坦对象必投射</title>
+          <description>&lt;p&gt;试思考以下问题: 若平坦模有投射盖, 则必是投射模.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;证明见经典教材&lt;a href=&quot;https://link.springer.com/book/10.1007/978-1-4612-0525-8&quot;&gt;环论与模论讲义 (林節玄 著)&lt;/a&gt; 中的习题 Ch6-§4-20, 解答见 (&lt;a href=&quot;https://www.maths.ed.ac.uk/~v1ranick/papers/lam2.pdf#page=126&quot;&gt;此处&lt;/a&gt;).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;特别注意: 以上证明并未使用 &lt;a href=&quot;Lazard_thm&quot;&gt;Lazard 定理&lt;/a&gt; (平坦模是有限生成投射模的滤过余极限), 本质上与下述证明不同.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
 若平坦对象具有投射盖, 则其必然是投射对象.
 &lt;/div&gt;
 
 &lt;div class=&quot;proof&quot;&gt;
-记 $P \overset π ↠ F$ 是平坦对象的投射盖, 其中 $F = \varinjlim P_i$ 是有限生成投射对象的滤过余极限. 取定所有拉回
+记 $P \overset π ↠ F$ 是平坦对象的投射盖, 其中 $F = \varinjlim P_i$ 是有限生成投射对象的滤过余极限 (Lazard). 取定所有拉回
 
 $$
 \begin{bmatrix}
@@ -274,7 +282,17 @@ $$
       
         <item>
           <title>Equivalent Definitions of Finitely Presented Functor</title>
-          <description>&lt;div class=&quot;theorem&quot;&gt;
+          <description>&lt;p&gt;对模范畴而言, $M ∈ 𝐌𝐨𝐝 _R$ 是有限表现模, 若以下等价命题成立:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;存在投射模的态射, 使得 $R^m → R^n → M → 0$ 是模的有限表现;&lt;/li&gt;
+  &lt;li&gt;$M ⊗ - : 𝐌𝐨𝐝_{R^{\mathrm{op}}} → 𝐀𝐛$ 与任意指标集的积 $∏$ 交换;&lt;/li&gt;
+  &lt;li&gt;$\mathrm{Hom}_R(M, -)$ 保持滤过余极限.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;证明见 &lt;a href=&quot;https://ncatlab.org/nlab/show/finitely+presented+module&quot;&gt;n-lab&lt;/a&gt;. 以下将这一结论迁移至有限表现函子范畴 $𝐦𝐨𝐝_𝒞$ 上.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
 (有限表现函子的等价定义) 选定 $F ∈ 𝐌𝐨𝐝_𝒞$, 以下等价:
 &lt;ol&gt;
 &lt;li&gt;
@@ -1061,7 +1079,11 @@ This is a solution.
       
         <item>
           <title>Notes for Reflexive Subcategories</title>
-          <description>&lt;h3 id=&quot;𝐦𝐨𝐝_𝒞&quot;&gt;$𝐦𝐨𝐝_{𝒞}$&lt;/h3&gt;
+          <description>&lt;div class=&quot;abstract&quot;&gt;&lt;h5&gt;Abstract&lt;/h5&gt;&lt;p&gt;
+本篇笔记将有限表现模范畴 $𝐦𝐨𝐝_R$ 中的结论迁移至将有限表现函子范畴 $𝐦𝐨𝐝_𝒞$, 重要命题包括&lt;a href=&quot;Finitely_Presented_Functor&quot;&gt;有限表现对象的等价定义&lt;/a&gt;, &lt;a href=&quot;Lazard_thm&quot;&gt;函子范畴的 Lazard 定理&lt;/a&gt; (平坦对象是投射对象的滤过余极限), &lt;a href=&quot;Fp_et_Plat_est_Proj&quot;&gt;有限表现平坦对象是投射对象&lt;/a&gt; (可表函子的直和项), &lt;a href=&quot;Plat_et_Proj_Cover_Proj&quot;&gt;具有投射盖的平坦对象必投射&lt;/a&gt;等. 重点研究了函子范畴中的平坦对象. 使用上述结论, 对具有较好性质的范畴, &lt;a href=&quot;Coreflexive_Contravariantly_Finite&quot;&gt;余反射子范畴与反变有限范畴等价&lt;/a&gt;.
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;𝐦𝐨𝐝_𝒞&quot;&gt;$𝐦𝐨𝐝_{𝒞}$&lt;/h3&gt;
 
 &lt;p&gt;全文使用&lt;/p&gt;
 
@@ -1440,7 +1462,7 @@ $$
 
 &lt;h4 id=&quot;torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/h4&gt;
 
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (垂直). 使用 $⟂_o$ 表示关于 $\mathrm{Hom}(-,-)$ 的垂直, $⟂$ 表示关于 $\mathrm{Ext}^1(-,-)$ 的垂直. 使用 $(-)^⟂$, $(-)^o$, $^⟂(-)$ 以及 $^o(-)$ 表示对象类的左右垂直类.&lt;/p&gt;
+&lt;p&gt;以下使用 $⟂_o$ 表示关于 $\mathrm{Hom}(-,-)$ 的垂直, $⟂$ 表示关于 $\mathrm{Ext}^1(-,-)$ 的垂直. 使用 $(-)^⟂$, $(-)^o$, $^⟂(-)$ 以及 $^o(-)$ 表示对象类的左右垂直类.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (对象类生成的对象类). 给定 (非空) 对象类 $𝒳$.&lt;/p&gt;
 

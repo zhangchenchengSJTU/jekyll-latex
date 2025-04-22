@@ -7,12 +7,12 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
-  <title>$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴
+  <title>具有投射盖的平坦对象必投射
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="若平坦对象具有投射盖, 则其必然是投射对象.">
+<meta name="description" content="试思考以下问题: 若平坦模有投射盖, 则必是投射模.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -57,7 +57,7 @@
 	<aside class="logo">
   
 
-  <a href="https://zhangchenchengsjtu.github.io/">
+  <a href="https://zhangchenchengsjtu.github.io/website/">
     <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
   </a>
   <span class="logo-prompt">Back to Home</span>
@@ -67,7 +67,7 @@
 	<main>
   <article>
     <div class="center">
-      <h1>$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴</h1>
+      <h1>具有投射盖的平坦对象必投射</h1>
       <p class="author">
         Chencheng Zhang
         <br/>
@@ -78,12 +78,20 @@
 
     <div class="divider"></div>
 
-    <div class="theorem">
+    <p>试思考以下问题: 若平坦模有投射盖, 则必是投射模.</p>
+
+<blockquote>
+  <p>证明见经典教材<a href="https://link.springer.com/book/10.1007/978-1-4612-0525-8">环论与模论讲义 (林節玄 著)</a> 中的习题 Ch6-§4-20, 解答见 (<a href="https://www.maths.ed.ac.uk/~v1ranick/papers/lam2.pdf#page=126">此处</a>).</p>
+</blockquote>
+
+<p>特别注意: 以上证明并未使用 <a href="Lazard_thm">Lazard 定理</a> (平坦模是有限生成投射模的滤过余极限), 本质上与下述证明不同.</p>
+
+<div class="theorem">
 若平坦对象具有投射盖, 则其必然是投射对象.
 </div>
 
 <div class="proof">
-记 $P \overset π ↠ F$ 是平坦对象的投射盖, 其中 $F = \varinjlim P_i$ 是有限生成投射对象的滤过余极限. 取定所有拉回
+记 $P \overset π ↠ F$ 是平坦对象的投射盖, 其中 $F = \varinjlim P_i$ 是有限生成投射对象的滤过余极限 (Lazard). 取定所有拉回
 
 $$
 \begin{bmatrix}
@@ -126,7 +134,7 @@ $$
     
     <a
       class="home"
-      href="https://zhangchenchengsjtu.github.io/website"
+      href="https://zhangchenchengsjtu.github.io/website/"
       title="Back to Homepage">Home</a>
     
       <span>
