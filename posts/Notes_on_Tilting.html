@@ -82,37 +82,61 @@
 
 <h3 id="经典-tilting-投射维度为--1">经典 Tilting: 投射维度为 $≤ 1$</h3>
 
-<h4 id="torsion-pair-确定的对象类">Torsion Pair 确定的对象类</h4>
+<h4 id="记号-对象类">记号: 对象类</h4>
 
 <p>以下使用 $⟂_o$ 表示关于 $\mathrm{Hom}(-,-)$ 的垂直, $⟂$ 表示关于 $\mathrm{Ext}^1(-,-)$ 的垂直. 使用 $(-)^⟂$, $(-)^o$, $^⟂(-)$ 以及 $^o(-)$ 表示对象类的左右垂直类.</p>
 
-<p><strong>Def</strong> (对象类生成的对象类). 给定 (非空) 对象类 $𝒳$.</p>
+<p>给定 (非空) 对象类 $𝒳$. 定义</p>
 
 <ol>
-  <li>$𝐚𝐝𝐝(𝒳)$ 是 $𝒳$ 中对象关于直和与直和项的闭包.</li>
-  <li>$𝐟𝐢𝐥(𝒳)$ 是 $𝒳$ 中对象关于扩张 (合成列) 的闭包.</li>
-  <li>$𝐬𝐮𝐛(𝒳)$ 是 $𝒳$ 中对象关于子对象的闭包.</li>
-  <li>$𝐜𝐨𝐠(𝒳) = 𝐬𝐮𝐛(𝐚𝐝𝐝(𝒳))$ 是 $𝒳$ 中对象关于直和与子对象的闭包.</li>
-  <li>$𝐅(𝒳) = 𝐟𝐢𝐥(𝐬𝐮𝐛(𝒳)) = (^o𝒳)^o$ 是 $𝒳$ 关于子对象和扩张的闭包.</li>
+  <li>$𝐚𝐝𝐝(𝒳)$ 是 $𝒳$ 中对象关于直和与直和项的闭包;</li>
+  <li>$𝐟𝐢𝐥(𝒳)$ 是 $𝒳$ 中对象关于扩张 (合成列) 的闭包;</li>
+  <li>$𝐬𝐮𝐛(𝒳)$ 是 $𝒳$ 中对象关于子对象的闭包;</li>
+  <li>$𝐜𝐨𝐠(𝒳) = 𝐬𝐮𝐛(𝐚𝐝𝐝(𝒳))$ 是 $𝒳$ 中对象关于直和与子对象的闭包;</li>
+  <li>$𝐅(𝒳) = 𝐟𝐢𝐥(𝐬𝐮𝐛(𝒳)) = (^o𝒳)^o$ 是 $𝒳$ 关于子对象和扩张的闭包;</li>
   <li>$𝐪𝐮𝐨𝐭(𝒳)$ 是 $𝒳$ 中对象关于商对象的闭包.</li>
-  <li>$𝐠𝐞𝐧(𝒳) = 𝐪𝐮𝐨𝐭(𝐟𝐢𝐥(𝒳))$ 是 $𝒳$ 中对象关于直和与商对象的闭包.</li>
+  <li>$𝐠𝐞𝐧(𝒳) = 𝐪𝐮𝐨𝐭(𝐟𝐢𝐥(𝒳))$ 是 $𝒳$ 中对象关于直和与商对象的闭包;</li>
   <li>$𝐓(𝒳) = 𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒳)) = {}^o(𝒳^o)$ 是 $𝒳$ 关于商对象和扩张的闭包.</li>
 </ol>
 
-<p><strong>Remark</strong> 对 $𝐦𝐨𝐝_A$, 对 $𝐚𝐝𝐝$ 封闭的对象类是有限生成的.</p>
+<p>特别地, 对 $𝐦𝐨𝐝_A$, 对 $𝐚𝐝𝐝$ 封闭的对象类 (1, 2, 4, 5, 7, 8) 都是有限生成的, 从而可以用一个代表元表示. 例如 $𝐜𝐨𝐠(𝒳)$ 必形如某一 $𝐜𝐨𝐠(M)$.</p>
 
-<p><strong>Def</strong> (Torsion pair). 称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.</p>
+<p>此外, 需要对 $𝒳$ 做一些说明. 见</p>
 
+<h4 id="torsion-pair-确定的对象类">Torsion Pair 确定的对象类</h4>
+
+<div class="definition">
+(Torsion pair 的等价定义).
+称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.
 <ol>
-  <li>$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.</li>
-  <li>存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$.</li>
-  <li>存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$.</li>
-  <li>${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.</li>
-  <li>$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.</li>
-  <li>$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.</li>
-  <li>任意 $𝒯$-滤过对象属于 $𝒯$.</li>
-  <li>任意 $ℱ$-滤过对象属于 $ℱ$.</li>
+<li>
+$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.
+</li>
+<li>
+存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$.
+</li>
+<li>
+存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$.
+</li>
+<li>
+${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.
+</li>
+<li>
+$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.
+</li>
+<li>
+$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
+</li>
+<li>
+任意 $𝒯$-滤过对象属于 $𝒯$.
+</li>
+<li>
+任意 $ℱ$-滤过对象属于 $ℱ$.
+</li>
 </ol>
+</div>
+
+<p><strong>Def</strong> (Torsion pair).</p>
 
 <p><strong>Lemma</strong> 此时, 典范正合列 $0 → tM → M → fM → 0$ 在同构意义下唯一.</p>
 
@@ -357,8 +381,8 @@
     
       <a
         class="next"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Reflexive_sub_cat"
-        title="NEXT: Notes for Reflexive Subcategories">&lt;&lt;</a>
+        href="https://zhangchenchengsjtu.github.io/website/posts/Almost_Split"
+        title="NEXT: 几乎可裂态射的结构">&lt;&lt;</a>
       <span>
         &middot;
       </span>
@@ -373,8 +397,8 @@
       </span>
       <a
         class="prev"
-        href="https://zhangchenchengsjtu.github.io/website/posts/exists_left_proj_app"
-        title="PREV: 存在左 $𝐩𝐫𝐨𝐣$-逼近">&gt;&gt;</a>
+        href="https://zhangchenchengsjtu.github.io/website/posts/template"
+        title="PREV: $\LaTeX$ Template (v 1.1)">&gt;&gt;</a>
     
   </div>
 </main>

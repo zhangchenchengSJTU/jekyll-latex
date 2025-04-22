@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+  <title>Torsion Pair 等价定义
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="(Torsion pair 的等价定义).称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.存在子函子 $t ↪ \mathrm...">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
+<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
+<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Def_de_TP">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+
+
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          [
+            '$', '$'
+          ],
+          [
+            '\\(', '\\)'
+          ]
+        ]
+      }
+    };
+  </script>
+  <script
+    async
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="latex-dark">
+
+	<aside class="logo">
+  
+
+  <a href="https://zhangchenchengsjtu.github.io/website/">
+    <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
+  </a>
+  <span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+	<main>
+  <article>
+    <div class="center">
+      <h1>Torsion Pair 等价定义</h1>
+      <p class="author">
+        Chencheng Zhang
+        <br/>
+        April 22, 2025
+      </p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="theorem">
+(Torsion pair 的等价定义).
+称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.
+<ol>
+<li>
+$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.
+</li>
+<li>
+存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$. 此时, $\ker t = ℱ$, $\operatorname{im} t = 𝒯$.
+</li>
+<li>
+存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$. 此时, $\ker f = 𝒯$, $\operatorname{im} f = ℱ$.
+</li>
+<li>
+${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.
+</li>
+<li>
+$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.
+</li>
+<li>
+$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
+</li>
+<li>
+任意 $𝐪𝐮𝐨𝐭(𝒯)$-滤过对象属于 $𝒯$, 并取 $ℱ := 𝒯^o$
+</li>
+<li>
+任意 $𝐬𝐮𝐛(ℱ)$-滤过对象属于 $ℱ$, 并取 $𝒯 := {}^oℱ$.
+</li>
+</ol>
+</div>
+
+<div class="proof">
+见下一引理.
+</div>
+
+<div class="lemma">
+(Torsion pair 的等价定义, 基于对称性的简化版本).
+称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.
+<ol>
+<li>
+$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.
+</li>
+<li>
+存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$. 此时, $\ker t = ℱ$, $\operatorname{im} t = 𝒯$.
+</li>
+<li>
+${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.
+</li>
+<li>
+$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.
+</li>
+<li>
+任意 $𝐪𝐮𝐨𝐭(𝒯)$-滤过对象属于 $𝒯$, 并取 $ℱ := 𝒯^o$
+</li>
+</ol>
+</div>
+
+<div class="proof">
+证明顺序是 (1 ⟺ 2) ⇒ 3 ⇒ (4 ⟺ 5).
+<br />
+(1 ⇒ 2). 若 1., 今断言 ses
+$$
+θ_M : 0 → tM → M → fM → 0
+$$
+是唯一的. 若不然, 核与余核的泛性质给出分解
+$$
+\begin{bmatrix}
+tM &amp; \overset{i}{↪ } &amp; M &amp; \overset{π }{↠ } &amp; fM\\
+α  ⇅  β  &amp;  &amp; ∥  &amp;  &amp; γ  ⇅  δ  \\
+t'M &amp; \underset{i'}{↪  } &amp; M &amp; \underset{π '}{↠  } &amp; f'M
+\end{bmatrix},
+$$
+使得 $i ∘ α = i'$, 以及 $i' ∘ β = i$, 这也建立了同构 $tM ≃ t'M$. 同理有 $fM ≃ f'M$. 依照类的选择公理, $t$ 是 $f$ 是函子. 特别地, 考虑 $θ_{tM}$ 知 $t^2M ≃ tM$, 以及 $t fM = 0$.
+<br />
+(2 ⇒ 1). 容易给出 ses 的构造
+$$
+0 → tM → M → M / tM → 0.
+$$
+往后证明 $\operatorname {im} t ⟂_o \ker t$. 容易发现, $\operatorname {im} t$ 中对象形如 $tM$, $\ker t$ 中对象形如 $N/tN$. 
+<br />
+对任意 $φ : tM → N/tN$, 显然 $φ$ 形如 $tM \xrightarrow a N ↠ tN$, 且 $a$ 通过 $tN ↪ N$ 分解. 因此 $φ =0$.
+<br />
+(1 ⇒ 3). $t$ 函子给出 $(\operatorname{im} t, \ker t)$. 下证明
+<ol>
+<li>
+$(\operatorname{im} t)^o ⊆ \ker t$. 若 $(-,X)$ 零化一切 $\operatorname{im} t$, 则 $tX ↪ X$ 只能是零态射. 因此, $X ∈ \ker t$.
+</li>
+<li>
+$^o(\ker t) ⊆ \operatorname{im}(t)$. 若 $(Y,-)$ 零化一切 $\ker t$, 则 $Y ↠ Y/tY$ 只能是零态射. 因此, $Y ∈ \operatorname{im} t$.
+</li>
+</ol>
+(3 ⇒ 4). 实际上, 任意对象类的左垂直 $(^o𝒳)$ 对商对象与扩张封闭, 考虑反变 $\mathrm{Hom}$ 的左正合列即可.
+<br />
+(4 ⇒ 5). 若 $𝒯$ 对商对象与扩张封闭, 则自然对滤过封闭.
+<br />
+(5 ⇒ 4). 对任意 $M ∈ 𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒯))$. 取滤过
+$$
+\textstyle 0 = F_0 M ⊆ F_1 M ⊆ \cdots ⊆ F_n M = M\quad (\frac{F_{p+1}M}{F_p M} ∈ 𝒯).
+$$
+<ol>
+<li>
+($𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒯))$ 对商对象封闭). 假定 $Q$ 是 $M$ 的商对象, 记 $π : M ↠ Q$. 此时, $π(F_∙M)$ 是 $Q$ 的滤过, 且 $\frac{π(F_{p+1}M)}{F_pM}$ 是 $\frac{F_{p+1}M}{F_p(M)}$ 的商. 因此
+</li>
+<li>
+($𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒯))$ 对扩张封闭). 假定 ses
+$$
+0 → M \overset i→ E \overset p → N → 0\quad (M,N ∈ 𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒯))).
+$$
+记 $F_∙ M$ 与 $G_∙ N$ 是 $M$ 与 $N$ 的 $𝐪𝐮𝐨𝐭(𝒯)$-滤过, 拼接以下两则滤过:
+$$
+0 = i(F_0M) ⊆ i(F_1M) ⊆ \cdots ⊆ i(F_nM) = \operatorname{im}(i)
+$$
+与
+$$
+\ker p = p^{-1}(G_0N) ⊆ p^{-1}(G_1N) ⊆ \cdots ⊆ p^{-1}(G_nN) = E.
+$$
+得 $E$ 的 $𝐪𝐮𝐨𝐭(𝒯)$-滤过.
+</li>
+</ol>
+(5 ⇒ 1). 往证 $X ∈ 𝒜$ 存在极大的 $𝒯$ 中子对象, 且这一子对象是最大的. 这要求
+<ol>
+<li>
+$X$ 的子对象构成集合, 且
+</li>
+<li>
+子对象集关于某种归纳极限封闭.
+</li>
+</ol>
+此处选取的 Abel 范畴是 $𝒜 = 𝐦𝐨𝐝_A$, 从而满足以上设定 (特别地, $𝐬𝐮𝐛 (X)$ 有限). 
+<ol>
+(证明极大元存在性). 今取 $𝒮 := 𝐬𝐮𝐛 (X) ∩ 𝒯$, 显然 $0 ∈ 𝒮$ 非空, 从而存在极大元 $i : S ↪ X$. 
+<br />
+(证明极大元唯一性). 若 $𝒮$ 存在另一极大元 $i' : S' ↪ X$, 则单态射的推出 $S + S' := S \underset{i(S) ∩ i(S')}⊔ S$ 是 $𝒮$ 中对象. 依照极大元假定, 只能由 $S ≃ S'$, 也就是极大元唯一.
+</ol>
+记极大元 $X_t$. 此时有函子的 ses $0 → X_t → X → \frac{X}{X_t} → 0$, 其中 $(-)_t$ 依照核的泛性质刻画. 依照构造, $((-)_t)_t ≃ (-)_t$. 今断言 $(X / X_t)_t = 0$, 若不然, 则可通过扩张构造 $𝒮$ 中比 $X_t$ 更大的对象. 矛盾.
+</div>
+
+<div class="note">
+4 ⟺ 5 说明, 对象类 $𝒳$ 关于商对象和扩张的闭包, 可通过先取商, 再取扩张实现.
+</div>
+
+<div class="note">
+若 Abel 范畴良幂, 且子对象对归纳极限封闭, 则以上命题等价性的证明仍奏效. 特例: Abel 长度范畴. 
+</div>
+
+
+  </article>
+
+  <div class="page-navigation">
+    
+    <a
+      class="home"
+      href="https://zhangchenchengsjtu.github.io/website/"
+      title="Back to Homepage">Home</a>
+    
+      <span>
+        &middot;
+      </span>
+      <a
+        class="prev"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Homological_Wk_Ker"
+        title="PREV: 上同调函子保持弱核">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    Chencheng Zhang</span>
+</div>
+
+</body>
+
+
+</html>

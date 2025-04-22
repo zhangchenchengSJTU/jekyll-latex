@@ -7,6 +7,160 @@
     
       
         <item>
+          <title>Torsion Pair 等价定义</title>
+          <description>&lt;div class=&quot;theorem&quot;&gt;
+(Torsion pair 的等价定义).
+称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.
+&lt;ol&gt;
+&lt;li&gt;
+$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.
+&lt;/li&gt;
+&lt;li&gt;
+存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$. 此时, $\ker t = ℱ$, $\operatorname{im} t = 𝒯$.
+&lt;/li&gt;
+&lt;li&gt;
+存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$. 此时, $\ker f = 𝒯$, $\operatorname{im} f = ℱ$.
+&lt;/li&gt;
+&lt;li&gt;
+${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.
+&lt;/li&gt;
+&lt;li&gt;
+$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.
+&lt;/li&gt;
+&lt;li&gt;
+$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
+&lt;/li&gt;
+&lt;li&gt;
+任意 $𝐪𝐮𝐨𝐭(𝒯)$-滤过对象属于 $𝒯$, 并取 $ℱ := 𝒯^o$
+&lt;/li&gt;
+&lt;li&gt;
+任意 $𝐬𝐮𝐛(ℱ)$-滤过对象属于 $ℱ$, 并取 $𝒯 := {}^oℱ$.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+见下一引理.
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+(Torsion pair 的等价定义, 基于对称性的简化版本).
+称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.
+&lt;ol&gt;
+&lt;li&gt;
+$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.
+&lt;/li&gt;
+&lt;li&gt;
+存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$. 此时, $\ker t = ℱ$, $\operatorname{im} t = 𝒯$.
+&lt;/li&gt;
+&lt;li&gt;
+${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.
+&lt;/li&gt;
+&lt;li&gt;
+$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.
+&lt;/li&gt;
+&lt;li&gt;
+任意 $𝐪𝐮𝐨𝐭(𝒯)$-滤过对象属于 $𝒯$, 并取 $ℱ := 𝒯^o$
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+证明顺序是 (1 ⟺ 2) ⇒ 3 ⇒ (4 ⟺ 5).
+&lt;br /&gt;
+(1 ⇒ 2). 若 1., 今断言 ses
+$$
+θ_M : 0 → tM → M → fM → 0
+$$
+是唯一的. 若不然, 核与余核的泛性质给出分解
+$$
+\begin{bmatrix}
+tM &amp;amp; \overset{i}{↪ } &amp;amp; M &amp;amp; \overset{π }{↠ } &amp;amp; fM\\
+α  ⇅  β  &amp;amp;  &amp;amp; ∥  &amp;amp;  &amp;amp; γ  ⇅  δ  \\
+t'M &amp;amp; \underset{i'}{↪  } &amp;amp; M &amp;amp; \underset{π '}{↠  } &amp;amp; f'M
+\end{bmatrix},
+$$
+使得 $i ∘ α = i'$, 以及 $i' ∘ β = i$, 这也建立了同构 $tM ≃ t'M$. 同理有 $fM ≃ f'M$. 依照类的选择公理, $t$ 是 $f$ 是函子. 特别地, 考虑 $θ_{tM}$ 知 $t^2M ≃ tM$, 以及 $t fM = 0$.
+&lt;br /&gt;
+(2 ⇒ 1). 容易给出 ses 的构造
+$$
+0 → tM → M → M / tM → 0.
+$$
+往后证明 $\operatorname {im} t ⟂_o \ker t$. 容易发现, $\operatorname {im} t$ 中对象形如 $tM$, $\ker t$ 中对象形如 $N/tN$. 
+&lt;br /&gt;
+对任意 $φ : tM → N/tN$, 显然 $φ$ 形如 $tM \xrightarrow a N ↠ tN$, 且 $a$ 通过 $tN ↪ N$ 分解. 因此 $φ =0$.
+&lt;br /&gt;
+(1 ⇒ 3). $t$ 函子给出 $(\operatorname{im} t, \ker t)$. 下证明
+&lt;ol&gt;
+&lt;li&gt;
+$(\operatorname{im} t)^o ⊆ \ker t$. 若 $(-,X)$ 零化一切 $\operatorname{im} t$, 则 $tX ↪ X$ 只能是零态射. 因此, $X ∈ \ker t$.
+&lt;/li&gt;
+&lt;li&gt;
+$^o(\ker t) ⊆ \operatorname{im}(t)$. 若 $(Y,-)$ 零化一切 $\ker t$, 则 $Y ↠ Y/tY$ 只能是零态射. 因此, $Y ∈ \operatorname{im} t$.
+&lt;/li&gt;
+&lt;/ol&gt;
+(3 ⇒ 4). 实际上, 任意对象类的左垂直 $(^o𝒳)$ 对商对象与扩张封闭, 考虑反变 $\mathrm{Hom}$ 的左正合列即可.
+&lt;br /&gt;
+(4 ⇒ 5). 若 $𝒯$ 对商对象与扩张封闭, 则自然对滤过封闭.
+&lt;br /&gt;
+(5 ⇒ 4). 对任意 $M ∈ 𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒯))$. 取滤过
+$$
+\textstyle 0 = F_0 M ⊆ F_1 M ⊆ \cdots ⊆ F_n M = M\quad (\frac{F_{p+1}M}{F_p M} ∈ 𝒯).
+$$
+&lt;ol&gt;
+&lt;li&gt;
+($𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒯))$ 对商对象封闭). 假定 $Q$ 是 $M$ 的商对象, 记 $π : M ↠ Q$. 此时, $π(F_∙M)$ 是 $Q$ 的滤过, 且 $\frac{π(F_{p+1}M)}{F_pM}$ 是 $\frac{F_{p+1}M}{F_p(M)}$ 的商. 因此
+&lt;/li&gt;
+&lt;li&gt;
+($𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒯))$ 对扩张封闭). 假定 ses
+$$
+0 → M \overset i→ E \overset p → N → 0\quad (M,N ∈ 𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒯))).
+$$
+记 $F_∙ M$ 与 $G_∙ N$ 是 $M$ 与 $N$ 的 $𝐪𝐮𝐨𝐭(𝒯)$-滤过, 拼接以下两则滤过:
+$$
+0 = i(F_0M) ⊆ i(F_1M) ⊆ \cdots ⊆ i(F_nM) = \operatorname{im}(i)
+$$
+与
+$$
+\ker p = p^{-1}(G_0N) ⊆ p^{-1}(G_1N) ⊆ \cdots ⊆ p^{-1}(G_nN) = E.
+$$
+得 $E$ 的 $𝐪𝐮𝐨𝐭(𝒯)$-滤过.
+&lt;/li&gt;
+&lt;/ol&gt;
+(5 ⇒ 1). 往证 $X ∈ 𝒜$ 存在极大的 $𝒯$ 中子对象, 且这一子对象是最大的. 这要求
+&lt;ol&gt;
+&lt;li&gt;
+$X$ 的子对象构成集合, 且
+&lt;/li&gt;
+&lt;li&gt;
+子对象集关于某种归纳极限封闭.
+&lt;/li&gt;
+&lt;/ol&gt;
+此处选取的 Abel 范畴是 $𝒜 = 𝐦𝐨𝐝_A$, 从而满足以上设定 (特别地, $𝐬𝐮𝐛 (X)$ 有限). 
+&lt;ol&gt;
+(证明极大元存在性). 今取 $𝒮 := 𝐬𝐮𝐛 (X) ∩ 𝒯$, 显然 $0 ∈ 𝒮$ 非空, 从而存在极大元 $i : S ↪ X$. 
+&lt;br /&gt;
+(证明极大元唯一性). 若 $𝒮$ 存在另一极大元 $i' : S' ↪ X$, 则单态射的推出 $S + S' := S \underset{i(S) ∩ i(S')}⊔ S$ 是 $𝒮$ 中对象. 依照极大元假定, 只能由 $S ≃ S'$, 也就是极大元唯一.
+&lt;/ol&gt;
+记极大元 $X_t$. 此时有函子的 ses $0 → X_t → X → \frac{X}{X_t} → 0$, 其中 $(-)_t$ 依照核的泛性质刻画. 依照构造, $((-)_t)_t ≃ (-)_t$. 今断言 $(X / X_t)_t = 0$, 若不然, 则可通过扩张构造 $𝒮$ 中比 $X_t$ 更大的对象. 矛盾.
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+4 ⟺ 5 说明, 对象类 $𝒳$ 关于商对象和扩张的闭包, 可通过先取商, 再取扩张实现.
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+若 Abel 范畴良幂, 且子对象对归纳极限封闭, 则以上命题等价性的证明仍奏效. 特例: Abel 长度范畴. 
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-22T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Def_de_TP</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Def_de_TP</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>上同调函子保持弱核</title>
           <description>&lt;div class=&quot;lemma&quot;&gt;
 (上) 同调函子保持弱核.
@@ -786,128 +940,306 @@ $$
     
       
         <item>
-          <title>合冲-逼近伴随 (稳定范畴中)</title>
-          <description>&lt;div class=&quot;theorem&quot;&gt;
-(逼近与合冲在稳定范畴中伴随).
-$Ω_∙$ 与 $C_∙$ 是稳定投射范畴的伴随函子; $℧^∙$ 与 $K^∙$ 是稳定内范畴的伴随函子.
+          <title>Notes for Classical Tilting Theory</title>
+          <description>&lt;h2 id=&quot;tilting-理论&quot;&gt;Tilting 理论&lt;/h2&gt;
+
+&lt;h3 id=&quot;经典-tilting-投射维度为--1&quot;&gt;经典 Tilting: 投射维度为 $≤ 1$&lt;/h3&gt;
+
+&lt;h4 id=&quot;记号-对象类&quot;&gt;记号: 对象类&lt;/h4&gt;
+
+&lt;p&gt;以下使用 $⟂_o$ 表示关于 $\mathrm{Hom}(-,-)$ 的垂直, $⟂$ 表示关于 $\mathrm{Ext}^1(-,-)$ 的垂直. 使用 $(-)^⟂$, $(-)^o$, $^⟂(-)$ 以及 $^o(-)$ 表示对象类的左右垂直类.&lt;/p&gt;
+
+&lt;p&gt;给定 (非空) 对象类 $𝒳$. 定义&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$𝐚𝐝𝐝(𝒳)$ 是 $𝒳$ 中对象关于直和与直和项的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐟𝐢𝐥(𝒳)$ 是 $𝒳$ 中对象关于扩张 (合成列) 的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐬𝐮𝐛(𝒳)$ 是 $𝒳$ 中对象关于子对象的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐜𝐨𝐠(𝒳) = 𝐬𝐮𝐛(𝐚𝐝𝐝(𝒳))$ 是 $𝒳$ 中对象关于直和与子对象的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐅(𝒳) = 𝐟𝐢𝐥(𝐬𝐮𝐛(𝒳)) = (^o𝒳)^o$ 是 $𝒳$ 关于子对象和扩张的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐪𝐮𝐨𝐭(𝒳)$ 是 $𝒳$ 中对象关于商对象的闭包.&lt;/li&gt;
+  &lt;li&gt;$𝐠𝐞𝐧(𝒳) = 𝐪𝐮𝐨𝐭(𝐟𝐢𝐥(𝒳))$ 是 $𝒳$ 中对象关于直和与商对象的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐓(𝒳) = 𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒳)) = {}^o(𝒳^o)$ 是 $𝒳$ 关于商对象和扩张的闭包.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;特别地, 对 $𝐦𝐨𝐝_A$, 对 $𝐚𝐝𝐝$ 封闭的对象类 (1, 2, 4, 5, 7, 8) 都是有限生成的, 从而可以用一个代表元表示. 例如 $𝐜𝐨𝐠(𝒳)$ 必形如某一 $𝐜𝐨𝐠(M)$.&lt;/p&gt;
+
+&lt;p&gt;此外, 需要对 $𝒳$ 做一些说明. 见&lt;/p&gt;
+
+&lt;h4 id=&quot;torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/h4&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+(Torsion pair 的等价定义).
+称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.
 &lt;ol&gt;
 &lt;li&gt;
-$C_k: \underline{𝐦𝐨𝐝_A} ⇆ \underline{𝐦𝐨𝐝_A} : Ω_k$ 是左右伴随.
+$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.
 &lt;/li&gt;
 &lt;li&gt;
-$℧^k: \overline{𝐦𝐨𝐝_A} ⇆ \overline{𝐦𝐨𝐝_A} : K^k$ 是左右伴随.
+存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$.
 &lt;/li&gt;
 &lt;li&gt;
-$C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$.
+存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$.
 &lt;/li&gt;
 &lt;li&gt;
-$K^k ≃ τ(℧^k(τ⁻¹))$.
+${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.
+&lt;/li&gt;
+&lt;li&gt;
+$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.
+&lt;/li&gt;
+&lt;li&gt;
+$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
+&lt;/li&gt;
+&lt;li&gt;
+任意 $𝒯$-滤过对象属于 $𝒯$.
+&lt;/li&gt;
+&lt;li&gt;
+任意 $ℱ$-滤过对象属于 $ℱ$.
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;proof&quot;&gt;
-对前两条, 仅证明第一处 $k=1$ 的情形. 考虑以下两条横向正合列 (原范畴中):
-$$
-\begin{bmatrix}
-M &amp;amp; →  &amp;amp; F( M) &amp;amp; ↠  &amp;amp; C( M)\\
-h⇣ \  &amp;amp;  &amp;amp; g⇣ \  &amp;amp;  &amp;amp; f⇣ \ \\
-Ω ( N) &amp;amp; →  &amp;amp; P( M) &amp;amp; ↠  &amp;amp; N
-\end{bmatrix}.
-$$
-若有 $f$, 则投射盖 $P_0(N) ↠ N$ 诱导了 $g$, 核的泛性质诱导了 $h$. 若有 $h$, 则左逼近的泛性质诱导了 $g$, 余核的泛性质诱导了 $f$. 之后说明在稳定范畴中, 以上对应 $f ↔ h$ 是双射.
+&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (Torsion pair).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; 此时, 典范正合列 $0 → tM → M → fM → 0$ 在同构意义下唯一.&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-给定 $f$, 假定存在满足条件的 $g_1 ≠ g_2$, 则 $(g_1 - g_2)$ 通过 $Ω_1(N)$ 分解. 依照泛性质, $h_i$ 唯一决定, 且 $(h_1 - h_2)$ 通过 $F(M)$ 分解. 这说明由 $f$ 决定的一族 $\{h_i\}$ 在稳定范畴中相等.
-&lt;/li&gt;
-&lt;li&gt;
-给定 $h$, 假定存在满足条件的 $g_1 ≠ g_2$, 则 $(g_1 - g_2)$ 通过 $C(M)$ 分解. 依照泛性质, $f_i$ 唯一决定, 且 $(f_1 - f_2)$ 通过 $P_0(N)$ 分解. 这说明由 $h$ 决定的一族 $\{f_i\}$ 在稳定范畴中相等.
-&lt;/li&gt;
+  &lt;li&gt;$t$ 是右正合的左伴随函子, $𝒯$ 是余反射的.&lt;/li&gt;
+  &lt;li&gt;$f$ 是左伴随的右正合函子, $ℱ$ 是反射的.&lt;/li&gt;
 &lt;/ol&gt;
-特别地, 右伴随函子 $C(-)$ 无关逼近的选取.
-&lt;br /&gt;
-对后一命题, 仅证明 $C(-) = \mathrm{Tr}(Ω_1(\mathrm{Tr}(-)))$. 给定左逼近对应的右正合列
 
-$$
-M → Q → C(M) → 0,
-$$
+&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象). 给定对象 $X$ 与 $M$.&lt;/p&gt;
 
-取任意投射表现 (不必极小) 诱导的四项正合列
+&lt;ol&gt;
+  &lt;li&gt;$M ∈ 𝐠𝐞𝐧(X)$ 当且仅当赋值 $(M, X) ⊗_{\mathrm{End}(X)} X → M$ 是满的.&lt;/li&gt;
+  &lt;li&gt;$M ∈ 𝐜𝐨𝐠(X)$ 当且仅当余赋值 $M → ((M, X), X)$ 是单的.&lt;/li&gt;
+&lt;/ol&gt;
 
-$$
-0 → M^∗ → P_0^∗ \overset α → P_1^∗ → \widetilde{\mathrm{Tr}(M)} → 0.
-$$
+&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($𝐓$ 与 $𝐅$ 中的对象). 给定对象 $X$ 与 $M$.&lt;/p&gt;
 
-注意到 $\operatorname{im}α$ 与 $Ω_1(\mathrm{Tr}(M))$ 在稳定范畴中相等, 而
+&lt;ol&gt;
+  &lt;li&gt;$M ∈ 𝐓(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐪𝐮𝐨𝐭(X)$.&lt;/li&gt;
+  &lt;li&gt;$M ∈ 𝐅(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐚𝐝𝐝(X)$.&lt;/li&gt;
+&lt;/ol&gt;
 
-$$
-\operatorname{coim}α = \operatorname{cok}[M^∗ ↪ P_0^∗]
-= \operatorname{cok}[Q^∗ ↠ M^∗ ↪ P_0^∗]
-$$
+&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; $𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.&lt;/p&gt;
 
-由 $C(M) = \operatorname{cok}[P_0 ↠ M → Q]$, 从而 $\mathrm{Tr}(C(M))$ 与 $\operatorname{coim}α$ 在稳定范畴中同构. 最后由 $\mathrm{Tr}$ 是稳定等价, 得
+&lt;ol&gt;
+  &lt;li&gt;若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧, X^o)$ 是 torsion pair.&lt;/li&gt;
+  &lt;li&gt;若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.&lt;/li&gt;
+&lt;/ol&gt;
 
-$$
-Ω_1(\mathrm{Tr}(M)) ≃ \operatorname{im}α ≃ \operatorname{coim}α ≃ \mathrm{Tr}(C(M))\quad \text{稳定范畴中}.
-$$
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (垂直条件). 以下刻画 torsion pair $(𝒯, ℱ)$ 中满足 $\mathrm{Ext}^1$-垂直的对象. 记 $t$ 与 $f$ 是相应的子函子与商函子.&lt;/p&gt;
 
-因此 $C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$ (稳定范畴中).
+&lt;ol&gt;
+  &lt;li&gt;$𝒯 ∩ (^⟂ 𝒯) = 𝒯 ∩ τ ⁻¹ ℱ$.&lt;/li&gt;
+  &lt;li&gt;$𝒯 ∩ (𝒯^⟂) = 𝒯 ∩ t(𝐢𝐧𝐣)$.&lt;/li&gt;
+  &lt;li&gt;$ℱ ∩ (ℱ^⟂) = ℱ ∩ τ 𝒯$.&lt;/li&gt;
+  &lt;li&gt;$ℱ ∩ (^⟂ ℱ) = ℱ ∩ f(𝐩𝐫𝐨𝐣)$.&lt;/li&gt;
+&lt;/ol&gt;
 
-$$
-\begin{bmatrix}
- &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \widetilde{Ω _{1}\widetilde{\mathrm{Tr}( M)}} &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
- &amp;amp;  &amp;amp;  &amp;amp; ↗  &amp;amp; ∥  &amp;amp; ⤥  &amp;amp;  &amp;amp;  &amp;amp; \\
-M^{*} &amp;amp; ↪  &amp;amp; P_{0}^{*} &amp;amp; ↠  &amp;amp; \operatorname{(co)im}, &amp;amp; ↪  &amp;amp; P_{1}^{*} &amp;amp; ↠  &amp;amp; \widetilde{\mathrm{Tr}}( M)\\
-↟  &amp;amp; ↗  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
-Q^{*} &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;
-\end{bmatrix}
-$$
+&lt;h4 id=&quot;局部-tilting-模-两类-torsion-pair&quot;&gt;局部 Tilting 模: 两类 torsion pair&lt;/h4&gt;
 
-以上是证明涉及的对象.
-&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (忠实模). 称 $M ∈ 𝐦𝐨𝐝_A$ 忠实, 若以下等价命题成立.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;对任意 $a ≠ 0$ 总有 $M ⋅ a ≠ 0$.&lt;/li&gt;
+  &lt;li&gt;同态 $A → \mathrm{End}(M)^{\mathrm{op}}$ 是单的.&lt;/li&gt;
+  &lt;li&gt;$A ∈ 𝐜𝐨𝐠(M)$.&lt;/li&gt;
+  &lt;li&gt;$DA ∈ 𝐠𝐞𝐧(M)$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (局部 Tilting 模). 称 $T$ 是局部 tilting 的, 若 $p.\dim T ≤ 1$ 且 $\mathrm{Ext}^1(T,T)=0$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (局部 tilting 模诱导的 torsion pair). 给定局部 tilting 模 $T$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$(𝐠𝐞𝐧(T), T^o)$ 是 torsion pair.&lt;/li&gt;
+  &lt;li&gt;$(T^⟂, 𝐜𝐨𝐠(τT))$ 是 torsion pair.&lt;/li&gt;
+  &lt;li&gt;$𝐠𝐞𝐧(T) ⊆ T^⟂$.&lt;/li&gt;
+  &lt;li&gt;以上两个 torsion pair, 均有 $T ∈ 𝒯 ∩ {}^⟂𝒯 = 𝒯 ∩ τ⁻¹ ℱ$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; 内射模属于 $T^⟂$. 若投射模属于 $𝐠𝐞𝐧(T)$, 则其属于 $𝐚𝐝𝐝(T)$.&lt;/p&gt;
+
+&lt;h4 id=&quot;tilting-模诱导的-torsion-pair&quot;&gt;Tilting 模诱导的 torsion pair&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; 给定局部 tilting 模 $T$, 以下是 $T$ 成为 tilting 模的等价条件.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$A$ 相对 $𝐚𝐝𝐝(T)$ 的内射分解 (余消解) 是至多 $1$ 维的, 即, 存在 ses $0 → A → T’ → T’’ → 0$, 其中 $T$, $T’’$ 属于 $𝐚𝐝𝐝(T)$.&lt;/li&gt;
+  &lt;li&gt;$𝐠𝐞𝐧(T) = T^⟂$.&lt;/li&gt;
+  &lt;li&gt;$T^o = 𝐜𝐨𝐠(τT)$.&lt;/li&gt;
+  &lt;li&gt;$^⟂(T^⟂) = 𝐚𝐝𝐝(T)$.&lt;/li&gt;
+  &lt;li&gt;任意 $M ∈ T^⟂$ 存在满的右 $𝐚𝐝𝐝(T)$-逼近 $π : T^n ↠ M$, 且 $\ker π ∈ T^⟂$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; 对 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$^⟂𝒯 = 𝐚𝐝𝐝(T)$.&lt;/li&gt;
+  &lt;li&gt;$M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.&lt;/li&gt;
+  &lt;li&gt;内射对象必属于 $𝒯$.&lt;/li&gt;
+  &lt;li&gt;投射对象若属于 $𝒯$, 则属于 $𝐚𝐝𝐝(T)$.&lt;/li&gt;
+  &lt;li&gt;投射内射对象必属于 $𝐚𝐝𝐝(T)$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (Bongartz). 局部 tilting 模是 tilting 模的直和项.&lt;/p&gt;
+
+&lt;h4 id=&quot;brenner-butler-理论&quot;&gt;Brenner-Butler 理论&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; 考虑函子 $(T,-) : 𝐦𝐨𝐝_A → 𝐦𝐨𝐝_{\mathrm{End}(T)^{\mathrm{op}}}$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$𝐚𝐝𝐝(T) → 𝐩𝐫𝐨𝐣(\mathrm{End}(T)^{\mathrm{op}})$ 给出范畴等价. 此处 $T$ 可以是任意模.&lt;/li&gt;
+  &lt;li&gt;$T$ 的直和项无重数, 当且仅当 $\mathrm{End}(T)$ 是基本代数.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;若 $T$ 是 tilting 模, 则 $(T,-)&lt;/td&gt;
+          &lt;td&gt;_𝒯$ 是全忠实的.&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;若 $T$ 是 tilting 模, 则 $\mathrm{Ext}^1(T,-)&lt;/td&gt;
+          &lt;td&gt;_𝒯$ 也是全忠实的.&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (Tilted 代数). 给定 tilting 模 $T ∈ 𝐦𝐨𝐝_A$, 记 $B:=\mathrm{End}(T)$ 是诱导的 tilted 代数.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; $T$ 是 $(B,A)$-双模. 特别地, 代数 $A$ 与 $B$ 的关系如下.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$T$ 视作 $B^{\mathrm{op}}$-模也是 tilting 模.&lt;/li&gt;
+  &lt;li&gt;代数同态的合成 $A → B^{\mathrm{op}} → \mathrm{End}(_BT)^{\mathrm{op}}$ 是同构.&lt;/li&gt;
+  &lt;li&gt;中心 $Z(A) ≃ Z(B)$ 同构, 因此 $A$ 与 $B$ 具有相同的连通性.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (对偶 torsion pair). 给定 tilting 模 $T ∈ 𝐦𝐨𝐝_A$, 记 $B:= \mathrm{End}(T_A)$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$𝐦𝐨𝐝_A$ 中的 torsion pair $(𝒯, ℱ)$ 如下:
+    &lt;ol&gt;
+      &lt;li&gt;$𝒯 = 𝐠𝐞𝐧(T_A) = T_A^⟂$,&lt;/li&gt;
+      &lt;li&gt;$ℱ = 𝐜𝐨𝐠 (τ T_A) = T_A^o$.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;$𝐦𝐨𝐝_B$ 中的 torsion pair $(𝒳, 𝒴)$ 如下:
+    &lt;ol&gt;
+      &lt;li&gt;$𝒳 = D(𝐜𝐨𝐠(τ{}_BT)) = D(_BT^o)$,&lt;/li&gt;
+      &lt;li&gt;$𝒴 = D(𝐠𝐞𝐧(_BT)) = D(_BT^⟂)$.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;省略对偶符号, 则
+    &lt;ol&gt;
+      &lt;li&gt;$𝒳 = \ker \mathrm{Hom}_B(-,DT) = \ker (- ⊗_B T)$,&lt;/li&gt;
+      &lt;li&gt;$𝒴 = \ker \mathrm{Ext}_B^1(-, DT) = \ker \mathrm{Tor}_1^B(- , T)$.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt; 习惯上, 置 $𝒯 := 𝒯(T_A) ⊆ 𝐦𝐨𝐝_A$ 以及 $𝒳 := 𝒳(T_A) ⊆ 𝐦𝐨𝐝_B$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; $𝐦𝐨𝐝_B$ 范畴存在对偶的逼近结论.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;(原). 任意 $M_A ∈ 𝒯$ 存在满的右 $𝐚𝐝𝐝(T_A)$-逼近 $π : T_A^n ↠ M_A$, 且 $\ker π ∈ 𝒯$.&lt;/li&gt;
+  &lt;li&gt;(新). 任意 $Y_B ∈ 𝒴$ 存在单的左 $𝐚𝐝𝐝((DT)_B)$-逼近 $ι: Y_B ↪ (DT)_B^m$, 且 $\operatorname{cok}ι ∈ 𝒴$.&lt;/li&gt;
+  &lt;li&gt;(原). $M_A ∈ 𝒯$ 的充要条件是典范态射 $(T, M) ⊗ T → M$ 是 $𝐦𝐨𝐝_A$-同构.&lt;/li&gt;
+  &lt;li&gt;(新). $Y_B ∈ 𝒴$ 的充要条件是典范态射 $(T, Y ⊗_B T) → Y$ 是 $𝐦𝐨𝐝_B$-同构.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (BB 导出等价). 给定资料 $(A,T,B)$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$\mathrm{Hom}_A(T,-) : 𝒯 ⇆ 𝒴 : (-⊗_BT)$ 是范畴等价 (视作拟逆).&lt;/li&gt;
+  &lt;li&gt;$\mathrm{Ext}^1_A(T,-) : ℱ ⇆ 𝒳 : \mathrm{Tor}_1^B(-, T)$ 是范畴等价 (视作拟逆).&lt;/li&gt;
+  &lt;li&gt;$𝐑^∙\mathrm{Hom}_A(T,-) : D^b(𝐦𝐨𝐝_A) ⇆ D^b(𝐦𝐨𝐝_B) : 𝐋 ^∙(-⊗_BT)$ 是导出等价.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (BB 同调公式). 给定上述函子.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;零次导出的核 (像) 是一次导出的像 (核).&lt;/li&gt;
+  &lt;li&gt;$𝐦𝐨𝐝_A$ 中 ses $0 → (T,M) ⊗_B T → M → \mathrm{Tor}_1^B(\mathrm{Ext}_A^1(T,M), T) → 0$, 即 $M$ 的 $(t,f)$ 序列.&lt;/li&gt;
+  &lt;li&gt;$𝐦𝐨𝐝_B$ 中 ses $0 → \mathrm{Ext}_A^1(T, X ⊗ _BT) → X → (T, X ⊗ _BT) → 0$, 即 $X$ 的 $(t,f)$ 序列.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;同调维度&quot;&gt;同调维度&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($𝒯$, $𝒴$ 与投射维数). 对 $M ∈ 𝒯$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;若 $p.\dim M ≠ 1$, 则 $p.\dim M = p.\dim (T,M)$.&lt;/li&gt;
+  &lt;li&gt;若 $p.\dim M = 1$, 则 $p.\dim (T,M) ∈ {0,1}$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Thm&lt;/strong&gt; (整体维数). $&lt;/td&gt;
+      &lt;td&gt;gl.\dim A - gl.\dim B&lt;/td&gt;
+      &lt;td&gt;≤ 1$.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;!-- **Lemma** ($𝒯$, $𝒴$ 与内射维数). 需要细化. --&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (Happel 的导出等价定理). 假定 Abel 范畴有足够投射. 某对象 $T$ 满足 $\mathrm{Ext}_𝒜^{≥ 1}(T,T) =0$. 记 $B = \mathrm{End}(T)$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$(T,-)_𝒜: 𝐚𝐝𝐝(T) ⇆ 𝐩𝐫𝐨𝐣(B) : (- ⊗ _BT)$ 是范畴等价.&lt;/li&gt;
+  &lt;li&gt;复合 $K^b(𝐚𝐝𝐝(T)) ↣ K^b (𝒜) → D^b𝒜$ 全忠实.&lt;/li&gt;
+  &lt;li&gt;若任意对象的 $𝐚𝐝𝐝(T)$-余消解维数有限, 则上述复合是等价.&lt;/li&gt;
+  &lt;li&gt;若 $𝒜$ 投射维数有限, 则典范函子 $K^b(𝐩𝐫𝐨𝐣(𝒜)) → D^b(𝒜)$ 是等价. 此时有导出等价 $D^b(𝒜) ≃ D^b(B)$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;遗传范畴的-torsion-pair&quot;&gt;遗传范畴的 torsion pair&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; 本节的范畴要求有足够投射对象, 且 tilting 对象 $T$ 使得一切 $(T,X)$ 均是有限生成右 $\mathrm{End}(T)$-模. 一个较弱的条件是 $\mathrm{Hom}$-群有限维.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (遗传范畴). 称 Abel 范畴遗传, 若米田积意义下的 $\mathrm{Ext}^2(-,-)$ 函子消失.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; 遗传范畴中的满单分解均可补全作推出拉回方块.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; 遗传范畴中, $X^∙$ 与 $H^∙(X)$ 导出等价.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (遗传范畴的 Tilting 对象). 称 $T ∈ 𝒜$ 是 tilting 对象, 若 $T$ 生成的 Serre 子范畴是 $𝒜$, 且 $\mathrm{Ext}^1(T,T)=0$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt; 遗传对应 $p.\dim T ≤ 1$, $T$ 生成 Serre 子范畴的条件对应 $A$ 的 $𝐚𝐝𝐝(T)$-余消解维度 $≤1$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (遗传范畴的 torsion pair). 对上述遗传范畴与 tilting 对象 $T$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$(\ker \mathrm{Ext}^0(T,-), \ker \mathrm{Ext}^1(T,-))$ 是 torsion pair, 记作 $(𝒯, ℱ)$.&lt;/li&gt;
+  &lt;li&gt;BB 导出等价给出 $(𝒳 , 𝒴) ≃ (ℱ[1], 𝒯)$.&lt;/li&gt;
+  &lt;li&gt;若 $B$ 遗传, 则 $(𝒯, ℱ)$ 可裂.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (可裂 torsion pair 的等价定义). 称 Abel 范畴 $𝒜$ 中的 torsion pair $(𝒯, ℱ)$ 可裂, 若以下等价命题成立.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$𝒯∪ℱ$ 包含一切不可分解对象.&lt;/li&gt;
+  &lt;li&gt;$\mathrm{Ext}_𝒜^1(ℱ, 𝒯) = 0$.&lt;/li&gt;
+  &lt;li&gt;$𝒯$ 关于 $τ⁻¹$ 封闭.&lt;/li&gt;
+  &lt;li&gt;$ℱ$ 关于 $τ$ 封闭.&lt;/li&gt;
+&lt;/ol&gt;
+
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</guid>
-        </item>
-      
-    
-      
-        <item>
-          <title>$Ω(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$</title>
-          <description>&lt;div class=&quot;theorem&quot;&gt;
-($Ω_1$ 与 $℧^1$).
-$Ω_1(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$ 是投射对象之子对象的稳定范畴. $℧^1(\overline{𝐦𝐨𝐝_A}) ≃ \overline{𝐪𝐮𝐨𝐭(A)}$ 是投射对象之商对象的稳定范畴.
-&lt;/div&gt;
-
-&lt;div class=&quot;proof&quot;&gt;
-仍只看单侧命题 $Ω(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$. 由定义, 两者是 $\underline{𝐦𝐨𝐝_A}$ 的全子范畴. 由同构闭, 两者的对象类等价.
-&lt;/div&gt;
-</description>
-          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</guid>
-        </item>
-      
-    
-      
-        <item>
-          <title>Top_Surjective</title>
-          <description>&lt;div class=&quot;proposition&quot;&gt;
-$\mathrm{Top}(f)$ 满当且仅当 $f$ 满; $\mathrm{Soc}(f)$ 单当且仅当 $f$ 单.
-&lt;/div&gt;
-
-&lt;div class=&quot;proof&quot;&gt;
-给定 $f : X → Y$. 若 $f$ 满, 则 $\mathrm{Top}(f)$ 满. 今假定 $\mathrm{Top}(f)$ 满. 此时, 对任意 $y ∈ Y$, 总有 $x ∈ X$ 使得 $(f(x) - y) ∈ \mathrm{Rad}(Y)$. 因此有
-$$
-\mathrm{im}(f) + \mathrm{Rad}(Y) = Y.
-$$
-依照 $\mathrm{Rad}$ 的性质, 只能由于 $\mathrm{im}(f) = Y$. 故 $f$ 满. 对 $\mathrm{Soc}(f)$ 的证明是完全对偶的.
-&lt;/div&gt;
-</description>
-          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting</guid>
         </item>
       
     
@@ -1455,47 +1787,196 @@ $$
     
       
         <item>
-          <title>Notes for Classical Tilting Theory</title>
+          <title>合冲-逼近伴随 (稳定范畴中)</title>
+          <description>&lt;div class=&quot;theorem&quot;&gt;
+(逼近与合冲在稳定范畴中伴随).
+$Ω_∙$ 与 $C_∙$ 是稳定投射范畴的伴随函子; $℧^∙$ 与 $K^∙$ 是稳定内范畴的伴随函子.
+&lt;ol&gt;
+&lt;li&gt;
+$C_k: \underline{𝐦𝐨𝐝_A} ⇆ \underline{𝐦𝐨𝐝_A} : Ω_k$ 是左右伴随.
+&lt;/li&gt;
+&lt;li&gt;
+$℧^k: \overline{𝐦𝐨𝐝_A} ⇆ \overline{𝐦𝐨𝐝_A} : K^k$ 是左右伴随.
+&lt;/li&gt;
+&lt;li&gt;
+$C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$.
+&lt;/li&gt;
+&lt;li&gt;
+$K^k ≃ τ(℧^k(τ⁻¹))$.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+对前两条, 仅证明第一处 $k=1$ 的情形. 考虑以下两条横向正合列 (原范畴中):
+$$
+\begin{bmatrix}
+M &amp;amp; →  &amp;amp; F( M) &amp;amp; ↠  &amp;amp; C( M)\\
+h⇣ \  &amp;amp;  &amp;amp; g⇣ \  &amp;amp;  &amp;amp; f⇣ \ \\
+Ω ( N) &amp;amp; →  &amp;amp; P( M) &amp;amp; ↠  &amp;amp; N
+\end{bmatrix}.
+$$
+若有 $f$, 则投射盖 $P_0(N) ↠ N$ 诱导了 $g$, 核的泛性质诱导了 $h$. 若有 $h$, 则左逼近的泛性质诱导了 $g$, 余核的泛性质诱导了 $f$. 之后说明在稳定范畴中, 以上对应 $f ↔ h$ 是双射.
+&lt;ol&gt;
+&lt;li&gt;
+给定 $f$, 假定存在满足条件的 $g_1 ≠ g_2$, 则 $(g_1 - g_2)$ 通过 $Ω_1(N)$ 分解. 依照泛性质, $h_i$ 唯一决定, 且 $(h_1 - h_2)$ 通过 $F(M)$ 分解. 这说明由 $f$ 决定的一族 $\{h_i\}$ 在稳定范畴中相等.
+&lt;/li&gt;
+&lt;li&gt;
+给定 $h$, 假定存在满足条件的 $g_1 ≠ g_2$, 则 $(g_1 - g_2)$ 通过 $C(M)$ 分解. 依照泛性质, $f_i$ 唯一决定, 且 $(f_1 - f_2)$ 通过 $P_0(N)$ 分解. 这说明由 $h$ 决定的一族 $\{f_i\}$ 在稳定范畴中相等.
+&lt;/li&gt;
+&lt;/ol&gt;
+特别地, 右伴随函子 $C(-)$ 无关逼近的选取.
+&lt;br /&gt;
+对后一命题, 仅证明 $C(-) = \mathrm{Tr}(Ω_1(\mathrm{Tr}(-)))$. 给定左逼近对应的右正合列
+
+$$
+M → Q → C(M) → 0,
+$$
+
+取任意投射表现 (不必极小) 诱导的四项正合列
+
+$$
+0 → M^∗ → P_0^∗ \overset α → P_1^∗ → \widetilde{\mathrm{Tr}(M)} → 0.
+$$
+
+注意到 $\operatorname{im}α$ 与 $Ω_1(\mathrm{Tr}(M))$ 在稳定范畴中相等, 而
+
+$$
+\operatorname{coim}α = \operatorname{cok}[M^∗ ↪ P_0^∗]
+= \operatorname{cok}[Q^∗ ↠ M^∗ ↪ P_0^∗]
+$$
+
+由 $C(M) = \operatorname{cok}[P_0 ↠ M → Q]$, 从而 $\mathrm{Tr}(C(M))$ 与 $\operatorname{coim}α$ 在稳定范畴中同构. 最后由 $\mathrm{Tr}$ 是稳定等价, 得
+
+$$
+Ω_1(\mathrm{Tr}(M)) ≃ \operatorname{im}α ≃ \operatorname{coim}α ≃ \mathrm{Tr}(C(M))\quad \text{稳定范畴中}.
+$$
+
+因此 $C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$ (稳定范畴中).
+
+$$
+\begin{bmatrix}
+ &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \widetilde{Ω _{1}\widetilde{\mathrm{Tr}( M)}} &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp;  &amp;amp; ↗  &amp;amp; ∥  &amp;amp; ⤥  &amp;amp;  &amp;amp;  &amp;amp; \\
+M^{*} &amp;amp; ↪  &amp;amp; P_{0}^{*} &amp;amp; ↠  &amp;amp; \operatorname{(co)im}, &amp;amp; ↪  &amp;amp; P_{1}^{*} &amp;amp; ↠  &amp;amp; \widetilde{\mathrm{Tr}}( M)\\
+↟  &amp;amp; ↗  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+Q^{*} &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;
+\end{bmatrix}
+$$
+
+以上是证明涉及的对象.
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>$Ω(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$</title>
+          <description>&lt;div class=&quot;theorem&quot;&gt;
+($Ω_1$ 与 $℧^1$).
+$Ω_1(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$ 是投射对象之子对象的稳定范畴. $℧^1(\overline{𝐦𝐨𝐝_A}) ≃ \overline{𝐪𝐮𝐨𝐭(A)}$ 是投射对象之商对象的稳定范畴.
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+仍只看单侧命题 $Ω(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$. 由定义, 两者是 $\underline{𝐦𝐨𝐝_A}$ 的全子范畴. 由同构闭, 两者的对象类等价.
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Top_Surjective</title>
+          <description>&lt;div class=&quot;proposition&quot;&gt;
+$\mathrm{Top}(f)$ 满当且仅当 $f$ 满; $\mathrm{Soc}(f)$ 单当且仅当 $f$ 单.
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+给定 $f : X → Y$. 若 $f$ 满, 则 $\mathrm{Top}(f)$ 满. 今假定 $\mathrm{Top}(f)$ 满. 此时, 对任意 $y ∈ Y$, 总有 $x ∈ X$ 使得 $(f(x) - y) ∈ \mathrm{Rad}(Y)$. 因此有
+$$
+\mathrm{im}(f) + \mathrm{Rad}(Y) = Y.
+$$
+依照 $\mathrm{Rad}$ 的性质, 只能由于 $\mathrm{im}(f) = Y$. 故 $f$ 满. 对 $\mathrm{Soc}(f)$ 的证明是完全对偶的.
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Notes on Classical Tilting Theory</title>
           <description>&lt;h2 id=&quot;tilting-理论&quot;&gt;Tilting 理论&lt;/h2&gt;
 
 &lt;h3 id=&quot;经典-tilting-投射维度为--1&quot;&gt;经典 Tilting: 投射维度为 $≤ 1$&lt;/h3&gt;
 
-&lt;h4 id=&quot;torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/h4&gt;
+&lt;h4 id=&quot;记号-对象类&quot;&gt;记号: 对象类&lt;/h4&gt;
 
 &lt;p&gt;以下使用 $⟂_o$ 表示关于 $\mathrm{Hom}(-,-)$ 的垂直, $⟂$ 表示关于 $\mathrm{Ext}^1(-,-)$ 的垂直. 使用 $(-)^⟂$, $(-)^o$, $^⟂(-)$ 以及 $^o(-)$ 表示对象类的左右垂直类.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (对象类生成的对象类). 给定 (非空) 对象类 $𝒳$.&lt;/p&gt;
+&lt;p&gt;给定 (非空) 对象类 $𝒳$. 定义&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;$𝐚𝐝𝐝(𝒳)$ 是 $𝒳$ 中对象关于直和与直和项的闭包.&lt;/li&gt;
-  &lt;li&gt;$𝐟𝐢𝐥(𝒳)$ 是 $𝒳$ 中对象关于扩张 (合成列) 的闭包.&lt;/li&gt;
-  &lt;li&gt;$𝐬𝐮𝐛(𝒳)$ 是 $𝒳$ 中对象关于子对象的闭包.&lt;/li&gt;
-  &lt;li&gt;$𝐜𝐨𝐠(𝒳) = 𝐬𝐮𝐛(𝐚𝐝𝐝(𝒳))$ 是 $𝒳$ 中对象关于直和与子对象的闭包.&lt;/li&gt;
-  &lt;li&gt;$𝐅(𝒳) = 𝐟𝐢𝐥(𝐬𝐮𝐛(𝒳)) = (^o𝒳)^o$ 是 $𝒳$ 关于子对象和扩张的闭包.&lt;/li&gt;
+  &lt;li&gt;$𝐚𝐝𝐝(𝒳)$ 是 $𝒳$ 中对象关于直和与直和项的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐟𝐢𝐥(𝒳)$ 是 $𝒳$ 中对象关于扩张 (合成列) 的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐬𝐮𝐛(𝒳)$ 是 $𝒳$ 中对象关于子对象的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐜𝐨𝐠(𝒳) = 𝐬𝐮𝐛(𝐚𝐝𝐝(𝒳))$ 是 $𝒳$ 中对象关于直和与子对象的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐅(𝒳) = 𝐟𝐢𝐥(𝐬𝐮𝐛(𝒳)) = (^o𝒳)^o$ 是 $𝒳$ 关于子对象和扩张的闭包;&lt;/li&gt;
   &lt;li&gt;$𝐪𝐮𝐨𝐭(𝒳)$ 是 $𝒳$ 中对象关于商对象的闭包.&lt;/li&gt;
-  &lt;li&gt;$𝐠𝐞𝐧(𝒳) = 𝐪𝐮𝐨𝐭(𝐟𝐢𝐥(𝒳))$ 是 $𝒳$ 中对象关于直和与商对象的闭包.&lt;/li&gt;
+  &lt;li&gt;$𝐠𝐞𝐧(𝒳) = 𝐪𝐮𝐨𝐭(𝐟𝐢𝐥(𝒳))$ 是 $𝒳$ 中对象关于直和与商对象的闭包;&lt;/li&gt;
   &lt;li&gt;$𝐓(𝒳) = 𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒳)) = {}^o(𝒳^o)$ 是 $𝒳$ 关于商对象和扩张的闭包.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt; 对 $𝐦𝐨𝐝_A$, 对 $𝐚𝐝𝐝$ 封闭的对象类是有限生成的.&lt;/p&gt;
+&lt;p&gt;特别地, 对 $𝐦𝐨𝐝_A$, 对 $𝐚𝐝𝐝$ 封闭的对象类 (1, 2, 4, 5, 7, 8) 都是有限生成的, 从而可以用一个代表元表示. 例如 $𝐜𝐨𝐠(𝒳)$ 必形如某一 $𝐜𝐨𝐠(M)$.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (Torsion pair). 称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.&lt;/p&gt;
+&lt;p&gt;此外, 需要对 $𝐅(𝒳)$ 与 $𝐓(𝒳)$ 的等价定义做一些说明, 见&lt;a href=&quot;Def_de_TP&quot;&gt;此处&lt;/a&gt;.&lt;/p&gt;
 
+&lt;h4 id=&quot;torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/h4&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+(Torsion pair 的等价定义, &lt;a href=&quot;Def_de_TP&quot;&gt;证明&lt;/a&gt;).
+称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.
 &lt;ol&gt;
-  &lt;li&gt;$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.&lt;/li&gt;
-  &lt;li&gt;存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$.&lt;/li&gt;
-  &lt;li&gt;存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$.&lt;/li&gt;
-  &lt;li&gt;${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.&lt;/li&gt;
-  &lt;li&gt;$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.&lt;/li&gt;
-  &lt;li&gt;$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.&lt;/li&gt;
-  &lt;li&gt;任意 $𝒯$-滤过对象属于 $𝒯$.&lt;/li&gt;
-  &lt;li&gt;任意 $ℱ$-滤过对象属于 $ℱ$.&lt;/li&gt;
+&lt;li&gt;
+$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.
+&lt;/li&gt;
+&lt;li&gt;
+存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$. 此时, $\ker t = ℱ$, $\operatorname{im} t = 𝒯$.
+&lt;/li&gt;
+&lt;li&gt;
+存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$. 此时, $\ker f = 𝒯$, $\operatorname{im} f = ℱ$.
+&lt;/li&gt;
+&lt;li&gt;
+${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.
+&lt;/li&gt;
+&lt;li&gt;
+$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.
+&lt;/li&gt;
+&lt;li&gt;
+$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
+&lt;/li&gt;
+&lt;li&gt;
+任意 $𝐪𝐮𝐨𝐭(𝒯)$-滤过对象属于 $𝒯$, 并取 $ℱ := 𝒯^o$
+&lt;/li&gt;
+&lt;li&gt;
+任意 $𝐬𝐮𝐛(ℱ)$-滤过对象属于 $ℱ$, 并取 $𝒯 := {}^oℱ$.
+&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; 此时, 典范正合列 $0 → tM → M → fM → 0$ 在同构意义下唯一.&lt;/p&gt;
+&lt;p&gt;以上 ses 在同构意义下唯一. 依照定义, $tM → N$ 类型的态射通过 $tN ↪ N$ 唯一地分解, 从而 $t$ 是全子范畴嵌入 $𝒯 ↣ 𝒜$ 的右伴随. 特别地,&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;$t$ 是右正合的左伴随函子, $𝒯$ 是余反射的.&lt;/li&gt;
+  &lt;li&gt;$t$ 是右正合的左伴随函子, $𝒯$ 是余反射的;&lt;/li&gt;
   &lt;li&gt;$f$ 是左伴随的右正合函子, $ℱ$ 是反射的.&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -1861,7 +2342,7 @@ $$
     
       
         <item>
-          <title>Notes for AR theory</title>
+          <title>Notes on AR theory</title>
           <description>&lt;div class=&quot;abstract&quot;&gt;&lt;h5&gt;Abstract&lt;/h5&gt;&lt;p&gt;
 本篇速记总结一些常见的公式, 主要来源于&lt;a href=&quot;https://www.cambridge.org/core/books/elements-of-the-representation-theory-of-associative-algebras/AA8066B5809D0F556A540400AD3A419C&quot;&gt;ERTAA vol 1&lt;/a&gt;, &lt;a href=&quot;https://www.cambridge.org/core/books/representation-theory-of-artin-algebras/B7452F28EDADF450BF1059A6FB6D68A4&quot;&gt;ETAA&lt;/a&gt;, 等. 目录如下. 
 &lt;/p&gt;&lt;/div&gt;
