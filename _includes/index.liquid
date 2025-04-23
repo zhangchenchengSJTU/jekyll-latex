@@ -32,7 +32,7 @@
       <div class="pagination" style="text-align: center; color: #fff; padding: 10px; border-radius: 5px;">
         {% if paginator.previous_page %}
           <a
-            href="{{ paginator.previous_page_path }}"
+            href="{{ paginator.previous_page_path | prepend: site.baseurl }}"
             class="previous"
             style="margin-right: 15px; color: #fff; text-decoration: none; padding: 5px 10px; border: 1px solid #fff; border-radius: 3px; transition: background-color 0.3s ease;">
             Previous
@@ -47,7 +47,7 @@
         </span>
         {% if paginator.next_page %}
           <a
-            href="{{ paginator.next_page_path }}"
+            href="{{ paginator.next_page_path | prepend: site.baseurl }}"
             class="next"
             style="margin-left: 15px; color: #fff; text-decoration: none; padding: 5px 10px; border: 1px solid #fff; border-radius: 3px; transition: background-color 0.3s ease;">Next</a>
         {% else %}

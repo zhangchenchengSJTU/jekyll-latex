@@ -7,10 +7,508 @@
     
       
         <item>
+          <title>$𝐜𝐨𝐠$ 与 $𝐠𝐞𝐧$ 的等价定义</title>
+          <description>&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象). 给定对象 $X$ 与 $M$.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+$M ∈ 𝐠𝐞𝐧(X)$ 当且仅当赋值 $(X, M) ⊗_{\mathrm{End}(X)} X → M$ 是满的.
+&lt;/li&gt;
+&lt;li&gt;
+$M ∈ 𝐜𝐨𝐠(X)$ 当且仅当余赋值 $M → ((M, X), X)$ 是单的.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;若 $p : X^n ↠ M$ 是满态射, 记分量为 $(p_i)&lt;em&gt;{1 ≤ i ≤ n}$. 此时, 任意 $m ∈ M$ 形如 $∑ p_i(x_i)$ 的形式, 因此
+\((X, M) ⊗_{\mathrm{End}(X)} X → M,\quad ∑ p_i ⊗ x_i ↦ m\)
+是满态射.
+&lt;br /&gt;
+反之, 若 $φ : (X, M) ⊗ X → M$ 满, 则任意 $m ∈ M$ 都是形如 $∑ f_i(x_i)$ 的形式, 由 $(X,M)$ 是有限生成右 $\mathrm{End}(M)$-模. 取 $(X, M)$ 的一组生成元 $𝒢$, 则有满态射
+\(X^𝒢 ↠ (X, M) ↠ M.\)
+&lt;br /&gt;
+若 $i: M ↪ X^n$ 是单态射, 不妨将 $M$ 中元素视同 $X^n$ 中元素. 对 $m = (x_j)&lt;/em&gt;{1 ≤ j ≤ n} ≠ 0$, 不妨设 $x_1 ≠ 0$, 得
+\((M, X) → X,\quad p_1 ↦ p_1(m) ≠ 0.\)
+因此 $m$ 在 $((M, X), X)$ 中的像是非零态射, 从而是单的. 
+&lt;br /&gt;
+反之, 若 $ψ : M → ((M, X), X)$ 是单态射, 则有复合的单态射
+\(M ↪ ((M, X), X) ↪ ((X, X)^n, X).\)
+此处 $(X, X)^n ↠ (M, X)$ 是有限生成模 $\mathrm{End}(X)$-模的覆盖.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-23T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/gen_and_cog</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/gen_and_cog</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Torsion Class 与 $\mathrm{Ext}^1$</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(垂直条件, &lt;a href=&quot;Torsion_Pair_Ext_Orth&quot;&gt;证明&lt;/a&gt;). 
+以下刻画 torsion pair $(𝒯, ℱ)$ 中满足 $\mathrm{Ext}^1$-垂直的对象. 记 $t$ 与 $f$ 是相应的子函子与商函子.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+$𝒯 ∩ (^⟂ 𝒯) = 𝒯 ∩ τ ⁻¹ ℱ$.
+&lt;/li&gt;
+&lt;li&gt;
+$𝒯 ∩ (𝒯^⟂) = 𝒯 ∩ t(𝐢𝐧𝐣)$.
+&lt;/li&gt;
+&lt;li&gt;
+$ℱ ∩ (ℱ^⟂) = ℱ ∩ τ 𝒯$.
+&lt;/li&gt;
+&lt;li&gt;
+$ℱ ∩ (^⟂ ℱ) = ℱ ∩ f(𝐩𝐫𝐨𝐣)$.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;基于对称性, 仅看前两条.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;$𝒯 ∩ (^⟂ 𝒯) = 𝒯 ∩ τ ⁻¹ ℱ$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;给定 $X ∈ 𝒯$, 往证 $\mathrm{Ext}^1(X,  𝒯) = 0$ 当且仅当 $τ X ∈ ℱ$.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+假定 $\mathrm{Ext}^1(X, 𝒯) = 0$. 若 $X$ 投射, 则 $τ M ∈ ℱ$; 若 $X$ 非投射, 则考虑几乎可裂 ses
+$$
+0 → τ X → E → X → 0.
+$$
+若 $τ X ↠ f(τX)$ 是同构, 则证毕. 若不然, $τX ↠ f(τX)$ 通过 $τ X ↪ E$ 分解 (几乎可裂 ses 定义). 此时有交换图 ($▩$ 是推出拉回):
+$$
+\begin{bmatrix}
+ &amp;amp;  &amp;amp; 0 &amp;amp;  &amp;amp; 0 &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; ↓   &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+0 &amp;amp; →  &amp;amp; t( τ  X) &amp;amp; →   &amp;amp; ? &amp;amp; →   &amp;amp; X &amp;amp; →   &amp;amp; 0\\
+ &amp;amp;  &amp;amp; ↓   &amp;amp; ▩  &amp;amp; ↓   &amp;amp;  &amp;amp; ∥   &amp;amp;  &amp;amp; \\
+0 &amp;amp; →   &amp;amp; τ  X &amp;amp; →   &amp;amp; E &amp;amp; →   &amp;amp; X &amp;amp; →   &amp;amp; 0\\
+ &amp;amp;  &amp;amp; ↓   &amp;amp; ↙   &amp;amp; ↓   &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+0 &amp;amp; →   &amp;amp; f( τ  X) &amp;amp; = &amp;amp; f( τ  X) &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp; ↓   &amp;amp;  &amp;amp; ↓   &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp; 0 &amp;amp;  &amp;amp; 0 &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; 
+\end{bmatrix}
+$$
+由假定, $\mathrm{Ext}^1(X, t(τX)) = 0$, 从而第一横行可裂. 由推出保持可裂单, 得 $τX ↪ E$ 可裂, 矛盾.
+&lt;/li&gt;
+&lt;li&gt;
+反之, 若 $τ X ∈ ℱ$, 则 AR 公式表明
+$$
+\mathrm{Ext}^1(X, 𝒯) ≃ D\overline {(𝒯 , τ X)} ↪ D(𝒯 , τ X) = 0.
+$$
+因此 $X ∈ {}^⟂𝒯$.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;$𝒯 ∩ (𝒯^⟂) = 𝒯 ∩ t(𝐢𝐧𝐣)$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;给定 $X ∈ 𝒯$, 往证 $\mathrm{Ext}^1(𝒯, X) = 0$ 当且仅当 $X$ 是某个内射对象的 $t$-部分.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+假定 $\mathrm{Ext}^1(𝒯, X) = 0$. 考虑内射包 $X ↪ I(X)$. 依照 $t$ 的函子性, 得 $X ↪ t(I(X)) ↪ I(X)$. 由于
+$$
+0 → X → t(I(X)) → \frac{t(I(X))}{X} → 0 \quad ∈ 𝒯 .
+$$
+依照 $\mathrm{Ext}^1(𝒯, X) = 0$, 得 ses 可裂. 由 $I$ 与 $t$ 是加法函子, $X$ 必形如内射模的 $t$ 部分.
+&lt;/li&gt;
+&lt;li&gt;
+若 $X$ 是内射对象的 $t$ 部分, 记 $X = tI$. 对 $I$ 的 $(t,f)$-ses 导出, 得
+$$
+\cdots → \underset 0 {\underbrace{(-, fI)|_{𝒯}}} → \mathrm{Ext}^1(-, tI)|_{𝒯} → \underset 0 {\underbrace{\mathrm{Ext}^1(-, I)|_{𝒯}}} → \cdots.
+$$
+从而 $\mathrm{Ext}^1(𝒯, X) = 0$.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-23T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Torsion_Pair_Ext_Orth</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Torsion_Pair_Ext_Orth</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Tilting 对象与 torsion pair</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;(Tilting 对象与 torsion pair, 证明). 对 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;对任意 $M ∈ 𝒯$, 存在满的右 $𝐚𝐝𝐝 (T)$-逼近 $T^n ↠ M$ 使得&lt;/p&gt;
+
+\[0 → K → T^n → M → 0 \quad ∈ 𝒯.\]
+  &lt;/li&gt;
+  &lt;li&gt;$^⟂𝒯 = 𝐚𝐝𝐝(T)$.&lt;/li&gt;
+  &lt;li&gt;$M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.&lt;/li&gt;
+  &lt;li&gt;内射对象必属于 $𝒯$.
+    &lt;blockquote&gt;
+      &lt;p&gt;注: 这是显然的, 因为 $𝒯 = T^⟂ ⊇ 𝐢𝐧𝐣$.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;投射对象若属于 $𝒯$, 则属于 $𝐚𝐝𝐝(T)$.
+    &lt;blockquote&gt;
+      &lt;p&gt;注: 若投射对象 $P ∈ 𝒯 = 𝐠𝐞𝐧 (T)$, 则 $P$ 是某一 $T^n$ 的直和项.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;投射内射对象必属于 $𝐚𝐝𝐝(T)$.
+    &lt;blockquote&gt;
+      &lt;p&gt;注: 投射对象是 $A$ 的直和项, 从而有 $𝐚𝐝𝐝(T)$ 余消解 $P ↪ T → \cdots$. 若其是内射对象, 则第一处单射可裂.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;不显然的命题是前两条.
+&lt;br /&gt;
+若&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-23T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Tilting_Obj_Torsion_Pair</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Tilting_Obj_Torsion_Pair</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>局部 tilting 模诱导的 torsion pair</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(局部 tilting 模诱导的 torsion pair). 局部 tilting 模 $T$ 诱导了以下两类 torsion pair.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$(𝐠𝐞𝐧(T), T^o)$ 是 torsion pair.&lt;/li&gt;
+  &lt;li&gt;$(T^⟂, 𝐜𝐨𝐠(τT))$ 是 torsion pair.&lt;/li&gt;
+  &lt;li&gt;$𝐠𝐞𝐧(T) ⊆ T^⟂$.&lt;/li&gt;
+  &lt;li&gt;以上两个 torsion pair, 均有 $T ∈ 𝒯 ∩ {}^⟂𝒯 = 𝒯 ∩ τ⁻¹ ℱ$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;第一问与&lt;a href=&quot;Gen_Eq_T&quot;&gt;此命题&lt;/a&gt;极其类似. 由 $p.\dim T ≤ 1$, 得 $\mathrm{Ext}^1(-, T)$ 是右正合函子, 因此 $\mathrm{Ext}^1(T,T) = 0$ 蕴含 $𝐠𝐞𝐧(T) ⟂ T$.
+&lt;br /&gt;
+第二问同理. 由 $𝐜𝐨𝐠(τT)$ 对扩张封闭, 从而是 torsion-free class. 仅需证明 $T^⟂ = {}^o𝐜𝐨𝐠(τT)$. 由 AR 公式,&lt;/p&gt;
+
+\[\mathrm{Ext}^1(T, M) ≃ D\overline {(M, τ T)} ≃ D(M, τ T).\]
+
+&lt;p&gt;最后一处同构是因为 $τ M$ 投射 (见 &lt;a href=&quot;AR_Formula&quot;&gt;AR 公式&lt;/a&gt;).
+&lt;br /&gt;
+第三问是直接的, 一般不取等 (若 $T$ 是 tilting 模, 则取等).
+&lt;br /&gt;
+第四问是直接的验证, 等价表述见 &lt;a href=&quot;Gen_Eq_T&quot;&gt;$𝐠𝐞𝐧 = 𝐓$ 的充分条件&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-23T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>$𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;$𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧(X), X^o)$ 是 torsion pair.&lt;/li&gt;
+  &lt;li&gt;若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;仅看第一问. 由 $𝐠𝐞𝐧(X)^o = X^o$, 只需说明 $𝐠𝐞𝐧(X)$ 是 torsion class. 等价地, 只需说明 $𝐠𝐞𝐧(X)$ 对扩张封闭.
+&lt;br /&gt;
+假定 ses $0 → K → M → C → 0$, 其中 $K, C ∈ 𝐠𝐞𝐧(X)$. 由 $\mathrm{Ext}^1(X, 𝐠𝐞𝐧(X))$, 得 ses&lt;/p&gt;
+
+\[0 → (X,K) → (X,M) → (X,C) → 0.\]
+
+&lt;p&gt;此时有正合列的交换图&lt;/p&gt;
+
+\[\begin{bmatrix}
+ &amp;amp;  &amp;amp; ( X,K) ⊗ X &amp;amp; →  &amp;amp; ( X,M) ⊗ X &amp;amp; →  &amp;amp; ( X,C) ⊗ X &amp;amp; →  &amp;amp; 0\\
+ &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; \\
+0 &amp;amp; →  &amp;amp; K &amp;amp; →  &amp;amp; M &amp;amp; →  &amp;amp; C &amp;amp; →  &amp;amp; 0\\
+ &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp; \operatorname{cok}_{K} &amp;amp;  &amp;amp; \operatorname{cok}_{M} &amp;amp;  &amp;amp; \operatorname{cok}_{C} &amp;amp;  &amp;amp;
+\end{bmatrix}.\]
+
+&lt;p&gt;依照&lt;a href=&quot;gen_and_cog&quot;&gt;此结论&lt;/a&gt;, $\operatorname{cok}_X = 0$ 当且仅当 $X ∈ 𝐠𝐞𝐧(X)$. 特别地, 若 $\operatorname{cok}_K$ 与 $\operatorname{cok}_C$ 均为 $0$, 则 $\operatorname{cok}_M = 0$. 因此 $𝐠𝐞𝐧$&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-23T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Gen_Eq_T</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gen_Eq_T</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>AR 公式</title>
+          <description>&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(AR 公式).
+以下是自然同构.
+\(D\underline{(τ⁻¹ N, M)} ≃ \mathrm{Ext}^1(M, N) ≃ D\overline{(N, τM)}.\)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+若 $p.\dim M = 1$, 则 $τ M$ 投射, 故 $\mathrm{Ext}^1(M,N) ≃ D(N, τ M)$.
+&lt;/li&gt;
+&lt;li&gt;
+若 $i.\dim N = 1$, 则 $τ⁻¹ N$ 内射, 故 $\mathrm{Ext}^1(M,N) ≃ D(τ⁻¹ N, M)$.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;待补充.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-23T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/AR_Formula</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR_Formula</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Torsion Pair 等价定义</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(Torsion pair 的等价定义).
+称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.&lt;/li&gt;
+  &lt;li&gt;存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$. 此时, $\ker t = ℱ$, $\operatorname{im} t = 𝒯$.&lt;/li&gt;
+  &lt;li&gt;存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$. 此时, $\ker f = 𝒯$, $\operatorname{im} f = ℱ$.&lt;/li&gt;
+  &lt;li&gt;${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.&lt;/li&gt;
+  &lt;li&gt;$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.&lt;/li&gt;
+  &lt;li&gt;$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.&lt;/li&gt;
+  &lt;li&gt;任意 $𝐪𝐮𝐨𝐭(𝒯)$-滤过对象属于 $𝒯$, 并取 $ℱ := 𝒯^o$.&lt;/li&gt;
+  &lt;li&gt;任意 $𝐬𝐮𝐛(ℱ)$-滤过对象属于 $ℱ$, 并取 $𝒯 := {}^oℱ$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;见下一引理.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(Torsion pair 的等价定义, 基于对称性的简化版本).
+称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.&lt;/li&gt;
+  &lt;li&gt;存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$. 此时, $\ker t = ℱ$, $\operatorname{im} t = 𝒯$.&lt;/li&gt;
+  &lt;li&gt;${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.&lt;/li&gt;
+  &lt;li&gt;$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.&lt;/li&gt;
+  &lt;li&gt;任意 $𝐪𝐮𝐨𝐭(𝒯)$-滤过对象属于 $𝒯$, 并取 $ℱ := 𝒯^o$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;证明顺序是 (1 ⟺ 2) ⇒ 3 ⇒ (4 ⟺ 5).
+&lt;br /&gt;
+(1 ⇒ 2). 若 1., 今断言 ses
+\(θ_M : 0 → tM → M → fM → 0\)
+是唯一的. 若不然, 核与余核的泛性质给出分解
+\(\begin{bmatrix}
+tM &amp;amp; \overset{i}{↪ } &amp;amp; M &amp;amp; \overset{π }{↠ } &amp;amp; fM\\
+α  ⇅  β  &amp;amp;  &amp;amp; ∥  &amp;amp;  &amp;amp; γ  ⇅  δ  \\
+t'M &amp;amp; \underset{i'}{↪  } &amp;amp; M &amp;amp; \underset{π '}{↠  } &amp;amp; f'M
+\end{bmatrix},\)
+使得 $i ∘ α = i’$, 以及 $i’ ∘ β = i$, 这也建立了同构 $tM ≃ t’M$. 同理有 $fM ≃ f’M$. 依照类的选择公理, $t$ 是 $f$ 是函子. 特别地, 考虑 $θ_{tM}$ 知 $t^2M ≃ tM$, 以及 $t fM = 0$.
+&lt;br /&gt;
+(2 ⇒ 1). 容易给出 ses 的构造
+\(0 → tM → M → M / tM → 0.\)
+往后证明 $\operatorname {im} t ⟂_o \ker t$. 容易发现, $\operatorname {im} t$ 中对象形如 $tM$, $\ker t$ 中对象形如 $N/tN$.
+&lt;br /&gt;
+对任意 $φ : tM → N/tN$, 显然 $φ$ 形如 $tM \xrightarrow a N ↠ tN$, 且 $a$ 通过 $tN ↪ N$ 分解. 因此 $φ =0$.
+&lt;br /&gt;
+(1 ⇒ 3). $t$ 函子给出 $(\operatorname{im} t, \ker t)$. 下证明&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$(\operatorname{im} t)^o ⊆ \ker t$. 若 $(-,X)$ 零化一切 $\operatorname{im} t$, 则 $tX ↪ X$ 只能是零态射. 因此, $X ∈ \ker t$.&lt;/li&gt;
+  &lt;li&gt;$^o(\ker t) ⊆ \operatorname{im}(t)$. 若 $(Y,-)$ 零化一切 $\ker t$, 则 $Y ↠ Y/tY$ 只能是零态射. 因此, $Y ∈ \operatorname{im} t$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;(3 ⇒ 4). 实际上, 任意对象类的左垂直 $(^o𝒳)$ 对商对象与扩张封闭, 考虑反变 $\mathrm{Hom}$ 的左正合列即可.
+&lt;br /&gt;
+(4 ⇒ 5). 若 $𝒯$ 对商对象与扩张封闭, 则自然对滤过封闭.
+&lt;br /&gt;
+(5 ⇒ 4). 对任意 $M ∈ 𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒯))$. 取滤过&lt;/p&gt;
+
+\[\textstyle 0 = F_0 M ⊆ F_1 M ⊆ \cdots ⊆ F_n M = M\quad (\frac{F_{p+1}M}{F_p M} ∈ 𝒯).\]
+
+&lt;ol&gt;
+  &lt;li&gt;($𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒯))$ 对商对象封闭). 假定 $Q$ 是 $M$ 的商对象, 记 $π : M ↠ Q$. 此时, $π(F_∙M)$ 是 $Q$ 的滤过, 且 $\frac{π(F_{p+1}M)}{F_pM}$ 是 $\frac{F_{p+1}M}{F_p(M)}$ 的商.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;($𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒯))$ 对扩张封闭). 假定 ses&lt;/p&gt;
+
+\[0 → M \overset i→ E \overset p → N → 0\quad (M,N ∈ 𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒯))).\]
+
+    &lt;p&gt;记 $F_∙ M$ 与 $G_∙ N$ 是 $M$ 与 $N$ 的 $𝐪𝐮𝐨𝐭(𝒯)$-滤过, 拼接以下两则滤过:&lt;/p&gt;
+
+\[0 = i(F_0M) ⊆ i(F_1M) ⊆ \cdots ⊆ i(F_nM) = \operatorname{im}(i)\]
+
+    &lt;p&gt;与&lt;/p&gt;
+
+\[\ker p = p^{-1}(G_0N) ⊆ p^{-1}(G_1N) ⊆ \cdots ⊆ p^{-1}(G_nN) = E.\]
+
+    &lt;p&gt;得 $E$ 的 $𝐪𝐮𝐨𝐭(𝒯)$-滤过.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;(5 ⇒ 1). 往证 $X ∈ 𝒜$ 存在极大的 $𝒯$ 中子对象, 且这一子对象是最大的. 这要求&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$X$ 的子对象构成集合, 且&lt;/li&gt;
+  &lt;li&gt;子对象集关于某种归纳极限封闭.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;此处选取的 Abel 范畴是 $𝒜 = 𝐦𝐨𝐝_A$, 从而满足以上设定 (特别地, $𝐬𝐮𝐛 (X)$ 有限).&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;(证明极大元存在性). 今取 $𝒮 := 𝐬𝐮𝐛 (X) ∩ 𝒯$, 显然 $0 ∈ 𝒮$ 非空, 从而存在极大元 $i : S ↪ X$.&lt;/li&gt;
+  &lt;li&gt;(证明极大元唯一性). 若 $𝒮$ 存在另一极大元 $i’ : S’ ↪ X$, 则单态射的推出 $S + S’ := S \underset{i(S) ∩ i(S’)}⊔ S$ 是 $𝒮$ 中对象. 依照极大元假定, 只能由 $S ≃ S’$, 也就是极大元唯一.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;记极大元 $X_t$. 此时有函子的 ses $0 → X_t → X → \frac{X}{X_t} → 0$, 其中 $(-)_t$ 依照核的泛性质刻画. 依照构造, $((-)_t)_t ≃ (-)_t$. 今断言 $(X / X_t)_t = 0$, 若不然, 则可通过扩张构造 $𝒮$ 中比 $X_t$ 更大的对象. 矛盾.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;4 ⟺ 5 说明, 对象类 $𝒳$ 关于商对象和扩张的闭包, 可通过先取商, 再取扩张实现.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;若 Abel 范畴良幂, 且子对象对归纳极限封闭, 则以上命题等价性的证明仍奏效. 特例: Abel 长度范畴.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-22T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Def_de_TP</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Def_de_TP</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>上同调函子保持弱核</title>
+          <description>&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(上) 同调函子保持弱核.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;只看共变情形. 给定同调函子 $f: 𝒯 → 𝒜$, 则有右正合函子&lt;/p&gt;
+
+\[F: 𝐦𝐨𝐝_𝒯 → 𝒜 ,\quad \mathrm{cok}(h_φ) ↦ \mathrm{cok}(F(φ)).\]
+
+&lt;p&gt;这一函子在相差一个范畴等价的意义下是唯一的. 
+&lt;br /&gt;
+对好三角 $W \xrightarrow u X \xrightarrow v Y$ 与 $X$ 处弱正合的态射列 $K \xrightarrow i X \xrightarrow v Y$, 以上两处复合态射都是 $0$. 依照弱核的泛性质, 存在 $α : W ⇆ K : β$ 使得 $i ∘ α = u$ 与 $u ∘ β = i$.&lt;/p&gt;
+
+\[\begin{bmatrix}
+K &amp;amp; \xrightarrow{i} &amp;amp; X &amp;amp; \xrightarrow{v} &amp;amp; Y\\
+α ⇅ β  &amp;amp;  &amp;amp; ∥  &amp;amp;  &amp;amp; ∥ \\
+W &amp;amp; \xrightarrow{u} &amp;amp; X &amp;amp; \xrightarrow{v} &amp;amp; Y
+\end{bmatrix}.\]
+
+&lt;p&gt;因此 $\mathrm{im}(Fi) = \mathrm{im}(Fu) = \ker(Fv)$. 这说明同调函子 $F$ 保持弱核.&lt;/p&gt;
+&lt;/div&gt;
+
+</description>
+          <pubDate>2025-04-22T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Homological_Wk_Ker</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Homological_Wk_Ker</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>米田嵌入是上同调函子</title>
+          <description>&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;反变的米田嵌入 $𝒯^{\mathrm{op}} → 𝐅𝐮𝐧𝐜𝐭(𝒞, 𝐌𝐨𝐝_k)$ 是上同调函子.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;只需证明一切 $(-,W)&lt;em&gt;{𝒯}$ 是上同调函子. 任意给定三角 $X^∙ ∈ \triangle$, 上链复形 $(X^∙ , W)&lt;/em&gt;{𝒯} ∈ C(k)$ 在 $n$ 处的正合性描述作以下命题:&lt;/p&gt;
+
+&lt;ol&gt;
+对 $f^n : X^n → W$, 复合态射 $[X^{n-1} → X^n → W] = 0$, 当且仅当 $f^n$ 通过 $[X^n → X^{n+1}]$ 分解. 
+&lt;/ol&gt;
+
+&lt;p&gt;对 ${f^{n-1},f^n,f^{n+1}}$ 使用二推三原则, 研究以下三角射即可:&lt;/p&gt;
+
+\[\begin{bmatrix}
+X^{\bullet } &amp;amp;:&amp;amp; \cdots  &amp;amp; \rightarrow  &amp;amp; X^{n-1} &amp;amp; \rightarrow  &amp;amp; X^{n} &amp;amp; \rightarrow  &amp;amp; X^{n} +1 &amp;amp; \rightarrow  &amp;amp; \cdots \\
+\downarrow &amp;amp; &amp;amp;  &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \\
+W^{\bullet }&amp;amp;: &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; W &amp;amp; = &amp;amp; W &amp;amp; \rightarrow  &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; \cdots 
+\end{bmatrix}.\]
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-21T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Yoneda_Homological</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Yoneda_Homological</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>具有投射盖的平坦对象必投射</title>
+          <description>&lt;p&gt;试思考以下问题: 若平坦模有投射盖, 则必是投射模.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;证明见经典教材&lt;a href=&quot;https://link.springer.com/book/10.1007/978-1-4612-0525-8&quot;&gt;环论与模论讲义 (林節玄 著)&lt;/a&gt; 中的习题 Ch6-§4-20, 解答见 (&lt;a href=&quot;https://www.maths.ed.ac.uk/~v1ranick/papers/lam2.pdf#page=126&quot;&gt;此处&lt;/a&gt;).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;特别注意: 以上证明并未使用 &lt;a href=&quot;Lazard_thm&quot;&gt;Lazard 定理&lt;/a&gt; (平坦模是有限生成投射模的滤过余极限), 本质上与下述证明不同.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;若平坦对象具有投射盖, 则其必然是投射对象.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;记 $P \overset π ↠ F$ 是平坦对象的投射盖, 其中 $F = \varinjlim P_i$ 是有限生成投射对象的滤过余极限 (Lazard). 取定所有拉回&lt;/p&gt;
+
+\[\begin{bmatrix}
+&amp;amp;P_i ⊕ Q_i &amp;amp; \xrightarrow{(1 \ 0)}&amp;amp; P_i \\ 
+\substack{g_i}&amp;amp;↓ &amp;amp;  &amp;amp; ↓ &amp;amp;\substack {f_i}\\ 
+&amp;amp;P &amp;amp; \overset π ↠ &amp;amp; F \\ 
+\end{bmatrix}.\]
+
+&lt;p&gt;依照拉回的泛性质, $g_i$ 自动构成滤过系统. 依照 $∐ (P_i ⊕ Q_i) ↠ ∐ P_i$, 得推出拉回方块&lt;/p&gt;
+
+\[\begin{bmatrix}
+ &amp;amp;  &amp;amp; ∐ (P_{i} ⊕ Q_{i}) &amp;amp; ↠   &amp;amp; ∐ P_{i}\\
+ &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; ↓ \\
+∗   &amp;amp; ↪   &amp;amp; ∑ \operatorname{im} g_{i} &amp;amp; ↠   &amp;amp; Σ  \operatorname{im} f_{i}\\
+↓   &amp;amp; \text{PBPO} &amp;amp; ↓   &amp;amp;  &amp;amp; ∥  \\
+\ker π   &amp;amp; ↪   &amp;amp; P &amp;amp; ↠   &amp;amp; F
+\end{bmatrix}.\]
+
+&lt;p&gt;依照投射盖的定义, $∑ \operatorname{im}g_i ↪ P$ 是同构, $∗ → \ker π$ 亦是同构. 因此滤过系统 ${g_i}$ 的滤过余极限即 $P$. 
+&lt;br /&gt;
+&lt;br /&gt;
+以上得到滤过系统的态射 ${f_i} ↪ {g_i} ↠ {f_i}$ 这甚至是链可裂的. 依照余极限的泛性质, 存在形变收缩 $F → P → F$, 因此 $F$ 是投射对象.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-21T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Plat_et_Proj_Cover_Proj</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Plat_et_Proj_Cover_Proj</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴</title>
+          <description>&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Mod_Tri_is_Frobenius&quot;&gt;证明&lt;/a&gt;).
+$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;上同调函子通过米田嵌入分解, 从而 $𝐦𝐨𝐝_{𝒯^{\mathrm{op}}}^{\mathrm{op}} ≃ 𝐦𝐨𝐝_𝒯$. 从而可表函子既是投射对象, 又是内射对象 (反范畴的投射对象). 由于 $𝐦𝐨𝐝_𝒯$ 存在足够投射对象, 故投射对象就是内射对象.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-21T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Mod_Tri_is_Frobenius</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Mod_Tri_is_Frobenius</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>Proof of Lazard's Theorem</title>
-          <description>&lt;div class=&quot;theorem&quot;&gt;
-(平坦对象是投射对象的滤过余极限).
-给定小的加法范畴 $𝒞$, 假定以下提及的滤过余极限存在.
+          <description>&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(平坦对象是投射对象的滤过余极限).
+给定小的加法范畴 $𝒞$, 假定以下提及的滤过余极限存在.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 假定 $𝒞^{\mathrm{op}}$ 有弱核, 则 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 当且仅当 $P$ 是有限表现函子 $\{h_X\}$ 的滤过余极限; 
@@ -21,33 +519,26 @@
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;proof&quot;&gt;
-只需证明第一条. 若 $P$ 平坦, 记 $P = \varinjlim\limits_{i ∈ I} M_∙$ 是限表现函子的滤过余极限. 定义新的余极限系统如下, 其对象是 $φ_{i_k}$, 使得
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;只需证明第一条. 若 $P$ 平坦, 记 $P = \varinjlim\limits_{i ∈ I} M_∙$ 是限表现函子的滤过余极限. 定义新的余极限系统如下, 其对象是 $φ_{i_k}$, 使得&lt;/p&gt;
 
-$$
-e_i := \left[M_i  → h_{X_{i_k}} \xrightarrow {\varphi_{i_k}} P\right]
-$$
+\[e_i := \left[M_i  → h_{X_{i_k}} \xrightarrow {\varphi_{i_k}} P\right]\]
 
-是原滤过系统中指向余极限对象的典范态射. 为证明新系统与原系统共尾, 只需证明对任意给定的
+&lt;p&gt;是原滤过系统中指向余极限对象的典范态射. 为证明新系统与原系统共尾, 只需证明对任意给定的&lt;/p&gt;
 
-$$
-\left[M_1 \xrightarrow φ M_2 \xrightarrow{e_2} P\right] = e_1 = \left[M_1 → h_{X_1} \xrightarrow φ  P\right],
-$$
+\[\left[M_1 \xrightarrow φ M_2 \xrightarrow{e_2} P\right] = e_1 = \left[M_1 → h_{X_1} \xrightarrow φ  P\right],\]
 
-存在可表函子 $h_{X_2}$ 使得下图交换
+&lt;p&gt;存在可表函子 $h_{X_2}$ 使得下图交换&lt;/p&gt;
 
-$$
-\begin{bmatrix}
+\[\begin{bmatrix}
 M_{1} &amp;amp; →  &amp;amp; h_{X_{1}} &amp;amp;  &amp;amp; \\
 ↓  &amp;amp;  &amp;amp; ↓ &amp;amp; ↘  &amp;amp; \\
 M_{2} &amp;amp; →  &amp;amp; h_{X_{2}} &amp;amp; →  &amp;amp; P
-\end{bmatrix}
-$$
+\end{bmatrix}\]
 
-此处先取推出 $M_1 → h_{X_1} ⊕ M_2 → C → 0$. 由于 $C$ 有限表现, 故 $e_2$ 与 $φ$ 诱导的 $C → P$ 通过某有限表现投射对象分解. 这表明安插投射对象所得的新系统也是滤过的. 回顾对 $\varinjlim M_∙$ 的&lt;a href=&quot;Finitely_Presented_Functor&quot;&gt;构造 (2 ⇒ 3)&lt;/a&gt;, 可取满覆盖 $∐\limits_{X ∈ 𝖮𝖻(𝒞)}h_{X^n} ↠ M$ 以上构造的 $h_{X_i}$ 属于原系统, 共尾性证毕. 
+&lt;p&gt;此处先取推出 $M_1 → h_{X_1} ⊕ M_2 → C → 0$. 由于 $C$ 有限表现, 故 $e_2$ 与 $φ$ 诱导的 $C → P$ 通过某有限表现投射对象分解. 这表明安插投射对象所得的新系统也是滤过的. 回顾对 $\varinjlim M_∙$ 的&lt;a href=&quot;Finitely_Presented_Functor&quot;&gt;构造 (2 ⇒ 3)&lt;/a&gt;, 可取满覆盖 $∐\limits_{X ∈ 𝖮𝖻(𝒞)}h_{X^n} ↠ M$ 以上构造的 $h_{X_i}$ 属于原系统, 共尾性证毕. 
 &lt;br /&gt;
 &lt;br /&gt;
-若反之, 选定函子 $F = \varinjlim h_X$ 为可表函子的滤过余极限, 则 $(h_X ⊗ -)$ 是 $𝐌𝐨𝐝_{𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}}$ 中正合函子的滤过余极限. 依照 $𝐌𝐨𝐝_k$ 是 Ab5 范畴, 故 $F ⊗-$ 是正合函子, 从而平坦.  
+若反之, 选定函子 $F = \varinjlim h_X$ 为可表函子的滤过余极限, 则 $(h_X ⊗ -)$ 是 $𝐌𝐨𝐝_{𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}}$ 中正合函子的滤过余极限. 依照 $𝐌𝐨𝐝_k$ 是 Ab5 范畴, 故 $F ⊗-$ 是正合函子, 从而平坦.&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
@@ -59,47 +550,36 @@ $$
       
         <item>
           <title>Finitely Presented Flat is Projective</title>
-          <description>&lt;div class=&quot;theorem&quot;&gt;
-(有限表现 + 平坦 = 投射).
-给定 Karoubi 的, 本质小的加法范畴 $𝒞$. 若 $F ∈ 𝐦𝐨𝐝_𝒞$ 平坦, 则 $F$ 投射.
+          <description>&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(有限表现 + 平坦 = 投射).
+给定 Karoubi 的, 本质小的加法范畴 $𝒞$. 若 $F ∈ 𝐦𝐨𝐝_𝒞$ 平坦, 则 $F$ 投射.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;proof&quot;&gt;
-记 $F = \mathrm{cok}(h_{X \xrightarrow f Y})$. 考虑对偶
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;记 $F = \mathrm{cok}(h_{X \xrightarrow f Y})$. 考虑对偶&lt;/p&gt;
 
-$$
-𝔇 : 𝐌𝐨𝐝_{𝒞} → 𝐌𝐨𝐝_{𝒞^{\mathrm{op}}},\quad L ↦ (L(∙), C). 
-$$
+\[𝔇 : 𝐌𝐨𝐝_{𝒞} → 𝐌𝐨𝐝_{𝒞^{\mathrm{op}}},\quad L ↦ (L(∙), C).\]
 
-其中 $C$ 是 $𝐌𝐨𝐝_k$ 中的内射余生成元. 往证 $F$ 提升一切满态射 $α : L → R$, 也就是证明单态射
+&lt;p&gt;其中 $C$ 是 $𝐌𝐨𝐝_k$ 中的内射余生成元. 往证 $F$ 提升一切满态射 $α : L → R$, 也就是证明单态射&lt;/p&gt;
 
-$$
-𝔇 𝖭𝖺𝗍[F, R]\xrightarrow {𝔇 α} 𝔇  𝖭𝖺𝗍[F, L]. 
-$$
+\[𝔇 𝖭𝖺𝗍[F, R]\xrightarrow {𝔇 α} 𝔇  𝖭𝖺𝗍[F, L].\]
 
-对可表函子 $h_X$,
+&lt;p&gt;对可表函子 $h_X$,&lt;/p&gt;
 
-$$
-𝔇 𝖭𝖺𝗍[h_X, L] ≃ 𝔇LX = (LX, C)≃ h_X(∙) ⊗ (L(∙), C). 
-$$
+\[𝔇 𝖭𝖺𝗍[h_X, L] ≃ 𝔇LX = (LX, C)≃ h_X(∙) ⊗ (L(∙), C).\]
 
-此时,
+&lt;p&gt;此时,&lt;/p&gt;
 
-$$
-\begin{bmatrix}
+\[\begin{bmatrix}
 𝔇 (RX) &amp;amp; ≃  &amp;amp; h_{X} ⊗ (R,C) &amp;amp; ↪  &amp;amp; h_{X} ⊗ (L,C) &amp;amp; ≃  &amp;amp; 𝔇 (LX)\\
 ↓  &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; ↓ \\
 𝔇 (RY) &amp;amp; ≃  &amp;amp; h_{Y} ⊗ (R,C) &amp;amp; ↪ &amp;amp; h_{Y} ⊗ (L,C) &amp;amp; ≃  &amp;amp; 𝔇 (LY)\\
 ↓  &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; ↓ \\
 𝔇 ([F,R]) &amp;amp; ≃  &amp;amp; F⊗ (R,C) &amp;amp; \dashrightarrow  &amp;amp; F⊗ (L,C) &amp;amp; ≃  &amp;amp; 𝔇 ([F,L])
-\end{bmatrix}.
-$$
+\end{bmatrix}.\]
 
-依照蛇引理, $𝔇([F,R]) ↪ 𝔇([F,L])$ 是单态射, 从而 $F$ 提升一切满态射. 依照 $F$ 投射, 有限表现, 以及范畴 Karoubi, 得 $F$ 可表.  
+&lt;p&gt;依照蛇引理, $𝔇([F,R]) ↪ 𝔇([F,L])$ 是单态射, 从而 $F$ 提升一切满态射. 依照 $F$ 投射, 有限表现, 以及范畴 Karoubi, 得 $F$ 可表.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;note&quot;&gt;
-这一证明完全照抄模范畴的结论.
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;这一证明完全照抄模范畴的结论.&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
@@ -111,31 +591,25 @@ $$
       
         <item>
           <title>$𝐅𝐩 → 𝐏𝐥𝐚𝐭 → 𝐏𝐫𝐨𝐣$</title>
-          <description>&lt;div class=&quot;proposition&quot;&gt;
-(有限表现 → 投射 通过平坦对象分解).
-假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.
+          <description>&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;(有限表现 → 投射 通过平坦对象分解).
+假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;proof&quot;&gt;
-若 $F = \mathrm{cok}(h_X\xrightarrow {h_f} h_Y)$, 仅需证明存在满射 $PZ → [F,P]$ (此情形下, 下交换图底行正合).
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;若 $F = \mathrm{cok}(h_X\xrightarrow {h_f} h_Y)$, 仅需证明存在满射 $PZ → [F,P]$ (此情形下, 下交换图底行正合).&lt;/p&gt;
 
-$$
-\begin{bmatrix}
+\[\begin{bmatrix}
 𝖭𝖺𝗍(F,P) &amp;amp; ↪ &amp;amp; 𝖭𝖺𝗍(h_{Y} ,P) &amp;amp; \xrightarrow{h_{f}^{∗ }} &amp;amp; 𝖭𝖺𝗍(h_{X} ,P)\\
 ↟  &amp;amp;  &amp;amp; ∥  &amp;amp;  &amp;amp; ∥ \\
 PZ &amp;amp; ⇢ &amp;amp; PY &amp;amp; \xrightarrow{Pf} &amp;amp; PX \\ 
 ∥ &amp;amp;  &amp;amp; ∥ &amp;amp;  &amp;amp; ∥ \\
 P ⊗ h^Z &amp;amp; \xrightarrow{h^g} &amp;amp; P ⊗ h^Y &amp;amp; \xrightarrow{h^f} &amp;amp; P ⊗ h^X
-\end{bmatrix}.
-$$
+\end{bmatrix}.\]
 
-由于 $P$ 平坦, 故 
+&lt;p&gt;由于 $P$ 平坦, 故&lt;/p&gt;
 
-$$
-𝖭𝖺𝗍(F,P) ≃ P ⊗ \ker(h^Y \xrightarrow{h^f} h^X).
-$$
+\[𝖭𝖺𝗍(F,P) ≃ P ⊗ \ker(h^Y \xrightarrow{h^f} h^X).\]
 
-此时取 $Z \xrightarrow {g^{\mathrm{op}}} Y$ 为 $Y\xrightarrow{f^{\mathrm{op}}}X$ 的弱核即可.
+&lt;p&gt;此时取 $Z \xrightarrow {g^{\mathrm{op}}} Y$ 为 $Y\xrightarrow{f^{\mathrm{op}}}X$ 的弱核即可.&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
@@ -147,8 +621,17 @@ $$
       
         <item>
           <title>Equivalent Definitions of Finitely Presented Functor</title>
-          <description>&lt;div class=&quot;theorem&quot;&gt;
-(有限表现函子的等价定义) 选定 $F ∈ 𝐌𝐨𝐝_𝒞$, 以下等价:
+          <description>&lt;p&gt;对模范畴而言, $M ∈ 𝐌𝐨𝐝 _R$ 是有限表现模, 若以下等价命题成立:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;存在投射模的态射, 使得 $R^m → R^n → M → 0$ 是模的有限表现;&lt;/li&gt;
+  &lt;li&gt;$M ⊗ - : 𝐌𝐨𝐝_{R^{\mathrm{op}}} → 𝐀𝐛$ 与任意指标集的积 $∏$ 交换;&lt;/li&gt;
+  &lt;li&gt;$\mathrm{Hom}_R(M, -)$ 保持滤过余极限.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;证明见 &lt;a href=&quot;https://ncatlab.org/nlab/show/finitely+presented+module&quot;&gt;n-lab&lt;/a&gt;. 以下将这一结论迁移至有限表现函子范畴 $𝐦𝐨𝐝_𝒞$ 上.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(有限表现函子的等价定义) 选定 $F ∈ 𝐌𝐨𝐝_𝒞$, 以下等价:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 (有限表现函子) $F ∈ 𝐦𝐨𝐝_𝒞$;
@@ -165,71 +648,53 @@ $F ⊗ -: 𝐌𝐨𝐝_{𝒞 ^{\mathrm{op}}} → 𝐌𝐨𝐝_k$ 保持任意积
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-&lt;div class=&quot;proof&quot;&gt;
-证明顺序: 2 ⟺ 1 ⟺ 3.
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;证明顺序: 2 ⟺ 1 ⟺ 3.
 &lt;br /&gt;
 &lt;br /&gt;
 (1 ⟹ 2). 记 $F = \mathrm{cok}(h_{X \xrightarrow φ Y})$, 则对任意滤过系统 $G_∙$,
-$$
-\begin{bmatrix}
+\(\begin{bmatrix}
 0&amp;amp;\to &amp;amp;(\mathrm{cok}(h_φ),\varinjlim G_∙) &amp;amp;\to &amp;amp;(h_Y,\varinjlim G_∙)&amp;amp;\to &amp;amp;(h_X,\varinjlim G_∙)\\
 &amp;amp;&amp;amp;\downarrow&amp;amp;&amp;amp;\downarrow&amp;amp;&amp;amp;\downarrow&amp;amp;&amp;amp;\\
 0&amp;amp;\to &amp;amp;\varinjlim G_∙ (\mathrm{cok}(φ))&amp;amp;\to &amp;amp;\varinjlim G_∙ (Y)&amp;amp;\to &amp;amp;\varinjlim G_∙ (X)
-\end{bmatrix}.
-$$
+\end{bmatrix}.\)
 依照 $𝐌𝐨𝐝_k$ 是 AB5 范畴, 下一行是正合列. 考虑自然同构
-$$
-(h_Z, \varinjlim G_∙)\xlongequal[\sim]{\text{米田引理}}(\varinjlim G_\bullet)(X)\xlongequal{\text{定义}}\varinjlim G_∙ (X).
-$$
+\((h_Z, \varinjlim G_∙)\xlongequal[\sim]{\text{米田引理}}(\varinjlim G_\bullet)(X)\xlongequal{\text{定义}}\varinjlim G_∙ (X).\)
 由此得自然同构
-$$
-(\mathrm{cok}(h_φ),\varinjlim G_∙)  ≃ \varinjlim G_∙ (\mathrm{cok}(φ)) ≃ \varinjlim(\mathrm{cok}(h_φ), G_∙) . 
-$$
+\((\mathrm{cok}(h_φ),\varinjlim G_∙)  ≃ \varinjlim G_∙ (\mathrm{cok}(φ)) ≃ \varinjlim(\mathrm{cok}(h_φ), G_∙) .\)
 &lt;br /&gt;
 &lt;br /&gt;
-(2 ⇒ 1) 记余极限 $∐\limits_{i ∈ I} h_{X_i} ↠ \varinjlim\limits_{i ∈ I} h_X = F$, 定义滤过系统 $\{(L, I_0), ≤ \}$. 其中 $I_0 ⊂ I$ 是有限集, $L$ 是有限生成的 (可表函子的商). 称 $(L, I_0) ≤ (H, J_0)$, 当且仅当 $L ↪ H$ 且 $I_0 ⊂ J_0$, 如下图所示
-$$
-\begin{bmatrix}
+(2 ⇒ 1) 记余极限 $∐\limits_{i ∈ I} h_{X_i} ↠ \varinjlim\limits_{i ∈ I} h_X = F$, 定义滤过系统 ${(L, I_0), ≤ }$. 其中 $I_0 ⊂ I$ 是有限集, $L$ 是有限生成的 (可表函子的商). 称 $(L, I_0) ≤ (H, J_0)$, 当且仅当 $L ↪ H$ 且 $I_0 ⊂ J_0$, 如下图所示
+\(\begin{bmatrix}
 H &amp;amp; \hookrightarrow  &amp;amp; K\cap \coprod _{i\in J_{0}} h_{X_{i}} &amp;amp; \hookrightarrow  &amp;amp; \coprod _{i\in J_{0}} h_{X_{i}} &amp;amp;  &amp;amp; \\
 \downarrow  &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \\
 L &amp;amp; \hookrightarrow  &amp;amp; K\cap \coprod _{i\in I_{0}} h_{X_{i}} &amp;amp; \hookrightarrow  &amp;amp; \coprod _{i\in I_{0}} h_{X_{i}} &amp;amp;  &amp;amp; \\
 &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \\
 &amp;amp;  &amp;amp; K &amp;amp; \hookrightarrow  &amp;amp; \coprod _{i\in I} h_{X_{i}} &amp;amp; \twoheadrightarrow  &amp;amp; F
-\end{bmatrix}.
-$$
-下检验这一偏序集是滤过的.
+\end{bmatrix}.\)
+下检验这一偏序集是滤过的.&lt;/p&gt;
 &lt;ol&gt;
 对 $\{(L_i, I_i)\}_{i = 1,2}$, 形式地定义 $L_1 + L_2$ 为 $\{L_i ↪ K ∩ ∐\limits_{I_1 ∪ I_2} h_i\}_{i=1,2}$ 拉回之推出. 由于 $L_1 + L_2$ 是 $L_1 ⊕ L_2$ 的商, 从而是有限生成的. 因此 $(L_1 + L_2, I_1 ∪ I_2)$ 是两者的公共上界.
 &lt;/ol&gt;
-对 $0 → L → ∐\limits_{I_0} h_{x_i} → \frac{∐_{I_0} h_{x_i}}{L} → 0$ 取滤过余极限, 得 
-$$
-F = \varinjlim\limits_{(L, I_0)} \mathrm{cok}(L ↪ ∐\limits_{x ∈ I_0} h_{x}). 
-$$
-这说明 $F$ 是有限表现函子的滤过余极限 (记 $F = \varinjlim M_∙$). 依照假定,  
-$$
-\mathrm{id}_F ∈ (F,F) ≃ \varinjlim (F, M_∙),
-$$
-从而 $\mathrm{id}_F$ 通过某一有限表现函子 $M_∙$ 分解. 
+&lt;p&gt;对 $0 → L → ∐\limits_{I_0} h_{x_i} → \frac{∐&lt;em&gt;{I_0} h&lt;/em&gt;{x_i}}{L} → 0$ 取滤过余极限, 得 
+\(F = \varinjlim\limits_{(L, I_0)} \mathrm{cok}(L ↪ ∐\limits_{x ∈ I_0} h_{x}).\)
+这说明 $F$ 是有限表现函子的滤过余极限 (记 $F = \varinjlim M_∙$). 依照假定,&lt;br /&gt;
+\(\mathrm{id}_F ∈ (F,F) ≃ \varinjlim (F, M_∙),\)
+从而 $\mathrm{id}&lt;em&gt;F$ 通过某一有限表现函子 $M&lt;/em&gt;∙$ 分解. 
 &lt;br /&gt;
 &lt;br /&gt;
 (1 ⇒ 3) 选定 $F = \mathrm{cok}(h_{X\xrightarrow φ Y})$, 依照直积的正合性, 以下是正合列的交换图 
-$$
-\begin{bmatrix}
+\(\begin{bmatrix}
 h_X\otimes \prod-&amp;amp;\to&amp;amp;h_Y\otimes \prod-&amp;amp;\to&amp;amp;F\otimes \prod-&amp;amp;\to&amp;amp;0\\
 \downarrow&amp;amp;&amp;amp;\downarrow&amp;amp;&amp;amp;\downarrow&amp;amp;&amp;amp;\\
 \prod h_X\otimes-&amp;amp;\to&amp;amp;\prod h_Y\otimes-&amp;amp;\to&amp;amp;\prod F\otimes- &amp;amp;\to&amp;amp;0
-\end{bmatrix}. 
-$$
+\end{bmatrix}.\)
 左侧竖向同构, 从而是推出方块, 故右两项同构.
 &lt;br /&gt;
 &lt;br /&gt;
-(3 ⇒ 1) 由于 $𝒞$ 本质小, 将自然变换 $\mathrm{id}_F$ 视作集合
-$$
-∏\limits_{(M,N) ∈ 𝖮𝖻(X) × 𝖮𝖻(Y)}(FM,FN)^{(FM,FN)}
-$$
+(3 ⇒ 1) 由于 $𝒞$ 本质小, 将自然变换 $\mathrm{id}&lt;em&gt;F$ 视作集合
+\(∏\limits_{(M,N) ∈ 𝖮𝖻(X) × 𝖮𝖻(Y)}(FM,FN)^{(FM,FN)}\)
 中的一个元素. 依照函子性, 存在自然同构 $(FM, FN) = F ⊗ 𝖭𝖺𝗍(h^N,h^M)$. 因此有
-$$
-\begin{align*}
+\(\begin{align*}
 &amp;amp;\  ∏\limits_{(M,N) ∈ 𝖮𝖻(X) × 𝖮𝖻(Y)}(FM,FN)^{(FM,FN)}\\ 
 ≃ &amp;amp;\  ∏\limits_{(M,N) ∈ 𝖮𝖻(X) × 𝖮𝖻(Y)}(F ⊗ 𝖭𝖺𝗍 (h^N, h^M))^{(FM,FN)}\\ 
 ≃ &amp;amp;\ F ⊗ ∏\limits_{(M,N) ∈ 𝖮𝖻(X) × 𝖮𝖻(Y)}(𝖭𝖺𝗍 (h^N, h^M))^{(FM,FN)}\\ 
@@ -237,18 +702,98 @@ $$
 ≃ &amp;amp;\ \varinjlim \left(h_{X_i} ⊗ ∏\limits_{(M,N) ∈ 𝖮𝖻(X) × 𝖮𝖻(Y)}(𝖭𝖺𝗍 (h^N, h^M))^{(FM,FN)}\right)\\ 
 ≃ &amp;amp;\ \varinjlim ∏\limits_{(M,N) ∈ 𝖮𝖻(X) × 𝖮𝖻(Y)}(Y_∙ ⊗ 𝖭𝖺𝗍 (h^N, h^M))^{(FM,FN)}\\
 ≃ &amp;amp;\ \varinjlim ∏\limits_{(M,N) ∈ 𝖮𝖻(X) × 𝖮𝖻(Y)}(Y_∙ (M), Y_∙ (N))^{(FM,FN)}.
-\end{align*}
-$$
-以上将 $F$ 表示作有限表现函子的滤过余极限 $\varinjlim Y_∙$, 每一 $Y_i$ 均与 $∏$ 交换. 从而 $\mathrm{id}_F$ 是某一 $𝖭𝖺𝗍(Y_i, F)$ 的像. 此时存在满的自然变换 $Y_i → F$, 得 $F$ 有限生成. 取 $𝐌𝐨𝐝_{𝒞}$ 的短正合列
-$$
-0 → K → h_{X} → F → 0.
-$$
-由于后两项保持积, 蛇引理给出函子的满的自然变换 $(K ⊗ ∏ -) ↠ ∏(K ⊗ -)$. 基于类似的论证, 存在满态射 $h_{Y_j} ↠ K$ , 因此 $h_{Y_j} → h_{X_i} → F → 0$ 正合.
+\end{align*}\)
+以上将 $F$ 表示作有限表现函子的滤过余极限 $\varinjlim Y&lt;/em&gt;∙$, 每一 $Y_i$ 均与 $∏$ 交换. 从而 $\mathrm{id}&lt;em&gt;F$ 是某一 $𝖭𝖺𝗍(Y_i, F)$ 的像. 此时存在满的自然变换 $Y_i → F$, 得 $F$ 有限生成. 取 $𝐌𝐨𝐝&lt;/em&gt;{𝒞}$ 的短正合列
+\(0 → K → h_{X} → F → 0.\)
+由于后两项保持积, 蛇引理给出函子的满的自然变换 $(K ⊗ ∏ -) ↠ ∏(K ⊗ -)$. 基于类似的论证, 存在满态射 $h_{Y_j} ↠ K$ , 因此 $h_{Y_j} → h_{X_i} → F → 0$ 正合.&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
           <link>https://zhangchenchengsjtu.github.io/website/posts/Finitely_Presented_Functor</link>
           <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Finitely_Presented_Functor</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>有可数积或可数余积的三角范畴必 Karoubi</title>
+          <description>&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(有可数积或可数余积的三角范畴必 Karoubi, &lt;a href=&quot;Countable_Karoubi&quot;&gt;证明&lt;/a&gt;).
+三角范畴 Karoubi 的一个充分条件: 若三角范畴有可数积或可数余积, 则 Karoubi.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;范畴 Karoubi, 当且仅当其反范畴亦然. 不妨假定 $𝒯$ 有可数积, 对幂等自同态 $f ∈ \mathrm{End}(X)$ 定义&lt;/p&gt;
+
+\[∏_ℕX \xrightarrow[:=-e_L] {1-f+fL}∏_ℕX ,\quad ∏_ℕX \xrightarrow[:=-e_R] {1-f+fR}∏_ℕX.\]
+
+&lt;p&gt;此处 $L$ 是左移算子 (满), $R$ 是右移算子 (满). 计算知&lt;/p&gt;
+
+\[e_Le_R = 1,\quad e_Re_L = 1-(f,0,\ldots).\]
+
+&lt;p&gt;在三角范畴中, $e_L$ 可裂满, 从而 $\ker (e_L)$ 存在, 因此 $(1-f)$ 存在核. 对称地, $𝒯$ Karoubi.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;以上实际上是在取 $\cdots → X \xrightarrow f X$ 的同伦极限.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-21T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Countable_Karoubi</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Countable_Karoubi</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>余反射子范畴与反变有限子范畴</title>
+          <description>&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;(余反射与反变有限).
+取加法范畴 $𝒯$ 与本质小的同构闭全子范畴 $ℬ$. 假定 $ℬ$  Karoubi , $ℬ^{\mathrm{op}}$ 存在弱核, 且 $𝐦𝐨𝐝_{ℬ}$ 存在投射盖 (例如 Krull-Schmidt 三角范畴). 此时 $ℬ$ 余反射, 当且仅当其反变有限.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;若 $ℬ$ 余反射, 记嵌入的右伴随 $t$, 即&lt;/p&gt;
+
+\[(X, t(A))_{ℬ} ≃ (i(X), A)_{𝒯}.\]
+
+&lt;p&gt;任意 $X ∈ 𝒯$ 都有预盖 $ε_X: t(X) → X$, 因为&lt;/p&gt;
+
+\[(i(A), ε_X)_{𝒜} ≃ \mathrm{id}_{(A, t(X))}.\]
+
+&lt;p&gt;反之, 若 $ℬ$ 反变有限, 以下求解 $A ∈ 𝒯$ 在 $ℬ$ 中的右伴随像. 记&lt;/p&gt;
+
+\[(i(-), A)_{𝒯} ∈ ℬ ^{\mathrm{op}} → 𝐌𝐨𝐝_k.\]
+
+&lt;p&gt;这一函子是上同调函子, 从而是平坦对象. 再由 $ℬ$ 反变有限, 存在恒满的态射族 $(ℬ, X\xrightarrow φ A)_{𝒯}$. 因此&lt;/p&gt;
+
+\[h_X ↠ (i(-), A)_{𝒯} \quad ∈ 𝐦𝐨𝐝_ℬ\]
+
+&lt;p&gt;由于平坦对象 $(i(-), A)_{𝒯}$ 存在投射盖, 且 $𝒯^{\mathrm{op}}$ 存在弱余核, 从而只能是投射对象 (&lt;a href=&quot;Fp_et_Plat_est_Proj&quot;&gt;证明&lt;/a&gt;). 这一对象也是有限生成的. 再由 Karoubi 性, 该函子可表, 因此 $i$ 存在右伴随.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;假定 $ℬ$ Karoubi, 存在弱核. 此时 $ℬ$ 余反射, 当且仅当其反变有限.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;若 $ℬ$ 余反射, 则反变有限 (见前一命题).&lt;/p&gt;
+
+&lt;p&gt;若 $ℬ$ 反变有限, 对任意 $A ∈ 𝒯$ 构造
+\(X_K \xrightarrow c K \xrightarrow b X_A \xrightarrow a A.\)
+其中 $X_M → M$ 是预盖, $b$ 是 $a$ 的弱核. 此时有正合列
+\((-, X_K)_ℬ → (-,X_A)_ℬ → (i(-),A)_𝒯 → 0.\)
+由于 $(i(-),A)_𝒯$ 是有限表现的平坦对象, 从而投射 (&lt;a href=&quot;Plat_et_Proj_Cover_Proj&quot;&gt;证明&lt;/a&gt;). 再由 Karoubi 性, 该函子可表, 因此 $i$ 存在右伴随.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;总结地看, 从余反射 (反射) 到反变有限的论证仅使用了伴随函子的单位与余单位. 反之, 需要参照模论中的一些定理.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+有投射盖的平坦模是投射模, &lt;a href=&quot;Fp_et_Plat_est_Proj&quot;&gt;函子版本&lt;/a&gt;.
+&lt;/li&gt;
+&lt;li&gt;
+有限表现的平坦模是投射模, &lt;a href=&quot;Plat_et_Proj_Cover_Proj&quot;&gt;函子版本&lt;/a&gt;.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;此处, 可表对应投射对象.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-21T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Coreflexive_Contravariantly_Finite</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Coreflexive_Contravariantly_Finite</guid>
         </item>
       
     
@@ -283,8 +828,9 @@ $$
 
 &lt;p&gt;&lt;em&gt;Solution&lt;/em&gt;. 第一问是&lt;a href=&quot;https://czhang271828.github.io/Linear-algebra/2024%20%E7%A7%8B-%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/2023/mess%20-%20%E5%89%AF%E6%9C%AC/%E5%B0%8F%E6%B5%8B%E8%AF%95%E5%8D%B7.pdf&quot;&gt;原题 (去年试卷第三题)&lt;/a&gt;的弱化版本 (少了一次求导), 思路完全相同. 考虑换元 ($x := y + 1$) 即可. 此时&lt;/p&gt;
 
-&lt;p&gt;\(g(y) := f(x) = f(y+1) = \frac{(y+1)^p - 1}{(y+1) - 1} = y^{p-1} + \binom{p}{1} y^{p-2} + \cdots + \binom{p}{p-1} y^0.\)
-依照 Eisenstein 判别法, 非最高次项均是 $p$ 的倍数, 常数项不是 $p^2$ 的倍数. 因此 $g$ 与 $f$ 均不可约.&lt;/p&gt;
+\[g(y) := f(x) = f(y+1) = \frac{(y+1)^p - 1}{(y+1) - 1} = y^{p-1} + \binom{p}{1} y^{p-2} + \cdots + \binom{p}{p-1} y^0.\]
+
+&lt;p&gt;依照 EisenStein 判别法, 非最高次项均是 $p$ 的倍数, 常数项不是 $p^2$ 的倍数. 因此 $g$ 与 $f$ 均不可约.&lt;/p&gt;
 
 &lt;p&gt;第二问是&lt;a href=&quot;https://czhang271828.github.io/Linear-algebra/Notes/27Feb%20(%E4%B9%A0%E9%A2%98%E8%AF%BE)/27Feb2025%20(rmy%20%E7%8F%AD).pdf&quot;&gt;原题 (Mar27 习题课)&lt;/a&gt;.&lt;/p&gt;
 
@@ -302,7 +848,7 @@ $$
     &lt;p&gt;(10 points). Assume that $a,b ∈ ℂ$ are two complex numbers. Prove the following two subspaces of $ℂ[x]$,&lt;/p&gt;
 
 \[\begin{aligned}
- &amp;amp; V_a=\{f(x) \in \mathbb{C}[x] \mid f(a)=0\}, \\
+ &amp;amp; V_a=\{f(x) \in \mathbb{C}[x] \mid f(a)=0\}, \\[6pt]
  &amp;amp; V_b=\{g(x) \in \mathbb{C}[x] \mid g(b)=0\} ,
  \end{aligned}\]
 
@@ -361,17 +907,17 @@ $$
     &lt;p&gt;There exists some $α ∈ V$ such that $α ∉ V_1 ∪ V_2 ∪ \cdots ∪ V_s$;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;there exists a basis of $V, ε _1, ε _2, \ldots, ε _n$, such that&lt;/p&gt;
+    &lt;p&gt;There exists a basis of $V, ε _1, ε _2, \ldots, ε _n$, such that&lt;/p&gt;
 
-\[\left\{ε _1, ε _2, \cdots, ε _n\right\} ⋂ \left(V_1 ∪  V_2 ∪  \cdots ∪  V_s\right)=∅.\]
+\[\left\{ε _1, ε _2, \ldots, ε _n\right\} ⋂ \left(V_1 ∪  V_2 ∪  \cdots ∪  V_s\right)=∅.\]
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;em&gt;Solution&lt;/em&gt;. 对任意 $x ∈ 𝔽$ 构造 Vandermonde (列) 向量&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Solution&lt;/em&gt;. 对任意 $x ∈ 𝔽$ 构造 VanDerMonde (列) 向量&lt;/p&gt;
 
 \[\{v (x) = (1,x,x^2,\ldots, x^{n-1}) ∣ x ∈ 𝔽\},\]
 
-&lt;p&gt;这一无限集是线性无关组.&lt;/p&gt;
+&lt;p&gt;这一无限集中的任意 $n$ 个向量是线性无关的.&lt;/p&gt;
 
 &lt;p&gt;第一问: 每个 $V_i$ 只能包含有限个 $v(x)$.&lt;/p&gt;
 
@@ -451,78 +997,55 @@ $$
       
         <item>
           <title>几乎可裂态射的结构</title>
-          <description>&lt;div class=&quot;theorem&quot;&gt;
-(几乎可裂态射的结构). 以下是左右几乎可裂态射的结构.
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(几乎可裂态射的结构). 以下是左右几乎可裂态射的结构.&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-左几乎可裂态射的来源 $s(f)$ 是不可约的.
-&lt;/li&gt;
-&lt;li&gt;
-左几乎可裂态射 $f$ 是单的, 当且仅当 $s(f) ∉ 𝐢𝐧𝐣$.
-&lt;/li&gt;
-&lt;li&gt;
-左几乎可裂态射 $s(f) ∈ 𝐢𝐧𝐣$, 则形如 $I → \mathrm{Bot}(I) ⊕ \cdots$.
-&lt;/li&gt;
-&lt;li&gt;
-右几乎可裂态射的去向 $t(f)$ 是不可约的.
-&lt;/li&gt;
-&lt;li&gt;
-右几乎可裂态射 $f$ 是满的, 当且仅当 $t(f) ∉ 𝐩𝐫𝐨𝐣$.
-&lt;/li&gt;
-&lt;li&gt;
-右几乎可裂态射 $t(f) ∈ 𝐩𝐫𝐨𝐣$, 则形如 $\cdots ⊕ \mathrm{Rad}(X) → X$.
-&lt;/li&gt;
+  &lt;li&gt;左几乎可裂态射的来源 $s(f)$ 是不可约的.&lt;/li&gt;
+  &lt;li&gt;左几乎可裂态射 $f$ 是单的, 当且仅当 $s(f) ∉ 𝐢𝐧𝐣$.&lt;/li&gt;
+  &lt;li&gt;左几乎可裂态射 $s(f) ∈ 𝐢𝐧𝐣$, 则形如 $I → \mathrm{Bot}(I) ⊕ \cdots$.&lt;/li&gt;
+  &lt;li&gt;右几乎可裂态射的去向 $t(f)$ 是不可约的.&lt;/li&gt;
+  &lt;li&gt;右几乎可裂态射 $f$ 是满的, 当且仅当 $t(f) ∉ 𝐩𝐫𝐨𝐣$.&lt;/li&gt;
+  &lt;li&gt;右几乎可裂态射 $t(f) ∈ 𝐩𝐫𝐨𝐣$, 则形如 $\cdots ⊕ \mathrm{Rad}(X) → X$.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;proof&quot;&gt;
-由对称性, 只需证明前三条.  
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;由对称性, 只需证明前三条.&lt;br /&gt;
+&lt;br /&gt;
+假定存在 $X_1 ⊕ X_2 \xrightarrow{(f_1 \ f_2)} Z$ 类型的几乎可裂态射 (假定 $X_i ≠ 0$), 则非可裂单的 $p_i : X_1 ⊕ X_2 → x_i$ 通过 $(f_1 \ f_2)$ 分解, 得 $r_i$. 注意到&lt;/p&gt;
 
-&lt;br /&gt;  
-&lt;br /&gt;  
+\[X_1 ⊕ X_2 \xrightarrow{(f_1 \ f_2)} Z \xrightarrow{(r_1 \ r_2)} X_1 ⊕ X_2\]
 
-假定存在 $X_1 ⊕ X_2 \xrightarrow{(f_1 \ f_2)} Z$ 类型的几乎可裂态射 (假定 $X_i ≠ 0$), 则非可裂单的 $p_i : X_1 ⊕ X_2 → x_i$ 通过 $(f_1 \ f_2)$ 分解, 得 $r_i$. 注意到
-$$
-X_1 ⊕ X_2 \xrightarrow{(f_1 \ f_2)} Z \xrightarrow{(r_1 \ r_2)} X_1 ⊕ X_2
-$$
-同构, 从而 $(f_1 \ f_2)$ 是可裂单, 矛盾.
+&lt;p&gt;同构, 从而 $(f_1 \ f_2)$ 是可裂单, 矛盾.
+&lt;br /&gt;
+今假定 $f$ 不是单的, 则必有 $s(f) ∉ 𝐢𝐧𝐣$. 若左几乎可裂态射 $f$ 非单, 则有左正合列&lt;/p&gt;
 
-&lt;br /&gt;  
-&lt;br /&gt;  
+\[0 → K → X → Y .\]
 
-今假定 $f$ 不是单的, 则必有 $s(f) ∉ 𝐢𝐧𝐣$. 若左几乎可裂态射 $f$ 非单, 则有左正合列
-$$
-0 → K → X → Y .  
-$$
-今断言 $X$ 是内射对象. 若不然, 则存在 $X$ 无法提升的单态射 $U ↪ V$, 此时推出方块 $▤$ 中的态射 $X  ⇢  E$ 不是可裂单, 从而被 $X → Y$ 分解:
-$$
-\begin{bmatrix}
+&lt;p&gt;今断言 $X$ 是内射对象. 若不然, 则存在 $X$ 无法提升的单态射 $U ↪ V$, 此时推出方块 $▤$ 中的态射 $X  ⇢  E$ 不是可裂单, 从而被 $X → Y$ 分解:&lt;/p&gt;
+
+\[\begin{bmatrix}
  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; Y\\
  &amp;amp;  &amp;amp;  &amp;amp; ↗  &amp;amp; ⤈ \\
 K &amp;amp; ↪  &amp;amp; X &amp;amp; ⇢ &amp;amp; E\\
  &amp;amp;  &amp;amp; ↑  &amp;amp; ▤  &amp;amp; ⇡ \\
  &amp;amp;  &amp;amp; U &amp;amp; ↪  &amp;amp; V
-\end{bmatrix}.  
-$$
-由 Abel 范畴的性质, 单射的推出仍是单的, 因此
-$$
-0 = \ker [X → E] ↩ \ker [X → Y] = K ≠ 0.  
-$$
-这给出矛盾, 从而 $X$ 必然是内射对象.
+\end{bmatrix}.\]
 
+&lt;p&gt;由 Abel 范畴的性质, 单射的推出仍是单的, 因此&lt;/p&gt;
+
+\[0 = \ker [X → E] ↩ \ker [X → Y] = K ≠ 0.\]
+
+&lt;p&gt;这给出矛盾, 从而 $X$ 必然是内射对象.
 &lt;br /&gt;
+给定内射对象 $I$. 对任意非可裂单 $a : I → X$, 态射 $I → X → I$ 的余像是总是 $\mathrm{Bot}(I)$ 的商, 因此 $a$ 必通过 $I ↠ \mathrm{Bot}(I)$ 分解. 这说明 $I ↠ \mathrm{Bot}(I)$ 是左几乎可裂.
 &lt;br /&gt;
+下对一切内射模出发的左几乎可裂态射作说明: 若存在另一左几乎可裂态射 $I → J$, 则存在&lt;/p&gt;
 
-给定内射对象 $I$. 对任意非可裂单 $a : I → X$, 态射 $I → X → I$ 的余像是总是 $\mathrm{Bot}(I)$ 的商, 因此 $a$ 必通过 $I ↠ \mathrm{Bot}(I)$ 分解. 这说明 $I ↠ \mathrm{Bot}(I)$ 是左几乎可裂. 
-&lt;br /&gt;
-下对一切内射模出发的左几乎可裂态射作说明: 若存在另一左几乎可裂态射 $I → J$, 则存在
+\[[I ↠ \mathrm{Bot}(I)] = [I ↠ \mathrm{Bot}(I) → J → \mathrm{Bot}(I)].\]
 
-$$
-[I ↠ \mathrm{Bot}(I)] = [I ↠ \mathrm{Bot}(I) → J → \mathrm{Bot}(I)].
-$$
-
-因此 $\mathrm{Bot}(I)$ 是 $J$ 的直和项.
-
+&lt;p&gt;因此 $\mathrm{Bot}(I)$ 是 $J$ 的直和项.&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
@@ -533,735 +1056,65 @@ $$
     
       
         <item>
-          <title>合冲-逼近伴随 (稳定范畴中)</title>
-          <description>&lt;div class=&quot;theorem&quot;&gt;
-(逼近与合冲在稳定范畴中伴随).
-$Ω_∙$ 与 $C_∙$ 是稳定投射范畴的伴随函子; $℧^∙$ 与 $K^∙$ 是稳定内范畴的伴随函子.
-&lt;ol&gt;
-&lt;li&gt;
-$C_k: \underline{𝐦𝐨𝐝_A} ⇆ \underline{𝐦𝐨𝐝_A} : Ω_k$ 是左右伴随.
-&lt;/li&gt;
-&lt;li&gt;
-$℧^k: \overline{𝐦𝐨𝐝_A} ⇆ \overline{𝐦𝐨𝐝_A} : K^k$ 是左右伴随.
-&lt;/li&gt;
-&lt;li&gt;
-$C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$.
-&lt;/li&gt;
-&lt;li&gt;
-$K^k ≃ τ(℧^k(τ⁻¹))$.
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;proof&quot;&gt;
-对前两条, 仅证明第一处 $k=1$ 的情形. 考虑以下两条横向正合列 (原范畴中):
-$$
-\begin{bmatrix}
-M &amp;amp; →  &amp;amp; F( M) &amp;amp; ↠  &amp;amp; C( M)\\
-h⇣ \  &amp;amp;  &amp;amp; g⇣ \  &amp;amp;  &amp;amp; f⇣ \ \\
-Ω ( N) &amp;amp; →  &amp;amp; P( M) &amp;amp; ↠  &amp;amp; N
-\end{bmatrix}.
-$$
-若有 $f$, 则投射盖 $P_0(N) ↠ N$ 诱导了 $g$, 核的泛性质诱导了 $h$. 若有 $h$, 则左逼近的泛性质诱导了 $g$, 余核的泛性质诱导了 $f$. 之后说明在稳定范畴中, 以上对应 $f ↔ h$ 是双射.
-&lt;ol&gt;
-&lt;li&gt;
-给定 $f$, 假定存在满足条件的 $g_1 ≠ g_2$, 则 $(g_1 - g_2)$ 通过 $Ω_1(N)$ 分解. 依照泛性质, $h_i$ 唯一决定, 且 $(h_1 - h_2)$ 通过 $F(M)$ 分解. 这说明由 $f$ 决定的一族 $\{h_i\}$ 在稳定范畴中相等.
-&lt;/li&gt;
-&lt;li&gt;
-给定 $h$, 假定存在满足条件的 $g_1 ≠ g_2$, 则 $(g_1 - g_2)$ 通过 $C(M)$ 分解. 依照泛性质, $f_i$ 唯一决定, 且 $(f_1 - f_2)$ 通过 $P_0(N)$ 分解. 这说明由 $h$ 决定的一族 $\{f_i\}$ 在稳定范畴中相等.
-&lt;/li&gt;
-&lt;/ol&gt;
-特别地, 右伴随函子 $C(-)$ 无关逼近的选取.
-&lt;br /&gt;
-对后一命题, 仅证明 $C(-) = \mathrm{Tr}(Ω_1(\mathrm{Tr}(-)))$. 给定左逼近对应的右正合列
-
-$$
-M → Q → C(M) → 0,
-$$
-
-取任意投射表现 (不必极小) 诱导的四项正合列
-
-$$
-0 → M^∗ → P_0^∗ \overset α → P_1^∗ → \widetilde{\mathrm{Tr}(M)} → 0.
-$$
-
-注意到 $\operatorname{im}α$ 与 $Ω_1(\mathrm{Tr}(M))$ 在稳定范畴中相等, 而
-
-$$
-\operatorname{coim}α = \operatorname{cok}[M^∗ ↪ P_0^∗]
-= \operatorname{cok}[Q^∗ ↠ M^∗ ↪ P_0^∗]
-$$
-
-由 $C(M) = \operatorname{cok}[P_0 ↠ M → Q]$, 从而 $\mathrm{Tr}(C(M))$ 与 $\operatorname{coim}α$ 在稳定范畴中同构. 最后由 $\mathrm{Tr}$ 是稳定等价, 得
-
-$$
-Ω_1(\mathrm{Tr}(M)) ≃ \operatorname{im}α ≃ \operatorname{coim}α ≃ \mathrm{Tr}(C(M))\quad \text{稳定范畴中}.
-$$
-
-因此 $C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$ (稳定范畴中).
-
-$$
-\begin{bmatrix}
- &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \widetilde{Ω _{1}\widetilde{\mathrm{Tr}( M)}} &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
- &amp;amp;  &amp;amp;  &amp;amp; ↗  &amp;amp; ∥  &amp;amp; ⤥  &amp;amp;  &amp;amp;  &amp;amp; \\
-M^{*} &amp;amp; ↪  &amp;amp; P_{0}^{*} &amp;amp; ↠  &amp;amp; \operatorname{(co)im}, &amp;amp; ↪  &amp;amp; P_{1}^{*} &amp;amp; ↠  &amp;amp; \widetilde{\mathrm{Tr}}( M)\\
-↟  &amp;amp; ↗  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
-Q^{*} &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;
-\end{bmatrix}
-$$
-
-以上是证明涉及的对象.
-&lt;/div&gt;
-</description>
-          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</guid>
-        </item>
-      
-    
-      
-        <item>
-          <title>$Ω(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$</title>
-          <description>&lt;div class=&quot;theorem&quot;&gt;
-($Ω_1$ 与 $℧^1$).
-$Ω_1(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$ 是投射对象之子对象的稳定范畴. $℧^1(\overline{𝐦𝐨𝐝_A}) ≃ \overline{𝐪𝐮𝐨𝐭(A)}$ 是投射对象之商对象的稳定范畴.
-&lt;/div&gt;
-
-&lt;div class=&quot;proof&quot;&gt;
-仍只看单侧命题 $Ω(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$. 由定义, 两者是 $\underline{𝐦𝐨𝐝_A}$ 的全子范畴. 由同构闭, 两者的对象类等价.
-&lt;/div&gt;
-</description>
-          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</guid>
-        </item>
-      
-    
-      
-        <item>
-          <title>Top_Surjective</title>
-          <description>&lt;div class=&quot;proposition&quot;&gt;
-$\mathrm{Top}(f)$ 满当且仅当 $f$ 满; $\mathrm{Soc}(f)$ 单当且仅当 $f$ 单.
-&lt;/div&gt;
-
-&lt;div class=&quot;proof&quot;&gt;
-给定 $f : X → Y$. 若 $f$ 满, 则 $\mathrm{Top}(f)$ 满. 今假定 $\mathrm{Top}(f)$ 满. 此时, 对任意 $y ∈ Y$, 总有 $x ∈ X$ 使得 $(f(x) - y) ∈ \mathrm{Rad}(Y)$. 因此有
-$$
-\mathrm{im}(f) + \mathrm{Rad}(Y) = Y.
-$$
-依照 $\mathrm{Rad}$ 的性质, 只能由于 $\mathrm{im}(f) = Y$. 故 $f$ 满. 对 $\mathrm{Soc}(f)$ 的证明是完全对偶的.
-&lt;/div&gt;
-</description>
-          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</guid>
-        </item>
-      
-    
-      
-        <item>
-          <title>$\LaTeX$ Template (v 1.1)</title>
-          <description>&lt;div class=&quot;abstract&quot;&gt;&lt;h5&gt;Abstract&lt;/h5&gt;&lt;p&gt;
-This is a $\LaTeX$ template for writing articles.
-&lt;/p&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h2&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#table-of-contents&quot; id=&quot;markdown-toc-table-of-contents&quot;&gt;Table of Contents&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#why-this-template&quot; id=&quot;markdown-toc-why-this-template&quot;&gt;Why this template?&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#示例&quot; id=&quot;markdown-toc-示例&quot;&gt;示例&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;why-this-template&quot;&gt;Why this template?&lt;/h2&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-The real numbers $ℝ$ are uncountable.
-&lt;/div&gt;
-
-&lt;div class=&quot;proof&quot;&gt;
-By &lt;a href=&quot;https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument&quot;&gt;Cantor's diagonal argument&lt;/a&gt;, we can show that the set of real numbers is uncountable.
-$$
-\begin{bmatrix}
-    a_{1,1} &amp;amp; a_{1,2} &amp;amp; a_{1,3} &amp;amp; \cdots \\
-    a_{2,1} &amp;amp; a_{2,2} &amp;amp; a_{2,3} &amp;amp; \cdots \\
-    a_{3,1} &amp;amp; a_{3,2} &amp;amp; a_{3,3} &amp;amp; \cdots \\
-    ⋮ &amp;amp; ⋮ &amp;amp; ⋮ &amp;amp; ⋱.
-\end{bmatrix}
-$$
-&lt;/div&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-(&lt;code&gt;html&lt;/code&gt; 较 $\LaTeX$ 的优越性). 该模板相较传统 $\LaTeX$ 模板之优点包括但不限于
-&lt;ol&gt;
-&lt;li&gt;零秒编译.&lt;/li&gt;
-&lt;li&gt;输出连续网页, 避免 &lt;code&gt;PDF&lt;/code&gt; 割裂图片或公式等.
-    &lt;ul&gt;&lt;li&gt;当然, 打印网页即得 &lt;code&gt;PDF&lt;/code&gt; 文档&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;使用 URL 运行图片 ($\LaTeX$ 永远无法做到, 权宜的方式是使用 &lt;code&gt;write18&lt;/code&gt;).&lt;/li&gt;
-&lt;li&gt;发布网页, 随时随地都可查看.&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;localhost&lt;/code&gt; 端口: 电脑代码, 平板查看编译结果.&lt;/li&gt;
-&lt;li&gt;兼容 &lt;code&gt;Unicode-math&lt;/code&gt; $ℝ$ (数学环境), ℝ (文本环境), 无需手动调整 assymb 包的兼容性问题, 或字体问题等.&lt;/li&gt;
-&lt;li&gt;兼容多国语言混排, 这是一句废话, 但对 $\LaTeX$ 来说过于困难.&lt;/li&gt;
-&lt;li&gt;排版语言公式简单 (前提: 配上合适的 &lt;code&gt;html&lt;/code&gt; 代码环境).&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;example&quot;&gt;
-(在 block 外使用 markdown 与 $\LaTeX$ 写作).
-在 {% --- %} --- {% end--- %} 外可直接使用 markdown 语言与 $\LaTeX$.
-&lt;br /&gt;
-一个小 bug 是将公式内的 underscore 识别为下标 (目前已修复).
-&lt;/div&gt;
-
-&lt;div class=&quot;example&quot;&gt;
-(&lt;code&gt;Tikz&lt;/code&gt; 功能).
-
-使用插件 &lt;code&gt;quiver&lt;/code&gt; 画图.
-
-&lt;center&gt;
-&lt;!-- https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcbWF0aHNjciBDIl0sWzAsMSwiXFxtYXRoYmIgQV9rICJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxXSxbMiwzXSxbMyw0XSxbMSw0XSxbNSw3LCIiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV0sWzIsOSwiIiwyLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XV0= --&gt;
-&lt;iframe class=&quot;quiver-embed&quot; src=&quot;https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcbWF0aHNjciBDIl0sWzAsMSwiXFxtYXRoYmIgQV9rICJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxXSxbMiwzXSxbMyw0XSxbMSw0XSxbNSw3LCIiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV0sWzIsOSwiIiwyLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XV0=&amp;amp;embed&quot; width=&quot;432&quot; height=&quot;304&quot; style=&quot;border-radius: 8px; border: none;&quot;&gt;&lt;/iframe&gt;
-&lt;/center&gt;
-
-图像大小容易失衡, 建议使用 &lt;code&gt;mathcha&lt;/code&gt; 画图, 输出矩阵, 例如
-$$
-\begin{bmatrix}
-M &amp;amp; →  &amp;amp; F( M) &amp;amp; ↠  &amp;amp; C( M)\\
-h⇣ \  &amp;amp;  &amp;amp; g⇣ \  &amp;amp;  &amp;amp; f⇣ \ \\
-Ω ( N) &amp;amp; →  &amp;amp; P( M) &amp;amp; ↠  &amp;amp; N
-\end{bmatrix}.
-$$
-或者, 直接插入图片也行.
-&lt;/div&gt;
-
-&lt;div class=&quot;example&quot;&gt;
-(Use &lt;code&gt;mathcha&lt;/code&gt; to draw picture).
-
-&lt;figure class=&quot;image&quot;&gt;
-  &lt;img src=&quot;https:/raw.githubusercontent.com/czhang271828/imgs/New_img/n_imgdiagram-20250420%20(2).png&quot; alt=&quot;&quot; /&gt;
-  &lt;figcaption&gt;&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;example&quot;&gt;
-(Block).
-支持 Definition, Theorem, Lemma, Proof, Solution, Example, Remark, Note, Corollary, Proposition, Slogan. 实现方式如下:
-&lt;ol&gt;
-&lt;li&gt;
-在 &lt;code&gt;/_sass/main.scss&lt;/code&gt; 中定义 solution 的样式 (包含前, 中, 后, 以及 QED 正方形).
-&lt;/li&gt;
-&lt;li&gt;
-在 &lt;code&gt;/_plugins/latex.rb&lt;/code&gt; 中定义 solution 公式块环境, 此处使用  {% sol %} {% endsol %} .
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;example&quot;&gt;
-(我的写作界面).
-
-下图左是简陋的 markdown 编辑器 (&lt;code&gt;VScode&lt;/code&gt;, 配 Unicode-math 输入, 类似 &lt;a href=&quot;https://live.lean-lang.org/&quot;&gt;L∃∀N&lt;/a&gt;), 下图右是 &lt;code&gt;edge&lt;/code&gt; 浏览器. 一般来说, 左侧 $\texttt{ctrl + S}$ 保存, 右侧 $\texttt{ctrl + R}$ 直接刷新即可, 用时不超过一秒.
-&lt;figure class=&quot;image&quot;&gt;
-  &lt;img src=&quot;https://raw.githubusercontent.com/czhang271828/imgs/New_img//n_imgimage-20250421023038224.png&quot; alt=&quot;&quot; /&gt;
-  &lt;figcaption&gt;&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;示例&quot;&gt;示例&lt;/h3&gt;
-
-&lt;div class=&quot;slogan&quot;&gt;
-The empty set $∅$ is the initial object of $𝐒𝐞𝐭𝐬$. 
-&lt;/div&gt;
-
-&lt;div class=&quot;note&quot;&gt;
-This is a note.
-&lt;/div&gt;
-
-&lt;div class=&quot;question&quot;&gt;
-This is a question.
-&lt;/div&gt;
-
-&lt;div class=&quot;proposition&quot;&gt;
-This is a proposition.
-&lt;/div&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-
-This is a theorem.
-&lt;/div&gt;
-
-&lt;div class=&quot;lemma&quot;&gt;
-This is a lemma.
-&lt;/div&gt;
-
-&lt;div class=&quot;proof&quot;&gt;
-This is a proof.
-&lt;/div&gt;
-
-&lt;div class=&quot;corollary&quot;&gt;
-This is a corollary.
-&lt;/div&gt;
-
-&lt;div class=&quot;definition&quot;&gt;
-This is a definition. 作者有意将 &lt;code&gt;bottom-margin&lt;/code&gt; 调整至 &lt;code&gt;2em&lt;/code&gt;.
-&lt;/div&gt;
-
-&lt;div class=&quot;example&quot;&gt;
-This is an example.
-&lt;/div&gt;
-
-&lt;div class=&quot;solution&quot;&gt;
-This is a solution.
-&lt;/div&gt;
-</description>
-          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/template</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/template</guid>
-        </item>
-      
-    
-      
-        <item>
-          <title>Notes for Reflexive Subcategories</title>
-          <description>&lt;h3 id=&quot;𝐦𝐨𝐝_𝒞&quot;&gt;$𝐦𝐨𝐝_{𝒞}$&lt;/h3&gt;
-
-&lt;p&gt;全文使用&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$𝐌𝐨𝐝_k$ 表示 $k$-右模范畴.&lt;/li&gt;
-  &lt;li&gt;$𝐦𝐨𝐝_k$ 有限表现 $k$-右模范畴.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;对局部小的 $k$-范畴 $𝒞$, 记&lt;/p&gt;
-
-\[𝐌𝐨𝐝_𝒞 := 𝐅𝐮𝐧𝐜𝐭_k(𝒞^{\mathrm{op}}, 𝐌𝐨𝐝_k)\]
-
-&lt;p&gt;为 $k$-函子范畴. 若无特别强调, 默认 $k$-范畴的函子是 $k$-函子.&lt;/p&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-($k$-范畴的米田嵌入). 对交换环 $k$, 与 $k$-范畴 $𝒞$, 以下是全忠实的嵌入:
-
-$$
-𝒞 ↣ 𝐅𝐮𝐧𝐜𝐭_k (𝒞^{\mathrm{op}}, 𝐌𝐨𝐝_k) ,\quad X ↦ h_X\quad (:=(-,X)_{𝒞}).  
-$$
-
-特别地, 以下米田引理的同构是 $k$-模的同构:  
-
-$$
-𝖭𝖺𝗍[h_X, F] ≃ F(X),\quad Φ ↦ Φ(\mathrm{id}_X).
-$$
-
-&lt;/div&gt;
-
-&lt;p&gt;以上是 $k$-充实版本的的米田引理. 特别地, $k = ℤ$ 对应预加范畴.&lt;/p&gt;
-
-&lt;div class=&quot;definition&quot;&gt;
-
-(有限表现范畴). 对给定局部小的 $k$-范畴 $𝒞$, 定义有限表现范畴 $𝐦𝐨𝐝_𝒞$ 为 $𝐅𝐮𝐧𝐜𝐭(𝒞^{\mathrm{op}}, 𝐀𝐛)$ 的全子范畴. 其对象形如 $\mathrm{cok} (h_φ)$, 即,
-
-$$
-(-,X) \xrightarrow{(-,φ )} (-,Y) ↠ \mathrm{cok} (h_φ).
-$$
-
-&lt;/div&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-
-对加法范畴 $𝒞$ 与具有 $\mathrm{cok}$ 的 $k$-范畴 $𝒜$, 以下是函子范畴的等价
-
-$$
-𝐅𝐮𝐧𝐜𝐭(𝒞 , 𝒜 ) → 𝐅𝐮𝐧𝐜𝐭_{Rex}(𝐦𝐨𝐝_𝒞, 𝒜); 
-$$
-
-&lt;ol&gt;
-&lt;li&gt; 
-$𝐅𝐮𝐧𝐜𝐭_{Rex}$ 表示右正合函子 (保持余核的函子) 构成的全子范畴;
-&lt;/li&gt;
-&lt;li&gt;
-对左侧的 $f$, 右侧的函子定义作 $\mathrm{cok}(h_φ) ↦ \mathrm{cok}(F(φ))$.
-&lt;/li&gt;
-&lt;li&gt;
-对右侧的 $F$, 左侧函子定义作 $X ↦ F(h_X)$.
-&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;/div&gt;
-
-&lt;div class=&quot;definition&quot;&gt;
-(弱核). 称 $X\xrightarrow f Y$ 是 $Y \xrightarrow g Z$ 的弱核, 若以下 $𝐦𝐨𝐝_{𝒞}$ 中的态射链
-
-$$
-h_X \xrightarrow{h_f} h_Y \xrightarrow{h_g}h_Z
-$$
-
-在 $h_Y$ 处正合.
-&lt;/div&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-记 $𝒞$ 局部小的有弱核的 $k$-范畴, $𝒜$ 是 Abel $k$-范畴, 以下是函子范畴的等价
-
-$$
-\begin{bmatrix}
-𝐅𝐮𝐧𝐜𝐭_w(𝒞 , 𝒜 ) &amp;amp; ↣ &amp;amp; 𝐅𝐮𝐧𝐜𝐭(𝒞 , 𝒜 ) \\
-∼↑  &amp;amp; &amp;amp; ↑ ∼ \\
-𝐅𝐮𝐧𝐜𝐭_{Ex}(𝐦𝐨𝐝 _𝒞 , 𝒜 ) &amp;amp; ↣ &amp;amp; 𝐅𝐮𝐧𝐜𝐭_{Rex}(𝐦𝐨𝐝 _𝒞 , 𝒜 ) \\
-\end{bmatrix}
-$$
-
-&lt;ol&gt;
-&lt;li&gt;
-当且仅当 $𝒞$ 存在弱核, $𝐦𝐨𝐝_𝒞$ 是 Abel 范畴; 
-&lt;/li&gt;
-&lt;li&gt;
-$F ∈ 𝐅𝐮𝐧𝐜𝐭_w(𝒞 , 𝒜 )$, 当且仅当 $F$ 将一切弱核所在的态射链 $X \xrightarrow f Y \xrightarrow g Z$ 映作 $F(Y)$ 处正合的态射链 $F(X)\xrightarrow {F(f)} F(Y) \xrightarrow {F(g)} F(Z)$;
-&lt;/li&gt;
-&lt;li&gt;
-$𝐅𝐮𝐧𝐜𝐭_{Ex}$ 表示正合函子 (保持核与余核的函子). 
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;p&gt;以下说明全子范畴的嵌入 $𝒞 ↣ 𝐦𝐨𝐝_𝒞$ 决定了某些普适问题的解. 给定局部小的 $k$-范畴 $𝒞$. 依照定理,&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;一切从 $𝐦𝐨𝐝_𝒞$ 到 Abel $k$-范畴 $𝒜$ 的右正合函子通过全忠实嵌入 $𝒞 ↣ 𝐦𝐨𝐝_𝒞$ 唯一分解 (至多相差一个范畴等价);&lt;/li&gt;
-  &lt;li&gt;若 $𝒞$ 有弱核, 一切从 $𝐦𝐨𝐝_𝒞$ 到 Abel $k$-范畴 $𝒜$ 的正合函子通过全忠实嵌入 $𝒞 ↣ 𝐦𝐨𝐝_𝒞$ 唯一分解 (至多相差一个范畴等价).&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;example&quot;&gt;
-假定 $𝒜$ 是有足够投射对象的 Abel 范畴, $i : 𝒫 ↣ 𝒜$ 是投射对象组成的全子范畴, 则
-
-$$
-(i(-),∙)_{𝒫}: 𝒜 → 𝐦𝐨𝐝_𝒫,\quad X ↦ (i(-),X)_𝒫
-$$
-
-是范畴等价.
-&lt;/div&gt;
-
-&lt;h3 id=&quot;张量积-𝐦𝐨𝐝_𝒞-的等价刻画&quot;&gt;张量积, $𝐦𝐨𝐝_{𝒞}$ 的等价刻画&lt;/h3&gt;
-
-&lt;p&gt;定义 $k$-范畴的函子范畴 $𝐌𝐨𝐝_𝒞 := 𝐅𝐮𝐧𝐜𝐭 (𝒞^{\mathrm{op}} , 𝐦𝐨𝐝_k)$. 任意 $F ∈ 𝐌𝐨𝐝_k$ 通过顿范畴 $𝒞⇒F$ 中的滤过余极限表出, 且这一构造是函子性的.&lt;/p&gt;
-
-&lt;p&gt;今考虑本质小的 $k$-范畴 $𝒞$, 此时 $𝐦𝐨𝐝_𝒞$ 也是本质小的 $k$-范畴. 定义 $k$-双线性的配对&lt;/p&gt;
-
-\[𝒞 ⊗ 𝐌𝐨𝐝_{𝒞^{\mathrm{op}}} → 𝐌𝐨𝐝_k,\quad X ⊗ F ↦ FX.\]
-
-&lt;p&gt;由于 $F ∈ 𝐌𝐨𝐝_𝒞$ 是可表函子的余极限 (考虑 $∐\limits_{X ∈ 𝖮𝖻(𝒞)}(h_X)^{∐F(X)} ↠ F$), 且这一构造是函子性的.&lt;/p&gt;
-
-&lt;div class=&quot;definition&quot;&gt;
-(张量积) 将张量积的定义延拓至
-
-$$
-𝐌𝐨𝐝_𝒞 ⊗ 𝐌𝐨𝐝_{𝒞^{\mathrm{op}}} → 𝐌𝐨𝐝_k,\quad (\varinjlim(-, X)) ⊗ F ↦ \varinjlim FX.
-$$
-
-&lt;/div&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-(有限表现函子的等价定义, &lt;a href=&quot;Finitely_Presented_Functor&quot;&gt;证明&lt;/a&gt;)
-
-选定 $F ∈ 𝐌𝐨𝐝_𝒞$, 以下等价:
-&lt;ol&gt;
-&lt;li&gt;
-(有限表现函子) $F ∈ 𝐦𝐨𝐝_𝒞$;
-&lt;/li&gt;
-&lt;li&gt;
-(紧对象) 对 $𝐌𝐨𝐝_k$ 中的滤过系统 $G_∙$, 典范态射
-
-$$
-\varinjlim (F, G_∙)_{𝒞^{\mathrm{op}}} ≃  (F, \varinjlim G_∙)_{𝒞^{\mathrm{op}}}
-$$
-
-是同构;
-&lt;/li&gt;
-&lt;li&gt;
-$F ⊗ -: 𝐌𝐨𝐝_{𝒞 ^{\mathrm{op}}} → 𝐌𝐨𝐝_k$ 保持任意积.
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;note&quot;&gt;
-参考上述命题中 (2 ⇒ 1) 一步的证明, 任意函子是有限表现函子的滤过余极限. 以上也蕴含了模范畴中的类似结论, 例如, $M$ 是有限表现模, 当且仅当 $(M ⊗ -)$ 与 $∏$ 交换.
-&lt;/div&gt;
-
-&lt;div class=&quot;example&quot;&gt;
-有限生成投射对象必然是可表函子的直和项. 特别地, 若 $𝒞$  Karoubi  (所有幂等态射都有核与余核), 则有限生成投射对象恰好是可表函子.
-&lt;/div&gt;
-
-&lt;div class=&quot;definition&quot;&gt;
-(平坦对象). 称 $F ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 当且仅当 $F ⊗ -$ 保持 $𝐌𝐨𝐝_{𝒞^{\mathrm{op}}}$ 中的单自然变换.
-&lt;/div&gt;
-
-&lt;p&gt;依照 $𝐌𝐨𝐝_k$ 范畴的 AB5 条件, 模的滤过余极限与有限极限交换. 因此, 平坦对象只需保持 $𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}$ 中的单自然变换.&lt;/p&gt;
-
-&lt;p&gt;例如, $M$ 是平坦模, 当且仅当 $M ⊗ -$ 保持有限表现模之间的单射.&lt;/p&gt;
-
-&lt;div class=&quot;proposition&quot;&gt;
-(有限表现 → 投射 通过平坦对象分解, &lt;a href=&quot;Fp_Proj_Plat&quot;&gt;证明&lt;/a&gt;).
-
-假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.
-&lt;/div&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-(平坦对象是投射对象的滤过余极限, &lt;a href=&quot;Lazard_thm&quot;&gt;证明&lt;/a&gt;).
-给定小的加法范畴 $𝒞$, 假定以下提及的滤过余极限存在.
-&lt;ol&gt;
-&lt;li&gt;
-假定 $𝒞^{\mathrm{op}}$ 有弱核, 则 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 当且仅当 $P$ 是有限表现函子 $\{h_X\}$ 的滤过余极限; 
-&lt;/li&gt;
-&lt;li&gt;
-假定 $𝒞$ 有弱核, 则 $P ∈ 𝐌𝐨𝐝_{𝒞^{\mathrm{op}}}$ 是平坦对象, 当且仅当 $P$ 是有限表现函子 $\{h^X\}$ 的滤过余极限. 
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;definition&quot;&gt;
-(karoubi 范畴). 称加法范畴 Karoubi, 若幂等态射存在核与余核.
-&lt;/div&gt;
-
-&lt;div class=&quot;definition&quot;&gt;
-(内射余生成元). 对局部小的范畴 $𝒞$. 称 $X ∈ 𝒞$ 是内射余生成元, 若以下两点满足
-&lt;ol&gt;
-&lt;li&gt;
-$f ↦ (f, X)_𝒞$ 将满射对应至单射, 换言之, $(-,X)$ 是正合函子; 
-&lt;/li&gt;
-&lt;li&gt;
-$(f,X)_{𝒞} ↦ f$ 良定义, 从而将单射返回至满射, 换言之, $(-,X)$ 是忠实函子. 
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;p&gt;例如, $𝐌𝐨𝐝_k$ 存在内射余生成元, 通常选作 $(k, C)_{ℤ}$. 其中 $C$ 是 $𝐀𝐛$ 的内射余生成元, 例如 $ℚ/ℤ$ 或 $ℝ/ℤ$.&lt;/p&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-(有限表现 + 平坦 = 投射, &lt;a href=&quot;Fp_et_Plat_est_Proj&quot;&gt;证明&lt;/a&gt;).
-给定 Karoubi 的, 本质小的加法范畴 $𝒞$. 若 $F ∈ 𝐦𝐨𝐝_𝒞$ 平坦, 则 $F$ 投射.
-&lt;/div&gt;
-
-&lt;div class=&quot;example&quot;&gt;
-(关于 Abel 化: 模范畴的非对称性).
-对加法范畴 $𝒞$, 以下两者均是 $𝒞$ 是在 $𝐌𝐨𝐝_{𝒞}$ 中的 Abel 闭包:
-
-$$
-𝐦𝐨𝐝_{𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}^{\mathrm{op}}} = 𝐟𝐩 (𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}, 𝐌𝐨𝐝_k);\quad 𝐦𝐨𝐝^{\mathrm{op}}_{𝐦𝐨𝐝_{𝒞}^{\mathrm{op}}} = 𝐟𝐩 (𝐦𝐨𝐝_{𝒞}, 𝐌𝐨𝐝_k)^{\mathrm{op}}.
-$$
-
-取 $𝒞$ 为 $k$-代数 $R$ 的有限生成自由模范畴, 则两处 Abel 闭包的典范同构由自由模所在的可表函子诱导, 即,
-
-$$
-\begin{bmatrix}
-    𝐟𝐩 (𝐦𝐨𝐝_{𝒞}, 𝐌𝐨𝐝_k)^{\mathrm{op}} &amp;amp;→&amp;amp; 𝐟𝐩 (𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}, 𝐌𝐨𝐝_k) \\ 
-    (R_R^n, - )_{𝐦𝐨𝐝_R} &amp;amp; ↦ &amp;amp; ({_R}R^n, -)_{𝐦𝐨𝐝_{R^{\mathrm{}op}}}
-\end{bmatrix}.
-$$
-
-对 $M_R = \mathrm{cok}(R^m \xrightarrow f R^n)$, 上述对应延拓至
-
-$$
-\begin{bmatrix}
-𝐟𝐩(𝐦𝐨𝐝_{R^{\mathrm{op}}} ,𝐌𝐨𝐝_{k}) &amp;amp; M_R ⊗ - &amp;amp; ←  &amp;amp; R_{R}^{n} ⊗ - &amp;amp; ←  &amp;amp; R_{R}^{m} \otimes -\\
- &amp;amp;   &amp;amp;  &amp;amp; ∥  &amp;amp;  &amp;amp; ∥ \\
-𝐟𝐩(𝐦𝐨𝐝_{R^{\mathrm{op}}}^{\mathrm{op}} ,𝐌𝐨𝐝_{k}) &amp;amp; ( M_{R} ,-) &amp;amp; →  &amp;amp; \left( R_{R}^{n} ,-\right) &amp;amp; →  &amp;amp; \left( R_{R}^{m} ,-\right)
-\end{bmatrix}
-$$
-
-同理, 上方的 $(_RX, - )_{𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}}$ 对应下方的 $- ⊗_RX ∈ 𝐟𝐩(𝐦𝐨𝐝_R^{\mathrm{op}}, 𝐌𝐨𝐝_k)^{\mathrm{op}}$. 这一紧对象间的对应通过滤过余极限给出 Abel 闭包的范畴等价.
-&lt;/div&gt;
-
-&lt;div class=&quot;note&quot;&gt;
-注意: 这一非对称性在三角范畴中将不复存在, $𝐦𝐨𝐝_𝒯^{\mathrm{op}}$ 等价于 $𝐦𝐨𝐝_{𝒯^{\mathrm{op}}}$. 本质上, 同调函子与上同调函子是对称的.
-&lt;/div&gt;
-
-&lt;h3 id=&quot;三角范畴-上同调函子&quot;&gt;三角范畴, 上同调函子&lt;/h3&gt;
-
-&lt;p&gt;采用记号 $(𝒯, [1], \triangle)$ 表示三角范畴, 平移, 以及好三角类. 使用上链复形 $X^∙$ 表示一个好三角. 对 Abel 范畴 $𝒜$, 称函子 $F:𝒯^{\mathrm{op}} → 𝒜$ 是上同调的, 当且仅当 $F$ 将 $\triangle$ 映作长正合列.&lt;/p&gt;
-
-&lt;div class=&quot;lemma&quot;&gt;
-反变的米田嵌入 $𝒯^{\mathrm{op}} → 𝐅𝐮𝐧𝐜𝐭(𝒞, 𝐌𝐨𝐝_k)$ 是上同调函子. 
-&lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt; 只需证明一切 $(-,W)&lt;em&gt;{𝒯}$ 是上同调函子. 任意给定三角 $X^∙ ∈ \triangle$, 上链复形 $(X^∙ , W)&lt;/em&gt;{𝒯} ∈ C(k)$ 在 $n$ 处的正合性描述作以下命题:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;对 $f^n : X^n → W$, 复合态射 $[X^{n-1} → X^n → W] = 0$, 当且仅当 $f^n$ 通过 $[X^n → X^{n+1}]$ 分解.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;对 ${f^{n-1},f^n,f^{n+1}}$ 使用二推三原则, 研究以下三角射即可:&lt;/p&gt;
-
-\[\begin{bmatrix}
-X^{\bullet } &amp;amp;:&amp;amp; \cdots  &amp;amp; \rightarrow  &amp;amp; X^{n-1} &amp;amp; \rightarrow  &amp;amp; X^{n} &amp;amp; \rightarrow  &amp;amp; X^{n} +1 &amp;amp; \rightarrow  &amp;amp; \cdots \\
-\downarrow &amp;amp; &amp;amp;  &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \\
-W^{\bullet }&amp;amp;: &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; W &amp;amp; = &amp;amp; W &amp;amp; \rightarrow  &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; \cdots 
-\end{bmatrix}.\]
-
-&lt;p&gt;$\square$&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Prop&lt;/strong&gt; 给定三角范畴. 对任意 $X^∙ ∈ \triangle$, $X^n → X^{n+1}$ 的三角核 $X^{n-1} → X^n$ 是弱核.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Prop&lt;/strong&gt; (上) 同调函子保持弱核.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt; 只看共变情形. 给定同调函子 $f: 𝒯 → 𝒜$, 则有唯一的 (差一个范畴等价) 右正合函子
-\(F: 𝐦𝐨𝐝_𝒯 → 𝒜 ,\quad \mathrm{cok}(h_φ) ↦ \mathrm{cok}(F(φ)).\)
-对好三角 $W \xrightarrow u X \xrightarrow v Y$ 与 $X$ 处弱正合的态射列 $K \xrightarrow i X \xrightarrow v Y$, 以上两处复合态射都是 $0$. 依照弱核的泛性质, 存在 $α : W ⇆ K : β$ 使得 $i ∘ α = u$ 与 $u ∘ β = i$. 因此 $\mathrm{im}(Fi) = \mathrm{im}(Fu) = \ker(Fv)$. 这说明同调函子 $F$ 保持弱核.&lt;/p&gt;
-
-&lt;p&gt;$\square$&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Rmk&lt;/strong&gt; 在 $X$ 处弱正合的态射序列 $K \xrightarrow i X \xrightarrow v Y$ 未必是好三角的相邻三项. 例如 $X → 0 → 0$.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Rmk&lt;/strong&gt; 对三角范畴至 Abel 范畴的函子, 上同调函子恰好是保持弱核的函子. 对三角范畴, 上同调函子通过 $𝒯^{\mathrm{op}} ↣ 𝐦𝐨𝐝_{𝒯^{\mathrm{op}}}$ 唯一分解.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Prop&lt;/strong&gt; $𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt;. 上同调函子通过米田嵌入分解, 从而 $𝐦𝐨𝐝_{𝒯^{\mathrm{op}}}^{\mathrm{op}} ≃ 𝐦𝐨𝐝_𝒯$. 从而可表函子既是投射对象, 又是内射对象 (反范畴的投射对象). 由于 $𝐦𝐨𝐝_𝒯$ 存在足够投射对象, 故投射对象就是内射对象.&lt;/p&gt;
-
-&lt;p&gt;$\square$&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Rmk&lt;/strong&gt; 比较自由模范畴的两类 Abel 闭包, 三角范畴的 Abel 闭包显得更对称: 这主要得益于上同调函子的泛性质.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Prop&lt;/strong&gt; 对本质小的三角范畴 $𝒯$, 考虑函子范畴 $𝐅𝐮𝐧𝐜𝐭(𝒯^{\mathrm{op}}, 𝐌𝐨𝐝_k)$, 则上同调函子, 正合函子, 可表函子的滤过余极限, 以及平坦函子四者相同.&lt;/p&gt;
-
-&lt;h3 id=&quot;反变有限&quot;&gt;反变有限&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (逼近, 预盖, 反变有限). 给定任意范畴 $𝒞$ 与同构闭的对象类 $𝒳$.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;一个 $𝒳$-预覆盖是一个态射 $X_{∈ 𝒳} \xrightarrow f M_{∈ 𝒞}$, 使得 $(𝒳, f)$ 均为满射.&lt;/li&gt;
-  &lt;li&gt;此时, 称 $f$ 是 $M$ 的一个右 $𝒳$-逼近. 等价地, 任意 $X’ → M$ 通过 $f$ 分解.&lt;/li&gt;
-  &lt;li&gt;称 $𝒳$ 是反变有限的对象类, 若所有 $M$ 都存在右 $𝒳$-逼近.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Rmk&lt;/strong&gt; 若 $𝒞$ 中有足够投射对象, 取 $𝒳 = 𝐏𝐫𝐨𝐣$, 右逼近取作投射对象出发的满射.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (投射盖). 假定 Abel 范畴. 称 $π : P → X$ 是 $X$ 的一个投射盖, 若 $π$ 是满的, 且 $\mathrm{ker}(π)$ 是盈余的. 换言之, 任意形如 
-\(\begin{bmatrix}
-∗ &amp;amp; ↪ &amp;amp; ∗ \\ 
-\overset∨ ↓ &amp;amp; &amp;amp; \overset ∨ ↓ \\ 
-\mathrm{ker}(π) &amp;amp; ↪ &amp;amp; P \\ 
-\end{bmatrix}\)
-的推出拉回方块一定同构于
-\(\begin{bmatrix}
-\mathrm{ker}(π) &amp;amp; ↪ &amp;amp; P \\ 
-∥ &amp;amp; \ &amp;amp; ∥ \\ 
-\mathrm{ker}(π) &amp;amp; ↪ &amp;amp; P \\ 
-\end{bmatrix}.\)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Rmk&lt;/strong&gt; 有些地方将投射盖定义作满足 $[(p ∘ α = p) ⟹ (α \ \text{同构})]$ 的满态射 (这一假定似乎更弱一些). 以上定义按照 superfluous 等价转化.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Prop&lt;/strong&gt; 若平坦对象具有投射盖, 则其必然是投射对象.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt; 记 $P \overset π ↠ F$ 是平坦对象的投射盖, 其中 $F = \varinjlim P_i$ 是有限生成投射对象的滤过余极限. 取定所有拉回
-\(\begin{bmatrix}
-&amp;amp;P_i ⊕ Q_i &amp;amp; \xrightarrow{(1 \ 0)}&amp;amp; P_i \\ 
-\substack{g_i}&amp;amp;↓ &amp;amp;  &amp;amp; ↓ &amp;amp;\substack {f_i}\\ 
-&amp;amp;P &amp;amp; \overset π ↠ &amp;amp; F \\ 
-\end{bmatrix}.\)
-依照拉回的泛性质, $g_i$ 自动构成滤过系统. 依照 $∐ (P_i ⊕ Q_i) ↠ ∐ P_i$, 得推出拉回方块 
-\(\begin{bmatrix}
- &amp;amp;  &amp;amp; \amalg (P_{i} \oplus Q_{i}) &amp;amp; \twoheadrightarrow  &amp;amp; \amalg P_{i}\\
- &amp;amp;  &amp;amp; \downarrow  &amp;amp;  &amp;amp; \downarrow \\
-\ast  &amp;amp; \hookrightarrow  &amp;amp; \Sigma \operatorname{im} g_{i} &amp;amp; \twoheadrightarrow  &amp;amp; \Sigma \operatorname{im} f_{i}\\
-\downarrow  &amp;amp; \text{PBPO} &amp;amp; \downarrow  &amp;amp;  &amp;amp; \parallel \\
-\ker \pi  &amp;amp; \hookrightarrow  &amp;amp; P &amp;amp; \twoheadrightarrow  &amp;amp; F
-\end{bmatrix}.\)
-依照投射盖的定义, $Σ \operatorname{im}g_i ↪ P$ 是同构, $∗ → \ker π$ 亦是同构. 因此滤过系统 ${g_i}$ 的滤过余极限即 $P$.&lt;/p&gt;
-
-&lt;p&gt;以上得到滤过系统的态射 ${f_i} ↪ {g_i} ↠ {f_i}$ 这甚至是链可裂的. 依照余极限的泛性质, 存在形变收缩 $F → P → F$, 因此 $F$ 是投射对象.&lt;/p&gt;
-
-&lt;p&gt;$\square$&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; 取定同构封闭的全子范畴 $i : 𝒞 ↣ 𝒜$.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;称 $𝒞$ 是反射的, 若 $i$ 是右伴随.&lt;/li&gt;
-  &lt;li&gt;称 $𝒞$ 是余反射的, 若 $i$ 是左伴随.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Eg&lt;/strong&gt; 给定挠对 $(𝒯 , ℱ)$, 全子范畴 $ℱ$ 是反射的, $𝒯$ 是余反射的.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Prop&lt;/strong&gt; 取加法范畴 $𝒯$ 与本质小的同构闭全子范畴 $ℬ$. 假定 $ℬ$  Karoubi , $ℬ^{\mathrm{op}}$ 存在弱核, 且 $𝐦𝐨𝐝_{ℬ}$ 存在投射盖 (例如 Krull-Schmidt 三角范畴). 此时 $ℬ$ 余反射, 当且仅当其反变有限.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt; 若 $ℬ$ 余反射, 记嵌入的右伴随 $t$, 即 
-\((X, t(A))_{ℬ} ≃ (i(X), A)_{𝒯}.\)
-任意 $X ∈ 𝒯$ 都有预盖 $ε_X: t(X) → X$, 因为
-\((i(A), ε_X)_{𝒜} ≃ \mathrm{id}_{(A, t(X))}.\)
-反之, 若 $ℬ$ 反变有限, 以下求解 $A ∈ 𝒯$ 在 $ℬ$ 中的右伴随像. 记 
-\((i(-), A)_{𝒯} ∈ ℬ ^{\mathrm{op}} → 𝐌𝐨𝐝_k.\)
-这一函子是上同调函子, 从而是平坦对象. 再由 $ℬ$ 反变有限, 存在恒满的态射族 $(ℬ, X\xrightarrow φ A)&lt;em&gt;{𝒯}$. 因此
-\(h_X ↠ (i(-), A)_{𝒯} \quad ∈ 𝐦𝐨𝐝_ℬ\)
-由于平坦对象 $(i(-), A)&lt;/em&gt;{𝒯}$ 存在投射盖, 且 $𝒯^{\mathrm{op}}$ 存在弱余核, 从而只能是投射对象. 这一对象也是有限生成的. 再由 Karoubi 性, 该函子可表, 因此 $i$ 存在右伴随.&lt;/p&gt;
-
-&lt;p&gt;$\square$&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Prop&lt;/strong&gt; 取加法范畴 $𝒯$ 与本质小的同构闭全子范畴 $ℬ$. 假定 $ℬ$ Karoubi, 存在弱核. 此时 $ℬ$ 余反射, 当且仅当其反变有限.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt; 若 $ℬ$ 余反射, 则反变有限 (见前一命题).&lt;/p&gt;
-
-&lt;p&gt;若 $ℬ$ 反变有限, 对任意 $A ∈ 𝒯$ 构造
-\(X_K \xrightarrow c K \xrightarrow b X_A \xrightarrow a A.\)
-其中 $X_M → M$ 是预盖, $b$ 是 $a$ 的弱核. 此时有正合列
-\((-, X_K)_ℬ → (-,X_A)_ℬ → (i(-),A)_𝒯 → 0.\)
-由于 $(i(-),A)_𝒯$ 是有限表现的平坦对象, 从而投射. 再由 Karoubi 性, 该函子可表, 因此 $i$ 存在右伴随.&lt;/p&gt;
-
-&lt;p&gt;$\square$&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Prop&lt;/strong&gt; 三角范畴 Karoubi 的一个充分条件: 若三角范畴有可数积或可数余积, 则 Karoubi.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt; 范畴 Karoubi, 当且仅当其反范畴亦然. 不妨假定 $𝒯$ 有可数积, 对幂等自同态 $f ∈ \mathrm{End}(X)$ 定义
-\(∏_ℕX \xrightarrow[:=-e_L] {1-f+fL}∏_ℕX ,\quad ∏_ℕX \xrightarrow[:=-e_R] {1-f+fR}∏_ℕX.\)
-此处 $L$ 是左移算子 (满), $R$ 是右移算子 (满). 计算知 
-\(e_Le_R = 1,\quad e_Re_L = 1-(f,0,\ldots).\)
-在三角范畴中, $e_L$ 可裂满, 从而 $\ker (e_L)$ 存在, 因此 $(1-f)$ 存在核. 对称地, $𝒯$ Karoubi.&lt;/p&gt;
-
-&lt;p&gt;$\square$&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Rmk&lt;/strong&gt; 以上实际上是在取 $\cdots → X \xrightarrow f X$ 的同伦极限.&lt;/p&gt;
-</description>
-          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Reflexive_sub_cat</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Reflexive_sub_cat</guid>
-        </item>
-      
-    
-      
-        <item>
           <title>Notes for Classical Tilting Theory</title>
           <description>&lt;h2 id=&quot;tilting-理论&quot;&gt;Tilting 理论&lt;/h2&gt;
 
 &lt;h3 id=&quot;经典-tilting-投射维度为--1&quot;&gt;经典 Tilting: 投射维度为 $≤ 1$&lt;/h3&gt;
 
-&lt;h4 id=&quot;torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/h4&gt;
+&lt;h4 id=&quot;记号-对象类&quot;&gt;记号: 对象类&lt;/h4&gt;
 
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (垂直). 使用 $⟂_o$ 表示关于 $\mathrm{Hom}(-,-)$ 的垂直, $⟂$ 表示关于 $\mathrm{Ext}^1(-,-)$ 的垂直. 使用 $(-)^⟂$, $(-)^o$, $^⟂(-)$ 以及 $^o(-)$ 表示对象类的左右垂直类.&lt;/p&gt;
+&lt;p&gt;以下使用 $⟂_o$ 表示关于 $\mathrm{Hom}(-,-)$ 的垂直, $⟂$ 表示关于 $\mathrm{Ext}^1(-,-)$ 的垂直. 使用 $(-)^⟂$, $(-)^o$, $^⟂(-)$ 以及 $^o(-)$ 表示对象类的左右垂直类.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (对象类生成的对象类). 给定 (非空) 对象类 $𝒳$.&lt;/p&gt;
+&lt;p&gt;给定 (非空) 对象类 $𝒳$. 定义&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;$𝐚𝐝𝐝(𝒳)$ 是 $𝒳$ 中对象关于直和与直和项的闭包.&lt;/li&gt;
-  &lt;li&gt;$𝐟𝐢𝐥(𝒳)$ 是 $𝒳$ 中对象关于扩张 (合成列) 的闭包.&lt;/li&gt;
-  &lt;li&gt;$𝐬𝐮𝐛(𝒳)$ 是 $𝒳$ 中对象关于子对象的闭包.&lt;/li&gt;
-  &lt;li&gt;$𝐜𝐨𝐠(𝒳) = 𝐬𝐮𝐛(𝐚𝐝𝐝(𝒳))$ 是 $𝒳$ 中对象关于直和与子对象的闭包.&lt;/li&gt;
-  &lt;li&gt;$𝐅(𝒳) = 𝐟𝐢𝐥(𝐬𝐮𝐛(𝒳)) = (^o𝒳)^o$ 是 $𝒳$ 关于子对象和扩张的闭包.&lt;/li&gt;
+  &lt;li&gt;$𝐚𝐝𝐝(𝒳)$ 是 $𝒳$ 中对象关于直和与直和项的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐟𝐢𝐥(𝒳)$ 是 $𝒳$ 中对象关于扩张 (合成列) 的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐬𝐮𝐛(𝒳)$ 是 $𝒳$ 中对象关于子对象的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐜𝐨𝐠(𝒳) = 𝐬𝐮𝐛(𝐚𝐝𝐝(𝒳))$ 是 $𝒳$ 中对象关于直和与子对象的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐅(𝒳) = 𝐟𝐢𝐥(𝐬𝐮𝐛(𝒳)) = (^o𝒳)^o$ 是 $𝒳$ 关于子对象和扩张的闭包;&lt;/li&gt;
   &lt;li&gt;$𝐪𝐮𝐨𝐭(𝒳)$ 是 $𝒳$ 中对象关于商对象的闭包.&lt;/li&gt;
-  &lt;li&gt;$𝐠𝐞𝐧(𝒳) = 𝐪𝐮𝐨𝐭(𝐟𝐢𝐥(𝒳))$ 是 $𝒳$ 中对象关于直和与商对象的闭包.&lt;/li&gt;
+  &lt;li&gt;$𝐠𝐞𝐧(𝒳) = 𝐪𝐮𝐨𝐭(𝐟𝐢𝐥(𝒳))$ 是 $𝒳$ 中对象关于直和与商对象的闭包;&lt;/li&gt;
   &lt;li&gt;$𝐓(𝒳) = 𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒳)) = {}^o(𝒳^o)$ 是 $𝒳$ 关于商对象和扩张的闭包.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt; 对 $𝐦𝐨𝐝_A$, 对 $𝐚𝐝𝐝$ 封闭的对象类是有限生成的.&lt;/p&gt;
+&lt;p&gt;特别地, 对 $𝐦𝐨𝐝_A$, 对 $𝐚𝐝𝐝$ 封闭的对象类 (1, 2, 4, 5, 7, 8) 都是有限生成的, 从而可以用一个代表元表示. 例如 $𝐜𝐨𝐠(𝒳)$ 必形如某一 $𝐜𝐨𝐠(M)$.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (Torsion pair). 称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.&lt;/p&gt;
+&lt;p&gt;此外, 需要对 $𝒳$ 做一些说明. 见&lt;/p&gt;
 
+&lt;h4 id=&quot;torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/h4&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(Torsion pair 的等价定义).
+称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.&lt;/li&gt;
-  &lt;li&gt;存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$.&lt;/li&gt;
-  &lt;li&gt;存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$.&lt;/li&gt;
-  &lt;li&gt;${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.&lt;/li&gt;
-  &lt;li&gt;$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.&lt;/li&gt;
-  &lt;li&gt;$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.&lt;/li&gt;
-  &lt;li&gt;任意 $𝒯$-滤过对象属于 $𝒯$.&lt;/li&gt;
-  &lt;li&gt;任意 $ℱ$-滤过对象属于 $ℱ$.&lt;/li&gt;
+&lt;li&gt;
+$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.
+&lt;/li&gt;
+&lt;li&gt;
+存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$.
+&lt;/li&gt;
+&lt;li&gt;
+存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$.
+&lt;/li&gt;
+&lt;li&gt;
+${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.
+&lt;/li&gt;
+&lt;li&gt;
+$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.
+&lt;/li&gt;
+&lt;li&gt;
+$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
+&lt;/li&gt;
+&lt;li&gt;
+任意 $𝒯$-滤过对象属于 $𝒯$.
+&lt;/li&gt;
+&lt;li&gt;
+任意 $ℱ$-滤过对象属于 $ℱ$.
+&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (Torsion pair).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; 此时, 典范正合列 $0 → tM → M → fM → 0$ 在同构意义下唯一.&lt;/p&gt;
 
@@ -1507,39 +1360,922 @@ W^{\bullet }&amp;amp;: &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; W &amp;amp; 
     
       
         <item>
-          <title>存在左 $𝐩𝐫𝐨𝐣$-逼近</title>
-          <description>&lt;div class=&quot;proposition&quot;&gt;
-(未命名).
-对 Artin 代数, $M ∈ 𝐦𝐨𝐝_A$ 存在左投射逼近, 以及左极小投射逼近.
-&lt;br /&gt;
-&lt;br /&gt;
-特别地, 左投射逼近 $M → P$ 未必是单的, 但存在分解 $M → M^{∗ ∗ } ↪ P$. 
+          <title>$\LaTeX$ Template (v 1.2)</title>
+          <description>&lt;div class=&quot;abstract&quot;&gt;
+  &lt;h5&gt;Abstract&lt;/h5&gt;
+  &lt;div&gt;&lt;p&gt;This is a $\LaTeX$ template for writing articles.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;proof&quot;&gt;
-取 $M ∈ 𝐦𝐨𝐝_A$, 取 $(M,A)$ 的生成元为集合 $S$. 今断言以下是投射逼近
-$$
-φ : M → A^S,\quad m ↦ (f_i(m))_{i ∈ S}.
-$$
-往证任意 $M → 𝐩𝐫𝐨𝐣$ 类型的模同态通过 $A^S$ 分解. 依照稳定投射右正合列
-$$
-M^∗ ⊗ N → (M,N) → \underline{(M,N)} → 0.
-$$
-得 $M^∗ ⊗ 𝐩𝐫𝐨𝐣 ≃ (M,𝐩𝐫𝐨𝐣)$, 一切 $M → 𝐩𝐫𝐨𝐣$ 类型的同态是是 $f_i$ 的线性组合.
+&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h2&gt;
 
-&lt;br /&gt;
-&lt;br /&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#table-of-contents&quot; id=&quot;markdown-toc-table-of-contents&quot;&gt;Table of Contents&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#why-this-template&quot; id=&quot;markdown-toc-why-this-template&quot;&gt;Why this template?&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#示例&quot; id=&quot;markdown-toc-示例&quot;&gt;示例&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-考虑 $2 × 2$ 交换图
+&lt;h2 id=&quot;why-this-template&quot;&gt;Why this template?&lt;/h2&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;The real numbers $ℝ$ are uncountable.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;By &lt;a href=&quot;https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument&quot;&gt;Cantor’s diagonal argument&lt;/a&gt;, we can show that the set of real numbers is uncountable.&lt;/p&gt;
+
+\[\begin{bmatrix}
+    a_{1,1} &amp;amp; a_{1,2} &amp;amp; a_{1,3} &amp;amp; \cdots \\
+    a_{2,1} &amp;amp; a_{2,2} &amp;amp; a_{2,3} &amp;amp; \cdots \\
+    a_{3,1} &amp;amp; a_{3,2} &amp;amp; a_{3,3} &amp;amp; \cdots \\
+    ⋮ &amp;amp; ⋮ &amp;amp; ⋮ &amp;amp; ⋱.
+\end{bmatrix}\]
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;html&lt;/code&gt; 较 $\LaTeX$ 的优越性). 该模板相较传统 $\LaTeX$ 模板之优点包括但不限于&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;零秒编译.&lt;/li&gt;
+  &lt;li&gt;输出连续网页, 避免 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PDF&lt;/code&gt; 割裂图片或公式等.
+当然, 打印网页即得 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PDF&lt;/code&gt; 文档&lt;/li&gt;
+  &lt;li&gt;使用 URL 运行图片 ($\LaTeX$ 永远无法做到, 权宜的方式是使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;write18&lt;/code&gt;).&lt;/li&gt;
+  &lt;li&gt;发布网页, 随时随地都可查看.&lt;/li&gt;
+  &lt;li&gt;使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;localhost&lt;/code&gt; 端口: 电脑代码, 平板查看编译结果.&lt;/li&gt;
+  &lt;li&gt;兼容 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Unicode-math&lt;/code&gt; $ℝ$ (数学环境), ℝ (文本环境), 无需手动调整 assymb 包的兼容性问题, 或字体问题等.&lt;/li&gt;
+  &lt;li&gt;兼容多国语言混排, 这是一句废话, 但对 $\LaTeX$ 来说过于困难.&lt;/li&gt;
+  &lt;li&gt;排版语言公式简单 (前提: 配上合适的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;html&lt;/code&gt; 代码环境).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;(在 block 外使用 markdown 与 $\LaTeX$ 写作).
+在 {% — %} — {% end— %} 外可直接使用 markdown 语言与 $\LaTeX$.&lt;/p&gt;
+
+&lt;p&gt;一个小 bug 是将公式内的 underscore 识别为下标 (目前已修复).&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tikz&lt;/code&gt; 功能). 使用插件 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;quiver&lt;/code&gt; 画图.&lt;/p&gt;
+
+&lt;center&gt;
+&lt;!-- https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcbWF0aHNjciBDIl0sWzAsMSwiXFxtYXRoYmIgQV9rICJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxXSxbMiwzXSxbMyw0XSxbMSw0XSxbNSw3LCIiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV0sWzIsOSwiIiwyLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XV0= --&gt;
+&lt;iframe class=&quot;quiver-embed&quot; src=&quot;https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcbWF0aHNjciBDIl0sWzAsMSwiXFxtYXRoYmIgQV9rICJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxXSxbMiwzXSxbMyw0XSxbMSw0XSxbNSw3LCIiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV0sWzIsOSwiIiwyLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XV0=&amp;amp;embed&quot; width=&quot;432&quot; height=&quot;304&quot; style=&quot;border-radius: 8px; border: none;&quot;&gt;&lt;/iframe&gt;
+&lt;/center&gt;
+
+&lt;p&gt;图像大小容易失衡, 建议使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mathcha&lt;/code&gt; 画图, 输出矩阵, 例如&lt;/p&gt;
+
+\[\begin{bmatrix}
+M &amp;amp; →  &amp;amp; F( M) &amp;amp; ↠  &amp;amp; C( M)\\
+h⇣ \  &amp;amp;  &amp;amp; g⇣ \  &amp;amp;  &amp;amp; f⇣ \ \\
+Ω ( N) &amp;amp; →  &amp;amp; P( M) &amp;amp; ↠  &amp;amp; N
+\end{bmatrix}.\]
+
+&lt;p&gt;或者, 直接插入图片也行.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;(Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mathcha&lt;/code&gt; to draw picture).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https:/raw.githubusercontent.com/czhang271828/imgs/New_img/n_imgdiagram-20250420%20(2).png&quot; alt=&quot;image-20250423194403416&quot; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;(Block).
+支持 Definition, Theorem, Lemma, Proof, Solution, Example, Remark, Note, Corollary, Proposition, Slogan. 实现方式如下:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/_sass/main.scss&lt;/code&gt; 中定义 solution 的样式 (包含前, 中, 后, 以及 QED 正方形).&lt;/li&gt;
+  &lt;li&gt;在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/_plugins/latex.rb&lt;/code&gt; 中定义 solution 公式块环境, 此处使用  {% sol %} {% endsol %} .&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;(我的写作界面).&lt;/p&gt;
+
+&lt;p&gt;下图左是简陋的 markdown 编辑器 (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VScode&lt;/code&gt;, 配 Unicode-math 输入, 类似 &lt;a href=&quot;https://live.lean-lang.org/&quot;&gt;L∃∀N&lt;/a&gt;, 下图右是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;edge&lt;/code&gt; 浏览器. 一般来说, 左侧 $\texttt{ctrl + S}$ 保存, 右侧 $\texttt{ctrl + R}$ 直接刷新即可, 用时不超过一秒.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/czhang271828/imgs/New_img//n_imgimage-20250423194804974.png&quot; alt=&quot;image-20250423194804974&quot; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;示例&quot;&gt;示例&lt;/h3&gt;
+
+&lt;div class=&quot;slogan&quot;&gt;&lt;p&gt;The empty set $∅$ is the initial object of $𝐒𝐞𝐭𝐬$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;This is a note.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;question&quot;&gt;&lt;p&gt;This is a question.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;This is a proposition.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;This is a theorem.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;This is a lemma.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;This is a proof.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;corollary&quot;&gt;&lt;p&gt;This is a corollary.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;This is a definition. 作者有意将 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bottom-margin&lt;/code&gt; 调整至 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2em&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;This is an example.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;solution&quot;&gt;&lt;p&gt;This is a solution.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;测试视频?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/dQw4w9WgXcQ&quot;&gt;&lt;img src=&quot;https://markdown-videos-api.jorgenkh.no/youtube/dQw4w9WgXcQ&quot; alt=&quot;上当了&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/template</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/template</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Notes for Reflexive Subcategories</title>
+          <description>&lt;div class=&quot;abstract&quot;&gt;
+  &lt;h5&gt;Abstract&lt;/h5&gt;
+  &lt;div&gt;&lt;p&gt;本篇笔记将有限表现模范畴 $𝐦𝐨𝐝_R$ 中的结论迁移至将有限表现函子范畴 $𝐦𝐨𝐝_𝒞$, 重要命题包括&lt;a href=&quot;Finitely_Presented_Functor&quot;&gt;有限表现对象的等价定义&lt;/a&gt;, &lt;a href=&quot;Lazard_thm&quot;&gt;函子范畴的 Lazard 定理&lt;/a&gt; (平坦对象是投射对象的滤过余极限), &lt;a href=&quot;Fp_et_Plat_est_Proj&quot;&gt;有限表现平坦对象是投射对象&lt;/a&gt; (可表函子的直和项), &lt;a href=&quot;Plat_et_Proj_Cover_Proj&quot;&gt;具有投射盖的平坦对象必投射&lt;/a&gt;等. 重点研究了函子范畴中的平坦对象. 使用上述结论, 对具有较好性质的范畴, &lt;a href=&quot;Coreflexive_Contravariantly_Finite&quot;&gt;余反射子范畴与反变有限范畴等价&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;𝐦𝐨𝐝_𝒞&quot;&gt;$𝐦𝐨𝐝_{𝒞}$&lt;/h2&gt;
+
+&lt;p&gt;全文使用&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$𝐌𝐨𝐝_k$ 表示 $k$-右模范畴.&lt;/li&gt;
+  &lt;li&gt;$𝐦𝐨𝐝_k$ 有限表现 $k$-右模范畴.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;对局部小的 $k$-范畴 $𝒞$, 记&lt;/p&gt;
+
+\[𝐌𝐨𝐝_𝒞 := 𝐅𝐮𝐧𝐜𝐭_k(𝒞^{\mathrm{op}}, 𝐌𝐨𝐝_k)\]
+
+&lt;p&gt;为 $k$-函子范畴. 若无特别强调, 默认 $k$-范畴的函子是 $k$-函子.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;($k$-范畴的米田嵌入). 对交换环 $k$, 与 $k$-范畴 $𝒞$, 以下是全忠实的嵌入:&lt;/p&gt;
+
+\[𝒞 ↣ 𝐅𝐮𝐧𝐜𝐭_k (𝒞^{\mathrm{op}}, 𝐌𝐨𝐝_k) ,\quad X ↦ h_X\quad (:=(-,X)_{𝒞}).\]
+
+&lt;p&gt;特别地, 以下米田引理的同构是 $k$-模的同构:&lt;/p&gt;
+
+\[𝖭𝖺𝗍[h_X, F] ≃ F(X),\quad Φ ↦ Φ(\mathrm{id}_X).\]
+&lt;/div&gt;
+
+&lt;p&gt;以上是 $k$-充实版本的的米田引理. 特别地, $k = ℤ$ 对应预加范畴.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(有限表现范畴). 对给定局部小的 $k$-范畴 $𝒞$, 定义有限表现范畴 $𝐦𝐨𝐝_𝒞$ 为 $𝐅𝐮𝐧𝐜𝐭(𝒞^{\mathrm{op}}, 𝐀𝐛)$ 的全子范畴. 其对象形如 $\mathrm{cok} (h_φ)$, 即,&lt;/p&gt;
+
+\[(-,X) \xrightarrow{(-,φ )} (-,Y) ↠ \mathrm{cok} (h_φ).\]
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;对加法范畴 $𝒞$ 与具有 $\mathrm{cok}$ 的 $k$-范畴 $𝒜$, 以下是函子范畴的等价&lt;/p&gt;
+
+\[𝐅𝐮𝐧𝐜𝐭(𝒞 , 𝒜 ) → 𝐅𝐮𝐧𝐜𝐭_{Rex}(𝐦𝐨𝐝_𝒞, 𝒜);\]
+
+&lt;ol&gt;
+&lt;li&gt; 
+$𝐅𝐮𝐧𝐜𝐭_{Rex}$ 表示右正合函子 (保持余核的函子) 构成的全子范畴;
+&lt;/li&gt;
+&lt;li&gt;
+对左侧的 $f$, 右侧的函子定义作 $\mathrm{cok}(h_φ) ↦ \mathrm{cok}(F(φ))$.
+&lt;/li&gt;
+&lt;li&gt;
+对右侧的 $F$, 左侧函子定义作 $X ↦ F(h_X)$.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(弱核). 称 $X\xrightarrow f Y$ 是 $Y \xrightarrow g Z$ 的弱核, 若以下 $𝐦𝐨𝐝_{𝒞}$ 中的态射链&lt;/p&gt;
+
+\[h_X \xrightarrow{h_f} h_Y \xrightarrow{h_g}h_Z\]
+
+&lt;p&gt;在 $h_Y$ 处正合.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;记 $𝒞$ 局部小的有弱核的 $k$-范畴, $𝒜$ 是 Abel $k$-范畴, 以下是函子范畴的等价&lt;/p&gt;
+
+\[\begin{bmatrix}
+𝐅𝐮𝐧𝐜𝐭_w(𝒞 , 𝒜 ) &amp;amp; ↣ &amp;amp; 𝐅𝐮𝐧𝐜𝐭(𝒞 , 𝒜 ) \\
+∼↑  &amp;amp; &amp;amp; ↑ ∼ \\
+𝐅𝐮𝐧𝐜𝐭_{Ex}(𝐦𝐨𝐝 _𝒞 , 𝒜 ) &amp;amp; ↣ &amp;amp; 𝐅𝐮𝐧𝐜𝐭_{Rex}(𝐦𝐨𝐝 _𝒞 , 𝒜 ) \\
+\end{bmatrix}\]
+
+&lt;ol&gt;
+&lt;li&gt;
+当且仅当 $𝒞$ 存在弱核, $𝐦𝐨𝐝_𝒞$ 是 Abel 范畴; 
+&lt;/li&gt;
+&lt;li&gt;
+$F ∈ 𝐅𝐮𝐧𝐜𝐭_w(𝒞 , 𝒜 )$, 当且仅当 $F$ 将一切弱核所在的态射链 $X \xrightarrow f Y \xrightarrow g Z$ 映作 $F(Y)$ 处正合的态射链 $F(X)\xrightarrow {F(f)} F(Y) \xrightarrow {F(g)} F(Z)$;
+&lt;/li&gt;
+&lt;li&gt;
+$𝐅𝐮𝐧𝐜𝐭_{Ex}$ 表示正合函子 (保持核与余核的函子). 
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;以下说明全子范畴的嵌入 $𝒞 ↣ 𝐦𝐨𝐝_𝒞$ 决定了某些普适问题的解. 给定局部小的 $k$-范畴 $𝒞$. 依照定理,&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;一切从 $𝐦𝐨𝐝_𝒞$ 到 Abel $k$-范畴 $𝒜$ 的右正合函子通过全忠实嵌入 $𝒞 ↣ 𝐦𝐨𝐝_𝒞$ 唯一分解 (至多相差一个范畴等价);&lt;/li&gt;
+  &lt;li&gt;若 $𝒞$ 有弱核, 一切从 $𝐦𝐨𝐝_𝒞$ 到 Abel $k$-范畴 $𝒜$ 的正合函子通过全忠实嵌入 $𝒞 ↣ 𝐦𝐨𝐝_𝒞$ 唯一分解 (至多相差一个范畴等价).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;假定 $𝒜$ 是有足够投射对象的 Abel 范畴, $i : 𝒫 ↣ 𝒜$ 是投射对象组成的全子范畴, 则&lt;/p&gt;
+
+\[(i(-),∙)_{𝒫}: 𝒜 → 𝐦𝐨𝐝_𝒫,\quad X ↦ (i(-),X)_𝒫\]
+
+&lt;p&gt;是范畴等价.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;张量积-𝐦𝐨𝐝_𝒞-的等价刻画&quot;&gt;张量积, $𝐦𝐨𝐝_{𝒞}$ 的等价刻画&lt;/h2&gt;
+
+&lt;p&gt;定义 $k$-范畴的函子范畴 $𝐌𝐨𝐝_𝒞 := 𝐅𝐮𝐧𝐜𝐭 (𝒞^{\mathrm{op}} , 𝐦𝐨𝐝_k)$. 任意 $F ∈ 𝐌𝐨𝐝_k$ 通过顿范畴 $𝒞⇒F$ 中的滤过余极限表出, 且这一构造是函子性的.&lt;/p&gt;
+
+&lt;p&gt;今考虑本质小的 $k$-范畴 $𝒞$, 此时 $𝐦𝐨𝐝_𝒞$ 也是本质小的 $k$-范畴. 定义 $k$-双线性的配对&lt;/p&gt;
+
+\[𝒞 ⊗ 𝐌𝐨𝐝_{𝒞^{\mathrm{op}}} → 𝐌𝐨𝐝_k,\quad X ⊗ F ↦ FX.\]
+
+&lt;p&gt;由于 $F ∈ 𝐌𝐨𝐝_𝒞$ 是可表函子的余极限 (考虑 $∐\limits_{X ∈ 𝖮𝖻(𝒞)}(h_X)^{∐F(X)} ↠ F$), 且这一构造是函子性的.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(张量积) 将张量积的定义延拓至&lt;/p&gt;
+
+\[𝐌𝐨𝐝_𝒞 ⊗ 𝐌𝐨𝐝_{𝒞^{\mathrm{op}}} → 𝐌𝐨𝐝_k,\quad (\varinjlim(-, X)) ⊗ F ↦ \varinjlim FX.\]
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(有限表现函子的等价定义, &lt;a href=&quot;Finitely_Presented_Functor&quot;&gt;证明&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;选定 $F ∈ 𝐌𝐨𝐝_𝒞$, 以下等价:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+(有限表现函子) $F ∈ 𝐦𝐨𝐝_𝒞$;
+&lt;/li&gt;
+&lt;li&gt;
+(紧对象) 对 $𝐌𝐨𝐝_k$ 中的滤过系统 $G_∙$, 典范态射
+
 $$
-\begin{bmatrix}
+\varinjlim (F, G_∙)_{𝒞^{\mathrm{op}}} ≃  (F, \varinjlim G_∙)_{𝒞^{\mathrm{op}}}
+$$
+
+是同构;
+&lt;/li&gt;
+&lt;li&gt;
+$F ⊗ -: 𝐌𝐨𝐝_{𝒞 ^{\mathrm{op}}} → 𝐌𝐨𝐝_k$ 保持任意积.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;参考上述命题中 (2 ⇒ 1) 一步的证明, 任意函子是有限表现函子的滤过余极限. 以上也蕴含了模范畴中的类似结论, 例如, $M$ 是有限表现模, 当且仅当 $(M ⊗ -)$ 与 $∏$ 交换.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;有限生成投射对象必然是可表函子的直和项. 特别地, 若 $𝒞$  Karoubi  (所有幂等态射都有核与余核), 则有限生成投射对象恰好是可表函子.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(平坦对象). 称 $F ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 当且仅当 $F ⊗ -$ 保持 $𝐌𝐨𝐝_{𝒞^{\mathrm{op}}}$ 中的单自然变换.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;依照 $𝐌𝐨𝐝_k$ 范畴的 AB5 条件, 模的滤过余极限与有限极限交换. 因此, 平坦对象只需保持 $𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}$ 中的单自然变换.&lt;/p&gt;
+
+&lt;p&gt;例如, $M$ 是平坦模, 当且仅当 $M ⊗ -$ 保持有限表现模之间的单射.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;(有限表现 → 投射 通过平坦对象分解, &lt;a href=&quot;Fp_Proj_Plat&quot;&gt;证明&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(平坦对象是投射对象的滤过余极限, &lt;a href=&quot;Lazard_thm&quot;&gt;证明&lt;/a&gt;).
+给定小的加法范畴 $𝒞$, 假定以下提及的滤过余极限存在.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+假定 $𝒞^{\mathrm{op}}$ 有弱核, 则 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 当且仅当 $P$ 是有限表现函子 $\{h_X\}$ 的滤过余极限; 
+&lt;/li&gt;
+&lt;li&gt;
+假定 $𝒞$ 有弱核, 则 $P ∈ 𝐌𝐨𝐝_{𝒞^{\mathrm{op}}}$ 是平坦对象, 当且仅当 $P$ 是有限表现函子 $\{h^X\}$ 的滤过余极限. 
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(karoubi 范畴). 称加法范畴 Karoubi, 若幂等态射存在核与余核.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(内射余生成元). 对局部小的范畴 $𝒞$. 称 $X ∈ 𝒞$ 是内射余生成元, 若以下两点满足&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+$f ↦ (f, X)_𝒞$ 将满射对应至单射, 换言之, $(-,X)$ 是正合函子; 
+&lt;/li&gt;
+&lt;li&gt;
+$(f,X)_{𝒞} ↦ f$ 良定义, 从而将单射返回至满射, 换言之, $(-,X)$ 是忠实函子. 
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;例如, $𝐌𝐨𝐝_k$ 存在内射余生成元, 通常选作 $(k, C)_{ℤ}$. 其中 $C$ 是 $𝐀𝐛$ 的内射余生成元, 例如 $ℚ/ℤ$ 或 $ℝ/ℤ$.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(有限表现 + 平坦 = 投射, &lt;a href=&quot;Fp_et_Plat_est_Proj&quot;&gt;证明&lt;/a&gt;).
+给定 Karoubi 的, 本质小的加法范畴 $𝒞$. 若 $F ∈ 𝐦𝐨𝐝_𝒞$ 平坦, 则 $F$ 投射.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;(关于 Abel 化: 模范畴的非对称性).
+对加法范畴 $𝒞$, 以下两者均是 $𝒞$ 是在 $𝐌𝐨𝐝_{𝒞}$ 中的 Abel 闭包:&lt;/p&gt;
+
+\[𝐦𝐨𝐝_{𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}^{\mathrm{op}}} = 𝐟𝐩 (𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}, 𝐌𝐨𝐝_k);\quad 𝐦𝐨𝐝^{\mathrm{op}}_{𝐦𝐨𝐝_{𝒞}^{\mathrm{op}}} = 𝐟𝐩 (𝐦𝐨𝐝_{𝒞}, 𝐌𝐨𝐝_k)^{\mathrm{op}}.\]
+
+&lt;p&gt;取 $𝒞$ 为 $k$-代数 $R$ 的有限生成自由模范畴, 则两处 Abel 闭包的典范同构由自由模所在的可表函子诱导, 即,&lt;/p&gt;
+
+\[\begin{bmatrix}
+    𝐟𝐩 (𝐦𝐨𝐝_{𝒞}, 𝐌𝐨𝐝_k)^{\mathrm{op}} &amp;amp;→&amp;amp; 𝐟𝐩 (𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}, 𝐌𝐨𝐝_k) \\ 
+    (R_R^n, - )_{𝐦𝐨𝐝_R} &amp;amp; ↦ &amp;amp; ({_R}R^n, -)_{𝐦𝐨𝐝_{R^{\mathrm{}op}}}
+\end{bmatrix}.\]
+
+&lt;p&gt;对 $M_R = \mathrm{cok}(R^m \xrightarrow f R^n)$, 上述对应延拓至&lt;/p&gt;
+
+\[\begin{bmatrix}
+𝐟𝐩(𝐦𝐨𝐝_{R^{\mathrm{op}}} ,𝐌𝐨𝐝_{k}) &amp;amp; M_R ⊗ - &amp;amp; ←  &amp;amp; R_{R}^{n} ⊗ - &amp;amp; ←  &amp;amp; R_{R}^{m} \otimes -\\
+ &amp;amp;   &amp;amp;  &amp;amp; ∥  &amp;amp;  &amp;amp; ∥ \\
+𝐟𝐩(𝐦𝐨𝐝_{R^{\mathrm{op}}}^{\mathrm{op}} ,𝐌𝐨𝐝_{k}) &amp;amp; ( M_{R} ,-) &amp;amp; →  &amp;amp; \left( R_{R}^{n} ,-\right) &amp;amp; →  &amp;amp; \left( R_{R}^{m} ,-\right)
+\end{bmatrix}\]
+
+&lt;p&gt;同理, 上方的 $(&lt;em&gt;RX, - )&lt;/em&gt;{𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}}$ 对应下方的 $- ⊗_RX ∈ 𝐟𝐩(𝐦𝐨𝐝_R^{\mathrm{op}}, 𝐌𝐨𝐝_k)^{\mathrm{op}}$. 这一紧对象间的对应通过滤过余极限给出 Abel 闭包的范畴等价.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;注意: 这一非对称性在三角范畴中将不复存在, $𝐦𝐨𝐝_𝒯^{\mathrm{op}}$ 等价于 $𝐦𝐨𝐝_{𝒯^{\mathrm{op}}}$. 本质上, 同调函子与上同调函子是对称的.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;三角范畴-上同调函子&quot;&gt;三角范畴, 上同调函子&lt;/h2&gt;
+
+&lt;p&gt;采用记号 $(𝒯, [1], \triangle)$ 表示三角范畴, 平移, 以及好三角类. 使用上链复形 $X^∙$ 表示一个好三角. 对 Abel 范畴 $𝒜$, 称函子 $F:𝒯^{\mathrm{op}} → 𝒜$ 是上同调的, 当且仅当 $F$ 将 $\triangle$ 映作长正合列.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;反变的米田嵌入 $𝒯^{\mathrm{op}} → 𝐅𝐮𝐧𝐜𝐭(𝒞, 𝐌𝐨𝐝_k)$ 是上同调函子. &lt;a href=&quot;Yoneda_Homological&quot;&gt;证明&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;依照定义, 给定三角范畴, 对任意 $X^∙ ∈ \triangle$, $X^n → X^{n+1}$ 的三角核 $X^{n-1} → X^n$ 是弱核. 换言之, 三角核都是弱核. 相应地, 三角余核是弱余核.&lt;/p&gt;
+
+&lt;p&gt;应当指出, 存在非三角核形式的弱核. 例如取 $X ≠ 0$, 则 $X → 0$ 是 $0 → 0$ 的弱核. 这说明弱核未必是三角核.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Homological_Wk_Ker&quot;&gt;证明&lt;/a&gt;).
+(上) 同调函子保持弱核.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Mod_Tri_is_Frobenius&quot;&gt;证明&lt;/a&gt;).
+$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;比较自由模范畴的两类 Abel 闭包, 三角范畴的 Abel 闭包显得更对称: 这主要得益于上同调函子的泛性质.&lt;/p&gt;
+
+&lt;p&gt;对三角范畴至 Abel 范畴的函子, 上同调函子恰好是保持弱核的函子. 对三角范畴, 上同调函子通过 $𝒯^{\mathrm{op}} ↣ 𝐦𝐨𝐝_{𝒯^{\mathrm{op}}}$ 唯一分解.&lt;/p&gt;
+
+&lt;div class=&quot;slogan&quot;&gt;&lt;p&gt;对本质小的三角范畴 $𝒯$, 考虑函子范畴 $𝐅𝐮𝐧𝐜𝐭(𝒯^{\mathrm{op}}, 𝐌𝐨𝐝_k)$, 则上同调函子, 正合函子, 可表函子的滤过余极限, 以及平坦函子四者相同.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;反变有限&quot;&gt;反变有限&lt;/h2&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(逼近, 预盖, 反变有限). 
+给定任意范畴 $𝒞$ 与同构闭的对象类 $𝒳$.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+一个 $𝒳$-预覆盖是一个态射 $X_{∈ 𝒳} \xrightarrow f M_{∈ 𝒞}$, 使得 $(𝒳, f)$ 均为满射. 
+&lt;/li&gt;
+&lt;li&gt;
+此时, 称 $f$ 是 $M$ 的一个右 $𝒳$-逼近. 等价地, 任意 $X' → M$ 通过 $f$ 分解. 
+&lt;/li&gt;
+&lt;li&gt;
+称 $𝒳$ 是反变有限的对象类, 若所有 $M$ 都存在右 $𝒳$-逼近. 
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;若 $𝒞$ 中有足够投射对象, 取 $𝒳 = 𝐏𝐫𝐨𝐣$, 右逼近取作投射对象出发的满射.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(投射盖). 假定 Abel 范畴. 称 $π : P → X$ 是 $X$ 的一个投射盖, 若 $π$ 是满的, 且 $\mathrm{ker}(π)$ 是盈余的. 换言之, 任意形如&lt;/p&gt;
+
+\[\begin{bmatrix}
+∗ &amp;amp; ↪ &amp;amp; ∗ \\ 
+⤵ &amp;amp; &amp;amp; ⤵ \\ 
+\mathrm{ker}(π) &amp;amp; ↪ &amp;amp; P \\ 
+\end{bmatrix}\]
+
+&lt;p&gt;的推出拉回方块一定同构于&lt;/p&gt;
+
+\[\begin{bmatrix}
+\mathrm{ker}(π) &amp;amp; ↪ &amp;amp; P \\ 
+∥ &amp;amp; \ &amp;amp; ∥ \\ 
+\mathrm{ker}(π) &amp;amp; ↪ &amp;amp; P \\ 
+\end{bmatrix}.\]
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;有些地方将投射盖定义作满足 $[(p ∘ α = p) ⟹ (α \ \text{同构})]$ 的满态射 (这一假定似乎更弱一些). 以上定义按照 superfluous 等价转化.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Plat_et_Proj_Cover_Proj&quot;&gt;证明&lt;/a&gt;).
+若平坦对象具有投射盖, 则其必然是投射对象.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;取定同构封闭的全子范畴 $i : 𝒞 ↣ 𝒜$.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+称 $𝒞$ 是反射的, 若 $i$ 是右伴随. 
+&lt;/li&gt;
+&lt;li&gt;
+称 $𝒞$ 是余反射的, 若 $i$ 是左伴随. 
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;例如, 给定 torsion pair $(𝒯 , ℱ)$, 全子范畴 $ℱ$ 是反射的, $𝒯$ 是余反射的.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;(余反射与反变有限, &lt;a href=&quot;Coreflexive_Contravariantly_Finite&quot;&gt;证明&lt;/a&gt;).
+取加法范畴 $𝒯$ 与本质小的同构闭全子范畴 $ℬ$.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+假定 $ℬ$ Karoubi, $ℬ^{\mathrm{op}}$ 存在弱核, 且 $𝐦𝐨𝐝_{ℬ}$ 存在投射盖 (例如 Krull-Schmidt 三角范畴). 此时 $ℬ$ 余反射, 当且仅当其反变有限.
+&lt;/li&gt;
+&lt;li&gt;
+假定 $ℬ$ Karoubi, 存在弱核. 此时 $ℬ$ 余反射, 当且仅当其反变有限. 
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(有可数积或可数余积的三角范畴必 Karoubi, &lt;a href=&quot;Countable_Karoubi&quot;&gt;证明&lt;/a&gt;).
+三角范畴 Karoubi 的一个充分条件: 若三角范畴有可数积或可数余积, 则 Karoubi.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Reflexive_sub_cat</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Reflexive_sub_cat</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>合冲-逼近伴随 (稳定范畴中)</title>
+          <description>&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(逼近与合冲在稳定范畴中伴随).
+$Ω_∙$ 与 $C_∙$ 是稳定投射范畴的伴随函子; $℧^∙$ 与 $K^∙$ 是稳定内范畴的伴随函子.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+$C_k: \underline{𝐦𝐨𝐝_A} ⇆ \underline{𝐦𝐨𝐝_A} : Ω_k$ 是左右伴随.
+&lt;/li&gt;
+&lt;li&gt;
+$℧^k: \overline{𝐦𝐨𝐝_A} ⇆ \overline{𝐦𝐨𝐝_A} : K^k$ 是左右伴随.
+&lt;/li&gt;
+&lt;li&gt;
+$C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$.
+&lt;/li&gt;
+&lt;li&gt;
+$K^k ≃ τ(℧^k(τ⁻¹))$.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;对前两条, 仅证明第一处 $k=1$ 的情形. 考虑以下两条横向正合列 (原范畴中):
+\(\begin{bmatrix}
+M &amp;amp; →  &amp;amp; F( M) &amp;amp; ↠  &amp;amp; C( M)\\
+h⇣ \  &amp;amp;  &amp;amp; g⇣ \  &amp;amp;  &amp;amp; f⇣ \ \\
+Ω ( N) &amp;amp; →  &amp;amp; P( M) &amp;amp; ↠  &amp;amp; N
+\end{bmatrix}.\)
+若有 $f$, 则投射盖 $P_0(N) ↠ N$ 诱导了 $g$, 核的泛性质诱导了 $h$. 若有 $h$, 则左逼近的泛性质诱导了 $g$, 余核的泛性质诱导了 $f$. 之后说明在稳定范畴中, 以上对应 $f ↔ h$ 是双射.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+给定 $f$, 假定存在满足条件的 $g_1 ≠ g_2$, 则 $(g_1 - g_2)$ 通过 $Ω_1(N)$ 分解. 依照泛性质, $h_i$ 唯一决定, 且 $(h_1 - h_2)$ 通过 $F(M)$ 分解. 这说明由 $f$ 决定的一族 $\{h_i\}$ 在稳定范畴中相等.
+&lt;/li&gt;
+&lt;li&gt;
+给定 $h$, 假定存在满足条件的 $g_1 ≠ g_2$, 则 $(g_1 - g_2)$ 通过 $C(M)$ 分解. 依照泛性质, $f_i$ 唯一决定, 且 $(f_1 - f_2)$ 通过 $P_0(N)$ 分解. 这说明由 $h$ 决定的一族 $\{f_i\}$ 在稳定范畴中相等.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;特别地, 右伴随函子 $C(-)$ 无关逼近的选取.
+&lt;br /&gt;
+对后一命题, 仅证明 $C(-) = \mathrm{Tr}(Ω_1(\mathrm{Tr}(-)))$. 给定左逼近对应的右正合列&lt;/p&gt;
+
+\[M → Q → C(M) → 0,\]
+
+&lt;p&gt;取任意投射表现 (不必极小) 诱导的四项正合列&lt;/p&gt;
+
+\[0 → M^∗ → P_0^∗ \overset α → P_1^∗ → \widetilde{\mathrm{Tr}(M)} → 0.\]
+
+&lt;p&gt;注意到 $\operatorname{im}α$ 与 $Ω_1(\mathrm{Tr}(M))$ 在稳定范畴中相等, 而&lt;/p&gt;
+
+\[\operatorname{coim}α = \operatorname{cok}[M^∗ ↪ P_0^∗]
+= \operatorname{cok}[Q^∗ ↠ M^∗ ↪ P_0^∗]\]
+
+&lt;p&gt;由 $C(M) = \operatorname{cok}[P_0 ↠ M → Q]$, 从而 $\mathrm{Tr}(C(M))$ 与 $\operatorname{coim}α$ 在稳定范畴中同构. 最后由 $\mathrm{Tr}$ 是稳定等价, 得&lt;/p&gt;
+
+\[Ω_1(\mathrm{Tr}(M)) ≃ \operatorname{im}α ≃ \operatorname{coim}α ≃ \mathrm{Tr}(C(M))\quad \text{稳定范畴中}.\]
+
+&lt;p&gt;因此 $C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$ (稳定范畴中).&lt;/p&gt;
+
+\[\begin{bmatrix}
+ &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \widetilde{Ω _{1}\widetilde{\mathrm{Tr}( M)}} &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp;  &amp;amp; ↗  &amp;amp; ∥  &amp;amp; ⤥  &amp;amp;  &amp;amp;  &amp;amp; \\
+M^{*} &amp;amp; ↪  &amp;amp; P_{0}^{*} &amp;amp; ↠  &amp;amp; \operatorname{(co)im}, &amp;amp; ↪  &amp;amp; P_{1}^{*} &amp;amp; ↠  &amp;amp; \widetilde{\mathrm{Tr}}( M)\\
+↟  &amp;amp; ↗  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+Q^{*} &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;
+\end{bmatrix}\]
+
+&lt;p&gt;以上是证明涉及的对象.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>$Ω(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$</title>
+          <description>&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;($Ω_1$ 与 $℧^1$).
+$Ω_1(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$ 是投射对象之子对象的稳定范畴. $℧^1(\overline{𝐦𝐨𝐝_A}) ≃ \overline{𝐪𝐮𝐨𝐭(A)}$ 是投射对象之商对象的稳定范畴.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;仍只看单侧命题 $Ω(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$. 由定义, 两者是 $\underline{𝐦𝐨𝐝_A}$ 的全子范畴. 由同构闭, 两者的对象类等价.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Top_Surjective</title>
+          <description>&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;$\mathrm{Top}(f)$ 满当且仅当 $f$ 满; $\mathrm{Soc}(f)$ 单当且仅当 $f$ 单.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;给定 $f : X → Y$. 若 $f$ 满, 则 $\mathrm{Top}(f)$ 满. 今假定 $\mathrm{Top}(f)$ 满. 此时, 对任意 $y ∈ Y$, 总有 $x ∈ X$ 使得 $(f(x) - y) ∈ \mathrm{Rad}(Y)$. 因此有
+\(\mathrm{im}(f) + \mathrm{Rad}(Y) = Y.\)
+依照 $\mathrm{Rad}$ 的性质, 只能由于 $\mathrm{im}(f) = Y$. 故 $f$ 满. 对 $\mathrm{Soc}(f)$ 的证明是完全对偶的.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Notes on Classical Tilting Theory</title>
+          <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#tilting-理论&quot; id=&quot;markdown-toc-tilting-理论&quot;&gt;Tilting 理论&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#经典-tilting-投射维度为--1&quot; id=&quot;markdown-toc-经典-tilting-投射维度为--1&quot;&gt;经典 Tilting: 投射维度为 $≤ 1$&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#记号-对象类&quot; id=&quot;markdown-toc-记号-对象类&quot;&gt;记号: 对象类&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#torsion-pair-确定的对象类&quot; id=&quot;markdown-toc-torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#局部-tilting-模-两类-torsion-pair&quot; id=&quot;markdown-toc-局部-tilting-模-两类-torsion-pair&quot;&gt;局部 Tilting 模: 两类 torsion pair&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#tilting-模诱导的-torsion-pair&quot; id=&quot;markdown-toc-tilting-模诱导的-torsion-pair&quot;&gt;Tilting 模诱导的 torsion pair&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#brenner-butler-理论&quot; id=&quot;markdown-toc-brenner-butler-理论&quot;&gt;Brenner-Butler 理论&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#同调维度&quot; id=&quot;markdown-toc-同调维度&quot;&gt;同调维度&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#遗传范畴的-torsion-pair&quot; id=&quot;markdown-toc-遗传范畴的-torsion-pair&quot;&gt;遗传范畴的 torsion pair&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;tilting-理论&quot;&gt;Tilting 理论&lt;/h2&gt;
+
+&lt;h3 id=&quot;经典-tilting-投射维度为--1&quot;&gt;经典 Tilting: 投射维度为 $≤ 1$&lt;/h3&gt;
+
+&lt;h4 id=&quot;记号-对象类&quot;&gt;记号: 对象类&lt;/h4&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(垂直). 以下使用&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$⟂_o$ 表示关于 $\mathrm{Hom}(-,-)$ 的垂直,&lt;/li&gt;
+  &lt;li&gt;$⟂$ 表示关于 $\mathrm{Ext}^1(-,-)$ 的垂直.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;特别地, 使用 $(-)^⟂$, $(-)^o$, $^⟂(-)$ 以及 $^o(-)$ 表示对象类的左右垂直类.&lt;/p&gt;
+
+\[𝒳^⟂ := \{Y ∈ 𝖮𝖻(𝒞) ∣ \mathrm{Ext}^1(X, Y) = 0, ∀ X ∈ 𝒳\}.\]
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;给定 (非空) 对象类 $𝒳$. 定义&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$𝐚𝐝𝐝(𝒳)$ 是 $𝒳$ 中对象关于直和与直和项的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐟𝐢𝐥(𝒳)$ 是 $𝒳$ 中对象关于扩张 (合成列) 的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐬𝐮𝐛(𝒳)$ 是 $𝒳$ 中对象关于子对象的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐜𝐨𝐠(𝒳) = 𝐬𝐮𝐛(𝐚𝐝𝐝(𝒳))$ 是 $𝒳$ 中对象关于直和与子对象的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐅(𝒳) = 𝐟𝐢𝐥(𝐬𝐮𝐛(𝒳)) = (^o𝒳)^o$ 是 $𝒳$ 关于子对象和扩张的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐪𝐮𝐨𝐭(𝒳)$ 是 $𝒳$ 中对象关于商对象的闭包.&lt;/li&gt;
+  &lt;li&gt;$𝐠𝐞𝐧(𝒳) = 𝐪𝐮𝐨𝐭(𝐟𝐢𝐥(𝒳))$ 是 $𝒳$ 中对象关于直和与商对象的闭包;&lt;/li&gt;
+  &lt;li&gt;$𝐓(𝒳) = 𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒳)) = {}^o(𝒳^o)$ 是 $𝒳$ 关于商对象和扩张的闭包.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;特别地, 对 $𝐦𝐨𝐝_A$, 对 $𝐚𝐝𝐝$ 封闭的对象类 (1, 2, 4, 5, 7, 8) 都是有限生成的, 从而可以用一个代表元表示. 例如 $𝐜𝐨𝐠(𝒳)$ 必形如某一 $𝐜𝐨𝐠(M)$.&lt;/p&gt;
+
+&lt;p&gt;此外, 需要对 $𝐅(𝒳)$ 与 $𝐓(𝒳)$ 的等价定义做一些说明, 见&lt;a href=&quot;Def_de_TP&quot;&gt;此处&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/h4&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(Torsion pair 的等价定义, &lt;a href=&quot;Def_de_TP&quot;&gt;证明&lt;/a&gt;).
+称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.&lt;/li&gt;
+  &lt;li&gt;存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$. 此时, $\ker t = ℱ$, $\operatorname{im} t = 𝒯$.&lt;/li&gt;
+  &lt;li&gt;存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$. 此时, $\ker f = 𝒯$, $\operatorname{im} f = ℱ$.&lt;/li&gt;
+  &lt;li&gt;${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.&lt;/li&gt;
+  &lt;li&gt;$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.&lt;/li&gt;
+  &lt;li&gt;$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.&lt;/li&gt;
+  &lt;li&gt;任意 $𝐪𝐮𝐨𝐭(𝒯)$-滤过对象属于 $𝒯$, 并取 $ℱ := 𝒯^o$&lt;/li&gt;
+  &lt;li&gt;任意 $𝐬𝐮𝐛(ℱ)$-滤过对象属于 $ℱ$, 并取 $𝒯 := {}^oℱ$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;以上 ses 在同构意义下唯一. 依照定义, $tM → N$ 类型的态射通过 $tN ↪ N$ 唯一地分解, 从而 $t$ 是全子范畴嵌入 $𝒯 ↣ 𝒜$ 的右伴随. 特别地,&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$t$ 是右正合的左伴随函子, $𝒯$ 是余反射的;&lt;/li&gt;
+  &lt;li&gt;$f$ 是左伴随的右正合函子, $ℱ$ 是反射的.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Torsion pair 关于 $\mathrm{Hom}$-垂直 (且封闭). 以下是一些关于 $\mathrm{Ext}^1$-垂直的结论.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(垂直条件, &lt;a href=&quot;Torsion_Pair_Ext_Orth&quot;&gt;证明&lt;/a&gt;). 以下刻画 torsion pair $(𝒯, ℱ)$ 中满足 $\mathrm{Ext}^1$-垂直的对象. 记 $t$ 与 $f$ 是相应的子函子与商函子.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$𝒯 ∩ (^⟂ 𝒯) = 𝒯 ∩ τ ⁻¹ ℱ$.&lt;/li&gt;
+  &lt;li&gt;$𝒯 ∩ (𝒯^⟂) = 𝒯 ∩ t(𝐢𝐧𝐣)$.&lt;/li&gt;
+  &lt;li&gt;$ℱ ∩ (ℱ^⟂) = ℱ ∩ τ 𝒯$.&lt;/li&gt;
+  &lt;li&gt;$ℱ ∩ (^⟂ ℱ) = ℱ ∩ f(𝐩𝐫𝐨𝐣)$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象, &lt;a href=&quot;gen_and_cog&quot;&gt;证明&lt;/a&gt;). 给定对象 $X$ 与 $M$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$M ∈ 𝐠𝐞𝐧(X)$ 当且仅当赋值 $(X, M) ⊗_{\mathrm{End}(X)} X → M$ 是满的.&lt;/li&gt;
+  &lt;li&gt;$M ∈ 𝐜𝐨𝐠(X)$ 当且仅当余赋值 $M → ((M, X), X)$ 是单的.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($𝐓$ 与 $𝐅$ 中的对象, 证明见&lt;a href=&quot;Def_de_TP&quot;&gt;此定理&lt;/a&gt;中 4 ⟺ 5 部分). 给定对象 $X$ 与 $M$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$M ∈ 𝐓(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐪𝐮𝐨𝐭(X)$.&lt;/li&gt;
+  &lt;li&gt;$M ∈ 𝐅(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐚𝐝𝐝(X)$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Gen_Eq_T&quot;&gt;证明&lt;/a&gt;). $𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧(X), X^o)$ 是 torsion pair.&lt;/li&gt;
+  &lt;li&gt;若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;作为 $𝐜𝐨𝐠$ 与 $𝐠𝐞𝐧$ 中的特例, 定义&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(忠实模). 称 $M ∈ 𝐦𝐨𝐝_A$ 忠实, 若以下等价命题成立.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;对任意 $a ≠ 0$ 总有 $M ⋅ a ≠ 0$.&lt;/li&gt;
+  &lt;li&gt;同态 $A → \mathrm{End}(M)^{\mathrm{op}}$ 是单的.&lt;/li&gt;
+  &lt;li&gt;$A ∈ 𝐜𝐨𝐠(M)$.&lt;/li&gt;
+  &lt;li&gt;$DA ∈ 𝐠𝐞𝐧(M)$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;局部-tilting-模-两类-torsion-pair&quot;&gt;局部 Tilting 模: 两类 torsion pair&lt;/h4&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(局部 Tilting 模). 称 $T$ 是局部 tilting 的, 若 $p.\dim T ≤ 1$ 且 $\mathrm{Ext}^1(T,T)=0$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;等价地, $T$ 满足自垂直条件 $\mathrm{Ext}^1(T,T)$, 以及&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;$A$ 相对 $𝐚𝐝𝐝(T)$ 的内射分解 (余消解) 是至多 $1$ 维的, 即, 存在 ses&lt;/p&gt;
+
+\[0 → A → T' → T'' → 0,\]
+
+    &lt;p&gt;其中 $T$, $T’’$ 属于 $𝐚𝐝𝐝(T)$.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$T$ 相对 $𝐚𝐝𝐝(A)$ 的投射分解 (消解) 是至多 $1$ 维的, 即, 存在 ses&lt;/p&gt;
+
+\[0 → P' → P'' → T → 0,\]
+
+    &lt;p&gt;其中 $P$, $P’$ 属于 $𝐚𝐝𝐝(A)$.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;slogan&quot;&gt;&lt;p&gt;由投射维度, $\mathrm{Ext}^1(T,-)$ 与 $\mathrm{Ext}^1(-,T)$ 是右正合函子.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(局部 tilting 模诱导的 torsion pair, &lt;a href=&quot;Partial_Tilting_Two_Torsion_pairs&quot;&gt;证明&lt;/a&gt;). 局部 tilting 模 $T$ 诱导了以下两类 torsion pair.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$(𝐠𝐞𝐧(T), T^o)$ 是 torsion pair.&lt;/li&gt;
+  &lt;li&gt;$(T^⟂, 𝐜𝐨𝐠(τT))$ 是 torsion pair.&lt;/li&gt;
+  &lt;li&gt;$𝐠𝐞𝐧(T) ⊆ T^⟂$.&lt;/li&gt;
+  &lt;li&gt;以上两个 torsion pair, 均有 $T ∈ 𝒯 ∩ {}^⟂𝒯 = 𝒯 ∩ τ⁻¹ ℱ$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;内射模属于 $T^⟂$. 若投射模属于 $𝐠𝐞𝐧(T)$, 则其属于 $𝐚𝐝𝐝(T)$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;tilting-模诱导的-torsion-pair&quot;&gt;Tilting 模诱导的 torsion pair&lt;/h4&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(&lt;a href=&quot;404&quot;&gt;证明待补充&lt;/a&gt;). 给定局部 tilting 模 $T$, 以下是 $T$ 成为 tilting 模的等价条件.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$A$ 相对 $𝐚𝐝𝐝(T)$ 的内射分解 (余消解) 是至多 $1$ 维的, 即, 存在 ses $0 → A → T’ → T’’ → 0$, 其中 $T$, $T’’$ 属于 $𝐚𝐝𝐝(T)$.&lt;/li&gt;
+  &lt;li&gt;$𝐠𝐞𝐧(T) = T^⟂$.&lt;/li&gt;
+  &lt;li&gt;$T^o = 𝐜𝐨𝐠(τT)$.&lt;/li&gt;
+  &lt;li&gt;$^⟂(T^⟂) = 𝐚𝐝𝐝(T)$.&lt;/li&gt;
+  &lt;li&gt;任意 $M ∈ T^⟂$ 存在满的右 $𝐚𝐝𝐝(T)$-逼近 $π : T^n ↠ M$, 且 $\ker π ∈ T^⟂$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;(Tilting 对象与 torsion pair, &lt;a href=&quot;Tilting_Obj_Torsion_Pair&quot;&gt;证明&lt;/a&gt;). 对 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$^⟂𝒯 = 𝐚𝐝𝐝(T)$.&lt;/li&gt;
+  &lt;li&gt;$M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.&lt;/li&gt;
+  &lt;li&gt;内射对象必属于 $𝒯$.&lt;/li&gt;
+  &lt;li&gt;投射对象若属于 $𝒯$, 则属于 $𝐚𝐝𝐝(T)$.&lt;/li&gt;
+  &lt;li&gt;投射内射对象必属于 $𝐚𝐝𝐝(T)$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(Bongartz). 局部 tilting 模是 tilting 模的直和项.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;brenner-butler-理论&quot;&gt;Brenner-Butler 理论&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; 考虑函子 $(T,-) : 𝐦𝐨𝐝_A → 𝐦𝐨𝐝_{\mathrm{End}(T)^{\mathrm{op}}}$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$𝐚𝐝𝐝(T) → 𝐩𝐫𝐨𝐣(\mathrm{End}(T)^{\mathrm{op}})$ 给出范畴等价. 此处 $T$ 可以是任意模.&lt;/li&gt;
+  &lt;li&gt;$T$ 的直和项无重数, 当且仅当 $\mathrm{End}(T)$ 是基本代数.&lt;/li&gt;
+  &lt;li&gt;若 $T$ 是 tilting 模, 则 $(T,-)\restriction_𝒯$ 是全忠实的.&lt;/li&gt;
+  &lt;li&gt;若 $T$ 是 tilting 模, 则 $\mathrm{Ext}^1(T,-)\restriction_𝒯$ 也是全忠实的.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (Tilted 代数). 给定 tilting 模 $T ∈ 𝐦𝐨𝐝_A$, 记 $B:=\mathrm{End}(T)$ 是诱导的 tilted 代数.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; $T$ 是 $(B,A)$-双模. 特别地, 代数 $A$ 与 $B$ 的关系如下.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$T$ 视作 $B^{\mathrm{op}}$-模也是 tilting 模.&lt;/li&gt;
+  &lt;li&gt;代数同态的合成 $A → B^{\mathrm{op}} → \mathrm{End}(_BT)^{\mathrm{op}}$ 是同构.&lt;/li&gt;
+  &lt;li&gt;中心 $Z(A) ≃ Z(B)$ 同构, 因此 $A$ 与 $B$ 具有相同的连通性.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (对偶 torsion pair). 给定 tilting 模 $T ∈ 𝐦𝐨𝐝_A$, 记 $B:= \mathrm{End}(T_A)$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$𝐦𝐨𝐝_A$ 中的 torsion pair $(𝒯, ℱ)$ 如下:
+    &lt;ol&gt;
+      &lt;li&gt;$𝒯 = 𝐠𝐞𝐧(T_A) = T_A^⟂$,&lt;/li&gt;
+      &lt;li&gt;$ℱ = 𝐜𝐨𝐠 (τ T_A) = T_A^o$.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;$𝐦𝐨𝐝_B$ 中的 torsion pair $(𝒳, 𝒴)$ 如下:
+    &lt;ol&gt;
+      &lt;li&gt;$𝒳 = D(𝐜𝐨𝐠(τ{}_BT)) = D(_BT^o)$,&lt;/li&gt;
+      &lt;li&gt;$𝒴 = D(𝐠𝐞𝐧(_BT)) = D(_BT^⟂)$.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;省略对偶符号, 则
+    &lt;ol&gt;
+      &lt;li&gt;$𝒳 = \ker \mathrm{Hom}_B(-,DT) = \ker (- ⊗_B T)$,&lt;/li&gt;
+      &lt;li&gt;$𝒴 = \ker \mathrm{Ext}_B^1(-, DT) = \ker \mathrm{Tor}_1^B(- , T)$.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt; 习惯上, 置 $𝒯 := 𝒯(T_A) ⊆ 𝐦𝐨𝐝_A$ 以及 $𝒳 := 𝒳(T_A) ⊆ 𝐦𝐨𝐝_B$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; $𝐦𝐨𝐝_B$ 范畴存在对偶的逼近结论.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;(原). 任意 $M_A ∈ 𝒯$ 存在满的右 $𝐚𝐝𝐝(T_A)$-逼近 $π : T_A^n ↠ M_A$, 且 $\ker π ∈ 𝒯$.&lt;/li&gt;
+  &lt;li&gt;(新). 任意 $Y_B ∈ 𝒴$ 存在单的左 $𝐚𝐝𝐝((DT)_B)$-逼近 $ι: Y_B ↪ (DT)_B^m$, 且 $\operatorname{cok}ι ∈ 𝒴$.&lt;/li&gt;
+  &lt;li&gt;(原). $M_A ∈ 𝒯$ 的充要条件是典范态射 $(T, M) ⊗ T → M$ 是 $𝐦𝐨𝐝_A$-同构.&lt;/li&gt;
+  &lt;li&gt;(新). $Y_B ∈ 𝒴$ 的充要条件是典范态射 $(T, Y ⊗_B T) → Y$ 是 $𝐦𝐨𝐝_B$-同构.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (BB 导出等价). 给定资料 $(A,T,B)$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$\mathrm{Hom}_A(T,-) : 𝒯 ⇆ 𝒴 : (-⊗_BT)$ 是范畴等价 (视作拟逆).&lt;/li&gt;
+  &lt;li&gt;$\mathrm{Ext}^1_A(T,-) : ℱ ⇆ 𝒳 : \mathrm{Tor}_1^B(-, T)$ 是范畴等价 (视作拟逆).&lt;/li&gt;
+  &lt;li&gt;$𝐑^∙\mathrm{Hom}_A(T,-) : D^b(𝐦𝐨𝐝_A) ⇆ D^b(𝐦𝐨𝐝_B) : 𝐋 ^∙(-⊗_BT)$ 是导出等价.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (BB 同调公式). 给定上述函子.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;零次导出的核 (像) 是一次导出的像 (核).&lt;/li&gt;
+  &lt;li&gt;$𝐦𝐨𝐝_A$ 中 ses $0 → (T,M) ⊗_B T → M → \mathrm{Tor}_1^B(\mathrm{Ext}_A^1(T,M), T) → 0$, 即 $M$ 的 $(t,f)$ 序列.&lt;/li&gt;
+  &lt;li&gt;$𝐦𝐨𝐝_B$ 中 ses $0 → \mathrm{Ext}_A^1(T, X ⊗ _BT) → X → (T, X ⊗ _BT) → 0$, 即 $X$ 的 $(t,f)$ 序列.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;同调维度&quot;&gt;同调维度&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($𝒯$, $𝒴$ 与投射维数). 对 $M ∈ 𝒯$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;若 $p.\dim M ≠ 1$, 则 $p.\dim M = p.\dim (T,M)$.&lt;/li&gt;
+  &lt;li&gt;若 $p.\dim M = 1$, 则 $p.\dim (T,M) ∈ {0,1}$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (整体维数). $|gl.\dim A - gl.\dim B|≤ 1$.&lt;/p&gt;
+
+&lt;!-- **Lemma** ($𝒯$, $𝒴$ 与内射维数). 需要细化. --&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (Happel 的导出等价定理). 假定 Abel 范畴有足够投射. 某对象 $T$ 满足 $\mathrm{Ext}_𝒜^{≥ 1}(T,T) =0$. 记 $B = \mathrm{End}(T)$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$(T,-)_𝒜: 𝐚𝐝𝐝(T) ⇆ 𝐩𝐫𝐨𝐣(B) : (- ⊗ _BT)$ 是范畴等价.&lt;/li&gt;
+  &lt;li&gt;复合 $K^b(𝐚𝐝𝐝(T)) ↣ K^b (𝒜) → D^b𝒜$ 全忠实.&lt;/li&gt;
+  &lt;li&gt;若任意对象的 $𝐚𝐝𝐝(T)$-余消解维数有限, 则上述复合是等价.&lt;/li&gt;
+  &lt;li&gt;若 $𝒜$ 投射维数有限, 则典范函子 $K^b(𝐩𝐫𝐨𝐣(𝒜)) → D^b(𝒜)$ 是等价. 此时有导出等价 $D^b(𝒜) ≃ D^b(B)$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;遗传范畴的-torsion-pair&quot;&gt;遗传范畴的 torsion pair&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; 本节的范畴要求有足够投射对象, 且 tilting 对象 $T$ 使得一切 $(T,X)$ 均是有限生成右 $\mathrm{End}(T)$-模. 一个较弱的条件是 $\mathrm{Hom}$-群有限维.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (遗传范畴). 称 Abel 范畴遗传, 若米田积意义下的 $\mathrm{Ext}^2(-,-)$ 函子消失.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; 遗传范畴中的满单分解均可补全作推出拉回方块.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; 遗传范畴中, $X^∙$ 与 $H^∙(X)$ 导出等价.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (遗传范畴的 Tilting 对象). 称 $T ∈ 𝒜$ 是 tilting 对象, 若 $T$ 生成的 Serre 子范畴是 $𝒜$, 且 $\mathrm{Ext}^1(T,T)=0$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt; 遗传对应 $p.\dim T ≤ 1$, $T$ 生成 Serre 子范畴的条件对应 $A$ 的 $𝐚𝐝𝐝(T)$-余消解维度 $≤1$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (遗传范畴的 torsion pair). 对上述遗传范畴与 tilting 对象 $T$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$(\ker \mathrm{Ext}^0(T,-), \ker \mathrm{Ext}^1(T,-))$ 是 torsion pair, 记作 $(𝒯, ℱ)$.&lt;/li&gt;
+  &lt;li&gt;BB 导出等价给出 $(𝒳 , 𝒴) ≃ (ℱ[1], 𝒯)$.&lt;/li&gt;
+  &lt;li&gt;若 $B$ 遗传, 则 $(𝒯, ℱ)$ 可裂.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (可裂 torsion pair 的等价定义). 称 Abel 范畴 $𝒜$ 中的 torsion pair $(𝒯, ℱ)$ 可裂, 若以下等价命题成立.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$𝒯∪ℱ$ 包含一切不可分解对象.&lt;/li&gt;
+  &lt;li&gt;$\mathrm{Ext}_𝒜^1(ℱ, 𝒯) = 0$.&lt;/li&gt;
+  &lt;li&gt;$𝒯$ 关于 $τ⁻¹$ 封闭.&lt;/li&gt;
+  &lt;li&gt;$ℱ$ 关于 $τ$ 封闭.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>存在左 $𝐩𝐫𝐨𝐣$-逼近</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;(未命名).
+对 Artin 代数, $M ∈ 𝐦𝐨𝐝_A$ 存在左投射逼近, 以及左极小投射逼近.
+&lt;br /&gt;
+特别地, 左投射逼近 $M → P$ 未必是单的, 但存在分解 $M → M^{∗ ∗ } ↪ P$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;取 $M ∈ 𝐦𝐨𝐝_A$, 取 $(M,A)$ 的生成元为集合 $S$. 今断言以下是投射逼近&lt;/p&gt;
+
+\[φ : M → A^S,\quad m ↦ (f_i(m))_{i ∈ S}.\]
+
+&lt;p&gt;往证任意 $M → 𝐩𝐫𝐨𝐣$ 类型的模同态通过 $A^S$ 分解. 依照稳定投射右正合列&lt;/p&gt;
+
+\[M^∗ ⊗ N → (M,N) → \underline{(M,N)} → 0.\]
+
+&lt;p&gt;得 $M^∗ ⊗ 𝐩𝐫𝐨𝐣 ≃ (M,𝐩𝐫𝐨𝐣)$, 一切 $M → 𝐩𝐫𝐨𝐣$ 类型的同态是是 $f_i$ 的线性组合.
+&lt;br /&gt;
+考虑 $2 × 2$ 交换图&lt;/p&gt;
+
+\[\begin{bmatrix}
 M &amp;amp; \xrightarrow{η _{M}} &amp;amp; M^{∗∗}\\
 ↓  &amp;amp;  &amp;amp; ↓ \\
 P &amp;amp; \xrightarrow[∼]{η _{P}} &amp;amp; P^{∗∗}
-\end{bmatrix}. 
-$$
-故存在分解 $M → M^{∗ ∗ } → P$. 不妨将 $P^∗$ 取作 $M^∗$ 的投射盖, 则 $M^{∗ ∗ } ↪ P$ 单.
+\end{bmatrix}.\]
 
+&lt;p&gt;故存在分解 $M → M^{∗ ∗ } → P$. 不妨将 $P^∗$ 取作 $M^∗$ 的投射盖, 则 $M^{∗ ∗ } ↪ P$ 单.&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
@@ -1551,9 +2287,8 @@ $$
       
         <item>
           <title>Torsionless 模的等价定义</title>
-          <description>&lt;div class=&quot;theorem&quot;&gt;
-(Torsionless 判别法).
-给定 $η_M : M → M^{∗ ∗}$. 以下条件等价.
+          <description>&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(Torsionless 判别法).
+给定 $η_M : M → M^{∗ ∗}$. 以下条件等价.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 $η_M$ 是单的.
@@ -1567,28 +2302,21 @@ $\mathrm{Ext}^1(\mathrm{Tr}(M), A) = 0$.
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;proof&quot;&gt;
-考虑四项正合列
-$$
-0 → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → N ⊗ M → (M^∗, N) → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → 0.
-$$
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;考虑四项正合列
+\(0 → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → N ⊗ M → (M^∗, N) → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → 0.\)
 将 $N$ 替换作 $A$, 得 3. 与 1. 等价.
 &lt;br /&gt;
 &lt;br /&gt;
-若 $η_M$ 单, 则 $M ↪ M^{∗∗} ↪ \mathrm{Hom}_{𝐒𝐞𝐭𝐬}(M^∗, A)$, 因此 $η_M$ 是 $∏ A$ 子空间. 由 &lt;a href=&quot;https://arxiv.org/abs/2105.00701&quot;&gt; Chase 引理&lt;/a&gt;, 投射模对任意积封闭当且仅当环是 Artin 的, 从而 $∏_{M^∗} A$ 是投射模. 由 $M$ 有限生成, 其必然是有限生成投射模的子模.
+若 $η_M$ 单, 则 $M ↪ M^{∗∗} ↪ \mathrm{Hom}&lt;em&gt;{𝐒𝐞𝐭𝐬}(M^∗, A)$, 因此 $η_M$ 是 $∏ A$ 子空间. 由 &lt;a href=&quot;https://arxiv.org/abs/2105.00701&quot;&gt; Chase 引理&lt;/a&gt;, 投射模对任意积封闭当且仅当环是 Artin 的, 从而 $∏&lt;/em&gt;{M^∗} A$ 是投射模. 由 $M$ 有限生成, 其必然是有限生成投射模的子模.
 &lt;br /&gt;
-&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-若 $M$ 是 $A^n$ 的子对象, 记嵌入映射 $ι$. 由 $ι^{∗ ∗ } ∘ η_M = η_{A^n} ∘ ι$ 单, 得 $η_M$ 单.
-
+&lt;p&gt;若 $M$ 是 $A^n$ 的子对象, 记嵌入映射 $ι$. 由 $ι^{∗ ∗ } ∘ η_M = η_{A^n} ∘ ι$ 单, 得 $η_M$ 单.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;note&quot;&gt;
-证明 1. 至 2. 可避免使用 Chase 引理. 取 $M^∗$ 的投射盖 $P$, 则
-$$
-(M^∗, A) ↪ (P,A) ↪ A^n
-$$
-即为所求之单射.
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;证明 1. 至 2. 可避免使用 Chase 引理. 取 $M^∗$ 的投射盖 $P$, 则
+\((M^∗, A) ↪ (P,A) ↪ A^n\)
+即为所求之单射.&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
@@ -1600,28 +2328,23 @@ $$
       
         <item>
           <title>左投射逼近的等价命题</title>
-          <description>&lt;div class=&quot;theorem&quot;&gt;
-(左投射逼近).
-给定 ses $0 → L \overset i → P → N → 0$, $P$ 投射. 以下等价.
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(左投射逼近).
+给定 ses $0 → L \overset i → P → N → 0$, $P$ 投射. 以下等价.&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-$i$ 是左投射逼近.
-&lt;/li&gt;
-&lt;li&gt;
-$i^∗$ 是满的.
-&lt;/li&gt;
-&lt;li&gt;
-$\mathrm{Ext}^1(N, A) = 0$.
-&lt;/li&gt;
+  &lt;li&gt;$i$ 是左投射逼近.&lt;/li&gt;
+  &lt;li&gt;$i^∗$ 是满的.&lt;/li&gt;
+  &lt;li&gt;$\mathrm{Ext}^1(N, A) = 0$.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;proof&quot;&gt;
-给定考虑四项函子的正合列
-$$
-0 → (N,-) → (P,-) → (L,-) → {}^1(N,-) → 0.
-$$
-此时 $(P,-) → (L,-)$ 满等价于 ${}^1(N,-)$ 消失.
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;给定考虑四项函子的正合列&lt;/p&gt;
+
+\[0 → (N,-) → (P,-) → (L,-) → {}^1(N,-) → 0.\]
+
+&lt;p&gt;此时 $(P,-) → (L,-)$ 满等价于 ${}^1(N,-)$ 消失.&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
@@ -1632,42 +2355,50 @@ $$
     
       
         <item>
-          <title>Notes for AR theory</title>
-          <description>&lt;div class=&quot;abstract&quot;&gt;&lt;h5&gt;Abstract&lt;/h5&gt;&lt;p&gt;
-本篇速记总结一些常见的公式, 主要来源于&lt;a href=&quot;https://www.cambridge.org/core/books/elements-of-the-representation-theory-of-associative-algebras/AA8066B5809D0F556A540400AD3A419C&quot;&gt;ERTAA vol 1&lt;/a&gt;, &lt;a href=&quot;https://www.cambridge.org/core/books/representation-theory-of-artin-algebras/B7452F28EDADF450BF1059A6FB6D68A4&quot;&gt;ETAA&lt;/a&gt;, 等. 目录如下. 
-&lt;/p&gt;&lt;/div&gt;
+          <title>Notes on AR theory</title>
+          <description>&lt;div class=&quot;abstract&quot;&gt;
+  &lt;h5&gt;Abstract&lt;/h5&gt;
+  &lt;div&gt;&lt;p&gt;本篇速记总结一些常见的公式, 主要来源于&lt;a href=&quot;https://www.cambridge.org/core/books/elements-of-the-representation-theory-of-associative-algebras/AA8066B5809D0F556A540400AD3A419C&quot;&gt;ERTAA vol 1&lt;/a&gt;, &lt;a href=&quot;https://www.cambridge.org/core/books/representation-theory-of-artin-algebras/B7452F28EDADF450BF1059A6FB6D68A4&quot;&gt;ETAA&lt;/a&gt; 等. 目录如下.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#artin-代数的要件&quot; id=&quot;markdown-toc-artin-代数的要件&quot;&gt;Artin 代数的要件&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#模格&quot; id=&quot;markdown-toc-模格&quot;&gt;模格&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#ar-理论&quot; id=&quot;markdown-toc-ar-理论&quot;&gt;AR 理论&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#artin-代数的要件&quot; id=&quot;markdown-toc-artin-代数的要件&quot;&gt;Artin 代数的要件&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#模格&quot; id=&quot;markdown-toc-模格&quot;&gt;模格&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#稳定范畴等价&quot; id=&quot;markdown-toc-稳定范畴等价&quot;&gt;稳定范畴等价&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#对偶函子&quot; id=&quot;markdown-toc-对偶函子&quot;&gt;对偶函子&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#判别法&quot; id=&quot;markdown-toc-判别法&quot;&gt;判别法&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#逼近&quot; id=&quot;markdown-toc-逼近&quot;&gt;逼近&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#维度&quot; id=&quot;markdown-toc-维度&quot;&gt;维度&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#著名定理&quot; id=&quot;markdown-toc-著名定理&quot;&gt;著名定理&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#q-二次型&quot; id=&quot;markdown-toc-q-二次型&quot;&gt;$q$-二次型&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#coxeter-反射&quot; id=&quot;markdown-toc-coxeter-反射&quot;&gt;Coxeter 反射&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#几乎可裂-ses&quot; id=&quot;markdown-toc-几乎可裂-ses&quot;&gt;几乎可裂 ses&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#两种构造态射的方式-不可约-极小几乎可裂&quot; id=&quot;markdown-toc-两种构造态射的方式-不可约-极小几乎可裂&quot;&gt;两种构造态射的方式: 不可约, 极小几乎可裂&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#几乎可裂-ses-的等价定义&quot; id=&quot;markdown-toc-几乎可裂-ses-的等价定义&quot;&gt;几乎可裂 ses 的等价定义&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#函子语言&quot; id=&quot;markdown-toc-函子语言&quot;&gt;函子语言&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#ar-定理&quot; id=&quot;markdown-toc-ar-定理&quot;&gt;AR 定理&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#稳定范畴等价&quot; id=&quot;markdown-toc-稳定范畴等价&quot;&gt;稳定范畴等价&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#对偶函子&quot; id=&quot;markdown-toc-对偶函子&quot;&gt;对偶函子&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#判别法&quot; id=&quot;markdown-toc-判别法&quot;&gt;判别法&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#逼近&quot; id=&quot;markdown-toc-逼近&quot;&gt;逼近&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#维度&quot; id=&quot;markdown-toc-维度&quot;&gt;维度&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#著名定理&quot; id=&quot;markdown-toc-著名定理&quot;&gt;著名定理&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#q-二次型&quot; id=&quot;markdown-toc-q-二次型&quot;&gt;$q$-二次型&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#coxeter-反射&quot; id=&quot;markdown-toc-coxeter-反射&quot;&gt;Coxeter 反射&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#几乎可裂-ses&quot; id=&quot;markdown-toc-几乎可裂-ses&quot;&gt;几乎可裂 ses&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#两种构造态射的方式-不可约-极小几乎可裂&quot; id=&quot;markdown-toc-两种构造态射的方式-不可约-极小几乎可裂&quot;&gt;两种构造态射的方式: 不可约, 极小几乎可裂&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#几乎可裂-ses-的等价定义&quot; id=&quot;markdown-toc-几乎可裂-ses-的等价定义&quot;&gt;几乎可裂 ses 的等价定义&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#函子语言&quot; id=&quot;markdown-toc-函子语言&quot;&gt;函子语言&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#ar-定理&quot; id=&quot;markdown-toc-ar-定理&quot;&gt;AR 定理&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;ar-理论&quot;&gt;AR 理论&lt;/h2&gt;
 
 &lt;h3 id=&quot;artin-代数的要件&quot;&gt;Artin 代数的要件&lt;/h3&gt;
 
 &lt;h4 id=&quot;模格&quot;&gt;模格&lt;/h4&gt;
 
-&lt;p&gt;给定域 $k$ 上的 Artin 代数, 则有限表现模 $M ∈ 𝐦𝐨𝐝_A$ 的所有子对象构成模格 (商对象亦然). 使用&lt;/p&gt;
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;(子对象与商对象构成模格).
+给定域 $k$ 上的 Artin 代数, 则有限表现模 $M ∈ 𝐦𝐨𝐝_A$ 的所有子对象构成模格 (商对象亦然). 使用&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;$(∩ , +)$ 表示子对象模格,&lt;/li&gt;
@@ -1696,29 +2427,26 @@ $$
 &lt;p&gt;以及&lt;/p&gt;
 
 \[0 → \mathrm{Soc} → X → \mathrm{Bot}(X) → 0.\]
+&lt;/div&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-(本性子, 商模格).
-任意给定 $X$, 则 $X$ 属于以下两类模格.
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(本性子, 商模格).
+任意给定 $X$, 则 $X$ 属于以下两类模格.&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-模格
+  &lt;li&gt;
+    &lt;p&gt;模格&lt;/p&gt;
 
-$$
-P(X) ↠ \cdots ↠ X ↠ \cdots ↠ \mathrm{Top}(X),
-$$
+\[P(X) ↠ \cdots ↠ X ↠ \cdots ↠ \mathrm{Top}(X),\]
 
-该模格同构于 $\mathrm{Rad}(P(X))$ 的子对象模格.
-&lt;/li&gt;
-&lt;li&gt;
-模格
+    &lt;p&gt;该模格同构于 $\mathrm{Rad}(P(X))$ 的子对象模格.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;模格&lt;/p&gt;
 
-$$
-\mathrm{Soc}(X) ↪ \cdots ↪ X ↪ \cdots ↪ I(X),
-$$
+\[\mathrm{Soc}(X) ↪ \cdots ↪ X ↪ \cdots ↪ I(X),\]
 
-该模格同构于 $\mathrm{Bot}(I(X))$ 的商对象模格.
-&lt;/li&gt;
+    &lt;p&gt;该模格同构于 $\mathrm{Bot}(I(X))$ 的商对象模格.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
@@ -1726,121 +2454,94 @@ $$
 
 &lt;p&gt;以下引理通过模格结构, 细化了将态射的满单分解.&lt;/p&gt;
 
-&lt;div class=&quot;theorem&quot;&gt;
-(满单分解).
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(满单分解). 任意给定态射 $f : X → Y$.&lt;/p&gt;
 
-任意给定态射 $f : X → Y$.
 &lt;ol&gt;
-&lt;li&gt;
-(投射盖, 满满单). 态射 $f$ 分解如下:
-$$
-X ↠ P(\operatorname{coim} f)\underset {P(X)}⊔ X ↠ \operatorname{coim} f ↪ Y.
-$$
-第一处满射模格间的, 商去了部分生成基. 第二处满射是模格内的, 商去了部分生成关系.
-&lt;/li&gt;&lt;li&gt;
-(内射包, 满单单). 态射 $f$ 分解如下:
-$$
-X ↠ \operatorname{im}(f) ↪ I(\operatorname{im}(f))\underset{\operatorname{im}(f)} × Y ↪ Y.
-$$
-第二处单射模格间的, 商去了部分 $k$-对偶生成基. 第一处单射是模格内的, 商去了部分 $k$-生成关系.
-&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(投射盖, 满满单). 态射 $f$ 分解如下:&lt;/p&gt;
+
+\[X ↠ P(\operatorname{coim} f)\underset {P(X)}⊔ X ↠ \operatorname{coim} f ↪ Y.\]
+
+    &lt;p&gt;第一处满射模格间的, 商去了部分生成基. 第二处满射是模格内的, 商去了部分生成关系.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(内射包, 满单单). 态射 $f$ 分解如下:&lt;/p&gt;
+
+\[X ↠ \operatorname{im}(f) ↪ I(\operatorname{im}(f))\underset{\operatorname{im}(f)} × Y ↪ Y.\]
+
+    &lt;p&gt;第二处单射模格间的, 商去了部分 $k$-对偶生成基. 第一处单射是模格内的, 商去了部分 $k$-生成关系.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;proposition&quot;&gt;
-特别地, 有如下结论 (&lt;a href=&quot;Top_surjective&quot;&gt;证明&lt;/a&gt;).
-$\mathrm{Top}(f)$ 满当且仅当 $f$ 满; $\mathrm{Soc}(f)$ 单当且仅当 $f$ 单.
-&lt;/div&gt;
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Top_surjective&quot;&gt;证明&lt;/a&gt;).
+特别地, 有如下结论.&lt;/p&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-(投射盖).
-
-给定投射模出发的满态射 $π : P ↠ X$ 是投射盖. 称之投射盖, 若以下等价条件成立.
 &lt;ol&gt;
-&lt;li&gt;
-(M1). $\ker π ↪ \mathrm{Rad}(P)$.
-&lt;/li&gt;
-&lt;li&gt;
-(M2). $\mathrm{Top}(P) = \mathrm{Top}(X)$.
-&lt;/li&gt;
-&lt;li&gt;
-(M3). 满满单分解的出发的首尾两项同构.
-&lt;/li&gt;
-&lt;li&gt;
-(L1). 任意 $P' ↠ X$ 类型的态射通过 $π$ 分解.
-&lt;/li&gt;
-&lt;li&gt;
-(L2). $π$ 右极小, 换言之, $α ∘ π = π$ 当且仅当 $α$ 是同构.
-&lt;/li&gt;
-&lt;li&gt;
-(L3). $π ∘ -$ 保持并反射满射.
-&lt;/li&gt;
+  &lt;li&gt;$\mathrm{Top}(f)$ 满当且仅当 $f$ 满;&lt;/li&gt;
+  &lt;li&gt;$\mathrm{Soc}(f)$ 单当且仅当 $f$ 单.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;note&quot;&gt;
-M1-M3 本质在说 $π$ 是 $[P ↠ \mathrm{Top}(P)]$ 模格内的态射; L1-L3 本质在说极小性.
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(投射盖). 给定投射模出发的满态射 $π : P ↠ X$ 是投射盖. 称之投射盖, 若以下等价条件成立.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;(M1). $\ker π ↪ \mathrm{Rad}(P)$.&lt;/li&gt;
+  &lt;li&gt;(M2). $\mathrm{Top}(P) = \mathrm{Top}(X)$.&lt;/li&gt;
+  &lt;li&gt;(M3). 满满单分解的出发的首尾两项同构.&lt;/li&gt;
+  &lt;li&gt;(L1). 任意 $P’ ↠ X$ 类型的态射通过 $π$ 分解.&lt;/li&gt;
+  &lt;li&gt;(L2). $π$ 右极小, 换言之, $α ∘ π = π$ 当且仅当 $α$ 是同构.&lt;/li&gt;
+  &lt;li&gt;(L3). $π ∘ -$ 保持并反射满射.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-(内射包). 定义对偶, 此处从略. 
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;M1-M3 本质在说 $π$ 是 $[P ↠ \mathrm{Top}(P)]$ 模格内的态射; L1-L3 本质在说极小性.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(内射包). 定义对偶, 此处从略.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h3 id=&quot;稳定范畴等价&quot;&gt;稳定范畴等价&lt;/h3&gt;
 
 &lt;h4 id=&quot;对偶函子&quot;&gt;对偶函子&lt;/h4&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-(线性空间的 $k$-对偶).
-
-反变正合函子 $D = (-, k)$ 给出反变等价 (对偶) $𝐦𝐨𝐝_A ↔ 𝐦𝐨𝐝_{A^{\mathrm{op}}}$.
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(线性空间的 $k$-对偶). 反变正合函子 $D = (-, k)$ 给出反变等价 (对偶) $𝐦𝐨𝐝_A ↔ 𝐦𝐨𝐝_{A^{\mathrm{op}}}$.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;slogan&quot;&gt;
-函子 $D$ 颠倒单射与满射, 投射对象与内射对象, 投射分解与内射分解, 以及左投射逼近与右内射逼近等等.
+&lt;div class=&quot;slogan&quot;&gt;&lt;p&gt;函子 $D$ 颠倒单射与满射, 投射对象与内射对象, 投射分解与内射分解, 以及左投射逼近与右内射逼近等等.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-($A$-对偶).
-
-左正合反变函子 $(-)^∗ : 𝐦𝐨𝐝_A ↔ 𝐦𝐨𝐝_{A^{\mathrm{op}}}$, 保持投射对象 (限制在 $𝐩𝐫𝐨𝐣$ 上是等价).
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;($A$-对偶). 左正合反变函子 $(-)^∗ : 𝐦𝐨𝐝_A ↔ 𝐦𝐨𝐝_{A^{\mathrm{op}}}$, 保持投射对象 (限制在 $𝐩𝐫𝐨𝐣$ 上是等价).&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-(中山函子).
-
-右正合反变函子 $ν := D(-^∗) ≃ - ⊗_A DA$, 颠倒投射对象与内射对象 (等价 $ν : 𝐩𝐫𝐨𝐣 ≃ 𝐢𝐧𝐣$).
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(中山函子). 右正合反变函子 $ν := D(-^∗) ≃ - ⊗_A DA$, 颠倒投射对象与内射对象 (等价 $ν : 𝐩𝐫𝐨𝐣 ≃ 𝐢𝐧𝐣$).&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;note&quot;&gt;
-中山函子的右伴随是 $(-, DA)_A$, 亦即 $(D(-), A)_{A^{\mathrm{op}}}$.  
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;中山函子的右伴随是 $(-, DA)&lt;em&gt;A$, 亦即 $(D(-), A)&lt;/em&gt;{A^{\mathrm{op}}}$.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;theorem&quot;&gt;
-$𝐦𝐨𝐝_A$ 中不可分解投射对象, 不可分解内射对象, 单对象一一对应. 通过 $\mathrm{Top}(-)$, $\mathrm{Soc}(-)$, $I(-)$ 以及 $P(-)$ 实现对应.
-$$
-\begin{bmatrix}
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;$𝐦𝐨𝐝_A$ 中不可分解投射对象, 不可分解内射对象, 单对象一一对应. 通过 $\mathrm{Top}(-)$, $\mathrm{Soc}(-)$, $I(-)$ 以及 $P(-)$ 实现对应.&lt;/p&gt;
+
+\[\begin{bmatrix}
  &amp;amp; P(-) &amp;amp;  &amp;amp; \mathrm{Soc} &amp;amp; \\
-𝐩𝐫𝐨𝐣 &amp;amp; \leftrightarrows  &amp;amp; 𝐬𝐞𝐦𝐢𝐬𝐢𝐦𝐩 &amp;amp; \leftrightarrows  &amp;amp; 𝐢𝐧𝐣\\
+𝐩𝐫𝐨𝐣 &amp;amp; ⇆  &amp;amp; 𝐬𝐞𝐦𝐢𝐬𝐢𝐦𝐩 &amp;amp; ⇆  &amp;amp; 𝐢𝐧𝐣\\
  &amp;amp; \mathrm{Soc} &amp;amp;  &amp;amp; I( -) &amp;amp;
-\end{bmatrix}.
-$$
+\end{bmatrix}.\]
 &lt;/div&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-(AR 转置 $\mathrm{Tr}$ 与平移 $τ$).
-给定不可分解对象 $X$ 的极小投射表现 $X ≃ \operatorname{cok}(f)$, 记 $\mathrm{Tr}(M) := \operatorname{cok}(f^∗)$, 即 $(-,A)$ 对偶范畴中的投射表现. 使用图表说明: 
-$$
-\begin{bmatrix}
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(AR 转置 $\mathrm{Tr}$ 与平移 $τ$).
+给定不可分解对象 $X$ 的极小投射表现 $X ≃ \operatorname{cok}(f)$, 记 $\mathrm{Tr}(M) := \operatorname{cok}(f^∗)$, 即 $(-,A)$ 对偶范畴中的投射表现. 使用图表说明:&lt;/p&gt;
+
+\[\begin{bmatrix}
  &amp;amp;  &amp;amp; P_{1} &amp;amp; \rightarrow  &amp;amp; P_{0} &amp;amp; \twoheadrightarrow  &amp;amp; X\\[6pt]
 \mathrm{Tr}( X) &amp;amp; \twoheadleftarrow  &amp;amp; P_{1}^{*} &amp;amp; \leftarrow  &amp;amp; P_{0}^{*} &amp;amp; \hookleftarrow  &amp;amp; X^{*}\\[6pt]
 D\mathrm{Tr}( X) &amp;amp; \hookrightarrow  &amp;amp; \nu P_{1} &amp;amp; \rightarrow  &amp;amp; \nu P_{0} &amp;amp; \twoheadrightarrow  &amp;amp; \nu X
-\end{bmatrix}.
-$$
-记 $τ(-) := \mathrm{Tr}D (-)$.
+\end{bmatrix}.\]
+
+&lt;p&gt;记 $τ(-) := \mathrm{Tr}D (-)$.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;AR 转置具有以下熟知性质.&lt;/p&gt;
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;AR 转置具有以下熟知性质.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;选取极小内射分解, 则 $\mathrm{Tr} D ≃ τ⁻¹$.&lt;/li&gt;
@@ -1849,144 +2550,117 @@ $$
   &lt;li&gt;若选取的并非极小投射分解, 则构造出的 $\mathrm{Tr}(X)$ 与 $τ$ 与相差投射的直和项.&lt;/li&gt;
   &lt;li&gt;$\mathrm{Tr}$ 保持不可分解非投射对象. 特别地, $\mathrm{Tr}^2 = \mathrm{id}$.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
 &lt;p&gt;将以上事实总结作以下定理.&lt;/p&gt;
 
-&lt;div class=&quot;theorem&quot;&gt;
-(AR 转置与稳定等价).
-$\mathrm{Tr}$ 将投射对象映至 $0$, 对 $𝐦𝐨𝐝_A$ 与 $𝐦𝐨𝐝_{A^{\mathrm{op}}}$ 的不可分解的非投射对象, $\mathrm{Tr}$ 是双射, 且 $\mathrm{Tr}^2 = \operatorname{id}$. 特别地, $\underline{𝐦𝐨𝐝_A} ≃ \underline{𝐦𝐨𝐝_{A^{\mathrm{op}}}}$ 是投射稳定等价. 
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(AR 转置与稳定等价). $\mathrm{Tr}$ 具有如下性质&lt;/p&gt;
 
-&lt;br /&gt;
+&lt;ol&gt;
+  &lt;li&gt;将投射对象映至 $0$,&lt;/li&gt;
+  &lt;li&gt;对 $𝐦𝐨𝐝_A$ 与 $𝐦𝐨𝐝_{A^{\mathrm{op}}}$ 的不可分解的非投射对象, $\mathrm{Tr}$ 是双射,&lt;/li&gt;
+  &lt;li&gt;$\mathrm{Tr}^2 = \operatorname{id}$,&lt;/li&gt;
+  &lt;li&gt;特别地, $\underline{𝐦𝐨𝐝_A} ≃ \underline{𝐦𝐨𝐝_{A^{\mathrm{op}}}}$ 是投射稳定等价.&lt;/li&gt;
+&lt;/ol&gt;
 
-类似地, $τ : \underline{𝐦𝐨𝐝_A} ≃ \overline{𝐦𝐨𝐝_A} : τ⁻¹$ 是稳定等价. 对 $𝐦𝐨𝐝$ 不可分解对象而言, 以下是双射对应
-$$
-\begin{bmatrix}
+&lt;p&gt;类似地, $τ : \underline{𝐦𝐨𝐝_A} ≃ \overline{𝐦𝐨𝐝_A} : τ⁻¹$ 是稳定等价. 对 $𝐦𝐨𝐝$ 不可分解对象而言, 以下是双射对应&lt;/p&gt;
+
+\[\begin{bmatrix}
  &amp;amp; τ  &amp;amp; \\
 𝐬𝐢𝐦𝐩 ∖ 𝐢𝐧𝐣 &amp;amp; ⇆  &amp;amp; 𝐬𝐢𝐦𝐩 ∖ 𝐩𝐫𝐨𝐣\\
  &amp;amp; τ ^{-1} &amp;amp;
-\end{bmatrix}.
-$$
-$τ$ 映投射对象为 $0$, 映非投射对象为非内射对象; $τ⁻¹$ 映内射对象为 $0$, 映非内射对象为非投射对象.
+\end{bmatrix}.\]
+
+&lt;p&gt;以上,&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$τ$ 映投射对象为 $0$, 映非投射对象为非内射对象;&lt;/li&gt;
+  &lt;li&gt;$τ⁻¹$ 映内射对象为 $0$, 映非内射对象为非投射对象.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/div&gt;
 
 &lt;h4 id=&quot;判别法&quot;&gt;判别法&lt;/h4&gt;
 
-&lt;div class=&quot;theorem&quot;&gt;
-(投射对象判别法). 
-
-以下是 $P$ 构成投射对象的充要条件.
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(投射对象判别法). 以下是 $P$ 构成投射对象的充要条件.&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;
-(L1). $P ∈ 𝐚𝐝𝐝 (A)$.
-&lt;/li&gt;
-&lt;li&gt;
-(E1). $(P,-)$ 正合.
-&lt;/li&gt;
-&lt;li&gt;
-(E2). $\mathrm{Ext}^{≥ 1}(P, -)$ 消失.
-&lt;/li&gt;
-&lt;li&gt;
-(E3). 映至 $P$ 的满射可裂.
-&lt;/li&gt;
-&lt;li&gt;
-(B1). $P ⊗ -$ 保持单射.
-&lt;/li&gt;
-&lt;li&gt;
-(B2). $P ⊗ -$ 将 $A^{\mathrm{op}}$ 中理想的包含对应至单射.
-&lt;/li&gt;
-&lt;li&gt;
-(B3). $(-, DP)$ 将 $A^{\mathrm{op}}$ 中理想的包含对应至满射.
-&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;/div&gt;
-
-&lt;div class=&quot;note&quot;&gt;
-以上 L1 来自自由遗忘伴随, E1-E3 来自正合性, B1-B3 是 Baer 判别法. 内射判别法是对偶的.
-&lt;/div&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-(Torsionless 判别法, &lt;a href=&quot;/posts/Torsion_Less&quot;&gt;证明&lt;/a&gt;). 
-
-给定 $η_M : M → M^{∗ ∗}$. 以下条件等价.
-&lt;ol&gt;
-&lt;li&gt;
-$η_M$ 是单的.
-&lt;/li&gt;
-&lt;li&gt;
-$M$ 是 $A^n$ 的子对象.
-&lt;/li&gt;
-&lt;li&gt;
-$\mathrm{Ext}^1(\mathrm{Tr}(M), A) = 0$.
-&lt;/li&gt;
+  &lt;li&gt;(L1). $P ∈ 𝐚𝐝𝐝 (A)$.&lt;/li&gt;
+  &lt;li&gt;(E1). $(P,-)$ 正合.&lt;/li&gt;
+  &lt;li&gt;(E2). $\mathrm{Ext}^{≥ 1}(P, -)$ 消失.&lt;/li&gt;
+  &lt;li&gt;(E3). 映至 $P$ 的满射可裂.&lt;/li&gt;
+  &lt;li&gt;(B1). $P ⊗ -$ 保持单射.&lt;/li&gt;
+  &lt;li&gt;(B2). $P ⊗ -$ 将 $A^{\mathrm{op}}$ 中理想的包含对应至单射.&lt;/li&gt;
+  &lt;li&gt;(B3). $(-, DP)$ 将 $A^{\mathrm{op}}$ 中理想的包含对应至满射.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;lemma&quot;&gt;
-四项正合列 (&lt;a href=&quot;404&quot;&gt;待补&lt;/a&gt;)
-$$
-0 → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → N ⊗ M → (M^∗, N) → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → 0.
-$$
-中间项是余赋值
-$$
-N ⊗ M → (M^∗, N),\quad \left[∑\limits_{\text{finite sum}} n_i ⊗ m_i\right] ↦ \begin{bmatrix}
-   M^\ast &amp;amp; \to &amp;amp; N\\ 
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;以上 L1 来自自由遗忘伴随, E1-E3 来自正合性, B1-B3 是 Baer 判别法. 内射判别法是对偶的.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(Torsionless 判别法, &lt;a href=&quot;Torsion_Less&quot;&gt;证明&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;给定 $η_M : M → M^{∗ ∗}$. 以下条件等价.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$η_M$ 是单的.&lt;/li&gt;
+  &lt;li&gt;$M$ 是 $A^n$ 的子对象.&lt;/li&gt;
+  &lt;li&gt;$\mathrm{Ext}^1(\mathrm{Tr}(M), A) = 0$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;四项正合列 (&lt;a href=&quot;404&quot;&gt;待补&lt;/a&gt;)&lt;/p&gt;
+
+\[0 → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → N ⊗ M → (M^∗, N) → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → 0.\]
+
+&lt;p&gt;中间项是余赋值&lt;/p&gt;
+
+\[N ⊗ M → (M^∗, N),\quad \left[∑\limits_{\text{finite sum}} n_i ⊗ m_i\right] ↦ \begin{bmatrix}
+   M^\ast &amp;amp; \to &amp;amp; N\\
    f &amp;amp; \mapsto &amp;amp; \sum n_i \otimes f(m_i)
-\end{bmatrix}.
-$$
+\end{bmatrix}.\]
 &lt;/div&gt;
 
 &lt;h4 id=&quot;逼近&quot;&gt;逼近&lt;/h4&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-(左逼近, 预包络). 称 $f : M → N$ 是左 $𝒳$-逼近, 若 $(f, 𝒳)$ 是满的. 等价地, 任意 $M → X ∈ 𝒳$ 通过 $f$ 分解.
-
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(左逼近, 预包络). 称 $f : M → N$ 是左 $𝒳$-逼近, 若 $(f, 𝒳)$ 是满的. 等价地, 任意 $M → X ∈ 𝒳$ 通过 $f$ 分解.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;note&quot;&gt;
-同一概念的三种描述: 左逼近 (右逼近), 预包括 (预覆盖) 以及 $(-, M)|_𝒳$-满 ($(M, -)|_𝒳$-满).
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;同一概念的三种描述: 左逼近 (右逼近), 预包括 (预覆盖) 以及 $(-, M)\restriction_𝒳$-满 ($(M, -)\restriction_𝒳$-满).&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;若对象类 $𝒳$ 是 $𝐩𝐫𝐨𝐣$ 或 $𝐢𝐧𝐣$, 则称之投射逼近或内射逼近.&lt;/p&gt;
 
-&lt;div class=&quot;theorem&quot;&gt;
-(左投射逼近, &lt;a href=&quot;/posts/Left_proj_approx&quot;&gt;证明&lt;/a&gt;).
-给定 ses $0 → L \overset i → P → N → 0$, $P$ 投射. 以下等价.
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(左投射逼近, &lt;a href=&quot;Left_proj_approx&quot;&gt;证明&lt;/a&gt;).
+给定 ses&lt;/p&gt;
+
+\[0 → L \overset i → P → N → 0,\]
+
+&lt;p&gt;$P$ 投射. 以下等价.&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-$i$ 是左投射逼近.
-&lt;/li&gt;
-&lt;li&gt;
-$i^∗$ 是满的.
-&lt;/li&gt;
-&lt;li&gt;
-$\mathrm{Ext}^1(N, A) = 0$.
-&lt;/li&gt;
+  &lt;li&gt;$i$ 是左投射逼近.&lt;/li&gt;
+  &lt;li&gt;$i^∗$ 是满的.&lt;/li&gt;
+  &lt;li&gt;$\mathrm{Ext}^1(N, A) = 0$.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;proposition&quot;&gt;
-(未命名, &lt;a href=&quot;/posts/exists_left_proj_app&quot;&gt;证明&lt;/a&gt;).
-对 Artin 代数, $M ∈ 𝐦𝐨𝐝_A$ 存在左投射逼近, 以及左极小投射逼近.
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;(未命名, &lt;a href=&quot;exists_left_proj_app&quot;&gt;证明&lt;/a&gt;).
+对 Artin 代数, $M ∈ 𝐦𝐨𝐝_A$ 存在左投射逼近, 以及左极小投射逼近.&lt;/p&gt;
 
-&lt;br /&gt;
-&lt;br /&gt;
-
-特别地, 左投射逼近 $M → P$ 未必是单的, 但存在分解 $M → M^{∗ ∗ } ↪ P$. 特别地, $M^{∗ ∗}$ 是 torsionless 模.
+&lt;p&gt;特别地, 左投射逼近 $M → P$ 未必是单的, 但存在分解 $M → M^{∗ ∗ } ↪ P$. 特别地, $M^{∗ ∗}$ 是 torsionless 模.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;lemma&quot;&gt;
-$M^{∗ ∗}$ 是 torsionless 模.
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;$M^{∗ ∗}$ 是 torsionless 模.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-(合冲). 给定 $M$, 定义 $Ω(M) := \ker [P(M) ↠ M]$, 以及 $℧(M) := \operatorname{cok} [M ↪ I(M)]$.
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(合冲). 给定 $M$, 定义 $Ω(M) := \ker [P(M) ↠ M]$, 以及 $℧(M) := \operatorname{cok} [M ↪ I(M)]$.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;对一般存在足够投射与内射的范畴, 投射盖与内射包未必存在; $Ω$ 与 $℧$ 在稳定范畴中是良定义的.&lt;/p&gt;
 
-&lt;p&gt;归纳地, 记 $P_{≥ 0}(M) ↠ M$ 是极小投射分解, $M ↪ I^{≥ 0}(M)$ 是极小内射分解. 定义如下.&lt;/p&gt;
+&lt;p&gt;归纳地, 记 $P_{≥ 0}(M) ↠ M$ 是极小投射分解, $M ↪ I^{≥ 0}(M)$ 是极小内射分解.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(复合). 定义如下.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;$℧^k(M) := \mathrm{im}[I^{k-1}(M) → I^{k} (M)]$, 其中 $k ≥ 1$.&lt;/li&gt;
@@ -2002,40 +2676,30 @@ $M^{∗ ∗}$ 是 torsionless 模.
   &lt;li&gt;记 $C_{k + 1}(M) := C(C_k(M))$, $C_0(M) = M$.&lt;/li&gt;
   &lt;li&gt;记 $K^{k + 1}(M) := K(K^k(M))$, $K_0(M) = M$.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;div class=&quot;theorem&quot;&gt;
-(逼近与合冲在稳定范畴中伴随, &lt;a href=&quot;/posts/syzygy_und_approx&quot;&gt;证明&lt;/a&gt;). 
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(逼近与合冲在稳定范畴中伴随, &lt;a href=&quot;syzygy_und_approx&quot;&gt;证明&lt;/a&gt;).&lt;/p&gt;
 
-$Ω_∙$ 与 $C_∙$ 是稳定投射范畴的伴随函子; $℧^∙$ 与 $K^∙$ 是稳定内范畴的伴随函子.
+&lt;p&gt;$Ω_∙$ 与 $C_∙$ 是稳定投射范畴的伴随函子; $℧^∙$ 与 $K^∙$ 是稳定内范畴的伴随函子.&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-$C_k: \underline{𝐦𝐨𝐝_A} ⇆ \underline{𝐦𝐨𝐝_A} : Ω_k$ 是左右伴随.
-&lt;/li&gt;
-&lt;li&gt;
-$℧^k: \overline{𝐦𝐨𝐝_A} ⇆ \overline{𝐦𝐨𝐝_A} : K^k$ 是左右伴随.
-&lt;/li&gt;
-&lt;li&gt;
-$C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$.
-&lt;/li&gt;
-&lt;li&gt;
-$K^k ≃ τ(℧^k(τ⁻¹))$.
-&lt;/li&gt;
+  &lt;li&gt;$C_k: \underline{𝐦𝐨𝐝_A} ⇆ \underline{𝐦𝐨𝐝_A} : Ω_k$ 是左右伴随.&lt;/li&gt;
+  &lt;li&gt;$℧^k: \overline{𝐦𝐨𝐝_A} ⇆ \overline{𝐦𝐨𝐝_A} : K^k$ 是左右伴随.&lt;/li&gt;
+  &lt;li&gt;$C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$.&lt;/li&gt;
+  &lt;li&gt;$K^k ≃ τ(℧^k(τ⁻¹))$.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;note&quot;&gt;
-伴随函子的交换图如下 ($↕ := \mathrm{Tr}$, $⇕ := D\mathrm{Tr}D$):
-$$
-\begin{bmatrix}
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;伴随函子的交换图如下 ($↕ := \mathrm{Tr}$, $⇕ := D\mathrm{Tr}D$):&lt;/p&gt;
+
+\[\begin{bmatrix}
 \underline{𝐦𝐨𝐝_{A^{\mathrm{op}}}} &amp;amp; \substack{C\\⟶ \\⊥\\⟵ \\Ω}  &amp;amp; \underline{𝐦𝐨𝐝_{A^{\mathrm{op}}}} &amp;amp; \overset D ↔  &amp;amp; \overline{𝐦𝐨𝐝_{A}} &amp;amp; \substack{K\\⟵ \\⊤\\⟶ \\℧}  &amp;amp; \overline{𝐦𝐨𝐝_{A}}\\
 ↕  &amp;amp;  &amp;amp; ↕  &amp;amp;  &amp;amp; ⇕  &amp;amp;  &amp;amp; ⇕ \\
 \underline{𝐦𝐨𝐝_{A}} &amp;amp; \substack{Ω\\ ⟶\\⊤\\⟵ \\C} &amp;amp; \underline{𝐦𝐨𝐝_{A}} &amp;amp; \underset D ↔  &amp;amp; \overline{𝐦𝐨𝐝_{A^{\mathrm{op}}}} &amp;amp;  \substack{℧\\⟵ \\⊥\\⟶ \\K}   &amp;amp; \overline{𝐦𝐨𝐝_{A^{\mathrm{op}}}}
-\end{bmatrix}
-$$
+\end{bmatrix}\]
 &lt;/div&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-(反射子范畴). 称全子范畴 $i: 𝒞 ↣ 𝒜$ 是反射 (余范畴) 的, 若 $i$ 是右伴随 (左伴随).
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(反射子范畴). 称全子范畴 $i: 𝒞 ↣ 𝒜$ 是反射 (余范畴) 的, 若 $i$ 是右伴随 (左伴随).&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;考虑函子像所在的全子范畴, 此时&lt;/p&gt;
@@ -2045,15 +2709,13 @@ $$
   &lt;li&gt;$℧^k(\overline{𝐦𝐨𝐝_A}) ↣ \cdots ↣ ℧^1 (\overline{𝐦𝐨𝐝_A}) ↣ \overline{𝐦𝐨𝐝_A}$ 是一列反射子范畴.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;theorem&quot;&gt;
-($Ω_1$ 与 $℧^1$, &lt;a href=&quot;/posts/stable_subquot&quot;&gt;证明&lt;/a&gt;).
-实际上, $Ω_1(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$ 是投射对象之子对象的稳定范畴. $℧^1(\overline{𝐦𝐨𝐝_A}) ≃ \overline{𝐪𝐮𝐨𝐭(A)}$ 是投射对象之商对象的稳定范畴.
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;($Ω_1$ 与 $℧^1$, &lt;a href=&quot;stable_subquot&quot;&gt;证明&lt;/a&gt;).
+实际上, $Ω_1(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$ 是投射对象之子对象的稳定范畴. $℧^1(\overline{𝐦𝐨𝐝_A}) ≃ \overline{𝐪𝐮𝐨𝐭(A)}$ 是投射对象之商对象的稳定范畴.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h3 id=&quot;维度&quot;&gt;维度&lt;/h3&gt;
 
-&lt;div class=&quot;note&quot;&gt;
-Under construction?
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;Under construction?&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h4 id=&quot;著名定理&quot;&gt;著名定理&lt;/h4&gt;
@@ -2074,218 +2736,169 @@ Under construction?
 
 &lt;h4 id=&quot;两种构造态射的方式-不可约-极小几乎可裂&quot;&gt;两种构造态射的方式: 不可约, 极小几乎可裂&lt;/h4&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-(Radical). 对 $\mathrm{Hom}$-有限的 Abel 范畴 $𝒜$, 称 $f ∈ \mathrm{Rad}(X,Y)$, 当且仅当 $\operatorname{id}_X ∉ \operatorname{im}(f, X)$. 等价命题省略.
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(Radical). 对 $\mathrm{Hom}$-有限的 Abel 范畴 $𝒜$, 称 $f ∈ \mathrm{Rad}(X,Y)$, 当且仅当 $\operatorname{id}_X ∉ \operatorname{im}(f, X)$. 等价命题省略.
 &lt;br /&gt;
 &lt;br /&gt;
-归纳地, $\mathrm{Rad}^{k+1} = \mathrm{Rad}^{k} ∘ \mathrm{Rad}$. 注意: $\mathrm{Rad}^{k}$ 随 $k$ 增加递减.
+归纳地, $\mathrm{Rad}^{k+1} = \mathrm{Rad}^{k} ∘ \mathrm{Rad}$. 注意: $\mathrm{Rad}^{k}$ 随 $k$ 增加递减.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;note&quot;&gt;
-实际上, 将 $𝒜$ 视作广义的 $k$-代数, $\mathrm{Rad}$ 就是环的 Radical.
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;实际上, 将 $𝒜$ 视作广义的 $k$-代数, $\mathrm{Rad}$ 就是环的 Radical.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;lemma&quot;&gt;
-(不可约态射). 称 $f ∈ \mathrm{Hom}(X, Y)$ 不可约, 若以下等价命题成立.
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(不可约态射). 称 $f ∈ \mathrm{Hom}(X, Y)$ 不可约, 若以下等价命题成立.&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-(态射分解). $f$ 本身不可裂. 若 $f = a ∘ b$, 则必有 $a$ 可裂单, 或 $b$ 可裂满.
-&lt;/li&gt;
-&lt;li&gt;
-(范畴 $\mathrm{Rad}$). $\mathrm{Rad}^1(X, Y) ∖ \mathrm{Rad}^2(X, Y)$.
-&lt;/li&gt;
+  &lt;li&gt;(态射分解). $f$ 本身不可裂. 若 $f = a ∘ b$, 则必有 $a$ 可裂单, 或 $b$ 可裂满.&lt;/li&gt;
+  &lt;li&gt;(范畴 $\mathrm{Rad}$). $\mathrm{Rad}^1(X, Y) ∖ \mathrm{Rad}^2(X, Y)$.&lt;/li&gt;
+  &lt;li&gt;特别地, 不可分解对象间的不可约态射是单或满的.&lt;/li&gt;
 &lt;/ol&gt;
-特别地, 不可分解对象间的不可约态射是单或满的.
 &lt;/div&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-(不可约空间). 不可约态射集的线性化, 即商 $\mathrm{Irr}(X,Y) := \frac{\mathrm{Rad}(X,Y)}{\mathrm{Rad}^2(X,Y)}$.
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(不可约空间). 不可约态射集的线性化, 即商 $\mathrm{Irr}(X,Y) := \frac{\mathrm{Rad}(X,Y)}{\mathrm{Rad}^2(X,Y)}$.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-(左, 右几乎可裂).
-
-称 $f : L → X$ 是左几乎可裂的, 若 $f$ 不是可裂单, 且任意 $L$ 出发的非可裂单通过 $f$ 分解. 右几乎可裂对偶.
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(左, 右几乎可裂). 称 $f : L → X$ 是左几乎可裂的, 若 $f$ 不是可裂单, 且任意 $L$ 出发的非可裂单通过 $f$ 分解. 右几乎可裂对偶.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;左可裂即存在左逆, 也就是可裂单. 几乎可裂态射是可裂态射的次位.&lt;/p&gt;
 
-&lt;div class=&quot;theorem&quot;&gt;
-(几乎可裂态射的结构, &lt;a href=&quot;Almost_Split&quot;&gt;证明&lt;/a&gt;). 以下是左右几乎可裂态射的结构.
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(几乎可裂态射的结构, &lt;a href=&quot;Almost_Split&quot;&gt;证明&lt;/a&gt;). 以下是左右几乎可裂态射的结构.&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-左几乎可裂态射的来源 $s(f)$ 是不可约的.
-&lt;/li&gt;
-&lt;li&gt;
-左几乎可裂态射 $f$ 是单的, 当且仅当 $s(f) ∉ 𝐢𝐧𝐣$.
-&lt;/li&gt;
-&lt;li&gt;
-左几乎可裂态射 $s(f) ∈ 𝐢𝐧𝐣$, 则形如 $I → \mathrm{Bot}(I) ⊕ \cdots$.
-&lt;/li&gt;
-&lt;li&gt;
-右几乎可裂态射的去向 $t(f)$ 是不可约的.
-&lt;/li&gt;
-&lt;li&gt;
-右几乎可裂态射 $f$ 是满的, 当且仅当 $t(f) ∉ 𝐩𝐫𝐨𝐣$.
-&lt;/li&gt;
-&lt;li&gt;
-右几乎可裂态射 $t(f) ∈ 𝐩𝐫𝐨𝐣$, 则形如 $\cdots ⊕ \mathrm{Rad}(X) → X$.
-&lt;/li&gt;
+  &lt;li&gt;左几乎可裂态射的来源 $s(f)$ 是不可约的.&lt;/li&gt;
+  &lt;li&gt;左几乎可裂态射 $f$ 是单的, 当且仅当 $s(f) ∉ 𝐢𝐧𝐣$.&lt;/li&gt;
+  &lt;li&gt;左几乎可裂态射 $s(f) ∈ 𝐢𝐧𝐣$, 则形如 $I → \mathrm{Top}(I) ⊕ \cdots$.&lt;/li&gt;
+  &lt;li&gt;右几乎可裂态射的去向 $t(f)$ 是不可约的.&lt;/li&gt;
+  &lt;li&gt;右几乎可裂态射 $f$ 是单的, 当且仅当 $t(f) ∉ 𝐢𝐧𝐣$.&lt;/li&gt;
+  &lt;li&gt;右几乎可裂态射 $t(f) ∈ 𝐢𝐧𝐣$, 则形如 $I → \mathrm{Top}(I) ⊕ \cdots$.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-(左, 右极小). 称 $f$ 左极小, 若 $α ∘ f = f$ 蕴含 $α$ 是同构. 右极小定义对偶.
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(左, 右极小). 称 $f$ 左极小, 若 $α ∘ f = f$ 蕴含 $α$ 是同构. 右极小定义对偶.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;theorem&quot;&gt;
-(不可约态射恰是极小几乎可裂态射的直和项). 给定 $f$, 以下等价.
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(不可约态射恰是极小几乎可裂态射的直和项). 给定 $f$, 以下等价.&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-$f$ 不可约.
-&lt;/li&gt;
-&lt;li&gt;
-$f ∈ \mathrm{Rad} ∖ \mathrm{Rad}^2$.
-&lt;/li&gt;
-&lt;li&gt;
-可以给 $t(f)$ 添加若干直和项, 使得 $\binom{f}{f'}$ 左极小几乎可裂.
-&lt;/li&gt;
-&lt;li&gt;
-可以给 $s(f)$ 添加若干直和项, 使得 $(f \ f'')$ 右极小几乎可裂.
-&lt;/li&gt;
+  &lt;li&gt;$f$ 不可约.&lt;/li&gt;
+  &lt;li&gt;$f ∈ \mathrm{Rad} ∖ \mathrm{Rad}^2$.&lt;/li&gt;
+  &lt;li&gt;可以给 $t(f)$ 添加若干直和项, 使得 $\binom{f}{f’}$ 左极小几乎可裂.&lt;/li&gt;
+  &lt;li&gt;可以给 $s(f)$ 添加若干直和项, 使得 $(f \ f’’)$ 右极小几乎可裂.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
 &lt;h4 id=&quot;几乎可裂-ses-的等价定义&quot;&gt;几乎可裂 ses 的等价定义&lt;/h4&gt;
 
-&lt;div class=&quot;theorem&quot;&gt;
-给定不可列 ses $0 → L \xrightarrow f M \xrightarrow g N → 0$, 以下是几乎可裂 ses 的等价定义:
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;给定不可列 ses $0 → L \xrightarrow f M \xrightarrow g N → 0$, 以下是几乎可裂 ses 的等价定义:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;
-$f$ 是左极小几乎可裂态射;
-&lt;/li&gt;
-&lt;li&gt;
-$g$ 是右极小几乎可裂态射;
-&lt;/li&gt;
-&lt;li&gt;
-$f$ 左几乎可裂, $N$ 不可分解;
-&lt;/li&gt;
-&lt;li&gt;
-$g$ 右几乎可裂, $L$ 不可分解;
-&lt;/li&gt;
-&lt;li&gt;
-$L$ 与 $N$ 不可分解,且 $f$ 与 $g$ 不可约;
-&lt;/li&gt;
-&lt;li&gt;
-ses 形如 $0 → τ N → ⨁ E_i → N → 0$.
-&lt;/li&gt;
+  &lt;li&gt;$f$ 是左极小几乎可裂态射;&lt;/li&gt;
+  &lt;li&gt;$g$ 是右极小几乎可裂态射;&lt;/li&gt;
+  &lt;li&gt;$f$ 左几乎可裂, $N$ 不可分解;&lt;/li&gt;
+  &lt;li&gt;$g$ 右几乎可裂, $L$ 不可分解;&lt;/li&gt;
+  &lt;li&gt;$L$ 与 $N$ 不可分解, 且 $f$ 与 $g$ 不可约;&lt;/li&gt;
+  &lt;li&gt;ses 形如 $0 → τ N → ⨁ E_i → N → 0$.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;note&quot;&gt;
-若下式不出现 $0$, 则有 $k$-线性空间的同构
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;若下式不出现 $0$, 则有 $k$-线性空间的同构&lt;/p&gt;
 
-$$
-\mathrm{Irr}(τ M, τ N) ≃ \mathrm{Irr}(τ N, M) ≃ \mathrm{Irr}(M, N) ≃ \mathrm{Irr}(N, τ ⁻¹ M) ≃ \mathrm{Irr}(τ ⁻¹ M, τ ⁻¹ N).
-$$
+\[\mathrm{Irr}(τ M, τ N) ≃ \mathrm{Irr}(τ N, M) ≃ \mathrm{Irr}(M, N) ≃ \mathrm{Irr}(N, τ ⁻¹ M) ≃ \mathrm{Irr}(τ ⁻¹ M, τ ⁻¹ N).\]
 &lt;/div&gt;
 
 &lt;h4 id=&quot;函子语言&quot;&gt;函子语言&lt;/h4&gt;
 
-&lt;div class=&quot;note&quot;&gt;
-对函子语言的系统性阐述见&lt;a href=&quot;Reflexive_sub_cat&quot;&gt;此篇笔记&lt;/a&gt;.
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;对函子语言的系统性阐述见&lt;a href=&quot;Reflexive_sub_cat&quot;&gt;此篇笔记&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-($k$-函子范畴). 由 $k$-代数 $A$, 则 $𝐦𝐨𝐝_A$ 是 $k$-范畴. 考虑以下全忠实的嵌入.
-&lt;ol&gt;
-&lt;li&gt;
-(预层). $h_∙ : 𝐦𝐨𝐝_A ↣ 𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k),\quad X ↦ (-,X)$.
-&lt;/li&gt;
-&lt;li&gt;
-(余预层). $h^∙ : 𝐦𝐨𝐝_A ↣ 𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A, 𝐌𝐨𝐝_k)^{\mathrm{op}},\quad X ↦ (X,-)$.
-&lt;/li&gt;
-&lt;/ol&gt;
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;($k$-函子范畴). 由 $k$-代数 $A$, 则 $𝐦𝐨𝐝_A$ 是 $k$-范畴. 考虑以下全忠实的嵌入.&lt;/p&gt;
 
+&lt;ol&gt;
+  &lt;li&gt;(预层). $h_∙ : 𝐦𝐨𝐝_A ↣ 𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k),\quad X ↦ (-,X)$.&lt;/li&gt;
+  &lt;li&gt;(余预层). $h^∙ : 𝐦𝐨𝐝_A ↣ 𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A, 𝐌𝐨𝐝_k)^{\mathrm{op}},\quad X ↦ (X,-)$.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/div&gt;
 
 &lt;p&gt;考虑全子范畴的闭包, $\operatorname{im}h_∙$ 在 $𝐅𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A, 𝐌𝐨𝐝_k)$ 中关于余核封闭的最小子范畴等价于 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k)$, 同时这也是 Abel 范畴. $\operatorname{im} h^∙$ 类似.&lt;/p&gt;
 
-&lt;div class=&quot;theorem&quot;&gt;
-(伴随).
-范畴 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k)$ 中对象形如  
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(伴随).
+范畴 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k)$ 中对象形如&lt;/p&gt;
 
-$$
-h_X \xrightarrow {h_f} h_Y → F(-) → 0\quad (f : X → Y).
-$$
+\[h_X \xrightarrow {h_f} h_Y → F(-) → 0\quad (f : X → Y).\]
 
-$h_∙$ 有左伴随 $\operatorname{cok}h_φ ↦ \operatorname{cok}φ$, 从而是反射子范畴.
+&lt;p&gt;$h_∙$ 有左伴随 $\operatorname{cok}h_φ ↦ \operatorname{cok}φ$, 从而是反射子范畴.
 &lt;br /&gt;
-类似地, $h^∙$ 有右伴随 $\ker h^φ ↦ \operatorname{ker}φ$, 从而是余反射子范畴.
+类似地, $h^∙$ 有右伴随 $\ker h^φ ↦ \operatorname{ker}φ$, 从而是余反射子范畴.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;lemma&quot;&gt;
-($k$-米田引理). 对上述两个范畴, 可表函子就是投射对象.
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($k$-米田引理). 对上述两个范畴, 可表函子就是投射对象.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;lemma&quot;&gt;
-($k$-函子对应). 以预层 $𝐦𝐨𝐝_A ↣ 𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k)$ 为例.
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($k$-函子对应). 以预层 $𝐦𝐨𝐝_A ↣ 𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k)$ 为例.&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-对任意 Abel $k$-范畴 $𝒜$, $𝐦𝐨𝐝_A → 𝒜$ 类型的 $k$ 函子唯一提升作 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k) → 𝒜$ 类型的右正合函子. 特别地, $𝒜 = 𝐦𝐨𝐝_A$ 时, 上述分解是伴随的余单位.
-&lt;/li&gt;
-&lt;li&gt;
-对任意 Abel $k$-范畴 $𝒜$, 保持 $𝐦𝐨𝐝_A$ 中弱正合列的 $𝐦𝐨𝐝_A → 𝒜$ 类型的 $k$ 函子唯一提升作 $𝒜 → 𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A, 𝐌𝐨𝐝_k)^{\mathrm{op}}$ 类型的正合函子.
-&lt;/li&gt;
+  &lt;li&gt;对任意 Abel $k$-范畴 $𝒜$, $𝐦𝐨𝐝_A → 𝒜$ 类型的 $k$ 函子唯一提升作 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k) → 𝒜$ 类型的右正合函子. 特别地, $𝒜 = 𝐦𝐨𝐝_A$ 时, 上述分解是伴随的余单位.&lt;/li&gt;
+  &lt;li&gt;对任意 Abel $k$-范畴 $𝒜$, 保持 $𝐦𝐨𝐝_A$ 中弱正合列的 $𝐦𝐨𝐝_A → 𝒜$ 类型的 $k$ 函子唯一提升作 $𝒜 → 𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A, 𝐌𝐨𝐝_k)^{\mathrm{op}}$ 类型的正合函子.&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;/div&gt;
 
-&lt;div class=&quot;theorem&quot;&gt;
-(几乎可裂映射的函子表述). 给定 $f : X → Y$, 则有以下结论.
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(几乎可裂映射的函子表述). 给定 $f : X → Y$, 则有以下结论.&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;
-$f$ 非可裂单, 当且仅当 $\operatorname{im} (f,X) ⊆ \mathrm{Rad}(X,X)$;
-&lt;/li&gt;
-&lt;li&gt;
-$f$ 非可裂满, 当且仅当 $\operatorname{im} (X,f) ⊆ \mathrm{Rad}(Y,Y)$;
-&lt;/li&gt;
-&lt;li&gt;
-$f$ 是左几乎可裂, 当且仅当 $(-, f)$ 是 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k)$ 中的投射表现;
-&lt;/li&gt;
-&lt;li&gt;
-左几乎额可裂态射 $f$ 是极小的, 当且仅当 $(-, f)$ 是 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k)$ 中的极小投射表现;
-&lt;/li&gt;
-&lt;li&gt;
-$f$ 是右几乎可裂, 当且仅当 $(f, -)$ 是 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A, 𝐌𝐨𝐝_k)^{\mathrm{op}}$ 中的投射表现;
-&lt;/li&gt;
-&lt;li&gt;
-右几乎可裂态射 $f$ 是极小的, 当且仅当 $(f, -)$ 是 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A, 𝐌𝐨𝐝_k)^{\mathrm{op}}$ 中的极小投射表现.
-&lt;/li&gt;
+  &lt;li&gt;$f$ 非可裂单, 当且仅当 $\operatorname{im} (f,X) ⊆ \mathrm{Rad}(X,X)$;&lt;/li&gt;
+  &lt;li&gt;$f$ 非可裂满, 当且仅当 $\operatorname{im} (X,f) ⊆ \mathrm{Rad}(Y,Y)$;&lt;/li&gt;
+  &lt;li&gt;$f$ 是左几乎可裂, 当且仅当 $(-, f)$ 是 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k)$ 中的投射表现;&lt;/li&gt;
+  &lt;li&gt;左几乎额可裂态射 $f$ 是极小的, 当且仅当 $(-, f)$ 是 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A^{\mathrm{op}}, 𝐌𝐨𝐝_k)$ 中的极小投射表现;&lt;/li&gt;
+  &lt;li&gt;$f$ 是右几乎可裂, 当且仅当 $(f, -)$ 是 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A, 𝐌𝐨𝐝_k)^{\mathrm{op}}$ 中的投射表现;&lt;/li&gt;
+  &lt;li&gt;右几乎可裂态射 $f$ 是极小的, 当且仅当 $(f, -)$ 是 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨𝐝_A, 𝐌𝐨𝐝_k)^{\mathrm{op}}$ 中的极小投射表现.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
 &lt;h3 id=&quot;ar-定理&quot;&gt;AR 定理&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; (缺陷公式). 对 ses $θ : 0 → A → B → C → 0$, 以下是函子的长正合列 $0 → (-, θ) → θ ⊗ \mathrm{Tr}(-) → 0$.&lt;/p&gt;
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(缺陷公式). 对 ses&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($\mathrm{Tor}_{1,2}(Y, \mathrm{Tr}(X))$, 稳定 $\mathrm{Hom}$). 存在函子的四项正合列 $0 → \mathrm{Tor}_2(Y, \mathrm{Tr}(X)) → Y ⊗ X^∗ → (X, Y) → \mathrm{Tor}_1(Y, \mathrm{Tr}(X)) → 0$. 此处 $\mathrm{Tor}_1(Y, \mathrm{Tr}(X)) ≃ \underline {(X,Y)}$.&lt;/p&gt;
+\[θ : 0 → A → B → C → 0,\]
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($\mathrm{Tor}&lt;em&gt;{≥ 3}(Y, \mathrm{Tr}(X))$). $\mathrm{Tor}&lt;/em&gt;{n+3}(Y, \mathrm{Tr}(X)) ≃ \mathrm{Tor}_{n+1}(Y, X^∗)$.&lt;/p&gt;
+&lt;p&gt;以下是函子的长正合列&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($\mathrm{Ext}^{1,2}(\mathrm{Tr}(M), N)$, AB 公式). 存在函子的四项正合列 $0 → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → N ⊗ M → (M^∗, N) → \mathrm{Ext}^2(\mathrm{Tr}(M), N) → 0$. 此处 $\mathrm{Ext}^1(\mathrm{Tr}(M), N) ≃ \underline {(M,N)}$.&lt;/p&gt;
+\[0 → (-, θ) → θ ⊗ \mathrm{Tr}(-) → 0\]
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($\mathrm{Ext}^{≥ 3}(\mathrm{Tr}(M), N)$). $\mathrm{Ext}^{n + 3}(\mathrm{Tr}(M), N) ≃ \mathrm{Ext}^{n}(\mathrm{Tr}(M), N)$.&lt;/p&gt;
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($\mathrm{Tor}_{1,2}(Y, \mathrm{Tr}(X))$, 稳定 $\mathrm{Hom}$).
+存在函子的四项正合列&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; (AR 公式). 以下是自然同构. $D\underline{(τ⁻¹ N, M)} ≃ \mathrm{Ext}^1(M, N) ≃ D\overline{(N, τM)}$.&lt;/p&gt;
+\[0 → \mathrm{Tor}_2(Y, \mathrm{Tr}(X)) → Y ⊗ X^∗ → (X, Y) → \mathrm{Tor}_1(Y, \mathrm{Tr}(X)) → 0\]
+
+&lt;p&gt;此处, $\mathrm{Tor}_1(Y, \mathrm{Tr}(X)) ≃ \underline {(X,Y)}$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($\mathrm{Tor}&lt;em&gt;{≥ 3}(Y, \mathrm{Tr}(X))$).
+$\mathrm{Tor}&lt;/em&gt;{n+3}(Y, \mathrm{Tr}(X)) ≃ \mathrm{Tor}_{n+1}(Y, X^∗)$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($\mathrm{Ext}^{1,2}(\mathrm{Tr}(M), N)$, AB 公式).
+存在函子的四项正合列&lt;/p&gt;
+
+\[0 → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → N ⊗ M → (M^∗, N) → \mathrm{Ext}^2(\mathrm{Tr}(M), N) → 0\]
+
+&lt;p&gt;此处 $\mathrm{Ext}^1(\mathrm{Tr}(M), N) ≃ \underline {(M,N)}$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($\mathrm{Ext}^{≥ 3}(\mathrm{Tr}(M), N)$).
+$\mathrm{Ext}^{n + 3}(\mathrm{Tr}(M), N) ≃ \mathrm{Ext}^{n}(\mathrm{Tr}(M), N)$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(AR 公式, &lt;a href=&quot;AR_Formula&quot;&gt;证明&lt;/a&gt;).
+以下是自然同构.&lt;/p&gt;
+
+\[D\underline{(τ⁻¹ N, M)} ≃ \mathrm{Ext}^1(M, N) ≃ D\overline{(N, τM)}.\]
 
 &lt;ol&gt;
   &lt;li&gt;若 $p.\dim M = 1$, 则 $τ M$ 投射, 故 $\mathrm{Ext}^1(M,N) ≃ D(N, τ M)$.&lt;/li&gt;
   &lt;li&gt;若 $i.\dim N = 1$, 则 $τ⁻¹ N$ 内射, 故 $\mathrm{Ext}^1(M,N) ≃ D(τ⁻¹ N, M)$.&lt;/li&gt;
 &lt;/ol&gt;
-
+&lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
           <link>https://zhangchenchengsjtu.github.io/website/posts/AR-notes</link>

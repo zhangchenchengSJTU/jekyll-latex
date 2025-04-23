@@ -1,11 +1,8 @@
 ---
-title: Notes on Classical Tilting Theory
+title: Notes for Classical Tilting Theory
 author: Chencheng Zhang
 layout: post
 ---
-
-* TOC
-{:toc}
 
 ## Tilting 理论
 
@@ -13,21 +10,8 @@ layout: post
 
 #### 记号: 对象类
 
-{% def %}
-(垂直). 以下使用
+以下使用 $⟂_o$ 表示关于 $\mathrm{Hom}(-,-)$ 的垂直, $⟂$ 表示关于 $\mathrm{Ext}^1(-,-)$ 的垂直. 使用 $(-)^⟂$, $(-)^o$, $^⟂(-)$ 以及 $^o(-)$ 表示对象类的左右垂直类.
 
-1. $⟂_o$ 表示关于 $\mathrm{Hom}(-,-)$ 的垂直,
-2. $⟂$ 表示关于 $\mathrm{Ext}^1(-,-)$ 的垂直.
-
-特别地, 使用 $(-)^⟂$, $(-)^o$, $^⟂(-)$ 以及 $^o(-)$ 表示对象类的左右垂直类.
-
-$$
-𝒳^⟂ := \{Y ∈ 𝖮𝖻(𝒞) ∣ \mathrm{Ext}^1(X, Y) = 0, ∀ X ∈ 𝒳\}.
-$$
-
-{% enddef %}
-
-{% def %}
 给定 (非空) 对象类 $𝒳$. 定义
 
 1. $𝐚𝐝𝐝(𝒳)$ 是 $𝒳$ 中对象关于直和与直和项的闭包;
@@ -41,135 +25,101 @@ $$
 
 特别地, 对 $𝐦𝐨𝐝_A$, 对 $𝐚𝐝𝐝$ 封闭的对象类 (1, 2, 4, 5, 7, 8) 都是有限生成的, 从而可以用一个代表元表示. 例如 $𝐜𝐨𝐠(𝒳)$ 必形如某一 $𝐜𝐨𝐠(M)$.
 
-此外, 需要对 $𝐅(𝒳)$ 与 $𝐓(𝒳)$ 的等价定义做一些说明, 见[此处](Def_de_TP).
-
-{% enddef %}
+此外, 需要对 $𝒳$ 做一些说明. 见
 
 #### Torsion Pair 确定的对象类
 
 {% def %}
-(Torsion pair 的等价定义, [证明](Def_de_TP)).
+(Torsion pair 的等价定义).
 称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.
-
-1. $𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.
-2. 存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$. 此时, $\ker t = ℱ$, $\operatorname{im} t = 𝒯$.
-3. 存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$. 此时, $\ker f = 𝒯$, $\operatorname{im} f = ℱ$.
-4. ${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.
-5. $𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.
-6. $ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
-7. 任意 $𝐪𝐮𝐨𝐭(𝒯)$-滤过对象属于 $𝒯$, 并取 $ℱ := 𝒯^o$
-8. 任意 $𝐬𝐮𝐛(ℱ)$-滤过对象属于 $ℱ$, 并取 $𝒯 := {}^oℱ$.
-
+<ol>
+<li>
+$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.
+</li>
+<li>
+存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$.
+</li>
+<li>
+存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$.
+</li>
+<li>
+${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.
+</li>
+<li>
+$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.
+</li>
+<li>
+$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
+</li>
+<li>
+任意 $𝒯$-滤过对象属于 $𝒯$.
+</li>
+<li>
+任意 $ℱ$-滤过对象属于 $ℱ$.
+</li>
+</ol>
 {% enddef %}
 
-以上 ses 在同构意义下唯一. 依照定义, $tM → N$ 类型的态射通过 $tN ↪ N$ 唯一地分解, 从而 $t$ 是全子范畴嵌入 $𝒯 ↣ 𝒜$ 的右伴随. 特别地,
+**Def** (Torsion pair). 
 
-1. $t$ 是右正合的左伴随函子, $𝒯$ 是余反射的;
+**Lemma** 此时, 典范正合列 $0 → tM → M → fM → 0$ 在同构意义下唯一.
+
+1. $t$ 是右正合的左伴随函子, $𝒯$ 是余反射的.
 2. $f$ 是左伴随的右正合函子, $ℱ$ 是反射的.
 
-Torsion pair 关于 $\mathrm{Hom}$-垂直 (且封闭). 以下是一些关于 $\mathrm{Ext}^1$-垂直的结论.
+**Lemma** ($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象). 给定对象 $X$ 与 $M$.
 
-{% lem %}
-(垂直条件, [证明](Torsion_Pair_Ext_Orth)). 以下刻画 torsion pair $(𝒯, ℱ)$ 中满足 $\mathrm{Ext}^1$-垂直的对象. 记 $t$ 与 $f$ 是相应的子函子与商函子.
+1. $M ∈ 𝐠𝐞𝐧(X)$ 当且仅当赋值 $(M, X) ⊗_{\mathrm{End}(X)} X → M$ 是满的.
+2. $M ∈ 𝐜𝐨𝐠(X)$ 当且仅当余赋值 $M → ((M, X), X)$ 是单的.
+
+**Lemma** ($𝐓$ 与 $𝐅$ 中的对象). 给定对象 $X$ 与 $M$.
+
+1. $M ∈ 𝐓(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐪𝐮𝐨𝐭(X)$.
+2. $M ∈ 𝐅(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐚𝐝𝐝(X)$.
+
+**Lemma** $𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.
+
+1. 若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧, X^o)$ 是 torsion pair.
+2. 若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.
+
+**Thm** (垂直条件). 以下刻画 torsion pair $(𝒯, ℱ)$ 中满足 $\mathrm{Ext}^1$-垂直的对象. 记 $t$ 与 $f$ 是相应的子函子与商函子.
 
 1. $𝒯 ∩ (^⟂ 𝒯) = 𝒯 ∩ τ ⁻¹ ℱ$.
 2. $𝒯 ∩ (𝒯^⟂) = 𝒯 ∩ t(𝐢𝐧𝐣)$.
 3. $ℱ ∩ (ℱ^⟂) = ℱ ∩ τ 𝒯$.
 4. $ℱ ∩ (^⟂ ℱ) = ℱ ∩ f(𝐩𝐫𝐨𝐣)$.
 
-{% endlem %}
+#### 局部 Tilting 模: 两类 torsion pair
 
-{% lem %}
-($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象, [证明](gen_and_cog)). 给定对象 $X$ 与 $M$.
-
-1. $M ∈ 𝐠𝐞𝐧(X)$ 当且仅当赋值 $(X, M) ⊗_{\mathrm{End}(X)} X → M$ 是满的.
-2. $M ∈ 𝐜𝐨𝐠(X)$ 当且仅当余赋值 $M → ((M, X), X)$ 是单的.
-{% endlem %}
-
-{% lem %}
-($𝐓$ 与 $𝐅$ 中的对象, 证明见[此定理](Def_de_TP)中 4 ⟺ 5 部分). 给定对象 $X$ 与 $M$.
-
-1. $M ∈ 𝐓(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐪𝐮𝐨𝐭(X)$.
-2. $M ∈ 𝐅(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐚𝐝𝐝(X)$.
-
-{% endlem %}
-
-{% lem %}
-([证明](Gen_Eq_T)). $𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.
-
-1. 若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧(X), X^o)$ 是 torsion pair.
-2. 若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.
-
-{% endlem %}
-
-作为 $𝐜𝐨𝐠$ 与 $𝐠𝐞𝐧$ 中的特例, 定义
-
-{% def %}
-(忠实模). 称 $M ∈ 𝐦𝐨𝐝_A$ 忠实, 若以下等价命题成立.
+**Def** (忠实模). 称 $M ∈ 𝐦𝐨𝐝_A$ 忠实, 若以下等价命题成立.
 
 1. 对任意 $a ≠ 0$ 总有 $M ⋅ a ≠ 0$.
 2. 同态 $A → \mathrm{End}(M)^{\mathrm{op}}$ 是单的.
 3. $A ∈ 𝐜𝐨𝐠(M)$.
 4. $DA ∈ 𝐠𝐞𝐧(M)$.
 
-{% enddef %}
+**Def** (局部 Tilting 模). 称 $T$ 是局部 tilting 的, 若 $p.\dim T ≤ 1$ 且 $\mathrm{Ext}^1(T,T)=0$.
 
-#### 局部 Tilting 模: 两类 torsion pair
-
-{% def %}
-(局部 Tilting 模). 称 $T$ 是局部 tilting 的, 若 $p.\dim T ≤ 1$ 且 $\mathrm{Ext}^1(T,T)=0$.
-{% enddef %}
-
-等价地, $T$ 满足自垂直条件 $\mathrm{Ext}^1(T,T)$, 以及
-
-1. $A$ 相对 $𝐚𝐝𝐝(T)$ 的内射分解 (余消解) 是至多 $1$ 维的, 即, 存在 ses
-
-   $$
-   0 → A → T' → T'' → 0,
-   $$
-
-   其中 $T$, $T''$ 属于 $𝐚𝐝𝐝(T)$.
-2. $T$ 相对 $𝐚𝐝𝐝(A)$ 的投射分解 (消解) 是至多 $1$ 维的, 即, 存在 ses
-
-   $$
-   0 → P' → P'' → T → 0,
-   $$
-
-   其中 $P$, $P'$ 属于 $𝐚𝐝𝐝(A)$.
-
-{% slo %}
-由投射维度, $\mathrm{Ext}^1(T,-)$ 与 $\mathrm{Ext}^1(-,T)$ 是右正合函子.
-{% endslo %}
-
-{% thm %}
-(局部 tilting 模诱导的 torsion pair, [证明](Partial_Tilting_Two_Torsion_pairs)). 局部 tilting 模 $T$ 诱导了以下两类 torsion pair.
+**Thm** (局部 tilting 模诱导的 torsion pair). 给定局部 tilting 模 $T$.
 
 1. $(𝐠𝐞𝐧(T), T^o)$ 是 torsion pair.
 2. $(T^⟂, 𝐜𝐨𝐠(τT))$ 是 torsion pair.
 3. $𝐠𝐞𝐧(T) ⊆ T^⟂$.
 4. 以上两个 torsion pair, 均有 $T ∈ 𝒯 ∩ {}^⟂𝒯 = 𝒯 ∩ τ⁻¹ ℱ$.
 
-{% endthm %}
-
-{% note %}
-内射模属于 $T^⟂$. 若投射模属于 $𝐠𝐞𝐧(T)$, 则其属于 $𝐚𝐝𝐝(T)$.
-{% endnote %}
+**Note** 内射模属于 $T^⟂$. 若投射模属于 $𝐠𝐞𝐧(T)$, 则其属于 $𝐚𝐝𝐝(T)$.
 
 #### Tilting 模诱导的 torsion pair
 
-{% def %}
-([证明待补充](404)). 给定局部 tilting 模 $T$, 以下是 $T$ 成为 tilting 模的等价条件.
+**Def** 给定局部 tilting 模 $T$, 以下是 $T$ 成为 tilting 模的等价条件.
 
 1. $A$ 相对 $𝐚𝐝𝐝(T)$ 的内射分解 (余消解) 是至多 $1$ 维的, 即, 存在 ses $0 → A → T' → T'' → 0$, 其中 $T$, $T''$ 属于 $𝐚𝐝𝐝(T)$.
 2. $𝐠𝐞𝐧(T) = T^⟂$.
-3. $T^o = 𝐜𝐨𝐠(τT)$.
+3. $T^o = 𝐜𝐨𝐠(τT)$.  
 4. $^⟂(T^⟂) = 𝐚𝐝𝐝(T)$.
 5. 任意 $M ∈ T^⟂$ 存在满的右 $𝐚𝐝𝐝(T)$-逼近 $π : T^n ↠ M$, 且 $\ker π ∈ T^⟂$.
 
-{% enddef %}
-
-{% prop %}
-(Tilting 对象与 torsion pair, [证明](Tilting_Obj_Torsion_Pair)). 对 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$.
+**Lemma** 对 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$.
 
 1. $^⟂𝒯 = 𝐚𝐝𝐝(T)$.
 2. $M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.
@@ -177,11 +127,7 @@ Torsion pair 关于 $\mathrm{Hom}$-垂直 (且封闭). 以下是一些关于 $\m
 4. 投射对象若属于 $𝒯$, 则属于 $𝐚𝐝𝐝(T)$.
 5. 投射内射对象必属于 $𝐚𝐝𝐝(T)$.
 
-{% endprop %}
-
-{% thm %}
-(Bongartz). 局部 tilting 模是 tilting 模的直和项.
-{% endthm %}
+**Thm** (Bongartz). 局部 tilting 模是 tilting 模的直和项.
 
 #### Brenner-Butler 理论
 
@@ -189,8 +135,8 @@ Torsion pair 关于 $\mathrm{Hom}$-垂直 (且封闭). 以下是一些关于 $\m
 
 1. $𝐚𝐝𝐝(T) → 𝐩𝐫𝐨𝐣(\mathrm{End}(T)^{\mathrm{op}})$ 给出范畴等价. 此处 $T$ 可以是任意模.
 2. $T$ 的直和项无重数, 当且仅当 $\mathrm{End}(T)$ 是基本代数.
-3. 若 $T$ 是 tilting 模, 则 $(T,-)\restriction_𝒯$ 是全忠实的.
-4. 若 $T$ 是 tilting 模, 则 $\mathrm{Ext}^1(T,-)\restriction_𝒯$ 也是全忠实的.
+3. 若 $T$ 是 tilting 模, 则 $(T,-)|_𝒯$ 是全忠实的.
+4. 若 $T$ 是 tilting 模, 则 $\mathrm{Ext}^1(T,-)|_𝒯$ 也是全忠实的.
 
 **Def** (Tilted 代数). 给定 tilting 模 $T ∈ 𝐦𝐨𝐝_A$, 记 $B:=\mathrm{End}(T)$ 是诱导的 tilted 代数.
 
@@ -240,7 +186,7 @@ Torsion pair 关于 $\mathrm{Hom}$-垂直 (且封闭). 以下是一些关于 $\m
 1. 若 $p.\dim M ≠ 1$, 则 $p.\dim M = p.\dim (T,M)$.
 2. 若 $p.\dim M = 1$, 则 $p.\dim (T,M) ∈ \{0,1\}$.
 
-**Thm** (整体维数). $\|gl.\dim A - gl.\dim B\|≤ 1$.
+**Thm** (整体维数). $|gl.\dim A - gl.\dim B| ≤ 1$.
 
 <!-- **Lemma** ($𝒯$, $𝒴$ 与内射维数). 需要细化. -->
 
@@ -277,3 +223,4 @@ Torsion pair 关于 $\mathrm{Hom}$-垂直 (且封闭). 以下是一些关于 $\m
 2. $\mathrm{Ext}_𝒜^1(ℱ, 𝒯) = 0$.
 3. $𝒯$ 关于 $τ⁻¹$ 封闭.
 4. $ℱ$ 关于 $τ$ 封闭.
+

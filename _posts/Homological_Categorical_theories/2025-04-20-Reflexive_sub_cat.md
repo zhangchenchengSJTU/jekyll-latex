@@ -4,7 +4,11 @@ author: Chencheng Zhang
 layout: post
 ---
 
-### $𝐦𝐨𝐝_{𝒞}$
+{% abs %}
+本篇笔记将有限表现模范畴 $𝐦𝐨𝐝_R$ 中的结论迁移至将有限表现函子范畴 $𝐦𝐨𝐝_𝒞$, 重要命题包括<a href = "Finitely_Presented_Functor">有限表现对象的等价定义</a>, <a href = "Lazard_thm">函子范畴的 Lazard 定理</a> (平坦对象是投射对象的滤过余极限), <a href = "Fp_et_Plat_est_Proj">有限表现平坦对象是投射对象</a> (可表函子的直和项), <a href = "Plat_et_Proj_Cover_Proj">具有投射盖的平坦对象必投射</a>等. 重点研究了函子范畴中的平坦对象. 使用上述结论, 对具有较好性质的范畴, <a href = "Coreflexive_Contravariantly_Finite">余反射子范畴与反变有限范畴等价</a>.
+{% endabs %}
+
+## $𝐦𝐨𝐝_{𝒞}$
 
 全文使用  
 
@@ -117,7 +121,7 @@ $$
 是范畴等价.
 {% endex %}
 
-### 张量积, $𝐦𝐨𝐝_{𝒞}$ 的等价刻画
+## 张量积, $𝐦𝐨𝐝_{𝒞}$ 的等价刻画
 
 定义 $k$-范畴的函子范畴 $𝐌𝐨𝐝_𝒞 := 𝐅𝐮𝐧𝐜𝐭 (𝒞^{\mathrm{op}} , 𝐦𝐨𝐝_k)$. 任意 $F ∈ 𝐌𝐨𝐝_k$ 通过顿范畴 $𝒞⇒F$ 中的滤过余极限表出, 且这一构造是函子性的.
 
@@ -253,76 +257,69 @@ $$
 注意: 这一非对称性在三角范畴中将不复存在, $𝐦𝐨𝐝_𝒯^{\mathrm{op}}$ 等价于 $𝐦𝐨𝐝_{𝒯^{\mathrm{op}}}$. 本质上, 同调函子与上同调函子是对称的.
 {% endnote %}
 
-### 三角范畴, 上同调函子
+## 三角范畴, 上同调函子
 
 采用记号 $(𝒯, [1], \triangle)$ 表示三角范畴, 平移, 以及好三角类. 使用上链复形 $X^∙$ 表示一个好三角. 对 Abel 范畴 $𝒜$, 称函子 $F:𝒯^{\mathrm{op}} → 𝒜$ 是上同调的, 当且仅当 $F$ 将 $\triangle$ 映作长正合列.
 
 {% lem %}
-反变的米田嵌入 $𝒯^{\mathrm{op}} → 𝐅𝐮𝐧𝐜𝐭(𝒞, 𝐌𝐨𝐝_k)$ 是上同调函子. 
+反变的米田嵌入 $𝒯^{\mathrm{op}} → 𝐅𝐮𝐧𝐜𝐭(𝒞, 𝐌𝐨𝐝_k)$ 是上同调函子. <a href = "Yoneda_Homological">证明</a>
 {% endlem %}
 
-*Proof* 只需证明一切 $(-,W)_{𝒯}$ 是上同调函子. 任意给定三角 $X^∙ ∈ \triangle$, 上链复形 $(X^∙ , W)_{𝒯} ∈ C(k)$ 在 $n$ 处的正合性描述作以下命题:
+依照定义, 给定三角范畴, 对任意 $X^∙ ∈ \triangle$, $X^n → X^{n+1}$ 的三角核 $X^{n-1} → X^n$ 是弱核. 换言之, 三角核都是弱核. 相应地, 三角余核是弱余核.
 
-* 对 $f^n : X^n → W$, 复合态射 $[X^{n-1} → X^n → W] = 0$, 当且仅当 $f^n$ 通过 $[X^n → X^{n+1}]$ 分解. 
+应当指出, 存在非三角核形式的弱核. 例如取 $X ≠ 0$, 则 $X → 0$ 是 $0 → 0$ 的弱核. 这说明弱核未必是三角核.
 
-对 $\{f^{n-1},f^n,f^{n+1}\}$ 使用二推三原则, 研究以下三角射即可: 
+{% lem %}
+(<a href = "Homological_Wk_Ker">证明</a>).
+(上) 同调函子保持弱核.
+{% endlem %}
 
-$$
-\begin{bmatrix}
-X^{\bullet } &:& \cdots  & \rightarrow  & X^{n-1} & \rightarrow  & X^{n} & \rightarrow  & X^{n} +1 & \rightarrow  & \cdots \\
-\downarrow & &  &  & \downarrow  &  & \downarrow  &  & \downarrow  &  & \\
-W^{\bullet }&: & 0 & \rightarrow  & W & = & W & \rightarrow  & 0 & \rightarrow  & \cdots 
-\end{bmatrix}. 
-$$
+{% thm %}
+(<a href = "Mod_Tri_is_Frobenius">证明</a>).
+$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴. 
+{% endthm %}
 
-$\square$ 
+比较自由模范畴的两类 Abel 闭包, 三角范畴的 Abel 闭包显得更对称: 这主要得益于上同调函子的泛性质. 
 
-**Prop** 给定三角范畴. 对任意 $X^∙ ∈ \triangle$, $X^n → X^{n+1}$ 的三角核 $X^{n-1} → X^n$ 是弱核. 
+对三角范畴至 Abel 范畴的函子, 上同调函子恰好是保持弱核的函子. 对三角范畴, 上同调函子通过 $𝒯^{\mathrm{op}} ↣ 𝐦𝐨𝐝_{𝒯^{\mathrm{op}}}$ 唯一分解. 
 
-**Prop** (上) 同调函子保持弱核. 
+{% slo %}
+对本质小的三角范畴 $𝒯$, 考虑函子范畴 $𝐅𝐮𝐧𝐜𝐭(𝒯^{\mathrm{op}}, 𝐌𝐨𝐝_k)$, 则上同调函子, 正合函子, 可表函子的滤过余极限, 以及平坦函子四者相同.
+{% endslo %}
 
-*Proof* 只看共变情形. 给定同调函子 $f: 𝒯 → 𝒜$, 则有唯一的 (差一个范畴等价) 右正合函子
-$$
-F: 𝐦𝐨𝐝_𝒯 → 𝒜 ,\quad \mathrm{cok}(h_φ) ↦ \mathrm{cok}(F(φ)).  
-$$
-对好三角 $W \xrightarrow u X \xrightarrow v Y$ 与 $X$ 处弱正合的态射列 $K \xrightarrow i X \xrightarrow v Y$, 以上两处复合态射都是 $0$. 依照弱核的泛性质, 存在 $α : W ⇆ K : β$ 使得 $i ∘ α = u$ 与 $u ∘ β = i$. 因此 $\mathrm{im}(Fi) = \mathrm{im}(Fu) = \ker(Fv)$. 这说明同调函子 $F$ 保持弱核. 
+## 反变有限
 
-$\square$ 
+{% def %}
+(逼近, 预盖, 反变有限). 
+给定任意范畴 $𝒞$ 与同构闭的对象类 $𝒳$. 
+<ol>
+<li>
+一个 $𝒳$-预覆盖是一个态射 $X_{∈ 𝒳} \xrightarrow f M_{∈ 𝒞}$, 使得 $(𝒳, f)$ 均为满射. 
+</li>
+<li>
+此时, 称 $f$ 是 $M$ 的一个右 $𝒳$-逼近. 等价地, 任意 $X' → M$ 通过 $f$ 分解. 
+</li>
+<li>
+称 $𝒳$ 是反变有限的对象类, 若所有 $M$ 都存在右 $𝒳$-逼近. 
+</li>
+</ol>
+{% enddef %}
 
-**Rmk** 在 $X$ 处弱正合的态射序列 $K \xrightarrow i X \xrightarrow v Y$ 未必是好三角的相邻三项. 例如 $X → 0 → 0$. 
+若 $𝒞$ 中有足够投射对象, 取 $𝒳 = 𝐏𝐫𝐨𝐣$, 右逼近取作投射对象出发的满射.
 
-**Rmk** 对三角范畴至 Abel 范畴的函子, 上同调函子恰好是保持弱核的函子. 对三角范畴, 上同调函子通过 $𝒯^{\mathrm{op}} ↣ 𝐦𝐨𝐝_{𝒯^{\mathrm{op}}}$ 唯一分解. 
+{% def %}
+(投射盖). 假定 Abel 范畴. 称 $π : P → X$ 是 $X$ 的一个投射盖, 若 $π$ 是满的, 且 $\mathrm{ker}(π)$ 是盈余的. 换言之, 任意形如 
 
-**Prop** $𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴. 
-
-*Proof*. 上同调函子通过米田嵌入分解, 从而 $𝐦𝐨𝐝_{𝒯^{\mathrm{op}}}^{\mathrm{op}} ≃ 𝐦𝐨𝐝_𝒯$. 从而可表函子既是投射对象, 又是内射对象 (反范畴的投射对象). 由于 $𝐦𝐨𝐝_𝒯$ 存在足够投射对象, 故投射对象就是内射对象. 
-
-$\square$ 
-
-**Rmk** 比较自由模范畴的两类 Abel 闭包, 三角范畴的 Abel 闭包显得更对称: 这主要得益于上同调函子的泛性质. 
-
-**Prop** 对本质小的三角范畴 $𝒯$, 考虑函子范畴 $𝐅𝐮𝐧𝐜𝐭(𝒯^{\mathrm{op}}, 𝐌𝐨𝐝_k)$, 则上同调函子, 正合函子, 可表函子的滤过余极限, 以及平坦函子四者相同. 
-
-
-
-### 反变有限
-
-**Def** (逼近, 预盖, 反变有限). 给定任意范畴 $𝒞$ 与同构闭的对象类 $𝒳$. 
-1. 一个 $𝒳$-预覆盖是一个态射 $X_{∈ 𝒳} \xrightarrow f M_{∈ 𝒞}$, 使得 $(𝒳, f)$ 均为满射. 
-2. 此时, 称 $f$ 是 $M$ 的一个右 $𝒳$-逼近. 等价地, 任意 $X' → M$ 通过 $f$ 分解. 
-3. 称 $𝒳$ 是反变有限的对象类, 若所有 $M$ 都存在右 $𝒳$-逼近. 
-
-**Rmk** 若 $𝒞$ 中有足够投射对象, 取 $𝒳 = 𝐏𝐫𝐨𝐣$, 右逼近取作投射对象出发的满射. 
-
-**Def** (投射盖). 假定 Abel 范畴. 称 $π : P → X$ 是 $X$ 的一个投射盖, 若 $π$ 是满的, 且 $\mathrm{ker}(π)$ 是盈余的. 换言之, 任意形如 
 $$
 \begin{bmatrix}
 ∗ & ↪ & ∗ \\ 
-\overset∨ ↓ & & \overset ∨ ↓ \\ 
+⤵ & & ⤵ \\ 
 \mathrm{ker}(π) & ↪ & P \\ 
 \end{bmatrix}
 $$
+
 的推出拉回方块一定同构于
+
 $$
 \begin{bmatrix}
 \mathrm{ker}(π) & ↪ & P \\ 
@@ -331,91 +328,47 @@ $$
 \end{bmatrix}. 
 $$
 
-**Rmk** 有些地方将投射盖定义作满足 $[(p ∘ α = p) ⟹ (α \ \text{同构})]$ 的满态射 (这一假定似乎更弱一些). 以上定义按照 superfluous 等价转化. 
+{% enddef %}
 
-**Prop** 若平坦对象具有投射盖, 则其必然是投射对象. 
+{% note %}
+有些地方将投射盖定义作满足 $[(p ∘ α = p) ⟹ (α \ \text{同构})]$ 的满态射 (这一假定似乎更弱一些). 以上定义按照 superfluous 等价转化. 
+{% endnote %}
 
-*Proof* 记 $P \overset π ↠ F$ 是平坦对象的投射盖, 其中 $F = \varinjlim P_i$ 是有限生成投射对象的滤过余极限. 取定所有拉回
-$$
-\begin{bmatrix}
-&P_i ⊕ Q_i & \xrightarrow{(1 \ 0)}& P_i \\ 
-\substack{g_i}&↓ &  & ↓ &\substack {f_i}\\ 
-&P & \overset π ↠ & F \\ 
-\end{bmatrix}. 
-$$
-依照拉回的泛性质, $g_i$ 自动构成滤过系统. 依照 $∐ (P_i ⊕ Q_i) ↠ ∐ P_i$, 得推出拉回方块 
-$$
-\begin{bmatrix}
- &  & \amalg (P_{i} \oplus Q_{i}) & \twoheadrightarrow  & \amalg P_{i}\\
- &  & \downarrow  &  & \downarrow \\
-\ast  & \hookrightarrow  & \Sigma \operatorname{im} g_{i} & \twoheadrightarrow  & \Sigma \operatorname{im} f_{i}\\
-\downarrow  & \text{PBPO} & \downarrow  &  & \parallel \\
-\ker \pi  & \hookrightarrow  & P & \twoheadrightarrow  & F
-\end{bmatrix}. 
-$$
-依照投射盖的定义, $Σ \operatorname{im}g_i ↪ P$ 是同构, $∗ → \ker π$ 亦是同构. 因此滤过系统 $\{g_i\}$ 的滤过余极限即 $P$. 
+{% thm %}
+(<a href = "Plat_et_Proj_Cover_Proj">证明</a>).
+若平坦对象具有投射盖, 则其必然是投射对象. 
+{% endthm %}
 
-以上得到滤过系统的态射 $\{f_i\} ↪ \{g_i\} ↠ \{f_i\}$ 这甚至是链可裂的. 依照余极限的泛性质, 存在形变收缩 $F → P → F$, 因此 $F$ 是投射对象. 
 
-$\square$ 
+{% def %}
+取定同构封闭的全子范畴 $i : 𝒞 ↣ 𝒜$. 
+<ol>
+<li>
+称 $𝒞$ 是反射的, 若 $i$ 是右伴随. 
+</li>
+<li>
+称 $𝒞$ 是余反射的, 若 $i$ 是左伴随. 
+</li>
+</ol>
+{% enddef %}
 
-**Def** 取定同构封闭的全子范畴 $i : 𝒞 ↣ 𝒜$. 
+例如, 给定 torsion pair $(𝒯 , ℱ)$, 全子范畴 $ℱ$ 是反射的, $𝒯$ 是余反射的.
 
-1. 称 $𝒞$ 是反射的, 若 $i$ 是右伴随. 
-2. 称 $𝒞$ 是余反射的, 若 $i$ 是左伴随. 
+{% prop %}
+(余反射与反变有限, <a href = "Coreflexive_Contravariantly_Finite">证明</a>).
+取加法范畴 $𝒯$ 与本质小的同构闭全子范畴 $ℬ$. 
 
-**Eg** 给定挠对 $(𝒯 , ℱ)$, 全子范畴 $ℱ$ 是反射的, $𝒯$ 是余反射的. 
+<ol>
+<li>
+假定 $ℬ$ Karoubi, $ℬ^{\mathrm{op}}$ 存在弱核, 且 $𝐦𝐨𝐝_{ℬ}$ 存在投射盖 (例如 Krull-Schmidt 三角范畴). 此时 $ℬ$ 余反射, 当且仅当其反变有限.
+</li>
+<li>
+假定 $ℬ$ Karoubi, 存在弱核. 此时 $ℬ$ 余反射, 当且仅当其反变有限. 
+</li>
+</ol>
+{% endprop %}
 
-**Prop** 取加法范畴 $𝒯$ 与本质小的同构闭全子范畴 $ℬ$. 假定 $ℬ$  Karoubi , $ℬ^{\mathrm{op}}$ 存在弱核, 且 $𝐦𝐨𝐝_{ℬ}$ 存在投射盖 (例如 Krull-Schmidt 三角范畴). 此时 $ℬ$ 余反射, 当且仅当其反变有限. 
-
-*Proof* 若 $ℬ$ 余反射, 记嵌入的右伴随 $t$, 即 
-$$
-(X, t(A))_{ℬ} ≃ (i(X), A)_{𝒯}. 
-$$
-任意 $X ∈ 𝒯$ 都有预盖 $ε_X: t(X) → X$, 因为
-$$
-(i(A), ε_X)_{𝒜} ≃ \mathrm{id}_{(A, t(X))}. 
-$$
-反之, 若 $ℬ$ 反变有限, 以下求解 $A ∈ 𝒯$ 在 $ℬ$ 中的右伴随像. 记 
-$$
-(i(-), A)_{𝒯} ∈ ℬ ^{\mathrm{op}} → 𝐌𝐨𝐝_k.  
-$$
-这一函子是上同调函子, 从而是平坦对象. 再由 $ℬ$ 反变有限, 存在恒满的态射族 $(ℬ, X\xrightarrow φ A)_{𝒯}$. 因此
-$$
-h_X ↠ (i(-), A)_{𝒯} \quad ∈ 𝐦𝐨𝐝_ℬ
-$$
-由于平坦对象 $(i(-), A)_{𝒯}$ 存在投射盖, 且 $𝒯^{\mathrm{op}}$ 存在弱余核, 从而只能是投射对象. 这一对象也是有限生成的. 再由 Karoubi 性, 该函子可表, 因此 $i$ 存在右伴随. 
-
-$\square$ 
-
-**Prop** 取加法范畴 $𝒯$ 与本质小的同构闭全子范畴 $ℬ$. 假定 $ℬ$ Karoubi, 存在弱核. 此时 $ℬ$ 余反射, 当且仅当其反变有限. 
-
-*Proof* 若 $ℬ$ 余反射, 则反变有限 (见前一命题). 
-
-若 $ℬ$ 反变有限, 对任意 $A ∈ 𝒯$ 构造
-$$
-X_K \xrightarrow c K \xrightarrow b X_A \xrightarrow a A. 
-$$
-其中 $X_M → M$ 是预盖, $b$ 是 $a$ 的弱核. 此时有正合列
-$$
-(-, X_K)_ℬ → (-,X_A)_ℬ → (i(-),A)_𝒯 → 0.
-$$
-由于 $(i(-),A)_𝒯$ 是有限表现的平坦对象, 从而投射. 再由 Karoubi 性, 该函子可表, 因此 $i$ 存在右伴随. 
-
-$\square$ 
-
-**Prop** 三角范畴 Karoubi 的一个充分条件: 若三角范畴有可数积或可数余积, 则 Karoubi. 
-
-*Proof* 范畴 Karoubi, 当且仅当其反范畴亦然. 不妨假定 $𝒯$ 有可数积, 对幂等自同态 $f ∈ \mathrm{End}(X)$ 定义
-$$
-∏_ℕX \xrightarrow[:=-e_L] {1-f+fL}∏_ℕX ,\quad ∏_ℕX \xrightarrow[:=-e_R] {1-f+fR}∏_ℕX. 
-$$
-此处 $L$ 是左移算子 (满), $R$ 是右移算子 (满). 计算知 
-$$
-e_Le_R = 1,\quad e_Re_L = 1-(f,0,\ldots).
-$$
-在三角范畴中, $e_L$ 可裂满, 从而 $\ker (e_L)$ 存在, 因此 $(1-f)$ 存在核. 对称地, $𝒯$ Karoubi.  
-
-$\square$
-
-**Rmk** 以上实际上是在取 $\cdots → X \xrightarrow f X$ 的同伦极限.
+{% lem %}
+(有可数积或可数余积的三角范畴必 Karoubi, <a href = "Countable_Karoubi">证明</a>).
+三角范畴 Karoubi 的一个充分条件: 若三角范畴有可数积或可数余积, 则 Karoubi. 
+{% endlem %}
