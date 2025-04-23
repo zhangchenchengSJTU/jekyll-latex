@@ -12,7 +12,7 @@
     Jekyll Latex</title>
 
 
-<meta name="description" content="Abstract本篇笔记将有限表现模范畴 $𝐦𝐨𝐝_R$ 中的结论迁移至将有限表现函子范畴 $𝐦𝐨𝐝_𝒞$, 重要命题包括有限表现对象的等价定义, 函子范畴的 Lazard 定理 (平坦对象是投射对象的滤过余极限), 有限表现平坦对象是投射对象 (可表函子的直和项), 具有投射盖的平坦对象必投射等. 重点研究了函...">
+<meta name="description" content="  Abstract  本篇笔记将有限表现模范畴 $𝐦𝐨𝐝_R$ 中的结论迁移至将有限表现函子范畴 $𝐦𝐨𝐝_𝒞$, 重要命题包括有限表现对象的等价定义, 函子范畴的 Lazard 定理 (平坦对象是投射对象的滤过余极限), 有限表现平坦对象是投射对象 (可表函子的直和项), 具有投射盖的平坦对象必投射等. 重点...">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -78,11 +78,13 @@
 
     <div class="divider"></div>
 
-    <div class="abstract"><h5>Abstract</h5><p>
-本篇笔记将有限表现模范畴 $𝐦𝐨𝐝_R$ 中的结论迁移至将有限表现函子范畴 $𝐦𝐨𝐝_𝒞$, 重要命题包括<a href="Finitely_Presented_Functor">有限表现对象的等价定义</a>, <a href="Lazard_thm">函子范畴的 Lazard 定理</a> (平坦对象是投射对象的滤过余极限), <a href="Fp_et_Plat_est_Proj">有限表现平坦对象是投射对象</a> (可表函子的直和项), <a href="Plat_et_Proj_Cover_Proj">具有投射盖的平坦对象必投射</a>等. 重点研究了函子范畴中的平坦对象. 使用上述结论, 对具有较好性质的范畴, <a href="Coreflexive_Contravariantly_Finite">余反射子范畴与反变有限范畴等价</a>.
-</p></div>
+    <div class="abstract">
+  <h5>Abstract</h5>
+  <div><p>本篇笔记将有限表现模范畴 $𝐦𝐨𝐝_R$ 中的结论迁移至将有限表现函子范畴 $𝐦𝐨𝐝_𝒞$, 重要命题包括<a href="Finitely_Presented_Functor">有限表现对象的等价定义</a>, <a href="Lazard_thm">函子范畴的 Lazard 定理</a> (平坦对象是投射对象的滤过余极限), <a href="Fp_et_Plat_est_Proj">有限表现平坦对象是投射对象</a> (可表函子的直和项), <a href="Plat_et_Proj_Cover_Proj">具有投射盖的平坦对象必投射</a>等. 重点研究了函子范畴中的平坦对象. 使用上述结论, 对具有较好性质的范畴, <a href="Coreflexive_Contravariantly_Finite">余反射子范畴与反变有限范畴等价</a>.</p>
+</div>
+</div>
 
-<h3 id="𝐦𝐨𝐝_𝒞">$𝐦𝐨𝐝_{𝒞}$</h3>
+<h2 id="𝐦𝐨𝐝_𝒞">$𝐦𝐨𝐝_{𝒞}$</h2>
 
 <p>全文使用</p>
 
@@ -97,40 +99,25 @@
 
 <p>为 $k$-函子范畴. 若无特别强调, 默认 $k$-范畴的函子是 $k$-函子.</p>
 
-<div class="theorem">
-($k$-范畴的米田嵌入). 对交换环 $k$, 与 $k$-范畴 $𝒞$, 以下是全忠实的嵌入:
+<div class="theorem"><p>($k$-范畴的米田嵌入). 对交换环 $k$, 与 $k$-范畴 $𝒞$, 以下是全忠实的嵌入:</p>
 
-$$
-𝒞 ↣ 𝐅𝐮𝐧𝐜𝐭_k (𝒞^{\mathrm{op}}, 𝐌𝐨𝐝_k) ,\quad X ↦ h_X\quad (:=(-,X)_{𝒞}).  
-$$
+\[𝒞 ↣ 𝐅𝐮𝐧𝐜𝐭_k (𝒞^{\mathrm{op}}, 𝐌𝐨𝐝_k) ,\quad X ↦ h_X\quad (:=(-,X)_{𝒞}).\]
 
-特别地, 以下米田引理的同构是 $k$-模的同构:  
+<p>特别地, 以下米田引理的同构是 $k$-模的同构:</p>
 
-$$
-𝖭𝖺𝗍[h_X, F] ≃ F(X),\quad Φ ↦ Φ(\mathrm{id}_X).
-$$
-
+\[𝖭𝖺𝗍[h_X, F] ≃ F(X),\quad Φ ↦ Φ(\mathrm{id}_X).\]
 </div>
 
 <p>以上是 $k$-充实版本的的米田引理. 特别地, $k = ℤ$ 对应预加范畴.</p>
 
-<div class="definition">
+<div class="definition"><p>(有限表现范畴). 对给定局部小的 $k$-范畴 $𝒞$, 定义有限表现范畴 $𝐦𝐨𝐝_𝒞$ 为 $𝐅𝐮𝐧𝐜𝐭(𝒞^{\mathrm{op}}, 𝐀𝐛)$ 的全子范畴. 其对象形如 $\mathrm{cok} (h_φ)$, 即,</p>
 
-(有限表现范畴). 对给定局部小的 $k$-范畴 $𝒞$, 定义有限表现范畴 $𝐦𝐨𝐝_𝒞$ 为 $𝐅𝐮𝐧𝐜𝐭(𝒞^{\mathrm{op}}, 𝐀𝐛)$ 的全子范畴. 其对象形如 $\mathrm{cok} (h_φ)$, 即,
-
-$$
-(-,X) \xrightarrow{(-,φ )} (-,Y) ↠ \mathrm{cok} (h_φ).
-$$
-
+\[(-,X) \xrightarrow{(-,φ )} (-,Y) ↠ \mathrm{cok} (h_φ).\]
 </div>
 
-<div class="theorem">
+<div class="theorem"><p>对加法范畴 $𝒞$ 与具有 $\mathrm{cok}$ 的 $k$-范畴 $𝒜$, 以下是函子范畴的等价</p>
 
-对加法范畴 $𝒞$ 与具有 $\mathrm{cok}$ 的 $k$-范畴 $𝒜$, 以下是函子范畴的等价
-
-$$
-𝐅𝐮𝐧𝐜𝐭(𝒞 , 𝒜 ) → 𝐅𝐮𝐧𝐜𝐭_{Rex}(𝐦𝐨𝐝_𝒞, 𝒜); 
-$$
+\[𝐅𝐮𝐧𝐜𝐭(𝒞 , 𝒜 ) → 𝐅𝐮𝐧𝐜𝐭_{Rex}(𝐦𝐨𝐝_𝒞, 𝒜);\]
 
 <ol>
 <li> 
@@ -143,29 +130,22 @@ $𝐅𝐮𝐧𝐜𝐭_{Rex}$ 表示右正合函子 (保持余核的函子) 构�
 对右侧的 $F$, 左侧函子定义作 $X ↦ F(h_X)$.
 </li>
 </ol>
-
 </div>
 
-<div class="definition">
-(弱核). 称 $X\xrightarrow f Y$ 是 $Y \xrightarrow g Z$ 的弱核, 若以下 $𝐦𝐨𝐝_{𝒞}$ 中的态射链
+<div class="definition"><p>(弱核). 称 $X\xrightarrow f Y$ 是 $Y \xrightarrow g Z$ 的弱核, 若以下 $𝐦𝐨𝐝_{𝒞}$ 中的态射链</p>
 
-$$
-h_X \xrightarrow{h_f} h_Y \xrightarrow{h_g}h_Z
-$$
+\[h_X \xrightarrow{h_f} h_Y \xrightarrow{h_g}h_Z\]
 
-在 $h_Y$ 处正合.
+<p>在 $h_Y$ 处正合.</p>
 </div>
 
-<div class="theorem">
-记 $𝒞$ 局部小的有弱核的 $k$-范畴, $𝒜$ 是 Abel $k$-范畴, 以下是函子范畴的等价
+<div class="theorem"><p>记 $𝒞$ 局部小的有弱核的 $k$-范畴, $𝒜$ 是 Abel $k$-范畴, 以下是函子范畴的等价</p>
 
-$$
-\begin{bmatrix}
+\[\begin{bmatrix}
 𝐅𝐮𝐧𝐜𝐭_w(𝒞 , 𝒜 ) &amp; ↣ &amp; 𝐅𝐮𝐧𝐜𝐭(𝒞 , 𝒜 ) \\
 ∼↑  &amp; &amp; ↑ ∼ \\
 𝐅𝐮𝐧𝐜𝐭_{Ex}(𝐦𝐨𝐝 _𝒞 , 𝒜 ) &amp; ↣ &amp; 𝐅𝐮𝐧𝐜𝐭_{Rex}(𝐦𝐨𝐝 _𝒞 , 𝒜 ) \\
-\end{bmatrix}
-$$
+\end{bmatrix}\]
 
 <ol>
 <li>
@@ -187,17 +167,14 @@ $𝐅𝐮𝐧𝐜𝐭_{Ex}$ 表示正合函子 (保持核与余核的函子).
   <li>若 $𝒞$ 有弱核, 一切从 $𝐦𝐨𝐝_𝒞$ 到 Abel $k$-范畴 $𝒜$ 的正合函子通过全忠实嵌入 $𝒞 ↣ 𝐦𝐨𝐝_𝒞$ 唯一分解 (至多相差一个范畴等价).</li>
 </ol>
 
-<div class="example">
-假定 $𝒜$ 是有足够投射对象的 Abel 范畴, $i : 𝒫 ↣ 𝒜$ 是投射对象组成的全子范畴, 则
+<div class="example"><p>假定 $𝒜$ 是有足够投射对象的 Abel 范畴, $i : 𝒫 ↣ 𝒜$ 是投射对象组成的全子范畴, 则</p>
 
-$$
-(i(-),∙)_{𝒫}: 𝒜 → 𝐦𝐨𝐝_𝒫,\quad X ↦ (i(-),X)_𝒫
-$$
+\[(i(-),∙)_{𝒫}: 𝒜 → 𝐦𝐨𝐝_𝒫,\quad X ↦ (i(-),X)_𝒫\]
 
-是范畴等价.
+<p>是范畴等价.</p>
 </div>
 
-<h3 id="张量积-𝐦𝐨𝐝_𝒞-的等价刻画">张量积, $𝐦𝐨𝐝_{𝒞}$ 的等价刻画</h3>
+<h2 id="张量积-𝐦𝐨𝐝_𝒞-的等价刻画">张量积, $𝐦𝐨𝐝_{𝒞}$ 的等价刻画</h2>
 
 <p>定义 $k$-范畴的函子范畴 $𝐌𝐨𝐝_𝒞 := 𝐅𝐮𝐧𝐜𝐭 (𝒞^{\mathrm{op}} , 𝐦𝐨𝐝_k)$. 任意 $F ∈ 𝐌𝐨𝐝_k$ 通过顿范畴 $𝒞⇒F$ 中的滤过余极限表出, 且这一构造是函子性的.</p>
 
@@ -207,19 +184,14 @@ $$
 
 <p>由于 $F ∈ 𝐌𝐨𝐝_𝒞$ 是可表函子的余极限 (考虑 $∐\limits_{X ∈ 𝖮𝖻(𝒞)}(h_X)^{∐F(X)} ↠ F$), 且这一构造是函子性的.</p>
 
-<div class="definition">
-(张量积) 将张量积的定义延拓至
+<div class="definition"><p>(张量积) 将张量积的定义延拓至</p>
 
-$$
-𝐌𝐨𝐝_𝒞 ⊗ 𝐌𝐨𝐝_{𝒞^{\mathrm{op}}} → 𝐌𝐨𝐝_k,\quad (\varinjlim(-, X)) ⊗ F ↦ \varinjlim FX.
-$$
-
+\[𝐌𝐨𝐝_𝒞 ⊗ 𝐌𝐨𝐝_{𝒞^{\mathrm{op}}} → 𝐌𝐨𝐝_k,\quad (\varinjlim(-, X)) ⊗ F ↦ \varinjlim FX.\]
 </div>
 
-<div class="theorem">
-(有限表现函子的等价定义, <a href="Finitely_Presented_Functor">证明</a>)
+<div class="theorem"><p>(有限表现函子的等价定义, <a href="Finitely_Presented_Functor">证明</a>)</p>
 
-选定 $F ∈ 𝐌𝐨𝐝_𝒞$, 以下等价:
+<p>选定 $F ∈ 𝐌𝐨𝐝_𝒞$, 以下等价:</p>
 <ol>
 <li>
 (有限表现函子) $F ∈ 𝐦𝐨𝐝_𝒞$;
@@ -239,31 +211,26 @@ $F ⊗ -: 𝐌𝐨𝐝_{𝒞 ^{\mathrm{op}}} → 𝐌𝐨𝐝_k$ 保持任意积
 </ol>
 </div>
 
-<div class="note">
-参考上述命题中 (2 ⇒ 1) 一步的证明, 任意函子是有限表现函子的滤过余极限. 以上也蕴含了模范畴中的类似结论, 例如, $M$ 是有限表现模, 当且仅当 $(M ⊗ -)$ 与 $∏$ 交换.
+<div class="note"><p>参考上述命题中 (2 ⇒ 1) 一步的证明, 任意函子是有限表现函子的滤过余极限. 以上也蕴含了模范畴中的类似结论, 例如, $M$ 是有限表现模, 当且仅当 $(M ⊗ -)$ 与 $∏$ 交换.</p>
 </div>
 
-<div class="example">
-有限生成投射对象必然是可表函子的直和项. 特别地, 若 $𝒞$  Karoubi  (所有幂等态射都有核与余核), 则有限生成投射对象恰好是可表函子.
+<div class="example"><p>有限生成投射对象必然是可表函子的直和项. 特别地, 若 $𝒞$  Karoubi  (所有幂等态射都有核与余核), 则有限生成投射对象恰好是可表函子.</p>
 </div>
 
-<div class="definition">
-(平坦对象). 称 $F ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 当且仅当 $F ⊗ -$ 保持 $𝐌𝐨𝐝_{𝒞^{\mathrm{op}}}$ 中的单自然变换.
+<div class="definition"><p>(平坦对象). 称 $F ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 当且仅当 $F ⊗ -$ 保持 $𝐌𝐨𝐝_{𝒞^{\mathrm{op}}}$ 中的单自然变换.</p>
 </div>
 
 <p>依照 $𝐌𝐨𝐝_k$ 范畴的 AB5 条件, 模的滤过余极限与有限极限交换. 因此, 平坦对象只需保持 $𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}$ 中的单自然变换.</p>
 
 <p>例如, $M$ 是平坦模, 当且仅当 $M ⊗ -$ 保持有限表现模之间的单射.</p>
 
-<div class="proposition">
-(有限表现 → 投射 通过平坦对象分解, <a href="Fp_Proj_Plat">证明</a>).
+<div class="proposition"><p>(有限表现 → 投射 通过平坦对象分解, <a href="Fp_Proj_Plat">证明</a>).</p>
 
-假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.
+<p>假定 $𝒞^{\mathrm{op}}$ 有弱核. 若 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 则一切有限表现函子 $F$ 向 $P$ 的态射通过某一可表函子分解.</p>
 </div>
 
-<div class="theorem">
-(平坦对象是投射对象的滤过余极限, <a href="Lazard_thm">证明</a>).
-给定小的加法范畴 $𝒞$, 假定以下提及的滤过余极限存在.
+<div class="theorem"><p>(平坦对象是投射对象的滤过余极限, <a href="Lazard_thm">证明</a>).
+给定小的加法范畴 $𝒞$, 假定以下提及的滤过余极限存在.</p>
 <ol>
 <li>
 假定 $𝒞^{\mathrm{op}}$ 有弱核, 则 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 当且仅当 $P$ 是有限表现函子 $\{h_X\}$ 的滤过余极限; 
@@ -274,12 +241,10 @@ $F ⊗ -: 𝐌𝐨𝐝_{𝒞 ^{\mathrm{op}}} → 𝐌𝐨𝐝_k$ 保持任意积
 </ol>
 </div>
 
-<div class="definition">
-(karoubi 范畴). 称加法范畴 Karoubi, 若幂等态射存在核与余核.
+<div class="definition"><p>(karoubi 范畴). 称加法范畴 Karoubi, 若幂等态射存在核与余核.</p>
 </div>
 
-<div class="definition">
-(内射余生成元). 对局部小的范畴 $𝒞$. 称 $X ∈ 𝒞$ 是内射余生成元, 若以下两点满足
+<div class="definition"><p>(内射余生成元). 对局部小的范畴 $𝒞$. 称 $X ∈ 𝒞$ 是内射余生成元, 若以下两点满足</p>
 <ol>
 <li>
 $f ↦ (f, X)_𝒞$ 将满射对应至单射, 换言之, $(-,X)$ 是正合函子; 
@@ -292,80 +257,66 @@ $(f,X)_{𝒞} ↦ f$ 良定义, 从而将单射返回至满射, 换言之, $(-,X
 
 <p>例如, $𝐌𝐨𝐝_k$ 存在内射余生成元, 通常选作 $(k, C)_{ℤ}$. 其中 $C$ 是 $𝐀𝐛$ 的内射余生成元, 例如 $ℚ/ℤ$ 或 $ℝ/ℤ$.</p>
 
-<div class="theorem">
-(有限表现 + 平坦 = 投射, <a href="Fp_et_Plat_est_Proj">证明</a>).
-给定 Karoubi 的, 本质小的加法范畴 $𝒞$. 若 $F ∈ 𝐦𝐨𝐝_𝒞$ 平坦, 则 $F$ 投射.
+<div class="theorem"><p>(有限表现 + 平坦 = 投射, <a href="Fp_et_Plat_est_Proj">证明</a>).
+给定 Karoubi 的, 本质小的加法范畴 $𝒞$. 若 $F ∈ 𝐦𝐨𝐝_𝒞$ 平坦, 则 $F$ 投射.</p>
 </div>
 
-<div class="example">
-(关于 Abel 化: 模范畴的非对称性).
-对加法范畴 $𝒞$, 以下两者均是 $𝒞$ 是在 $𝐌𝐨𝐝_{𝒞}$ 中的 Abel 闭包:
+<div class="example"><p>(关于 Abel 化: 模范畴的非对称性).
+对加法范畴 $𝒞$, 以下两者均是 $𝒞$ 是在 $𝐌𝐨𝐝_{𝒞}$ 中的 Abel 闭包:</p>
 
-$$
-𝐦𝐨𝐝_{𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}^{\mathrm{op}}} = 𝐟𝐩 (𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}, 𝐌𝐨𝐝_k);\quad 𝐦𝐨𝐝^{\mathrm{op}}_{𝐦𝐨𝐝_{𝒞}^{\mathrm{op}}} = 𝐟𝐩 (𝐦𝐨𝐝_{𝒞}, 𝐌𝐨𝐝_k)^{\mathrm{op}}.
-$$
+\[𝐦𝐨𝐝_{𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}^{\mathrm{op}}} = 𝐟𝐩 (𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}, 𝐌𝐨𝐝_k);\quad 𝐦𝐨𝐝^{\mathrm{op}}_{𝐦𝐨𝐝_{𝒞}^{\mathrm{op}}} = 𝐟𝐩 (𝐦𝐨𝐝_{𝒞}, 𝐌𝐨𝐝_k)^{\mathrm{op}}.\]
 
-取 $𝒞$ 为 $k$-代数 $R$ 的有限生成自由模范畴, 则两处 Abel 闭包的典范同构由自由模所在的可表函子诱导, 即,
+<p>取 $𝒞$ 为 $k$-代数 $R$ 的有限生成自由模范畴, 则两处 Abel 闭包的典范同构由自由模所在的可表函子诱导, 即,</p>
 
-$$
-\begin{bmatrix}
+\[\begin{bmatrix}
     𝐟𝐩 (𝐦𝐨𝐝_{𝒞}, 𝐌𝐨𝐝_k)^{\mathrm{op}} &amp;→&amp; 𝐟𝐩 (𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}, 𝐌𝐨𝐝_k) \\ 
     (R_R^n, - )_{𝐦𝐨𝐝_R} &amp; ↦ &amp; ({_R}R^n, -)_{𝐦𝐨𝐝_{R^{\mathrm{}op}}}
-\end{bmatrix}.
-$$
+\end{bmatrix}.\]
 
-对 $M_R = \mathrm{cok}(R^m \xrightarrow f R^n)$, 上述对应延拓至
+<p>对 $M_R = \mathrm{cok}(R^m \xrightarrow f R^n)$, 上述对应延拓至</p>
 
-$$
-\begin{bmatrix}
+\[\begin{bmatrix}
 𝐟𝐩(𝐦𝐨𝐝_{R^{\mathrm{op}}} ,𝐌𝐨𝐝_{k}) &amp; M_R ⊗ - &amp; ←  &amp; R_{R}^{n} ⊗ - &amp; ←  &amp; R_{R}^{m} \otimes -\\
  &amp;   &amp;  &amp; ∥  &amp;  &amp; ∥ \\
 𝐟𝐩(𝐦𝐨𝐝_{R^{\mathrm{op}}}^{\mathrm{op}} ,𝐌𝐨𝐝_{k}) &amp; ( M_{R} ,-) &amp; →  &amp; \left( R_{R}^{n} ,-\right) &amp; →  &amp; \left( R_{R}^{m} ,-\right)
-\end{bmatrix}
-$$
+\end{bmatrix}\]
 
-同理, 上方的 $(_RX, - )_{𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}}$ 对应下方的 $- ⊗_RX ∈ 𝐟𝐩(𝐦𝐨𝐝_R^{\mathrm{op}}, 𝐌𝐨𝐝_k)^{\mathrm{op}}$. 这一紧对象间的对应通过滤过余极限给出 Abel 闭包的范畴等价.
+<p>同理, 上方的 $(<em>RX, - )</em>{𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}}$ 对应下方的 $- ⊗_RX ∈ 𝐟𝐩(𝐦𝐨𝐝_R^{\mathrm{op}}, 𝐌𝐨𝐝_k)^{\mathrm{op}}$. 这一紧对象间的对应通过滤过余极限给出 Abel 闭包的范畴等价.</p>
 </div>
 
-<div class="note">
-注意: 这一非对称性在三角范畴中将不复存在, $𝐦𝐨𝐝_𝒯^{\mathrm{op}}$ 等价于 $𝐦𝐨𝐝_{𝒯^{\mathrm{op}}}$. 本质上, 同调函子与上同调函子是对称的.
+<div class="note"><p>注意: 这一非对称性在三角范畴中将不复存在, $𝐦𝐨𝐝_𝒯^{\mathrm{op}}$ 等价于 $𝐦𝐨𝐝_{𝒯^{\mathrm{op}}}$. 本质上, 同调函子与上同调函子是对称的.</p>
 </div>
 
-<h3 id="三角范畴-上同调函子">三角范畴, 上同调函子</h3>
+<h2 id="三角范畴-上同调函子">三角范畴, 上同调函子</h2>
 
 <p>采用记号 $(𝒯, [1], \triangle)$ 表示三角范畴, 平移, 以及好三角类. 使用上链复形 $X^∙$ 表示一个好三角. 对 Abel 范畴 $𝒜$, 称函子 $F:𝒯^{\mathrm{op}} → 𝒜$ 是上同调的, 当且仅当 $F$ 将 $\triangle$ 映作长正合列.</p>
 
-<div class="lemma">
-反变的米田嵌入 $𝒯^{\mathrm{op}} → 𝐅𝐮𝐧𝐜𝐭(𝒞, 𝐌𝐨𝐝_k)$ 是上同调函子. <a href="Yoneda_Homological">证明</a>
+<div class="lemma"><p>反变的米田嵌入 $𝒯^{\mathrm{op}} → 𝐅𝐮𝐧𝐜𝐭(𝒞, 𝐌𝐨𝐝_k)$ 是上同调函子. <a href="Yoneda_Homological">证明</a></p>
 </div>
 
 <p>依照定义, 给定三角范畴, 对任意 $X^∙ ∈ \triangle$, $X^n → X^{n+1}$ 的三角核 $X^{n-1} → X^n$ 是弱核. 换言之, 三角核都是弱核. 相应地, 三角余核是弱余核.</p>
 
 <p>应当指出, 存在非三角核形式的弱核. 例如取 $X ≠ 0$, 则 $X → 0$ 是 $0 → 0$ 的弱核. 这说明弱核未必是三角核.</p>
 
-<div class="lemma">
-(<a href="Homological_Wk_Ker">证明</a>).
-(上) 同调函子保持弱核.
+<div class="lemma"><p>(<a href="Homological_Wk_Ker">证明</a>).
+(上) 同调函子保持弱核.</p>
 </div>
 
-<div class="theorem">
-(<a href="Mod_Tri_is_Frobenius">证明</a>).
-$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴. 
+<div class="theorem"><p>(<a href="Mod_Tri_is_Frobenius">证明</a>).
+$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴.</p>
 </div>
 
 <p>比较自由模范畴的两类 Abel 闭包, 三角范畴的 Abel 闭包显得更对称: 这主要得益于上同调函子的泛性质.</p>
 
 <p>对三角范畴至 Abel 范畴的函子, 上同调函子恰好是保持弱核的函子. 对三角范畴, 上同调函子通过 $𝒯^{\mathrm{op}} ↣ 𝐦𝐨𝐝_{𝒯^{\mathrm{op}}}$ 唯一分解.</p>
 
-<div class="slogan">
-对本质小的三角范畴 $𝒯$, 考虑函子范畴 $𝐅𝐮𝐧𝐜𝐭(𝒯^{\mathrm{op}}, 𝐌𝐨𝐝_k)$, 则上同调函子, 正合函子, 可表函子的滤过余极限, 以及平坦函子四者相同.
+<div class="slogan"><p>对本质小的三角范畴 $𝒯$, 考虑函子范畴 $𝐅𝐮𝐧𝐜𝐭(𝒯^{\mathrm{op}}, 𝐌𝐨𝐝_k)$, 则上同调函子, 正合函子, 可表函子的滤过余极限, 以及平坦函子四者相同.</p>
 </div>
 
-<h3 id="反变有限">反变有限</h3>
+<h2 id="反变有限">反变有限</h2>
 
-<div class="definition">
-(逼近, 预盖, 反变有限). 
-给定任意范畴 $𝒞$ 与同构闭的对象类 $𝒳$. 
+<div class="definition"><p>(逼近, 预盖, 反变有限). 
+给定任意范畴 $𝒞$ 与同构闭的对象类 $𝒳$.</p>
 <ol>
 <li>
 一个 $𝒳$-预覆盖是一个态射 $X_{∈ 𝒳} \xrightarrow f M_{∈ 𝒞}$, 使得 $(𝒳, f)$ 均为满射. 
@@ -381,40 +332,31 @@ $𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴.
 
 <p>若 $𝒞$ 中有足够投射对象, 取 $𝒳 = 𝐏𝐫𝐨𝐣$, 右逼近取作投射对象出发的满射.</p>
 
-<div class="definition">
-(投射盖). 假定 Abel 范畴. 称 $π : P → X$ 是 $X$ 的一个投射盖, 若 $π$ 是满的, 且 $\mathrm{ker}(π)$ 是盈余的. 换言之, 任意形如 
+<div class="definition"><p>(投射盖). 假定 Abel 范畴. 称 $π : P → X$ 是 $X$ 的一个投射盖, 若 $π$ 是满的, 且 $\mathrm{ker}(π)$ 是盈余的. 换言之, 任意形如</p>
 
-$$
-\begin{bmatrix}
+\[\begin{bmatrix}
 ∗ &amp; ↪ &amp; ∗ \\ 
 ⤵ &amp; &amp; ⤵ \\ 
 \mathrm{ker}(π) &amp; ↪ &amp; P \\ 
-\end{bmatrix}
-$$
+\end{bmatrix}\]
 
-的推出拉回方块一定同构于
+<p>的推出拉回方块一定同构于</p>
 
-$$
-\begin{bmatrix}
+\[\begin{bmatrix}
 \mathrm{ker}(π) &amp; ↪ &amp; P \\ 
 ∥ &amp; \ &amp; ∥ \\ 
 \mathrm{ker}(π) &amp; ↪ &amp; P \\ 
-\end{bmatrix}. 
-$$
-
+\end{bmatrix}.\]
 </div>
 
-<div class="note">
-有些地方将投射盖定义作满足 $[(p ∘ α = p) ⟹ (α \ \text{同构})]$ 的满态射 (这一假定似乎更弱一些). 以上定义按照 superfluous 等价转化. 
+<div class="note"><p>有些地方将投射盖定义作满足 $[(p ∘ α = p) ⟹ (α \ \text{同构})]$ 的满态射 (这一假定似乎更弱一些). 以上定义按照 superfluous 等价转化.</p>
 </div>
 
-<div class="theorem">
-(<a href="Plat_et_Proj_Cover_Proj">证明</a>).
-若平坦对象具有投射盖, 则其必然是投射对象. 
+<div class="theorem"><p>(<a href="Plat_et_Proj_Cover_Proj">证明</a>).
+若平坦对象具有投射盖, 则其必然是投射对象.</p>
 </div>
 
-<div class="definition">
-取定同构封闭的全子范畴 $i : 𝒞 ↣ 𝒜$. 
+<div class="definition"><p>取定同构封闭的全子范畴 $i : 𝒞 ↣ 𝒜$.</p>
 <ol>
 <li>
 称 $𝒞$ 是反射的, 若 $i$ 是右伴随. 
@@ -427,9 +369,8 @@ $$
 
 <p>例如, 给定 torsion pair $(𝒯 , ℱ)$, 全子范畴 $ℱ$ 是反射的, $𝒯$ 是余反射的.</p>
 
-<div class="proposition">
-(余反射与反变有限, <a href="Coreflexive_Contravariantly_Finite">证明</a>).
-取加法范畴 $𝒯$ 与本质小的同构闭全子范畴 $ℬ$. 
+<div class="proposition"><p>(余反射与反变有限, <a href="Coreflexive_Contravariantly_Finite">证明</a>).
+取加法范畴 $𝒯$ 与本质小的同构闭全子范畴 $ℬ$.</p>
 
 <ol>
 <li>
@@ -441,9 +382,8 @@ $$
 </ol>
 </div>
 
-<div class="lemma">
-(有可数积或可数余积的三角范畴必 Karoubi, <a href="Countable_Karoubi">证明</a>).
-三角范畴 Karoubi 的一个充分条件: 若三角范畴有可数积或可数余积, 则 Karoubi. 
+<div class="lemma"><p>(有可数积或可数余积的三角范畴必 Karoubi, <a href="Countable_Karoubi">证明</a>).
+三角范畴 Karoubi 的一个充分条件: 若三角范畴有可数积或可数余积, 则 Karoubi.</p>
 </div>
 
 
@@ -454,7 +394,7 @@ $$
       <a
         class="next"
         href="https://zhangchenchengsjtu.github.io/website/posts/template"
-        title="NEXT: $\LaTeX$ Template (v 1.1)">&lt;&lt;</a>
+        title="NEXT: $\LaTeX$ Template (v 1.2)">&lt;&lt;</a>
       <span>
         &middot;
       </span>

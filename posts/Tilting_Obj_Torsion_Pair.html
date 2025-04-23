@@ -7,12 +7,12 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
-  <title>Torsionless 模的等价定义
+  <title>Tilting 对象与 torsion pair
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="(Torsionless 判别法).给定 $η_M : M → M^{∗ ∗}$. 以下条件等价.$η_M$ 是单的.$M$ 是 $A^n$ 的子对象.$\mathrm{Ext}^1(\mathrm{Tr}(M), A) = 0$.">
+<meta name="description" content="证明">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -21,7 +21,7 @@
 <link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
 <link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
-<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Torsion_Less">
+<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Tilting_Obj_Torsion_Pair">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -67,47 +67,50 @@
 	<main>
   <article>
     <div class="center">
-      <h1>Torsionless 模的等价定义</h1>
+      <h1>Tilting 对象与 torsion pair</h1>
       <p class="author">
         Chencheng Zhang
         <br/>
-        April 19, 2025
+        April 23, 2025
       </p>
 
     </div>
 
     <div class="divider"></div>
 
-    <div class="theorem"><p>(Torsionless 判别法).
-给定 $η_M : M → M^{∗ ∗}$. 以下条件等价.</p>
+    <h2 id="证明">证明</h2>
+
+<div class="proposition"><p>(Tilting 对象与 torsion pair, 证明). 对 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$.</p>
+
 <ol>
-<li>
-$η_M$ 是单的.
-</li>
-<li>
-$M$ 是 $A^n$ 的子对象.
-</li>
-<li>
-$\mathrm{Ext}^1(\mathrm{Tr}(M), A) = 0$.
-</li>
+  <li>
+    <p>对任意 $M ∈ 𝒯$, 存在满的右 $𝐚𝐝𝐝 (T)$-逼近 $T^n ↠ M$ 使得</p>
+
+\[0 → K → T^n → M → 0 \quad ∈ 𝒯.\]
+  </li>
+  <li>$^⟂𝒯 = 𝐚𝐝𝐝(T)$.</li>
+  <li>$M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.</li>
+  <li>内射对象必属于 $𝒯$.
+    <blockquote>
+      <p>注: 这是显然的, 因为 $𝒯 = T^⟂ ⊇ 𝐢𝐧𝐣$.</p>
+    </blockquote>
+  </li>
+  <li>投射对象若属于 $𝒯$, 则属于 $𝐚𝐝𝐝(T)$.
+    <blockquote>
+      <p>注: 若投射对象 $P ∈ 𝒯 = 𝐠𝐞𝐧 (T)$, 则 $P$ 是某一 $T^n$ 的直和项.</p>
+    </blockquote>
+  </li>
+  <li>投射内射对象必属于 $𝐚𝐝𝐝(T)$.
+    <blockquote>
+      <p>注: 投射对象是 $A$ 的直和项, 从而有 $𝐚𝐝𝐝(T)$ 余消解 $P ↪ T → \cdots$. 若其是内射对象, 则第一处单射可裂.</p>
+    </blockquote>
+  </li>
 </ol>
 </div>
 
-<div class="proof"><p>考虑四项正合列
-\(0 → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → N ⊗ M → (M^∗, N) → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → 0.\)
-将 $N$ 替换作 $A$, 得 3. 与 1. 等价.
+<div class="proof"><p>不显然的命题是前两条.
 <br />
-<br />
-若 $η_M$ 单, 则 $M ↪ M^{∗∗} ↪ \mathrm{Hom}<em>{𝐒𝐞𝐭𝐬}(M^∗, A)$, 因此 $η_M$ 是 $∏ A$ 子空间. 由 <a href="https://arxiv.org/abs/2105.00701"> Chase 引理</a>, 投射模对任意积封闭当且仅当环是 Artin 的, 从而 $∏</em>{M^∗} A$ 是投射模. 由 $M$ 有限生成, 其必然是有限生成投射模的子模.
-<br />
-<br /></p>
-
-<p>若 $M$ 是 $A^n$ 的子对象, 记嵌入映射 $ι$. 由 $ι^{∗ ∗ } ∘ η_M = η_{A^n} ∘ ι$ 单, 得 $η_M$ 单.</p>
-</div>
-
-<div class="note"><p>证明 1. 至 2. 可避免使用 Chase 引理. 取 $M^∗$ 的投射盖 $P$, 则
-\((M^∗, A) ↪ (P,A) ↪ A^n\)
-即为所求之单射.</p>
+若</p>
 </div>
 
 
@@ -117,8 +120,8 @@ $\mathrm{Ext}^1(\mathrm{Tr}(M), A) = 0$.
     
       <a
         class="next"
-        href="https://zhangchenchengsjtu.github.io/website/posts/exists_left_proj_app"
-        title="NEXT: 存在左 $𝐩𝐫𝐨𝐣$-逼近">&lt;&lt;</a>
+        href="https://zhangchenchengsjtu.github.io/website/posts/Torsion_Pair_Ext_Orth"
+        title="NEXT: Torsion Class 与 $\mathrm{Ext}^1$">&lt;&lt;</a>
       <span>
         &middot;
       </span>
@@ -133,8 +136,8 @@ $\mathrm{Ext}^1(\mathrm{Tr}(M), A) = 0$.
       </span>
       <a
         class="prev"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Left_proj_approx"
-        title="PREV: 左投射逼近的等价命题">&gt;&gt;</a>
+        href="https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs"
+        title="PREV: 局部 tilting 模诱导的 torsion pair">&gt;&gt;</a>
     
   </div>
 </main>

@@ -86,37 +86,31 @@
 
 <p>特别注意: 以上证明并未使用 <a href="Lazard_thm">Lazard 定理</a> (平坦模是有限生成投射模的滤过余极限), 本质上与下述证明不同.</p>
 
-<div class="theorem">
-若平坦对象具有投射盖, 则其必然是投射对象.
+<div class="theorem"><p>若平坦对象具有投射盖, 则其必然是投射对象.</p>
 </div>
 
-<div class="proof">
-记 $P \overset π ↠ F$ 是平坦对象的投射盖, 其中 $F = \varinjlim P_i$ 是有限生成投射对象的滤过余极限 (Lazard). 取定所有拉回
+<div class="proof"><p>记 $P \overset π ↠ F$ 是平坦对象的投射盖, 其中 $F = \varinjlim P_i$ 是有限生成投射对象的滤过余极限 (Lazard). 取定所有拉回</p>
 
-$$
-\begin{bmatrix}
+\[\begin{bmatrix}
 &amp;P_i ⊕ Q_i &amp; \xrightarrow{(1 \ 0)}&amp; P_i \\ 
 \substack{g_i}&amp;↓ &amp;  &amp; ↓ &amp;\substack {f_i}\\ 
 &amp;P &amp; \overset π ↠ &amp; F \\ 
-\end{bmatrix}. 
-$$
+\end{bmatrix}.\]
 
-依照拉回的泛性质, $g_i$ 自动构成滤过系统. 依照 $∐ (P_i ⊕ Q_i) ↠ ∐ P_i$, 得推出拉回方块 
+<p>依照拉回的泛性质, $g_i$ 自动构成滤过系统. 依照 $∐ (P_i ⊕ Q_i) ↠ ∐ P_i$, 得推出拉回方块</p>
 
-$$
-\begin{bmatrix}
+\[\begin{bmatrix}
  &amp;  &amp; ∐ (P_{i} ⊕ Q_{i}) &amp; ↠   &amp; ∐ P_{i}\\
  &amp;  &amp; ↓  &amp;  &amp; ↓ \\
 ∗   &amp; ↪   &amp; ∑ \operatorname{im} g_{i} &amp; ↠   &amp; Σ  \operatorname{im} f_{i}\\
 ↓   &amp; \text{PBPO} &amp; ↓   &amp;  &amp; ∥  \\
 \ker π   &amp; ↪   &amp; P &amp; ↠   &amp; F
-\end{bmatrix}. 
-$$
+\end{bmatrix}.\]
 
-依照投射盖的定义, $∑ \operatorname{im}g_i ↪ P$ 是同构, $∗ → \ker π$ 亦是同构. 因此滤过系统 $\{g_i\}$ 的滤过余极限即 $P$. 
+<p>依照投射盖的定义, $∑ \operatorname{im}g_i ↪ P$ 是同构, $∗ → \ker π$ 亦是同构. 因此滤过系统 ${g_i}$ 的滤过余极限即 $P$. 
 <br />
 <br />
-以上得到滤过系统的态射 $\{f_i\} ↪ \{g_i\} ↠ \{f_i\}$ 这甚至是链可裂的. 依照余极限的泛性质, 存在形变收缩 $F → P → F$, 因此 $F$ 是投射对象. 
+以上得到滤过系统的态射 ${f_i} ↪ {g_i} ↠ {f_i}$ 这甚至是链可裂的. 依照余极限的泛性质, 存在形变收缩 $F → P → F$, 因此 $F$ 是投射对象.</p>
 </div>
 
 

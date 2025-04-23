@@ -12,7 +12,7 @@
     Jekyll Latex</title>
 
 
-<meta name="description" content="$𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧(X), X^o)$ 是 torsion pair.若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.">
+<meta name="description" content="证明">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -78,36 +78,33 @@
 
     <div class="divider"></div>
 
-    <div class="lemma">
-$𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.
+    <h2 id="证明">证明</h2>
+
+<div class="lemma"><p>$𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.</p>
+
 <ol>
-<li>
-若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧(X), X^o)$ 是 torsion pair.
-</li>
-<li>
-若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.
-</li>
+  <li>若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧(X), X^o)$ 是 torsion pair.</li>
+  <li>若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.</li>
 </ol>
 </div>
 
-<div class="proof">
-仅看第一问. 由 $𝐠𝐞𝐧(X)^o = X^o$, 只需说明 $𝐠𝐞𝐧(X)$ 是 torsion class. 等价地, 只需说明 $𝐠𝐞𝐧(X)$ 对扩张封闭.
+<div class="proof"><p>仅看第一问. 由 $𝐠𝐞𝐧(X)^o = X^o$, 只需说明 $𝐠𝐞𝐧(X)$ 是 torsion class. 等价地, 只需说明 $𝐠𝐞𝐧(X)$ 对扩张封闭.
 <br />
-假定 ses $0 → K → M → C → 0$, 其中 $K, C ∈ 𝐠𝐞𝐧(X)$. 由 $\mathrm{Ext}^1(X, 𝐠𝐞𝐧(X))$, 得 ses
-$$
-0 → (X,K) → (X,M) → (X,C) → 0.
-$$
-此时有正合列的交换图
-$$
-\begin{bmatrix}
+假定 ses $0 → K → M → C → 0$, 其中 $K, C ∈ 𝐠𝐞𝐧(X)$. 由 $\mathrm{Ext}^1(X, 𝐠𝐞𝐧(X))$, 得 ses</p>
+
+\[0 → (X,K) → (X,M) → (X,C) → 0.\]
+
+<p>此时有正合列的交换图</p>
+
+\[\begin{bmatrix}
  &amp;  &amp; ( X,K) ⊗ X &amp; →  &amp; ( X,M) ⊗ X &amp; →  &amp; ( X,C) ⊗ X &amp; →  &amp; 0\\
  &amp;  &amp; ↓  &amp;  &amp; ↓  &amp;  &amp; ↓  &amp;  &amp; \\
 0 &amp; →  &amp; K &amp; →  &amp; M &amp; →  &amp; C &amp; →  &amp; 0\\
  &amp;  &amp; ↓  &amp;  &amp; ↓  &amp;  &amp; ↓  &amp;  &amp; \\
- &amp;  &amp; \operatorname{cok}_{K} &amp;  &amp; \operatorname{cok}_{M} &amp;  &amp; \operatorname{cok}_{C} &amp;  &amp; 
-\end{bmatrix}.
-$$
-依照<a href="gen_and_cog">结论</a>, $\operatorname{cok}_X = 0$ 当且仅当 $X ∈ 𝐠𝐞𝐧(X)$. 特别地, 若 $\operatorname{cok}_K$ 与 $\operatorname{cok}_C$ 均为 $0$, 则 $\operatorname{cok}_M = 0$. 因此 $𝐠𝐞𝐧$
+ &amp;  &amp; \operatorname{cok}_{K} &amp;  &amp; \operatorname{cok}_{M} &amp;  &amp; \operatorname{cok}_{C} &amp;  &amp;
+\end{bmatrix}.\]
+
+<p>依照<a href="gen_and_cog">此结论</a>, $\operatorname{cok}_X = 0$ 当且仅当 $X ∈ 𝐠𝐞𝐧(X)$. 特别地, 若 $\operatorname{cok}_K$ 与 $\operatorname{cok}_C$ 均为 $0$, 则 $\operatorname{cok}_M = 0$. 因此 $𝐠𝐞𝐧$</p>
 </div>
 
 

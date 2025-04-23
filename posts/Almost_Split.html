@@ -12,7 +12,7 @@
     Jekyll Latex</title>
 
 
-<meta name="description" content="(几乎可裂态射的结构). 以下是左右几乎可裂态射的结构.左几乎可裂态射的来源 $s(f)$ 是不可约的.左几乎可裂态射 $f$ 是单的, 当且仅当 $s(f) ∉ 𝐢𝐧𝐣$.左几乎可裂态射 $s(f) ∈ 𝐢𝐧𝐣$, 则形如 $I → \mathrm{Bot}(I) ⊕ \cdots$.右几乎可裂态射的去向 $t...">
+<meta name="description" content="证明">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -78,78 +78,55 @@
 
     <div class="divider"></div>
 
-    <div class="theorem">
-(几乎可裂态射的结构). 以下是左右几乎可裂态射的结构.
+    <h2 id="证明">证明</h2>
+
+<div class="theorem"><p>(几乎可裂态射的结构). 以下是左右几乎可裂态射的结构.</p>
+
 <ol>
-<li>
-左几乎可裂态射的来源 $s(f)$ 是不可约的.
-</li>
-<li>
-左几乎可裂态射 $f$ 是单的, 当且仅当 $s(f) ∉ 𝐢𝐧𝐣$.
-</li>
-<li>
-左几乎可裂态射 $s(f) ∈ 𝐢𝐧𝐣$, 则形如 $I → \mathrm{Bot}(I) ⊕ \cdots$.
-</li>
-<li>
-右几乎可裂态射的去向 $t(f)$ 是不可约的.
-</li>
-<li>
-右几乎可裂态射 $f$ 是满的, 当且仅当 $t(f) ∉ 𝐩𝐫𝐨𝐣$.
-</li>
-<li>
-右几乎可裂态射 $t(f) ∈ 𝐩𝐫𝐨𝐣$, 则形如 $\cdots ⊕ \mathrm{Rad}(X) → X$.
-</li>
+  <li>左几乎可裂态射的来源 $s(f)$ 是不可约的.</li>
+  <li>左几乎可裂态射 $f$ 是单的, 当且仅当 $s(f) ∉ 𝐢𝐧𝐣$.</li>
+  <li>左几乎可裂态射 $s(f) ∈ 𝐢𝐧𝐣$, 则形如 $I → \mathrm{Bot}(I) ⊕ \cdots$.</li>
+  <li>右几乎可裂态射的去向 $t(f)$ 是不可约的.</li>
+  <li>右几乎可裂态射 $f$ 是满的, 当且仅当 $t(f) ∉ 𝐩𝐫𝐨𝐣$.</li>
+  <li>右几乎可裂态射 $t(f) ∈ 𝐩𝐫𝐨𝐣$, 则形如 $\cdots ⊕ \mathrm{Rad}(X) → X$.</li>
 </ol>
 </div>
 
-<div class="proof">
-由对称性, 只需证明前三条.  
+<div class="proof"><p>由对称性, 只需证明前三条.<br />
+<br />
+假定存在 $X_1 ⊕ X_2 \xrightarrow{(f_1 \ f_2)} Z$ 类型的几乎可裂态射 (假定 $X_i ≠ 0$), 则非可裂单的 $p_i : X_1 ⊕ X_2 → x_i$ 通过 $(f_1 \ f_2)$ 分解, 得 $r_i$. 注意到</p>
 
-<br />  
-<br />  
+\[X_1 ⊕ X_2 \xrightarrow{(f_1 \ f_2)} Z \xrightarrow{(r_1 \ r_2)} X_1 ⊕ X_2\]
 
-假定存在 $X_1 ⊕ X_2 \xrightarrow{(f_1 \ f_2)} Z$ 类型的几乎可裂态射 (假定 $X_i ≠ 0$), 则非可裂单的 $p_i : X_1 ⊕ X_2 → x_i$ 通过 $(f_1 \ f_2)$ 分解, 得 $r_i$. 注意到
-$$
-X_1 ⊕ X_2 \xrightarrow{(f_1 \ f_2)} Z \xrightarrow{(r_1 \ r_2)} X_1 ⊕ X_2
-$$
-同构, 从而 $(f_1 \ f_2)$ 是可裂单, 矛盾.
+<p>同构, 从而 $(f_1 \ f_2)$ 是可裂单, 矛盾.
+<br />
+今假定 $f$ 不是单的, 则必有 $s(f) ∉ 𝐢𝐧𝐣$. 若左几乎可裂态射 $f$ 非单, 则有左正合列</p>
 
-<br />  
-<br />  
+\[0 → K → X → Y .\]
 
-今假定 $f$ 不是单的, 则必有 $s(f) ∉ 𝐢𝐧𝐣$. 若左几乎可裂态射 $f$ 非单, 则有左正合列
-$$
-0 → K → X → Y .  
-$$
-今断言 $X$ 是内射对象. 若不然, 则存在 $X$ 无法提升的单态射 $U ↪ V$, 此时推出方块 $▤$ 中的态射 $X  ⇢  E$ 不是可裂单, 从而被 $X → Y$ 分解:
-$$
-\begin{bmatrix}
+<p>今断言 $X$ 是内射对象. 若不然, 则存在 $X$ 无法提升的单态射 $U ↪ V$, 此时推出方块 $▤$ 中的态射 $X  ⇢  E$ 不是可裂单, 从而被 $X → Y$ 分解:</p>
+
+\[\begin{bmatrix}
  &amp;  &amp;  &amp;  &amp; Y\\
  &amp;  &amp;  &amp; ↗  &amp; ⤈ \\
 K &amp; ↪  &amp; X &amp; ⇢ &amp; E\\
  &amp;  &amp; ↑  &amp; ▤  &amp; ⇡ \\
  &amp;  &amp; U &amp; ↪  &amp; V
-\end{bmatrix}.  
-$$
-由 Abel 范畴的性质, 单射的推出仍是单的, 因此
-$$
-0 = \ker [X → E] ↩ \ker [X → Y] = K ≠ 0.  
-$$
-这给出矛盾, 从而 $X$ 必然是内射对象.
+\end{bmatrix}.\]
 
+<p>由 Abel 范畴的性质, 单射的推出仍是单的, 因此</p>
+
+\[0 = \ker [X → E] ↩ \ker [X → Y] = K ≠ 0.\]
+
+<p>这给出矛盾, 从而 $X$ 必然是内射对象.
 <br />
+给定内射对象 $I$. 对任意非可裂单 $a : I → X$, 态射 $I → X → I$ 的余像是总是 $\mathrm{Bot}(I)$ 的商, 因此 $a$ 必通过 $I ↠ \mathrm{Bot}(I)$ 分解. 这说明 $I ↠ \mathrm{Bot}(I)$ 是左几乎可裂.
 <br />
+下对一切内射模出发的左几乎可裂态射作说明: 若存在另一左几乎可裂态射 $I → J$, 则存在</p>
 
-给定内射对象 $I$. 对任意非可裂单 $a : I → X$, 态射 $I → X → I$ 的余像是总是 $\mathrm{Bot}(I)$ 的商, 因此 $a$ 必通过 $I ↠ \mathrm{Bot}(I)$ 分解. 这说明 $I ↠ \mathrm{Bot}(I)$ 是左几乎可裂. 
-<br />
-下对一切内射模出发的左几乎可裂态射作说明: 若存在另一左几乎可裂态射 $I → J$, 则存在
+\[[I ↠ \mathrm{Bot}(I)] = [I ↠ \mathrm{Bot}(I) → J → \mathrm{Bot}(I)].\]
 
-$$
-[I ↠ \mathrm{Bot}(I)] = [I ↠ \mathrm{Bot}(I) → J → \mathrm{Bot}(I)].
-$$
-
-因此 $\mathrm{Bot}(I)$ 是 $J$ 的直和项.
-
+<p>因此 $\mathrm{Bot}(I)$ 是 $J$ 的直和项.</p>
 </div>
 
 
