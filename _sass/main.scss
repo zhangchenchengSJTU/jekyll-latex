@@ -101,7 +101,8 @@
 }
 
 :root {
-  --body-color: hsl(0, 5%, 10%);
+  // --body-color: hsl(0, 5%, 10%);
+  --body-color: hsl(0, 0%, 0%);
   --body-bg-color: hsl(210, 20%, 98%);
   --link-visited: hsl(0, 100%, 33%);
   --link-focus-outline: hsl(220, 90%, 52%);
@@ -121,11 +122,13 @@
 
 .latex-dark {
   --body-color: hsl(0, 0%, 86%);
-  --body-bg-color: hsl(0, 0%, 16%);
+  // --body-bg-color: hsl(0, 0%, 16%);
+  --body-bg-color: hsl(0, 0%, 0%);
   --link-visited: hsl(196 80% 77%);
   --link-focus-outline: hsl(215, 63%, 73%);
   --pre-bg-color: hsl(0, 1%, 25%);
-  --kbd-bg-color: hsl(0, 0%, 16%);
+  // --kbd-bg-color: hsl(0, 0%, 16%);
+  --kbd-bg-color: hsl(0, 0%, 0%);
   --kbd-border-color: hsl(210, 5%, 70%);
   --table-border-color: white;
   --sidenote-target-border-color: hsl(0, 0%, 59%);
@@ -136,11 +139,13 @@
 @media (prefers-color-scheme: dark) {
   .latex-dark-auto {
     --body-color: hsl(0, 0%, 86%);
-    --body-bg-color: hsl(0, 0%, 16%);
+    // --body-bg-color: hsl(0, 0%, 16%);
+    --body-bg-color: hsl(0, 0%, 0%);
     --link-visited: hsl(196 80% 77%);
     --link-focus-outline: hsl(215, 63%, 73%);
     --pre-bg-color: hsl(0, 1%, 25%);
-    --kbd-bg-color: hsl(0, 0%, 16%);
+    // --kbd-bg-color: hsl(0, 0%, 16%);
+    --kbd-bg-color: hsl(0, 0%, 0%);
     --kbd-border-color: hsl(210, 5%, 70%);
     --table-border-color: white;
     --sidenote-target-border-color: hsl(0, 0%, 59%);
@@ -202,9 +207,10 @@ body {
 /* Justify and hyphenate all paragraphs */
 p {
   text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
+  // hyphens: auto; # 原代码.
   -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
   margin-top: 1rem;
 }
 
@@ -408,6 +414,11 @@ dl dd {
   font-style: normal;
 }
 
+.theorem p {
+  display: inline;  /* 取消段落换行 */
+  margin: 0 !important;  /* 清除默认边距 */
+}
+
 /* Slogan */
 .slogan {
   counter-increment: slogan;
@@ -421,6 +432,12 @@ dl dd {
   font-weight: bold;
   font-style: normal;
 }
+
+.slogan p {
+  display: inline;  /* 取消段落换行 */
+  margin: 0 !important;  /* 清除默认边距 */
+}
+
 
 /* Question */
 .question {
@@ -436,6 +453,12 @@ dl dd {
   font-style: normal;
 }
 
+.question p {
+  display: inline;  /* 取消段落换行 */
+  margin: 0 !important;  /* 清除默认边距 */
+}
+
+
 /* Note */
 .note {
   counter-increment: note;
@@ -449,6 +472,12 @@ dl dd {
   font-weight: bold;
   font-style: normal;
 }
+
+.note p {
+  display: inline;  /* 取消段落换行 */
+  margin: 0 !important;  /* 清除默认边距 */
+}
+
 
 /* Example */
 .example {
@@ -464,6 +493,12 @@ dl dd {
   font-style: normal;
 }
 
+.example p {
+  display: inline;  /* 取消段落换行 */
+  margin: 0 !important;  /* 清除默认边距 */
+}
+
+
 /* Lemma */
 .lemma {
   counter-increment: theorem;
@@ -476,6 +511,11 @@ dl dd {
   content: 'Lemma ' counter(theorem) '. ';
   font-weight: bold;
   font-style: normal;
+}
+
+.lemma p {
+  display: inline;  /* 取消段落换行 */
+  margin: 0 !important;  /* 清除默认边距 */
 }
 
 /* Corollary */
@@ -491,6 +531,12 @@ dl dd {
   font-weight: bold;
   font-style: normal;
 }
+
+.corollary p {
+  display: inline;  /* 取消段落换行 */
+  margin: 0 !important;  /* 清除默认边距 */
+}
+
 
 /* Proof */
 .proof {
@@ -513,6 +559,12 @@ dl dd {
   bottom: -2px;
 }
 
+.proof p {
+  display: inline;  /* 取消段落换行 */
+  margin: 0 !important;  /* 清除默认边距 */
+}
+
+
 /* Solution */
 .solution {
   display: block;
@@ -534,6 +586,39 @@ dl dd {
   bottom: -2px;
 }
 
+.solution p {
+  display: inline;  /* 取消段落换行 */
+  margin: 0 !important;  /* 清除默认边距 */
+}
+
+
+/* Blank */
+.blank {
+  display: block;
+  margin: 12px 0;
+  font-style: normal;
+  position: relative;
+}
+
+.blank::before {
+  content: 'blank. ' attr(title);
+  font-style: italic;
+}
+
+.blank:after {
+  content: '◾️';
+  filter: var(--proof-symbol-filter);
+  position: absolute;
+  right: -12px;
+  bottom: -2px;
+}
+
+.blank p {
+  display: inline;  /* 取消段落换行 */
+  margin: 0 !important;  /* 清除默认边距 */
+}
+
+
 /* Definition */
 .definition {
   counter-increment: definition;
@@ -549,6 +634,12 @@ dl dd {
   font-style: normal;
 }
 
+.definition p {
+  display: inline;  /* 取消段落换行 */
+  margin: 0 !important;  /* 清除默认边距 */
+}
+
+
 /* Proposition */
 .proposition {
   counter-increment: proposition;
@@ -562,6 +653,12 @@ dl dd {
   font-weight: bold;
   font-style: normal;
 }
+
+.proposition p {
+  display: inline;  /* 取消段落换行 */
+  margin: 0 !important;  /* 清除默认边距 */
+}
+
 
 /* Center align author name, use small caps and add vertical spacing  */
 .author {
@@ -679,21 +776,46 @@ input.sidenote-toggle {
   border-top: 1px solid var(--footnotes-border-color);
 }
 
-/* Center title and paragraph */
-.abstract,
-.abstract p {
-  text-align: center;
-  margin-top: 0;
-}
-
+/* 仅标题居中，内容左对齐 */
 .abstract {
   margin: 2.25rem 0;
+  text-align: left; // 容器默认左对齐
+
+  // 标题居中
+  > h5 { // 根据你的代码，标题用的是 h5 而不是 h2
+    text-align: center !important;
+    font-size: 1rem;
+    margin-bottom: -0.2rem;
+  }
+
+  // 内容强制左对齐
+  > div { // 包裹内容的 div
+    text-align: left !important;
+    
+    // 处理转换后的 Markdown 段落
+    p {
+      text-align: inherit !important; // 继承左对齐
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 }
 
-.abstract>h2 {
-  font-size: 1rem;
-  margin-bottom: -0.2rem;
-}
+// /* Center title and paragraph */
+// .abstract,
+// .abstract p {
+//   text-align: center;
+//   margin-top: 0;
+// }
+
+// .abstract {
+//   margin: 2.25rem 0;
+// }
+
+// .abstract>h2 {
+//   font-size: 1rem;
+//   margin-bottom: -0.2rem;
+// }
 
 /* Format the LaTeX symbol correctly (a higher up, e lower) */
 .latex span:nth-child(1) {
