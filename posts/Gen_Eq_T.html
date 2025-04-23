@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+  <title>$𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="$𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧(X), X^o)$ 是 torsion pair.若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
+<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
+<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Gen_Eq_T">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+
+
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          [
+            '$', '$'
+          ],
+          [
+            '\\(', '\\)'
+          ]
+        ]
+      }
+    };
+  </script>
+  <script
+    async
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="latex-dark">
+
+	<aside class="logo">
+  
+
+  <a href="https://zhangchenchengsjtu.github.io/website/">
+    <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
+  </a>
+  <span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+	<main>
+  <article>
+    <div class="center">
+      <h1>$𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件</h1>
+      <p class="author">
+        Chencheng Zhang
+        <br/>
+        April 23, 2025
+      </p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="lemma">
+$𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.
+<ol>
+<li>
+若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧(X), X^o)$ 是 torsion pair.
+</li>
+<li>
+若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.
+</li>
+</ol>
+</div>
+
+<div class="proof">
+仅看第一问. 由 $𝐠𝐞𝐧(X)^o = X^o$, 只需说明 $𝐠𝐞𝐧(X)$ 是 torsion class. 等价地, 只需说明 $𝐠𝐞𝐧(X)$ 对扩张封闭.
+<br />
+假定 ses $0 → K → M → C → 0$, 其中 $K, C ∈ 𝐠𝐞𝐧(X)$. 由 $\mathrm{Ext}^1(X, 𝐠𝐞𝐧(X))$, 得 ses
+$$
+0 → (X,K) → (X,M) → (X,C) → 0.
+$$
+此时有正合列的交换图
+$$
+\begin{bmatrix}
+ &amp;  &amp; ( X,K) ⊗ X &amp; →  &amp; ( X,M) ⊗ X &amp; →  &amp; ( X,C) ⊗ X &amp; →  &amp; 0\\
+ &amp;  &amp; ↓  &amp;  &amp; ↓  &amp;  &amp; ↓  &amp;  &amp; \\
+0 &amp; →  &amp; K &amp; →  &amp; M &amp; →  &amp; C &amp; →  &amp; 0\\
+ &amp;  &amp; ↓  &amp;  &amp; ↓  &amp;  &amp; ↓  &amp;  &amp; \\
+ &amp;  &amp; \operatorname{cok}_{K} &amp;  &amp; \operatorname{cok}_{M} &amp;  &amp; \operatorname{cok}_{C} &amp;  &amp; 
+\end{bmatrix}.
+$$
+依照<a href="gen_and_cog">结论</a>, $\operatorname{cok}_X = 0$ 当且仅当 $X ∈ 𝐠𝐞𝐧(X)$. 特别地, 若 $\operatorname{cok}_K$ 与 $\operatorname{cok}_C$ 均为 $0$, 则 $\operatorname{cok}_M = 0$. 因此 $𝐠𝐞𝐧$
+</div>
+
+
+  </article>
+
+  <div class="page-navigation">
+    
+      <a
+        class="next"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs"
+        title="NEXT: 局部 tilting 模诱导的 torsion pair">&lt;&lt;</a>
+      <span>
+        &middot;
+      </span>
+    
+    <a
+      class="home"
+      href="https://zhangchenchengsjtu.github.io/website/"
+      title="Back to Homepage">Home</a>
+    
+      <span>
+        &middot;
+      </span>
+      <a
+        class="prev"
+        href="https://zhangchenchengsjtu.github.io/website/posts/AR_Formula"
+        title="PREV: AR 公式">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    Chencheng Zhang</span>
+</div>
+
+</body>
+
+
+</html>

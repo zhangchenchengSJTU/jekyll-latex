@@ -7,6 +7,255 @@
     
       
         <item>
+          <title>$𝐜𝐨𝐠$ 与 $𝐠𝐞𝐧$ 的等价定义</title>
+          <description>&lt;div class=&quot;lemma&quot;&gt;
+($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象). 给定对象 $X$ 与 $M$.
+&lt;ol&gt;
+&lt;li&gt;
+$M ∈ 𝐠𝐞𝐧(X)$ 当且仅当赋值 $(X, M) ⊗_{\mathrm{End}(X)} X → M$ 是满的.
+&lt;/li&gt;
+&lt;li&gt;
+$M ∈ 𝐜𝐨𝐠(X)$ 当且仅当余赋值 $M → ((M, X), X)$ 是单的.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+若 $p : X^n ↠ M$ 是满态射, 记分量为 $(p_i)_{1 ≤ i ≤ n}$. 此时, 任意 $m ∈ M$ 形如 $∑ p_i(x_i)$ 的形式, 因此
+$$
+(X, M) ⊗_{\mathrm{End}(X)} X → M,\quad ∑ p_i ⊗ x_i ↦ m
+$$
+是满态射.
+&lt;br /&gt;
+反之, 若 $φ : (X, M) ⊗ X → M$ 满, 则任意 $m ∈ M$ 都是形如 $∑ f_i(x_i)$ 的形式, 由 $(X,M)$ 是有限生成右 $\mathrm{End}(M)$-模. 取 $(X, M)$ 的一组生成元 $𝒢$, 则有满态射
+$$
+X^𝒢 ↠ (X, M) ↠ M.
+$$
+&lt;br /&gt;
+若 $i: M ↪ X^n$ 是单态射, 不妨将 $M$ 中元素视同 $X^n$ 中元素. 对 $m = (x_j)_{1 ≤ j ≤ n} ≠ 0$, 不妨设 $x_1 ≠ 0$, 得
+$$
+(M, X) → X,\quad p_1 ↦ p_1(m) ≠ 0.
+$$
+因此 $m$ 在 $((M, X), X)$ 中的像是非零态射, 从而是单的. 
+&lt;br /&gt;
+反之, 若 $ψ : M → ((M, X), X)$ 是单态射, 则有复合的单态射
+$$
+M ↪ ((M, X), X) ↪ ((X, X)^n, X).
+$$
+此处 $(X, X)^n ↠ (M, X)$ 是有限生成模 $\mathrm{End}(X)$-模的覆盖.
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-23T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/gen_and_cog</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/gen_and_cog</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Torsion Class 与 $\mathrm{Ext}^1$</title>
+          <description>&lt;div class=&quot;theorem&quot;&gt;
+(垂直条件, &lt;a href=&quot;Torsion_Pair_Ext_Orth&quot;&gt;证明&lt;/a&gt;). 
+以下刻画 torsion pair $(𝒯, ℱ)$ 中满足 $\mathrm{Ext}^1$-垂直的对象. 记 $t$ 与 $f$ 是相应的子函子与商函子.
+&lt;ol&gt;
+&lt;li&gt;
+$𝒯 ∩ (^⟂ 𝒯) = 𝒯 ∩ τ ⁻¹ ℱ$.
+&lt;/li&gt;
+&lt;li&gt;
+$𝒯 ∩ (𝒯^⟂) = 𝒯 ∩ t(𝐢𝐧𝐣)$.
+&lt;/li&gt;
+&lt;li&gt;
+$ℱ ∩ (ℱ^⟂) = ℱ ∩ τ 𝒯$.
+&lt;/li&gt;
+&lt;li&gt;
+$ℱ ∩ (^⟂ ℱ) = ℱ ∩ f(𝐩𝐫𝐨𝐣)$.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;基于对称性, 仅看前两条.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+$𝒯 ∩ (^⟂ 𝒯) = 𝒯 ∩ τ ⁻¹ ℱ$.
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+给定 $X ∈ 𝒯$, 往证 $\mathrm{Ext}^1(X,  𝒯) = 0$ 当且仅当 $τ X ∈ ℱ$.
+&lt;ol&gt;
+&lt;li&gt;
+假定 $\mathrm{Ext}^1(X, 𝒯) = 0$. 若 $X$ 投射, 则 $τ M ∈ ℱ$; 若 $X$ 非投射, 则考虑几乎可裂 ses
+$$
+0 → τ X → E → X → 0.
+$$
+若 $τ X ↠ f(τX)$ 是同构, 则证毕. 若不然, $τX ↠ f(τX)$ 通过 $τ X ↪ E$ 分解 (几乎可裂 ses 定义). 此时有交换图 ($▩$ 是推出拉回):
+$$
+\begin{bmatrix}
+ &amp;amp;  &amp;amp; 0 &amp;amp;  &amp;amp; 0 &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; ↓   &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+0 &amp;amp; →  &amp;amp; t( τ  X) &amp;amp; →   &amp;amp; ? &amp;amp; →   &amp;amp; X &amp;amp; →   &amp;amp; 0\\
+ &amp;amp;  &amp;amp; ↓   &amp;amp; ▩  &amp;amp; ↓   &amp;amp;  &amp;amp; ∥   &amp;amp;  &amp;amp; \\
+0 &amp;amp; →   &amp;amp; τ  X &amp;amp; →   &amp;amp; E &amp;amp; →   &amp;amp; X &amp;amp; →   &amp;amp; 0\\
+ &amp;amp;  &amp;amp; ↓   &amp;amp; ↙   &amp;amp; ↓   &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+0 &amp;amp; →   &amp;amp; f( τ  X) &amp;amp; = &amp;amp; f( τ  X) &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp; ↓   &amp;amp;  &amp;amp; ↓   &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp; 0 &amp;amp;  &amp;amp; 0 &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; 
+\end{bmatrix}
+$$
+由假定, $\mathrm{Ext}^1(X, t(τX)) = 0$, 从而第一横行可裂. 由推出保持可裂单, 得 $τX ↪ E$ 可裂, 矛盾.
+&lt;/li&gt;
+&lt;li&gt;
+反之, 若 $τ X ∈ ℱ$, 则 AR 公式表明
+$$
+\mathrm{Ext}^1(X, 𝒯) ≃ D\overline {(𝒯 , τ X)} ↪ D(𝒯 , τ X) = 0.
+$$
+因此 $X ∈ {}^⟂𝒯$.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+$𝒯 ∩ (𝒯^⟂) = 𝒯 ∩ t(𝐢𝐧𝐣)$.
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+给定 $X ∈ 𝒯$, 往证 $\mathrm{Ext}^1(𝒯, X) = 0$ 当且仅当 $X$ 是某个内射对象的 $t$-部分.
+&lt;ol&gt;
+&lt;li&gt;
+假定 $\mathrm{Ext}^1(𝒯, X) = 0$. 考虑内射包 $X ↪ I(X)$. 依照 $t$ 的函子性, 得 $X ↪ t(I(X)) ↪ I(X)$. 由于
+$$
+0 → X → t(I(X)) → \frac{t(I(X))}{X} → 0 \quad ∈ 𝒯 .
+$$
+依照 $\mathrm{Ext}^1(𝒯, X) = 0$, 得 ses 可裂. 由 $I$ 与 $t$ 是加法函子, $X$ 必形如内射模的 $t$ 部分.
+&lt;/li&gt;
+&lt;li&gt;
+若 $X$ 是内射对象的 $t$ 部分, 记 $X = tI$. 对 $I$ 的 $(t,f)$-ses 导出, 得
+$$
+\cdots → \underset 0 {\underbrace{(-, fI)|_{𝒯}}} → \mathrm{Ext}^1(-, tI)|_{𝒯} → \underset 0 {\underbrace{\mathrm{Ext}^1(-, I)|_{𝒯}}} → \cdots.
+$$
+从而 $\mathrm{Ext}^1(𝒯, X) = 0$.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-23T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Torsion_Pair_Ext_Orth</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Torsion_Pair_Ext_Orth</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>局部 tilting 模诱导的 torsion pair</title>
+          <description>&lt;div class=&quot;theorem&quot;&gt;
+(局部 tilting 模诱导的 torsion pair). 局部 tilting 模 $T$ 诱导了以下两类 torsion pair.
+&lt;ol&gt;
+&lt;li&gt;
+$(𝐠𝐞𝐧(T), T^o)$ 是 torsion pair.
+&lt;/li&gt;
+&lt;li&gt;
+$(T^⟂, 𝐜𝐨𝐠(τT))$ 是 torsion pair.
+&lt;/li&gt;
+&lt;li&gt;
+$𝐠𝐞𝐧(T) ⊆ T^⟂$.
+&lt;/li&gt;
+&lt;li&gt;
+以上两个 torsion pair, 均有 $T ∈ 𝒯 ∩ {}^⟂𝒯 = 𝒯 ∩ τ⁻¹ ℱ$.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+第一问与&lt;a href=&quot;Gen_Eq_T&quot;&gt;此命题&lt;/a&gt;极其类似, 由 $p.\dim T ≤ 1$, 得 $\mathrm{Ext}^1(-, T)$ 是右正合函子. 因此 $\mathrm{Ext}^1(T,T) = 0$ 蕴含 $𝐠𝐞𝐧(T) ⟂ T$.
+&lt;br /&gt;
+第二问同理. 由 $𝐜𝐨𝐠(τT)$ 对扩张封闭, 从而是 torsion-free class. 仅需证明 $T^⟂ = {}^o𝐜𝐨𝐠(τT)$. 由 AR 公式,
+$$
+\mathrm{Ext}^1(T, M) ≃ D\overline {(M, τ T)} ≃ D(M, τ T).
+$$
+最后一处同构是因为 $τ M$ 投射 (见&lt;a href=&quot;AR_Formula&quot;&gt;AR 公式&lt;/a&gt;). 
+&lt;br /&gt;
+第三问是直接的, 一般不取等 (若 $T$ 是 tilting 模, 则取等).
+&lt;br /&gt;
+第四问是直接的验证, 等价表述见 &lt;a href=&quot;Gen_Eq_T&quot;&gt;$𝐠𝐞𝐧 = 𝐓$ 的充分条件&lt;/a&gt;.
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-23T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>$𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件</title>
+          <description>&lt;div class=&quot;lemma&quot;&gt;
+$𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.
+&lt;ol&gt;
+&lt;li&gt;
+若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧(X), X^o)$ 是 torsion pair.
+&lt;/li&gt;
+&lt;li&gt;
+若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+仅看第一问. 由 $𝐠𝐞𝐧(X)^o = X^o$, 只需说明 $𝐠𝐞𝐧(X)$ 是 torsion class. 等价地, 只需说明 $𝐠𝐞𝐧(X)$ 对扩张封闭.
+&lt;br /&gt;
+假定 ses $0 → K → M → C → 0$, 其中 $K, C ∈ 𝐠𝐞𝐧(X)$. 由 $\mathrm{Ext}^1(X, 𝐠𝐞𝐧(X))$, 得 ses
+$$
+0 → (X,K) → (X,M) → (X,C) → 0.
+$$
+此时有正合列的交换图
+$$
+\begin{bmatrix}
+ &amp;amp;  &amp;amp; ( X,K) ⊗ X &amp;amp; →  &amp;amp; ( X,M) ⊗ X &amp;amp; →  &amp;amp; ( X,C) ⊗ X &amp;amp; →  &amp;amp; 0\\
+ &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; \\
+0 &amp;amp; →  &amp;amp; K &amp;amp; →  &amp;amp; M &amp;amp; →  &amp;amp; C &amp;amp; →  &amp;amp; 0\\
+ &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp; \operatorname{cok}_{K} &amp;amp;  &amp;amp; \operatorname{cok}_{M} &amp;amp;  &amp;amp; \operatorname{cok}_{C} &amp;amp;  &amp;amp; 
+\end{bmatrix}.
+$$
+依照&lt;a href=&quot;gen_and_cog&quot;&gt;结论&lt;/a&gt;, $\operatorname{cok}_X = 0$ 当且仅当 $X ∈ 𝐠𝐞𝐧(X)$. 特别地, 若 $\operatorname{cok}_K$ 与 $\operatorname{cok}_C$ 均为 $0$, 则 $\operatorname{cok}_M = 0$. 因此 $𝐠𝐞𝐧$
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-23T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Gen_Eq_T</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gen_Eq_T</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>AR 公式</title>
+          <description>&lt;div class=&quot;theorem&quot;&gt;
+(AR 公式).
+以下是自然同构.
+$$
+D\underline{(τ⁻¹ N, M)} ≃ \mathrm{Ext}^1(M, N) ≃ D\overline{(N, τM)}.
+$$
+&lt;ol&gt;
+&lt;li&gt;
+若 $p.\dim M = 1$, 则 $τ M$ 投射, 故 $\mathrm{Ext}^1(M,N) ≃ D(N, τ M)$.
+&lt;/li&gt;
+&lt;li&gt;
+若 $i.\dim N = 1$, 则 $τ⁻¹ N$ 内射, 故 $\mathrm{Ext}^1(M,N) ≃ D(τ⁻¹ N, M)$.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+待补充.
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-23T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/AR_Formula</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR_Formula</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>Torsion Pair 等价定义</title>
           <description>&lt;div class=&quot;theorem&quot;&gt;
 (Torsion pair 的等价定义).
@@ -1980,57 +2229,129 @@ $ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
   &lt;li&gt;$f$ 是左伴随的右正合函子, $ℱ$ 是反射的.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象). 给定对象 $X$ 与 $M$.&lt;/p&gt;
+&lt;p&gt;Torsion pair 关于 $\mathrm{Hom}$-垂直 (且封闭). 以下是一些关于 $\mathrm{Ext}^1$-垂直的结论.&lt;/p&gt;
 
+&lt;div class=&quot;lemma&quot;&gt;
+(垂直条件, &lt;a href=&quot;Torsion_Pair_Ext_Orth&quot;&gt;证明&lt;/a&gt;). 
+以下刻画 torsion pair $(𝒯, ℱ)$ 中满足 $\mathrm{Ext}^1$-垂直的对象. 记 $t$ 与 $f$ 是相应的子函子与商函子.
 &lt;ol&gt;
-  &lt;li&gt;$M ∈ 𝐠𝐞𝐧(X)$ 当且仅当赋值 $(M, X) ⊗_{\mathrm{End}(X)} X → M$ 是满的.&lt;/li&gt;
-  &lt;li&gt;$M ∈ 𝐜𝐨𝐠(X)$ 当且仅当余赋值 $M → ((M, X), X)$ 是单的.&lt;/li&gt;
+&lt;li&gt;
+$𝒯 ∩ (^⟂ 𝒯) = 𝒯 ∩ τ ⁻¹ ℱ$.
+&lt;/li&gt;
+&lt;li&gt;
+$𝒯 ∩ (𝒯^⟂) = 𝒯 ∩ t(𝐢𝐧𝐣)$.
+&lt;/li&gt;
+&lt;li&gt;
+$ℱ ∩ (ℱ^⟂) = ℱ ∩ τ 𝒯$.
+&lt;/li&gt;
+&lt;li&gt;
+$ℱ ∩ (^⟂ ℱ) = ℱ ∩ f(𝐩𝐫𝐨𝐣)$.
+&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($𝐓$ 与 $𝐅$ 中的对象). 给定对象 $X$ 与 $M$.&lt;/p&gt;
-
+&lt;div class=&quot;lemma&quot;&gt;
+($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象, &lt;a href=&quot;gen_and_cog&quot;&gt;证明&lt;/a&gt;). 给定对象 $X$ 与 $M$.
 &lt;ol&gt;
-  &lt;li&gt;$M ∈ 𝐓(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐪𝐮𝐨𝐭(X)$.&lt;/li&gt;
-  &lt;li&gt;$M ∈ 𝐅(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐚𝐝𝐝(X)$.&lt;/li&gt;
+&lt;li&gt;
+$M ∈ 𝐠𝐞𝐧(X)$ 当且仅当赋值 $(X, M) ⊗_{\mathrm{End}(X)} X → M$ 是满的.
+&lt;/li&gt;
+&lt;li&gt;
+$M ∈ 𝐜𝐨𝐠(X)$ 当且仅当余赋值 $M → ((M, X), X)$ 是单的.
+&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; $𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.&lt;/p&gt;
-
+&lt;div class=&quot;lemma&quot;&gt;
+($𝐓$ 与 $𝐅$ 中的对象, 证明见&lt;a href=&quot;Def_de_TP&quot;&gt;此定理&lt;/a&gt;中 4 ⟺ 5 部分). 给定对象 $X$ 与 $M$.
 &lt;ol&gt;
-  &lt;li&gt;若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧, X^o)$ 是 torsion pair.&lt;/li&gt;
-  &lt;li&gt;若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.&lt;/li&gt;
+&lt;li&gt;
+$M ∈ 𝐓(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐪𝐮𝐨𝐭(X)$.
+&lt;/li&gt;
+&lt;li&gt;
+$M ∈ 𝐅(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐚𝐝𝐝(X)$.
+&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (垂直条件). 以下刻画 torsion pair $(𝒯, ℱ)$ 中满足 $\mathrm{Ext}^1$-垂直的对象. 记 $t$ 与 $f$ 是相应的子函子与商函子.&lt;/p&gt;
-
+&lt;div class=&quot;lemma&quot;&gt;
+(&lt;a href=&quot;Gen_Eq_T&quot;&gt;证明&lt;/a&gt;).
+$𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.
 &lt;ol&gt;
-  &lt;li&gt;$𝒯 ∩ (^⟂ 𝒯) = 𝒯 ∩ τ ⁻¹ ℱ$.&lt;/li&gt;
-  &lt;li&gt;$𝒯 ∩ (𝒯^⟂) = 𝒯 ∩ t(𝐢𝐧𝐣)$.&lt;/li&gt;
-  &lt;li&gt;$ℱ ∩ (ℱ^⟂) = ℱ ∩ τ 𝒯$.&lt;/li&gt;
-  &lt;li&gt;$ℱ ∩ (^⟂ ℱ) = ℱ ∩ f(𝐩𝐫𝐨𝐣)$.&lt;/li&gt;
+&lt;li&gt;
+若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧(X), X^o)$ 是 torsion pair.
+&lt;/li&gt;
+&lt;li&gt;
+若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.
+&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;作为 $𝐜𝐨𝐠$ 与 $𝐠𝐞𝐧$ 中的特例, 定义&lt;/p&gt;
+&lt;div class=&quot;definition&quot;&gt;
+(忠实模). 称 $M ∈ 𝐦𝐨𝐝_A$ 忠实, 若以下等价命题成立.
+&lt;ol&gt;
+&lt;li&gt;
+对任意 $a ≠ 0$ 总有 $M ⋅ a ≠ 0$.
+&lt;/li&gt;
+&lt;li&gt;
+同态 $A → \mathrm{End}(M)^{\mathrm{op}}$ 是单的.
+&lt;/li&gt;
+&lt;li&gt;
+$A ∈ 𝐜𝐨𝐠(M)$.
+&lt;/li&gt;
+&lt;li&gt;
+$DA ∈ 𝐠𝐞𝐧(M)$.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;局部-tilting-模-两类-torsion-pair&quot;&gt;局部 Tilting 模: 两类 torsion pair&lt;/h4&gt;
 
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (忠实模). 称 $M ∈ 𝐦𝐨𝐝_A$ 忠实, 若以下等价命题成立.&lt;/p&gt;
+&lt;div class=&quot;definition&quot;&gt;
+(局部 Tilting 模). 称 $T$ 是局部 tilting 的, 若 $p.\dim T ≤ 1$ 且 $\mathrm{Ext}^1(T,T)=0$.
+&lt;/div&gt;
+
+&lt;p&gt;等价地, $T$ 满足自垂直条件 $\mathrm{Ext}^1(T,T)$, 以及&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;对任意 $a ≠ 0$ 总有 $M ⋅ a ≠ 0$.&lt;/li&gt;
-  &lt;li&gt;同态 $A → \mathrm{End}(M)^{\mathrm{op}}$ 是单的.&lt;/li&gt;
-  &lt;li&gt;$A ∈ 𝐜𝐨𝐠(M)$.&lt;/li&gt;
-  &lt;li&gt;$DA ∈ 𝐠𝐞𝐧(M)$.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$A$ 相对 $𝐚𝐝𝐝(T)$ 的内射分解 (余消解) 是至多 $1$ 维的, 即, 存在 ses&lt;/p&gt;
+
+\[0 → A → T' → T'' → 0,\]
+
+    &lt;p&gt;其中 $T$, $T’’$ 属于 $𝐚𝐝𝐝(T)$.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$T$ 相对 $𝐚𝐝𝐝(A)$ 的投射分解 (消解) 是至多 $1$ 维的, 即, 存在 ses&lt;/p&gt;
+
+\[0 → P' → P'' → T → 0,\]
+
+    &lt;p&gt;其中 $P$, $P’$ 属于 $𝐚𝐝𝐝(A)$.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (局部 Tilting 模). 称 $T$ 是局部 tilting 的, 若 $p.\dim T ≤ 1$ 且 $\mathrm{Ext}^1(T,T)=0$.&lt;/p&gt;
+&lt;div class=&quot;slogan&quot;&gt;
+由投射维度, $\mathrm{Ext}^1(T,-)$ 与 $\mathrm{Ext}^1(-,T)$ 是右正合函子.
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (局部 tilting 模诱导的 torsion pair). 给定局部 tilting 模 $T$.&lt;/p&gt;
-
+&lt;div class=&quot;theorem&quot;&gt;
+(局部 tilting 模诱导的 torsion pair, &lt;a href=&quot;Partial_Tilting_Two_Torsion_pairs&quot;&gt;证明&lt;/a&gt;). 局部 tilting 模 $T$ 诱导了以下两类 torsion pair.
 &lt;ol&gt;
-  &lt;li&gt;$(𝐠𝐞𝐧(T), T^o)$ 是 torsion pair.&lt;/li&gt;
-  &lt;li&gt;$(T^⟂, 𝐜𝐨𝐠(τT))$ 是 torsion pair.&lt;/li&gt;
-  &lt;li&gt;$𝐠𝐞𝐧(T) ⊆ T^⟂$.&lt;/li&gt;
-  &lt;li&gt;以上两个 torsion pair, 均有 $T ∈ 𝒯 ∩ {}^⟂𝒯 = 𝒯 ∩ τ⁻¹ ℱ$.&lt;/li&gt;
+&lt;li&gt;
+$(𝐠𝐞𝐧(T), T^o)$ 是 torsion pair.
+&lt;/li&gt;
+&lt;li&gt;
+$(T^⟂, 𝐜𝐨𝐠(τT))$ 是 torsion pair.
+&lt;/li&gt;
+&lt;li&gt;
+$𝐠𝐞𝐧(T) ⊆ T^⟂$.
+&lt;/li&gt;
+&lt;li&gt;
+以上两个 torsion pair, 均有 $T ∈ 𝒯 ∩ {}^⟂𝒯 = 𝒯 ∩ τ⁻¹ ℱ$.
+&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; 内射模属于 $T^⟂$. 若投射模属于 $𝐠𝐞𝐧(T)$, 则其属于 $𝐚𝐝𝐝(T)$.&lt;/p&gt;
 
@@ -2979,23 +3300,61 @@ $f$ 是右几乎可裂, 当且仅当 $(f, -)$ 是 $𝐟𝐮𝐧𝐜𝐭(𝐦𝐨
 
 &lt;h3 id=&quot;ar-定理&quot;&gt;AR 定理&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; (缺陷公式). 对 ses $θ : 0 → A → B → C → 0$, 以下是函子的长正合列 $0 → (-, θ) → θ ⊗ \mathrm{Tr}(-) → 0$.&lt;/p&gt;
+&lt;div class=&quot;lemma&quot;&gt;
+(缺陷公式).
+对 ses
+$$
+θ : 0 → A → B → C → 0,
+$$
+以下是函子的长正合列
+$$
+0 → (-, θ) → θ ⊗ \mathrm{Tr}(-) → 0
+$$
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($\mathrm{Tor}_{1,2}(Y, \mathrm{Tr}(X))$, 稳定 $\mathrm{Hom}$). 存在函子的四项正合列 $0 → \mathrm{Tor}_2(Y, \mathrm{Tr}(X)) → Y ⊗ X^∗ → (X, Y) → \mathrm{Tor}_1(Y, \mathrm{Tr}(X)) → 0$. 此处 $\mathrm{Tor}_1(Y, \mathrm{Tr}(X)) ≃ \underline {(X,Y)}$.&lt;/p&gt;
+&lt;div class=&quot;lemma&quot;&gt;
+($\mathrm{Tor}_{1,2}(Y, \mathrm{Tr}(X))$, 稳定 $\mathrm{Hom}$).
+存在函子的四项正合列
+$$
+0 → \mathrm{Tor}_2(Y, \mathrm{Tr}(X)) → Y ⊗ X^∗ → (X, Y) → \mathrm{Tor}_1(Y, \mathrm{Tr}(X)) → 0
+$$
+此处, $\mathrm{Tor}_1(Y, \mathrm{Tr}(X)) ≃ \underline {(X,Y)}$.
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($\mathrm{Tor}&lt;em&gt;{≥ 3}(Y, \mathrm{Tr}(X))$). $\mathrm{Tor}&lt;/em&gt;{n+3}(Y, \mathrm{Tr}(X)) ≃ \mathrm{Tor}_{n+1}(Y, X^∗)$.&lt;/p&gt;
+&lt;div class=&quot;lemma&quot;&gt;
+($\mathrm{Tor}_{≥ 3}(Y, \mathrm{Tr}(X))$). 
+$\mathrm{Tor}_{n+3}(Y, \mathrm{Tr}(X)) ≃ \mathrm{Tor}_{n+1}(Y, X^∗)$.
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($\mathrm{Ext}^{1,2}(\mathrm{Tr}(M), N)$, AB 公式). 存在函子的四项正合列 $0 → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → N ⊗ M → (M^∗, N) → \mathrm{Ext}^2(\mathrm{Tr}(M), N) → 0$. 此处 $\mathrm{Ext}^1(\mathrm{Tr}(M), N) ≃ \underline {(M,N)}$.&lt;/p&gt;
+&lt;div class=&quot;lemma&quot;&gt;
+($\mathrm{Ext}^{1,2}(\mathrm{Tr}(M), N)$, AB 公式).
+存在函子的四项正合列
+$$
+0 → \mathrm{Ext}^1(\mathrm{Tr}(M), N) → N ⊗ M → (M^∗, N) → \mathrm{Ext}^2(\mathrm{Tr}(M), N) → 0
+$$
+此处 $\mathrm{Ext}^1(\mathrm{Tr}(M), N) ≃ \underline {(M,N)}$.
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($\mathrm{Ext}^{≥ 3}(\mathrm{Tr}(M), N)$). $\mathrm{Ext}^{n + 3}(\mathrm{Tr}(M), N) ≃ \mathrm{Ext}^{n}(\mathrm{Tr}(M), N)$.&lt;/p&gt;
+&lt;div class=&quot;lemma&quot;&gt;
+($\mathrm{Ext}^{≥ 3}(\mathrm{Tr}(M), N)$).
+$\mathrm{Ext}^{n + 3}(\mathrm{Tr}(M), N) ≃ \mathrm{Ext}^{n}(\mathrm{Tr}(M), N)$.
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; (AR 公式). 以下是自然同构. $D\underline{(τ⁻¹ N, M)} ≃ \mathrm{Ext}^1(M, N) ≃ D\overline{(N, τM)}$.&lt;/p&gt;
-
+&lt;div class=&quot;theorem&quot;&gt;
+(AR 公式, &lt;a href=&quot;AR_Formula&quot;&gt;证明&lt;/a&gt;).
+以下是自然同构.
+$$
+D\underline{(τ⁻¹ N, M)} ≃ \mathrm{Ext}^1(M, N) ≃ D\overline{(N, τM)}.
+$$
 &lt;ol&gt;
-  &lt;li&gt;若 $p.\dim M = 1$, 则 $τ M$ 投射, 故 $\mathrm{Ext}^1(M,N) ≃ D(N, τ M)$.&lt;/li&gt;
-  &lt;li&gt;若 $i.\dim N = 1$, 则 $τ⁻¹ N$ 内射, 故 $\mathrm{Ext}^1(M,N) ≃ D(τ⁻¹ N, M)$.&lt;/li&gt;
+&lt;li&gt;
+若 $p.\dim M = 1$, 则 $τ M$ 投射, 故 $\mathrm{Ext}^1(M,N) ≃ D(N, τ M)$.
+&lt;/li&gt;
+&lt;li&gt;
+若 $i.\dim N = 1$, 则 $τ⁻¹ N$ 内射, 故 $\mathrm{Ext}^1(M,N) ≃ D(τ⁻¹ N, M)$.
+&lt;/li&gt;
 &lt;/ol&gt;
-
+&lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
           <link>https://zhangchenchengsjtu.github.io/website/posts/AR-notes</link>
