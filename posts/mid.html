@@ -7,7 +7,7 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
-  <title>期中考试试卷与解答
+  <title>2025-04-24 试卷讲评与习题课
     ·
     Jekyll Latex</title>
 
@@ -67,9 +67,9 @@
 	<main>
   <article>
     <div class="center">
-      <h1>期中考试试卷与解答</h1>
+      <h1>2025-04-24 试卷讲评与习题课</h1>
       <p class="author">
-        任明旸 (命题人)
+        Anonymous
         <br/>
         April 21, 2025
       </p>
@@ -80,7 +80,96 @@
 
     <hr />
 
-<p><strong>Problem 1</strong> (20points).</p>
+<div class="abstract">
+  <h5>Abstract</h5>
+  <div><p>本次测试中, <strong>Problem 1</strong> 与 <strong>Problem 4</strong> 是原题, <strong>Problem 5</strong> 是在 <a href="https://oc.sjtu.end.cn">Canvas</a> 上发布过的别班习题. 主要内容:</p>
+
+\[\underset{\text{第一节课}}{\underbrace{\text{试卷分发与颁奖仪式} ⇒  \text{试卷讲评} ⇒  \text{专题练习}}}
+⇒
+\underset{\text{第二节课}}{\underbrace{\text{任老师讲新题}}}.\]
+
+<p>以下是各题平均得分.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>T1</td>
+      <td>T2</td>
+      <td>T3</td>
+      <td>T4</td>
+      <td>T5</td>
+      <td>T6</td>
+      <td>平均</td>
+    </tr>
+    <tr>
+      <td>16.578</td>
+      <td>17.733</td>
+      <td>16.489</td>
+      <td>12.911</td>
+      <td>8.111</td>
+      <td>9.489</td>
+      <td>81.311</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>以下是各分数段人数 (共 45 人与考).</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>100</td>
+      <td>90-99</td>
+      <td>80-89</td>
+      <td>70-79</td>
+      <td>60-69</td>
+      <td>0-59</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>11</td>
+      <td>12</td>
+      <td>7</td>
+      <td>6</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>应当需要强调的错误.</p>
+
+<ol>
+  <li>商空间 <code class="language-plaintext highlighter-rouge">/</code>, 与差集 <code class="language-plaintext highlighter-rouge">\</code>.</li>
+  <li>线性空间: $U ∩ V = 0$, 而非 $U ∩ V = ∅$.</li>
+  <li>直和 $\operatorname{im} φ ⊕ \ker φ = V$, 而非 $\operatorname{im} φ ∪ \ker φ$.</li>
+  <li>误用 $(∩, +)$ 的分配律.</li>
+  <li>$f ∈ ℚ[x]$ 没有有理根, 从而不可约?</li>
+  <li>写错任课教师姓名, 如杨扬畅炀, 以及若干 Unicode 未收入的字.</li>
+</ol>
+</div>
+</div>
+
+<hr />
+
+<h2 id="试卷分发与颁奖仪式">试卷分发与颁奖仪式</h2>
+
+<p><br /></p>
+<details>
+  <summary>满分同学 (排名不分先后)</summary>
+  <p>余逍遥, 方逸涵, 马子博, 李书杭, 胡志豪, 汤嘉铭.</p>
+</details>
+<p><br /></p>
+<details>
+  <summary>进步王 (本次成绩 减 去年期末原始分)</summary>
+  <p>欧阳屹洺, 方逸涵, 蔺准, 马子博, 余逍遥, 赵毅恒, 李书杭, 黄弋铭, 姜皓文等.
+  </p>
+</details>
+
+<hr />
+
+<h2 id="试卷讲评">试卷讲评</h2>
+
+<div class="problem"><p>(20points).</p>
 
 <ol>
   <li>
@@ -103,8 +192,9 @@
     </ol>
   </li>
 </ol>
+</div>
 
-<p><em>Solution</em>. 第一问是<a href="https://czhang271828.github.io/Linear-algebra/2024%20%E7%A7%8B-%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/2023/mess%20-%20%E5%89%AF%E6%9C%AC/%E5%B0%8F%E6%B5%8B%E8%AF%95%E5%8D%B7.pdf">原题 (去年试卷第三题)</a>的弱化版本 (少了一次求导), 思路完全相同. 考虑换元 ($x := y + 1$) 即可. 此时</p>
+<div class="solution"><p>第一问是<a href="https://czhang271828.github.io/Linear-algebra/2024%20%E7%A7%8B-%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/2023/mess%20-%20%E5%89%AF%E6%9C%AC/%E5%B0%8F%E6%B5%8B%E8%AF%95%E5%8D%B7.pdf">原题 (去年试卷第三题)</a>的弱化版本 (少了一次求导), 思路完全相同. 考虑换元 ($x := y + 1$) 即可. 此时</p>
 
 \[g(y) := f(x) = f(y+1) = \frac{(y+1)^p - 1}{(y+1) - 1} = y^{p-1} + \binom{p}{1} y^{p-2} + \cdots + \binom{p}{p-1} y^0.\]
 
@@ -116,10 +206,11 @@
   <li>关于充分性: 若多项式有实根 $(x-λ)$, 即 $f(x) = h(x) ⋅ (x-λ)$, 展开验证即可 ($b_∙$ 是 $h$ 的系数, 最后的分式是 $-λ⁻¹$).</li>
   <li>必要性即倒推充分性, 证明略.</li>
 </ol>
+</div>
 
 <hr />
 
-<p><strong>Problem 2</strong> (20 points).</p>
+<div class="problem"><p>(20 points).</p>
 
 <ol>
   <li>
@@ -143,8 +234,9 @@
     </ol>
   </li>
 </ol>
+</div>
 
-<p><em>Solution</em>. 第一问先证 $V_a$ (零化 $a$ 之多项式集) 是线性空间.</p>
+<div class="solution"><p>第一问先证 $V_a$ (零化 $a$ 之多项式集) 是线性空间.</p>
 
 <ol>
   <li>(非空). 零多项式属于 $V_a$.</li>
@@ -175,10 +267,11 @@
 \[γ_1 = f_1,\quad γ_2 = f_2 - f_1,\quad γ_3 = f_3 - f_2.\]
   </li>
 </ol>
+</div>
 
 <hr />
 
-<p><strong>Problem 3</strong> (20 points). Suppose $V$ is an $n$-dimensional vector space over a number field, and let $V_1, V_2, \ldots, V_s$ be $s$ proper subspaces of $V$. Prove that</p>
+<div class="problem"><p>(20 points). Suppose $V$ is an $n$-dimensional vector space over a number field, and let $V_1, V_2, \ldots, V_s$ be $s$ proper subspaces of $V$. Prove that</p>
 
 <ol>
   <li>
@@ -190,8 +283,9 @@
 \[\left\{ε _1, ε _2, \ldots, ε _n\right\} ⋂ \left(V_1 ∪  V_2 ∪  \cdots ∪  V_s\right)=∅.\]
   </li>
 </ol>
+</div>
 
-<p><em>Solution</em>. 对任意 $x ∈ 𝔽$ 构造 VanDerMonde (列) 向量</p>
+<div class="solution"><p>对任意 $x ∈ 𝔽$ 构造 VanDerMonde (列) 向量</p>
 
 \[\{v (x) = (1,x,x^2,\ldots, x^{n-1}) ∣ x ∈ 𝔽\},\]
 
@@ -202,18 +296,20 @@
 <p>第二问: 显然.</p>
 
 <p><strong>注: 这一技巧 (构造任意多一般位置的向量) 在上学期提及过.</strong></p>
+</div>
 
 <hr />
 
-<p><strong>Problem 4</strong> (15 points). Suppose $φ _1, φ _2, \ldots, φ_m$ are linear maps over the $n$-dimensional vector space $V$, such that</p>
+<div class="problem"><p>(15 points). Suppose $φ _1, φ _2, \ldots, φ_m$ are linear maps over the $n$-dimensional vector space $V$, such that</p>
 
 \[φ _i^2 = φ _i\quad  \text{and}\quad  φ _i φ _j = 0 \quad (i ≠ j, \ 1 ≤ i, \ j ≤ m).\]
 
 <p>Prove that</p>
 
 \[V=\operatorname{im} \varphi_1 ⊕ \operatorname{im} \varphi_2 ⊕ \cdots ⊕ \operatorname{im} φ_m ⊕ \bigcap_{i=1}^m \operatorname{ker} φ_i .\]
+</div>
 
-<p><em>Solution</em>. 这是<a href="https://czhang271828.github.io/Linear-algebra/Notes/27Mar%20(%E4%B9%A0%E9%A2%98%E8%AF%BE)/27Mar2025%20(zyc%20%E7%8F%AD).pdf">原题 (习题课 27Mar)</a>. 以上结论适用于无限维空间, 从而<strong>矩阵方法不是一般的</strong>.</p>
+<div class="solution"><p>这是<a href="https://czhang271828.github.io/Linear-algebra/Notes/27Mar%20(%E4%B9%A0%E9%A2%98%E8%AF%BE)/27Mar2025%20(zyc%20%E7%8F%AD).pdf">原题 (习题课 27Mar)</a>. 以上结论适用于无限维空间, 从而<strong>矩阵方法不是一般的</strong>.</p>
 
 <p>(矩阵方法). 由零化多项式无重根, $φ_i$ 在某组基下对角化为 ${0,1}$-矩阵, 且两两交换的矩阵可同时对角化. 因此存在合适的基, 使得 $φ_i$ 的矩阵形式是</p>
 
@@ -241,12 +337,14 @@
     <p>左式是 $\underset{1 ≤ i ≤ k+1}⋂\ker φ_i$, 右式是 $\operatorname{im} φ_{k+1}$ (因为 $\operatorname{im}φ_k ⊆ \operatorname{ker}φ_{≠ k}$).</p>
   </li>
 </ol>
+</div>
 
 <hr />
 
-<p><strong>Problem 5</strong> (15 points). Suppose the linear map $𝒜 (X)=AXA^T$ over $ℝ^{n × n}$, where $A$ is an $n$-order real square matrix with $\operatorname{rank}(A) = r$. Find the dimension and a basis of $\operatorname{im} 𝒜$.</p>
+<div class="problem"><p>(15 points). Suppose the linear map $𝒜 (X)=AXA^T$ over $ℝ^{n × n}$, where $A$ is an $n$-order real square matrix with $\operatorname{rank}(A) = r$. Find the dimension and a basis of $\operatorname{im} 𝒜$.</p>
+</div>
 
-<p><em>Solution</em>. 这也是<a href="https://czhang271828.github.io/Linear-algebra/Week%20V/Supplementary%20Reading%20Material/Homework_6%20part%202.pdf">原题</a>.</p>
+<div class="solution"><p>这也是<a href="https://czhang271828.github.io/Linear-algebra/Week%20V/Supplementary%20Reading%20Material/Homework_6%20part%202.pdf">原题</a>.</p>
 
 <p>记 $A = P ⋅ I’ ⋅ Q$ 是相抵标准型, 则原映射为</p>
 
@@ -258,13 +356,117 @@
   <li>$\ker 𝒜 := \mathrm{span}({B_{i,j}∣ {\max(i,j) &gt; \mathrm{rank}(A)}})$, 维度 $n^2 - r^2$.</li>
   <li>$\operatorname{im} 𝒜 := \mathrm{span}({B_{i,j}∣ {\max(i,j) ≤ \mathrm{rank}(A)}})$, 维度 $r^2$.</li>
 </ol>
+</div>
 
 <hr />
 
-<p><strong>Problem 6</strong> (10 points). <em>You are encouraged to have a great amount of reading and thinking besides the classes. This problem is meant to test the your understanding.</em> Please give a new theorem/question that has neither appeared in classes nor in our textbook, and then give a proof/solution to this theorem/question. It can be a phenomenon you have summarized, a theorem in other books, or a theorem that is beyond what we have learned.</p>
+<div class="problem"><p>(10 points). <em>You are encouraged to have a great amount of reading and thinking besides the classes. This problem is meant to test the your understanding.</em>
+Please give a new theorem/question that has neither appeared in classes nor in our textbook, and then give a proof/solution to this theorem/question.
+It can be a phenomenon you have summarized, a theorem in other books, or a theorem that is beyond what we have learned.</p>
+</div>
 
 <hr />
 
+<h2 id="专题练习-填不满原理">专题练习: 填不满原理</h2>
+
+<div class="lemma"><p>(填不满原理).</p>
+
+<ol>
+  <li>(来自加法逻辑). 对线性空间 $V$, 若 $U_1$ 与 $U_2$ 是 $V$ 的真子空间, 则 $U_1 ∪ U_2 ≠ V$.</li>
+  <li>(来自分析). 对数域上的线性空间 $V$, 若 ${U_i}$ 是 $V$ 的有限个真子空间, 则 $⋃ U_i ≠ V$.</li>
+</ol>
+</div>
+
+<div class="note"><p>第一个命题对一般的模, Abel 群等具有加法结构的东西都成立. 第二个命题需要对 $𝔽$ 做一些要求 (无限域即可).</p>
+</div>
+
+<div class="example"><p>(第二命题在一般域上的反例).
+记 $𝔽 = 𝔽_2$ 是二元域. 定义</p>
+
+<ol>
+  <li>$V = 𝔽 e_1 ⊕ 𝔽 e_2$,</li>
+  <li>$U_1 = \operatorname{span}(e_1)$,</li>
+  <li>$U_2 = \operatorname{span}(e_2)$,</li>
+  <li>$U_3 = \operatorname{span}(e_1 + e_2)$.</li>
+</ol>
+
+<p>此时 $U_1 ∪ U_2 ∪ U_3 = V$.</p>
+</div>
+
+<div class="note"><p>对大小为 $q$ 的有限域 $𝔽$, $q$ 个真子空间的并不是全空间.</p>
+</div>
+
+<hr />
+
+<div class="example"><p>(仅使用加法逻辑).</p>
+
+<p>记 $φ : 𝔽^{n × n} → 𝔽^{n × n}$ 是线性映射. 假定</p>
+
+\[φ (A ⋅ B) ∈ \{φ (A) ⋅ φ (B), φ (B) ⋅ φ (A)\}.\]
+
+<p>试证明, 恒有 $φ (A ⋅ B) = φ (A) ⋅ φ (B)$, 或恒有 $φ (A ⋅ B) = φ (B) ⋅ φ (A)$.</p>
+</div>
+
+<div class="note"><p>实际上, 上述命题可以加强.</p>
+
+<ol>
+  <li>
+    <p>若 $φ (A ⋅ B) = φ (A) ⋅ φ (B)$, 则存在 $C$ 使得</p>
+
+\[φ : 𝔽^{n × n} → 𝔽^{n × n},\quad A ↦ C^{-1} ⋅ A ⋅ C.\]
+  </li>
+  <li>
+    <p>(作为推论). 若 $φ (A ⋅ B) = φ (B) ⋅ φ (A)$, 则存在 $C$ 使得</p>
+
+\[φ : 𝔽^{n × n} → 𝔽^{n × n},\quad A ↦ C^{-1} ⋅ A^T ⋅ C.\]
+  </li>
+  <li>
+    <p>若 $α: \mathrm{GL}_n(𝔽^{n × n}) → \mathrm{GL}_n(𝔽^{n × n})$ 满足 $α (X^{-1}) = (α(X))^{-1}$, 则 $α$ 形如以上.</p>
+  </li>
+</ol>
+</div>
+
+<div class="example"><p>(仅使用加法逻辑).</p>
+
+<p>记 $φ : G → G$ 是 Abel 群 $(G, +, 0)$ 同态, 且 $G$ 上存在满足分配律的乘法 $⋅$. 假定</p>
+
+\[φ (a ⋅ b) ∈ \{φ (a) ⋅ φ (b), φ (b) ⋅ φ (a)\}.\]
+
+<p>试证明, 恒有 $φ (a ⋅ b) = φ (b) ⋅ φ (a)$, 或恒有 $φ (a ⋅ b) = φ (b) ⋅ φ (a)$.</p>
+</div>
+
+<hr />
+
+<div class="example"><p>现假定 $𝔽$ 是数域. 给定 $V = 𝔽^n$ 与 $φ ∈ \mathrm{End}_𝔽(V)$. 定义</p>
+
+<ol>
+  <li>$f_φ$ 是零化 $φ$ 的次数<strong>最小的</strong>首一非零多项式.</li>
+  <li>对任意 $v ∈ V$, $f_v$ 是次数最小的首一非零多项式, 使得 $(f_v(φ)) (v) = 0$.</li>
+</ol>
+
+<p>证明, 存在 $v ∈ V$ 使得 $f_φ = f_v$.</p>
+</div>
+
+<div class="example"><p>现假定 $𝔽$ 是数域, $V = 𝔽^n$. 取 $f ∈ V^∗$ 使得 $f(v)$ 总是 $v$ 的分量.</p>
+
+<p>证明: 存在 $1 ≤ m ≤ n$, 使得 $f$ 是向 $m$-分量的投影.</p>
+</div>
+
+<div class="example"><p>现假定 $𝔽$ 是数域. 证明, 给定一组两两不同的线性映射</p>
+
+\[\{φ_i : U → V ∣ 1 ≤ i ≤ n\}.\]
+
+<p>试证明, 存在 $u ∈ U$ 使得 $φ_i(u)$ 两两不同.</p>
+</div>
+
+<div class="example"><p>现假定 $𝔽$ 是数域. $U_i$ 是 $V$ 的有限个真子空间.</p>
+
+<ol>
+  <li>$⋃ U_i ≠ V$.</li>
+  <li>$(⋃ U_i )^c$ 中存在一组基.</li>
+  <li>假定 $𝔽 = ℝ$, 则 $(⋃ U_i )^c$ 中存在一组标准正交基.</li>
+</ol>
+</div>
 
 
   </article>
@@ -289,8 +491,8 @@
       </span>
       <a
         class="prev"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Almost_Split"
-        title="PREV: 几乎可裂态射的结构">&gt;&gt;</a>
+        href="https://zhangchenchengsjtu.github.io/website/posts/mid-copy"
+        title="PREV: 2025-04-21 试卷">&gt;&gt;</a>
     
   </div>
 </main>

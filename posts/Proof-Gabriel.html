@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+  <title>Proof of Gabriel's Theorem
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="  Abstract  表示的轨道语言. Krull 维数公式. 不可约表示是极大开子轨道. 图分类定理 (有限型与仿射型). Gabriel 定理: $𝐝𝐢𝐦$ 是双射. 有限表示路代数 (无关系).">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
+<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
+<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Proof-Gabriel">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+
+
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          [
+            '$', '$'
+          ],
+          [
+            '\\(', '\\)'
+          ]
+        ]
+      }
+    };
+  </script>
+  <script
+    async
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="latex-dark">
+
+	<aside class="logo">
+  
+
+  <a href="https://zhangchenchengsjtu.github.io/website/">
+    <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
+  </a>
+  <span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+	<main>
+  <article>
+    <div class="center">
+      <h1>Proof of Gabriel's Theorem</h1>
+      <p class="author">
+        Chencheng Zhang
+        <br/>
+        April 24, 2025
+      </p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="abstract">
+  <h5>Abstract</h5>
+  <div><p>表示的轨道语言. Krull 维数公式. 不可约表示是极大开子轨道. 图分类定理 (有限型与仿射型). Gabriel 定理: $𝐝𝐢𝐦$ 是双射. 有限表示路代数 (无关系).</p>
+</div>
+</div>
+
+<h2 id="gabriel-定理">Gabriel 定理</h2>
+
+<h3 id="轨道">轨道</h3>
+
+<div class="definition"><p>(不带关系的箭图).
+选定有限无环的 quiver $Q$, 定义代数闭域 $k = \overline k$ 上的路代数 $kQ$, 并将 $Q$ 的资料记作 $(Q_0, Q_1, s, t)$, 其中 $t(α) \xleftarrow α s(α)$.</p>
+</div>
+
+<div class="definition"><p>(路代数). 回顾小 $k$-范畴的 $k$-等价 $𝐦𝐨𝐝_{kQ} ≃ 𝐫𝐞𝐩_k(Q)$. 将路代数的模记作函子</p>
+
+\[M : Q → \mathrm{vec}_k, \quad [i ↦ M_i,\quad α ↦ M_α].\]
+</div>
+
+<p>记 $P(i)$ 是 $i ∈ Q_0$ 处对应的投射模. 以上 $kQ$ 是有限维遗传代数. 任意 $M ∈ 𝐦𝐨𝐝_{kQ}$ 的<a href="Ringel_Resolution">极小投射分解</a>是</p>
+
+\[0 → ⨁_{α∈ Q_1}P(t(α))^{\dim  M_{s(α)}} → ⨁_{i∈ Q_0}P(i)^{\dim M_i} → M → 0.\]
+
+<ol>
+  <li>第一处态射将 $(p_α)_{(α : i → j ; \ k(i))}$ 对应至</li>
+  <li>第二处态射由投射盖 $P(i)^{\dim M_i} ↠ M ⋅ e_i$ 决定.</li>
+</ol>
+
+<p>\begin{definition}[维数向量]
+  子范畴 $ι: Q_0 ↪ Q_1$ 给出拉回 
+  \begin{equation}
+    𝐝𝐢𝐦:= \quad ι^∗: 𝐦𝐨𝐝_{kQ} → 𝐦𝐨𝐝_{kQ_0},\quad M ↦ (\dim M_i)_{i ∈ Q_0}.
+  \end{equation} 
+\end{definition}</p>
+
+<p>\begin{remark}
+  简单地看, $ι(M)$ 是将一切`` $M_α$ ‘‘替换作零态射. 函子 $𝐦𝐨𝐝$ 本质满, 但未必全忠实.
+\end{remark}</p>
+
+<p>\begin{definition}[轨道]
+  给定 $𝐯 ∈ 𝐦𝐨𝐝_{kQ_0}$, 以 $𝐯$ 为维数向量的表示即 ${M ∣ 𝐝𝐢𝐦 \ M = 𝐯}$ 的同构类. 以下使用轨道定义之. 
+  \begin{enumerate}
+    (集合) 记 $𝐫𝐞𝐩(𝐯) = ∏ <em>{α  ∈  Q_1} k^{𝐯</em>{t(α )} ×  𝐯_{s(α )}}$. $X$ 中的一个对象 (一族 $Q_1$-指标的矩阵) 对应一个以 $𝐯$ 为维度向量的模. 特别地, 
+    \begin{equation}
+        M_{t(α )} \xleftarrow{M_{α }} M_{s(α )} ,\quad k^{𝐯_{t(α )}} \xleftarrow{Y} k^{𝐯_{s(α)}}\quad (Y ∈  k^{𝐯_{t(α )} ×  𝐯_{s(α )}}). 
+    \end{equation}
+    (代数群) 称 $𝐫𝐞𝐩(𝐯) =$ 中元素等价 ($M ∼  N$), 当且仅当其作为 $kQ$-模同构. 相应地, 存在 $g ∈  ∏ <em>{i ∈  Q_0}\mathrm{GL}(k, 𝐯_i)$ 使得
+    \begin{equation}
+        g</em>{t(α )} ⋅  M_α  = N_α  ⋅  g_{s(α )}^{-1} \ \quad (∀  α  ∈  Q_1)
+    \end{equation}
+    (群作用) 定义 $G := ∏ <em>{i ∈  Q_0}\mathrm{GL}(k, 𝐯_i)$ 在 $𝐫𝐞𝐩(𝐯) =$ 上的作用如下\footnote{这就是群的共轭作用. ``指标不同处’‘乘积为 $0$.}: 
+    \begin{equation}
+        g. (x_α )</em>{α  ∈  Q_1} := (g_{t(α )} ⋅  x_α  ⋅  g_{s(α )})_{α  ∈  Q_1}. 
+    \end{equation}
+\end{enumerate} 
+\end{definition}</p>
+
+<p>\begin{remark}
+  记 $[M]$ 是 $M$ 所在的轨道. $[M]$ 代表一个表示. <br />
+\end{remark}</p>
+
+<p>\begin{note}
+  Gabriel 定理证明的出发点: 找到 $𝐫𝐞𝐩(𝐯)$ 的所有 $G$-轨道. We call $𝐫𝐞𝐩(𝐯)$ a representation variety. 
+\end{note}</p>
+
+<p>\subsection{预备定义: 维度公式}</p>
+
+<p>\begin{theorem}[Krull 维度公式]
+  $G$ 是代数群概型, 以下直接使用 Chevalley 的系列定理.
+  \begin{enumerate}
+      所有 $G$-轨道 $[M]$ 都是不可约的局部闭集: 
+              \begin{enumerate}
+          不可约: 所有开子集稠密, 等价地, 任意两个开集有非空交; 
+          局部闭: $X$ 是 $\overline X$ 的开子集, 等价地, $X$ 是开集与闭集的交. 
+      \end{enumerate}
+      对任意 $M$, 稳定子群 $\mathrm{Stab}<em>{M}$ 是闭子群. 
+      Krull 维度公式: $\dim G = \dim \ [M] + \dim \mathrm{Stab}</em>{M}$. \footnote{对线性空间, krull 维度就是线性维度. 以下不区分 $\dim$ 与 $\dim_k$.}
+      $(\overline{[M]} ∖ [M])$ 恰是一切 Krull 维度更小的轨道的并 (观察 ses). 
+  \end{enumerate}
+\end{theorem}</p>
+
+<p>\begin{lemma}
+  对轨道的维度公式做一些调整: 
+  \begin{enumerate}
+      $\mathrm{Stab}<em>{M} = \mathrm{Aut}(M) ⊂ \mathrm{End}(M)$ 是稠密开集, 故维度相同; 
+      Euler 型 $q(𝐯) = ∑ _{i ∈  Q_0} 𝐯_i^2 - ∑ _{α  ∈  Q_1} 𝐯</em>{s(α )}⋅  𝐯_{t(α )} = \dim G - \dim 𝐫𝐞𝐩(𝐯)$; 
+      遗传代数的 Euler 公式 $q(𝐯) = \dim \mathrm{End}(M) - \dim \mathrm{Ext}^1(M,M)$. 
+  \end{enumerate}
+  将以上带入 Krull 维度公式, 得``关键恒等式’’:
+  \begin{equation}
+      \dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M) = \dim \mathrm{End}(M) - q(𝐯). 
+  \end{equation}
+\end{lemma}</p>
+
+<p>\begin{proposition}
+  以下是一些<code class="language-plaintext highlighter-rouge">几何的''结论.
+  \begin{enumerate}
+      极大轨道满足以下等价定义: $\mathrm{Ext}^1(M,M) =0$; $[M]$ 是开集; $\overline{[M]} = 𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$. 固定 $𝐯$, 极大轨道若存在则必唯一. 
+      极大轨道不存在的必要条件: $q(𝐯) ≤ 0$.
+      极小轨道就是半单表示; 等价地, $[X]$ 是闭集. 
+      给定 ses $0 →  X →  Y →  Z →  0$, 该 ses 不可裂当且仅当
+      \begin{equation}
+          [X] ∪  [Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y]. 
+      \end{equation}
+  \end{enumerate}
+  \begin{proof}
+    1. 的证明较为繁琐, 且对主定理的证明无帮助, 故从略. 
+    \begin{itemize}
+      (1. 的证明). 由</code>关键恒等式’’, $\dim \mathrm{Ext}^1(M,M) = 0$ 当且仅当 $\dim [M] = \dim 𝐫𝐞𝐩(𝐯)$. 
+      \begin{enumerate}
+        若 $\mathrm{Ext}^1(M,M) =0$, 则 $\overline{[M]} = 𝐫𝐞𝐩(𝐯)$. 由 $[M]$ 在 $\overline {[M]}$ 中开, 得 $[M]$ 在 $𝐫𝐞𝐩(𝐯)$ 中开. 
+        若 $[M]$ 在 $𝐫𝐞𝐩(𝐯)$ 中开, 则必稠密. 此时 $\dim [M] = \dim 𝐫𝐞𝐩(𝐯)$, 因此 $\mathrm{Ext}^1(M,M) =0$. 
+      \end{enumerate}
+      (2. 的证明). 若 $q(𝐯) ≤ 0$, 则对任意非零 $M$ 都有 $\dim 𝐫𝐞𝐩 (𝐯) &gt; \dim [M]$.<br />
+      (4. 的证明). 若 $0 → L \xrightarrow f M \xrightarrow g N → 0$ 不可裂, 则 $[L ⊕ N] ⊂ \overline{[M]} ∖ [M]$. 
+      将以上 ses 看作 $Q$-指标的线性空间的 ses. 依照线性代数, 存在同时分块上三角化 
+      \begin{equation}
+          0 → \begin{pmatrix}
+              L_λ  &amp; O 
+          \end{pmatrix}\xrightarrow{\binom{f_λ }{0}} \begin{pmatrix}
+              M^1<em>λ  &amp; M^2_λ  \ O &amp; M^4 _λ<br />
+          \end{pmatrix}\xrightarrow{(0 \ \ g_λ )} \begin{pmatrix}
+              O \ 
+              N_λ 
+          \end{pmatrix} →  0. 
+      \end{equation}
+      取 $G$ 中元素为 $g_t := \begin{pmatrix}
+          t ⋅  \mathrm{id}</em>{L_i} &amp; O \ O &amp; \mathrm{id}_{N_i}
+      \end{pmatrix}$, 考虑 $M$ 在单参数子群 $g_t$ 共轭作用下的轨道 $[M]_t$. 由 $k ∖ {0}$ 在 $k$ 中稠密, $[M]_0 ∈  \overline{{[M]_t ∣  t ≠  0}}$.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  再说明 $L⊕  N ≇  M$. 若同构, 由长正合列知,  
+  \begin{equation}
+      \dim \mathrm{im}\left[\mathrm{Hom}(L, L) → \mathrm{Ext}^1(N, L)\right] = 0. 
+  \end{equation}
+  由上述正合列不可裂, 得矛盾. 
+\end{itemize}    \end{proof} \end{proposition}
+</code></pre></div></div>
+
+<p>\subsection{预备定义: 根系}</p>
+
+<p>\begin{definition}[根系]
+  给定二次型 $q : ℤ^n × ℤ^n → ℤ$, 定义
+  \begin{enumerate}
+      (根系) 定义有限型 quiver 的根系 $\Delta := { 𝐯 \mid q(𝐯) &lt; 1, 𝐯 \neq \mathbf 0}$; 
+      (虚实) 实根 (虚根) 满足 $q(𝐯)=0$ ($q (𝐯)=1$), 记作 $\Delta ^{\mathrm{Re}}$ ($\Delta ^{\mathrm{Im}}$); 
+      (正负) 各项 $\geq 0$ ($\leq 0$) 整数的根称为正根 (负根), 记作 $\Delta _+$ ($\Delta _-$).
+  \end{enumerate} 
+\end{definition}</p>
+
+<p>\begin{theorem}[图分类定理]
+对有限, 连通, 无向, 允许重边的图 $Q$, 记 Euler 型 $q$.
+\begin{itemize}
+  记 $\overline Q$ 是 $Q$ 的无向化 (去除箭头), $A$ 是其邻接矩阵, 则 $q$ 对应的对称二次型为 $B: = \frac{1}{2}(2I - A)$.
+\end{itemize}
+以下著名定理分类了正定或几乎正定的邻接矩阵 $B$. 
+\begin{enumerate}
+  称 $q$ 是有限型的, 当且仅当 $q$ 正定, 当且仅当 $Δ$ 是有限集, 当且仅当 $\overline Q$ 是 Dynkin 图 $A_n$, $D_n$, 以及 $E_{6,7,8}$, 角标 $n$ 是顶点数. 
+  称 $q$ 是仿射型的, 当且仅当 $q$ 半正定且 $\dim N(B) = 1$, 当且仅当 $Δ$ 是有限集与 $ℤ⋅ 𝐤$ 的直和, 当且仅当 $\overline Q$ 是 $\widehat{A_n}$, $\widehat{D_n}$, $\widehat{E_{6,7,8}}$. 
+  \begin{itemize}
+      \item[注] $n + 1$ 是顶点数; $𝐤$ 见下图. 
+  \end{itemize}
+  特别地, $Δ  = Δ  _+ ⊔  Δ  _-$. 换言之, 根系中不存在既正又负的向量.
+\end{enumerate}
+\begin{equation}
+  % https://q.uiver.app/#q=WzAsNDUsWzIsNywiMSJdLFsxLDcsIjEiXSxbMSw1LCIxIl0sWzIsNSwiMSJdLFswLDYsIlxcd2lkZWhhdHtBX259Il0sWzUsNywiMSJdLFs0LDcsIjIiXSxbMyw3LCIxIl0sWzQsNiwiXFxjZG90cyJdLFs0LDUsIjIiXSxbMyw2LCJcXHdpZGVoYXR7RF9ufSJdLFs2LDcsIjEiXSxbNiw2LCIyIl0sWzYsNSwiMyJdLFs3LDUsIjIiXSxbOCw1LCIxIl0sWzYsNCwiMiJdLFs2LDMsIjEiXSxbNSw2LCJcXHdpZGVoYXR7RV82fSJdLFsyLDIsIjEiXSxbMywyLCIyIl0sWzQsMiwiMyJdLFs1LDIsIjQiXSxbNiwyLCIzIl0sWzcsMiwiMiJdLFs4LDIsIjEiXSxbNSwzLCIyIl0sWzgsMSwiMiJdLFs3LDEsIjQiXSxbNiwxLCI2Il0sWzUsMSwiNSJdLFs0LDEsIjQiXSxbMywxLCIyIl0sWzIsMSwiMiJdLFsxLDEsIjEiXSxbNSwwLCIzIl0sWzQsMywiXFx3aWRlaGF0e0VfN30iXSxbNCwwLCJcXHdpZGVoYXR7RV84fSJdLFsxLDQsIjEiXSxbMiw0LCIxIl0sWzMsNCwiMSJdLFs0LDQsIjIiXSxbNSw0LCIxIl0sWzEsNiwiXFxjZG90cyJdLFsyLDYsIlxcY2RvdHMiXSxbMSwwLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDcsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOSw4LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsNiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMSwxMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMiwxMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMywxNiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxNiwxNywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMywxNCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxNCwxNSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMCwyMSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyNCwyNSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMiwyMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMiwyNiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyNywyOCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyOSwzMCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMSwzMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMywzNCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMCwzMSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyOCwyOSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMiwzMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxOSwyMCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMSwyMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMywyNCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMCwzNSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs5LDQxLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQxLDQwLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQxLDQyLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsNDMsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNDMsMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDM4LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzM4LDM5LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzM5LDMsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMyw0NCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0NCwwLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNDMsIlxcY29sb3J7Ymx1ZX06IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEwLDgsIlxcY29sb3J7Ymx1ZX06IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE4LDEyLCJcXGNvbG9ye2JsdWV9OiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszNiwyNiwiXFxjb2xvcntibHVlfToiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMzcsMzUsIlxcY29sb3J7Ymx1ZX06IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&amp;]
+	\&amp;\&amp;\&amp;\&amp; {\widehat{E_8}} \&amp; 3 <br />
+	\&amp; 1 \&amp; 2 \&amp; 2 \&amp; 4 \&amp; 5 \&amp; 6 \&amp; 4 \&amp; 2 <br />
+	\&amp;\&amp; 1 \&amp; 2 \&amp; 3 \&amp; 4 \&amp; 3 \&amp; 2 \&amp; 1 <br />
+	\&amp;\&amp;\&amp;\&amp; {\widehat{E_7}} \&amp; 2 \&amp; 1 <br />
+	\&amp; 1 \&amp; 1 \&amp; 1 \&amp; 2 \&amp; 1 \&amp; 2 <br />
+	\&amp; 1 \&amp; 1 \&amp;\&amp; 2 \&amp;\&amp; 3 \&amp; 2 \&amp; 1 <br />
+	{\widehat{A_n}} \&amp; \cdots \&amp; \cdots \&amp; {\widehat{D_n}} \&amp; \cdots \&amp; {\widehat{E_6}} \&amp; 2 <br />
+	\&amp; 1 \&amp; 1 \&amp; 1 \&amp; 2 \&amp; 1 \&amp; 1
+	\arrow[”{\color{blue}:}”{description}, draw=none, from=1-5, to=1-6]
+	\arrow[no head, from=2-3, to=2-2]
+	\arrow[no head, from=2-4, to=2-3]
+	\arrow[no head, from=2-5, to=2-4]
+	\arrow[no head, from=2-6, to=1-6]
+	\arrow[no head, from=2-6, to=2-5]
+	\arrow[no head, from=2-7, to=2-6]
+	\arrow[no head, from=2-8, to=2-7]
+	\arrow[no head, from=2-9, to=2-8]
+	\arrow[no head, from=3-3, to=3-4]
+	\arrow[no head, from=3-4, to=3-5]
+	\arrow[no head, from=3-5, to=3-6]
+	\arrow[no head, from=3-6, to=3-7]
+	\arrow[no head, from=3-6, to=4-6]
+	\arrow[no head, from=3-7, to=3-8]
+	\arrow[no head, from=3-8, to=3-9]
+	\arrow[”{\color{blue}:}”{description}, draw=none, from=4-5, to=4-6]
+	\arrow[no head, from=5-2, to=5-3]
+	\arrow[no head, from=5-3, to=6-3]
+	\arrow[no head, from=5-5, to=5-4]
+	\arrow[no head, from=5-5, to=5-6]
+	\arrow[no head, from=5-7, to=4-7]
+	\arrow[no head, from=6-2, to=5-2]
+	\arrow[no head, from=6-3, to=7-3]
+	\arrow[no head, from=6-5, to=5-5]
+	\arrow[no head, from=6-5, to=7-5]
+	\arrow[no head, from=6-7, to=5-7]
+	\arrow[no head, from=6-7, to=6-8]
+	\arrow[no head, from=6-8, to=6-9]
+	\arrow[”{\color{blue}:}”{marking, allow upside down}, draw=none, from=7-1, to=7-2]
+	\arrow[no head, from=7-2, to=6-2]
+	\arrow[no head, from=7-3, to=8-3]
+	\arrow[”{\color{blue}:}”{marking, allow upside down}, draw=none, from=7-4, to=7-5]
+	\arrow[no head, from=7-5, to=8-5]
+	\arrow[”{\color{blue}:}”{marking, allow upside down}, draw=none, from=7-6, to=7-7]
+	\arrow[no head, from=7-7, to=6-7]
+	\arrow[no head, from=8-2, to=7-2]
+	\arrow[no head, from=8-2, to=8-3]
+	\arrow[no head, from=8-5, to=8-4]
+	\arrow[no head, from=8-6, to=8-5]
+	\arrow[no head, from=8-7, to=7-7]
+\end{tikzcd}.
+\end{equation}
+\end{theorem}</p>
+
+<p>\subsection{Gabriel 定理的证明}</p>
+
+<p>\begin{theorem}[Gabriel 定理]
+  给定代数闭域上的路代数 $kQ$, $\overline Q$ 是 Dynkin 图. 
+  \begin{equation}
+      𝐝𝐢𝐦 : \mathbf{rep}_k (Q) → \mathbf{rep}_k (Q_0),\quad [M] ↦  𝐝𝐢𝐦 \ M 
+  \end{equation}
+  建立了不可分解表示与 $Δ ^+$ 的双射对应: 
+  \begin{enumerate}
+      给定不可分解模 $M$, 表示 $[M]$ 对应 $𝐝𝐢𝐦 \ M$; 
+      给定正根 $𝐯$, 则 $𝐫𝐞𝐩(𝐯)$ 存在极大轨道 $[M]$, 对应不可约表示. 
+  \end{enumerate}
+  特别地, $kQ$ 的不可分解表示有限, 当且仅当 $\overline Q$ 是 Dynkin 图. 
+  \begin{proof}
+      假定 $\overline Q$ 是 Dynkin 图, 记 $𝐝𝐢𝐦 : \mathrm{Idem}(kQ) → Δ  _+$. 
+      \begin{enumerate}
+          (良定义) 若 $M$ 不可分解, 以下就 $M$ 是否为 brick 进行分类讨论. 
+          \begin{enumerate}
+              若 $M = B$, 则 $\dim \mathrm{End}(M)$. 依照
+              \begin{equation}
+                  0 &lt; q(𝐝𝐢𝐦 \ M) = \dim {\mathrm{End}(M)} - \dim \mathrm{Ext}^1(M,M), 
+              \end{equation}
+              此时只能有 $\mathrm{Ext}^1(M,M) = 0$, 以及 $q(𝐝𝐢𝐦 \ M) = 1$. 
+              若 $M ≠  B$, 先将 $B ↪  M ↠ B$ 补全作 PBPO 方块\footnote{遗传范畴中, 任意满-单分解可以补全作 PBPO 方块.}. 由 $M$ 与 $B$ 不可分解, 以及 $M ≇ B$, 得 $\mathrm{Ext}^1(B,B) ≠ 0$. 故 $q(𝐝𝐢𝐦 \ B) ≤  0$, 矛盾. 
+          \end{enumerate}
+          综上, $𝐝𝐢𝐦$ 的去向确实是 $Δ _+$. 特别地, $\mathrm{Idem}(kQ) = \mathrm{Brick}(kQ)$, 且任意 brick 都是 $\mathrm{Ext}^1$-自垂直的. 
+          (单射) 由<code class="language-plaintext highlighter-rouge">关键恒等式'', 自垂直的 $M$ 满足 $𝐫𝐞𝐩(𝐝𝐢𝐦 \ M) = \dim \ [M]$. 由 $𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$ 不可约, 极大轨道若存在则必唯一. 
+          (满射) 只需证明 $𝐫𝐞𝐩(𝐯)$ 中的最大\footnote{由 Zariski 拓扑, 存在维度是 $\dim 𝐫𝐞𝐩(𝐯)$ 的轨道. 由不可约性, 这是唯一最大的轨道.}轨道 $[M]$ 是不可分解的. 若 $M = ⨁_{i ∈ I}M_i$, 由 ses 三项的轨道关系知 $\mathrm{Ext}^1(M_i, M_j) =0$. 此时, $1 = $
+          \begin{equation}
+              q(𝐯) = q\left(∑ _{i ∈  I}𝐝𝐢𝐦 \ M_i\right) = ∑  _{i ∈  I} q(𝐝𝐢𝐦 \ M_i) + ∑ _{i ≠  j} \dim (M_i, M_j).   
+          \end{equation}
+          矛盾. 综上, $𝐝𝐢𝐦$ 确实是双射. 
+      \end{enumerate}
+      最后是对有限性的说明. 
+      \begin{enumerate}
+          若 $\overline Q$ 是 Dynkin 图, 则 $\mathrm{Idem}(kQ)$ 是有限集. 
+          反之, 若 $\overline Q$ 不是 Dynkin 图, 则存在仿射型子图, 因此存在非零的 $𝐯 ≥ 0$ 使得 $q(𝐯) = 0$. 由</code>关键恒等式’’, 对任意 $𝐝𝐢𝐦 \ M = \mathbf  v$ 总有
+          \begin{align}
+              \dim 𝐫𝐞𝐩(𝐯) &amp; = \dim \ [M] + \dim \mathrm{Ext}^1(M,M) \ 
+              &amp; = \dim \ [M] + \dim \mathrm{End}(M) - q(𝐯) \ 
+              &amp; ≥  \dim \ [M] + 1. 
+          \end{align}
+          由 Zariski 拓扑, 以 $𝐯$ 为维度向量的不可约表示必然是无穷个. 
+      \end{enumerate}
+  \end{proof}
+\end{theorem}</p>
+
+
+  </article>
+
+  <div class="page-navigation">
+    
+      <a
+        class="next"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Ringel_Resolution"
+        title="NEXT: Canonical Resolution of Quiver algebra">&lt;&lt;</a>
+      <span>
+        &middot;
+      </span>
+    
+    <a
+      class="home"
+      href="https://zhangchenchengsjtu.github.io/website/"
+      title="Back to Homepage">Home</a>
+    
+      <span>
+        &middot;
+      </span>
+      <a
+        class="prev"
+        href="https://zhangchenchengsjtu.github.io/website/posts/gen_and_cog"
+        title="PREV: $𝐜𝐨𝐠$ 与 $𝐠𝐞𝐧$ 的等价定义">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    Chencheng Zhang</span>
+</div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+  <title>遗传范畴的 $\mathrm{Hom}_{D𝒜}(-,-)$.
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="证明">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
+<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
+<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Hom_D_Hereditary">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+
+
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          [
+            '$', '$'
+          ],
+          [
+            '\\(', '\\)'
+          ]
+        ]
+      }
+    };
+  </script>
+  <script
+    async
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="latex-dark">
+
+	<aside class="logo">
+  
+
+  <a href="https://zhangchenchengsjtu.github.io/website/">
+    <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
+  </a>
+  <span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+	<main>
+  <article>
+    <div class="center">
+      <h1>遗传范畴的 $\mathrm{Hom}_{D𝒜}(-,-)$.</h1>
+      <p class="author">
+        Chencheng Zhang
+        <br/>
+        April 24, 2025
+      </p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 id="证明">证明</h2>
+
+<div class="theorem"><p>遗传范畴中, $X^∙$ 与 $H^∙(X)$ (同调群构成的轴复形) 导出等价.</p>
+</div>
+
+<div class="proof"><p>给定上链复形 $(X^∙, d^∙)$. 考虑 $X^n$ 附近的交换图</p>
+
+\[\begin{bmatrix}
+r_{1} : &amp; \cdots  &amp; \rightarrow  &amp; X^{n-2} &amp; \rightarrow  &amp; X^{n-1} &amp; \xrightarrow{d^{n-1}} &amp; X^{n} &amp; \xrightarrow{d^{n}} &amp; X^{n+1} &amp; \rightarrow  &amp; \cdots \\
+\uparrow  &amp;  &amp;  &amp; \uparrow  &amp;  &amp; \parallel  &amp; ⊠  &amp; \uparrow  &amp;  &amp; \uparrow  &amp;  &amp; \\
+r_{2} : &amp; \cdots  &amp; \rightarrow  &amp; 0 &amp; \rightarrow  &amp; X^{n-1} &amp; \hookrightarrow  &amp; E &amp; \rightarrow  &amp; 0 &amp; \rightarrow  &amp; \cdots \\
+\Downarrow  &amp;  &amp;  &amp; \Downarrow  &amp;  &amp; \Downarrow  &amp;  &amp; \Downarrow  &amp;  &amp; \Downarrow  &amp;  &amp; \\
+r_{3} : &amp; \cdots  &amp; \rightarrow  &amp; 0 &amp; \rightarrow  &amp; 0 &amp; \rightarrow  &amp; H^{n}( X) &amp; \rightarrow  &amp; 0 &amp; \rightarrow  &amp; \cdots 
+\end{bmatrix}.\]
+
+<p>此处, 交换方块 $⊠$ 内部如下 ($▦$ 是推出拉回):</p>
+
+\[⊠ = \begin{bmatrix}
+X^{n-1} &amp; = &amp; X^{n-1} &amp; \xrightarrow{d^{n-1}} &amp; X^{n}\\
+\parallel  &amp;  &amp; ↡  &amp;  &amp; \uparrow \\
+\parallel  &amp;  &amp; \operatorname{im} d^{n-1} &amp; ↪  &amp; \ker d^{n}\\
+\parallel  &amp;  &amp; ↟  &amp; ▦ &amp; ↟ \\
+X^{n-1} &amp; = &amp; X^{n-1} &amp; \rightarrow  &amp; E
+\end{bmatrix}.\]
+
+<p>特别地, $r_2 ⇒ r_3$ 是拟同构, $r_2 → r_1$ 仅投影 $X^n$ 处同调群. 将 $r_2$ 取遍所有 $X^k ↪ E’$, 得拟同构</p>
+
+\[X^∙ ⇐ ∑\limits_k [X^k ↪ E'] ⇒ H^∙ (X).\]
+</div>
+
+
+  </article>
+
+  <div class="page-navigation">
+    
+      <a
+        class="next"
+        href="https://zhangchenchengsjtu.github.io/website/posts/T_Y_Dim"
+        title="NEXT: $\dim M$ 与 $\dim (T,M)$">&lt;&lt;</a>
+      <span>
+        &middot;
+      </span>
+    
+    <a
+      class="home"
+      href="https://zhangchenchengsjtu.github.io/website/"
+      title="Back to Homepage">Home</a>
+    
+      <span>
+        &middot;
+      </span>
+      <a
+        class="prev"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Gl_Dim_A_B"
+        title="PREV: $\dim A$ 与 $\dim \mathrm{End}(T_A)$">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    Chencheng Zhang</span>
+</div>
+
+</body>
+
+
+</html>

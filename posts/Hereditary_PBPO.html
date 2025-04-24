@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+  <title>遗传范畴的满-单分解补全作 PBPO
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="证明">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
+<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
+<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Hereditary_PBPO">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+
+
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          [
+            '$', '$'
+          ],
+          [
+            '\\(', '\\)'
+          ]
+        ]
+      }
+    };
+  </script>
+  <script
+    async
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="latex-dark">
+
+	<aside class="logo">
+  
+
+  <a href="https://zhangchenchengsjtu.github.io/website/">
+    <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
+  </a>
+  <span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+	<main>
+  <article>
+    <div class="center">
+      <h1>遗传范畴的满-单分解补全作 PBPO</h1>
+      <p class="author">
+        Chencheng Zhang
+        <br/>
+        April 23, 2025
+      </p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 id="证明">证明</h2>
+
+<div class="note"><p>在定义米田 (大) 群时, 不必要求范畴是局部小的. 以上结论亦无此要求然.</p>
+</div>
+
+<div class="theorem"><p>遗传范畴中的满单分解均可补全作推出拉回方块.</p>
+</div>
+
+<div class="proof"><p>给定满-单态射复合 $\overset π ↠ \overset ι ↪$. 考虑 ses</p>
+
+\[θ : 0 → K → X \overset π → C → 0\]
+
+<p>由 $\mathrm{Ext}^2(-, K)$ 消失, $\mathrm{Ext}^1(ι, K)$ 是满态射. 这说明 $θ$ 是某 ses 关于 $ι$ 推出的像, 换言之, 存在正合列的交换图</p>
+
+\[\begin{bmatrix}
+0 &amp; →   &amp; K &amp; →  &amp; X &amp; \xrightarrow π   &amp; C &amp; →  &amp; 0\\
+ &amp;  &amp; ∥  &amp;  &amp; ⇣  &amp; ▦  &amp; \ \ ↓ι  &amp;  &amp; \\
+0 &amp; →  &amp; K &amp; ⇢ &amp; E &amp; ⇢  &amp; F &amp; → &amp; 0
+\end{bmatrix}.\]
+
+<p>此处 $▦$ 即为所求.</p>
+</div>
+
+<div class="example"><p>(关于 $3 × 3$-引理).
+考虑 $3 × 3$ 的短正合列的交换图</p>
+
+\[\begin{bmatrix}
+ &amp; X_{1} &amp; \overset{i_{1}}{\hookrightarrow } &amp; Y_{1} &amp; \overset{p_{1}}{\twoheadrightarrow } &amp; Z_{1}\\
+ &amp; f_{1} \downarrow \ \  &amp;  &amp; g_{1} \downarrow \ \  &amp;  &amp; h_{1} \downarrow \ \ \ \\
+ &amp; X_{2} &amp; \overset{i_{2}}{\hookrightarrow } &amp; Y_{2} &amp; \overset{p_{2}}{\twoheadrightarrow } &amp; Z_{2}\\
+ &amp; f_{2} \downarrow \ \  &amp;  &amp; g_{2} \downarrow \ \  &amp;  &amp; g_{2} \downarrow \ \ \\
+ &amp; X_{3} &amp; \overset{i_{3}}{\hookrightarrow } &amp; Y_{3} &amp; \overset{p_{3}}{\twoheadrightarrow } &amp; Z_{3}
+\end{bmatrix}.\]
+
+<p>此时有四项正合列的交换图:</p>
+
+\[\begin{bmatrix}
+θ: &amp; X_{1} &amp; \xrightarrow{\binom{i_{1}}{-f_{1}}} &amp; X_{2} \oplus Y_{1} &amp; \xrightarrow{( g_{1} \ i_{2})} &amp; Y_{2} &amp; \xrightarrow{g_{2} \circ p_{2}} &amp; Z_{3}\\
+&amp; \parallel  &amp;  &amp; \pi \downarrow \ \  &amp;  &amp; p_{2} \downarrow \ \  &amp;  &amp; \parallel \\
+η: &amp; X_{1} &amp; \xrightarrow{i_{1}} &amp; Y_{1} &amp; \xrightarrow{h_{1} \circ p_{1}} &amp; Z_{2} &amp; \xrightarrow{g_{2}} &amp; Z_{3}
+\end{bmatrix}.\]
+
+<p>因此, 以上 $η$ 与 $θ$ 是 $\mathrm{Ext}^2(Z_3, X_1)$ 中相同的元素.
+<br />
+<br />
+类似地, $X_1 → Y_1 → Z_2 → Z_3$ 与 $(-θ)$ 是 $\mathrm{Ext}^2(Z_3, X_1)$ 中相同的元素. 这说明以下两条四项正合列在 $\mathrm{Ext}^2(Z_3, X_1)$ 中互为相反数.</p>
+
+\[\begin{bmatrix}
+X_{1} &amp; \rightarrow  &amp; Y_{1} &amp;  &amp; \\
+\downarrow  &amp;  &amp;  &amp; \searrow  &amp;  \\
+X_{2} &amp;  &amp;  &amp;  &amp; Z_{2}\\
+ &amp; \searrow  &amp;  &amp;  &amp; \downarrow \\
+ &amp;  &amp; Y_{3} &amp; \rightarrow  &amp; Z_{3}
+\end{bmatrix}.\]
+</div>
+
+
+  </article>
+
+  <div class="page-navigation">
+    
+      <a
+        class="next"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs"
+        title="NEXT: 局部 tilting 模诱导的 torsion pair">&lt;&lt;</a>
+      <span>
+        &middot;
+      </span>
+    
+    <a
+      class="home"
+      href="https://zhangchenchengsjtu.github.io/website/"
+      title="Back to Homepage">Home</a>
+    
+      <span>
+        &middot;
+      </span>
+      <a
+        class="prev"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Gen_Eq_T"
+        title="PREV: $𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    Chencheng Zhang</span>
+</div>
+
+</body>
+
+
+</html>

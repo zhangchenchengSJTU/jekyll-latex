@@ -7,12 +7,12 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
-  <title>存在左 $𝐩𝐫𝐨𝐣$-逼近
+  <title>Canonical Resolution of Quiver algebra
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="证明">
+<meta name="description" content="$kQ$ 的极小投射分解">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -21,7 +21,7 @@
 <link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
 <link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
-<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/exists_left_proj_app">
+<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Ringel_Resolution">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -67,45 +67,23 @@
 	<main>
   <article>
     <div class="center">
-      <h1>存在左 $𝐩𝐫𝐨𝐣$-逼近</h1>
+      <h1>Canonical Resolution of Quiver algebra</h1>
       <p class="author">
         Chencheng Zhang
         <br/>
-        April 19, 2025
+        April 24, 2025
       </p>
 
     </div>
 
     <div class="divider"></div>
 
-    <h2 id="证明">证明</h2>
+    <h2 id="kq-的极小投射分解">$kQ$ 的极小投射分解</h2>
 
-<div class="proposition"><p>(未命名).
-对 Artin 代数, $M ∈ 𝐦𝐨𝐝_A$ 存在左投射逼近, 以及左极小投射逼近.
-<br />
-特别地, 左投射逼近 $M → P$ 未必是单的, 但存在分解 $M → M^{∗ ∗ } ↪ P$.</p>
-</div>
+<p>给定任意不带关系的路代数 $kQ$, 有限生成模 $M ∈ 𝐦𝐨𝐝_{kQ}$ 的<a href="Ringel_Resolution">极小投射分解</a>是</p>
 
-<div class="proof"><p>取 $M ∈ 𝐦𝐨𝐝_A$, 取 $(M,A)$ 的生成元为集合 $S$. 今断言以下是投射逼近</p>
+\[0 → ⨁_{α∈ Q_1}P(t(α))^{\dim  M_{s(α)}} → ⨁_{i∈ Q_0}P(i)^{\dim M_i} → M → 0.\]
 
-\[φ : M → A^S,\quad m ↦ (f_i(m))_{i ∈ S}.\]
-
-<p>往证任意 $M → 𝐩𝐫𝐨𝐣$ 类型的模同态通过 $A^S$ 分解. 依照稳定投射右正合列</p>
-
-\[M^∗ ⊗ N → (M,N) → \underline{(M,N)} → 0.\]
-
-<p>得 $M^∗ ⊗ 𝐩𝐫𝐨𝐣 ≃ (M,𝐩𝐫𝐨𝐣)$, 一切 $M → 𝐩𝐫𝐨𝐣$ 类型的同态是是 $f_i$ 的线性组合.
-<br />
-考虑 $2 × 2$ 交换图</p>
-
-\[\begin{bmatrix}
-M &amp; \xrightarrow{η _{M}} &amp; M^{∗∗}\\
-↓  &amp;  &amp; ↓ \\
-P &amp; \xrightarrow[∼]{η _{P}} &amp; P^{∗∗}
-\end{bmatrix}.\]
-
-<p>故存在分解 $M → M^{∗ ∗ } → P$. 不妨将 $P^∗$ 取作 $M^∗$ 的投射盖, 则 $M^{∗ ∗ } ↪ P$ 单.</p>
-</div>
 
 
   </article>
@@ -114,8 +92,8 @@ P &amp; \xrightarrow[∼]{η _{P}} &amp; P^{∗∗}
     
       <a
         class="next"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Top_surjective"
-        title="NEXT: Top_Surjective">&lt;&lt;</a>
+        href="https://zhangchenchengsjtu.github.io/website/posts/Gl_Dim_A_B"
+        title="NEXT: $\dim A$ 与 $\dim \mathrm{End}(T_A)$">&lt;&lt;</a>
       <span>
         &middot;
       </span>
@@ -130,8 +108,8 @@ P &amp; \xrightarrow[∼]{η _{P}} &amp; P^{∗∗}
       </span>
       <a
         class="prev"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Torsion_Less"
-        title="PREV: Torsionless 模的等价定义">&gt;&gt;</a>
+        href="https://zhangchenchengsjtu.github.io/website/posts/Proof-Gabriel"
+        title="PREV: Proof of Gabriel's Theorem">&gt;&gt;</a>
     
   </div>
 </main>

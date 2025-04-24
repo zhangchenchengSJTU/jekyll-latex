@@ -7,6 +7,422 @@
     
       
         <item>
+          <title>$\dim M$ 与 $\dim (T,M)$</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($𝒯$, $𝒴$ 与投射维数). 对 $M ∈ 𝒯$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;若 $p.\dim M ≠ 1$, 则 $p.\dim M = p.\dim (T,M)$.&lt;/li&gt;
+  &lt;li&gt;若 $p.\dim M = 1$, 则 $p.\dim (T,M)$ 为 $0$ 或 $1$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;使用数学归纳法.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;假定 $p.\dim M = 0$. 此时 $M$ 投射. 由 $M ∈ \mathrm{Gen}(T)$ 知 $M ∈ 𝐚𝐝𝐝(T)$. 因此 $p.\dim (T,M) = 0$.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;假定 $p.\dim M = 1$. 取右逼近的 ses $θ : 0 → K → T^n → M → 0$ 使得 $K ∈ 𝒯$. 此时 $(T, θ)$-正合, 只需证明 $K ∈ 𝐚𝐝𝐝(T)$. 等价地, $\mathrm{Ext}^1(K, 𝒯) = 0$, 考虑以下 ses 即可:&lt;/p&gt;
+
+\[0 → \underset{\text{ses}}{\underbrace{(M, 𝒯) → (T^n, 𝒯) → (K, 𝒯)}} → {}^1(M, 𝒯) → {}^1 (T^n, 𝒯) = 0.\]
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(归纳). 假定 $p.\dim M = n+1 ≥ 2$, 只需证明 $p.\dim (T,K) ≤ n$. 由归纳假设, 只需证明 $p.\dim K ≤ n$. 由&lt;/p&gt;
+
+\[0 → \underset{p.\dim = ?}{\underbrace{K}} → \underset{p.\dim ≤ 1}{\underbrace{T^n}} → \underset{p.\dim = n + 1}{\underbrace{M}} → 0,\]
+
+    &lt;p&gt;因此 $p.\dim K = p.\dim M - 1 = n + 1$.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;关于取等条件的讨论如下.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$p. \dim M = 0$ 时 $p. \dim (T, M) = 0$.&lt;/li&gt;
+  &lt;li&gt;$p.\dim M = 1$ 时 $p.\dim (T,M) ∈ {0,1}$. 例如取 $M = T ∉ 𝐩𝐫𝐨𝐣$, 则 $p.\dim T = 1$ 但 $p.\dim (T, M) = 0$.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$p.\dim M = n ≥ 2$ 时 $p.\dim (T, M) ≥ 2$: 考虑函子的正合列:&lt;/p&gt;
+
+\[\mathrm{Ext}{}^1 (M, -)→\mathrm{Ext}{}^1 (T^n, -)→\mathrm{Ext}{}^1 (K, -)→ \mathrm{Ext}{}^2(M, -) → 0 → \cdots.\]
+
+    &lt;p&gt;以及&lt;/p&gt;
+
+\[\cdots → 0 → \mathrm{Ext}{}^{k} (K, -) ≃ \mathrm{Ext}{}^{k+1} (M, -) → 0 → \cdots\quad (k ≥ 2).\]
+
+    &lt;p&gt;此时 $\mathrm{Ext}{}^{1,\ldots, n-1} (K, -) ≠ 0$, 但 $\mathrm{Ext}{}^n(K, -) =0$.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-24T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/T_Y_Dim</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/T_Y_Dim</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>遗传范畴的 $\mathrm{Hom}_{D𝒜}(-,-)$.</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;遗传范畴中, $X^∙$ 与 $H^∙(X)$ (同调群构成的轴复形) 导出等价.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;给定上链复形 $(X^∙, d^∙)$. 考虑 $X^n$ 附近的交换图&lt;/p&gt;
+
+\[\begin{bmatrix}
+r_{1} : &amp;amp; \cdots  &amp;amp; \rightarrow  &amp;amp; X^{n-2} &amp;amp; \rightarrow  &amp;amp; X^{n-1} &amp;amp; \xrightarrow{d^{n-1}} &amp;amp; X^{n} &amp;amp; \xrightarrow{d^{n}} &amp;amp; X^{n+1} &amp;amp; \rightarrow  &amp;amp; \cdots \\
+\uparrow  &amp;amp;  &amp;amp;  &amp;amp; \uparrow  &amp;amp;  &amp;amp; \parallel  &amp;amp; ⊠  &amp;amp; \uparrow  &amp;amp;  &amp;amp; \uparrow  &amp;amp;  &amp;amp; \\
+r_{2} : &amp;amp; \cdots  &amp;amp; \rightarrow  &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; X^{n-1} &amp;amp; \hookrightarrow  &amp;amp; E &amp;amp; \rightarrow  &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; \cdots \\
+\Downarrow  &amp;amp;  &amp;amp;  &amp;amp; \Downarrow  &amp;amp;  &amp;amp; \Downarrow  &amp;amp;  &amp;amp; \Downarrow  &amp;amp;  &amp;amp; \Downarrow  &amp;amp;  &amp;amp; \\
+r_{3} : &amp;amp; \cdots  &amp;amp; \rightarrow  &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; H^{n}( X) &amp;amp; \rightarrow  &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; \cdots 
+\end{bmatrix}.\]
+
+&lt;p&gt;此处, 交换方块 $⊠$ 内部如下 ($▦$ 是推出拉回):&lt;/p&gt;
+
+\[⊠ = \begin{bmatrix}
+X^{n-1} &amp;amp; = &amp;amp; X^{n-1} &amp;amp; \xrightarrow{d^{n-1}} &amp;amp; X^{n}\\
+\parallel  &amp;amp;  &amp;amp; ↡  &amp;amp;  &amp;amp; \uparrow \\
+\parallel  &amp;amp;  &amp;amp; \operatorname{im} d^{n-1} &amp;amp; ↪  &amp;amp; \ker d^{n}\\
+\parallel  &amp;amp;  &amp;amp; ↟  &amp;amp; ▦ &amp;amp; ↟ \\
+X^{n-1} &amp;amp; = &amp;amp; X^{n-1} &amp;amp; \rightarrow  &amp;amp; E
+\end{bmatrix}.\]
+
+&lt;p&gt;特别地, $r_2 ⇒ r_3$ 是拟同构, $r_2 → r_1$ 仅投影 $X^n$ 处同调群. 将 $r_2$ 取遍所有 $X^k ↪ E’$, 得拟同构&lt;/p&gt;
+
+\[X^∙ ⇐ ∑\limits_k [X^k ↪ E'] ⇒ H^∙ (X).\]
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-24T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Hom_D_Hereditary</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hom_D_Hereditary</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>$\dim A$ 与 $\dim \mathrm{End}(T_A)$</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(整体维数, &lt;a href=&quot;Gl_Dim_A_B&quot;&gt;证明&lt;/a&gt;). $|gl.\dim A - gl.\dim B|≤ 1$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;任取 $B$-模 $X$, 此时存在投射模 $P$ 使得有 ses
+\(0 → K → P → X → 0\)
+由 $P ∈ 𝒴 = (T,𝒯)$ 属于 torsion-free class, 此时子对象 $K ∈ 𝒴$. 不妨假定 $K = (T, M)$, 满足 $M ∈ 𝒯$. 由&lt;a href=&quot;T_Y_Dim&quot;&gt;此定理&lt;/a&gt;, 得&lt;/p&gt;
+
+\[p_B.\dim K = p_B.\dim (T,M) ≤ p_A. \dim M ≤ gl.\dim A.\]
+
+&lt;p&gt;因此 $p_B.\dim X - 1 ≤ gl.\dim A$. 取左式 $\sup$, 得 $gl.\dim B ≤ gl.\dim A + 1$.
+&lt;br /&gt;
+&lt;br /&gt;
+由 $\mathrm{End}(_BT) ≃ A$, 得&lt;/p&gt;
+
+\[gl.\dim A ≤ gl.\dim \mathrm{End}(_BT) ≤ gl.\dim B + 1.\]
+
+&lt;p&gt;综上, $|gl.\dim A - gl.\dim B|≤ 1$.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-24T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Gl_Dim_A_B</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gl_Dim_A_B</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Canonical Resolution of Quiver algebra</title>
+          <description>&lt;h2 id=&quot;kq-的极小投射分解&quot;&gt;$kQ$ 的极小投射分解&lt;/h2&gt;
+
+&lt;p&gt;给定任意不带关系的路代数 $kQ$, 有限生成模 $M ∈ 𝐦𝐨𝐝_{kQ}$ 的&lt;a href=&quot;Ringel_Resolution&quot;&gt;极小投射分解&lt;/a&gt;是&lt;/p&gt;
+
+\[0 → ⨁_{α∈ Q_1}P(t(α))^{\dim  M_{s(α)}} → ⨁_{i∈ Q_0}P(i)^{\dim M_i} → M → 0.\]
+
+</description>
+          <pubDate>2025-04-24T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Ringel_Resolution</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Ringel_Resolution</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Proof of Gabriel's Theorem</title>
+          <description>&lt;div class=&quot;abstract&quot;&gt;
+  &lt;h5&gt;Abstract&lt;/h5&gt;
+  &lt;div&gt;&lt;p&gt;表示的轨道语言. Krull 维数公式. 不可约表示是极大开子轨道. 图分类定理 (有限型与仿射型). Gabriel 定理: $𝐝𝐢𝐦$ 是双射. 有限表示路代数 (无关系).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;gabriel-定理&quot;&gt;Gabriel 定理&lt;/h2&gt;
+
+&lt;h3 id=&quot;轨道&quot;&gt;轨道&lt;/h3&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(不带关系的箭图).
+选定有限无环的 quiver $Q$, 定义代数闭域 $k = \overline k$ 上的路代数 $kQ$, 并将 $Q$ 的资料记作 $(Q_0, Q_1, s, t)$, 其中 $t(α) \xleftarrow α s(α)$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(路代数). 回顾小 $k$-范畴的 $k$-等价 $𝐦𝐨𝐝_{kQ} ≃ 𝐫𝐞𝐩_k(Q)$. 将路代数的模记作函子&lt;/p&gt;
+
+\[M : Q → \mathrm{vec}_k, \quad [i ↦ M_i,\quad α ↦ M_α].\]
+&lt;/div&gt;
+
+&lt;p&gt;记 $P(i)$ 是 $i ∈ Q_0$ 处对应的投射模. 以上 $kQ$ 是有限维遗传代数. 任意 $M ∈ 𝐦𝐨𝐝_{kQ}$ 的&lt;a href=&quot;Ringel_Resolution&quot;&gt;极小投射分解&lt;/a&gt;是&lt;/p&gt;
+
+\[0 → ⨁_{α∈ Q_1}P(t(α))^{\dim  M_{s(α)}} → ⨁_{i∈ Q_0}P(i)^{\dim M_i} → M → 0.\]
+
+&lt;ol&gt;
+  &lt;li&gt;第一处态射将 $(p_α)_{(α : i → j ; \ k(i))}$ 对应至&lt;/li&gt;
+  &lt;li&gt;第二处态射由投射盖 $P(i)^{\dim M_i} ↠ M ⋅ e_i$ 决定.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;\begin{definition}[维数向量]
+  子范畴 $ι: Q_0 ↪ Q_1$ 给出拉回 
+  \begin{equation}
+    𝐝𝐢𝐦:= \quad ι^∗: 𝐦𝐨𝐝_{kQ} → 𝐦𝐨𝐝_{kQ_0},\quad M ↦ (\dim M_i)_{i ∈ Q_0}.
+  \end{equation} 
+\end{definition}&lt;/p&gt;
+
+&lt;p&gt;\begin{remark}
+  简单地看, $ι(M)$ 是将一切`` $M_α$ ‘‘替换作零态射. 函子 $𝐦𝐨𝐝$ 本质满, 但未必全忠实.
+\end{remark}&lt;/p&gt;
+
+&lt;p&gt;\begin{definition}[轨道]
+  给定 $𝐯 ∈ 𝐦𝐨𝐝_{kQ_0}$, 以 $𝐯$ 为维数向量的表示即 ${M ∣ 𝐝𝐢𝐦 \ M = 𝐯}$ 的同构类. 以下使用轨道定义之. 
+  \begin{enumerate}
+    (集合) 记 $𝐫𝐞𝐩(𝐯) = ∏ &lt;em&gt;{α  ∈  Q_1} k^{𝐯&lt;/em&gt;{t(α )} ×  𝐯_{s(α )}}$. $X$ 中的一个对象 (一族 $Q_1$-指标的矩阵) 对应一个以 $𝐯$ 为维度向量的模. 特别地, 
+    \begin{equation}
+        M_{t(α )} \xleftarrow{M_{α }} M_{s(α )} ,\quad k^{𝐯_{t(α )}} \xleftarrow{Y} k^{𝐯_{s(α)}}\quad (Y ∈  k^{𝐯_{t(α )} ×  𝐯_{s(α )}}). 
+    \end{equation}
+    (代数群) 称 $𝐫𝐞𝐩(𝐯) =$ 中元素等价 ($M ∼  N$), 当且仅当其作为 $kQ$-模同构. 相应地, 存在 $g ∈  ∏ &lt;em&gt;{i ∈  Q_0}\mathrm{GL}(k, 𝐯_i)$ 使得
+    \begin{equation}
+        g&lt;/em&gt;{t(α )} ⋅  M_α  = N_α  ⋅  g_{s(α )}^{-1} \ \quad (∀  α  ∈  Q_1)
+    \end{equation}
+    (群作用) 定义 $G := ∏ &lt;em&gt;{i ∈  Q_0}\mathrm{GL}(k, 𝐯_i)$ 在 $𝐫𝐞𝐩(𝐯) =$ 上的作用如下\footnote{这就是群的共轭作用. ``指标不同处’‘乘积为 $0$.}: 
+    \begin{equation}
+        g. (x_α )&lt;/em&gt;{α  ∈  Q_1} := (g_{t(α )} ⋅  x_α  ⋅  g_{s(α )})_{α  ∈  Q_1}. 
+    \end{equation}
+\end{enumerate} 
+\end{definition}&lt;/p&gt;
+
+&lt;p&gt;\begin{remark}
+  记 $[M]$ 是 $M$ 所在的轨道. $[M]$ 代表一个表示. &lt;br /&gt;
+\end{remark}&lt;/p&gt;
+
+&lt;p&gt;\begin{note}
+  Gabriel 定理证明的出发点: 找到 $𝐫𝐞𝐩(𝐯)$ 的所有 $G$-轨道. We call $𝐫𝐞𝐩(𝐯)$ a representation variety. 
+\end{note}&lt;/p&gt;
+
+&lt;p&gt;\subsection{预备定义: 维度公式}&lt;/p&gt;
+
+&lt;p&gt;\begin{theorem}[Krull 维度公式]
+  $G$ 是代数群概型, 以下直接使用 Chevalley 的系列定理.
+  \begin{enumerate}
+      所有 $G$-轨道 $[M]$ 都是不可约的局部闭集: 
+              \begin{enumerate}
+          不可约: 所有开子集稠密, 等价地, 任意两个开集有非空交; 
+          局部闭: $X$ 是 $\overline X$ 的开子集, 等价地, $X$ 是开集与闭集的交. 
+      \end{enumerate}
+      对任意 $M$, 稳定子群 $\mathrm{Stab}&lt;em&gt;{M}$ 是闭子群. 
+      Krull 维度公式: $\dim G = \dim \ [M] + \dim \mathrm{Stab}&lt;/em&gt;{M}$. \footnote{对线性空间, krull 维度就是线性维度. 以下不区分 $\dim$ 与 $\dim_k$.}
+      $(\overline{[M]} ∖ [M])$ 恰是一切 Krull 维度更小的轨道的并 (观察 ses). 
+  \end{enumerate}
+\end{theorem}&lt;/p&gt;
+
+&lt;p&gt;\begin{lemma}
+  对轨道的维度公式做一些调整: 
+  \begin{enumerate}
+      $\mathrm{Stab}&lt;em&gt;{M} = \mathrm{Aut}(M) ⊂ \mathrm{End}(M)$ 是稠密开集, 故维度相同; 
+      Euler 型 $q(𝐯) = ∑ _{i ∈  Q_0} 𝐯_i^2 - ∑ _{α  ∈  Q_1} 𝐯&lt;/em&gt;{s(α )}⋅  𝐯_{t(α )} = \dim G - \dim 𝐫𝐞𝐩(𝐯)$; 
+      遗传代数的 Euler 公式 $q(𝐯) = \dim \mathrm{End}(M) - \dim \mathrm{Ext}^1(M,M)$. 
+  \end{enumerate}
+  将以上带入 Krull 维度公式, 得``关键恒等式’’:
+  \begin{equation}
+      \dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M) = \dim \mathrm{End}(M) - q(𝐯). 
+  \end{equation}
+\end{lemma}&lt;/p&gt;
+
+&lt;p&gt;\begin{proposition}
+  以下是一些&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;几何的''结论.
+  \begin{enumerate}
+      极大轨道满足以下等价定义: $\mathrm{Ext}^1(M,M) =0$; $[M]$ 是开集; $\overline{[M]} = 𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$. 固定 $𝐯$, 极大轨道若存在则必唯一. 
+      极大轨道不存在的必要条件: $q(𝐯) ≤ 0$.
+      极小轨道就是半单表示; 等价地, $[X]$ 是闭集. 
+      给定 ses $0 →  X →  Y →  Z →  0$, 该 ses 不可裂当且仅当
+      \begin{equation}
+          [X] ∪  [Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y]. 
+      \end{equation}
+  \end{enumerate}
+  \begin{proof}
+    1. 的证明较为繁琐, 且对主定理的证明无帮助, 故从略. 
+    \begin{itemize}
+      (1. 的证明). 由&lt;/code&gt;关键恒等式’’, $\dim \mathrm{Ext}^1(M,M) = 0$ 当且仅当 $\dim [M] = \dim 𝐫𝐞𝐩(𝐯)$. 
+      \begin{enumerate}
+        若 $\mathrm{Ext}^1(M,M) =0$, 则 $\overline{[M]} = 𝐫𝐞𝐩(𝐯)$. 由 $[M]$ 在 $\overline {[M]}$ 中开, 得 $[M]$ 在 $𝐫𝐞𝐩(𝐯)$ 中开. 
+        若 $[M]$ 在 $𝐫𝐞𝐩(𝐯)$ 中开, 则必稠密. 此时 $\dim [M] = \dim 𝐫𝐞𝐩(𝐯)$, 因此 $\mathrm{Ext}^1(M,M) =0$. 
+      \end{enumerate}
+      (2. 的证明). 若 $q(𝐯) ≤ 0$, 则对任意非零 $M$ 都有 $\dim 𝐫𝐞𝐩 (𝐯) &amp;gt; \dim [M]$.&lt;br /&gt;
+      (4. 的证明). 若 $0 → L \xrightarrow f M \xrightarrow g N → 0$ 不可裂, 则 $[L ⊕ N] ⊂ \overline{[M]} ∖ [M]$. 
+      将以上 ses 看作 $Q$-指标的线性空间的 ses. 依照线性代数, 存在同时分块上三角化 
+      \begin{equation}
+          0 → \begin{pmatrix}
+              L_λ  &amp;amp; O 
+          \end{pmatrix}\xrightarrow{\binom{f_λ }{0}} \begin{pmatrix}
+              M^1&lt;em&gt;λ  &amp;amp; M^2_λ  \ O &amp;amp; M^4 _λ&lt;br /&gt;
+          \end{pmatrix}\xrightarrow{(0 \ \ g_λ )} \begin{pmatrix}
+              O \ 
+              N_λ 
+          \end{pmatrix} →  0. 
+      \end{equation}
+      取 $G$ 中元素为 $g_t := \begin{pmatrix}
+          t ⋅  \mathrm{id}&lt;/em&gt;{L_i} &amp;amp; O \ O &amp;amp; \mathrm{id}_{N_i}
+      \end{pmatrix}$, 考虑 $M$ 在单参数子群 $g_t$ 共轭作用下的轨道 $[M]_t$. 由 $k ∖ {0}$ 在 $k$ 中稠密, $[M]_0 ∈  \overline{{[M]_t ∣  t ≠  0}}$.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  再说明 $L⊕  N ≇  M$. 若同构, 由长正合列知,  
+  \begin{equation}
+      \dim \mathrm{im}\left[\mathrm{Hom}(L, L) → \mathrm{Ext}^1(N, L)\right] = 0. 
+  \end{equation}
+  由上述正合列不可裂, 得矛盾. 
+\end{itemize}    \end{proof} \end{proposition}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;\subsection{预备定义: 根系}&lt;/p&gt;
+
+&lt;p&gt;\begin{definition}[根系]
+  给定二次型 $q : ℤ^n × ℤ^n → ℤ$, 定义
+  \begin{enumerate}
+      (根系) 定义有限型 quiver 的根系 $\Delta := { 𝐯 \mid q(𝐯) &amp;lt; 1, 𝐯 \neq \mathbf 0}$; 
+      (虚实) 实根 (虚根) 满足 $q(𝐯)=0$ ($q (𝐯)=1$), 记作 $\Delta ^{\mathrm{Re}}$ ($\Delta ^{\mathrm{Im}}$); 
+      (正负) 各项 $\geq 0$ ($\leq 0$) 整数的根称为正根 (负根), 记作 $\Delta _+$ ($\Delta _-$).
+  \end{enumerate} 
+\end{definition}&lt;/p&gt;
+
+&lt;p&gt;\begin{theorem}[图分类定理]
+对有限, 连通, 无向, 允许重边的图 $Q$, 记 Euler 型 $q$.
+\begin{itemize}
+  记 $\overline Q$ 是 $Q$ 的无向化 (去除箭头), $A$ 是其邻接矩阵, 则 $q$ 对应的对称二次型为 $B: = \frac{1}{2}(2I - A)$.
+\end{itemize}
+以下著名定理分类了正定或几乎正定的邻接矩阵 $B$. 
+\begin{enumerate}
+  称 $q$ 是有限型的, 当且仅当 $q$ 正定, 当且仅当 $Δ$ 是有限集, 当且仅当 $\overline Q$ 是 Dynkin 图 $A_n$, $D_n$, 以及 $E_{6,7,8}$, 角标 $n$ 是顶点数. 
+  称 $q$ 是仿射型的, 当且仅当 $q$ 半正定且 $\dim N(B) = 1$, 当且仅当 $Δ$ 是有限集与 $ℤ⋅ 𝐤$ 的直和, 当且仅当 $\overline Q$ 是 $\widehat{A_n}$, $\widehat{D_n}$, $\widehat{E_{6,7,8}}$. 
+  \begin{itemize}
+      \item[注] $n + 1$ 是顶点数; $𝐤$ 见下图. 
+  \end{itemize}
+  特别地, $Δ  = Δ  _+ ⊔  Δ  _-$. 换言之, 根系中不存在既正又负的向量.
+\end{enumerate}
+\begin{equation}
+  % https://q.uiver.app/#q=WzAsNDUsWzIsNywiMSJdLFsxLDcsIjEiXSxbMSw1LCIxIl0sWzIsNSwiMSJdLFswLDYsIlxcd2lkZWhhdHtBX259Il0sWzUsNywiMSJdLFs0LDcsIjIiXSxbMyw3LCIxIl0sWzQsNiwiXFxjZG90cyJdLFs0LDUsIjIiXSxbMyw2LCJcXHdpZGVoYXR7RF9ufSJdLFs2LDcsIjEiXSxbNiw2LCIyIl0sWzYsNSwiMyJdLFs3LDUsIjIiXSxbOCw1LCIxIl0sWzYsNCwiMiJdLFs2LDMsIjEiXSxbNSw2LCJcXHdpZGVoYXR7RV82fSJdLFsyLDIsIjEiXSxbMywyLCIyIl0sWzQsMiwiMyJdLFs1LDIsIjQiXSxbNiwyLCIzIl0sWzcsMiwiMiJdLFs4LDIsIjEiXSxbNSwzLCIyIl0sWzgsMSwiMiJdLFs3LDEsIjQiXSxbNiwxLCI2Il0sWzUsMSwiNSJdLFs0LDEsIjQiXSxbMywxLCIyIl0sWzIsMSwiMiJdLFsxLDEsIjEiXSxbNSwwLCIzIl0sWzQsMywiXFx3aWRlaGF0e0VfN30iXSxbNCwwLCJcXHdpZGVoYXR7RV84fSJdLFsxLDQsIjEiXSxbMiw0LCIxIl0sWzMsNCwiMSJdLFs0LDQsIjIiXSxbNSw0LCIxIl0sWzEsNiwiXFxjZG90cyJdLFsyLDYsIlxcY2RvdHMiXSxbMSwwLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDcsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOSw4LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsNiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMSwxMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMiwxMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMywxNiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxNiwxNywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMywxNCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxNCwxNSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMCwyMSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyNCwyNSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMiwyMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMiwyNiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyNywyOCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyOSwzMCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMSwzMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMywzNCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMCwzMSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyOCwyOSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMiwzMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxOSwyMCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMSwyMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMywyNCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMCwzNSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs5LDQxLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQxLDQwLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQxLDQyLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsNDMsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNDMsMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDM4LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzM4LDM5LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzM5LDMsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMyw0NCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0NCwwLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNDMsIlxcY29sb3J7Ymx1ZX06IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEwLDgsIlxcY29sb3J7Ymx1ZX06IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE4LDEyLCJcXGNvbG9ye2JsdWV9OiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszNiwyNiwiXFxjb2xvcntibHVlfToiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMzcsMzUsIlxcY29sb3J7Ymx1ZX06IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&amp;amp;]
+	\&amp;amp;\&amp;amp;\&amp;amp;\&amp;amp; {\widehat{E_8}} \&amp;amp; 3 &lt;br /&gt;
+	\&amp;amp; 1 \&amp;amp; 2 \&amp;amp; 2 \&amp;amp; 4 \&amp;amp; 5 \&amp;amp; 6 \&amp;amp; 4 \&amp;amp; 2 &lt;br /&gt;
+	\&amp;amp;\&amp;amp; 1 \&amp;amp; 2 \&amp;amp; 3 \&amp;amp; 4 \&amp;amp; 3 \&amp;amp; 2 \&amp;amp; 1 &lt;br /&gt;
+	\&amp;amp;\&amp;amp;\&amp;amp;\&amp;amp; {\widehat{E_7}} \&amp;amp; 2 \&amp;amp; 1 &lt;br /&gt;
+	\&amp;amp; 1 \&amp;amp; 1 \&amp;amp; 1 \&amp;amp; 2 \&amp;amp; 1 \&amp;amp; 2 &lt;br /&gt;
+	\&amp;amp; 1 \&amp;amp; 1 \&amp;amp;\&amp;amp; 2 \&amp;amp;\&amp;amp; 3 \&amp;amp; 2 \&amp;amp; 1 &lt;br /&gt;
+	{\widehat{A_n}} \&amp;amp; \cdots \&amp;amp; \cdots \&amp;amp; {\widehat{D_n}} \&amp;amp; \cdots \&amp;amp; {\widehat{E_6}} \&amp;amp; 2 &lt;br /&gt;
+	\&amp;amp; 1 \&amp;amp; 1 \&amp;amp; 1 \&amp;amp; 2 \&amp;amp; 1 \&amp;amp; 1
+	\arrow[”{\color{blue}:}”{description}, draw=none, from=1-5, to=1-6]
+	\arrow[no head, from=2-3, to=2-2]
+	\arrow[no head, from=2-4, to=2-3]
+	\arrow[no head, from=2-5, to=2-4]
+	\arrow[no head, from=2-6, to=1-6]
+	\arrow[no head, from=2-6, to=2-5]
+	\arrow[no head, from=2-7, to=2-6]
+	\arrow[no head, from=2-8, to=2-7]
+	\arrow[no head, from=2-9, to=2-8]
+	\arrow[no head, from=3-3, to=3-4]
+	\arrow[no head, from=3-4, to=3-5]
+	\arrow[no head, from=3-5, to=3-6]
+	\arrow[no head, from=3-6, to=3-7]
+	\arrow[no head, from=3-6, to=4-6]
+	\arrow[no head, from=3-7, to=3-8]
+	\arrow[no head, from=3-8, to=3-9]
+	\arrow[”{\color{blue}:}”{description}, draw=none, from=4-5, to=4-6]
+	\arrow[no head, from=5-2, to=5-3]
+	\arrow[no head, from=5-3, to=6-3]
+	\arrow[no head, from=5-5, to=5-4]
+	\arrow[no head, from=5-5, to=5-6]
+	\arrow[no head, from=5-7, to=4-7]
+	\arrow[no head, from=6-2, to=5-2]
+	\arrow[no head, from=6-3, to=7-3]
+	\arrow[no head, from=6-5, to=5-5]
+	\arrow[no head, from=6-5, to=7-5]
+	\arrow[no head, from=6-7, to=5-7]
+	\arrow[no head, from=6-7, to=6-8]
+	\arrow[no head, from=6-8, to=6-9]
+	\arrow[”{\color{blue}:}”{marking, allow upside down}, draw=none, from=7-1, to=7-2]
+	\arrow[no head, from=7-2, to=6-2]
+	\arrow[no head, from=7-3, to=8-3]
+	\arrow[”{\color{blue}:}”{marking, allow upside down}, draw=none, from=7-4, to=7-5]
+	\arrow[no head, from=7-5, to=8-5]
+	\arrow[”{\color{blue}:}”{marking, allow upside down}, draw=none, from=7-6, to=7-7]
+	\arrow[no head, from=7-7, to=6-7]
+	\arrow[no head, from=8-2, to=7-2]
+	\arrow[no head, from=8-2, to=8-3]
+	\arrow[no head, from=8-5, to=8-4]
+	\arrow[no head, from=8-6, to=8-5]
+	\arrow[no head, from=8-7, to=7-7]
+\end{tikzcd}.
+\end{equation}
+\end{theorem}&lt;/p&gt;
+
+&lt;p&gt;\subsection{Gabriel 定理的证明}&lt;/p&gt;
+
+&lt;p&gt;\begin{theorem}[Gabriel 定理]
+  给定代数闭域上的路代数 $kQ$, $\overline Q$ 是 Dynkin 图. 
+  \begin{equation}
+      𝐝𝐢𝐦 : \mathbf{rep}_k (Q) → \mathbf{rep}_k (Q_0),\quad [M] ↦  𝐝𝐢𝐦 \ M 
+  \end{equation}
+  建立了不可分解表示与 $Δ ^+$ 的双射对应: 
+  \begin{enumerate}
+      给定不可分解模 $M$, 表示 $[M]$ 对应 $𝐝𝐢𝐦 \ M$; 
+      给定正根 $𝐯$, 则 $𝐫𝐞𝐩(𝐯)$ 存在极大轨道 $[M]$, 对应不可约表示. 
+  \end{enumerate}
+  特别地, $kQ$ 的不可分解表示有限, 当且仅当 $\overline Q$ 是 Dynkin 图. 
+  \begin{proof}
+      假定 $\overline Q$ 是 Dynkin 图, 记 $𝐝𝐢𝐦 : \mathrm{Idem}(kQ) → Δ  _+$. 
+      \begin{enumerate}
+          (良定义) 若 $M$ 不可分解, 以下就 $M$ 是否为 brick 进行分类讨论. 
+          \begin{enumerate}
+              若 $M = B$, 则 $\dim \mathrm{End}(M)$. 依照
+              \begin{equation}
+                  0 &amp;lt; q(𝐝𝐢𝐦 \ M) = \dim {\mathrm{End}(M)} - \dim \mathrm{Ext}^1(M,M), 
+              \end{equation}
+              此时只能有 $\mathrm{Ext}^1(M,M) = 0$, 以及 $q(𝐝𝐢𝐦 \ M) = 1$. 
+              若 $M ≠  B$, 先将 $B ↪  M ↠ B$ 补全作 PBPO 方块\footnote{遗传范畴中, 任意满-单分解可以补全作 PBPO 方块.}. 由 $M$ 与 $B$ 不可分解, 以及 $M ≇ B$, 得 $\mathrm{Ext}^1(B,B) ≠ 0$. 故 $q(𝐝𝐢𝐦 \ B) ≤  0$, 矛盾. 
+          \end{enumerate}
+          综上, $𝐝𝐢𝐦$ 的去向确实是 $Δ _+$. 特别地, $\mathrm{Idem}(kQ) = \mathrm{Brick}(kQ)$, 且任意 brick 都是 $\mathrm{Ext}^1$-自垂直的. 
+          (单射) 由&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;关键恒等式'', 自垂直的 $M$ 满足 $𝐫𝐞𝐩(𝐝𝐢𝐦 \ M) = \dim \ [M]$. 由 $𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$ 不可约, 极大轨道若存在则必唯一. 
+          (满射) 只需证明 $𝐫𝐞𝐩(𝐯)$ 中的最大\footnote{由 Zariski 拓扑, 存在维度是 $\dim 𝐫𝐞𝐩(𝐯)$ 的轨道. 由不可约性, 这是唯一最大的轨道.}轨道 $[M]$ 是不可分解的. 若 $M = ⨁_{i ∈ I}M_i$, 由 ses 三项的轨道关系知 $\mathrm{Ext}^1(M_i, M_j) =0$. 此时, $1 = $
+          \begin{equation}
+              q(𝐯) = q\left(∑ _{i ∈  I}𝐝𝐢𝐦 \ M_i\right) = ∑  _{i ∈  I} q(𝐝𝐢𝐦 \ M_i) + ∑ _{i ≠  j} \dim (M_i, M_j).   
+          \end{equation}
+          矛盾. 综上, $𝐝𝐢𝐦$ 确实是双射. 
+      \end{enumerate}
+      最后是对有限性的说明. 
+      \begin{enumerate}
+          若 $\overline Q$ 是 Dynkin 图, 则 $\mathrm{Idem}(kQ)$ 是有限集. 
+          反之, 若 $\overline Q$ 不是 Dynkin 图, 则存在仿射型子图, 因此存在非零的 $𝐯 ≥ 0$ 使得 $q(𝐯) = 0$. 由&lt;/code&gt;关键恒等式’’, 对任意 $𝐝𝐢𝐦 \ M = \mathbf  v$ 总有
+          \begin{align}
+              \dim 𝐫𝐞𝐩(𝐯) &amp;amp; = \dim \ [M] + \dim \mathrm{Ext}^1(M,M) \ 
+              &amp;amp; = \dim \ [M] + \dim \mathrm{End}(M) - q(𝐯) \ 
+              &amp;amp; ≥  \dim \ [M] + 1. 
+          \end{align}
+          由 Zariski 拓扑, 以 $𝐯$ 为维度向量的不可约表示必然是无穷个. 
+      \end{enumerate}
+  \end{proof}
+\end{theorem}&lt;/p&gt;
+</description>
+          <pubDate>2025-04-24T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Proof-Gabriel</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Proof-Gabriel</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>$𝐜𝐨𝐠$ 与 $𝐠𝐞𝐧$ 的等价定义</title>
           <description>&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象). 给定对象 $X$ 与 $M$.&lt;/p&gt;
 &lt;ol&gt;
@@ -143,29 +559,55 @@ $$
 
 \[0 → K → T^n → M → 0 \quad ∈ 𝒯.\]
   &lt;/li&gt;
-  &lt;li&gt;$^⟂𝒯 = 𝐚𝐝𝐝(T)$.&lt;/li&gt;
-  &lt;li&gt;$M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.&lt;/li&gt;
-  &lt;li&gt;内射对象必属于 $𝒯$.
+  &lt;li&gt;$(^⟂𝒯) ∩ 𝒯 = 𝐚𝐝𝐝(T)$, 即 $𝒯 ∩ τ ^{-1} ℱ = 𝐚𝐝𝐝(T)$.
     &lt;blockquote&gt;
-      &lt;p&gt;注: 这是显然的, 因为 $𝒯 = T^⟂ ⊇ 𝐢𝐧𝐣$.&lt;/p&gt;
+      &lt;p&gt;一般地, 只有 $(^⟂𝒯) ∩ 𝒯 = 𝒯 ∩ τ ^{-1} ℱ$.&lt;/p&gt;
     &lt;/blockquote&gt;
   &lt;/li&gt;
-  &lt;li&gt;投射对象若属于 $𝒯$, 则属于 $𝐚𝐝𝐝(T)$.
+  &lt;li&gt;$M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.
     &lt;blockquote&gt;
-      &lt;p&gt;注: 若投射对象 $P ∈ 𝒯 = 𝐠𝐞𝐧 (T)$, 则 $P$ 是某一 $T^n$ 的直和项.&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;投射内射对象必属于 $𝐚𝐝𝐝(T)$.
-    &lt;blockquote&gt;
-      &lt;p&gt;注: 投射对象是 $A$ 的直和项, 从而有 $𝐚𝐝𝐝(T)$ 余消解 $P ↪ T → \cdots$. 若其是内射对象, 则第一处单射可裂.&lt;/p&gt;
+      &lt;p&gt;一般地, $M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T ↠ M$ 是满的.&lt;/p&gt;
     &lt;/blockquote&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;不显然的命题是前两条.
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;先构造右逼近. 取有限集 $𝒮 = (f_i)$ 为 $(T,M)$ 的生成元, 此时&lt;/p&gt;
+
+\[T^𝒮 → M, \quad t ↦ ∑ f_i(t_i),\]
+
+&lt;p&gt;与 $\mathrm{End}(T)^n ↠ (T,M)$ 都是满态射.
 &lt;br /&gt;
-若&lt;/p&gt;
+依照长正合列, $\mathrm{Ext}^1(T,K) = 0$, 从而 $K ∈ T^⟂ = 𝒯$.
+&lt;br /&gt;
+&lt;br /&gt;
+继而证明 ${}^⟂ 𝒯 = 𝐚𝐝𝐝 (T)$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;一方面, $𝐚𝐝𝐝 (T) ⊆ {}^⟂ 𝒯 = {}^⟂ (T^⟂)$.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;另一方面, 若 $X ∈ ({}^⟂ 𝒯) ∩ 𝒯$, 考虑满的极小右-$𝐚𝐝𝐝(T)$ 逼近, 得 $𝒯$ 中的 ses&lt;/p&gt;
+
+\[0 → K → T^n → X → 0\quad ∈ 𝒯.\]
+
+    &lt;p&gt;由假定, $\mathrm{Ext}^1(X, K) = 0$. 从而上述 ses 可裂.
+&lt;br /&gt;
+&lt;br /&gt;
+最后证明 $M ∈ 𝒯$ 时, 配对 $(T, M) ⊗ T → M$ 是同构. 类似&lt;a href=&quot;Gen_Eq_T&quot;&gt;此证明&lt;/a&gt;, 取 $(T,-)$-右正合列&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+\[T_1 → T_0 → X → 0\]
+
+&lt;p&gt;此时, 有右正合列的交换图&lt;/p&gt;
+
+\[\begin{bmatrix}
+ (T,T_1) ⊗ T &amp;amp; →  &amp;amp; (T,T_0) ⊗ T &amp;amp; →  &amp;amp; (T,X) ⊗ T &amp;amp; →  &amp;amp; 0\\
+∥  &amp;amp;  &amp;amp; ∥  &amp;amp;  &amp;amp; ↓  &amp;amp;  &amp;amp; \\
+T_1 &amp;amp; →  &amp;amp; T_0 &amp;amp; →  &amp;amp; M &amp;amp; →  &amp;amp; 0.
+\end{bmatrix}.\]
+
+&lt;p&gt;由五引理, $(T,X) ⊗ T → X$ 是同构.&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
@@ -205,6 +647,71 @@ $$
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
           <link>https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs</link>
           <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>遗传范畴的满-单分解补全作 PBPO</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;在定义米田 (大) 群时, 不必要求范畴是局部小的. 以上结论亦无此要求然.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;遗传范畴中的满单分解均可补全作推出拉回方块.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;给定满-单态射复合 $\overset π ↠ \overset ι ↪$. 考虑 ses&lt;/p&gt;
+
+\[θ : 0 → K → X \overset π → C → 0\]
+
+&lt;p&gt;由 $\mathrm{Ext}^2(-, K)$ 消失, $\mathrm{Ext}^1(ι, K)$ 是满态射. 这说明 $θ$ 是某 ses 关于 $ι$ 推出的像, 换言之, 存在正合列的交换图&lt;/p&gt;
+
+\[\begin{bmatrix}
+0 &amp;amp; →   &amp;amp; K &amp;amp; →  &amp;amp; X &amp;amp; \xrightarrow π   &amp;amp; C &amp;amp; →  &amp;amp; 0\\
+ &amp;amp;  &amp;amp; ∥  &amp;amp;  &amp;amp; ⇣  &amp;amp; ▦  &amp;amp; \ \ ↓ι  &amp;amp;  &amp;amp; \\
+0 &amp;amp; →  &amp;amp; K &amp;amp; ⇢ &amp;amp; E &amp;amp; ⇢  &amp;amp; F &amp;amp; → &amp;amp; 0
+\end{bmatrix}.\]
+
+&lt;p&gt;此处 $▦$ 即为所求.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;(关于 $3 × 3$-引理).
+考虑 $3 × 3$ 的短正合列的交换图&lt;/p&gt;
+
+\[\begin{bmatrix}
+ &amp;amp; X_{1} &amp;amp; \overset{i_{1}}{\hookrightarrow } &amp;amp; Y_{1} &amp;amp; \overset{p_{1}}{\twoheadrightarrow } &amp;amp; Z_{1}\\
+ &amp;amp; f_{1} \downarrow \ \  &amp;amp;  &amp;amp; g_{1} \downarrow \ \  &amp;amp;  &amp;amp; h_{1} \downarrow \ \ \ \\
+ &amp;amp; X_{2} &amp;amp; \overset{i_{2}}{\hookrightarrow } &amp;amp; Y_{2} &amp;amp; \overset{p_{2}}{\twoheadrightarrow } &amp;amp; Z_{2}\\
+ &amp;amp; f_{2} \downarrow \ \  &amp;amp;  &amp;amp; g_{2} \downarrow \ \  &amp;amp;  &amp;amp; g_{2} \downarrow \ \ \\
+ &amp;amp; X_{3} &amp;amp; \overset{i_{3}}{\hookrightarrow } &amp;amp; Y_{3} &amp;amp; \overset{p_{3}}{\twoheadrightarrow } &amp;amp; Z_{3}
+\end{bmatrix}.\]
+
+&lt;p&gt;此时有四项正合列的交换图:&lt;/p&gt;
+
+\[\begin{bmatrix}
+θ: &amp;amp; X_{1} &amp;amp; \xrightarrow{\binom{i_{1}}{-f_{1}}} &amp;amp; X_{2} \oplus Y_{1} &amp;amp; \xrightarrow{( g_{1} \ i_{2})} &amp;amp; Y_{2} &amp;amp; \xrightarrow{g_{2} \circ p_{2}} &amp;amp; Z_{3}\\
+&amp;amp; \parallel  &amp;amp;  &amp;amp; \pi \downarrow \ \  &amp;amp;  &amp;amp; p_{2} \downarrow \ \  &amp;amp;  &amp;amp; \parallel \\
+η: &amp;amp; X_{1} &amp;amp; \xrightarrow{i_{1}} &amp;amp; Y_{1} &amp;amp; \xrightarrow{h_{1} \circ p_{1}} &amp;amp; Z_{2} &amp;amp; \xrightarrow{g_{2}} &amp;amp; Z_{3}
+\end{bmatrix}.\]
+
+&lt;p&gt;因此, 以上 $η$ 与 $θ$ 是 $\mathrm{Ext}^2(Z_3, X_1)$ 中相同的元素.
+&lt;br /&gt;
+&lt;br /&gt;
+类似地, $X_1 → Y_1 → Z_2 → Z_3$ 与 $(-θ)$ 是 $\mathrm{Ext}^2(Z_3, X_1)$ 中相同的元素. 这说明以下两条四项正合列在 $\mathrm{Ext}^2(Z_3, X_1)$ 中互为相反数.&lt;/p&gt;
+
+\[\begin{bmatrix}
+X_{1} &amp;amp; \rightarrow  &amp;amp; Y_{1} &amp;amp;  &amp;amp; \\
+\downarrow  &amp;amp;  &amp;amp;  &amp;amp; \searrow  &amp;amp;  \\
+X_{2} &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; Z_{2}\\
+ &amp;amp; \searrow  &amp;amp;  &amp;amp;  &amp;amp; \downarrow \\
+ &amp;amp;  &amp;amp; Y_{3} &amp;amp; \rightarrow  &amp;amp; Z_{3}
+\end{bmatrix}.\]
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-23T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Hereditary_PBPO</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hereditary_PBPO</guid>
         </item>
       
     
@@ -799,10 +1306,99 @@ h_X\otimes \prod-&amp;amp;\to&amp;amp;h_Y\otimes \prod-&amp;amp;\to&amp;amp;F\ot
     
       
         <item>
-          <title>期中考试试卷与解答</title>
+          <title>2025-04-24 试卷讲评与习题课</title>
           <description>&lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Problem 1&lt;/strong&gt; (20points).&lt;/p&gt;
+&lt;div class=&quot;abstract&quot;&gt;
+  &lt;h5&gt;Abstract&lt;/h5&gt;
+  &lt;div&gt;&lt;p&gt;本次测试中, &lt;strong&gt;Problem 1&lt;/strong&gt; 与 &lt;strong&gt;Problem 4&lt;/strong&gt; 是原题, &lt;strong&gt;Problem 5&lt;/strong&gt; 是在 &lt;a href=&quot;https://oc.sjtu.end.cn&quot;&gt;Canvas&lt;/a&gt; 上发布过的别班习题. 主要内容:&lt;/p&gt;
+
+\[\underset{\text{第一节课}}{\underbrace{\text{试卷分发与颁奖仪式} ⇒  \text{试卷讲评} ⇒  \text{专题练习}}}
+⇒
+\underset{\text{第二节课}}{\underbrace{\text{任老师讲新题}}}.\]
+
+&lt;p&gt;以下是各题平均得分.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;T1&lt;/td&gt;
+      &lt;td&gt;T2&lt;/td&gt;
+      &lt;td&gt;T3&lt;/td&gt;
+      &lt;td&gt;T4&lt;/td&gt;
+      &lt;td&gt;T5&lt;/td&gt;
+      &lt;td&gt;T6&lt;/td&gt;
+      &lt;td&gt;平均&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;16.578&lt;/td&gt;
+      &lt;td&gt;17.733&lt;/td&gt;
+      &lt;td&gt;16.489&lt;/td&gt;
+      &lt;td&gt;12.911&lt;/td&gt;
+      &lt;td&gt;8.111&lt;/td&gt;
+      &lt;td&gt;9.489&lt;/td&gt;
+      &lt;td&gt;81.311&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;以下是各分数段人数 (共 45 人与考).&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;100&lt;/td&gt;
+      &lt;td&gt;90-99&lt;/td&gt;
+      &lt;td&gt;80-89&lt;/td&gt;
+      &lt;td&gt;70-79&lt;/td&gt;
+      &lt;td&gt;60-69&lt;/td&gt;
+      &lt;td&gt;0-59&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;应当需要强调的错误.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;商空间 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/&lt;/code&gt;, 与差集 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;线性空间: $U ∩ V = 0$, 而非 $U ∩ V = ∅$.&lt;/li&gt;
+  &lt;li&gt;直和 $\operatorname{im} φ ⊕ \ker φ = V$, 而非 $\operatorname{im} φ ∪ \ker φ$.&lt;/li&gt;
+  &lt;li&gt;误用 $(∩, +)$ 的分配律.&lt;/li&gt;
+  &lt;li&gt;$f ∈ ℚ[x]$ 没有有理根, 从而不可约?&lt;/li&gt;
+  &lt;li&gt;写错任课教师姓名, 如杨扬畅炀, 以及若干 Unicode 未收入的字.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;试卷分发与颁奖仪式&quot;&gt;试卷分发与颁奖仪式&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;details&gt;
+  &lt;summary&gt;满分同学 (排名不分先后)&lt;/summary&gt;
+  &lt;p&gt;余逍遥, 方逸涵, 马子博, 李书杭, 胡志豪, 汤嘉铭.&lt;/p&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;details&gt;
+  &lt;summary&gt;进步王 (本次成绩 减 去年期末原始分)&lt;/summary&gt;
+  &lt;p&gt;欧阳屹洺, 方逸涵, 蔺准, 马子博, 余逍遥, 赵毅恒, 李书杭, 黄弋铭, 姜皓文等.
+  &lt;/p&gt;
+&lt;/details&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;试卷讲评&quot;&gt;试卷讲评&lt;/h2&gt;
+
+&lt;div class=&quot;problem&quot;&gt;&lt;p&gt;(20points).&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -825,8 +1421,9 @@ h_X\otimes \prod-&amp;amp;\to&amp;amp;h_Y\otimes \prod-&amp;amp;\to&amp;amp;F\ot
     &lt;/ol&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;em&gt;Solution&lt;/em&gt;. 第一问是&lt;a href=&quot;https://czhang271828.github.io/Linear-algebra/2024%20%E7%A7%8B-%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/2023/mess%20-%20%E5%89%AF%E6%9C%AC/%E5%B0%8F%E6%B5%8B%E8%AF%95%E5%8D%B7.pdf&quot;&gt;原题 (去年试卷第三题)&lt;/a&gt;的弱化版本 (少了一次求导), 思路完全相同. 考虑换元 ($x := y + 1$) 即可. 此时&lt;/p&gt;
+&lt;div class=&quot;solution&quot;&gt;&lt;p&gt;第一问是&lt;a href=&quot;https://czhang271828.github.io/Linear-algebra/2024%20%E7%A7%8B-%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/2023/mess%20-%20%E5%89%AF%E6%9C%AC/%E5%B0%8F%E6%B5%8B%E8%AF%95%E5%8D%B7.pdf&quot;&gt;原题 (去年试卷第三题)&lt;/a&gt;的弱化版本 (少了一次求导), 思路完全相同. 考虑换元 ($x := y + 1$) 即可. 此时&lt;/p&gt;
 
 \[g(y) := f(x) = f(y+1) = \frac{(y+1)^p - 1}{(y+1) - 1} = y^{p-1} + \binom{p}{1} y^{p-2} + \cdots + \binom{p}{p-1} y^0.\]
 
@@ -838,10 +1435,11 @@ h_X\otimes \prod-&amp;amp;\to&amp;amp;h_Y\otimes \prod-&amp;amp;\to&amp;amp;F\ot
   &lt;li&gt;关于充分性: 若多项式有实根 $(x-λ)$, 即 $f(x) = h(x) ⋅ (x-λ)$, 展开验证即可 ($b_∙$ 是 $h$ 的系数, 最后的分式是 $-λ⁻¹$).&lt;/li&gt;
   &lt;li&gt;必要性即倒推充分性, 证明略.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Problem 2&lt;/strong&gt; (20 points).&lt;/p&gt;
+&lt;div class=&quot;problem&quot;&gt;&lt;p&gt;(20 points).&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -865,8 +1463,9 @@ h_X\otimes \prod-&amp;amp;\to&amp;amp;h_Y\otimes \prod-&amp;amp;\to&amp;amp;F\ot
     &lt;/ol&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;em&gt;Solution&lt;/em&gt;. 第一问先证 $V_a$ (零化 $a$ 之多项式集) 是线性空间.&lt;/p&gt;
+&lt;div class=&quot;solution&quot;&gt;&lt;p&gt;第一问先证 $V_a$ (零化 $a$ 之多项式集) 是线性空间.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;(非空). 零多项式属于 $V_a$.&lt;/li&gt;
@@ -897,10 +1496,11 @@ h_X\otimes \prod-&amp;amp;\to&amp;amp;h_Y\otimes \prod-&amp;amp;\to&amp;amp;F\ot
 \[γ_1 = f_1,\quad γ_2 = f_2 - f_1,\quad γ_3 = f_3 - f_2.\]
   &lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Problem 3&lt;/strong&gt; (20 points). Suppose $V$ is an $n$-dimensional vector space over a number field, and let $V_1, V_2, \ldots, V_s$ be $s$ proper subspaces of $V$. Prove that&lt;/p&gt;
+&lt;div class=&quot;problem&quot;&gt;&lt;p&gt;(20 points). Suppose $V$ is an $n$-dimensional vector space over a number field, and let $V_1, V_2, \ldots, V_s$ be $s$ proper subspaces of $V$. Prove that&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -912,8 +1512,9 @@ h_X\otimes \prod-&amp;amp;\to&amp;amp;h_Y\otimes \prod-&amp;amp;\to&amp;amp;F\ot
 \[\left\{ε _1, ε _2, \ldots, ε _n\right\} ⋂ \left(V_1 ∪  V_2 ∪  \cdots ∪  V_s\right)=∅.\]
   &lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;em&gt;Solution&lt;/em&gt;. 对任意 $x ∈ 𝔽$ 构造 VanDerMonde (列) 向量&lt;/p&gt;
+&lt;div class=&quot;solution&quot;&gt;&lt;p&gt;对任意 $x ∈ 𝔽$ 构造 VanDerMonde (列) 向量&lt;/p&gt;
 
 \[\{v (x) = (1,x,x^2,\ldots, x^{n-1}) ∣ x ∈ 𝔽\},\]
 
@@ -924,18 +1525,20 @@ h_X\otimes \prod-&amp;amp;\to&amp;amp;h_Y\otimes \prod-&amp;amp;\to&amp;amp;F\ot
 &lt;p&gt;第二问: 显然.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;注: 这一技巧 (构造任意多一般位置的向量) 在上学期提及过.&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Problem 4&lt;/strong&gt; (15 points). Suppose $φ _1, φ _2, \ldots, φ_m$ are linear maps over the $n$-dimensional vector space $V$, such that&lt;/p&gt;
+&lt;div class=&quot;problem&quot;&gt;&lt;p&gt;(15 points). Suppose $φ _1, φ _2, \ldots, φ_m$ are linear maps over the $n$-dimensional vector space $V$, such that&lt;/p&gt;
 
 \[φ _i^2 = φ _i\quad  \text{and}\quad  φ _i φ _j = 0 \quad (i ≠ j, \ 1 ≤ i, \ j ≤ m).\]
 
 &lt;p&gt;Prove that&lt;/p&gt;
 
 \[V=\operatorname{im} \varphi_1 ⊕ \operatorname{im} \varphi_2 ⊕ \cdots ⊕ \operatorname{im} φ_m ⊕ \bigcap_{i=1}^m \operatorname{ker} φ_i .\]
+&lt;/div&gt;
 
-&lt;p&gt;&lt;em&gt;Solution&lt;/em&gt;. 这是&lt;a href=&quot;https://czhang271828.github.io/Linear-algebra/Notes/27Mar%20(%E4%B9%A0%E9%A2%98%E8%AF%BE)/27Mar2025%20(zyc%20%E7%8F%AD).pdf&quot;&gt;原题 (习题课 27Mar)&lt;/a&gt;. 以上结论适用于无限维空间, 从而&lt;strong&gt;矩阵方法不是一般的&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&quot;solution&quot;&gt;&lt;p&gt;这是&lt;a href=&quot;https://czhang271828.github.io/Linear-algebra/Notes/27Mar%20(%E4%B9%A0%E9%A2%98%E8%AF%BE)/27Mar2025%20(zyc%20%E7%8F%AD).pdf&quot;&gt;原题 (习题课 27Mar)&lt;/a&gt;. 以上结论适用于无限维空间, 从而&lt;strong&gt;矩阵方法不是一般的&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;(矩阵方法). 由零化多项式无重根, $φ_i$ 在某组基下对角化为 ${0,1}$-矩阵, 且两两交换的矩阵可同时对角化. 因此存在合适的基, 使得 $φ_i$ 的矩阵形式是&lt;/p&gt;
 
@@ -963,12 +1566,14 @@ h_X\otimes \prod-&amp;amp;\to&amp;amp;h_Y\otimes \prod-&amp;amp;\to&amp;amp;F\ot
     &lt;p&gt;左式是 $\underset{1 ≤ i ≤ k+1}⋂\ker φ_i$, 右式是 $\operatorname{im} φ_{k+1}$ (因为 $\operatorname{im}φ_k ⊆ \operatorname{ker}φ_{≠ k}$).&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Problem 5&lt;/strong&gt; (15 points). Suppose the linear map $𝒜 (X)=AXA^T$ over $ℝ^{n × n}$, where $A$ is an $n$-order real square matrix with $\operatorname{rank}(A) = r$. Find the dimension and a basis of $\operatorname{im} 𝒜$.&lt;/p&gt;
+&lt;div class=&quot;problem&quot;&gt;&lt;p&gt;(15 points). Suppose the linear map $𝒜 (X)=AXA^T$ over $ℝ^{n × n}$, where $A$ is an $n$-order real square matrix with $\operatorname{rank}(A) = r$. Find the dimension and a basis of $\operatorname{im} 𝒜$.&lt;/p&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;em&gt;Solution&lt;/em&gt;. 这也是&lt;a href=&quot;https://czhang271828.github.io/Linear-algebra/Week%20V/Supplementary%20Reading%20Material/Homework_6%20part%202.pdf&quot;&gt;原题&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;solution&quot;&gt;&lt;p&gt;这也是&lt;a href=&quot;https://czhang271828.github.io/Linear-algebra/Week%20V/Supplementary%20Reading%20Material/Homework_6%20part%202.pdf&quot;&gt;原题&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;记 $A = P ⋅ I’ ⋅ Q$ 是相抵标准型, 则原映射为&lt;/p&gt;
 
@@ -980,17 +1585,226 @@ h_X\otimes \prod-&amp;amp;\to&amp;amp;h_Y\otimes \prod-&amp;amp;\to&amp;amp;F\ot
   &lt;li&gt;$\ker 𝒜 := \mathrm{span}({B_{i,j}∣ {\max(i,j) &amp;gt; \mathrm{rank}(A)}})$, 维度 $n^2 - r^2$.&lt;/li&gt;
   &lt;li&gt;$\operatorname{im} 𝒜 := \mathrm{span}({B_{i,j}∣ {\max(i,j) ≤ \mathrm{rank}(A)}})$, 维度 $r^2$.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Problem 6&lt;/strong&gt; (10 points). &lt;em&gt;You are encouraged to have a great amount of reading and thinking besides the classes. This problem is meant to test the your understanding.&lt;/em&gt; Please give a new theorem/question that has neither appeared in classes nor in our textbook, and then give a proof/solution to this theorem/question. It can be a phenomenon you have summarized, a theorem in other books, or a theorem that is beyond what we have learned.&lt;/p&gt;
+&lt;div class=&quot;problem&quot;&gt;&lt;p&gt;(10 points). &lt;em&gt;You are encouraged to have a great amount of reading and thinking besides the classes. This problem is meant to test the your understanding.&lt;/em&gt;
+Please give a new theorem/question that has neither appeared in classes nor in our textbook, and then give a proof/solution to this theorem/question.
+It can be a phenomenon you have summarized, a theorem in other books, or a theorem that is beyond what we have learned.&lt;/p&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 
+&lt;h2 id=&quot;专题练习-填不满原理&quot;&gt;专题练习: 填不满原理&lt;/h2&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(填不满原理).&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;(来自加法逻辑). 对线性空间 $V$, 若 $U_1$ 与 $U_2$ 是 $V$ 的真子空间, 则 $U_1 ∪ U_2 ≠ V$.&lt;/li&gt;
+  &lt;li&gt;(来自分析). 对数域上的线性空间 $V$, 若 ${U_i}$ 是 $V$ 的有限个真子空间, 则 $⋃ U_i ≠ V$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;第一个命题对一般的模, Abel 群等具有加法结构的东西都成立. 第二个命题需要对 $𝔽$ 做一些要求 (无限域即可).&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;(第二命题在一般域上的反例).
+记 $𝔽 = 𝔽_2$ 是二元域. 定义&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$V = 𝔽 e_1 ⊕ 𝔽 e_2$,&lt;/li&gt;
+  &lt;li&gt;$U_1 = \operatorname{span}(e_1)$,&lt;/li&gt;
+  &lt;li&gt;$U_2 = \operatorname{span}(e_2)$,&lt;/li&gt;
+  &lt;li&gt;$U_3 = \operatorname{span}(e_1 + e_2)$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;此时 $U_1 ∪ U_2 ∪ U_3 = V$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;对大小为 $q$ 的有限域 $𝔽$, $q$ 个真子空间的并不是全空间.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;(仅使用加法逻辑).&lt;/p&gt;
+
+&lt;p&gt;记 $φ : 𝔽^{n × n} → 𝔽^{n × n}$ 是线性映射. 假定&lt;/p&gt;
+
+\[φ (A ⋅ B) ∈ \{φ (A) ⋅ φ (B), φ (B) ⋅ φ (A)\}.\]
+
+&lt;p&gt;试证明, 恒有 $φ (A ⋅ B) = φ (A) ⋅ φ (B)$, 或恒有 $φ (A ⋅ B) = φ (B) ⋅ φ (A)$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;实际上, 上述命题可以加强.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;若 $φ (A ⋅ B) = φ (A) ⋅ φ (B)$, 则存在 $C$ 使得&lt;/p&gt;
+
+\[φ : 𝔽^{n × n} → 𝔽^{n × n},\quad A ↦ C^{-1} ⋅ A ⋅ C.\]
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(作为推论). 若 $φ (A ⋅ B) = φ (B) ⋅ φ (A)$, 则存在 $C$ 使得&lt;/p&gt;
+
+\[φ : 𝔽^{n × n} → 𝔽^{n × n},\quad A ↦ C^{-1} ⋅ A^T ⋅ C.\]
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;若 $α: \mathrm{GL}_n(𝔽^{n × n}) → \mathrm{GL}_n(𝔽^{n × n})$ 满足 $α (X^{-1}) = (α(X))^{-1}$, 则 $α$ 形如以上.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;(仅使用加法逻辑).&lt;/p&gt;
+
+&lt;p&gt;记 $φ : G → G$ 是 Abel 群 $(G, +, 0)$ 同态, 且 $G$ 上存在满足分配律的乘法 $⋅$. 假定&lt;/p&gt;
+
+\[φ (a ⋅ b) ∈ \{φ (a) ⋅ φ (b), φ (b) ⋅ φ (a)\}.\]
+
+&lt;p&gt;试证明, 恒有 $φ (a ⋅ b) = φ (b) ⋅ φ (a)$, 或恒有 $φ (a ⋅ b) = φ (b) ⋅ φ (a)$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;现假定 $𝔽$ 是数域. 给定 $V = 𝔽^n$ 与 $φ ∈ \mathrm{End}_𝔽(V)$. 定义&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$f_φ$ 是零化 $φ$ 的次数&lt;strong&gt;最小的&lt;/strong&gt;首一非零多项式.&lt;/li&gt;
+  &lt;li&gt;对任意 $v ∈ V$, $f_v$ 是次数最小的首一非零多项式, 使得 $(f_v(φ)) (v) = 0$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;证明, 存在 $v ∈ V$ 使得 $f_φ = f_v$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;现假定 $𝔽$ 是数域, $V = 𝔽^n$. 取 $f ∈ V^∗$ 使得 $f(v)$ 总是 $v$ 的分量.&lt;/p&gt;
+
+&lt;p&gt;证明: 存在 $1 ≤ m ≤ n$, 使得 $f$ 是向 $m$-分量的投影.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;现假定 $𝔽$ 是数域. 证明, 给定一组两两不同的线性映射&lt;/p&gt;
+
+\[\{φ_i : U → V ∣ 1 ≤ i ≤ n\}.\]
+
+&lt;p&gt;试证明, 存在 $u ∈ U$ 使得 $φ_i(u)$ 两两不同.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;现假定 $𝔽$ 是数域. $U_i$ 是 $V$ 的有限个真子空间.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$⋃ U_i ≠ V$.&lt;/li&gt;
+  &lt;li&gt;$(⋃ U_i )^c$ 中存在一组基.&lt;/li&gt;
+  &lt;li&gt;假定 $𝔽 = ℝ$, 则 $(⋃ U_i )^c$ 中存在一组标准正交基.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
           <link>https://zhangchenchengsjtu.github.io/website/posts/mid</link>
           <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/mid</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>2025-04-21 试卷</title>
+          <description>&lt;hr /&gt;
+
+&lt;h2 id=&quot;试卷&quot;&gt;试卷&lt;/h2&gt;
+
+&lt;div class=&quot;problem&quot;&gt;&lt;p&gt;(20points).&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;(10 points). Assume that $p$ is a prime number greater than 2. Prove that the polynomial&lt;/p&gt;
+
+\[f (x) = x^{p-1} + x^{p-2} + \cdots + x + 1\]
+
+    &lt;p&gt;is irreducible in the rational number field $ℚ$.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(10 points). For an integer coefficient polynomial&lt;/p&gt;
+
+\[f (x) = x^{n} + a_1 x^{n-1} + \cdots + a_{n-1} x + a_{n},\]
+
+    &lt;p&gt;the sufficient and necessary condition for $f (x)$ to have &lt;strong&gt;(non-zero)&lt;/strong&gt; integer roots is that there are $2(n-1)$ integers ${ b_i, c_i , \  i = 1, \ldots, n-1}$ such that&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;$a_i = b_i  +  c_i$, for $i = 1, \cdots, n-1$; and&lt;/li&gt;
+      &lt;li&gt;$\frac{1}{c_1} = \frac{b_1}{c_2} =  \frac{b_2}{c_3} = \cdots =  \frac{b_{n-2}}{c_{n-1}} =  \frac{b_{n-1}}{a_{n}}$.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;problem&quot;&gt;&lt;p&gt;(20 points).&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;(10 points). Assume that $a,b ∈ ℂ$ are two complex numbers. Prove the following two subspaces of $ℂ[x]$,&lt;/p&gt;
+
+\[\begin{aligned}
+ &amp;amp; V_a=\{f(x) \in \mathbb{C}[x] \mid f(a)=0\}, \\[6pt]
+ &amp;amp; V_b=\{g(x) \in \mathbb{C}[x] \mid g(b)=0\} ,
+ \end{aligned}\]
+
+    &lt;p&gt;are isomorphic.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(10 points). Assume that $ε_1, ε_2, ε_3$ is a basis of the linear space $V$, and $f_1, f_2, f_3$ is the dual basis of $ε_1, ε_2, ε_3$. Let&lt;/p&gt;
+
+\[α_1=ε_1+ε_2+ε_3,\quad {α}_2=ε_2+ε_3,\quad {α}_3=ε_3.\]
+
+    &lt;ol&gt;
+      &lt;li&gt;Prove that $α_1, α_2, α_3$ is a basis of $V$;&lt;/li&gt;
+      &lt;li&gt;Find the dual basis of $α_1, α_2, α_3$ (using $f_1, f_2, f_3$ to represent).&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;problem&quot;&gt;&lt;p&gt;(20 points). Suppose $V$ is an $n$-dimensional vector space over a number field, and let $V_1, V_2, \ldots, V_s$ be $s$ proper subspaces of $V$. Prove that&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;There exists some $α ∈ V$ such that $α ∉ V_1 ∪ V_2 ∪ \cdots ∪ V_s$;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;There exists a basis of $V, ε _1, ε _2, \ldots, ε _n$, such that&lt;/p&gt;
+
+\[\left\{ε _1, ε _2, \ldots, ε _n\right\} ⋂ \left(V_1 ∪  V_2 ∪  \cdots ∪  V_s\right)=∅.\]
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;problem&quot;&gt;&lt;p&gt;(15 points). Suppose $φ _1, φ _2, \ldots, φ_m$ are linear maps over the $n$-dimensional vector space $V$, such that&lt;/p&gt;
+
+\[φ _i^2 = φ _i\quad  \text{and}\quad  φ _i φ _j = 0 \quad (i ≠ j, \ 1 ≤ i, \ j ≤ m).\]
+
+&lt;p&gt;Prove that&lt;/p&gt;
+
+\[V=\operatorname{im} \varphi_1 ⊕ \operatorname{im} \varphi_2 ⊕ \cdots ⊕ \operatorname{im} φ_m ⊕ \bigcap_{i=1}^m \operatorname{ker} φ_i .\]
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;problem&quot;&gt;&lt;p&gt;(15 points). Suppose the linear map $𝒜 (X)=AXA^T$ over $ℝ^{n × n}$, where $A$ is an $n$-order real square matrix with $\operatorname{rank}(A) = r$. Find the dimension and a basis of $\operatorname{im} 𝒜$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;problem&quot;&gt;&lt;p&gt;(10 points). &lt;em&gt;You are encouraged to have a great amount of reading and thinking besides the classes. This problem is meant to test the your understanding.&lt;/em&gt;
+Please give a new theorem/question that has neither appeared in classes nor in our textbook, and then give a proof/solution to this theorem/question.
+It can be a phenomenon you have summarized, a theorem in other books, or a theorem that is beyond what we have learned.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-21T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/mid-copy</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/mid-copy</guid>
         </item>
       
     
@@ -1056,16 +1870,42 @@ K &amp;amp; ↪  &amp;amp; X &amp;amp; ⇢ &amp;amp; E\\
     
       
         <item>
-          <title>Notes for Classical Tilting Theory</title>
-          <description>&lt;h2 id=&quot;tilting-理论&quot;&gt;Tilting 理论&lt;/h2&gt;
+          <title>Notes on Classical Tilting Theory</title>
+          <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#tilting-理论&quot; id=&quot;markdown-toc-tilting-理论&quot;&gt;Tilting 理论&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#经典-tilting-投射维度--1&quot; id=&quot;markdown-toc-经典-tilting-投射维度--1&quot;&gt;经典 Tilting: 投射维度 $≤ 1$&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#记号-对象类&quot; id=&quot;markdown-toc-记号-对象类&quot;&gt;记号: 对象类&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#torsion-pair-确定的对象类&quot; id=&quot;markdown-toc-torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#局部-tilting-模-两类-torsion-pair&quot; id=&quot;markdown-toc-局部-tilting-模-两类-torsion-pair&quot;&gt;局部 Tilting 模: 两类 torsion pair&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#tilting-模诱导的-torsion-pair&quot; id=&quot;markdown-toc-tilting-模诱导的-torsion-pair&quot;&gt;Tilting 模诱导的 torsion pair&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#brenner-butler-理论&quot; id=&quot;markdown-toc-brenner-butler-理论&quot;&gt;Brenner-Butler 理论&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#同调维度&quot; id=&quot;markdown-toc-同调维度&quot;&gt;同调维度&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#遗传范畴的-torsion-pair&quot; id=&quot;markdown-toc-遗传范畴的-torsion-pair&quot;&gt;遗传范畴的 torsion pair&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h3 id=&quot;经典-tilting-投射维度为--1&quot;&gt;经典 Tilting: 投射维度为 $≤ 1$&lt;/h3&gt;
+&lt;h2 id=&quot;tilting-理论&quot;&gt;Tilting 理论&lt;/h2&gt;
+
+&lt;h3 id=&quot;经典-tilting-投射维度--1&quot;&gt;经典 Tilting: 投射维度 $≤ 1$&lt;/h3&gt;
 
 &lt;h4 id=&quot;记号-对象类&quot;&gt;记号: 对象类&lt;/h4&gt;
 
-&lt;p&gt;以下使用 $⟂_o$ 表示关于 $\mathrm{Hom}(-,-)$ 的垂直, $⟂$ 表示关于 $\mathrm{Ext}^1(-,-)$ 的垂直. 使用 $(-)^⟂$, $(-)^o$, $^⟂(-)$ 以及 $^o(-)$ 表示对象类的左右垂直类.&lt;/p&gt;
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(垂直). 以下使用&lt;/p&gt;
 
-&lt;p&gt;给定 (非空) 对象类 $𝒳$. 定义&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;$⟂_o$ 表示关于 $\mathrm{Hom}(-,-)$ 的垂直,&lt;/li&gt;
+  &lt;li&gt;$⟂$ 表示关于 $\mathrm{Ext}^1(-,-)$ 的垂直.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;特别地, 使用 $(-)^⟂$, $(-)^o$, $^⟂(-)$ 以及 $^o(-)$ 表示对象类的左右垂直类.&lt;/p&gt;
+
+\[𝒳^⟂ := \{Y ∈ 𝖮𝖻(𝒞) ∣ \mathrm{Ext}^1(X, Y) = 0, ∀ X ∈ 𝒳\}.\]
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;给定 (非空) 对象类 $𝒳$. 定义&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;$𝐚𝐝𝐝(𝒳)$ 是 $𝒳$ 中对象关于直和与直和项的闭包;&lt;/li&gt;
@@ -1080,71 +1920,36 @@ K &amp;amp; ↪  &amp;amp; X &amp;amp; ⇢ &amp;amp; E\\
 
 &lt;p&gt;特别地, 对 $𝐦𝐨𝐝_A$, 对 $𝐚𝐝𝐝$ 封闭的对象类 (1, 2, 4, 5, 7, 8) 都是有限生成的, 从而可以用一个代表元表示. 例如 $𝐜𝐨𝐠(𝒳)$ 必形如某一 $𝐜𝐨𝐠(M)$.&lt;/p&gt;
 
-&lt;p&gt;此外, 需要对 $𝒳$ 做一些说明. 见&lt;/p&gt;
+&lt;p&gt;此外, 需要对 $𝐅(𝒳)$ 与 $𝐓(𝒳)$ 的等价定义做一些说明, 见&lt;a href=&quot;Def_de_TP&quot;&gt;此处&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/h4&gt;
 
-&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(Torsion pair 的等价定义).
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(Torsion pair 的等价定义, &lt;a href=&quot;Def_de_TP&quot;&gt;证明&lt;/a&gt;).
 称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.
-&lt;/li&gt;
-&lt;li&gt;
-存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$.
-&lt;/li&gt;
-&lt;li&gt;
-存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$.
-&lt;/li&gt;
-&lt;li&gt;
-${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.
-&lt;/li&gt;
-&lt;li&gt;
-$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.
-&lt;/li&gt;
-&lt;li&gt;
-$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
-&lt;/li&gt;
-&lt;li&gt;
-任意 $𝒯$-滤过对象属于 $𝒯$.
-&lt;/li&gt;
-&lt;li&gt;
-任意 $ℱ$-滤过对象属于 $ℱ$.
-&lt;/li&gt;
+  &lt;li&gt;$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.&lt;/li&gt;
+  &lt;li&gt;存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$. 此时, $\ker t = ℱ$, $\operatorname{im} t = 𝒯$.&lt;/li&gt;
+  &lt;li&gt;存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$. 此时, $\ker f = 𝒯$, $\operatorname{im} f = ℱ$.&lt;/li&gt;
+  &lt;li&gt;${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.&lt;/li&gt;
+  &lt;li&gt;$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.&lt;/li&gt;
+  &lt;li&gt;$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.&lt;/li&gt;
+  &lt;li&gt;任意 $𝐪𝐮𝐨𝐭(𝒯)$-滤过对象属于 $𝒯$, 并取 $ℱ := 𝒯^o$&lt;/li&gt;
+  &lt;li&gt;任意 $𝐬𝐮𝐛(ℱ)$-滤过对象属于 $ℱ$, 并取 $𝒯 := {}^oℱ$.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (Torsion pair).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; 此时, 典范正合列 $0 → tM → M → fM → 0$ 在同构意义下唯一.&lt;/p&gt;
+&lt;p&gt;以上 ses 在同构意义下唯一. 依照定义, $tM → N$ 类型的态射通过 $tN ↪ N$ 唯一地分解, 从而 $t$ 是全子范畴嵌入 $𝒯 ↣ 𝒜$ 的右伴随. 特别地,&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;$t$ 是右正合的左伴随函子, $𝒯$ 是余反射的.&lt;/li&gt;
+  &lt;li&gt;$t$ 是右正合的左伴随函子, $𝒯$ 是余反射的;&lt;/li&gt;
   &lt;li&gt;$f$ 是左伴随的右正合函子, $ℱ$ 是反射的.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象). 给定对象 $X$ 与 $M$.&lt;/p&gt;
+&lt;p&gt;Torsion pair 关于 $\mathrm{Hom}$-垂直 (且封闭). 以下是一些关于 $\mathrm{Ext}^1$-垂直的结论.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;$M ∈ 𝐠𝐞𝐧(X)$ 当且仅当赋值 $(M, X) ⊗_{\mathrm{End}(X)} X → M$ 是满的.&lt;/li&gt;
-  &lt;li&gt;$M ∈ 𝐜𝐨𝐠(X)$ 当且仅当余赋值 $M → ((M, X), X)$ 是单的.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($𝐓$ 与 $𝐅$ 中的对象). 给定对象 $X$ 与 $M$.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$M ∈ 𝐓(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐪𝐮𝐨𝐭(X)$.&lt;/li&gt;
-  &lt;li&gt;$M ∈ 𝐅(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐚𝐝𝐝(X)$.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; $𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧, X^o)$ 是 torsion pair.&lt;/li&gt;
-  &lt;li&gt;若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (垂直条件). 以下刻画 torsion pair $(𝒯, ℱ)$ 中满足 $\mathrm{Ext}^1$-垂直的对象. 记 $t$ 与 $f$ 是相应的子函子与商函子.&lt;/p&gt;
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(垂直条件, &lt;a href=&quot;Torsion_Pair_Ext_Orth&quot;&gt;证明&lt;/a&gt;). 以下刻画 torsion pair $(𝒯, ℱ)$ 中满足 $\mathrm{Ext}^1$-垂直的对象. 记 $t$ 与 $f$ 是相应的子函子与商函子.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;$𝒯 ∩ (^⟂ 𝒯) = 𝒯 ∩ τ ⁻¹ ℱ$.&lt;/li&gt;
@@ -1152,10 +1957,35 @@ $ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
   &lt;li&gt;$ℱ ∩ (ℱ^⟂) = ℱ ∩ τ 𝒯$.&lt;/li&gt;
   &lt;li&gt;$ℱ ∩ (^⟂ ℱ) = ℱ ∩ f(𝐩𝐫𝐨𝐣)$.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;h4 id=&quot;局部-tilting-模-两类-torsion-pair&quot;&gt;局部 Tilting 模: 两类 torsion pair&lt;/h4&gt;
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象, &lt;a href=&quot;gen_and_cog&quot;&gt;证明&lt;/a&gt;). 给定对象 $X$ 与 $M$.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (忠实模). 称 $M ∈ 𝐦𝐨𝐝_A$ 忠实, 若以下等价命题成立.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;$M ∈ 𝐠𝐞𝐧(X)$ 当且仅当赋值 $(X, M) ⊗_{\mathrm{End}(X)} X → M$ 是满的.&lt;/li&gt;
+  &lt;li&gt;$M ∈ 𝐜𝐨𝐠(X)$ 当且仅当余赋值 $M → ((M, X), X)$ 是单的.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($𝐓$ 与 $𝐅$ 中的对象, 证明见&lt;a href=&quot;Def_de_TP&quot;&gt;此定理&lt;/a&gt;中 4 ⟺ 5 部分). 给定对象 $X$ 与 $M$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$M ∈ 𝐓(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐪𝐮𝐨𝐭(X)$.&lt;/li&gt;
+  &lt;li&gt;$M ∈ 𝐅(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐚𝐝𝐝(X)$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Gen_Eq_T&quot;&gt;证明&lt;/a&gt;). $𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧(X), X^o)$ 是 torsion pair.&lt;/li&gt;
+  &lt;li&gt;若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;作为 $𝐜𝐨𝐠$ 与 $𝐠𝐞𝐧$ 中的特例, 定义&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(忠实模). 称 $M ∈ 𝐦𝐨𝐝_A$ 忠实, 若以下等价命题成立.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;对任意 $a ≠ 0$ 总有 $M ⋅ a ≠ 0$.&lt;/li&gt;
@@ -1163,10 +1993,36 @@ $ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
   &lt;li&gt;$A ∈ 𝐜𝐨𝐠(M)$.&lt;/li&gt;
   &lt;li&gt;$DA ∈ 𝐠𝐞𝐧(M)$.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (局部 Tilting 模). 称 $T$ 是局部 tilting 的, 若 $p.\dim T ≤ 1$ 且 $\mathrm{Ext}^1(T,T)=0$.&lt;/p&gt;
+&lt;h4 id=&quot;局部-tilting-模-两类-torsion-pair&quot;&gt;局部 Tilting 模: 两类 torsion pair&lt;/h4&gt;
 
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (局部 tilting 模诱导的 torsion pair). 给定局部 tilting 模 $T$.&lt;/p&gt;
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(局部 Tilting 模). 称 $T$ 是局部 tilting 的, 若 $p.\dim T ≤ 1$ 且 $\mathrm{Ext}^1(T,T)=0$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;等价地, $T$ 满足自垂直条件 $\mathrm{Ext}^1(T,T)$, 以及&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;$A$ 相对 $𝐚𝐝𝐝(T)$ 的内射分解 (余消解) 是至多 $1$ 维的, 即, 存在 ses&lt;/p&gt;
+
+\[0 → A → T' → T'' → 0,\]
+
+    &lt;p&gt;其中 $T$, $T’’$ 属于 $𝐚𝐝𝐝(T)$.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$T$ 相对 $𝐚𝐝𝐝(A)$ 的投射分解 (消解) 是至多 $1$ 维的, 即, 存在 ses&lt;/p&gt;
+
+\[0 → P' → P'' → T → 0,\]
+
+    &lt;p&gt;其中 $P$, $P’$ 属于 $𝐚𝐝𝐝(A)$.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;slogan&quot;&gt;&lt;p&gt;由投射维度, $\mathrm{Ext}^1(T,-)$ 与 $\mathrm{Ext}^1(-,T)$ 是右正合函子.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(局部 tilting 模诱导的 torsion pair, &lt;a href=&quot;Partial_Tilting_Two_Torsion_pairs&quot;&gt;证明&lt;/a&gt;). 局部 tilting 模 $T$ 诱导了以下两类 torsion pair.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;$(𝐠𝐞𝐧(T), T^o)$ 是 torsion pair.&lt;/li&gt;
@@ -1174,73 +2030,98 @@ $ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
   &lt;li&gt;$𝐠𝐞𝐧(T) ⊆ T^⟂$.&lt;/li&gt;
   &lt;li&gt;以上两个 torsion pair, 均有 $T ∈ 𝒯 ∩ {}^⟂𝒯 = 𝒯 ∩ τ⁻¹ ℱ$.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; 内射模属于 $T^⟂$. 若投射模属于 $𝐠𝐞𝐧(T)$, 则其属于 $𝐚𝐝𝐝(T)$.&lt;/p&gt;
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;内射模属于 $T^⟂$. 若投射模属于 $𝐠𝐞𝐧(T)$, 则其属于 $𝐚𝐝𝐝(T)$.&lt;/p&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;tilting-模诱导的-torsion-pair&quot;&gt;Tilting 模诱导的 torsion pair&lt;/h4&gt;
 
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; 给定局部 tilting 模 $T$, 以下是 $T$ 成为 tilting 模的等价条件.&lt;/p&gt;
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(&lt;a href=&quot;404&quot;&gt;证明待补充&lt;/a&gt;). 给定局部 tilting 模 $T$, 以下是 $T$ 成为 tilting 模的等价条件.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;$A$ 相对 $𝐚𝐝𝐝(T)$ 的内射分解 (余消解) 是至多 $1$ 维的, 即, 存在 ses $0 → A → T’ → T’’ → 0$, 其中 $T$, $T’’$ 属于 $𝐚𝐝𝐝(T)$.&lt;/li&gt;
   &lt;li&gt;$𝐠𝐞𝐧(T) = T^⟂$.&lt;/li&gt;
   &lt;li&gt;$T^o = 𝐜𝐨𝐠(τT)$.&lt;/li&gt;
-  &lt;li&gt;$^⟂(T^⟂) = 𝐚𝐝𝐝(T)$.&lt;/li&gt;
   &lt;li&gt;任意 $M ∈ T^⟂$ 存在满的右 $𝐚𝐝𝐝(T)$-逼近 $π : T^n ↠ M$, 且 $\ker π ∈ T^⟂$.&lt;/li&gt;
+  &lt;li&gt;$(^⟂𝒯) ∩ 𝒯 = 𝐚𝐝𝐝(T)$, 即 $𝒯 ∩ τ ^{-1} ℱ = 𝐚𝐝𝐝(T)$.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; 对 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$.&lt;/p&gt;
+&lt;p&gt;前三条等价性的证明是直接的. 后两条定理的证明 (1 ⇒ 4,5) 理应借助 Bongartz 引理.&lt;/p&gt;
+
+&lt;p&gt;对 tilting 模, $𝐚𝐝𝐝(T)$ 具有一些神奇的性质. 一般地, 仅有 $({}^⟂𝒯) ∩ 𝒯 = 𝒯 ∩ τ^{-1} ℱ$, 但是,&lt;/p&gt;
+
+&lt;div class=&quot;slogan&quot;&gt;&lt;p&gt;对 tilting 模诱导的 torsion pair, $𝒯$ 中被 $τ$ 平移至 $ℱ$ 中的项必是 $T$ 的直和项.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(Bongartz, &lt;a href=&quot;404&quot;&gt;证明待补充&lt;/a&gt;). 局部 tilting 模是 tilting 模的直和项.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;暂时将 4 与 5 当作性质使用.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;(Tilting 对象与 torsion pair, &lt;a href=&quot;Tilting_Obj_Torsion_Pair&quot;&gt;证明&lt;/a&gt;). 对 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;$^⟂𝒯 = 𝐚𝐝𝐝(T)$.&lt;/li&gt;
-  &lt;li&gt;$M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.&lt;/li&gt;
-  &lt;li&gt;内射对象必属于 $𝒯$.&lt;/li&gt;
-  &lt;li&gt;投射对象若属于 $𝒯$, 则属于 $𝐚𝐝𝐝(T)$.&lt;/li&gt;
-  &lt;li&gt;投射内射对象必属于 $𝐚𝐝𝐝(T)$.&lt;/li&gt;
-&lt;/ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;对任意 $M ∈ 𝒯$, 存在满的右 $𝐚𝐝𝐝 (T)$-逼近 $T^n ↠ M$ 使得&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (Bongartz). 局部 tilting 模是 tilting 模的直和项.&lt;/p&gt;
+\[0 → K → T^n → M → 0 \quad ∈ 𝒯.\]
+  &lt;/li&gt;
+  &lt;li&gt;$(^⟂𝒯) ∩ 𝒯 = 𝐚𝐝𝐝(T)$, 即 $𝒯 ∩ τ ^{-1} ℱ = 𝐚𝐝𝐝(T)$.&lt;/li&gt;
+  &lt;li&gt;$M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;特别地, 存在一列逼近的 ses&lt;/p&gt;
+
+\[0 → K_{k + 1} → T^{N_n} → K_n → 0\quad (n ≥ 0,\quad K_0 = M).\]
+
+&lt;p&gt;使得有长正合列&lt;/p&gt;
+
+\[θ : \dots → T^{N_2} → T^{N_1} → T^{N_0} → M → 0.\]
+
+&lt;p&gt;使得 $(T, θ)$ 是 $(T, M)$ 的 $\mathrm{End}(T)$-模投射分解.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;同样地,&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;内射模属于 $T^⟂$.&lt;/li&gt;
+  &lt;li&gt;若投射模属于 $𝐠𝐞𝐧(T)$, 则其属于 $𝐚𝐝𝐝(T)$.&lt;/li&gt;
+  &lt;li&gt;投射内射模属于 $𝐚𝐝𝐝(T)$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;brenner-butler-理论&quot;&gt;Brenner-Butler 理论&lt;/h4&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; 考虑函子 $(T,-) : 𝐦𝐨𝐝_A → 𝐦𝐨𝐝_{\mathrm{End}(T)^{\mathrm{op}}}$.&lt;/p&gt;
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;考虑函子 $(T,-) : 𝐦𝐨𝐝_A → 𝐦𝐨𝐝_{\mathrm{End}(T)^{\mathrm{op}}}$.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;$𝐚𝐝𝐝(T) → 𝐩𝐫𝐨𝐣(\mathrm{End}(T)^{\mathrm{op}})$ 给出范畴等价. 此处 $T$ 可以是任意模.&lt;/li&gt;
   &lt;li&gt;$T$ 的直和项无重数, 当且仅当 $\mathrm{End}(T)$ 是基本代数.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;若 $T$ 是 tilting 模, 则 $(T,-)&lt;/td&gt;
-          &lt;td&gt;_𝒯$ 是全忠实的.&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;若 $T$ 是 tilting 模, 则 $\mathrm{Ext}^1(T,-)&lt;/td&gt;
-          &lt;td&gt;_𝒯$ 也是全忠实的.&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
+  &lt;li&gt;若 $T$ 是 tilting 模, 则 $(T,-)\restriction_𝒯$ 是全忠实的.&lt;/li&gt;
+  &lt;li&gt;若 $T$ 是 tilting 模, 则 $\mathrm{Ext}^1(T,-)\restriction_𝒯$ 也是全忠实的.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (Tilted 代数). 给定 tilting 模 $T ∈ 𝐦𝐨𝐝_A$, 记 $B:=\mathrm{End}(T)$ 是诱导的 tilted 代数.&lt;/p&gt;
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(Tilted 代数). 给定 tilting 模 $T ∈ 𝐦𝐨𝐝_A$, 记 $B:=\mathrm{End}(T)$ 是诱导的 tilted 代数.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; $T$ 是 $(B,A)$-双模. 特别地, 代数 $A$ 与 $B$ 的关系如下.&lt;/p&gt;
+&lt;p&gt;一般地, 称 $B$ 是 tilted $k$-代数, 若存在 $k$ 代数 $A$ 上的 tilting 模 $T_A$ 使得 $B ≃ \mathrm{End}(T_A)$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($A$ 与 $\mathrm{End}(T)$).
+$T$ 是 $(B,A)$-双模. 特别地, 代数 $A$ 与 $B$ 的关系如下.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;$T$ 视作 $B^{\mathrm{op}}$-模也是 tilting 模.&lt;/li&gt;
   &lt;li&gt;代数同态的合成 $A → B^{\mathrm{op}} → \mathrm{End}(_BT)^{\mathrm{op}}$ 是同构.&lt;/li&gt;
   &lt;li&gt;中心 $Z(A) ≃ Z(B)$ 同构, 因此 $A$ 与 $B$ 具有相同的连通性.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (对偶 torsion pair). 给定 tilting 模 $T ∈ 𝐦𝐨𝐝_A$, 记 $B:= \mathrm{End}(T_A)$.&lt;/p&gt;
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(对偶 torsion pair).
+给定 tilting 模 $T ∈ 𝐦𝐨𝐝_A$, 记 $B:= \mathrm{End}(T_A)$.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;$𝐦𝐨𝐝_A$ 中的 torsion pair $(𝒯, ℱ)$ 如下:
@@ -1262,10 +2143,11 @@ $ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
     &lt;/ol&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt; 习惯上, 置 $𝒯 := 𝒯(T_A) ⊆ 𝐦𝐨𝐝_A$ 以及 $𝒳 := 𝒳(T_A) ⊆ 𝐦𝐨𝐝_B$.&lt;/p&gt;
+&lt;p&gt;习惯上, 置 $𝒯 := 𝒯(T_A) ⊆ 𝐦𝐨𝐝_A$ 以及 $𝒳 := 𝒳(T_A) ⊆ 𝐦𝐨𝐝_B$.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; $𝐦𝐨𝐝_B$ 范畴存在对偶的逼近结论.&lt;/p&gt;
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($𝐦𝐨𝐝_B$ 中的 torsion pair). $𝐦𝐨𝐝_B$ 范畴存在对偶的逼近结论.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;(原). 任意 $M_A ∈ 𝒯$ 存在满的右 $𝐚𝐝𝐝(T_A)$-逼近 $π : T_A^n ↠ M_A$, 且 $\ker π ∈ 𝒯$.&lt;/li&gt;
@@ -1273,45 +2155,53 @@ $ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
   &lt;li&gt;(原). $M_A ∈ 𝒯$ 的充要条件是典范态射 $(T, M) ⊗ T → M$ 是 $𝐦𝐨𝐝_A$-同构.&lt;/li&gt;
   &lt;li&gt;(新). $Y_B ∈ 𝒴$ 的充要条件是典范态射 $(T, Y ⊗_B T) → Y$ 是 $𝐦𝐨𝐝_B$-同构.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (BB 导出等价). 给定资料 $(A,T,B)$.&lt;/p&gt;
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(BB 导出等价). 给定资料 $(A,T,B)$.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;$\mathrm{Hom}_A(T,-) : 𝒯 ⇆ 𝒴 : (-⊗_BT)$ 是范畴等价 (视作拟逆).&lt;/li&gt;
   &lt;li&gt;$\mathrm{Ext}^1_A(T,-) : ℱ ⇆ 𝒳 : \mathrm{Tor}_1^B(-, T)$ 是范畴等价 (视作拟逆).&lt;/li&gt;
   &lt;li&gt;$𝐑^∙\mathrm{Hom}_A(T,-) : D^b(𝐦𝐨𝐝_A) ⇆ D^b(𝐦𝐨𝐝_B) : 𝐋 ^∙(-⊗_BT)$ 是导出等价.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (BB 同调公式). 给定上述函子.&lt;/p&gt;
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(BB 同调公式).
+给定上述函子.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;零次导出的核 (像) 是一次导出的像 (核).&lt;/li&gt;
-  &lt;li&gt;$𝐦𝐨𝐝_A$ 中 ses $0 → (T,M) ⊗_B T → M → \mathrm{Tor}_1^B(\mathrm{Ext}_A^1(T,M), T) → 0$, 即 $M$ 的 $(t,f)$ 序列.&lt;/li&gt;
-  &lt;li&gt;$𝐦𝐨𝐝_B$ 中 ses $0 → \mathrm{Ext}_A^1(T, X ⊗ _BT) → X → (T, X ⊗ _BT) → 0$, 即 $X$ 的 $(t,f)$ 序列.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$𝐦𝐨𝐝_A$ 中 ses&lt;/p&gt;
+
+\[0 → (T,M) ⊗_B T → M → \mathrm{Tor}_1^B(\mathrm{Ext}_A^1(T,M), T) → 0,\]
+
+    &lt;p&gt;即, $M$ 的 $(t,f)$-典范 ses.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$𝐦𝐨𝐝_B$ 中 ses&lt;/p&gt;
+
+\[0 → \mathrm{Ext}_A^1(T, X ⊗ _BT) → X → (T, X ⊗ _BT) → 0,\]
+
+    &lt;p&gt;即, $X$ 的 $(t,f)$-典范 ses.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;同调维度&quot;&gt;同调维度&lt;/h4&gt;
 
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($𝒯$, $𝒴$ 与投射维数). 对 $M ∈ 𝒯$.&lt;/p&gt;
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($𝒯$, $𝒴$ 与投射维数, &lt;a href=&quot;T_Y_Dim&quot;&gt;证明&lt;/a&gt;). 对 $M ∈ 𝒯$.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;若 $p.\dim M ≠ 1$, 则 $p.\dim M = p.\dim (T,M)$.&lt;/li&gt;
-  &lt;li&gt;若 $p.\dim M = 1$, 则 $p.\dim (T,M) ∈ {0,1}$.&lt;/li&gt;
+  &lt;li&gt;若 $p.\dim M = 1$, 则 $p.\dim (T,M)$ 为 $0$ 或 $1$.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Thm&lt;/strong&gt; (整体维数). $&lt;/td&gt;
-      &lt;td&gt;gl.\dim A - gl.\dim B&lt;/td&gt;
-      &lt;td&gt;≤ 1$.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(整体维数, &lt;a href=&quot;Gl_Dim_A_B&quot;&gt;证明&lt;/a&gt;). $|gl.\dim A - gl.\dim B|≤ 1$.&lt;/p&gt;
+&lt;/div&gt;
 
-&lt;!-- **Lemma** ($𝒯$, $𝒴$ 与内射维数). 需要细化. --&gt;
-
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (Happel 的导出等价定理). 假定 Abel 范畴有足够投射. 某对象 $T$ 满足 $\mathrm{Ext}_𝒜^{≥ 1}(T,T) =0$. 记 $B = \mathrm{End}(T)$.&lt;/p&gt;
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(Happel 的导出等价定理). 假定 Abel 范畴有足够投射. 某对象 $T$ 满足 $\mathrm{Ext}_𝒜^{≥ 1}(T,T) =0$. 记 $B = \mathrm{End}(T)$.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;$(T,-)_𝒜: 𝐚𝐝𝐝(T) ⇆ 𝐩𝐫𝐨𝐣(B) : (- ⊗ _BT)$ 是范畴等价.&lt;/li&gt;
@@ -1319,30 +2209,53 @@ $ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
   &lt;li&gt;若任意对象的 $𝐚𝐝𝐝(T)$-余消解维数有限, 则上述复合是等价.&lt;/li&gt;
   &lt;li&gt;若 $𝒜$ 投射维数有限, 则典范函子 $K^b(𝐩𝐫𝐨𝐣(𝒜)) → D^b(𝒜)$ 是等价. 此时有导出等价 $D^b(𝒜) ≃ D^b(B)$.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;遗传范畴的-torsion-pair&quot;&gt;遗传范畴的 torsion pair&lt;/h4&gt;
 
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; 本节的范畴要求有足够投射对象, 且 tilting 对象 $T$ 使得一切 $(T,X)$ 均是有限生成右 $\mathrm{End}(T)$-模. 一个较弱的条件是 $\mathrm{Hom}$-群有限维.&lt;/p&gt;
+&lt;p&gt;本节的范畴要求有足够投射对象, 且 tilting 对象 $T$ 使得一切 $(T,X)$ 均是有限生成右 $\mathrm{End}(T)$-模. 一个较弱的条件是 $\mathrm{Hom}$-群有限维.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (遗传范畴). 称 Abel 范畴遗传, 若米田积意义下的 $\mathrm{Ext}^2(-,-)$ 函子消失.&lt;/p&gt;
+&lt;p&gt;仿照三角范畴, 定义 Abel 范畴的厚子范畴为, 关于 ses 二推三封闭的全子范畴.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; 遗传范畴中的满单分解均可补全作推出拉回方块.&lt;/p&gt;
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(遗传范畴). 称 Abel 范畴遗传, 若米田积意义下的 $\mathrm{Ext}^2(-,-)$ 函子消失.&lt;/p&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; 遗传范畴中, $X^∙$ 与 $H^∙(X)$ 导出等价.&lt;/p&gt;
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Hereditary_PBPO&quot;&gt;证明&lt;/a&gt;)
+遗传范畴中的满单分解均可补全作推出拉回方块.&lt;/p&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (遗传范畴的 Tilting 对象). 称 $T ∈ 𝒜$ 是 tilting 对象, 若 $T$ 生成的 Serre 子范畴是 $𝒜$, 且 $\mathrm{Ext}^1(T,T)=0$.&lt;/p&gt;
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Hom_D_Hereditary&quot;&gt;证明&lt;/a&gt;).
+遗传范畴中, $X^∙$ 与 $H^∙(X)$ (同调群构成的轴复形) 导出等价.&lt;/p&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt; 遗传对应 $p.\dim T ≤ 1$, $T$ 生成 Serre 子范畴的条件对应 $A$ 的 $𝐚𝐝𝐝(T)$-余消解维度 $≤1$.&lt;/p&gt;
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(遗传范畴的 Tilting 对象).
+称 $T ∈ 𝒜$ 是 tilting 对象, 若 $T$ 生成的厚子范畴是 $𝒜$, 且 $\mathrm{Ext}^1(T,T)=0$.&lt;/p&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (遗传范畴的 torsion pair). 对上述遗传范畴与 tilting 对象 $T$.&lt;/p&gt;
+&lt;p&gt;可以发现, 遗传范畴中的 tilting 对象与通常意义的 tilting 模是兼容的.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;遗传对应 $p.\dim T ≤ 1$,&lt;/li&gt;
+  &lt;li&gt;$T$ 生成厚子范畴的条件对应 $A$ 的 $𝐚𝐝𝐝(T)$-余消解维度 $≤1$,&lt;/li&gt;
+  &lt;li&gt;$\mathrm{Ext}^1(T,T) = 0$ 保持不变.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(遗传范畴的 torsion pair).
+对上述遗传范畴与 tilting 对象 $T$.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;$(\ker \mathrm{Ext}^0(T,-), \ker \mathrm{Ext}^1(T,-))$ 是 torsion pair, 记作 $(𝒯, ℱ)$.&lt;/li&gt;
   &lt;li&gt;BB 导出等价给出 $(𝒳 , 𝒴) ≃ (ℱ[1], 𝒯)$.&lt;/li&gt;
   &lt;li&gt;若 $B$ 遗传, 则 $(𝒯, ℱ)$ 可裂.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (可裂 torsion pair 的等价定义). 称 Abel 范畴 $𝒜$ 中的 torsion pair $(𝒯, ℱ)$ 可裂, 若以下等价命题成立.&lt;/p&gt;
+&lt;p&gt;示意图如下:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/czhang271828/imgs/New_img//n_imgimage-20250424135358118.png&quot; alt=&quot;image-20250424135358118&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(可裂 torsion pair 的等价定义).
+称 Abel 范畴 $𝒜$ 中的 torsion pair $(𝒯, ℱ)$ 可裂, 若以下等价命题成立.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;$𝒯∪ℱ$ 包含一切不可分解对象.&lt;/li&gt;
@@ -1350,7 +2263,7 @@ $ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.
   &lt;li&gt;$𝒯$ 关于 $τ⁻¹$ 封闭.&lt;/li&gt;
   &lt;li&gt;$ℱ$ 关于 $τ$ 封闭.&lt;/li&gt;
 &lt;/ol&gt;
-
+&lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
           <link>https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting</link>
@@ -1919,330 +2832,6 @@ $Ω_1(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$ 是投射对�
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
           <link>https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</link>
           <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</guid>
-        </item>
-      
-    
-      
-        <item>
-          <title>Notes on Classical Tilting Theory</title>
-          <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#tilting-理论&quot; id=&quot;markdown-toc-tilting-理论&quot;&gt;Tilting 理论&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#经典-tilting-投射维度为--1&quot; id=&quot;markdown-toc-经典-tilting-投射维度为--1&quot;&gt;经典 Tilting: 投射维度为 $≤ 1$&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#记号-对象类&quot; id=&quot;markdown-toc-记号-对象类&quot;&gt;记号: 对象类&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#torsion-pair-确定的对象类&quot; id=&quot;markdown-toc-torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#局部-tilting-模-两类-torsion-pair&quot; id=&quot;markdown-toc-局部-tilting-模-两类-torsion-pair&quot;&gt;局部 Tilting 模: 两类 torsion pair&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#tilting-模诱导的-torsion-pair&quot; id=&quot;markdown-toc-tilting-模诱导的-torsion-pair&quot;&gt;Tilting 模诱导的 torsion pair&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#brenner-butler-理论&quot; id=&quot;markdown-toc-brenner-butler-理论&quot;&gt;Brenner-Butler 理论&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#同调维度&quot; id=&quot;markdown-toc-同调维度&quot;&gt;同调维度&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#遗传范畴的-torsion-pair&quot; id=&quot;markdown-toc-遗传范畴的-torsion-pair&quot;&gt;遗传范畴的 torsion pair&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;tilting-理论&quot;&gt;Tilting 理论&lt;/h2&gt;
-
-&lt;h3 id=&quot;经典-tilting-投射维度为--1&quot;&gt;经典 Tilting: 投射维度为 $≤ 1$&lt;/h3&gt;
-
-&lt;h4 id=&quot;记号-对象类&quot;&gt;记号: 对象类&lt;/h4&gt;
-
-&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(垂直). 以下使用&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$⟂_o$ 表示关于 $\mathrm{Hom}(-,-)$ 的垂直,&lt;/li&gt;
-  &lt;li&gt;$⟂$ 表示关于 $\mathrm{Ext}^1(-,-)$ 的垂直.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;特别地, 使用 $(-)^⟂$, $(-)^o$, $^⟂(-)$ 以及 $^o(-)$ 表示对象类的左右垂直类.&lt;/p&gt;
-
-\[𝒳^⟂ := \{Y ∈ 𝖮𝖻(𝒞) ∣ \mathrm{Ext}^1(X, Y) = 0, ∀ X ∈ 𝒳\}.\]
-&lt;/div&gt;
-
-&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;给定 (非空) 对象类 $𝒳$. 定义&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$𝐚𝐝𝐝(𝒳)$ 是 $𝒳$ 中对象关于直和与直和项的闭包;&lt;/li&gt;
-  &lt;li&gt;$𝐟𝐢𝐥(𝒳)$ 是 $𝒳$ 中对象关于扩张 (合成列) 的闭包;&lt;/li&gt;
-  &lt;li&gt;$𝐬𝐮𝐛(𝒳)$ 是 $𝒳$ 中对象关于子对象的闭包;&lt;/li&gt;
-  &lt;li&gt;$𝐜𝐨𝐠(𝒳) = 𝐬𝐮𝐛(𝐚𝐝𝐝(𝒳))$ 是 $𝒳$ 中对象关于直和与子对象的闭包;&lt;/li&gt;
-  &lt;li&gt;$𝐅(𝒳) = 𝐟𝐢𝐥(𝐬𝐮𝐛(𝒳)) = (^o𝒳)^o$ 是 $𝒳$ 关于子对象和扩张的闭包;&lt;/li&gt;
-  &lt;li&gt;$𝐪𝐮𝐨𝐭(𝒳)$ 是 $𝒳$ 中对象关于商对象的闭包.&lt;/li&gt;
-  &lt;li&gt;$𝐠𝐞𝐧(𝒳) = 𝐪𝐮𝐨𝐭(𝐟𝐢𝐥(𝒳))$ 是 $𝒳$ 中对象关于直和与商对象的闭包;&lt;/li&gt;
-  &lt;li&gt;$𝐓(𝒳) = 𝐟𝐢𝐥(𝐪𝐮𝐨𝐭(𝒳)) = {}^o(𝒳^o)$ 是 $𝒳$ 关于商对象和扩张的闭包.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;特别地, 对 $𝐦𝐨𝐝_A$, 对 $𝐚𝐝𝐝$ 封闭的对象类 (1, 2, 4, 5, 7, 8) 都是有限生成的, 从而可以用一个代表元表示. 例如 $𝐜𝐨𝐠(𝒳)$ 必形如某一 $𝐜𝐨𝐠(M)$.&lt;/p&gt;
-
-&lt;p&gt;此外, 需要对 $𝐅(𝒳)$ 与 $𝐓(𝒳)$ 的等价定义做一些说明, 见&lt;a href=&quot;Def_de_TP&quot;&gt;此处&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/h4&gt;
-
-&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(Torsion pair 的等价定义, &lt;a href=&quot;Def_de_TP&quot;&gt;证明&lt;/a&gt;).
-称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$𝒯 ⟂_o ℱ$. 任意对象 $M$ 可嵌入正合列 $0 → tM → M → fM → 0$, 其中 $tM ∈ 𝒯$ 且 $fM ∈ ℱ$.&lt;/li&gt;
-  &lt;li&gt;存在子函子 $t ↪ \mathrm{id}$ 使得 $t^2 ≃ t$, 以及 $t : \operatorname{cok}(t → \mathrm{id}) → 0$. 此时, $\ker t = ℱ$, $\operatorname{im} t = 𝒯$.&lt;/li&gt;
-  &lt;li&gt;存在商函子 $\mathrm{id} ↠ f$ 使得 $f ≃ f^2$, 以及 $f : \operatorname{ker}(f ↠ \mathrm{id}) → 0$. 此时, $\ker f = 𝒯$, $\operatorname{im} f = ℱ$.&lt;/li&gt;
-  &lt;li&gt;${}^oℱ = 𝒯$, 且 $ℱ = 𝒯^o$.&lt;/li&gt;
-  &lt;li&gt;$𝒯$ 对商对象与扩张封闭, $ℱ = 𝒯^o$.&lt;/li&gt;
-  &lt;li&gt;$ℱ$ 对子对象与扩张封闭, $𝒯 = {}^oℱ$.&lt;/li&gt;
-  &lt;li&gt;任意 $𝐪𝐮𝐨𝐭(𝒯)$-滤过对象属于 $𝒯$, 并取 $ℱ := 𝒯^o$&lt;/li&gt;
-  &lt;li&gt;任意 $𝐬𝐮𝐛(ℱ)$-滤过对象属于 $ℱ$, 并取 $𝒯 := {}^oℱ$.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;p&gt;以上 ses 在同构意义下唯一. 依照定义, $tM → N$ 类型的态射通过 $tN ↪ N$ 唯一地分解, 从而 $t$ 是全子范畴嵌入 $𝒯 ↣ 𝒜$ 的右伴随. 特别地,&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$t$ 是右正合的左伴随函子, $𝒯$ 是余反射的;&lt;/li&gt;
-  &lt;li&gt;$f$ 是左伴随的右正合函子, $ℱ$ 是反射的.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Torsion pair 关于 $\mathrm{Hom}$-垂直 (且封闭). 以下是一些关于 $\mathrm{Ext}^1$-垂直的结论.&lt;/p&gt;
-
-&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(垂直条件, &lt;a href=&quot;Torsion_Pair_Ext_Orth&quot;&gt;证明&lt;/a&gt;). 以下刻画 torsion pair $(𝒯, ℱ)$ 中满足 $\mathrm{Ext}^1$-垂直的对象. 记 $t$ 与 $f$ 是相应的子函子与商函子.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$𝒯 ∩ (^⟂ 𝒯) = 𝒯 ∩ τ ⁻¹ ℱ$.&lt;/li&gt;
-  &lt;li&gt;$𝒯 ∩ (𝒯^⟂) = 𝒯 ∩ t(𝐢𝐧𝐣)$.&lt;/li&gt;
-  &lt;li&gt;$ℱ ∩ (ℱ^⟂) = ℱ ∩ τ 𝒯$.&lt;/li&gt;
-  &lt;li&gt;$ℱ ∩ (^⟂ ℱ) = ℱ ∩ f(𝐩𝐫𝐨𝐣)$.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象, &lt;a href=&quot;gen_and_cog&quot;&gt;证明&lt;/a&gt;). 给定对象 $X$ 与 $M$.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$M ∈ 𝐠𝐞𝐧(X)$ 当且仅当赋值 $(X, M) ⊗_{\mathrm{End}(X)} X → M$ 是满的.&lt;/li&gt;
-  &lt;li&gt;$M ∈ 𝐜𝐨𝐠(X)$ 当且仅当余赋值 $M → ((M, X), X)$ 是单的.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($𝐓$ 与 $𝐅$ 中的对象, 证明见&lt;a href=&quot;Def_de_TP&quot;&gt;此定理&lt;/a&gt;中 4 ⟺ 5 部分). 给定对象 $X$ 与 $M$.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$M ∈ 𝐓(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐪𝐮𝐨𝐭(X)$.&lt;/li&gt;
-  &lt;li&gt;$M ∈ 𝐅(X)$, 当且仅当 $M$ 存在合成列, 合成因子是 $𝐚𝐝𝐝(X)$.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Gen_Eq_T&quot;&gt;证明&lt;/a&gt;). $𝐠𝐞𝐧 = 𝐓$ 或 $𝐜𝐨𝐠 = 𝐅$ 的充分条件.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;若 $X ⟂ 𝐠𝐞𝐧(X)$, 则 $(𝐠𝐞𝐧(X), X^o)$ 是 torsion pair.&lt;/li&gt;
-  &lt;li&gt;若 $𝐜𝐨𝐠(X) ⟂ X$, 则 $(^o X, 𝐜𝐨𝐠 (X))$ 是 torsion pair.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;p&gt;作为 $𝐜𝐨𝐠$ 与 $𝐠𝐞𝐧$ 中的特例, 定义&lt;/p&gt;
-
-&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(忠实模). 称 $M ∈ 𝐦𝐨𝐝_A$ 忠实, 若以下等价命题成立.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;对任意 $a ≠ 0$ 总有 $M ⋅ a ≠ 0$.&lt;/li&gt;
-  &lt;li&gt;同态 $A → \mathrm{End}(M)^{\mathrm{op}}$ 是单的.&lt;/li&gt;
-  &lt;li&gt;$A ∈ 𝐜𝐨𝐠(M)$.&lt;/li&gt;
-  &lt;li&gt;$DA ∈ 𝐠𝐞𝐧(M)$.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;局部-tilting-模-两类-torsion-pair&quot;&gt;局部 Tilting 模: 两类 torsion pair&lt;/h4&gt;
-
-&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(局部 Tilting 模). 称 $T$ 是局部 tilting 的, 若 $p.\dim T ≤ 1$ 且 $\mathrm{Ext}^1(T,T)=0$.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;p&gt;等价地, $T$ 满足自垂直条件 $\mathrm{Ext}^1(T,T)$, 以及&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;$A$ 相对 $𝐚𝐝𝐝(T)$ 的内射分解 (余消解) 是至多 $1$ 维的, 即, 存在 ses&lt;/p&gt;
-
-\[0 → A → T' → T'' → 0,\]
-
-    &lt;p&gt;其中 $T$, $T’’$ 属于 $𝐚𝐝𝐝(T)$.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$T$ 相对 $𝐚𝐝𝐝(A)$ 的投射分解 (消解) 是至多 $1$ 维的, 即, 存在 ses&lt;/p&gt;
-
-\[0 → P' → P'' → T → 0,\]
-
-    &lt;p&gt;其中 $P$, $P’$ 属于 $𝐚𝐝𝐝(A)$.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;slogan&quot;&gt;&lt;p&gt;由投射维度, $\mathrm{Ext}^1(T,-)$ 与 $\mathrm{Ext}^1(-,T)$ 是右正合函子.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(局部 tilting 模诱导的 torsion pair, &lt;a href=&quot;Partial_Tilting_Two_Torsion_pairs&quot;&gt;证明&lt;/a&gt;). 局部 tilting 模 $T$ 诱导了以下两类 torsion pair.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$(𝐠𝐞𝐧(T), T^o)$ 是 torsion pair.&lt;/li&gt;
-  &lt;li&gt;$(T^⟂, 𝐜𝐨𝐠(τT))$ 是 torsion pair.&lt;/li&gt;
-  &lt;li&gt;$𝐠𝐞𝐧(T) ⊆ T^⟂$.&lt;/li&gt;
-  &lt;li&gt;以上两个 torsion pair, 均有 $T ∈ 𝒯 ∩ {}^⟂𝒯 = 𝒯 ∩ τ⁻¹ ℱ$.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;note&quot;&gt;&lt;p&gt;内射模属于 $T^⟂$. 若投射模属于 $𝐠𝐞𝐧(T)$, 则其属于 $𝐚𝐝𝐝(T)$.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;tilting-模诱导的-torsion-pair&quot;&gt;Tilting 模诱导的 torsion pair&lt;/h4&gt;
-
-&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(&lt;a href=&quot;404&quot;&gt;证明待补充&lt;/a&gt;). 给定局部 tilting 模 $T$, 以下是 $T$ 成为 tilting 模的等价条件.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$A$ 相对 $𝐚𝐝𝐝(T)$ 的内射分解 (余消解) 是至多 $1$ 维的, 即, 存在 ses $0 → A → T’ → T’’ → 0$, 其中 $T$, $T’’$ 属于 $𝐚𝐝𝐝(T)$.&lt;/li&gt;
-  &lt;li&gt;$𝐠𝐞𝐧(T) = T^⟂$.&lt;/li&gt;
-  &lt;li&gt;$T^o = 𝐜𝐨𝐠(τT)$.&lt;/li&gt;
-  &lt;li&gt;$^⟂(T^⟂) = 𝐚𝐝𝐝(T)$.&lt;/li&gt;
-  &lt;li&gt;任意 $M ∈ T^⟂$ 存在满的右 $𝐚𝐝𝐝(T)$-逼近 $π : T^n ↠ M$, 且 $\ker π ∈ T^⟂$.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;(Tilting 对象与 torsion pair, &lt;a href=&quot;Tilting_Obj_Torsion_Pair&quot;&gt;证明&lt;/a&gt;). 对 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$^⟂𝒯 = 𝐚𝐝𝐝(T)$.&lt;/li&gt;
-  &lt;li&gt;$M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.&lt;/li&gt;
-  &lt;li&gt;内射对象必属于 $𝒯$.&lt;/li&gt;
-  &lt;li&gt;投射对象若属于 $𝒯$, 则属于 $𝐚𝐝𝐝(T)$.&lt;/li&gt;
-  &lt;li&gt;投射内射对象必属于 $𝐚𝐝𝐝(T)$.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(Bongartz). 局部 tilting 模是 tilting 模的直和项.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;brenner-butler-理论&quot;&gt;Brenner-Butler 理论&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; 考虑函子 $(T,-) : 𝐦𝐨𝐝_A → 𝐦𝐨𝐝_{\mathrm{End}(T)^{\mathrm{op}}}$.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$𝐚𝐝𝐝(T) → 𝐩𝐫𝐨𝐣(\mathrm{End}(T)^{\mathrm{op}})$ 给出范畴等价. 此处 $T$ 可以是任意模.&lt;/li&gt;
-  &lt;li&gt;$T$ 的直和项无重数, 当且仅当 $\mathrm{End}(T)$ 是基本代数.&lt;/li&gt;
-  &lt;li&gt;若 $T$ 是 tilting 模, 则 $(T,-)\restriction_𝒯$ 是全忠实的.&lt;/li&gt;
-  &lt;li&gt;若 $T$ 是 tilting 模, 则 $\mathrm{Ext}^1(T,-)\restriction_𝒯$ 也是全忠实的.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (Tilted 代数). 给定 tilting 模 $T ∈ 𝐦𝐨𝐝_A$, 记 $B:=\mathrm{End}(T)$ 是诱导的 tilted 代数.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; $T$ 是 $(B,A)$-双模. 特别地, 代数 $A$ 与 $B$ 的关系如下.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$T$ 视作 $B^{\mathrm{op}}$-模也是 tilting 模.&lt;/li&gt;
-  &lt;li&gt;代数同态的合成 $A → B^{\mathrm{op}} → \mathrm{End}(_BT)^{\mathrm{op}}$ 是同构.&lt;/li&gt;
-  &lt;li&gt;中心 $Z(A) ≃ Z(B)$ 同构, 因此 $A$ 与 $B$ 具有相同的连通性.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (对偶 torsion pair). 给定 tilting 模 $T ∈ 𝐦𝐨𝐝_A$, 记 $B:= \mathrm{End}(T_A)$.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$𝐦𝐨𝐝_A$ 中的 torsion pair $(𝒯, ℱ)$ 如下:
-    &lt;ol&gt;
-      &lt;li&gt;$𝒯 = 𝐠𝐞𝐧(T_A) = T_A^⟂$,&lt;/li&gt;
-      &lt;li&gt;$ℱ = 𝐜𝐨𝐠 (τ T_A) = T_A^o$.&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;$𝐦𝐨𝐝_B$ 中的 torsion pair $(𝒳, 𝒴)$ 如下:
-    &lt;ol&gt;
-      &lt;li&gt;$𝒳 = D(𝐜𝐨𝐠(τ{}_BT)) = D(_BT^o)$,&lt;/li&gt;
-      &lt;li&gt;$𝒴 = D(𝐠𝐞𝐧(_BT)) = D(_BT^⟂)$.&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;省略对偶符号, 则
-    &lt;ol&gt;
-      &lt;li&gt;$𝒳 = \ker \mathrm{Hom}_B(-,DT) = \ker (- ⊗_B T)$,&lt;/li&gt;
-      &lt;li&gt;$𝒴 = \ker \mathrm{Ext}_B^1(-, DT) = \ker \mathrm{Tor}_1^B(- , T)$.&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt; 习惯上, 置 $𝒯 := 𝒯(T_A) ⊆ 𝐦𝐨𝐝_A$ 以及 $𝒳 := 𝒳(T_A) ⊆ 𝐦𝐨𝐝_B$.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; $𝐦𝐨𝐝_B$ 范畴存在对偶的逼近结论.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;(原). 任意 $M_A ∈ 𝒯$ 存在满的右 $𝐚𝐝𝐝(T_A)$-逼近 $π : T_A^n ↠ M_A$, 且 $\ker π ∈ 𝒯$.&lt;/li&gt;
-  &lt;li&gt;(新). 任意 $Y_B ∈ 𝒴$ 存在单的左 $𝐚𝐝𝐝((DT)_B)$-逼近 $ι: Y_B ↪ (DT)_B^m$, 且 $\operatorname{cok}ι ∈ 𝒴$.&lt;/li&gt;
-  &lt;li&gt;(原). $M_A ∈ 𝒯$ 的充要条件是典范态射 $(T, M) ⊗ T → M$ 是 $𝐦𝐨𝐝_A$-同构.&lt;/li&gt;
-  &lt;li&gt;(新). $Y_B ∈ 𝒴$ 的充要条件是典范态射 $(T, Y ⊗_B T) → Y$ 是 $𝐦𝐨𝐝_B$-同构.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (BB 导出等价). 给定资料 $(A,T,B)$.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$\mathrm{Hom}_A(T,-) : 𝒯 ⇆ 𝒴 : (-⊗_BT)$ 是范畴等价 (视作拟逆).&lt;/li&gt;
-  &lt;li&gt;$\mathrm{Ext}^1_A(T,-) : ℱ ⇆ 𝒳 : \mathrm{Tor}_1^B(-, T)$ 是范畴等价 (视作拟逆).&lt;/li&gt;
-  &lt;li&gt;$𝐑^∙\mathrm{Hom}_A(T,-) : D^b(𝐦𝐨𝐝_A) ⇆ D^b(𝐦𝐨𝐝_B) : 𝐋 ^∙(-⊗_BT)$ 是导出等价.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (BB 同调公式). 给定上述函子.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;零次导出的核 (像) 是一次导出的像 (核).&lt;/li&gt;
-  &lt;li&gt;$𝐦𝐨𝐝_A$ 中 ses $0 → (T,M) ⊗_B T → M → \mathrm{Tor}_1^B(\mathrm{Ext}_A^1(T,M), T) → 0$, 即 $M$ 的 $(t,f)$ 序列.&lt;/li&gt;
-  &lt;li&gt;$𝐦𝐨𝐝_B$ 中 ses $0 → \mathrm{Ext}_A^1(T, X ⊗ _BT) → X → (T, X ⊗ _BT) → 0$, 即 $X$ 的 $(t,f)$ 序列.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;同调维度&quot;&gt;同调维度&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt; ($𝒯$, $𝒴$ 与投射维数). 对 $M ∈ 𝒯$.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;若 $p.\dim M ≠ 1$, 则 $p.\dim M = p.\dim (T,M)$.&lt;/li&gt;
-  &lt;li&gt;若 $p.\dim M = 1$, 则 $p.\dim (T,M) ∈ {0,1}$.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (整体维数). $|gl.\dim A - gl.\dim B|≤ 1$.&lt;/p&gt;
-
-&lt;!-- **Lemma** ($𝒯$, $𝒴$ 与内射维数). 需要细化. --&gt;
-
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (Happel 的导出等价定理). 假定 Abel 范畴有足够投射. 某对象 $T$ 满足 $\mathrm{Ext}_𝒜^{≥ 1}(T,T) =0$. 记 $B = \mathrm{End}(T)$.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$(T,-)_𝒜: 𝐚𝐝𝐝(T) ⇆ 𝐩𝐫𝐨𝐣(B) : (- ⊗ _BT)$ 是范畴等价.&lt;/li&gt;
-  &lt;li&gt;复合 $K^b(𝐚𝐝𝐝(T)) ↣ K^b (𝒜) → D^b𝒜$ 全忠实.&lt;/li&gt;
-  &lt;li&gt;若任意对象的 $𝐚𝐝𝐝(T)$-余消解维数有限, 则上述复合是等价.&lt;/li&gt;
-  &lt;li&gt;若 $𝒜$ 投射维数有限, 则典范函子 $K^b(𝐩𝐫𝐨𝐣(𝒜)) → D^b(𝒜)$ 是等价. 此时有导出等价 $D^b(𝒜) ≃ D^b(B)$.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;遗传范畴的-torsion-pair&quot;&gt;遗传范畴的 torsion pair&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; 本节的范畴要求有足够投射对象, 且 tilting 对象 $T$ 使得一切 $(T,X)$ 均是有限生成右 $\mathrm{End}(T)$-模. 一个较弱的条件是 $\mathrm{Hom}$-群有限维.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (遗传范畴). 称 Abel 范畴遗传, 若米田积意义下的 $\mathrm{Ext}^2(-,-)$ 函子消失.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; 遗传范畴中的满单分解均可补全作推出拉回方块.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; 遗传范畴中, $X^∙$ 与 $H^∙(X)$ 导出等价.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Def&lt;/strong&gt; (遗传范畴的 Tilting 对象). 称 $T ∈ 𝒜$ 是 tilting 对象, 若 $T$ 生成的 Serre 子范畴是 $𝒜$, 且 $\mathrm{Ext}^1(T,T)=0$.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt; 遗传对应 $p.\dim T ≤ 1$, $T$ 生成 Serre 子范畴的条件对应 $A$ 的 $𝐚𝐝𝐝(T)$-余消解维度 $≤1$.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (遗传范畴的 torsion pair). 对上述遗传范畴与 tilting 对象 $T$.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$(\ker \mathrm{Ext}^0(T,-), \ker \mathrm{Ext}^1(T,-))$ 是 torsion pair, 记作 $(𝒯, ℱ)$.&lt;/li&gt;
-  &lt;li&gt;BB 导出等价给出 $(𝒳 , 𝒴) ≃ (ℱ[1], 𝒯)$.&lt;/li&gt;
-  &lt;li&gt;若 $B$ 遗传, 则 $(𝒯, ℱ)$ 可裂.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Thm&lt;/strong&gt; (可裂 torsion pair 的等价定义). 称 Abel 范畴 $𝒜$ 中的 torsion pair $(𝒯, ℱ)$ 可裂, 若以下等价命题成立.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$𝒯∪ℱ$ 包含一切不可分解对象.&lt;/li&gt;
-  &lt;li&gt;$\mathrm{Ext}_𝒜^1(ℱ, 𝒯) = 0$.&lt;/li&gt;
-  &lt;li&gt;$𝒯$ 关于 $τ⁻¹$ 封闭.&lt;/li&gt;
-  &lt;li&gt;$ℱ$ 关于 $τ$ 封闭.&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-          <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting</guid>
         </item>
       
     
