@@ -7,7 +7,7 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
-  <title>$\dim A$ 与 $\dim \mathrm{End}(T_A)$
+  <title>$\dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M)$
     ·
     Jekyll Latex</title>
 
@@ -21,7 +21,7 @@
 <link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
 <link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
-<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Gl_Dim_A_B">
+<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Key_Lemma_Gabriel">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -67,7 +67,7 @@
 	<main>
   <article>
     <div class="center">
-      <h1>$\dim A$ 与 $\dim \mathrm{End}(T_A)$</h1>
+      <h1>$\dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M)$</h1>
       <p class="author">
         Chencheng Zhang
         <br/>
@@ -80,23 +80,34 @@
 
     <h2 id="证明">证明</h2>
 
-<div class="theorem"><p>(整体维数, <a href="Gl_Dim_A_B">证明</a>). $|gl.\dim A - gl.\dim B|≤ 1$.</p>
+<div class="lemma"><p>(关键公式, <a href="Key_Lemma_Gabriel">证明</a>). 以下关键公式联系了 Krull 维度与线性空间的维度.</p>
+
+\[\dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M) = \dim \mathrm{End}(M) - q(𝐯).\]
 </div>
 
-<div class="proof"><p>任取 $B$-模 $X$, 此时存在投射模 $P$ 使得有 ses
-\(0 → K → P → X → 0\)
-由 $P ∈ 𝒴 = (T,𝒯)$ 属于 torsion-free class, 此时子对象 $K ∈ 𝒴$. 不妨假定 $K = (T, M)$, 满足 $M ∈ 𝒯$. 由<a href="T_Y_Dim">此定理</a>, 得</p>
+<div class="proof"><p>对轨道的维度公式</p>
 
-\[p_B.\dim K = p_B.\dim (T,M) ≤ p_A. \dim M ≤ gl.\dim A.\]
+\[\dim G = \dim \ [M] + \dim \mathrm{Stab}_{M}\]
 
-<p>因此 $p_B.\dim X - 1 ≤ gl.\dim A$. 取左式 $\sup$, 得 $gl.\dim B ≤ gl.\dim A + 1$.
-<br />
-<br />
-由 $\mathrm{End}(_BT) ≃ A$, 得</p>
+<p>做一些调整:</p>
 
-\[gl.\dim A ≤ gl.\dim \mathrm{End}(_BT) ≤ gl.\dim B + 1.\]
+<ol>
+  <li>$\mathrm{Stab}_{M} = \mathrm{Aut}(M) ⊆ \mathrm{End}(M)$ 是稠密开集, 故维度相同;</li>
+  <li>
+    <p>Euler 型</p>
 
-<p>综上, $|gl.\dim A - gl.\dim B|≤ 1$.</p>
+\[q(𝐯) = ∑ _{i ∈  Q_0} 𝐯_i^2 - ∑ _{α  ∈  Q_1} 𝐯_{s(α )}⋅  𝐯_{t(α )} = \dim G - \dim 𝐫𝐞𝐩(𝐯);\]
+  </li>
+  <li>
+    <p>遗传代数的 Euler 公式</p>
+
+\[q(𝐯) = \dim \mathrm{End}(M) - \dim \mathrm{Ext}^1(M,M)\]
+  </li>
+</ol>
+
+<p>将以上带入 Krull 维度公式, 得关键公式.</p>
+
+\[\dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M) = \dim \mathrm{End}(M) - q(𝐯).\]
 </div>
 
 
@@ -106,8 +117,8 @@
     
       <a
         class="next"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Hom_D_Hereditary"
-        title="NEXT: 遗传范畴的 $\mathrm{Hom}_{D𝒜}(-,-)$.">&lt;&lt;</a>
+        href="https://zhangchenchengsjtu.github.io/website/posts/Ringel_Resolution"
+        title="NEXT: Canonical Resolution of Quiver algebra">&lt;&lt;</a>
       <span>
         &middot;
       </span>
@@ -122,8 +133,8 @@
       </span>
       <a
         class="prev"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Uniqueness_of_Maximal_Orbit"
-        title="PREV: 关于轨道的若干结论">&gt;&gt;</a>
+        href="https://zhangchenchengsjtu.github.io/website/posts/Proof-Gabriel"
+        title="PREV: Proof of Gabriel's Theorem">&gt;&gt;</a>
     
   </div>
 </main>

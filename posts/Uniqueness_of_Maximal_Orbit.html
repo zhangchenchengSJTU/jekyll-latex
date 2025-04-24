@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+  <title>关于轨道的若干结论
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="证明">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
+<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
+<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Uniqueness_of_Maximal_Orbit">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+
+
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          [
+            '$', '$'
+          ],
+          [
+            '\\(', '\\)'
+          ]
+        ]
+      }
+    };
+  </script>
+  <script
+    async
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="latex-dark">
+
+	<aside class="logo">
+  
+
+  <a href="https://zhangchenchengsjtu.github.io/website/">
+    <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
+  </a>
+  <span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+	<main>
+  <article>
+    <div class="center">
+      <h1>关于轨道的若干结论</h1>
+      <p class="author">
+        Chencheng Zhang
+        <br/>
+        April 24, 2025
+      </p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 id="证明">证明</h2>
+
+<div class="proposition"><p>(<a href="Uniqueness_of_Maximal_Orbit">证明</a>)
+以下是一些几何的结论.</p>
+
+<ol>
+  <li>极大轨道满足以下等价定义:
+    <ol>
+      <li>$\mathrm{Ext}^1(M,M) =0$;</li>
+      <li>$[M]$ 是开集;</li>
+      <li>$\overline{[M]} = 𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$.</li>
+    </ol>
+  </li>
+  <li>固定 $𝐯$, 极大轨道若存在则必唯一.</li>
+  <li>极大轨道不存在的必要条件: $q(𝐯) ≤ 0$.</li>
+  <li>(不证明此条). 极小轨道就是半单表示; 等价地, $[X]$ 是闭集.</li>
+  <li>
+    <p>给定 ses $0 →  X →  Y →  Z →  0$, 该 ses 不可裂当且仅当</p>
+
+\[[X] ∪  [Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y].\]
+  </li>
+</ol>
+</div>
+
+<p>\begin{proposition}</p>
+
+<p>\begin{enumerate}</p>
+
+<p>\end{enumerate}
+  \begin{proof}
+    1. 的证明较为繁琐, 且对主定理的证明无帮助, 故从略. 
+    \begin{itemize}
+      (1. 的证明). 由``关键恒等式’’, $\dim \mathrm{Ext}^1(M,M) = 0$ 当且仅当 $\dim [M] = \dim 𝐫𝐞𝐩(𝐯)$. 
+      \begin{enumerate}
+        若 $\mathrm{Ext}^1(M,M) =0$, 则 $\overline{[M]} = 𝐫𝐞𝐩(𝐯)$. 由 $[M]$ 在 $\overline {[M]}$ 中开, 得 $[M]$ 在 $𝐫𝐞𝐩(𝐯)$ 中开. 
+        若 $[M]$ 在 $𝐫𝐞𝐩(𝐯)$ 中开, 则必稠密. 此时 $\dim [M] = \dim 𝐫𝐞𝐩(𝐯)$, 因此 $\mathrm{Ext}^1(M,M) =0$. 
+      \end{enumerate}
+      (2. 的证明). 若 $q(𝐯) ≤ 0$, 则对任意非零 $M$ 都有 $\dim 𝐫𝐞𝐩 (𝐯) &gt; \dim [M]$.<br />
+      (4. 的证明). 若 $0 → L \xrightarrow f M \xrightarrow g N → 0$ 不可裂, 则 $[L ⊕ N] ⊂ \overline{[M]} ∖ [M]$. 
+      将以上 ses 看作 $Q$-指标的线性空间的 ses. 依照线性代数, 存在同时分块上三角化 
+      \begin{equation}
+          0 → \begin{pmatrix}
+              L_λ  &amp; O 
+          \end{pmatrix}\xrightarrow{\binom{f_λ }{0}} \begin{pmatrix}
+              M^1<em>λ  &amp; M^2_λ  \ O &amp; M^4 _λ<br />
+          \end{pmatrix}\xrightarrow{(0 \ \ g_λ )} \begin{pmatrix}
+              O \ 
+              N_λ 
+          \end{pmatrix} →  0. 
+      \end{equation}
+      取 $G$ 中元素为 $g_t := \begin{pmatrix}
+          t ⋅  \mathrm{id}</em>{L_i} &amp; O \ O &amp; \mathrm{id}_{N_i}
+      \end{pmatrix}$, 考虑 $M$ 在单参数子群 $g_t$ 共轭作用下的轨道 $[M]_t$. 由 $k ∖ {0}$ 在 $k$ 中稠密, $[M]_0 ∈  \overline{{[M]_t ∣  t ≠  0}}$.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  再说明 $L⊕  N ≇  M$. 若同构, 由长正合列知,  
+  \begin{equation}
+      \dim \mathrm{im}\left[\mathrm{Hom}(L, L) → \mathrm{Ext}^1(N, L)\right] = 0. 
+  \end{equation}
+  由上述正合列不可裂, 得矛盾. 
+\end{itemize}    \end{proof} \end{proposition}
+</code></pre></div></div>
+
+
+  </article>
+
+  <div class="page-navigation">
+    
+      <a
+        class="next"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Gl_Dim_A_B"
+        title="NEXT: $\dim A$ 与 $\dim \mathrm{End}(T_A)$">&lt;&lt;</a>
+      <span>
+        &middot;
+      </span>
+    
+    <a
+      class="home"
+      href="https://zhangchenchengsjtu.github.io/website/"
+      title="Back to Homepage">Home</a>
+    
+      <span>
+        &middot;
+      </span>
+      <a
+        class="prev"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Ringel_Resolution"
+        title="PREV: Canonical Resolution of Quiver algebra">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    Chencheng Zhang</span>
+</div>
+
+</body>
+
+
+</html>

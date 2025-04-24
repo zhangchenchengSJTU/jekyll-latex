@@ -132,17 +132,240 @@ X^{n-1} &amp;amp; = &amp;amp; X^{n-1} &amp;amp; \rightarrow  &amp;amp; E
     
       
         <item>
+          <title>关于轨道的若干结论</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Uniqueness_of_Maximal_Orbit&quot;&gt;证明&lt;/a&gt;)
+以下是一些几何的结论.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;极大轨道满足以下等价定义:
+    &lt;ol&gt;
+      &lt;li&gt;$\mathrm{Ext}^1(M,M) =0$;&lt;/li&gt;
+      &lt;li&gt;$[M]$ 是开集;&lt;/li&gt;
+      &lt;li&gt;$\overline{[M]} = 𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;固定 $𝐯$, 极大轨道若存在则必唯一.&lt;/li&gt;
+  &lt;li&gt;极大轨道不存在的必要条件: $q(𝐯) ≤ 0$.&lt;/li&gt;
+  &lt;li&gt;(不证明此条). 极小轨道就是半单表示; 等价地, $[X]$ 是闭集.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;给定 ses $0 →  X →  Y →  Z →  0$, 该 ses 不可裂当且仅当&lt;/p&gt;
+
+\[[X] ∪  [Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y].\]
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;\begin{proposition}&lt;/p&gt;
+
+&lt;p&gt;\begin{enumerate}&lt;/p&gt;
+
+&lt;p&gt;\end{enumerate}
+  \begin{proof}
+    1. 的证明较为繁琐, 且对主定理的证明无帮助, 故从略. 
+    \begin{itemize}
+      (1. 的证明). 由``关键恒等式’’, $\dim \mathrm{Ext}^1(M,M) = 0$ 当且仅当 $\dim [M] = \dim 𝐫𝐞𝐩(𝐯)$. 
+      \begin{enumerate}
+        若 $\mathrm{Ext}^1(M,M) =0$, 则 $\overline{[M]} = 𝐫𝐞𝐩(𝐯)$. 由 $[M]$ 在 $\overline {[M]}$ 中开, 得 $[M]$ 在 $𝐫𝐞𝐩(𝐯)$ 中开. 
+        若 $[M]$ 在 $𝐫𝐞𝐩(𝐯)$ 中开, 则必稠密. 此时 $\dim [M] = \dim 𝐫𝐞𝐩(𝐯)$, 因此 $\mathrm{Ext}^1(M,M) =0$. 
+      \end{enumerate}
+      (2. 的证明). 若 $q(𝐯) ≤ 0$, 则对任意非零 $M$ 都有 $\dim 𝐫𝐞𝐩 (𝐯) &amp;gt; \dim [M]$.&lt;br /&gt;
+      (4. 的证明). 若 $0 → L \xrightarrow f M \xrightarrow g N → 0$ 不可裂, 则 $[L ⊕ N] ⊂ \overline{[M]} ∖ [M]$. 
+      将以上 ses 看作 $Q$-指标的线性空间的 ses. 依照线性代数, 存在同时分块上三角化 
+      \begin{equation}
+          0 → \begin{pmatrix}
+              L_λ  &amp;amp; O 
+          \end{pmatrix}\xrightarrow{\binom{f_λ }{0}} \begin{pmatrix}
+              M^1&lt;em&gt;λ  &amp;amp; M^2_λ  \ O &amp;amp; M^4 _λ&lt;br /&gt;
+          \end{pmatrix}\xrightarrow{(0 \ \ g_λ )} \begin{pmatrix}
+              O \ 
+              N_λ 
+          \end{pmatrix} →  0. 
+      \end{equation}
+      取 $G$ 中元素为 $g_t := \begin{pmatrix}
+          t ⋅  \mathrm{id}&lt;/em&gt;{L_i} &amp;amp; O \ O &amp;amp; \mathrm{id}_{N_i}
+      \end{pmatrix}$, 考虑 $M$ 在单参数子群 $g_t$ 共轭作用下的轨道 $[M]_t$. 由 $k ∖ {0}$ 在 $k$ 中稠密, $[M]_0 ∈  \overline{{[M]_t ∣  t ≠  0}}$.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  再说明 $L⊕  N ≇  M$. 若同构, 由长正合列知,  
+  \begin{equation}
+      \dim \mathrm{im}\left[\mathrm{Hom}(L, L) → \mathrm{Ext}^1(N, L)\right] = 0. 
+  \end{equation}
+  由上述正合列不可裂, 得矛盾. 
+\end{itemize}    \end{proof} \end{proposition}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+          <pubDate>2025-04-24T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Uniqueness_of_Maximal_Orbit</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Uniqueness_of_Maximal_Orbit</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>Canonical Resolution of Quiver algebra</title>
-          <description>&lt;h2 id=&quot;kq-的极小投射分解&quot;&gt;$kQ$ 的极小投射分解&lt;/h2&gt;
+          <description>&lt;h2 id=&quot;有限维代数的极小投射分解&quot;&gt;有限维代数的极小投射分解&lt;/h2&gt;
+
+&lt;h3 id=&quot;kq-的标准分解&quot;&gt;$kQ$ 的标准分解&lt;/h3&gt;
 
 &lt;p&gt;给定任意不带关系的路代数 $kQ$, 有限生成模 $M ∈ 𝐦𝐨𝐝_{kQ}$ 的&lt;a href=&quot;Ringel_Resolution&quot;&gt;极小投射分解&lt;/a&gt;是&lt;/p&gt;
 
-\[0 → ⨁_{α∈ Q_1}P(t(α))^{\dim  M_{s(α)}} → ⨁_{i∈ Q_0}P(i)^{\dim M_i} → M → 0.\]
+\[0 → ⨁\limits_{α∈ Q_1}P(t(α))^{\dim  M_{s(α)}} → ⨁\limits_{i∈ Q_0}P(i)^{\dim M_i} → M → 0.\]
 
+&lt;p&gt;此处 $P(i)^{\dim M_i} ↠ Me_i$ 是投射盖, 将 $e_i ∈ P(i)$ 对应至 $e_iM$ 的生成元.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;关于 $e_iM$ 的生成元, 可先取半单对象 ($X ↠ \mathrm{Top}(X)$)&lt;/p&gt;
+
+\[π : e_iM ↠ e_i M e_i.\]
+
+  &lt;p&gt;对 $(\dim M_i)$-维线性空间 $e_iMe_i$ 的基任取一组 $π$ 下的原像即可.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;由于 $X^𝒮$ 之类的式子并不能很好地反应生成元, 以下将极小投射分解改写作&lt;/p&gt;
+
+\[0 → ⨁\limits_{α∈ Q_1}P(t(α)) ⊗_k e_{s(α)} M \xrightarrow ι ⨁ \limits_{i∈ Q_0}P(i) ⊗_k e_i M \xrightarrow π M → 0.\]
+
+&lt;p&gt;第一处态射蕴含了生成关系:&lt;/p&gt;
+
+\[i : p ⊗ m ↦ p ⊗ (a ⋅ m) - pa ⊗ m.\]
+
+&lt;p&gt;以上是&lt;a href=&quot;https://ncatlab.org/nlab/show/bar+construction&quot;&gt;杠消解&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;定义-quiver-with-relation&quot;&gt;定义: quiver with relation&lt;/h3&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;称 $I$ 是 $kQ$ 的容许理想, 若存在 $N$ 使得&lt;/p&gt;
+
+\[\mathrm{Rad}^2(kQ) ⊇ I ⊇ \mathrm{Rad}^N(kQ).\]
+
+&lt;p&gt;这即是说, $I$ 中 relation 的长度至少是 $2$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(Bound quiver). 称 $kQ / I$ 是 bound quiver, 若 $kQ$ 是有限维的, 且 $I$ 是容许理想.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;单对象与-mathrmext-群&quot;&gt;单对象与 $\mathrm{Ext}$-群&lt;/h3&gt;
+
+&lt;p&gt;往后记 $J:= \mathrm{Rad}(A)$ 是代数的 Radical, 也就是 $k ⋅ Q_1$ 生成的理想.&lt;/p&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;($\mathrm{Ext}^1(S(i), S(j))$). 对 $S(i)$ 作投射盖&lt;/p&gt;
+
+\[0 → P(i) ⋅ J → P(i) → S(i) → 0.\]
+
+&lt;p&gt;作用 $(-, S(j))$, 得四项正合列&lt;/p&gt;
+
+\[0 → (S(i), S(j)) → (P(i), S(j)) → (P(i) ⋅ J, S(j)) → \mathrm{Ext}^1(S(i), S(j)) → 0.\]
+
+&lt;p&gt;由 $\mathrm{Top}$ 的性质, 前两项是满的. 此时后两项是同构. 计算得&lt;/p&gt;
+
+\[\mathrm{Ext}^1(S(i), S(j)) ≃ (P(i) ⋅ J, S(j)) ≃ k^{|Q_1 (i → j)|}.\]
+
+&lt;p&gt;此处 $|Q_1 (i → j)|$ 是 $i → j$ 连边数量.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;corollary&quot;&gt;&lt;p&gt;$\mathrm{Ext}^1(kQ_0, kQ_0) ≃ D(J / J^2)$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;特例: 对 $kQ = [1 → 2]$, 有典范短正合列&lt;/p&gt;
+
+\[θ : 0 → S(2) → P(1) → S(1) → 0.\]
+
+&lt;p&gt;此处 $\mathrm{Ext}^1(S(1), S(2)) = k ⋅ θ$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;对 bound quiver $(Q, I)$, 考虑一列滤过的右理想&lt;/p&gt;
+
+\[\cdots ⊆ I^{n + 1}  ⊆ JI^n ⊆ \cdots ⊆ I ⊆ J ⊆ kQ.\]
+
+&lt;p&gt;此时得 $A$ 的投射分解&lt;/p&gt;
+
+\[\begin{bmatrix}
+ &amp;amp;  &amp;amp; \Omega _{3} &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \Omega _{2} &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \Omega _{1} &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \Omega _{0}\\[6pt]\hline
+\frac{JI}{JI^{2}} &amp;amp;  &amp;amp; \rightarrow  &amp;amp;  &amp;amp; \frac{I}{I^{2}} &amp;amp;  &amp;amp; \rightarrow  &amp;amp;  &amp;amp; \frac{J}{JI} &amp;amp;  &amp;amp; \rightarrow  &amp;amp;  &amp;amp; \frac{kQ}{I} &amp;amp; \twoheadrightarrow  &amp;amp; \frac{kQ}{J}\\
+ &amp;amp; \searrow  &amp;amp;  &amp;amp; \nearrow  &amp;amp;  &amp;amp; \searrow  &amp;amp;  &amp;amp; \nearrow  &amp;amp;  &amp;amp; \searrow  &amp;amp;  &amp;amp; \nearrow  &amp;amp;  &amp;amp; \searrow  &amp;amp; \parallel \\
+ &amp;amp;  &amp;amp; \frac{JI}{I^{2}} &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \frac{I}{JI} &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \frac{J}{I} &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; K
+\end{bmatrix}.\]
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;依次验证上述是投射分解. 记 $J^0 = kQ$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;关于短正合列, 往复使用同构定理 $\frac{A / C}{B / C} ≃ \frac{A}{B}$ 即可.&lt;/li&gt;
+  &lt;li&gt;关于投射对象, 由 $kQ$ 遗传, 从而 $L ⊆ kQ$ 都是投射的, 因此是自由模的直和项. 由商保持直和项, 得 $\frac{L}{LI}$ 是投射 $\frac{kQ}{I}$-模.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;corollary&quot;&gt;&lt;p&gt;特别地, $\mathrm{Ext}^1(K, K) ≃ D(J / J^2)$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;本质上, $K$ 无论作为 $kQ / I$ 模或是 $kQ$ 模, 其本质上都是 $kQ_0$-模. 因此, 前文结论仍适用.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;corollary&quot;&gt;&lt;p&gt;$\mathrm{Ext}^2(K,K) ≃ D(\frac{I}{IJ+JI})$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;记 $A := kQ / I$. 由维数移位, 得&lt;/p&gt;
+
+\[\textstyle \mathrm{Ext}_A^2(K,K) ≃ (\frac I {JI}, (DK, k)_k)_A ≃ D(\frac I {JI} ⊗_A DK).\]
+
+&lt;p&gt;作为左 $A$-模, 半单模 $DK$ 即 $K$. 此时有正合列的交换图&lt;/p&gt;
+
+\[\begin{bmatrix}
+ &amp;amp;  &amp;amp; \frac{I}{JI} \otimes _{A}\frac{J}{I} &amp;amp; \rightarrow  &amp;amp; \frac{I}{JI} \otimes _{A} A &amp;amp; \rightarrow  &amp;amp; \frac{I}{JI} \otimes _{A} K &amp;amp; \rightarrow  &amp;amp; 0\\
+ &amp;amp;  &amp;amp; ↡  &amp;amp;  &amp;amp; \parallel  &amp;amp;  &amp;amp; ⇣ &amp;amp;  &amp;amp; \\
+0 &amp;amp; \rightarrow  &amp;amp; \frac{IJ+JI}{JI} &amp;amp; \rightarrow  &amp;amp; \frac{I}{JI} &amp;amp; \rightarrow  &amp;amp; \frac{I}{IJ+JI} &amp;amp; \rightarrow  &amp;amp; 0
+\end{bmatrix}.\]
+
+&lt;p&gt;此处, 左侧的 $↡$ 是直接的乘法运算. 由同调代数, 诱导的余核处的态射 $⇣$ 是同构.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;question&quot;&gt;&lt;p&gt;清晰地, $\dim \mathrm{Ext}^2(S(i), S(j)) = \dim e_j⋅ D(\frac{I}{IJ+JI})⋅ e_i$. 如何用自然语言刻画之?&lt;/p&gt;
+&lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
           <link>https://zhangchenchengsjtu.github.io/website/posts/Ringel_Resolution</link>
           <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Ringel_Resolution</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>$\dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M)$</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(关键公式, &lt;a href=&quot;Key_Lemma_Gabriel&quot;&gt;证明&lt;/a&gt;). 以下关键公式联系了 Krull 维度与线性空间的维度.&lt;/p&gt;
+
+\[\dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M) = \dim \mathrm{End}(M) - q(𝐯).\]
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;对轨道的维度公式&lt;/p&gt;
+
+\[\dim G = \dim \ [M] + \dim \mathrm{Stab}_{M}\]
+
+&lt;p&gt;做一些调整:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$\mathrm{Stab}_{M} = \mathrm{Aut}(M) ⊆ \mathrm{End}(M)$ 是稠密开集, 故维度相同;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Euler 型&lt;/p&gt;
+
+\[q(𝐯) = ∑ _{i ∈  Q_0} 𝐯_i^2 - ∑ _{α  ∈  Q_1} 𝐯_{s(α )}⋅  𝐯_{t(α )} = \dim G - \dim 𝐫𝐞𝐩(𝐯);\]
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;遗传代数的 Euler 公式&lt;/p&gt;
+
+\[q(𝐯) = \dim \mathrm{End}(M) - \dim \mathrm{Ext}^1(M,M)\]
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;将以上带入 Krull 维度公式, 得关键公式.&lt;/p&gt;
+
+\[\dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M) = \dim \mathrm{End}(M) - q(𝐯).\]
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-24T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Key_Lemma_Gabriel</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Key_Lemma_Gabriel</guid>
         </item>
       
     
@@ -172,120 +395,96 @@ X^{n-1} &amp;amp; = &amp;amp; X^{n-1} &amp;amp; \rightarrow  &amp;amp; E
 
 \[0 → ⨁_{α∈ Q_1}P(t(α))^{\dim  M_{s(α)}} → ⨁_{i∈ Q_0}P(i)^{\dim M_i} → M → 0.\]
 
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(维数向量).
+子范畴 $ι: Q_0 ↪ Q_1$ 给出拉回&lt;/p&gt;
+
+\[𝐝𝐢𝐦:= \quad ι^∗: 𝐦𝐨𝐝_{kQ} → 𝐦𝐨𝐝_{kQ_0},\quad M ↦ (\dim M_i)_{i ∈ Q_0}.\]
+&lt;/div&gt;
+
+&lt;p&gt;简单地看, $ι(M)$ 是将一切 $M_α$ 替换作零态射. 函子 $𝐦𝐨𝐝$ 本质满, 但未必全忠实.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(轨道). 给定 $𝐯 ∈ 𝐦𝐨𝐝_{kQ_0}$. 一个以 $𝐯$ 为维数向量的表示, 对应以下同构类中的一个代表元&lt;/p&gt;
+
+\[\{M ∈ 𝐫𝐞𝐩_k(Q) ∣ 𝐝𝐢𝐦 \ M = 𝐯\} / ≃ .\]
+
+&lt;p&gt;以下使用轨道定义之.&lt;/p&gt;
+
 &lt;ol&gt;
-  &lt;li&gt;第一处态射将 $(p_α)_{(α : i → j ; \ k(i))}$ 对应至&lt;/li&gt;
-  &lt;li&gt;第二处态射由投射盖 $P(i)^{\dim M_i} ↠ M ⋅ e_i$ 决定.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(Variety) 定义 representation variety:&lt;/p&gt;
+
+\[𝐫𝐞𝐩(𝐯) = ∏_{α ∈ Q_1} k^{𝐯_{t(α )} × 𝐯_{s(α)}}.\]
+
+    &lt;p&gt;$X$ 中的一个对象 (一族 $Q_1$-指标的矩阵) 对应一个以 $𝐯$ 为维度向量的模. 特别地,&lt;/p&gt;
+
+\[M_{t(α )} \xleftarrow{M_{α }} M_{s(α )} ,\quad k^{𝐯_{t(α )}} \xleftarrow{Y} k^{𝐯_{s(α)}}\quad (Y ∈  k^{𝐯_{t(α )} ×  𝐯_{s(α )}}).\]
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(代数群) 称 $𝐫𝐞𝐩(𝐯) =$ 中元素等价 ($M ∼  N$), 当且仅当其作为 $kQ$-模同构. 相应地, 存在 $g ∈  ∏ _{i ∈  Q_0}\mathrm{GL}(k, 𝐯_i)$ 使得&lt;/p&gt;
+
+\[g_{t(α )} ⋅  M_α  = N_α  ⋅  g_{s(α )} \ \quad (∀  α  ∈  Q_1)\]
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(群作用) 定义 $G := ∏ _{i ∈  Q_0}\mathrm{GL}(k, 𝐯_i)$ 在 $𝐫𝐞𝐩(𝐯) =$ 上的 (共轭) 作用如下:&lt;/p&gt;
+
+\[g. (x_α )_{α  ∈  Q_1} := (g_{t(α )} ⋅  x_α  ⋅  g_{s(α )}^{-1})_{α  ∈  Q_1}.\]
+  &lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;\begin{definition}[维数向量]
-  子范畴 $ι: Q_0 ↪ Q_1$ 给出拉回 
-  \begin{equation}
-    𝐝𝐢𝐦:= \quad ι^∗: 𝐦𝐨𝐝_{kQ} → 𝐦𝐨𝐝_{kQ_0},\quad M ↦ (\dim M_i)_{i ∈ Q_0}.
-  \end{equation} 
-\end{definition}&lt;/p&gt;
+&lt;p&gt;记 $[M]$ 是 $M$ 所在的轨道. $[M]$ 代表一个表示.&lt;/p&gt;
 
-&lt;p&gt;\begin{remark}
-  简单地看, $ι(M)$ 是将一切`` $M_α$ ‘‘替换作零态射. 函子 $𝐦𝐨𝐝$ 本质满, 但未必全忠实.
-\end{remark}&lt;/p&gt;
+&lt;div class=&quot;slogan&quot;&gt;&lt;p&gt;Gabriel 定理证明的出发点: 找到 $𝐫𝐞𝐩(𝐯)$ 的所有 $G$-轨道.&lt;/p&gt;
+&lt;/div&gt;
 
-&lt;p&gt;\begin{definition}[轨道]
-  给定 $𝐯 ∈ 𝐦𝐨𝐝_{kQ_0}$, 以 $𝐯$ 为维数向量的表示即 ${M ∣ 𝐝𝐢𝐦 \ M = 𝐯}$ 的同构类. 以下使用轨道定义之. 
-  \begin{enumerate}
-    (集合) 记 $𝐫𝐞𝐩(𝐯) = ∏ &lt;em&gt;{α  ∈  Q_1} k^{𝐯&lt;/em&gt;{t(α )} ×  𝐯_{s(α )}}$. $X$ 中的一个对象 (一族 $Q_1$-指标的矩阵) 对应一个以 $𝐯$ 为维度向量的模. 特别地, 
-    \begin{equation}
-        M_{t(α )} \xleftarrow{M_{α }} M_{s(α )} ,\quad k^{𝐯_{t(α )}} \xleftarrow{Y} k^{𝐯_{s(α)}}\quad (Y ∈  k^{𝐯_{t(α )} ×  𝐯_{s(α )}}). 
-    \end{equation}
-    (代数群) 称 $𝐫𝐞𝐩(𝐯) =$ 中元素等价 ($M ∼  N$), 当且仅当其作为 $kQ$-模同构. 相应地, 存在 $g ∈  ∏ &lt;em&gt;{i ∈  Q_0}\mathrm{GL}(k, 𝐯_i)$ 使得
-    \begin{equation}
-        g&lt;/em&gt;{t(α )} ⋅  M_α  = N_α  ⋅  g_{s(α )}^{-1} \ \quad (∀  α  ∈  Q_1)
-    \end{equation}
-    (群作用) 定义 $G := ∏ &lt;em&gt;{i ∈  Q_0}\mathrm{GL}(k, 𝐯_i)$ 在 $𝐫𝐞𝐩(𝐯) =$ 上的作用如下\footnote{这就是群的共轭作用. ``指标不同处’‘乘积为 $0$.}: 
-    \begin{equation}
-        g. (x_α )&lt;/em&gt;{α  ∈  Q_1} := (g_{t(α )} ⋅  x_α  ⋅  g_{s(α )})_{α  ∈  Q_1}. 
-    \end{equation}
-\end{enumerate} 
-\end{definition}&lt;/p&gt;
+&lt;h3 id=&quot;维度公式&quot;&gt;维度公式&lt;/h3&gt;
 
-&lt;p&gt;\begin{remark}
-  记 $[M]$ 是 $M$ 所在的轨道. $[M]$ 代表一个表示. &lt;br /&gt;
-\end{remark}&lt;/p&gt;
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;涉及 Krull 维度的部分暂不给出证明.&lt;/p&gt;
+&lt;/div&gt;
 
-&lt;p&gt;\begin{note}
-  Gabriel 定理证明的出发点: 找到 $𝐫𝐞𝐩(𝐯)$ 的所有 $G$-轨道. We call $𝐫𝐞𝐩(𝐯)$ a representation variety. 
-\end{note}&lt;/p&gt;
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(Krull 维度公式). 同上, $G$ 是共轭作用在 $𝐫𝐞𝐩(𝐯)$ 上的代数群概型. 一个表示就是一个 $G$-轨道.&lt;/p&gt;
 
-&lt;p&gt;\subsection{预备定义: 维度公式}&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;所有 $G$-轨道 $[M]$ 都是不可约的局部闭集:
+    &lt;ol&gt;
+      &lt;li&gt;不可约: 所有开子集稠密, 等价地, 任意两个开集有非空交;&lt;/li&gt;
+      &lt;li&gt;局部闭: $X$ 是 $\overline X$ 的开子集, 等价地, $X$ 是开集与闭集的交.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;对任意 $M$, 稳定子群 $\mathrm{Stab}_{M}$ 是闭子群.&lt;/li&gt;
+  &lt;li&gt;Krull 维度公式: $\dim G = \dim \ [M] + \dim \mathrm{Stab}_{M}$.&lt;/li&gt;
+  &lt;li&gt;$(\overline{[M]} ∖ [M])$ 恰是一切 Krull 维度更小的轨道的并 (观察 ses).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;\begin{theorem}[Krull 维度公式]
-  $G$ 是代数群概型, 以下直接使用 Chevalley 的系列定理.
-  \begin{enumerate}
-      所有 $G$-轨道 $[M]$ 都是不可约的局部闭集: 
-              \begin{enumerate}
-          不可约: 所有开子集稠密, 等价地, 任意两个开集有非空交; 
-          局部闭: $X$ 是 $\overline X$ 的开子集, 等价地, $X$ 是开集与闭集的交. 
-      \end{enumerate}
-      对任意 $M$, 稳定子群 $\mathrm{Stab}&lt;em&gt;{M}$ 是闭子群. 
-      Krull 维度公式: $\dim G = \dim \ [M] + \dim \mathrm{Stab}&lt;/em&gt;{M}$. \footnote{对线性空间, krull 维度就是线性维度. 以下不区分 $\dim$ 与 $\dim_k$.}
-      $(\overline{[M]} ∖ [M])$ 恰是一切 Krull 维度更小的轨道的并 (观察 ses). 
-  \end{enumerate}
-\end{theorem}&lt;/p&gt;
+&lt;p&gt;对 $𝔸_k^n$, 线性维度就是 Krull 维数.&lt;/p&gt;
 
-&lt;p&gt;\begin{lemma}
-  对轨道的维度公式做一些调整: 
-  \begin{enumerate}
-      $\mathrm{Stab}&lt;em&gt;{M} = \mathrm{Aut}(M) ⊂ \mathrm{End}(M)$ 是稠密开集, 故维度相同; 
-      Euler 型 $q(𝐯) = ∑ _{i ∈  Q_0} 𝐯_i^2 - ∑ _{α  ∈  Q_1} 𝐯&lt;/em&gt;{s(α )}⋅  𝐯_{t(α )} = \dim G - \dim 𝐫𝐞𝐩(𝐯)$; 
-      遗传代数的 Euler 公式 $q(𝐯) = \dim \mathrm{End}(M) - \dim \mathrm{Ext}^1(M,M)$. 
-  \end{enumerate}
-  将以上带入 Krull 维度公式, 得``关键恒等式’’:
-  \begin{equation}
-      \dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M) = \dim \mathrm{End}(M) - q(𝐯). 
-  \end{equation}
-\end{lemma}&lt;/p&gt;
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(关键公式, &lt;a href=&quot;Key_Lemma_Gabriel&quot;&gt;证明&lt;/a&gt;). 以下关键公式联系了 Krull 维度与线性空间的维度.&lt;/p&gt;
 
-&lt;p&gt;\begin{proposition}
-  以下是一些&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;几何的''结论.
-  \begin{enumerate}
-      极大轨道满足以下等价定义: $\mathrm{Ext}^1(M,M) =0$; $[M]$ 是开集; $\overline{[M]} = 𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$. 固定 $𝐯$, 极大轨道若存在则必唯一. 
-      极大轨道不存在的必要条件: $q(𝐯) ≤ 0$.
-      极小轨道就是半单表示; 等价地, $[X]$ 是闭集. 
-      给定 ses $0 →  X →  Y →  Z →  0$, 该 ses 不可裂当且仅当
-      \begin{equation}
-          [X] ∪  [Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y]. 
-      \end{equation}
-  \end{enumerate}
-  \begin{proof}
-    1. 的证明较为繁琐, 且对主定理的证明无帮助, 故从略. 
-    \begin{itemize}
-      (1. 的证明). 由&lt;/code&gt;关键恒等式’’, $\dim \mathrm{Ext}^1(M,M) = 0$ 当且仅当 $\dim [M] = \dim 𝐫𝐞𝐩(𝐯)$. 
-      \begin{enumerate}
-        若 $\mathrm{Ext}^1(M,M) =0$, 则 $\overline{[M]} = 𝐫𝐞𝐩(𝐯)$. 由 $[M]$ 在 $\overline {[M]}$ 中开, 得 $[M]$ 在 $𝐫𝐞𝐩(𝐯)$ 中开. 
-        若 $[M]$ 在 $𝐫𝐞𝐩(𝐯)$ 中开, 则必稠密. 此时 $\dim [M] = \dim 𝐫𝐞𝐩(𝐯)$, 因此 $\mathrm{Ext}^1(M,M) =0$. 
-      \end{enumerate}
-      (2. 的证明). 若 $q(𝐯) ≤ 0$, 则对任意非零 $M$ 都有 $\dim 𝐫𝐞𝐩 (𝐯) &amp;gt; \dim [M]$.&lt;br /&gt;
-      (4. 的证明). 若 $0 → L \xrightarrow f M \xrightarrow g N → 0$ 不可裂, 则 $[L ⊕ N] ⊂ \overline{[M]} ∖ [M]$. 
-      将以上 ses 看作 $Q$-指标的线性空间的 ses. 依照线性代数, 存在同时分块上三角化 
-      \begin{equation}
-          0 → \begin{pmatrix}
-              L_λ  &amp;amp; O 
-          \end{pmatrix}\xrightarrow{\binom{f_λ }{0}} \begin{pmatrix}
-              M^1&lt;em&gt;λ  &amp;amp; M^2_λ  \ O &amp;amp; M^4 _λ&lt;br /&gt;
-          \end{pmatrix}\xrightarrow{(0 \ \ g_λ )} \begin{pmatrix}
-              O \ 
-              N_λ 
-          \end{pmatrix} →  0. 
-      \end{equation}
-      取 $G$ 中元素为 $g_t := \begin{pmatrix}
-          t ⋅  \mathrm{id}&lt;/em&gt;{L_i} &amp;amp; O \ O &amp;amp; \mathrm{id}_{N_i}
-      \end{pmatrix}$, 考虑 $M$ 在单参数子群 $g_t$ 共轭作用下的轨道 $[M]_t$. 由 $k ∖ {0}$ 在 $k$ 中稠密, $[M]_0 ∈  \overline{{[M]_t ∣  t ≠  0}}$.&lt;/p&gt;
+\[\dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M) = \dim \mathrm{End}(M) - q(𝐯).\]
+&lt;/div&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  再说明 $L⊕  N ≇  M$. 若同构, 由长正合列知,  
-  \begin{equation}
-      \dim \mathrm{im}\left[\mathrm{Hom}(L, L) → \mathrm{Ext}^1(N, L)\right] = 0. 
-  \end{equation}
-  由上述正合列不可裂, 得矛盾. 
-\end{itemize}    \end{proof} \end{proposition}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Uniqueness_of_Maximal_Orbit&quot;&gt;证明&lt;/a&gt;)
+以下是一些几何的结论.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;极大轨道满足以下等价定义:
+    &lt;ol&gt;
+      &lt;li&gt;$\mathrm{Ext}^1(M,M) =0$;&lt;/li&gt;
+      &lt;li&gt;$[M]$ 是开集;&lt;/li&gt;
+      &lt;li&gt;$\overline{[M]} = 𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;固定 $𝐯$, 极大轨道若存在则必唯一.&lt;/li&gt;
+  &lt;li&gt;极大轨道不存在的必要条件: $q(𝐯) ≤ 0$.&lt;/li&gt;
+  &lt;li&gt;(不证明此条). 极小轨道就是半单表示; 等价地, $[X]$ 是闭集.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;给定 ses $0 →  X →  Y →  Z →  0$, 该 ses 不可裂当且仅当&lt;/p&gt;
+
+\[[X] ∪  [Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y].\]
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 
 &lt;p&gt;\subsection{预备定义: 根系}&lt;/p&gt;
 
