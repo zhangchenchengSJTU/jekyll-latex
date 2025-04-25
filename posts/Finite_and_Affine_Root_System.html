@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+  <title>有限型与仿射型 Dynkin 图
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="##">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
+<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
+<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Finite_and_Affine_Root_System">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+
+
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          [
+            '$', '$'
+          ],
+          [
+            '\\(', '\\)'
+          ]
+        ]
+      }
+    };
+  </script>
+  <script
+    async
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="latex-dark">
+
+	<aside class="logo">
+  
+
+  <a href="https://zhangchenchengsjtu.github.io/website/">
+    <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
+  </a>
+  <span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+	<main>
+  <article>
+    <div class="center">
+      <h1>有限型与仿射型 Dynkin 图</h1>
+      <p class="author">
+        Chencheng Zhang
+        <br/>
+        April 25, 2025
+      </p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <p>##</p>
+
+<div class="definition"><p>($A_n$). 该图具有 $n$ 个顶点, 形如</p>
+
+\[\begin{bmatrix}
+1 &amp; - &amp; 2 &amp; - &amp; \cdots  &amp; - &amp; n
+\end{bmatrix}.\]
+</div>
+
+<div class="definition"><p>($D_n$, $n ≥ 3$). 该图具有 $n$ 个顶点, 形如</p>
+
+\[\begin{bmatrix}
+1 &amp; - &amp; 3 &amp; - &amp; \cdots  &amp; - &amp; n\\
+ &amp;  &amp; \mid  &amp;  &amp;  &amp;  &amp; \\
+ &amp;  &amp; 2 &amp;  &amp;  &amp;  &amp;
+\end{bmatrix}.\]
+</div>
+
+<div class="definition"><p>($E_n$, $n = 6,7,8$). 该图具有 $n$ 个顶点, 形如</p>
+
+\[\begin{bmatrix}
+1 &amp; - &amp; 2 &amp; - &amp; 4 &amp; - &amp; \cdots  &amp; - &amp; n\\
+ &amp;  &amp;  &amp;  &amp; \mid  &amp;  &amp;  &amp;  &amp; \\
+ &amp;  &amp;  &amp;  &amp; 3 &amp;  &amp;  &amp;  &amp;
+\end{bmatrix}.\]
+</div>
+
+<p>对于仿射型 Dynkin 图, 将一维空间 $\ker q(-)$ 的特征向量依分量写至顶点处.</p>
+
+<div class="definition"><p>($\widehat {A_n}$). 该图具有 $n + 1$ 个顶点, 形如</p>
+
+\[\begin{bmatrix}
+1 &amp; - &amp;1 &amp; - &amp; \cdots_{1}  &amp; - &amp; 1 \\
+\mid  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; |\\
+1 &amp; - &amp; 1 &amp; - &amp; \cdots_{1}  &amp; - &amp; 1&amp;
+\end{bmatrix}.\]
+
+<p>特别地, $\widehat{A_1}$ 形如 $[1 = 2]$.</p>
+</div>
+
+<div class="definition"><p>($\widehat {D_n}$, $n ≥ 4$). 该图具有 $n + 1$ 个顶点, 形如</p>
+
+\[\begin{bmatrix}
+1 &amp; - &amp; 2 &amp; - &amp; \cdots _{2} &amp; - &amp; 2 &amp; - &amp; 2\\
+ &amp;  &amp; \mid  &amp;  &amp;  &amp;  &amp; | &amp;  &amp; \\
+ &amp;  &amp; 1 &amp;  &amp;  &amp;  &amp; 1 &amp;  &amp;
+\end{bmatrix}\]
+</div>
+
+<div class="definition"><p>($\widehat {E_n}$, $n = 6,7,8$). 该图具有 $n + 1$ 个顶点, 其中</p>
+
+\[\widehat{E_6} := \begin{bmatrix}
+1 &amp; - &amp; 2 &amp; - &amp; 3 &amp; - &amp; 2 &amp; - &amp; 1\\
+ &amp;  &amp;  &amp;  &amp; \mid  &amp;  &amp;  &amp;  &amp; \\
+ &amp;  &amp;  &amp;  &amp; 2 &amp;  &amp;  &amp;  &amp; \\
+ &amp;  &amp;  &amp;  &amp; | &amp;  &amp;  &amp;  &amp; \\
+ &amp;  &amp;  &amp;  &amp; 1 &amp;  &amp;  &amp;  &amp;
+\end{bmatrix},\]
+
+<p>以及</p>
+
+\[\widehat{E_7} := \begin{bmatrix}
+1 &amp; - &amp; 2 &amp; - &amp; 3 &amp; - &amp; 4 &amp; - &amp; 3 &amp; - &amp; 2 &amp; - &amp; 1\\
+ &amp;  &amp;  &amp;  &amp;  &amp;  &amp; \mid  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; \\
+ &amp;  &amp;  &amp;  &amp;  &amp;  &amp; 2 &amp;  &amp;  &amp;  &amp;  &amp;  &amp;
+\end{bmatrix},\]
+
+<p>以及</p>
+
+\[\widehat{E_8} := \begin{bmatrix}
+1 &amp; - &amp; 2 &amp; - &amp; 3 &amp; - &amp; 4 &amp; - &amp; 5 &amp; - &amp; 6 &amp; - &amp; 4 &amp; - &amp; 2\\
+ &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; | &amp;  &amp;  &amp;  &amp; \\
+ &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; 3 &amp;  &amp;  &amp;  &amp;
+\end{bmatrix}\]
+</div>
+
+
+  </article>
+
+  <div class="page-navigation">
+    
+      <a
+        class="next"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Gabriel_1"
+        title="NEXT: Gabriel 主定理 (I)">&lt;&lt;</a>
+      <span>
+        &middot;
+      </span>
+    
+    <a
+      class="home"
+      href="https://zhangchenchengsjtu.github.io/website/"
+      title="Back to Homepage">Home</a>
+    
+      <span>
+        &middot;
+      </span>
+      <a
+        class="prev"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Talk"
+        title="PREV: 2025-04-24-讨论班">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    Chencheng Zhang</span>
+</div>
+
+</body>
+
+
+</html>

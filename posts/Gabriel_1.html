@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+  <title>Gabriel 主定理 (I)
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="证明">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
+<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
+<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Gabriel_1">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+
+
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          [
+            '$', '$'
+          ],
+          [
+            '\\(', '\\)'
+          ]
+        ]
+      }
+    };
+  </script>
+  <script
+    async
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="latex-dark">
+
+	<aside class="logo">
+  
+
+  <a href="https://zhangchenchengsjtu.github.io/website/">
+    <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
+  </a>
+  <span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+	<main>
+  <article>
+    <div class="center">
+      <h1>Gabriel 主定理 (I)</h1>
+      <p class="author">
+        Chencheng Zhang
+        <br/>
+        April 25, 2025
+      </p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 id="证明">证明</h2>
+
+<div class="theorem"><p>(<a href="Gabriel_1">证明</a>).
+给定 $kQ$, 其中 $\overline Q$ 是有限型 Dynkin quiver. 考虑映射</p>
+
+\[𝐝𝐢𝐦 : \mathbf{rep}_k (Q) → \mathbf{rep}_k (Q_0),\quad [M] ↦  𝐝𝐢𝐦 \ M.\]
+
+<p>这一映射建立了不可分解表示与 $Δ ^+$ 的双射对应:</p>
+
+\[𝐝𝐢𝐦 : \mathbf{Indecomp} (Q) ⇆  Δ _+(Q) : \text{Maximal Orbit}.\]
+
+<ol>
+  <li>给定不可分解模 $M$, 表示 $[M]$ 对应 $𝐝𝐢𝐦 \ M$;</li>
+  <li>给定正根 $𝐯$, 则 $𝐫𝐞𝐩(𝐯)$ 存在极大轨道 $[M]$, 对应不可约表示.</li>
+</ol>
+</div>
+
+<div class="proof"><p>记 $𝐝𝐢𝐦 : \mathbf{Indecomp}(kQ) → Δ  _+$.</p>
+
+<ol>
+  <li>(良定义) 若 $M$ 不可分解, 以下就 $M$ 是否为 brick 进行分类讨论.
+    <ol>
+      <li>
+        <p>若 $M = B$, 则 $\dim \mathrm{End}(M)$. 依照</p>
+
+\[0 &lt; q(𝐝𝐢𝐦 \ M) = \dim {\mathrm{End}(M)} - \dim \mathrm{Ext}^1(M,M),\]
+
+        <p>此时只能有 $\mathrm{Ext}^1(M,M) = 0$, 以及 $q(𝐝𝐢𝐦 \ M) = 1$.</p>
+      </li>
+      <li>
+        <p>若 $M$ 非 brick, 则存在非同构的 $f : M → M$. 此时, 则</p>
+
+\[0 ≠ \operatorname{im} f ∈ 𝐬𝐮𝐛(M) ∩ 𝐪𝐮𝐨𝐭(M).\]
+
+        <p>取 $𝐬𝐮𝐛(M) ∩ 𝐪𝐮𝐨𝐭(M)$ 中维度最小的非零对象 $B$, 显然 $B$ 是 brick.
+<br />
+将 $B ↪ M ↠ B$ <a href="Hereditary_PBPO">补全</a>作 PBPO 方块. 由 $M$ 与 $B$ 不可分解, 以及 $M ≇ B$, 得 $\mathrm{Ext}^1(B,B) ≠ 0$. 故 $q(𝐝𝐢𝐦 \ B) ≤  0$, 矛盾.</p>
+      </li>
+    </ol>
+
+    <p>综上, $𝐝𝐢𝐦$ 的去向确实是 $Δ _+$. 特别地, $\mathbf{Indecomp}(kQ) = \mathrm{Brick}(kQ)$, 且任意 brick 都是 $\mathrm{Ext}^1$-自垂直的.</p>
+  </li>
+  <li>(单射) 由<a href="Key_Lemma_Gabriel">关键公式</a>, 自垂直的 $M$ 满足 $𝐫𝐞𝐩(𝐝𝐢𝐦 \ M) = \dim \ [M]$. 由 $𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$ 不可约, 极大轨道若存在则必唯一.</li>
+  <li>
+    <p>(满射) 只需证明 $𝐫𝐞𝐩(𝐯)$ 中的最大轨道 $[M]$ 是不可分解的. 若 $M = ⨁_{i ∈ I}M_i$, 由 <a href="Uniqueness_of_Maximal_Orbit">ses 三项的轨道关系</a>知 $\mathrm{Ext}^1(M_i, M_j) =0$. 此时,</p>
+
+\[1 = q(𝐯) = q\left(∑ _{i ∈  I}𝐝𝐢𝐦 \ M_i\right) = ∑  _{i ∈  I} q(𝐝𝐢𝐦 \ M_i) + ∑ _{i ≠  j} \dim (M_i, M_j).\]
+
+    <p>矛盾.</p>
+  </li>
+</ol>
+
+<p>综上, $𝐝𝐢𝐦$ 确实是双射.</p>
+</div>
+
+<div class="slogan"><p>由第一部分, $kQ$ 中的不可分解对象恰是 brick. 这些 brick 是 $\mathrm{Ext}^1$ 自垂直的.</p>
+</div>
+
+
+  </article>
+
+  <div class="page-navigation">
+    
+      <a
+        class="next"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Gabriel_2"
+        title="NEXT: Gabriel 主定理 (II)">&lt;&lt;</a>
+      <span>
+        &middot;
+      </span>
+    
+    <a
+      class="home"
+      href="https://zhangchenchengsjtu.github.io/website/"
+      title="Back to Homepage">Home</a>
+    
+      <span>
+        &middot;
+      </span>
+      <a
+        class="prev"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Finite_and_Affine_Root_System"
+        title="PREV: 有限型与仿射型 Dynkin 图">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    Chencheng Zhang</span>
+</div>
+
+</body>
+
+
+</html>

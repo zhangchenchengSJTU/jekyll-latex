@@ -7,6 +7,267 @@
     
       
         <item>
+          <title>Gabriel 主定理 (II)</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Gabriel_2&quot;&gt;证明&lt;/a&gt;)
+一般地, $kQ$ 的不可分解表示有限, 当且仅当 $\overline Q$ 是 Dynkin 图.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;若 $\overline Q$ 是 Dynkin 图, 则依照&lt;a href=&quot;Gabriel_1&quot;&gt;对应&lt;/a&gt;, $\mathrm{Idem}(kQ)$ 是有限集.
+&lt;br /&gt;
+反之, 若 $\overline Q$ 不是 Dynkin 图, 则存在仿射型子图. 具体的判定方法如下.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;先判定 $\overline Q$ 是否有环.&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;若有环, 则 $\overline Q$ 有形如 $\widehat {A_n}$ 的子图.&lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;若无环, 则 $\overline Q$ 是树. 由 $\overline Q$ 不是 Dynkin 的, 故存在三岔点.&lt;/p&gt;
+
+      &lt;ol&gt;
+        &lt;li&gt;若三岔点数量 $≥ 2$, 则 $\overline Q$ 有形如 $\widehat {D_n}$ 的子图.&lt;/li&gt;
+        &lt;li&gt;若三岔点数量 $= 1$, 记该点引出的三条道路长度为 $p,q,r$. 该图是有限型的当且仅当 $p^{-1}+q^{-1}+r^{-1} ≥ 1$. 由 $\overline{Q}$ 非有限型, 其必然有子图 $E_6$.&lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;因此存在非零的 $𝐯 ≥ 0$ 使得 $q(𝐯) = 0$. 由&lt;a href=&quot;Key_Lemma_Gabriel&quot;&gt;关键公式&lt;/a&gt;, 对任意 $𝐝𝐢𝐦 \ M = \mathbf  v$ 总有&lt;/p&gt;
+
+\[\begin{align}
+    \dim 𝐫𝐞𝐩(𝐯) &amp;amp; = \dim \ [M] + \dim \mathrm{Ext}^1(M,M) \\[6pt]
+    &amp;amp; = \dim \ [M] + \dim \mathrm{End}(M) - q(𝐯) \\[6pt]
+    &amp;amp; ≥  \dim \ [M] + 1.
+\end{align}\]
+
+&lt;p&gt;由 Zariski 拓扑, 以 $𝐯$ 为维度向量的不可约表示必然是无穷个.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-25T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Gabriel_2</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gabriel_2</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Gabriel 主定理 (I)</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Gabriel_1&quot;&gt;证明&lt;/a&gt;).
+给定 $kQ$, 其中 $\overline Q$ 是有限型 Dynkin quiver. 考虑映射&lt;/p&gt;
+
+\[𝐝𝐢𝐦 : \mathbf{rep}_k (Q) → \mathbf{rep}_k (Q_0),\quad [M] ↦  𝐝𝐢𝐦 \ M.\]
+
+&lt;p&gt;这一映射建立了不可分解表示与 $Δ ^+$ 的双射对应:&lt;/p&gt;
+
+\[𝐝𝐢𝐦 : \mathbf{Indecomp} (Q) ⇆  Δ _+(Q) : \text{Maximal Orbit}.\]
+
+&lt;ol&gt;
+  &lt;li&gt;给定不可分解模 $M$, 表示 $[M]$ 对应 $𝐝𝐢𝐦 \ M$;&lt;/li&gt;
+  &lt;li&gt;给定正根 $𝐯$, 则 $𝐫𝐞𝐩(𝐯)$ 存在极大轨道 $[M]$, 对应不可约表示.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;记 $𝐝𝐢𝐦 : \mathbf{Indecomp}(kQ) → Δ  _+$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;(良定义) 若 $M$ 不可分解, 以下就 $M$ 是否为 brick 进行分类讨论.
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;若 $M = B$, 则 $\dim \mathrm{End}(M)$. 依照&lt;/p&gt;
+
+\[0 &amp;lt; q(𝐝𝐢𝐦 \ M) = \dim {\mathrm{End}(M)} - \dim \mathrm{Ext}^1(M,M),\]
+
+        &lt;p&gt;此时只能有 $\mathrm{Ext}^1(M,M) = 0$, 以及 $q(𝐝𝐢𝐦 \ M) = 1$.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;若 $M$ 非 brick, 则存在非同构的 $f : M → M$. 此时, 则&lt;/p&gt;
+
+\[0 ≠ \operatorname{im} f ∈ 𝐬𝐮𝐛(M) ∩ 𝐪𝐮𝐨𝐭(M).\]
+
+        &lt;p&gt;取 $𝐬𝐮𝐛(M) ∩ 𝐪𝐮𝐨𝐭(M)$ 中维度最小的非零对象 $B$, 显然 $B$ 是 brick.
+&lt;br /&gt;
+将 $B ↪ M ↠ B$ &lt;a href=&quot;Hereditary_PBPO&quot;&gt;补全&lt;/a&gt;作 PBPO 方块. 由 $M$ 与 $B$ 不可分解, 以及 $M ≇ B$, 得 $\mathrm{Ext}^1(B,B) ≠ 0$. 故 $q(𝐝𝐢𝐦 \ B) ≤  0$, 矛盾.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;综上, $𝐝𝐢𝐦$ 的去向确实是 $Δ _+$. 特别地, $\mathbf{Indecomp}(kQ) = \mathrm{Brick}(kQ)$, 且任意 brick 都是 $\mathrm{Ext}^1$-自垂直的.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;(单射) 由&lt;a href=&quot;Key_Lemma_Gabriel&quot;&gt;关键公式&lt;/a&gt;, 自垂直的 $M$ 满足 $𝐫𝐞𝐩(𝐝𝐢𝐦 \ M) = \dim \ [M]$. 由 $𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$ 不可约, 极大轨道若存在则必唯一.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(满射) 只需证明 $𝐫𝐞𝐩(𝐯)$ 中的最大轨道 $[M]$ 是不可分解的. 若 $M = ⨁_{i ∈ I}M_i$, 由 &lt;a href=&quot;Uniqueness_of_Maximal_Orbit&quot;&gt;ses 三项的轨道关系&lt;/a&gt;知 $\mathrm{Ext}^1(M_i, M_j) =0$. 此时,&lt;/p&gt;
+
+\[1 = q(𝐯) = q\left(∑ _{i ∈  I}𝐝𝐢𝐦 \ M_i\right) = ∑  _{i ∈  I} q(𝐝𝐢𝐦 \ M_i) + ∑ _{i ≠  j} \dim (M_i, M_j).\]
+
+    &lt;p&gt;矛盾.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;综上, $𝐝𝐢𝐦$ 确实是双射.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;slogan&quot;&gt;&lt;p&gt;由第一部分, $kQ$ 中的不可分解对象恰是 brick. 这些 brick 是 $\mathrm{Ext}^1$ 自垂直的.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-25T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Gabriel_1</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gabriel_1</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>有限型与仿射型 Dynkin 图</title>
+          <description>&lt;p&gt;##&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;($A_n$). 该图具有 $n$ 个顶点, 形如&lt;/p&gt;
+
+\[\begin{bmatrix}
+1 &amp;amp; - &amp;amp; 2 &amp;amp; - &amp;amp; \cdots  &amp;amp; - &amp;amp; n
+\end{bmatrix}.\]
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;($D_n$, $n ≥ 3$). 该图具有 $n$ 个顶点, 形如&lt;/p&gt;
+
+\[\begin{bmatrix}
+1 &amp;amp; - &amp;amp; 3 &amp;amp; - &amp;amp; \cdots  &amp;amp; - &amp;amp; n\\
+ &amp;amp;  &amp;amp; \mid  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp; 2 &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;
+\end{bmatrix}.\]
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;($E_n$, $n = 6,7,8$). 该图具有 $n$ 个顶点, 形如&lt;/p&gt;
+
+\[\begin{bmatrix}
+1 &amp;amp; - &amp;amp; 2 &amp;amp; - &amp;amp; 4 &amp;amp; - &amp;amp; \cdots  &amp;amp; - &amp;amp; n\\
+ &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \mid  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; 3 &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;
+\end{bmatrix}.\]
+&lt;/div&gt;
+
+&lt;p&gt;对于仿射型 Dynkin 图, 将一维空间 $\ker q(-)$ 的特征向量依分量写至顶点处.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;($\widehat {A_n}$). 该图具有 $n + 1$ 个顶点, 形如&lt;/p&gt;
+
+\[\begin{bmatrix}
+1 &amp;amp; - &amp;amp;1 &amp;amp; - &amp;amp; \cdots_{1}  &amp;amp; - &amp;amp; 1 \\
+\mid  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; |\\
+1 &amp;amp; - &amp;amp; 1 &amp;amp; - &amp;amp; \cdots_{1}  &amp;amp; - &amp;amp; 1&amp;amp;
+\end{bmatrix}.\]
+
+&lt;p&gt;特别地, $\widehat{A_1}$ 形如 $[1 = 2]$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;($\widehat {D_n}$, $n ≥ 4$). 该图具有 $n + 1$ 个顶点, 形如&lt;/p&gt;
+
+\[\begin{bmatrix}
+1 &amp;amp; - &amp;amp; 2 &amp;amp; - &amp;amp; \cdots _{2} &amp;amp; - &amp;amp; 2 &amp;amp; - &amp;amp; 2\\
+ &amp;amp;  &amp;amp; \mid  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; | &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp; 1 &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; 1 &amp;amp;  &amp;amp;
+\end{bmatrix}\]
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;($\widehat {E_n}$, $n = 6,7,8$). 该图具有 $n + 1$ 个顶点, 其中&lt;/p&gt;
+
+\[\widehat{E_6} := \begin{bmatrix}
+1 &amp;amp; - &amp;amp; 2 &amp;amp; - &amp;amp; 3 &amp;amp; - &amp;amp; 2 &amp;amp; - &amp;amp; 1\\
+ &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \mid  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; 2 &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; | &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; 1 &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;
+\end{bmatrix},\]
+
+&lt;p&gt;以及&lt;/p&gt;
+
+\[\widehat{E_7} := \begin{bmatrix}
+1 &amp;amp; - &amp;amp; 2 &amp;amp; - &amp;amp; 3 &amp;amp; - &amp;amp; 4 &amp;amp; - &amp;amp; 3 &amp;amp; - &amp;amp; 2 &amp;amp; - &amp;amp; 1\\
+ &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \mid  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; 2 &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;
+\end{bmatrix},\]
+
+&lt;p&gt;以及&lt;/p&gt;
+
+\[\widehat{E_8} := \begin{bmatrix}
+1 &amp;amp; - &amp;amp; 2 &amp;amp; - &amp;amp; 3 &amp;amp; - &amp;amp; 4 &amp;amp; - &amp;amp; 5 &amp;amp; - &amp;amp; 6 &amp;amp; - &amp;amp; 4 &amp;amp; - &amp;amp; 2\\
+ &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; | &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; \\
+ &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp; 3 &amp;amp;  &amp;amp;  &amp;amp;  &amp;amp;
+\end{bmatrix}\]
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-25T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Finite_and_Affine_Root_System</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Finite_and_Affine_Root_System</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>2025-04-24-讨论班</title>
+          <description>&lt;h2 id=&quot;torsion-pair-的遗留问题&quot;&gt;Torsion pair 的遗留问题&lt;/h2&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;($\mathrm{Ext}^1$-垂直条件, &lt;a href=&quot;Torsion_Pair_Ext_Orth&quot;&gt;证明&lt;/a&gt;). 以下刻画 torsion pair $(𝒯, ℱ)$ 中满足 $\mathrm{Ext}^1$-垂直的对象. 记 $t$ 与 $f$ 是相应的子函子与商函子.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$𝒯 ∩ (^⟂ 𝒯) = 𝒯 ∩ τ ⁻¹ ℱ$.&lt;/li&gt;
+  &lt;li&gt;$𝒯 ∩ (𝒯^⟂) = 𝒯 ∩ t(𝐢𝐧𝐣)$.&lt;/li&gt;
+  &lt;li&gt;$ℱ ∩ (ℱ^⟂) = ℱ ∩ τ 𝒯$.&lt;/li&gt;
+  &lt;li&gt;$ℱ ∩ (^⟂ ℱ) = ℱ ∩ f(𝐩𝐫𝐨𝐣)$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;见&lt;a href=&quot;Notes_on_Tilting#torsion-pair-确定的对象类&quot;&gt;此节&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;tilting-与-torsion-pair-𝒯--𝒯--𝐚𝐝𝐝t-的证明&quot;&gt;Tilting 与 torsion pair: $(^⟂𝒯) ∩ 𝒯 = 𝐚𝐝𝐝(T)$ 的证明&lt;/h2&gt;
+
+&lt;p&gt;逼近问题见&lt;a href=&quot;Notes_on_Tilting#tilting-模诱导的-torsion-pair&quot;&gt;此节&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;(Tilting 对象与 torsion pair, &lt;a href=&quot;Tilting_Obj_Torsion_Pair&quot;&gt;证明&lt;/a&gt;). 对 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;对任意 $M ∈ 𝒯$, 存在满的右 $𝐚𝐝𝐝 (T)$-逼近 $T^n ↠ M$ 使得&lt;/p&gt;
+
+\[0 → K → T^n → M → 0 \quad ∈ 𝒯.\]
+  &lt;/li&gt;
+  &lt;li&gt;$(^⟂𝒯) ∩ 𝒯 = 𝐚𝐝𝐝(T)$, 即 $𝒯 ∩ τ ^{-1} ℱ = 𝐚𝐝𝐝(T)$.
+    &lt;blockquote&gt;
+      &lt;p&gt;一般来说, 只有 $(^⟂𝒯) ∩ 𝒯 = 𝒯 ∩ τ ^{-1} ℱ$.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;$M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;a href=&quot;gen_and_cog&quot;&gt;一般来说&lt;/a&gt;, $M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是满的.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;&lt;p&gt;特别地, 存在一列逼近的 ses&lt;/p&gt;
+
+\[0 → K_{k + 1} → T^{N_n} → K_n → 0\quad (n ≥ 0,\quad K_0 = M).\]
+
+&lt;p&gt;使得有长正合列&lt;/p&gt;
+
+\[θ : \dots → T^{N_2} → T^{N_1} → T^{N_0} → M → 0.\]
+
+&lt;p&gt;使得 $(T, θ)$ 是 $(T, M)$ 的 $\mathrm{End}(T)$-模投射分解.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;关于反射&quot;&gt;关于反射&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;Proof-Gabriel&quot;&gt;Gabriel 定理的证明&lt;/a&gt;.&lt;/p&gt;
+</description>
+          <pubDate>2025-04-25T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Talk</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Talk</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>$\dim M$ 与 $\dim (T,M)$</title>
           <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
 
@@ -152,48 +413,89 @@ X^{n-1} &amp;amp; = &amp;amp; X^{n-1} &amp;amp; \rightarrow  &amp;amp; E
   &lt;li&gt;
     &lt;p&gt;给定 ses $0 →  X →  Y →  Z →  0$, 该 ses 不可裂当且仅当&lt;/p&gt;
 
-\[[X] ∪  [Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y].\]
+\[[X ⊕ Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y]\quad (\text{视作} \ 𝐫𝐞𝐩(\dim Y) \ \text{中的轨道}).\]
   &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;p&gt;\begin{proposition}&lt;/p&gt;
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;极大轨道满足以下等价定义:&lt;/p&gt;
 
-&lt;p&gt;\begin{enumerate}&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;$\mathrm{Ext}^1(M,M) =0$;&lt;/li&gt;
+  &lt;li&gt;$[M]$ 是开集;&lt;/li&gt;
+  &lt;li&gt;$\overline{[M]} = 𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;\end{enumerate}
-  \begin{proof}
-    1. 的证明较为繁琐, 且对主定理的证明无帮助, 故从略. 
-    \begin{itemize}
-      (1. 的证明). 由``关键恒等式’’, $\dim \mathrm{Ext}^1(M,M) = 0$ 当且仅当 $\dim [M] = \dim 𝐫𝐞𝐩(𝐯)$. 
-      \begin{enumerate}
-        若 $\mathrm{Ext}^1(M,M) =0$, 则 $\overline{[M]} = 𝐫𝐞𝐩(𝐯)$. 由 $[M]$ 在 $\overline {[M]}$ 中开, 得 $[M]$ 在 $𝐫𝐞𝐩(𝐯)$ 中开. 
-        若 $[M]$ 在 $𝐫𝐞𝐩(𝐯)$ 中开, 则必稠密. 此时 $\dim [M] = \dim 𝐫𝐞𝐩(𝐯)$, 因此 $\mathrm{Ext}^1(M,M) =0$. 
-      \end{enumerate}
-      (2. 的证明). 若 $q(𝐯) ≤ 0$, 则对任意非零 $M$ 都有 $\dim 𝐫𝐞𝐩 (𝐯) &amp;gt; \dim [M]$.&lt;br /&gt;
-      (4. 的证明). 若 $0 → L \xrightarrow f M \xrightarrow g N → 0$ 不可裂, 则 $[L ⊕ N] ⊂ \overline{[M]} ∖ [M]$. 
-      将以上 ses 看作 $Q$-指标的线性空间的 ses. 依照线性代数, 存在同时分块上三角化 
-      \begin{equation}
-          0 → \begin{pmatrix}
-              L_λ  &amp;amp; O 
-          \end{pmatrix}\xrightarrow{\binom{f_λ }{0}} \begin{pmatrix}
-              M^1&lt;em&gt;λ  &amp;amp; M^2_λ  \ O &amp;amp; M^4 _λ&lt;br /&gt;
-          \end{pmatrix}\xrightarrow{(0 \ \ g_λ )} \begin{pmatrix}
-              O \ 
-              N_λ 
-          \end{pmatrix} →  0. 
-      \end{equation}
-      取 $G$ 中元素为 $g_t := \begin{pmatrix}
-          t ⋅  \mathrm{id}&lt;/em&gt;{L_i} &amp;amp; O \ O &amp;amp; \mathrm{id}_{N_i}
-      \end{pmatrix}$, 考虑 $M$ 在单参数子群 $g_t$ 共轭作用下的轨道 $[M]_t$. 由 $k ∖ {0}$ 在 $k$ 中稠密, $[M]_0 ∈  \overline{{[M]_t ∣  t ≠  0}}$.&lt;/p&gt;
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;由关键公式&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  再说明 $L⊕  N ≇  M$. 若同构, 由长正合列知,  
-  \begin{equation}
-      \dim \mathrm{im}\left[\mathrm{Hom}(L, L) → \mathrm{Ext}^1(N, L)\right] = 0. 
-  \end{equation}
-  由上述正合列不可裂, 得矛盾. 
-\end{itemize}    \end{proof} \end{proposition}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+\[\dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M) = \dim \mathrm{End}(M) - q(𝐯),\]
+
+&lt;p&gt;$\dim \mathrm{Ext}^1(M,M) = 0$ 当且仅当 $\dim 𝐫𝐞𝐩(𝐯) = \dim \ [M]$, 即 1 ⟺ 3.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;(1 ⇒ 2). 若 $\mathrm{Ext}^1(M,M) = 0$, 则 $\overline{[M]} = 𝐫𝐞𝐩(𝐯)$. 由于 $[M]$ 是 $\overline{[M]}$ 中的开集, 得 $[M]$ 是 $𝐫𝐞𝐩 (𝐯)$ 中的开集.&lt;/li&gt;
+  &lt;li&gt;(2 ⇒ 1). 若 $[M]$ 是 $𝐫𝐞𝐩 (𝐯)$ 中的开集, 则必是稠密的. 此时 $\dim \ [M] = \dim 𝐫𝐞𝐩(𝐯 )$, 因此 $\mathrm{Ext}^1(M,M) = 0$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;p&gt;由不可约空间, 固定 $𝐯$, 极大轨道若存在则必唯一.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;极大轨道不存在的必要条件: $q(𝐯) ≤ 0$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;若 $q(𝐯) ≤ 0$, 则对任意非零 $M$ 都有 $\dim 𝐫𝐞𝐩 (𝐯) &amp;gt; \dim [M]$. 特别地, 此时的轨道数量必无穷.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;&lt;p&gt;给定 ses $0 →  X →  Y →  Z →  0$, 该 ses 不可裂当且仅当&lt;/p&gt;
+
+\[[X ⊕ Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y]\quad (\text{视作} \ 𝐫𝐞𝐩(\dim Y) \ \text{中的轨道}).\]
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;&lt;p&gt;若 $0 → L \xrightarrow f M \xrightarrow g N → 0$ 可裂, 则 $[L ⊕ N] ⊈ \overline{[M]} ∖ [M]$. 下证明反向, 假定 ses 不可裂.
+&lt;br /&gt;
+模的分量由 $Q_0 ∪ Q_1$ 中分量决定的. 对任意 $λ ∈ (Q_0 ∪ Q_1)$, 存在同时分块上三角化&lt;/p&gt;
+
+\[0 → \begin{pmatrix}
+L_λ  &amp;amp; O
+\end{pmatrix}\xrightarrow{\binom{f_λ }{0}} \begin{pmatrix}
+M^1_λ  &amp;amp; M^2_λ  \\ O &amp;amp; M^4 _λ  
+\end{pmatrix}\xrightarrow{(0 \ \ g_λ )} \begin{pmatrix}
+O \\
+N_λ
+\end{pmatrix} →  0.\]
+
+&lt;blockquote&gt;
+  &lt;p&gt;此处使用了子表示与商表示的矩阵表述, 也可理解做不变子空间与商空间.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;取 $G$ 中元素为&lt;/p&gt;
+
+\[g_t := \begin{pmatrix}
+t ⋅  \mathrm{id}_{L_i} &amp;amp; O \\ O &amp;amp; \mathrm{id}_{N_i}
+\end{pmatrix},\]
+
+&lt;p&gt;考虑 $M$ 在单参数子群 $g_t$ 共轭作用下的轨道 $[M]_t$. 由 $k ∖ {0}$ 在 $k$ 中稠密, 得&lt;/p&gt;
+
+&lt;p&gt;\([M]_0 ∈  \overline{\{[M]_t ∣  t ≠  0\}}.\)
+&lt;br /&gt;
+最后说明 $L ⊕  N ≇  M$.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;即便以上 ses 不可列, 但本命题需要证明 $L ⊕  N ≇  M$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;若 $L ⊕ N ≅ M$, 考虑长正合列&lt;/p&gt;
+
+\[0 → (M,L) → (N,L) → (L,L) → \mathrm{Ext}^1(M,L) \overset δ → \cdots.\]
+
+&lt;p&gt;带入 $L ⊕ N ≅ M$, 并比较维数, 得&lt;/p&gt;
+
+\[\operatorname{im} \left(\mathrm{Hom}(L, L) \overset δ → \mathrm{Ext}^1(N, L)\right) = 0.\]
+
+&lt;p&gt;由上述不可裂 ses 正合列是 $δ (\mathrm{id}_L)$, 得矛盾.&lt;/p&gt;
+&lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
           <link>https://zhangchenchengsjtu.github.io/website/posts/Uniqueness_of_Maximal_Orbit</link>
@@ -374,7 +676,9 @@ X^{n-1} &amp;amp; = &amp;amp; X^{n-1} &amp;amp; \rightarrow  &amp;amp; E
           <title>Proof of Gabriel's Theorem</title>
           <description>&lt;div class=&quot;abstract&quot;&gt;
   &lt;h5&gt;Abstract&lt;/h5&gt;
-  &lt;div&gt;&lt;p&gt;表示的轨道语言. Krull 维数公式. 不可约表示是极大开子轨道. 图分类定理 (有限型与仿射型). Gabriel 定理: $𝐝𝐢𝐦$ 是双射. 有限表示路代数 (无关系).&lt;/p&gt;
+  &lt;div&gt;&lt;p&gt;关键步骤: 表示的轨道语言; Krull 维数公式; 不可约表示是极大开子轨道; 图分类定理 (有限型与仿射型).
+&lt;br /&gt;
+推广: Kac 定理等?&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -481,138 +785,67 @@ X^{n-1} &amp;amp; = &amp;amp; X^{n-1} &amp;amp; \rightarrow  &amp;amp; E
   &lt;li&gt;
     &lt;p&gt;给定 ses $0 →  X →  Y →  Z →  0$, 该 ses 不可裂当且仅当&lt;/p&gt;
 
-\[[X] ∪  [Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y].\]
+\[[X ⊕ Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y]\quad (\text{视作} \ 𝐫𝐞𝐩(\dim Y) \ \text{中的轨道}).\]
   &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;p&gt;\subsection{预备定义: 根系}&lt;/p&gt;
+&lt;h3 id=&quot;根系与图分类&quot;&gt;根系与图分类&lt;/h3&gt;
 
-&lt;p&gt;\begin{definition}[根系]
-  给定二次型 $q : ℤ^n × ℤ^n → ℤ$, 定义
-  \begin{enumerate}
-      (根系) 定义有限型 quiver 的根系 $\Delta := { 𝐯 \mid q(𝐯) &amp;lt; 1, 𝐯 \neq \mathbf 0}$; 
-      (虚实) 实根 (虚根) 满足 $q(𝐯)=0$ ($q (𝐯)=1$), 记作 $\Delta ^{\mathrm{Re}}$ ($\Delta ^{\mathrm{Im}}$); 
-      (正负) 各项 $\geq 0$ ($\leq 0$) 整数的根称为正根 (负根), 记作 $\Delta _+$ ($\Delta _-$).
-  \end{enumerate} 
-\end{definition}&lt;/p&gt;
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(根系与基本记号).
+给定二次型 $q : ℤ^n × ℤ^n → ℤ$, 定义&lt;/p&gt;
 
-&lt;p&gt;\begin{theorem}[图分类定理]
-对有限, 连通, 无向, 允许重边的图 $Q$, 记 Euler 型 $q$.
-\begin{itemize}
-  记 $\overline Q$ 是 $Q$ 的无向化 (去除箭头), $A$ 是其邻接矩阵, 则 $q$ 对应的对称二次型为 $B: = \frac{1}{2}(2I - A)$.
-\end{itemize}
-以下著名定理分类了正定或几乎正定的邻接矩阵 $B$. 
-\begin{enumerate}
-  称 $q$ 是有限型的, 当且仅当 $q$ 正定, 当且仅当 $Δ$ 是有限集, 当且仅当 $\overline Q$ 是 Dynkin 图 $A_n$, $D_n$, 以及 $E_{6,7,8}$, 角标 $n$ 是顶点数. 
-  称 $q$ 是仿射型的, 当且仅当 $q$ 半正定且 $\dim N(B) = 1$, 当且仅当 $Δ$ 是有限集与 $ℤ⋅ 𝐤$ 的直和, 当且仅当 $\overline Q$ 是 $\widehat{A_n}$, $\widehat{D_n}$, $\widehat{E_{6,7,8}}$. 
-  \begin{itemize}
-      \item[注] $n + 1$ 是顶点数; $𝐤$ 见下图. 
-  \end{itemize}
-  特别地, $Δ  = Δ  _+ ⊔  Δ  _-$. 换言之, 根系中不存在既正又负的向量.
-\end{enumerate}
-\begin{equation}
-  % https://q.uiver.app/#q=WzAsNDUsWzIsNywiMSJdLFsxLDcsIjEiXSxbMSw1LCIxIl0sWzIsNSwiMSJdLFswLDYsIlxcd2lkZWhhdHtBX259Il0sWzUsNywiMSJdLFs0LDcsIjIiXSxbMyw3LCIxIl0sWzQsNiwiXFxjZG90cyJdLFs0LDUsIjIiXSxbMyw2LCJcXHdpZGVoYXR7RF9ufSJdLFs2LDcsIjEiXSxbNiw2LCIyIl0sWzYsNSwiMyJdLFs3LDUsIjIiXSxbOCw1LCIxIl0sWzYsNCwiMiJdLFs2LDMsIjEiXSxbNSw2LCJcXHdpZGVoYXR7RV82fSJdLFsyLDIsIjEiXSxbMywyLCIyIl0sWzQsMiwiMyJdLFs1LDIsIjQiXSxbNiwyLCIzIl0sWzcsMiwiMiJdLFs4LDIsIjEiXSxbNSwzLCIyIl0sWzgsMSwiMiJdLFs3LDEsIjQiXSxbNiwxLCI2Il0sWzUsMSwiNSJdLFs0LDEsIjQiXSxbMywxLCIyIl0sWzIsMSwiMiJdLFsxLDEsIjEiXSxbNSwwLCIzIl0sWzQsMywiXFx3aWRlaGF0e0VfN30iXSxbNCwwLCJcXHdpZGVoYXR7RV84fSJdLFsxLDQsIjEiXSxbMiw0LCIxIl0sWzMsNCwiMSJdLFs0LDQsIjIiXSxbNSw0LCIxIl0sWzEsNiwiXFxjZG90cyJdLFsyLDYsIlxcY2RvdHMiXSxbMSwwLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDcsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOSw4LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsNiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMSwxMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMiwxMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMywxNiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxNiwxNywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMywxNCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxNCwxNSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMCwyMSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyNCwyNSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMiwyMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMiwyNiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyNywyOCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyOSwzMCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMSwzMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMywzNCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMCwzMSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyOCwyOSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMiwzMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxOSwyMCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMSwyMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMywyNCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMCwzNSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs5LDQxLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQxLDQwLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQxLDQyLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsNDMsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNDMsMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDM4LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzM4LDM5LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzM5LDMsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMyw0NCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0NCwwLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNDMsIlxcY29sb3J7Ymx1ZX06IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEwLDgsIlxcY29sb3J7Ymx1ZX06IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE4LDEyLCJcXGNvbG9ye2JsdWV9OiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszNiwyNiwiXFxjb2xvcntibHVlfToiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMzcsMzUsIlxcY29sb3J7Ymx1ZX06IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
-\begin{tikzcd}[ampersand replacement=\&amp;amp;]
-	\&amp;amp;\&amp;amp;\&amp;amp;\&amp;amp; {\widehat{E_8}} \&amp;amp; 3 &lt;br /&gt;
-	\&amp;amp; 1 \&amp;amp; 2 \&amp;amp; 2 \&amp;amp; 4 \&amp;amp; 5 \&amp;amp; 6 \&amp;amp; 4 \&amp;amp; 2 &lt;br /&gt;
-	\&amp;amp;\&amp;amp; 1 \&amp;amp; 2 \&amp;amp; 3 \&amp;amp; 4 \&amp;amp; 3 \&amp;amp; 2 \&amp;amp; 1 &lt;br /&gt;
-	\&amp;amp;\&amp;amp;\&amp;amp;\&amp;amp; {\widehat{E_7}} \&amp;amp; 2 \&amp;amp; 1 &lt;br /&gt;
-	\&amp;amp; 1 \&amp;amp; 1 \&amp;amp; 1 \&amp;amp; 2 \&amp;amp; 1 \&amp;amp; 2 &lt;br /&gt;
-	\&amp;amp; 1 \&amp;amp; 1 \&amp;amp;\&amp;amp; 2 \&amp;amp;\&amp;amp; 3 \&amp;amp; 2 \&amp;amp; 1 &lt;br /&gt;
-	{\widehat{A_n}} \&amp;amp; \cdots \&amp;amp; \cdots \&amp;amp; {\widehat{D_n}} \&amp;amp; \cdots \&amp;amp; {\widehat{E_6}} \&amp;amp; 2 &lt;br /&gt;
-	\&amp;amp; 1 \&amp;amp; 1 \&amp;amp; 1 \&amp;amp; 2 \&amp;amp; 1 \&amp;amp; 1
-	\arrow[”{\color{blue}:}”{description}, draw=none, from=1-5, to=1-6]
-	\arrow[no head, from=2-3, to=2-2]
-	\arrow[no head, from=2-4, to=2-3]
-	\arrow[no head, from=2-5, to=2-4]
-	\arrow[no head, from=2-6, to=1-6]
-	\arrow[no head, from=2-6, to=2-5]
-	\arrow[no head, from=2-7, to=2-6]
-	\arrow[no head, from=2-8, to=2-7]
-	\arrow[no head, from=2-9, to=2-8]
-	\arrow[no head, from=3-3, to=3-4]
-	\arrow[no head, from=3-4, to=3-5]
-	\arrow[no head, from=3-5, to=3-6]
-	\arrow[no head, from=3-6, to=3-7]
-	\arrow[no head, from=3-6, to=4-6]
-	\arrow[no head, from=3-7, to=3-8]
-	\arrow[no head, from=3-8, to=3-9]
-	\arrow[”{\color{blue}:}”{description}, draw=none, from=4-5, to=4-6]
-	\arrow[no head, from=5-2, to=5-3]
-	\arrow[no head, from=5-3, to=6-3]
-	\arrow[no head, from=5-5, to=5-4]
-	\arrow[no head, from=5-5, to=5-6]
-	\arrow[no head, from=5-7, to=4-7]
-	\arrow[no head, from=6-2, to=5-2]
-	\arrow[no head, from=6-3, to=7-3]
-	\arrow[no head, from=6-5, to=5-5]
-	\arrow[no head, from=6-5, to=7-5]
-	\arrow[no head, from=6-7, to=5-7]
-	\arrow[no head, from=6-7, to=6-8]
-	\arrow[no head, from=6-8, to=6-9]
-	\arrow[”{\color{blue}:}”{marking, allow upside down}, draw=none, from=7-1, to=7-2]
-	\arrow[no head, from=7-2, to=6-2]
-	\arrow[no head, from=7-3, to=8-3]
-	\arrow[”{\color{blue}:}”{marking, allow upside down}, draw=none, from=7-4, to=7-5]
-	\arrow[no head, from=7-5, to=8-5]
-	\arrow[”{\color{blue}:}”{marking, allow upside down}, draw=none, from=7-6, to=7-7]
-	\arrow[no head, from=7-7, to=6-7]
-	\arrow[no head, from=8-2, to=7-2]
-	\arrow[no head, from=8-2, to=8-3]
-	\arrow[no head, from=8-5, to=8-4]
-	\arrow[no head, from=8-6, to=8-5]
-	\arrow[no head, from=8-7, to=7-7]
-\end{tikzcd}.
-\end{equation}
-\end{theorem}&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;(根系) 定义有限型 quiver 的根系为 $q^{-1}(≤ 1)$, 即,&lt;/p&gt;
 
-&lt;p&gt;\subsection{Gabriel 定理的证明}&lt;/p&gt;
+\[\Delta := \{ 𝐯 \mid q(𝐯) &amp;lt; 1, 𝐯 \neq \mathbf 0\};\]
+  &lt;/li&gt;
+  &lt;li&gt;(虚实) 实根 (虚根) 满足 $q(𝐯)=0$ ($q (𝐯)=1$), 记作 $\Delta ^{\mathrm{Re}}$ ($\Delta ^{\mathrm{Im}}$);&lt;/li&gt;
+  &lt;li&gt;(正负) 各项 $\geq 0$ ($\leq 0$) 整数的根称为正根 (负根), 记作 $\Delta _+$ ($\Delta _-$).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;\begin{theorem}[Gabriel 定理]
-  给定代数闭域上的路代数 $kQ$, $\overline Q$ 是 Dynkin 图. 
-  \begin{equation}
-      𝐝𝐢𝐦 : \mathbf{rep}_k (Q) → \mathbf{rep}_k (Q_0),\quad [M] ↦  𝐝𝐢𝐦 \ M 
-  \end{equation}
-  建立了不可分解表示与 $Δ ^+$ 的双射对应: 
-  \begin{enumerate}
-      给定不可分解模 $M$, 表示 $[M]$ 对应 $𝐝𝐢𝐦 \ M$; 
-      给定正根 $𝐯$, 则 $𝐫𝐞𝐩(𝐯)$ 存在极大轨道 $[M]$, 对应不可约表示. 
-  \end{enumerate}
-  特别地, $kQ$ 的不可分解表示有限, 当且仅当 $\overline Q$ 是 Dynkin 图. 
-  \begin{proof}
-      假定 $\overline Q$ 是 Dynkin 图, 记 $𝐝𝐢𝐦 : \mathrm{Idem}(kQ) → Δ  _+$. 
-      \begin{enumerate}
-          (良定义) 若 $M$ 不可分解, 以下就 $M$ 是否为 brick 进行分类讨论. 
-          \begin{enumerate}
-              若 $M = B$, 则 $\dim \mathrm{End}(M)$. 依照
-              \begin{equation}
-                  0 &amp;lt; q(𝐝𝐢𝐦 \ M) = \dim {\mathrm{End}(M)} - \dim \mathrm{Ext}^1(M,M), 
-              \end{equation}
-              此时只能有 $\mathrm{Ext}^1(M,M) = 0$, 以及 $q(𝐝𝐢𝐦 \ M) = 1$. 
-              若 $M ≠  B$, 先将 $B ↪  M ↠ B$ 补全作 PBPO 方块\footnote{遗传范畴中, 任意满-单分解可以补全作 PBPO 方块.}. 由 $M$ 与 $B$ 不可分解, 以及 $M ≇ B$, 得 $\mathrm{Ext}^1(B,B) ≠ 0$. 故 $q(𝐝𝐢𝐦 \ B) ≤  0$, 矛盾. 
-          \end{enumerate}
-          综上, $𝐝𝐢𝐦$ 的去向确实是 $Δ _+$. 特别地, $\mathrm{Idem}(kQ) = \mathrm{Brick}(kQ)$, 且任意 brick 都是 $\mathrm{Ext}^1$-自垂直的. 
-          (单射) 由&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;关键恒等式'', 自垂直的 $M$ 满足 $𝐫𝐞𝐩(𝐝𝐢𝐦 \ M) = \dim \ [M]$. 由 $𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$ 不可约, 极大轨道若存在则必唯一. 
-          (满射) 只需证明 $𝐫𝐞𝐩(𝐯)$ 中的最大\footnote{由 Zariski 拓扑, 存在维度是 $\dim 𝐫𝐞𝐩(𝐯)$ 的轨道. 由不可约性, 这是唯一最大的轨道.}轨道 $[M]$ 是不可分解的. 若 $M = ⨁_{i ∈ I}M_i$, 由 ses 三项的轨道关系知 $\mathrm{Ext}^1(M_i, M_j) =0$. 此时, $1 = $
-          \begin{equation}
-              q(𝐯) = q\left(∑ _{i ∈  I}𝐝𝐢𝐦 \ M_i\right) = ∑  _{i ∈  I} q(𝐝𝐢𝐦 \ M_i) + ∑ _{i ≠  j} \dim (M_i, M_j).   
-          \end{equation}
-          矛盾. 综上, $𝐝𝐢𝐦$ 确实是双射. 
-      \end{enumerate}
-      最后是对有限性的说明. 
-      \begin{enumerate}
-          若 $\overline Q$ 是 Dynkin 图, 则 $\mathrm{Idem}(kQ)$ 是有限集. 
-          反之, 若 $\overline Q$ 不是 Dynkin 图, 则存在仿射型子图, 因此存在非零的 $𝐯 ≥ 0$ 使得 $q(𝐯) = 0$. 由&lt;/code&gt;关键恒等式’’, 对任意 $𝐝𝐢𝐦 \ M = \mathbf  v$ 总有
-          \begin{align}
-              \dim 𝐫𝐞𝐩(𝐯) &amp;amp; = \dim \ [M] + \dim \mathrm{Ext}^1(M,M) \ 
-              &amp;amp; = \dim \ [M] + \dim \mathrm{End}(M) - q(𝐯) \ 
-              &amp;amp; ≥  \dim \ [M] + 1. 
-          \end{align}
-          由 Zariski 拓扑, 以 $𝐯$ 为维度向量的不可约表示必然是无穷个. 
-      \end{enumerate}
-  \end{proof}
-\end{theorem}&lt;/p&gt;
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(图分类定理, &lt;a href=&quot;Finite_and_Affine_Root_System&quot;&gt;图&lt;/a&gt;). 对有限, 连通, 无向, 允许重边的图 $Q$, 记 Euler 二次型 $q$.
+&lt;br /&gt;
+记 $\overline Q$ 是 $Q$ 的无向化 (去除箭头), $A$ 是其邻接矩阵, 则 $q$ 对应的对称二次型为 $B: = \frac{1}{2}(2I - A)$.
+&lt;br /&gt;
+以下著名定理分类了正定或几乎正定的邻接矩阵 $B$.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;称 $q$ 是有限型的, 当且仅当 $q$ 正定, 当且仅当 $Δ$ 是有限集, 当且仅当 $\overline Q$ 是 Dynkin 图 $A_n$, $D_n$, 以及 $E_{6,7,8}$, 角标 $n$ 是顶点数.&lt;/li&gt;
+  &lt;li&gt;称 $q$ 是仿射型的, 当且仅当 $q$ 半正定且 $\dim N(B) = 1$, 当且仅当 $Δ$ 是有限集与 $ℤ⋅ 𝐤$ 的直和, 当且仅当 $\overline Q$ 是 $\widehat{A_n}$, $\widehat{D_n}$, $\widehat{E_{6,7,8}}$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;特别地, $Δ  = Δ  _+ ⊔  Δ  _-$. 换言之, 根系中不存在既正又负的向量.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;gabriel-定理的证明&quot;&gt;Gabriel 定理的证明&lt;/h3&gt;
+
+&lt;p&gt;给定有限无自环的 quiver $Q$, 记 $\overline Q$ 是无向化图. 给定特征为 $0$ 的代数闭域 $k$, 记路代数 $kQ$.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Gabriel_1&quot;&gt;证明&lt;/a&gt;).
+给定 $kQ$, 其中 $\overline Q$ 是有限型 Dynkin quiver. 考虑映射&lt;/p&gt;
+
+\[𝐝𝐢𝐦 : 𝐫𝐞𝐩_k (Q) → \mathbf{rep}_k (Q_0),\quad [M] ↦  𝐝𝐢𝐦 \ M.\]
+
+&lt;p&gt;这一映射建立了不可分解表示与 $Δ ^+$ 的双射对应:&lt;/p&gt;
+
+\[𝐝𝐢𝐦 : 𝐈𝐧𝐝𝐞𝐜𝐨𝐦𝐩 (Q) ⇆ Δ _+(Q) : \text{Maximal Orbit}.\]
+
+&lt;ol&gt;
+  &lt;li&gt;给定不可分解模 $M$, 表示 $[M]$ 对应 $𝐝𝐢𝐦 \ M$;&lt;/li&gt;
+  &lt;li&gt;给定正根 $𝐯$, 则 $𝐫𝐞𝐩(𝐯)$ 存在极大轨道 $[M]$, 对应不可约表示.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;corollary&quot;&gt;&lt;p&gt;(见&lt;a href=&quot;Gabriel_1&quot;&gt;证明&lt;/a&gt;第一部分).
+$kQ$ 中的不可分解对象恰是 brick. 这些 brick 是 $\mathrm{Ext}^1$ 自垂直的.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Gabriel_2&quot;&gt;证明&lt;/a&gt;)
+一般地, $kQ$ 的不可分解表示有限, 当且仅当 $\overline Q$ 是 Dynkin 图.&lt;/p&gt;
+&lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
           <link>https://zhangchenchengsjtu.github.io/website/posts/Proof-Gabriel</link>

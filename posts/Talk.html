@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+  <title>2025-04-24-讨论班
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="Torsion pair 的遗留问题">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
+<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
+<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Talk">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+
+
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          [
+            '$', '$'
+          ],
+          [
+            '\\(', '\\)'
+          ]
+        ]
+      }
+    };
+  </script>
+  <script
+    async
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="latex-dark">
+
+	<aside class="logo">
+  
+
+  <a href="https://zhangchenchengsjtu.github.io/website/">
+    <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
+  </a>
+  <span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+	<main>
+  <article>
+    <div class="center">
+      <h1>2025-04-24-讨论班</h1>
+      <p class="author">
+        ZCC
+        <br/>
+        April 25, 2025
+      </p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 id="torsion-pair-的遗留问题">Torsion pair 的遗留问题</h2>
+
+<div class="lemma"><p>($\mathrm{Ext}^1$-垂直条件, <a href="Torsion_Pair_Ext_Orth">证明</a>). 以下刻画 torsion pair $(𝒯, ℱ)$ 中满足 $\mathrm{Ext}^1$-垂直的对象. 记 $t$ 与 $f$ 是相应的子函子与商函子.</p>
+
+<ol>
+  <li>$𝒯 ∩ (^⟂ 𝒯) = 𝒯 ∩ τ ⁻¹ ℱ$.</li>
+  <li>$𝒯 ∩ (𝒯^⟂) = 𝒯 ∩ t(𝐢𝐧𝐣)$.</li>
+  <li>$ℱ ∩ (ℱ^⟂) = ℱ ∩ τ 𝒯$.</li>
+  <li>$ℱ ∩ (^⟂ ℱ) = ℱ ∩ f(𝐩𝐫𝐨𝐣)$.</li>
+</ol>
+</div>
+
+<p>见<a href="Notes_on_Tilting#torsion-pair-确定的对象类">此节</a>.</p>
+
+<h2 id="tilting-与-torsion-pair-𝒯--𝒯--𝐚𝐝𝐝t-的证明">Tilting 与 torsion pair: $(^⟂𝒯) ∩ 𝒯 = 𝐚𝐝𝐝(T)$ 的证明</h2>
+
+<p>逼近问题见<a href="Notes_on_Tilting#tilting-模诱导的-torsion-pair">此节</a>.</p>
+
+<div class="proposition"><p>(Tilting 对象与 torsion pair, <a href="Tilting_Obj_Torsion_Pair">证明</a>). 对 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$.</p>
+
+<ol>
+  <li>
+    <p>对任意 $M ∈ 𝒯$, 存在满的右 $𝐚𝐝𝐝 (T)$-逼近 $T^n ↠ M$ 使得</p>
+
+\[0 → K → T^n → M → 0 \quad ∈ 𝒯.\]
+  </li>
+  <li>$(^⟂𝒯) ∩ 𝒯 = 𝐚𝐝𝐝(T)$, 即 $𝒯 ∩ τ ^{-1} ℱ = 𝐚𝐝𝐝(T)$.
+    <blockquote>
+      <p>一般来说, 只有 $(^⟂𝒯) ∩ 𝒯 = 𝒯 ∩ τ ^{-1} ℱ$.</p>
+    </blockquote>
+  </li>
+  <li>$M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.
+    <blockquote>
+      <p><a href="gen_and_cog">一般来说</a>, $M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是满的.</p>
+    </blockquote>
+  </li>
+</ol>
+</div>
+
+<div class="example"><p>特别地, 存在一列逼近的 ses</p>
+
+\[0 → K_{k + 1} → T^{N_n} → K_n → 0\quad (n ≥ 0,\quad K_0 = M).\]
+
+<p>使得有长正合列</p>
+
+\[θ : \dots → T^{N_2} → T^{N_1} → T^{N_0} → M → 0.\]
+
+<p>使得 $(T, θ)$ 是 $(T, M)$ 的 $\mathrm{End}(T)$-模投射分解.</p>
+</div>
+
+<h2 id="关于反射">关于反射</h2>
+
+<p><a href="Proof-Gabriel">Gabriel 定理的证明</a>.</p>
+
+
+  </article>
+
+  <div class="page-navigation">
+    
+      <a
+        class="next"
+        href="https://zhangchenchengsjtu.github.io/website/posts/Finite_and_Affine_Root_System"
+        title="NEXT: 有限型与仿射型 Dynkin 图">&lt;&lt;</a>
+      <span>
+        &middot;
+      </span>
+    
+    <a
+      class="home"
+      href="https://zhangchenchengsjtu.github.io/website/"
+      title="Back to Homepage">Home</a>
+    
+      <span>
+        &middot;
+      </span>
+      <a
+        class="prev"
+        href="https://zhangchenchengsjtu.github.io/website/posts/T_Y_Dim"
+        title="PREV: $\dim M$ 与 $\dim (T,M)$">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    Chencheng Zhang</span>
+</div>
+
+</body>
+
+
+</html>
