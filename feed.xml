@@ -1362,7 +1362,9 @@ t'M &amp;amp; \underset{i'}{↪  } &amp;amp; M &amp;amp; \underset{π '}{↠  } 
       
         <item>
           <title>上同调函子保持弱核</title>
-          <description>&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(上) 同调函子保持弱核.&lt;/p&gt;
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;(上) 同调函子保持弱核.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;proof&quot;&gt;&lt;p&gt;只看共变情形. 给定同调函子 $f: 𝒯 → 𝒜$, 则有右正合函子&lt;/p&gt;
@@ -1392,7 +1394,9 @@ W &amp;amp; \xrightarrow{u} &amp;amp; X &amp;amp; \xrightarrow{v} &amp;amp; Y
       
         <item>
           <title>米田嵌入是上同调函子</title>
-          <description>&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;反变的米田嵌入 $𝒯^{\mathrm{op}} → 𝐅𝐮𝐧𝐜𝐭(𝒞, 𝐌𝐨𝐝_k)$ 是上同调函子.&lt;/p&gt;
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;&lt;p&gt;反变的米田嵌入 $𝒯^{\mathrm{op}} → 𝐅𝐮𝐧𝐜𝐭(𝒞, 𝐌𝐨𝐝_k)$ 是上同调函子.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;proof&quot;&gt;&lt;p&gt;只需证明一切 $(-,W)&lt;em&gt;{𝒯}$ 是上同调函子. 任意给定三角 $X^∙ ∈ \triangle$, 上链复形 $(X^∙ , W)&lt;/em&gt;{𝒯} ∈ C(k)$ 在 $n$ 处的正合性描述作以下命题:&lt;/p&gt;
@@ -1419,7 +1423,9 @@ W^{\bullet }&amp;amp;: &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; W &amp;amp; 
       
         <item>
           <title>具有投射盖的平坦对象必投射</title>
-          <description>&lt;p&gt;试思考以下问题: 若平坦模有投射盖, 则必是投射模.&lt;/p&gt;
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;p&gt;试思考以下问题: 若平坦模有投射盖, 则必是投射模.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;证明见经典教材&lt;a href=&quot;https://link.springer.com/book/10.1007/978-1-4612-0525-8&quot;&gt;环论与模论讲义 (林節玄 著)&lt;/a&gt; 中的习题 Ch6-§4-20, 解答见 (&lt;a href=&quot;https://www.maths.ed.ac.uk/~v1ranick/papers/lam2.pdf#page=126&quot;&gt;此处&lt;/a&gt;).&lt;/p&gt;
@@ -1463,8 +1469,9 @@ W^{\bullet }&amp;amp;: &amp;amp; 0 &amp;amp; \rightarrow  &amp;amp; W &amp;amp; 
       
         <item>
           <title>$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴</title>
-          <description>&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(&lt;a href=&quot;Mod_Tri_is_Frobenius&quot;&gt;证明&lt;/a&gt;).
-$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴.&lt;/p&gt;
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;$𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;proof&quot;&gt;&lt;p&gt;上同调函子通过米田嵌入分解, 从而 $𝐦𝐨𝐝_{𝒯^{\mathrm{op}}}^{\mathrm{op}} ≃ 𝐦𝐨𝐝_𝒯$. 从而可表函子既是投射对象, 又是内射对象 (反范畴的投射对象). 由于 $𝐦𝐨𝐝_𝒯$ 存在足够投射对象, 故投射对象就是内射对象.&lt;/p&gt;
@@ -2921,15 +2928,9 @@ h⇣ \  &amp;amp;  &amp;amp; g⇣ \  &amp;amp;  &amp;amp; f⇣ \ \\
 \[𝐅𝐮𝐧𝐜𝐭(𝒞 , 𝒜 ) → 𝐅𝐮𝐧𝐜𝐭_{Rex}(𝐦𝐨𝐝_𝒞, 𝒜);\]
 
 &lt;ol&gt;
-&lt;li&gt; 
-$𝐅𝐮𝐧𝐜𝐭_{Rex}$ 表示右正合函子 (保持余核的函子) 构成的全子范畴;
-&lt;/li&gt;
-&lt;li&gt;
-对左侧的 $f$, 右侧的函子定义作 $\mathrm{cok}(h_φ) ↦ \mathrm{cok}(F(φ))$.
-&lt;/li&gt;
-&lt;li&gt;
-对右侧的 $F$, 左侧函子定义作 $X ↦ F(h_X)$.
-&lt;/li&gt;
+  &lt;li&gt;$𝐅𝐮𝐧𝐜𝐭_{Rex}$ 表示右正合函子 (保持余核的函子) 构成的全子范畴;&lt;/li&gt;
+  &lt;li&gt;对左侧的 $f$, 右侧的函子定义作 $\mathrm{cok}(h_φ) ↦ \mathrm{cok}(F(φ))$.&lt;/li&gt;
+  &lt;li&gt;对右侧的 $F$, 左侧函子定义作 $X ↦ F(h_X)$.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
@@ -2949,15 +2950,9 @@ $𝐅𝐮𝐧𝐜𝐭_{Rex}$ 表示右正合函子 (保持余核的函子) 构�
 \end{bmatrix}\]
 
 &lt;ol&gt;
-&lt;li&gt;
-当且仅当 $𝒞$ 存在弱核, $𝐦𝐨𝐝_𝒞$ 是 Abel 范畴; 
-&lt;/li&gt;
-&lt;li&gt;
-$F ∈ 𝐅𝐮𝐧𝐜𝐭_w(𝒞 , 𝒜 )$, 当且仅当 $F$ 将一切弱核所在的态射链 $X \xrightarrow f Y \xrightarrow g Z$ 映作 $F(Y)$ 处正合的态射链 $F(X)\xrightarrow {F(f)} F(Y) \xrightarrow {F(g)} F(Z)$;
-&lt;/li&gt;
-&lt;li&gt;
-$𝐅𝐮𝐧𝐜𝐭_{Ex}$ 表示正合函子 (保持核与余核的函子). 
-&lt;/li&gt;
+  &lt;li&gt;当且仅当 $𝒞$ 存在弱核, $𝐦𝐨𝐝_𝒞$ 是 Abel 范畴;&lt;/li&gt;
+  &lt;li&gt;$F ∈ 𝐅𝐮𝐧𝐜𝐭_w(𝒞 , 𝒜 )$, 当且仅当 $F$ 将一切弱核所在的态射链 $X \xrightarrow f Y \xrightarrow g Z$ 映作 $F(Y)$ 处正合的态射链 $F(X)\xrightarrow {F(f)} F(Y) \xrightarrow {F(g)} F(Z)$;&lt;/li&gt;
+  &lt;li&gt;$𝐅𝐮𝐧𝐜𝐭_{Ex}$ 表示正合函子 (保持核与余核的函子).&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
@@ -2993,22 +2988,17 @@ $𝐅𝐮𝐧𝐜𝐭_{Ex}$ 表示正合函子 (保持核与余核的函子).
 &lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(有限表现函子的等价定义, &lt;a href=&quot;Finitely_Presented_Functor&quot;&gt;证明&lt;/a&gt;)&lt;/p&gt;
 
 &lt;p&gt;选定 $F ∈ 𝐌𝐨𝐝_𝒞$, 以下等价:&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-(有限表现函子) $F ∈ 𝐦𝐨𝐝_𝒞$;
-&lt;/li&gt;
-&lt;li&gt;
-(紧对象) 对 $𝐌𝐨𝐝_k$ 中的滤过系统 $G_∙$, 典范态射
+  &lt;li&gt;(有限表现函子) $F ∈ 𝐦𝐨𝐝_𝒞$;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(紧对象) 对 $𝐌𝐨𝐝_k$ 中的滤过系统 $G_∙$, 典范态射&lt;/p&gt;
 
-$$
-\varinjlim (F, G_∙)_{𝒞^{\mathrm{op}}} ≃  (F, \varinjlim G_∙)_{𝒞^{\mathrm{op}}}
-$$
+\[\varinjlim (F, G_∙)_{𝒞^{\mathrm{op}}} ≃  (F, \varinjlim G_∙)_{𝒞^{\mathrm{op}}}\]
 
-是同构;
-&lt;/li&gt;
-&lt;li&gt;
-$F ⊗ -: 𝐌𝐨𝐝_{𝒞 ^{\mathrm{op}}} → 𝐌𝐨𝐝_k$ 保持任意积.
-&lt;/li&gt;
+    &lt;p&gt;是同构;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;$F ⊗ -: 𝐌𝐨𝐝_{𝒞 ^{\mathrm{op}}} → 𝐌𝐨𝐝_k$ 保持任意积.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
@@ -3032,13 +3022,10 @@ $F ⊗ -: 𝐌𝐨𝐝_{𝒞 ^{\mathrm{op}}} → 𝐌𝐨𝐝_k$ 保持任意积
 
 &lt;div class=&quot;theorem&quot;&gt;&lt;p&gt;(平坦对象是投射对象的滤过余极限, &lt;a href=&quot;Lazard_thm&quot;&gt;证明&lt;/a&gt;).
 给定小的加法范畴 $𝒞$, 假定以下提及的滤过余极限存在.&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-假定 $𝒞^{\mathrm{op}}$ 有弱核, 则 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 当且仅当 $P$ 是有限表现函子 $\{h_X\}$ 的滤过余极限; 
-&lt;/li&gt;
-&lt;li&gt;
-假定 $𝒞$ 有弱核, 则 $P ∈ 𝐌𝐨𝐝_{𝒞^{\mathrm{op}}}$ 是平坦对象, 当且仅当 $P$ 是有限表现函子 $\{h^X\}$ 的滤过余极限. 
-&lt;/li&gt;
+  &lt;li&gt;假定 $𝒞^{\mathrm{op}}$ 有弱核, 则 $P ∈ 𝐌𝐨𝐝_𝒞$ 是平坦对象, 当且仅当 $P$ 是有限表现函子 ${h_X}$ 的滤过余极限;&lt;/li&gt;
+  &lt;li&gt;假定 $𝒞$ 有弱核, 则 $P ∈ 𝐌𝐨𝐝_{𝒞^{\mathrm{op}}}$ 是平坦对象, 当且仅当 $P$ 是有限表现函子 ${h^X}$ 的滤过余极限.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
@@ -3046,13 +3033,10 @@ $F ⊗ -: 𝐌𝐨𝐝_{𝒞 ^{\mathrm{op}}} → 𝐌𝐨𝐝_k$ 保持任意积
 &lt;/div&gt;
 
 &lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(内射余生成元). 对局部小的范畴 $𝒞$. 称 $X ∈ 𝒞$ 是内射余生成元, 若以下两点满足&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-$f ↦ (f, X)_𝒞$ 将满射对应至单射, 换言之, $(-,X)$ 是正合函子; 
-&lt;/li&gt;
-&lt;li&gt;
-$(f,X)_{𝒞} ↦ f$ 良定义, 从而将单射返回至满射, 换言之, $(-,X)$ 是忠实函子. 
-&lt;/li&gt;
+  &lt;li&gt;$f ↦ (f, X)_𝒞$ 将满射对应至单射, 换言之, $(-,X)$ 是正合函子;&lt;/li&gt;
+  &lt;li&gt;$(f,X)_{𝒞} ↦ f$ 良定义, 从而将单射返回至满射, 换言之, $(-,X)$ 是忠实函子.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
@@ -3070,7 +3054,7 @@ $(f,X)_{𝒞} ↦ f$ 良定义, 从而将单射返回至满射, 换言之, $(-,X
 &lt;p&gt;取 $𝒞$ 为 $k$-代数 $R$ 的有限生成自由模范畴, 则两处 Abel 闭包的典范同构由自由模所在的可表函子诱导, 即,&lt;/p&gt;
 
 \[\begin{bmatrix}
-    𝐟𝐩 (𝐦𝐨𝐝_{𝒞}, 𝐌𝐨𝐝_k)^{\mathrm{op}} &amp;amp;→&amp;amp; 𝐟𝐩 (𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}, 𝐌𝐨𝐝_k) \\ 
+    𝐟𝐩 (𝐦𝐨𝐝_{𝒞}, 𝐌𝐨𝐝_k)^{\mathrm{op}} &amp;amp;→&amp;amp; 𝐟𝐩 (𝐦𝐨𝐝_{𝒞^{\mathrm{op}}}, 𝐌𝐨𝐝_k) \\
     (R_R^n, - )_{𝐦𝐨𝐝_R} &amp;amp; ↦ &amp;amp; ({_R}R^n, -)_{𝐦𝐨𝐝_{R^{\mathrm{}op}}}
 \end{bmatrix}.\]
 
@@ -3116,18 +3100,13 @@ $𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴.&lt;/p&gt;
 
 &lt;h2 id=&quot;反变有限&quot;&gt;反变有限&lt;/h2&gt;
 
-&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(逼近, 预盖, 反变有限). 
+&lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(逼近, 预盖, 反变有限).
 给定任意范畴 $𝒞$ 与同构闭的对象类 $𝒳$.&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-一个 $𝒳$-预覆盖是一个态射 $X_{∈ 𝒳} \xrightarrow f M_{∈ 𝒞}$, 使得 $(𝒳, f)$ 均为满射. 
-&lt;/li&gt;
-&lt;li&gt;
-此时, 称 $f$ 是 $M$ 的一个右 $𝒳$-逼近. 等价地, 任意 $X' → M$ 通过 $f$ 分解. 
-&lt;/li&gt;
-&lt;li&gt;
-称 $𝒳$ 是反变有限的对象类, 若所有 $M$ 都存在右 $𝒳$-逼近. 
-&lt;/li&gt;
+  &lt;li&gt;一个 $𝒳$-预覆盖是一个态射 $X_{∈ 𝒳} \xrightarrow f M_{∈ 𝒞}$, 使得 $(𝒳, f)$ 均为满射.&lt;/li&gt;
+  &lt;li&gt;此时, 称 $f$ 是 $M$ 的一个右 $𝒳$-逼近. 等价地, 任意 $X’ → M$ 通过 $f$ 分解.&lt;/li&gt;
+  &lt;li&gt;称 $𝒳$ 是反变有限的对象类, 若所有 $M$ 都存在右 $𝒳$-逼近.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
@@ -3136,17 +3115,17 @@ $𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴.&lt;/p&gt;
 &lt;div class=&quot;definition&quot;&gt;&lt;p&gt;(投射盖). 假定 Abel 范畴. 称 $π : P → X$ 是 $X$ 的一个投射盖, 若 $π$ 是满的, 且 $\mathrm{ker}(π)$ 是盈余的. 换言之, 任意形如&lt;/p&gt;
 
 \[\begin{bmatrix}
-∗ &amp;amp; ↪ &amp;amp; ∗ \\ 
-⤵ &amp;amp; &amp;amp; ⤵ \\ 
-\mathrm{ker}(π) &amp;amp; ↪ &amp;amp; P \\ 
+∗ &amp;amp; ↪ &amp;amp; ∗ \\
+⤵ &amp;amp; &amp;amp; ⤵ \\
+\mathrm{ker}(π) &amp;amp; ↪ &amp;amp; P \\
 \end{bmatrix}\]
 
 &lt;p&gt;的推出拉回方块一定同构于&lt;/p&gt;
 
 \[\begin{bmatrix}
-\mathrm{ker}(π) &amp;amp; ↪ &amp;amp; P \\ 
-∥ &amp;amp; \ &amp;amp; ∥ \\ 
-\mathrm{ker}(π) &amp;amp; ↪ &amp;amp; P \\ 
+\mathrm{ker}(π) &amp;amp; ↪ &amp;amp; P \\
+∥ &amp;amp; \ &amp;amp; ∥ \\
+\mathrm{ker}(π) &amp;amp; ↪ &amp;amp; P \\
 \end{bmatrix}.\]
 &lt;/div&gt;
 
@@ -3158,13 +3137,10 @@ $𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;definition&quot;&gt;&lt;p&gt;取定同构封闭的全子范畴 $i : 𝒞 ↣ 𝒜$.&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-称 $𝒞$ 是反射的, 若 $i$ 是右伴随. 
-&lt;/li&gt;
-&lt;li&gt;
-称 $𝒞$ 是余反射的, 若 $i$ 是左伴随. 
-&lt;/li&gt;
+  &lt;li&gt;称 $𝒞$ 是反射的, 若 $i$ 是右伴随.&lt;/li&gt;
+  &lt;li&gt;称 $𝒞$ 是余反射的, 若 $i$ 是左伴随.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
@@ -3174,12 +3150,8 @@ $𝐦𝐨𝐝_𝒯$ 是 Frobenius 范畴.&lt;/p&gt;
 取加法范畴 $𝒯$ 与本质小的同构闭全子范畴 $ℬ$.&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;
-假定 $ℬ$ Karoubi, $ℬ^{\mathrm{op}}$ 存在弱核, 且 $𝐦𝐨𝐝_{ℬ}$ 存在投射盖 (例如 Krull-Schmidt 三角范畴). 此时 $ℬ$ 余反射, 当且仅当其反变有限.
-&lt;/li&gt;
-&lt;li&gt;
-假定 $ℬ$ Karoubi, 存在弱核. 此时 $ℬ$ 余反射, 当且仅当其反变有限. 
-&lt;/li&gt;
+  &lt;li&gt;假定 $ℬ$ Karoubi, $ℬ^{\mathrm{op}}$ 存在弱核, 且 $𝐦𝐨𝐝_{ℬ}$ 存在投射盖 (例如 Krull-Schmidt 三角范畴). 此时 $ℬ$ 余反射, 当且仅当其反变有限.&lt;/li&gt;
+  &lt;li&gt;假定 $ℬ$ Karoubi, 存在弱核. 此时 $ℬ$ 余反射, 当且仅当其反变有限.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 
