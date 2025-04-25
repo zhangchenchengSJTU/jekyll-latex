@@ -101,32 +101,41 @@
 </ol>
 </div>
 
+<div class="proposition"><p>给定 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$. 对任意 $M ∈ 𝒯$, 存在满的右 $𝐚𝐝𝐝 (T)$-逼近 $T^n ↠ M$ 使得</p>
+
+\[0 → K → T^n → M → 0 \quad ∈ 𝒯.\]
+</div>
+
 <div class="proof"><p>先构造右逼近. 取有限集 $𝒮 = (f_i)$ 为 $(T,M)$ 的生成元, 此时</p>
 
 \[T^𝒮 → M, \quad t ↦ ∑ f_i(t_i),\]
 
 <p>与 $\mathrm{End}(T)^n ↠ (T,M)$ 都是满态射.
 <br />
-依照长正合列, $\mathrm{Ext}^1(T,K) = 0$, 从而 $K ∈ T^⟂ = 𝒯$.
-<br />
-<br />
-继而证明 ${}^⟂ 𝒯 = 𝐚𝐝𝐝 (T)$.</p>
+依照长正合列, $\mathrm{Ext}^1(T,K) = 0$, 从而 $K ∈ T^⟂ = 𝒯$.</p>
+</div>
+
+<div class="proposition"><p>给定 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$. $(^⟂𝒯) ∩ 𝒯 = 𝐚𝐝𝐝(T)$, 即 $𝒯 ∩ τ ^{-1} ℱ = 𝐚𝐝𝐝(T)$.</p>
+</div>
+
+<div class="proof"><p>下证明 $({}^⟂ 𝒯) ∩ 𝒯 = 𝐚𝐝𝐝 (T)$.</p>
 
 <ol>
   <li>一方面, $𝐚𝐝𝐝 (T) ⊆ {}^⟂ 𝒯 = {}^⟂ (T^⟂)$.</li>
-  <li>
-    <p>另一方面, 若 $X ∈ ({}^⟂ 𝒯) ∩ 𝒯$, 考虑满的极小右-$𝐚𝐝𝐝(T)$ 逼近, 得 $𝒯$ 中的 ses</p>
+  <li>另一方面, 若 $X ∈ ({}^⟂ 𝒯) ∩ 𝒯$, 考虑满的极小右-$𝐚𝐝𝐝(T)$ 逼近, 得 $𝒯$ 中的 ses</li>
+</ol>
 
 \[0 → K → T^n → X → 0\quad ∈ 𝒯.\]
 
-    <p>由假定, $\mathrm{Ext}^1(X, K) = 0$. 从而上述 ses 可裂.
-<br />
-<br />
-最后证明 $M ∈ 𝒯$ 时, 配对 $(T, M) ⊗ T → M$ 是同构. 类似<a href="Gen_Eq_T">此证明</a>, 取 $(T,-)$-右正合列</p>
-  </li>
-</ol>
+<p>由假定, $\mathrm{Ext}^1(X, K) = 0$. 从而上述 ses 可裂.</p>
+</div>
 
-\[T_1 → T_0 → X → 0\]
+<div class="proposition"><p>给定 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$. $M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.</p>
+</div>
+
+<div class="proof"><p>最后证明 $M ∈ 𝒯$ 时, 配对 $(T, M) ⊗ T → M$ 是同构. 类似<a href="Gen_Eq_T">此证明</a>, 取 $(T,-)$-右正合列</p>
+
+\[T_1 → T_0 → X → 0.\]
 
 <p>此时, 有右正合列的交换图</p>
 

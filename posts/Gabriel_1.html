@@ -114,7 +114,25 @@
 
         <p>取 $𝐬𝐮𝐛(M) ∩ 𝐪𝐮𝐨𝐭(M)$ 中维度最小的非零对象 $B$, 显然 $B$ 是 brick.
 <br />
-将 $B ↪ M ↠ B$ <a href="Hereditary_PBPO">补全</a>作 PBPO 方块. 由 $M$ 与 $B$ 不可分解, 以及 $M ≇ B$, 得 $\mathrm{Ext}^1(B,B) ≠ 0$. 故 $q(𝐝𝐢𝐦 \ B) ≤  0$, 矛盾.</p>
+若 $B ≇ M$, 则合成 $B ↪ M ↠ B$ 为 $0$, 因此 $B$ 是 $M/B$ 的商对象. 由 $B$ 的极小性, $M/B ↠ B$ 限制在任意直和项上或零或满. 不妨取不可分解直和项 $M_1$ 使得 $M_1 ↠ B$.
+<br />
+显然 $M_1 ↪ M/B$ 不通过 $M ↠ M/B$ 分解. 这说明以下是不可裂 ses 的交换图</p>
+
+\[\begin{bmatrix}
+B &amp; \rightarrow  &amp; E &amp; \twoheadrightarrow  &amp; M_{1}\\
+\parallel  &amp;  &amp; ⇣  &amp;  &amp; \downarrow \\
+B &amp; \hookrightarrow  &amp; M &amp; \twoheadrightarrow  &amp; M/B
+\end{bmatrix}\]
+
+        <p>由 $\mathrm{Ext}^1$ 右正合, 得 $\mathrm{Ext}^1(M_1,M_1) ↠ \mathrm{Ext}^1(M_1,B) ≠ 0$. 
+<br />
+重复上述步骤, 得一列不可分解对象的满态射</p>
+
+\[M ↠ M_1 ↠ \cdots \quad (\mathrm{Ext}^1(M_k, M_k) ≠ 0)\]
+
+        <p>满态射降至 $0$ 时, 前一项必然是 brick.
+<br />
+以上构造了 $\mathrm{Ext}^1(-,-) ≠ 0$ 的 brick, 矛盾.</p>
       </li>
     </ol>
 

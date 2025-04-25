@@ -12,7 +12,7 @@
     Jekyll Latex</title>
 
 
-<meta name="description" content="($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象). 给定对象 $X$ 与 $M$.$M ∈ 𝐠𝐞𝐧(X)$ 当且仅当赋值 $(X, M) ⊗_{\mathrm{End}(X)} X → M$ 是满的.$M ∈ 𝐜𝐨𝐠(X)$ 当且仅当余赋值 $M → ((M, X), X)$ 是单的.">
+<meta name="description" content="证明">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -78,31 +78,37 @@
 
     <div class="divider"></div>
 
-    <div class="lemma"><p>($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象). 给定对象 $X$ 与 $M$.</p>
+    <h2 id="证明">证明</h2>
+
+<div class="lemma"><p>($𝐠𝐞𝐧$ 与 $𝐜𝐨𝐠$ 中的对象). 给定对象 $X$ 与 $M$.</p>
+
 <ol>
-<li>
-$M ∈ 𝐠𝐞𝐧(X)$ 当且仅当赋值 $(X, M) ⊗_{\mathrm{End}(X)} X → M$ 是满的.
-</li>
-<li>
-$M ∈ 𝐜𝐨𝐠(X)$ 当且仅当余赋值 $M → ((M, X), X)$ 是单的.
-</li>
+  <li>$M ∈ 𝐠𝐞𝐧(X)$ 当且仅当赋值 $(X, M) ⊗_{\mathrm{End}(X)} X → M$ 是满的.</li>
+  <li>$M ∈ 𝐜𝐨𝐠(X)$ 当且仅当余赋值 $M → ((M, X), X)$ 是单的.</li>
 </ol>
 </div>
 
-<div class="proof"><p>若 $p : X^n ↠ M$ 是满态射, 记分量为 $(p_i)<em>{1 ≤ i ≤ n}$. 此时, 任意 $m ∈ M$ 形如 $∑ p_i(x_i)$ 的形式, 因此
-\((X, M) ⊗_{\mathrm{End}(X)} X → M,\quad ∑ p_i ⊗ x_i ↦ m\)
-是满态射.
+<div class="proof"><p>若 $p : X^n ↠ M$ 是满态射, 记分量为 $(p_i)_{1 ≤ i ≤ n}$. 此时, 任意 $m ∈ M$ 形如 $∑ p_i(x_i)$ 的形式, 因此</p>
+
+\[(X, M) ⊗_{\mathrm{End}(X)} X → M,\quad ∑ p_i ⊗ x_i ↦ m\]
+
+<p>是满态射.
 <br />
-反之, 若 $φ : (X, M) ⊗ X → M$ 满, 则任意 $m ∈ M$ 都是形如 $∑ f_i(x_i)$ 的形式, 由 $(X,M)$ 是有限生成右 $\mathrm{End}(M)$-模. 取 $(X, M)$ 的一组生成元 $𝒢$, 则有满态射
-\(X^𝒢 ↠ (X, M) ↠ M.\)
+反之, 若 $φ : (X, M) ⊗ X → M$ 满, 则任意 $m ∈ M$ 都是形如 $∑ f_i(x_i)$ 的形式, 由 $(X,M)$ 是有限生成右 $\mathrm{End}(M)$-模. 取 $(X, M)$ 的一组生成元 $𝒢$, 则有满态射</p>
+
+\[X^𝒢 ↠ (X, M) ↠ M.\]
+
+<p>若 $i: M ↪ X^n$ 是单态射, 不妨将 $M$ 中元素视同 $X^n$ 中元素. 对 $m = (x_j)_{1 ≤ j ≤ n} ≠ 0$, 不妨设 $x_1 ≠ 0$, 得</p>
+
+\[(M, X) → X,\quad p_1 ↦ p_1(m) ≠ 0.\]
+
+<p>因此 $m$ 在 $((M, X), X)$ 中的像是非零态射, 从而是单的. 
 <br />
-若 $i: M ↪ X^n$ 是单态射, 不妨将 $M$ 中元素视同 $X^n$ 中元素. 对 $m = (x_j)</em>{1 ≤ j ≤ n} ≠ 0$, 不妨设 $x_1 ≠ 0$, 得
-\((M, X) → X,\quad p_1 ↦ p_1(m) ≠ 0.\)
-因此 $m$ 在 $((M, X), X)$ 中的像是非零态射, 从而是单的. 
-<br />
-反之, 若 $ψ : M → ((M, X), X)$ 是单态射, 则有复合的单态射
-\(M ↪ ((M, X), X) ↪ ((X, X)^n, X).\)
-此处 $(X, X)^n ↠ (M, X)$ 是有限生成模 $\mathrm{End}(X)$-模的覆盖.</p>
+反之, 若 $ψ : M → ((M, X), X)$ 是单态射, 则有复合的单态射</p>
+
+\[M ↪ ((M, X), X) ↪ ((X, X)^n, X).\]
+
+<p>此处 $(X, X)^n ↠ (M, X)$ 是有限生成模 $\mathrm{End}(X)$-模的覆盖.</p>
 </div>
 
 
