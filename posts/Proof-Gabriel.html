@@ -7,26 +7,28 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
+
+
   <title>Proof of Gabriel's Theorem
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="  Abstract  关键步骤: 表示的轨道语言; Krull 维数公式; 不可约表示是极大开子轨道; 图分类定理 (有限型与仿射型).推广: Kac 定理等?">
+<meta name="description" content="  Abstract      关键步骤: 表示的轨道语言; Krull 维数公式; 不可约表示是极大开子轨道; 图分类定理 (有限型与仿射型).  推广: Kac 定理等?  ">
 
 
   <meta name="google-site-verification" content="abc123">
 
 
-<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
-<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
-<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
-<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Proof-Gabriel">
+<link rel="icon" href="http://localhost:4000/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:4000/website/assets/touch-icon.png">
+<link rel="stylesheet" href="http://localhost:4000/website/assets/core.css">
+<link rel="canonical" href="http://localhost:4000/website/posts/Proof-Gabriel">
 <link
   rel="alternate"
   type="application/atom+xml"
   title="Jekyll Latex"
-  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+  href="http://localhost:4000/website/feed.xml" />
 
 
 
@@ -50,6 +52,9 @@
     id="MathJax-script"
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+
+
+
 </head>
 
 <body class="latex-dark">
@@ -57,7 +62,7 @@
 	<aside class="logo">
   
 
-  <a href="https://zhangchenchengsjtu.github.io/website/">
+  <a href="http://localhost:4000/website/">
     <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
   </a>
   <span class="logo-prompt">Back to Home</span>
@@ -79,176 +84,180 @@
     <div class="divider"></div>
 
     <div class="abstract">
-  <h5>Abstract</h5>
-  <div><p>关键步骤: 表示的轨道语言; Krull 维数公式; 不可约表示是极大开子轨道; 图分类定理 (有限型与仿射型).
-<br />
-推广: Kac 定理等?</p>
-</div>
+  <h5 id="abstract">Abstract</h5>
+  <div>
+    <p>关键步骤: 表示的轨道语言; Krull 维数公式; 不可约表示是极大开子轨道; 图分类定理 (有限型与仿射型). <br /> 推广: Kac 定理等?</p>
+  </div>
 </div>
 
 <h2 id="gabriel-定理">Gabriel 定理</h2>
 
 <h3 id="轨道">轨道</h3>
 
-<div class="definition"><p>(不带关系的箭图).
-选定有限无环的 quiver $Q$, 定义代数闭域 $k = \overline k$ 上的路代数 $kQ$, 并将 $Q$ 的资料记作 $(Q_0, Q_1, s, t)$, 其中 $t(α) \xleftarrow α s(α)$.</p>
+<div class="definition">
+  <p>(不带关系的箭图). 选定有限无环的 quiver $Q$, 定义代数闭域 $k = \overline k$ 上的路代数 $kQ$, 并将 $Q$ 的资料记作 $(Q_0, Q_1, s, t)$, 其中 $t(α) \xleftarrow α s(α)$.</p>
 </div>
 
-<div class="definition"><p>(路代数). 回顾小 $k$-范畴的 $k$-等价 $𝐦𝐨𝐝_{kQ} ≃ 𝐫𝐞𝐩_k(Q)$. 将路代数的模记作函子</p>
-
-\[M : Q → \mathrm{vec}_k, \quad [i ↦ M_i,\quad α ↦ M_α].\]
+<div class="definition">
+  <p>(路代数). 回顾小 $k$-范畴的 $k$-等价 $𝐦𝐨𝐝_{kQ} ≃ 𝐫𝐞𝐩_k(Q)$. 将路代数的模记作函子</p>
+  <p>$$
+M : Q → \mathrm{vec}_k, \quad [i ↦ M_i,\quad α ↦ M_α].
+$$</p>
 </div>
 
 <p>记 $P(i)$ 是 $i ∈ Q_0$ 处对应的投射模. 以上 $kQ$ 是有限维遗传代数. 任意 $M ∈ 𝐦𝐨𝐝_{kQ}$ 的<a href="Ringel_Resolution">极小投射分解</a>是</p>
 
-\[0 → ⨁_{α∈ Q_1}P(t(α))^{\dim  M_{s(α)}} → ⨁_{i∈ Q_0}P(i)^{\dim M_i} → M → 0.\]
+<p>$$
+0 → ⨁_{α∈ Q_1}P(t(α))^{\dim  M_{s(α)}} → ⨁_{i∈ Q_0}P(i)^{\dim M_i} → M → 0.
+$$</p>
 
-<div class="definition"><p>(维数向量).
-子范畴 $ι: Q_0 ↪ Q_1$ 给出拉回</p>
-
-\[𝐝𝐢𝐦:= \quad ι^∗: 𝐦𝐨𝐝_{kQ} → 𝐦𝐨𝐝_{kQ_0},\quad M ↦ (\dim M_i)_{i ∈ Q_0}.\]
+<div class="definition">
+  <p>(维数向量). 子范畴 $ι: Q_0 ↪ Q_1$ 给出拉回</p>
+  <p>$$
+𝐝𝐢𝐦:= \quad ι^∗: 𝐦𝐨𝐝_{kQ} → 𝐦𝐨𝐝_{kQ_0},\quad M ↦ (\dim M_i)_{i ∈ Q_0}.
+$$</p>
 </div>
 
 <p>简单地看, $ι(M)$ 是将一切 $M_α$ 替换作零态射. 函子 $𝐦𝐨𝐝$ 本质满, 但未必全忠实.</p>
 
-<div class="definition"><p>(轨道). 给定 $𝐯 ∈ 𝐦𝐨𝐝_{kQ_0}$. 一个以 $𝐯$ 为维数向量的表示, 对应以下同构类中的一个代表元</p>
-
-\[\{M ∈ 𝐫𝐞𝐩_k(Q) ∣ 𝐝𝐢𝐦 \ M = 𝐯\} / ≃ .\]
-
-<p>以下使用轨道定义之.</p>
-
-<ol>
-  <li>
-    <p>(Variety) 定义 representation variety:</p>
-
-\[𝐫𝐞𝐩(𝐯) = ∏_{α ∈ Q_1} k^{𝐯_{t(α )} × 𝐯_{s(α)}}.\]
-
-    <p>$X$ 中的一个对象 (一族 $Q_1$-指标的矩阵) 对应一个以 $𝐯$ 为维度向量的模. 特别地,</p>
-
-\[M_{t(α )} \xleftarrow{M_{α }} M_{s(α )} ,\quad k^{𝐯_{t(α )}} \xleftarrow{Y} k^{𝐯_{s(α)}}\quad (Y ∈  k^{𝐯_{t(α )} ×  𝐯_{s(α )}}).\]
-  </li>
-  <li>
-    <p>(代数群) 称 $𝐫𝐞𝐩(𝐯) =$ 中元素等价 ($M ∼  N$), 当且仅当其作为 $kQ$-模同构. 相应地, 存在 $g ∈  ∏ _{i ∈  Q_0}\mathrm{GL}(k, 𝐯_i)$ 使得</p>
-
-\[g_{t(α )} ⋅  M_α  = N_α  ⋅  g_{s(α )} \ \quad (∀  α  ∈  Q_1)\]
-  </li>
-  <li>
-    <p>(群作用) 定义 $G := ∏ _{i ∈  Q_0}\mathrm{GL}(k, 𝐯_i)$ 在 $𝐫𝐞𝐩(𝐯) =$ 上的 (共轭) 作用如下:</p>
-
-\[g. (x_α )_{α  ∈  Q_1} := (g_{t(α )} ⋅  x_α  ⋅  g_{s(α )}^{-1})_{α  ∈  Q_1}.\]
-  </li>
-</ol>
+<div class="definition">
+  <p>(轨道). 给定 $𝐯 ∈ 𝐦𝐨𝐝_{kQ_0}$. 一个以 $𝐯$ 为维数向量的表示, 对应以下同构类中的一个代表元</p>
+  <p>$$
+\{M ∈ 𝐫𝐞𝐩_k(Q) ∣ 𝐝𝐢𝐦 \ M = 𝐯\} / ≃ .
+$$</p>
+  <p>以下使用轨道定义之.</p>
+  <ol>
+    <li>
+      <p>(Variety) 定义 representation variety:</p>
+      <p>$$
+   𝐫𝐞𝐩(𝐯) = ∏_{α ∈ Q_1} k^{𝐯_{t(α )} × 𝐯_{s(α)}}.
+   $$</p>
+      <p>$X$ 中的一个对象 (一族 $Q_1$-指标的矩阵) 对应一个以 $𝐯$ 为维度向量的模. 特别地,</p>
+      <p>$$
+   M_{t(α )} \xleftarrow{M_{α }} M_{s(α )} ,\quad k^{𝐯_{t(α )}} \xleftarrow{Y} k^{𝐯_{s(α)}}\quad (Y ∈  k^{𝐯_{t(α )} ×  𝐯_{s(α )}}).
+   $$</p>
+    </li>
+    <li>
+      <p>(代数群) 称 $𝐫𝐞𝐩(𝐯) =$ 中元素等价 ($M ∼  N$), 当且仅当其作为 $kQ$-模同构. 相应地, 存在 $g ∈  ∏ _{i ∈  Q_0}\mathrm{GL}(k, 𝐯_i)$ 使得</p>
+      <p>$$
+   g_{t(α )} ⋅  M_α  = N_α  ⋅  g_{s(α )} \ \quad (∀  α  ∈  Q_1)
+   $$</p>
+    </li>
+    <li>
+      <p>(群作用) 定义 $G := ∏ _{i ∈  Q_0}\mathrm{GL}(k, 𝐯_i)$ 在 $𝐫𝐞𝐩(𝐯) =$ 上的 (共轭) 作用如下:</p>
+      <p>$$
+   g. (x_α )_{α  ∈  Q_1} := (g_{t(α )} ⋅  x_α  ⋅  g_{s(α )}^{-1})_{α  ∈  Q_1}.
+   $$</p>
+    </li>
+  </ol>
 </div>
 
 <p>记 $[M]$ 是 $M$ 所在的轨道. $[M]$ 代表一个表示.</p>
 
-<div class="slogan"><p>Gabriel 定理证明的出发点: 找到 $𝐫𝐞𝐩(𝐯)$ 的所有 $G$-轨道.</p>
+<div class="slogan">
+  <p>Gabriel 定理证明的出发点: 找到 $𝐫𝐞𝐩(𝐯)$ 的所有 $G$-轨道.</p>
 </div>
 
 <h3 id="维度公式">维度公式</h3>
 
-<div class="note"><p>涉及 Krull 维度的部分暂不给出证明.</p>
+<div class="note">
+  <p>涉及 Krull 维度的部分暂不给出证明.</p>
 </div>
 
-<div class="theorem"><p>(Krull 维度公式). 同上, $G$ 是共轭作用在 $𝐫𝐞𝐩(𝐯)$ 上的代数群概型. 一个表示就是一个 $G$-轨道.</p>
-
-<ol>
-  <li>所有 $G$-轨道 $[M]$ 都是不可约的局部闭集:
-    <ol>
-      <li>不可约: 所有开子集稠密, 等价地, 任意两个开集有非空交;</li>
-      <li>局部闭: $X$ 是 $\overline X$ 的开子集, 等价地, $X$ 是开集与闭集的交.</li>
-    </ol>
-  </li>
-  <li>对任意 $M$, 稳定子群 $\mathrm{Stab}_{M}$ 是闭子群.</li>
-  <li>Krull 维度公式: $\dim G = \dim \ [M] + \dim \mathrm{Stab}_{M}$.</li>
-  <li>$(\overline{[M]} ∖ [M])$ 恰是一切 Krull 维度更小的轨道的并 (观察 ses).</li>
-</ol>
+<div class="theorem">
+  <p>(Krull 维度公式). 同上, $G$ 是共轭作用在 $𝐫𝐞𝐩(𝐯)$ 上的代数群概型. 一个表示就是一个 $G$-轨道.</p>
+  <ol>
+    <li>所有 $G$-轨道 $[M]$ 都是不可约的局部闭集:       <ol>
+        <li>不可约: 所有开子集稠密, 等价地, 任意两个开集有非空交;</li>
+        <li>局部闭: $X$ 是 $\overline X$ 的开子集, 等价地, $X$ 是开集与闭集的交.</li>
+      </ol>
+    </li>
+    <li>对任意 $M$, 稳定子群 $\mathrm{Stab}_{M}$ 是闭子群.</li>
+    <li>Krull 维度公式: $\dim G = \dim \ [M] + \dim \mathrm{Stab}_{M}$.</li>
+    <li>$(\overline{[M]} ∖ [M])$ 恰是一切 Krull 维度更小的轨道的并 (观察 ses).</li>
+  </ol>
 </div>
 
 <p>对 $𝔸_k^n$, 线性维度就是 Krull 维数.</p>
 
-<div class="lemma"><p>(关键公式, <a href="Key_Lemma_Gabriel">证明</a>). 以下关键公式联系了 Krull 维度与线性空间的维度.</p>
-
-\[\dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M) = \dim \mathrm{End}(M) - q(𝐯).\]
+<div class="lemma">
+  <p>(关键公式, <a href="Key_Lemma_Gabriel">证明</a>). 以下关键公式联系了 Krull 维度与线性空间的维度.</p>
+  <p>$$
+\dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M) = \dim \mathrm{End}(M) - q(𝐯).
+$$</p>
 </div>
 
-<div class="proposition"><p>(<a href="Uniqueness_of_Maximal_Orbit">证明</a>)
-以下是一些几何的结论.</p>
-
-<ol>
-  <li>极大轨道满足以下等价定义:
-    <ol>
-      <li>$\mathrm{Ext}^1(M,M) =0$;</li>
-      <li>$[M]$ 是开集;</li>
-      <li>$\overline{[M]} = 𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$.</li>
-    </ol>
-  </li>
-  <li>固定 $𝐯$, 极大轨道若存在则必唯一.</li>
-  <li>极大轨道不存在的必要条件: $q(𝐯) ≤ 0$.</li>
-  <li>(不证明此条). 极小轨道就是半单表示; 等价地, $[X]$ 是闭集.</li>
-  <li>
-    <p>给定 ses $0 →  X →  Y →  Z →  0$, 该 ses 不可裂当且仅当</p>
-
-\[[X ⊕ Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y]\quad (\text{视作} \ 𝐫𝐞𝐩(\dim Y) \ \text{中的轨道}).\]
-  </li>
-</ol>
+<div class="proposition">
+  <p>(<a href="Uniqueness_of_Maximal_Orbit">证明</a>) 以下是一些几何的结论.</p>
+  <ol>
+    <li>极大轨道满足以下等价定义:       <ol>
+        <li>$\mathrm{Ext}^1(M,M) =0$;</li>
+        <li>$[M]$ 是开集;</li>
+        <li>$\overline{[M]} = 𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$.</li>
+      </ol>
+    </li>
+    <li>固定 $𝐯$, 极大轨道若存在则必唯一.</li>
+    <li>极大轨道不存在的必要条件: $q(𝐯) ≤ 0$.</li>
+    <li>(不证明此条). 极小轨道就是半单表示; 等价地, $[X]$ 是闭集.</li>
+    <li>
+      <p>给定 ses $0 →  X →  Y →  Z →  0$, 该 ses 不可裂当且仅当</p>
+      <p>$$
+   [X ⊕ Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y]\quad (\text{视作} \ 𝐫𝐞𝐩(\dim Y) \ \text{中的轨道}).
+   $$</p>
+    </li>
+  </ol>
 </div>
 
 <h3 id="根系与图分类">根系与图分类</h3>
 
-<div class="definition"><p>(根系的基本记号).
-给定二次型 $q : ℤ^n × ℤ^n → ℤ$, 定义</p>
-
-<ol>
-  <li>
-    <p>(根系) 定义有限型 quiver 的根系为 $q^{-1}(≤ 1)$, 即,</p>
-
-\[\Delta := \{ 𝐯 \mid q(𝐯) ≤ 1, 𝐯 \neq \mathbf 0\};\]
-  </li>
-  <li>(虚实) 实根 (虚根) 满足 $q(𝐯)=0$ ($q (𝐯)=1$), 记作 $\Delta ^{\mathrm{Re}}$ ($\Delta ^{\mathrm{Im}}$);</li>
-  <li>(正负) 各项 $\geq 0$ ($\leq 0$) 整数的根称为正根 (负根), 记作 $\Delta _+$ ($\Delta _-$).</li>
-</ol>
+<div class="definition">
+  <p>(根系的基本记号). 给定二次型 $q : ℤ^n × ℤ^n → ℤ$, 定义</p>
+  <ol>
+    <li>
+      <p>(根系) 定义有限型 quiver 的根系为 $q^{-1}(≤ 1)$, 即,</p>
+      <p>$$
+    \Delta := \{ 𝐯 \mid q(𝐯) ≤ 1, 𝐯 \neq \mathbf 0\};
+    $$</p>
+    </li>
+    <li>(虚实) 实根 (虚根) 满足 $q(𝐯)=0$ ($q (𝐯)=1$), 记作 $\Delta ^{\mathrm{Re}}$ ($\Delta ^{\mathrm{Im}}$);</li>
+    <li>(正负) 各项 $\geq 0$ ($\leq 0$) 整数的根称为正根 (负根), 记作 $\Delta _+$ ($\Delta _-$).</li>
+  </ol>
 </div>
 
-<div class="theorem"><p>(图分类定理, <a href="Finite_and_Affine_Root_System">图</a>). 对有限, 连通, 无向, 允许重边的图 $Q$, 记 Euler 二次型 $q$.
-<br />
-记 $\overline Q$ 是 $Q$ 的无向化 (去除箭头), $A$ 是其邻接矩阵, 则 $q$ 对应的对称二次型为 $B: = \frac{1}{2}(2I - A)$.
-<br />
-以下著名定理分类了正定或几乎正定的邻接矩阵 $B$.</p>
-
-<ol>
-  <li>称 $q$ 是有限型的, 当且仅当 $q$ 正定, 当且仅当 $Δ$ 是有限集, 当且仅当 $\overline Q$ 是 Dynkin 图 $A_n$, $D_n$, 以及 $E_{6,7,8}$, 角标 $n$ 是顶点数.</li>
-  <li>称 $q$ 是仿射型的, 当且仅当 $q$ 半正定且 $\dim N(B) = 1$, 当且仅当 $Δ$ 是有限集与 $ℤ⋅ 𝐤$ 的直和, 当且仅当 $\overline Q$ 是 $\widehat{A_n}$, $\widehat{D_n}$, $\widehat{E_{6,7,8}}$.</li>
-</ol>
-
-<p>特别地, $Δ  = Δ  _+ ⊔  Δ  _-$. 换言之, 根系中不存在既正又负的向量.</p>
+<div class="theorem">
+  <p>(图分类定理, <a href="Finite_and_Affine_Root_System">图</a>). 对有限, 连通, 无向, 允许重边的图 $Q$, 记 Euler 二次型 $q$. <br /> 记 $\overline Q$ 是 $Q$ 的无向化 (去除箭头), $A$ 是其邻接矩阵, 则 $q$ 对应的对称二次型为 $B: = \frac{1}{2}(2I - A)$. <br /> 以下著名定理分类了正定或几乎正定的邻接矩阵 $B$.</p>
+  <ol>
+    <li>称 $q$ 是有限型的, 当且仅当 $q$ 正定, 当且仅当 $Δ$ 是有限集, 当且仅当 $\overline Q$ 是 Dynkin 图 $A_n$, $D_n$, 以及 $E_{6,7,8}$, 角标 $n$ 是顶点数.</li>
+    <li>称 $q$ 是仿射型的, 当且仅当 $q$ 半正定且 $\dim N(B) = 1$, 当且仅当 $Δ$ 是有限集与 $ℤ⋅ 𝐤$ 的直和, 当且仅当 $\overline Q$ 是 $\widehat{A_n}$, $\widehat{D_n}$, $\widehat{E_{6,7,8}}$.</li>
+  </ol>
+  <p>特别地, $Δ  = Δ  _+ ⊔  Δ  _-$. 换言之, 根系中不存在既正又负的向量.</p>
 </div>
 
 <h3 id="gabriel-定理的证明">Gabriel 定理的证明</h3>
 
 <p>给定有限无自环的 quiver $Q$, 记 $\overline Q$ 是无向化图. 给定特征为 $0$ 的代数闭域 $k$, 记路代数 $kQ$.</p>
 
-<div class="theorem"><p>(<a href="Gabriel_1">证明</a>).
-给定 $kQ$, 其中 $\overline Q$ 是有限型 Dynkin quiver. 考虑映射</p>
-
-\[𝐝𝐢𝐦 : 𝐫𝐞𝐩_k (Q) → \mathbf{rep}_k (Q_0),\quad [M] ↦  𝐝𝐢𝐦 \ M.\]
-
-<p>这一映射建立了不可分解表示与 $Δ ^+$ 的双射对应:</p>
-
-\[𝐝𝐢𝐦 : 𝐈𝐧𝐝𝐞𝐜𝐨𝐦𝐩 (Q) ⇆ Δ _+(Q) : \text{Maximal Orbit}.\]
-
-<ol>
-  <li>给定不可分解模 $M$, 表示 $[M]$ 对应 $𝐝𝐢𝐦 \ M$;</li>
-  <li>给定正根 $𝐯$, 则 $𝐫𝐞𝐩(𝐯)$ 存在极大轨道 $[M]$, 对应不可约表示.</li>
-</ol>
+<div class="theorem">
+  <p>(<a href="Gabriel_1">证明</a>). 给定 $kQ$, 其中 $\overline Q$ 是有限型 Dynkin quiver. 考虑映射</p>
+  <p>$$
+𝐝𝐢𝐦 : 𝐫𝐞𝐩_k (Q) → \mathbf{rep}_k (Q_0),\quad [M] ↦  𝐝𝐢𝐦 \ M.
+$$</p>
+  <p>这一映射建立了不可分解表示与 $Δ ^+$ 的双射对应:</p>
+  <p>$$
+𝐝𝐢𝐦 : 𝐈𝐧𝐝𝐞𝐜𝐨𝐦𝐩 (Q) ⇆ Δ _+(Q) : \text{Maximal Orbit}.
+$$</p>
+  <ol>
+    <li>给定不可分解模 $M$, 表示 $[M]$ 对应 $𝐝𝐢𝐦 \ M$;</li>
+    <li>给定正根 $𝐯$, 则 $𝐫𝐞𝐩(𝐯)$ 存在极大轨道 $[M]$, 对应不可约表示.</li>
+  </ol>
 </div>
 
-<div class="corollary"><p>(见<a href="Gabriel_1">证明</a>第一部分).
-$kQ$ 中的不可分解对象恰是 brick. 这些 brick 是 $\mathrm{Ext}^1$ 自垂直的.</p>
+<div class="corollary">
+  <p>(见<a href="Gabriel_1">证明</a>第一部分). $kQ$ 中的不可分解对象恰是 brick. 这些 brick 是 $\mathrm{Ext}^1$ 自垂直的.</p>
 </div>
 
-<div class="theorem"><p>(<a href="Gabriel_2">证明</a>)
-一般地, $kQ$ 的不可分解表示有限, 当且仅当 $\overline Q$ 是 Dynkin 图.</p>
+<div class="theorem">
+  <p>(<a href="Gabriel_2">证明</a>) 一般地, $kQ$ 的不可分解表示有限, 当且仅当 $\overline Q$ 是 Dynkin 图.</p>
 </div>
 
 
@@ -258,7 +267,7 @@ $kQ$ 中的不可分解对象恰是 brick. 这些 brick 是 $\mathrm{Ext}^1$ 自
     
       <a
         class="next"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Key_Lemma_Gabriel"
+        href="http://localhost:4000/website/posts/Key_Lemma_Gabriel"
         title="NEXT: $\dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M)$">&lt;&lt;</a>
       <span>
         &middot;
@@ -266,7 +275,7 @@ $kQ$ 中的不可分解对象恰是 brick. 这些 brick 是 $\mathrm{Ext}^1$ 自
     
     <a
       class="home"
-      href="https://zhangchenchengsjtu.github.io/website/"
+      href="http://localhost:4000/website/"
       title="Back to Homepage">Home</a>
     
       <span>
@@ -274,7 +283,7 @@ $kQ$ 中的不可分解对象恰是 brick. 这些 brick 是 $\mathrm{Ext}^1$ 自
       </span>
       <a
         class="prev"
-        href="https://zhangchenchengsjtu.github.io/website/posts/gen_and_cog"
+        href="http://localhost:4000/website/posts/gen_and_cog"
         title="PREV: $𝐜𝐨𝐠$ 与 $𝐠𝐞𝐧$ 的等价定义">&gt;&gt;</a>
     
   </div>

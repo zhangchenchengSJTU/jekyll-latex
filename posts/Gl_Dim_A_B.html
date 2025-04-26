@@ -7,6 +7,8 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
+
+
   <title>$\dim A$ 与 $\dim \mathrm{End}(T_A)$
     ·
     Jekyll Latex</title>
@@ -18,15 +20,15 @@
   <meta name="google-site-verification" content="abc123">
 
 
-<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
-<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
-<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
-<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Gl_Dim_A_B">
+<link rel="icon" href="http://localhost:4000/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:4000/website/assets/touch-icon.png">
+<link rel="stylesheet" href="http://localhost:4000/website/assets/core.css">
+<link rel="canonical" href="http://localhost:4000/website/posts/Gl_Dim_A_B">
 <link
   rel="alternate"
   type="application/atom+xml"
   title="Jekyll Latex"
-  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+  href="http://localhost:4000/website/feed.xml" />
 
 
 
@@ -50,6 +52,9 @@
     id="MathJax-script"
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+
+
+
 </head>
 
 <body class="latex-dark">
@@ -57,7 +62,7 @@
 	<aside class="logo">
   
 
-  <a href="https://zhangchenchengsjtu.github.io/website/">
+  <a href="http://localhost:4000/website/">
     <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
   </a>
   <span class="logo-prompt">Back to Home</span>
@@ -80,23 +85,22 @@
 
     <h2 id="证明">证明</h2>
 
-<div class="theorem"><p>(整体维数, <a href="Gl_Dim_A_B">证明</a>). $|gl.\dim A - gl.\dim B|≤ 1$.</p>
+<div class="theorem">
+  <p>(整体维数, <a href="Gl_Dim_A_B">证明</a>). $\|gl.\dim A - gl.\dim B\|≤ 1$.</p>
 </div>
 
-<div class="proof"><p>任取 $B$-模 $X$, 此时存在投射模 $P$ 使得有 ses
-\(0 → K → P → X → 0\)
-由 $P ∈ 𝒴 = (T,𝒯)$ 属于 torsion-free class, 此时子对象 $K ∈ 𝒴$. 不妨假定 $K = (T, M)$, 满足 $M ∈ 𝒯$. 由<a href="T_Y_Dim">此定理</a>, 得</p>
-
-\[p_B.\dim K = p_B.\dim (T,M) ≤ p_A. \dim M ≤ gl.\dim A.\]
-
-<p>因此 $p_B.\dim X - 1 ≤ gl.\dim A$. 取左式 $\sup$, 得 $gl.\dim B ≤ gl.\dim A + 1$.
-<br />
-<br />
-由 $\mathrm{End}(_BT) ≃ A$, 得</p>
-
-\[gl.\dim A ≤ gl.\dim \mathrm{End}(_BT) ≤ gl.\dim B + 1.\]
-
-<p>综上, $|gl.\dim A - gl.\dim B|≤ 1$.</p>
+<div class="proof">
+  <p>任取 $B$-模 $X$, 此时存在投射模 $P$ 使得有 ses $$
+0 → K → P → X → 0
+$$ 由 $P ∈ 𝒴 = (T,𝒯)$ 属于 torsion-free class, 此时子对象 $K ∈ 𝒴$. 不妨假定 $K = (T, M)$, 满足 $M ∈ 𝒯$. 由<a href="T_Y_Dim">此定理</a>, 得</p>
+  <p>$$
+p_B.\dim K = p_B.\dim (T,M) ≤ p_A. \dim M ≤ gl.\dim A.
+$$</p>
+  <p>因此 $p_B.\dim X - 1 ≤ gl.\dim A$. 取左式 $\sup$, 得 $gl.\dim B ≤ gl.\dim A + 1$. <br /> <br /> 由 $\mathrm{End}(_BT) ≃ A$, 得</p>
+  <p>$$
+gl.\dim A ≤ gl.\dim \mathrm{End}(_BT) ≤ gl.\dim B + 1.
+$$</p>
+  <p>综上, $\|gl.\dim A - gl.\dim B\|≤ 1$.</p>
 </div>
 
 
@@ -106,7 +110,7 @@
     
       <a
         class="next"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Hom_D_Hereditary"
+        href="http://localhost:4000/website/posts/Hom_D_Hereditary"
         title="NEXT: 遗传范畴的 $\mathrm{Hom}_{D𝒜}(-,-)$.">&lt;&lt;</a>
       <span>
         &middot;
@@ -114,7 +118,7 @@
     
     <a
       class="home"
-      href="https://zhangchenchengsjtu.github.io/website/"
+      href="http://localhost:4000/website/"
       title="Back to Homepage">Home</a>
     
       <span>
@@ -122,7 +126,7 @@
       </span>
       <a
         class="prev"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Uniqueness_of_Maximal_Orbit"
+        href="http://localhost:4000/website/posts/Uniqueness_of_Maximal_Orbit"
         title="PREV: 关于轨道的若干结论">&gt;&gt;</a>
     
   </div>

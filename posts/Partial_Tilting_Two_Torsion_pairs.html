@@ -7,6 +7,8 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
+
+
   <title>局部 tilting 模诱导的 torsion pair
     ·
     Jekyll Latex</title>
@@ -18,15 +20,15 @@
   <meta name="google-site-verification" content="abc123">
 
 
-<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
-<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
-<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
-<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs">
+<link rel="icon" href="http://localhost:4000/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:4000/website/assets/touch-icon.png">
+<link rel="stylesheet" href="http://localhost:4000/website/assets/core.css">
+<link rel="canonical" href="http://localhost:4000/website/posts/Partial_Tilting_Two_Torsion_pairs">
 <link
   rel="alternate"
   type="application/atom+xml"
   title="Jekyll Latex"
-  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+  href="http://localhost:4000/website/feed.xml" />
 
 
 
@@ -50,6 +52,9 @@
     id="MathJax-script"
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+
+
+
 </head>
 
 <body class="latex-dark">
@@ -57,7 +62,7 @@
 	<aside class="logo">
   
 
-  <a href="https://zhangchenchengsjtu.github.io/website/">
+  <a href="http://localhost:4000/website/">
     <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
   </a>
   <span class="logo-prompt">Back to Home</span>
@@ -80,27 +85,22 @@
 
     <h2 id="证明">证明</h2>
 
-<div class="theorem"><p>(局部 tilting 模诱导的 torsion pair). 局部 tilting 模 $T$ 诱导了以下两类 torsion pair.</p>
-
-<ol>
-  <li>$(𝐠𝐞𝐧(T), T^o)$ 是 torsion pair.</li>
-  <li>$(T^⟂, 𝐜𝐨𝐠(τT))$ 是 torsion pair.</li>
-  <li>$𝐠𝐞𝐧(T) ⊆ T^⟂$.</li>
-  <li>以上两个 torsion pair, 均有 $T ∈ 𝒯 ∩ {}^⟂𝒯 = 𝒯 ∩ τ⁻¹ ℱ$.</li>
-</ol>
+<div class="theorem">
+  <p>(局部 tilting 模诱导的 torsion pair). 局部 tilting 模 $T$ 诱导了以下两类 torsion pair.</p>
+  <ol>
+    <li>$(𝐠𝐞𝐧(T), T^o)$ 是 torsion pair.</li>
+    <li>$(T^⟂, 𝐜𝐨𝐠(τT))$ 是 torsion pair.</li>
+    <li>$𝐠𝐞𝐧(T) ⊆ T^⟂$.</li>
+    <li>以上两个 torsion pair, 均有 $T ∈ 𝒯 ∩ {}^⟂𝒯 = 𝒯 ∩ τ⁻¹ ℱ$.</li>
+  </ol>
 </div>
 
-<div class="proof"><p>第一问与<a href="Gen_Eq_T">此命题</a>极其类似. 由 $p.\dim T ≤ 1$, 得 $\mathrm{Ext}^1(-, T)$ 是右正合函子, 因此 $\mathrm{Ext}^1(T,T) = 0$ 蕴含 $𝐠𝐞𝐧(T) ⟂ T$.
-<br />
-第二问同理. 由 $𝐜𝐨𝐠(τT)$ 对扩张封闭, 从而是 torsion-free class. 仅需证明 $T^⟂ = {}^o𝐜𝐨𝐠(τT)$. 由 AR 公式,</p>
-
-\[\mathrm{Ext}^1(T, M) ≃ D\overline {(M, τ T)} ≃ D(M, τ T).\]
-
-<p>最后一处同构是因为 $τ M$ 投射 (见 <a href="AR_Formula">AR 公式</a>).
-<br />
-第三问是直接的, 一般不取等 (若 $T$ 是 tilting 模, 则取等).
-<br />
-第四问是直接的验证, 等价表述见 <a href="Gen_Eq_T">$𝐠𝐞𝐧 = 𝐓$ 的充分条件</a>.</p>
+<div class="proof">
+  <p>第一问与<a href="Gen_Eq_T">此命题</a>极其类似. 由 $p.\dim T ≤ 1$, 得 $\mathrm{Ext}^1(-, T)$ 是右正合函子, 因此 $\mathrm{Ext}^1(T,T) = 0$ 蕴含 $𝐠𝐞𝐧(T) ⟂ T$. <br /> 第二问同理. 由 $𝐜𝐨𝐠(τT)$ 对扩张封闭, 从而是 torsion-free class. 仅需证明 $T^⟂ = {}^o𝐜𝐨𝐠(τT)$. 由 AR 公式,</p>
+  <p>$$
+\mathrm{Ext}^1(T, M) ≃ D\overline {(M, τ T)} ≃ D(M, τ T).
+$$</p>
+  <p>最后一处同构是因为 $τ M$ 投射 (见 <a href="AR_Formula">AR 公式</a>). <br /> 第三问是直接的, 一般不取等 (若 $T$ 是 tilting 模, 则取等). <br /> 第四问是直接的验证, 等价表述见 <a href="Gen_Eq_T">$𝐠𝐞𝐧 = 𝐓$ 的充分条件</a>.</p>
 </div>
 
 
@@ -110,7 +110,7 @@
     
       <a
         class="next"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Tilting_Obj_Torsion_Pair"
+        href="http://localhost:4000/website/posts/Tilting_Obj_Torsion_Pair"
         title="NEXT: Tilting 对象与 torsion pair">&lt;&lt;</a>
       <span>
         &middot;
@@ -118,7 +118,7 @@
     
     <a
       class="home"
-      href="https://zhangchenchengsjtu.github.io/website/"
+      href="http://localhost:4000/website/"
       title="Back to Homepage">Home</a>
     
       <span>
@@ -126,7 +126,7 @@
       </span>
       <a
         class="prev"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Hereditary_PBPO"
+        href="http://localhost:4000/website/posts/Hereditary_PBPO"
         title="PREV: 遗传范畴的满-单分解补全作 PBPO">&gt;&gt;</a>
     
   </div>

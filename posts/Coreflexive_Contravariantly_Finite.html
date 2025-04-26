@@ -7,26 +7,28 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
+
+
   <title>余反射子范畴与反变有限子范畴
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="(余反射与反变有限).取加法范畴 $𝒯$ 与本质小的同构闭全子范畴 $ℬ$. 假定 $ℬ$  Karoubi , $ℬ^{\mathrm{op}}$ 存在弱核, 且 $𝐦𝐨𝐝_{ℬ}$ 存在投射盖 (例如 Krull-Schmidt 三角范畴). 此时 $ℬ$ 余反射, 当且仅当其反变有限.">
+<meta name="description" content="  (余反射与反变有限). 取加法范畴 $𝒯$ 与本质小的同构闭全子范畴 $ℬ$. 假定 $ℬ$ Karoubi , $ℬ^{\mathrm{op}}$ 存在弱核, 且 $𝐦𝐨𝐝_{ℬ}$ 存在投射盖 (例如 Krull-Schmidt 三角范畴). 此时 $ℬ$ 余反射, 当且仅当其反变有限.">
 
 
   <meta name="google-site-verification" content="abc123">
 
 
-<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
-<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
-<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
-<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Coreflexive_Contravariantly_Finite">
+<link rel="icon" href="http://localhost:4000/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:4000/website/assets/touch-icon.png">
+<link rel="stylesheet" href="http://localhost:4000/website/assets/core.css">
+<link rel="canonical" href="http://localhost:4000/website/posts/Coreflexive_Contravariantly_Finite">
 <link
   rel="alternate"
   type="application/atom+xml"
   title="Jekyll Latex"
-  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+  href="http://localhost:4000/website/feed.xml" />
 
 
 
@@ -50,6 +52,9 @@
     id="MathJax-script"
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+
+
+
 </head>
 
 <body class="latex-dark">
@@ -57,7 +62,7 @@
 	<aside class="logo">
   
 
-  <a href="https://zhangchenchengsjtu.github.io/website/">
+  <a href="http://localhost:4000/website/">
     <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
   </a>
   <span class="logo-prompt">Back to Home</span>
@@ -78,51 +83,50 @@
 
     <div class="divider"></div>
 
-    <div class="proposition"><p>(余反射与反变有限).
-取加法范畴 $𝒯$ 与本质小的同构闭全子范畴 $ℬ$. 假定 $ℬ$  Karoubi , $ℬ^{\mathrm{op}}$ 存在弱核, 且 $𝐦𝐨𝐝_{ℬ}$ 存在投射盖 (例如 Krull-Schmidt 三角范畴). 此时 $ℬ$ 余反射, 当且仅当其反变有限.</p>
+    <div class="proposition">
+  <p>(余反射与反变有限). 取加法范畴 $𝒯$ 与本质小的同构闭全子范畴 $ℬ$. 假定 $ℬ$ Karoubi , $ℬ^{\mathrm{op}}$ 存在弱核, 且 $𝐦𝐨𝐝_{ℬ}$ 存在投射盖 (例如 Krull-Schmidt 三角范畴). 此时 $ℬ$ 余反射, 当且仅当其反变有限.</p>
 </div>
 
-<div class="proof"><p>若 $ℬ$ 余反射, 记嵌入的右伴随 $t$, 即</p>
-
-\[(X, t(A))_{ℬ} ≃ (i(X), A)_{𝒯}.\]
-
-<p>任意 $X ∈ 𝒯$ 都有预盖 $ε_X: t(X) → X$, 因为</p>
-
-\[(i(A), ε_X)_{𝒜} ≃ \mathrm{id}_{(A, t(X))}.\]
-
-<p>反之, 若 $ℬ$ 反变有限, 以下求解 $A ∈ 𝒯$ 在 $ℬ$ 中的右伴随像. 记</p>
-
-\[(i(-), A)_{𝒯} ∈ ℬ ^{\mathrm{op}} → 𝐌𝐨𝐝_k.\]
-
-<p>这一函子是上同调函子, 从而是平坦对象. 再由 $ℬ$ 反变有限, 存在恒满的态射族 $(ℬ, X\xrightarrow φ A)_{𝒯}$. 因此</p>
-
-\[h_X ↠ (i(-), A)_{𝒯} \quad ∈ 𝐦𝐨𝐝_ℬ\]
-
-<p>由于平坦对象 $(i(-), A)_{𝒯}$ 存在投射盖, 且 $𝒯^{\mathrm{op}}$ 存在弱余核, 从而只能是投射对象 (<a href="Fp_et_Plat_est_Proj">证明</a>). 这一对象也是有限生成的. 再由 Karoubi 性, 该函子可表, 因此 $i$ 存在右伴随.</p>
+<div class="proof">
+  <p>若 $ℬ$ 余反射, 记嵌入的右伴随 $t$, 即</p>
+  <p>$$
+(X, t(A))_{ℬ} ≃ (i(X), A)_{𝒯}. 
+$$</p>
+  <p>任意 $X ∈ 𝒯$ 都有预盖 $ε_X: t(X) → X$, 因为</p>
+  <p>$$
+(i(A), ε_X)_{𝒜} ≃ \mathrm{id}_{(A, t(X))}. 
+$$</p>
+  <p>反之, 若 $ℬ$ 反变有限, 以下求解 $A ∈ 𝒯$ 在 $ℬ$ 中的右伴随像. 记</p>
+  <p>$$
+(i(-), A)_{𝒯} ∈ ℬ ^{\mathrm{op}} → 𝐌𝐨𝐝_k.  
+$$</p>
+  <p>这一函子是上同调函子, 从而是平坦对象. 再由 $ℬ$ 反变有限, 存在恒满的态射族 $(ℬ, X\xrightarrow φ A)_{𝒯}$. 因此</p>
+  <p>$$
+h_X ↠ (i(-), A)_{𝒯} \quad ∈ 𝐦𝐨𝐝_ℬ
+$$</p>
+  <p>由于平坦对象 $(i(-), A)_{𝒯}$ 存在投射盖, 且 $𝒯^{\mathrm{op}}$ 存在弱余核, 从而只能是投射对象 (<a href="Fp_et_Plat_est_Proj">证明</a>). 这一对象也是有限生成的. 再由 Karoubi 性, 该函子可表, 因此 $i$ 存在右伴随.</p>
 </div>
 
-<div class="proposition"><p>假定 $ℬ$ Karoubi, 存在弱核. 此时 $ℬ$ 余反射, 当且仅当其反变有限.</p>
+<div class="proposition">
+  <p>假定 $ℬ$ Karoubi, 存在弱核. 此时 $ℬ$ 余反射, 当且仅当其反变有限.</p>
 </div>
 
-<div class="proof"><p>若 $ℬ$ 余反射, 则反变有限 (见前一命题).</p>
-
-<p>若 $ℬ$ 反变有限, 对任意 $A ∈ 𝒯$ 构造
-\(X_K \xrightarrow c K \xrightarrow b X_A \xrightarrow a A.\)
-其中 $X_M → M$ 是预盖, $b$ 是 $a$ 的弱核. 此时有正合列
-\((-, X_K)_ℬ → (-,X_A)_ℬ → (i(-),A)_𝒯 → 0.\)
-由于 $(i(-),A)_𝒯$ 是有限表现的平坦对象, 从而投射 (<a href="Plat_et_Proj_Cover_Proj">证明</a>). 再由 Karoubi 性, 该函子可表, 因此 $i$ 存在右伴随.</p>
+<div class="proof">
+  <p>若 $ℬ$ 余反射, 则反变有限 (见前一命题).</p>
+  <p>若 $ℬ$ 反变有限, 对任意 $A ∈ 𝒯$ 构造 $$
+X_K \xrightarrow c K \xrightarrow b X_A \xrightarrow a A. 
+$$ 其中 $X_M → M$ 是预盖, $b$ 是 $a$ 的弱核. 此时有正合列 $$
+(-, X_K)_ℬ → (-,X_A)_ℬ → (i(-),A)_𝒯 → 0.
+$$ 由于 $(i(-),A)_𝒯$ 是有限表现的平坦对象, 从而投射 (<a href="Plat_et_Proj_Cover_Proj">证明</a>). 再由 Karoubi 性, 该函子可表, 因此 $i$ 存在右伴随.</p>
 </div>
 
-<div class="note"><p>总结地看, 从余反射 (反射) 到反变有限的论证仅使用了伴随函子的单位与余单位. 反之, 需要参照模论中的一些定理.</p>
-<ol>
-<li>
-有投射盖的平坦模是投射模, <a href="Fp_et_Plat_est_Proj">函子版本</a>.
-</li>
-<li>
-有限表现的平坦模是投射模, <a href="Plat_et_Proj_Cover_Proj">函子版本</a>.
-</li>
-</ol>
-<p>此处, 可表对应投射对象.</p>
+<div class="note">
+  <p>总结地看, 从余反射 (反射) 到反变有限的论证仅使用了伴随函子的单位与余单位. 反之, 需要参照模论中的一些定理.</p>
+  <ol>
+    <li>有投射盖的平坦模是投射模, <a href="Fp_et_Plat_est_Proj">函子版本</a>.</li>
+    <li>有限表现的平坦模是投射模, <a href="Plat_et_Proj_Cover_Proj">函子版本</a>.</li>
+  </ol>
+  <p>此处, 可表对应投射对象.</p>
 </div>
 
 
@@ -132,7 +136,7 @@
     
       <a
         class="next"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Countable_Karoubi"
+        href="http://localhost:4000/website/posts/Countable_Karoubi"
         title="NEXT: 有可数积或可数余积的三角范畴必 Karoubi">&lt;&lt;</a>
       <span>
         &middot;
@@ -140,7 +144,7 @@
     
     <a
       class="home"
-      href="https://zhangchenchengsjtu.github.io/website/"
+      href="http://localhost:4000/website/"
       title="Back to Homepage">Home</a>
     
       <span>
@@ -148,7 +152,7 @@
       </span>
       <a
         class="prev"
-        href="https://zhangchenchengsjtu.github.io/website/posts/mid"
+        href="http://localhost:4000/website/posts/mid"
         title="PREV: 2025-04-24 试卷讲评与习题课">&gt;&gt;</a>
     
   </div>

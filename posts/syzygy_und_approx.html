@@ -7,26 +7,28 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
+
+
   <title>合冲-逼近伴随 (稳定范畴中)
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="(逼近与合冲在稳定范畴中伴随).$Ω_∙$ 与 $C_∙$ 是稳定投射范畴的伴随函子; $℧^∙$ 与 $K^∙$ 是稳定内范畴的伴随函子.$C_k: \underline{𝐦𝐨𝐝_A} ⇆ \underline{𝐦𝐨𝐝_A} : Ω_k$ 是左右伴随.$℧^k: \overline{𝐦𝐨𝐝_A} ⇆ \over...">
+<meta name="description" content="  (逼近与合冲在稳定范畴中伴随). $Ω_∙$ 与 $C_∙$ 是稳定投射范畴的伴随函子; $℧^∙$ 与 $K^∙$ 是稳定内范畴的伴随函子.      $C_k: \underline{𝐦𝐨𝐝_A} ⇆ \underline{𝐦𝐨𝐝_A} : Ω_k$ 是左右伴随.    $℧^k: \overline{𝐦...">
 
 
   <meta name="google-site-verification" content="abc123">
 
 
-<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
-<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
-<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
-<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx">
+<link rel="icon" href="http://localhost:4000/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:4000/website/assets/touch-icon.png">
+<link rel="stylesheet" href="http://localhost:4000/website/assets/core.css">
+<link rel="canonical" href="http://localhost:4000/website/posts/syzygy_und_approx">
 <link
   rel="alternate"
   type="application/atom+xml"
   title="Jekyll Latex"
-  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+  href="http://localhost:4000/website/feed.xml" />
 
 
 
@@ -50,6 +52,9 @@
     id="MathJax-script"
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+
+
+
 </head>
 
 <body class="latex-dark">
@@ -57,7 +62,7 @@
 	<aside class="logo">
   
 
-  <a href="https://zhangchenchengsjtu.github.io/website/">
+  <a href="http://localhost:4000/website/">
     <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
   </a>
   <span class="logo-prompt">Back to Home</span>
@@ -78,69 +83,56 @@
 
     <div class="divider"></div>
 
-    <div class="theorem"><p>(逼近与合冲在稳定范畴中伴随).
-$Ω_∙$ 与 $C_∙$ 是稳定投射范畴的伴随函子; $℧^∙$ 与 $K^∙$ 是稳定内范畴的伴随函子.</p>
-<ol>
-<li>
-$C_k: \underline{𝐦𝐨𝐝_A} ⇆ \underline{𝐦𝐨𝐝_A} : Ω_k$ 是左右伴随.
-</li>
-<li>
-$℧^k: \overline{𝐦𝐨𝐝_A} ⇆ \overline{𝐦𝐨𝐝_A} : K^k$ 是左右伴随.
-</li>
-<li>
-$C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$.
-</li>
-<li>
-$K^k ≃ τ(℧^k(τ⁻¹))$.
-</li>
-</ol>
+    <div class="theorem">
+  <p>(逼近与合冲在稳定范畴中伴随). $Ω_∙$ 与 $C_∙$ 是稳定投射范畴的伴随函子; $℧^∙$ 与 $K^∙$ 是稳定内范畴的伴随函子.</p>
+  <ol>
+    <li>$C_k: \underline{𝐦𝐨𝐝_A} ⇆ \underline{𝐦𝐨𝐝_A} : Ω_k$ 是左右伴随.</li>
+    <li>$℧^k: \overline{𝐦𝐨𝐝_A} ⇆ \overline{𝐦𝐨𝐝_A} : K^k$ 是左右伴随.</li>
+    <li>$C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$.</li>
+    <li>$K^k ≃ τ(℧^k(τ⁻¹))$.</li>
+  </ol>
 </div>
 
-<div class="proof"><p>对前两条, 仅证明第一处 $k=1$ 的情形. 考虑以下两条横向正合列 (原范畴中):
-\(\begin{bmatrix}
-M &amp; →  &amp; F( M) &amp; ↠  &amp; C( M)\\
-h⇣ \  &amp;  &amp; g⇣ \  &amp;  &amp; f⇣ \ \\
-Ω ( N) &amp; →  &amp; P( M) &amp; ↠  &amp; N
-\end{bmatrix}.\)
-若有 $f$, 则投射盖 $P_0(N) ↠ N$ 诱导了 $g$, 核的泛性质诱导了 $h$. 若有 $h$, 则左逼近的泛性质诱导了 $g$, 余核的泛性质诱导了 $f$. 之后说明在稳定范畴中, 以上对应 $f ↔ h$ 是双射.</p>
-<ol>
-<li>
-给定 $f$, 假定存在满足条件的 $g_1 ≠ g_2$, 则 $(g_1 - g_2)$ 通过 $Ω_1(N)$ 分解. 依照泛性质, $h_i$ 唯一决定, 且 $(h_1 - h_2)$ 通过 $F(M)$ 分解. 这说明由 $f$ 决定的一族 $\{h_i\}$ 在稳定范畴中相等.
-</li>
-<li>
-给定 $h$, 假定存在满足条件的 $g_1 ≠ g_2$, 则 $(g_1 - g_2)$ 通过 $C(M)$ 分解. 依照泛性质, $f_i$ 唯一决定, 且 $(f_1 - f_2)$ 通过 $P_0(N)$ 分解. 这说明由 $h$ 决定的一族 $\{f_i\}$ 在稳定范畴中相等.
-</li>
-</ol>
-<p>特别地, 右伴随函子 $C(-)$ 无关逼近的选取.
-<br />
-对后一命题, 仅证明 $C(-) = \mathrm{Tr}(Ω_1(\mathrm{Tr}(-)))$. 给定左逼近对应的右正合列</p>
-
-\[M → Q → C(M) → 0,\]
-
-<p>取任意投射表现 (不必极小) 诱导的四项正合列</p>
-
-\[0 → M^∗ → P_0^∗ \overset α → P_1^∗ → \widetilde{\mathrm{Tr}(M)} → 0.\]
-
-<p>注意到 $\operatorname{im}α$ 与 $Ω_1(\mathrm{Tr}(M))$ 在稳定范畴中相等, 而</p>
-
-\[\operatorname{coim}α = \operatorname{cok}[M^∗ ↪ P_0^∗]
-= \operatorname{cok}[Q^∗ ↠ M^∗ ↪ P_0^∗]\]
-
-<p>由 $C(M) = \operatorname{cok}[P_0 ↠ M → Q]$, 从而 $\mathrm{Tr}(C(M))$ 与 $\operatorname{coim}α$ 在稳定范畴中同构. 最后由 $\mathrm{Tr}$ 是稳定等价, 得</p>
-
-\[Ω_1(\mathrm{Tr}(M)) ≃ \operatorname{im}α ≃ \operatorname{coim}α ≃ \mathrm{Tr}(C(M))\quad \text{稳定范畴中}.\]
-
-<p>因此 $C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$ (稳定范畴中).</p>
-
-\[\begin{bmatrix}
- &amp;  &amp;  &amp;  &amp; \widetilde{Ω _{1}\widetilde{\mathrm{Tr}( M)}} &amp;  &amp;  &amp;  &amp; \\
- &amp;  &amp;  &amp; ↗  &amp; ∥  &amp; ⤥  &amp;  &amp;  &amp; \\
-M^{*} &amp; ↪  &amp; P_{0}^{*} &amp; ↠  &amp; \operatorname{(co)im}, &amp; ↪  &amp; P_{1}^{*} &amp; ↠  &amp; \widetilde{\mathrm{Tr}}( M)\\
-↟  &amp; ↗  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; \\
-Q^{*} &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;
-\end{bmatrix}\]
-
-<p>以上是证明涉及的对象.</p>
+<div class="proof">
+  <p>对前两条, 仅证明第一处 $k=1$ 的情形. 考虑以下两条横向正合列 (原范畴中): $$
+\begin{bmatrix}
+M & →  & F( M) & ↠  & C( M)\\
+h⇣ \  &  & g⇣ \  &  & f⇣ \ \\
+Ω ( N) & →  & P( M) & ↠  & N
+\end{bmatrix}.
+$$ 若有 $f$, 则投射盖 $P_0(N) ↠ N$ 诱导了 $g$, 核的泛性质诱导了 $h$. 若有 $h$, 则左逼近的泛性质诱导了 $g$, 余核的泛性质诱导了 $f$. 之后说明在稳定范畴中, 以上对应 $f ↔ h$ 是双射.</p>
+  <ol>
+    <li>给定 $f$, 假定存在满足条件的 $g_1 ≠ g_2$, 则 $(g_1 - g_2)$ 通过 $Ω_1(N)$ 分解. 依照泛性质, $h_i$ 唯一决定, 且 $(h_1 - h_2)$ 通过 $F(M)$ 分解. 这说明由 $f$ 决定的一族 $\{h_i\}$ 在稳定范畴中相等.</li>
+    <li>给定 $h$, 假定存在满足条件的 $g_1 ≠ g_2$, 则 $(g_1 - g_2)$ 通过 $C(M)$ 分解. 依照泛性质, $f_i$ 唯一决定, 且 $(f_1 - f_2)$ 通过 $P_0(N)$ 分解. 这说明由 $h$ 决定的一族 $\{f_i\}$ 在稳定范畴中相等.</li>
+  </ol>
+  <p>特别地, 右伴随函子 $C(-)$ 无关逼近的选取. <br /> 对后一命题, 仅证明 $C(-) = \mathrm{Tr}(Ω_1(\mathrm{Tr}(-)))$. 给定左逼近对应的右正合列</p>
+  <p>$$
+M → Q → C(M) → 0,
+$$</p>
+  <p>取任意投射表现 (不必极小) 诱导的四项正合列</p>
+  <p>$$
+0 → M^∗ → P_0^∗ \overset α → P_1^∗ → \widetilde{\mathrm{Tr}(M)} → 0.
+$$</p>
+  <p>注意到 $\operatorname{im}α$ 与 $Ω_1(\mathrm{Tr}(M))$ 在稳定范畴中相等, 而</p>
+  <p>$$
+\operatorname{coim}α = \operatorname{cok}[M^∗ ↪ P_0^∗]
+= \operatorname{cok}[Q^∗ ↠ M^∗ ↪ P_0^∗]
+$$</p>
+  <p>由 $C(M) = \operatorname{cok}[P_0 ↠ M → Q]$, 从而 $\mathrm{Tr}(C(M))$ 与 $\operatorname{coim}α$ 在稳定范畴中同构. 最后由 $\mathrm{Tr}$ 是稳定等价, 得</p>
+  <p>$$
+Ω_1(\mathrm{Tr}(M)) ≃ \operatorname{im}α ≃ \operatorname{coim}α ≃ \mathrm{Tr}(C(M))\quad \text{稳定范畴中}.
+$$</p>
+  <p>因此 $C_k ≃ \mathrm{Tr}(Ω_k(\mathrm{Tr}))$ (稳定范畴中).</p>
+  <p>$$
+\begin{bmatrix}
+ &  &  &  & \widetilde{Ω _{1}\widetilde{\mathrm{Tr}( M)}} &  &  &  & \\
+ &  &  & ↗  & ∥  & ⤥  &  &  & \\
+M^{*} & ↪  & P_{0}^{*} & ↠  & \operatorname{(co)im}, & ↪  & P_{1}^{*} & ↠  & \widetilde{\mathrm{Tr}}( M)\\
+↟  & ↗  &  &  &  &  &  &  & \\
+Q^{*} &  &  &  &  &  &  &  &
+\end{bmatrix}
+$$</p>
+  <p>以上是证明涉及的对象.</p>
 </div>
 
 
@@ -150,15 +142,15 @@ Q^{*} &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;
     
       <a
         class="next"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Reflexive_sub_cat"
-        title="NEXT: Notes for Reflexive Subcategories">&lt;&lt;</a>
+        href="http://localhost:4000/website/posts/Reflexive_sub_cat"
+        title="NEXT: Notes on Reflexive Subcategories">&lt;&lt;</a>
       <span>
         &middot;
       </span>
     
     <a
       class="home"
-      href="https://zhangchenchengsjtu.github.io/website/"
+      href="http://localhost:4000/website/"
       title="Back to Homepage">Home</a>
     
       <span>
@@ -166,7 +158,7 @@ Q^{*} &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;
       </span>
       <a
         class="prev"
-        href="https://zhangchenchengsjtu.github.io/website/posts/stable_subquot"
+        href="http://localhost:4000/website/posts/stable_subquot"
         title="PREV: $Ω(\underline{𝐦𝐨𝐝_A}) ≃ \underline{𝐬𝐮𝐛(A)}$">&gt;&gt;</a>
     
   </div>

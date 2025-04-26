@@ -7,6 +7,8 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
+
+
   <title>Tilting 对象与 torsion pair
     ·
     Jekyll Latex</title>
@@ -18,15 +20,15 @@
   <meta name="google-site-verification" content="abc123">
 
 
-<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
-<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
-<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
-<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Tilting_Obj_Torsion_Pair">
+<link rel="icon" href="http://localhost:4000/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:4000/website/assets/touch-icon.png">
+<link rel="stylesheet" href="http://localhost:4000/website/assets/core.css">
+<link rel="canonical" href="http://localhost:4000/website/posts/Tilting_Obj_Torsion_Pair">
 <link
   rel="alternate"
   type="application/atom+xml"
   title="Jekyll Latex"
-  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+  href="http://localhost:4000/website/feed.xml" />
 
 
 
@@ -50,6 +52,9 @@
     id="MathJax-script"
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+
+
+
 </head>
 
 <body class="latex-dark">
@@ -57,7 +62,7 @@
 	<aside class="logo">
   
 
-  <a href="https://zhangchenchengsjtu.github.io/website/">
+  <a href="http://localhost:4000/website/">
     <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
   </a>
   <span class="logo-prompt">Back to Home</span>
@@ -80,72 +85,75 @@
 
     <h2 id="证明">证明</h2>
 
-<div class="proposition"><p>(Tilting 对象与 torsion pair, 证明). 对 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$.</p>
-
-<ol>
-  <li>
-    <p>对任意 $M ∈ 𝒯$, 存在满的右 $𝐚𝐝𝐝 (T)$-逼近 $T^n ↠ M$ 使得</p>
-
-\[0 → K → T^n → M → 0 \quad ∈ 𝒯.\]
-  </li>
-  <li>$(^⟂𝒯) ∩ 𝒯 = 𝐚𝐝𝐝(T)$, 即 $𝒯 ∩ τ ^{-1} ℱ = 𝐚𝐝𝐝(T)$.
-    <blockquote>
-      <p>一般地, 只有 $(^⟂𝒯) ∩ 𝒯 = 𝒯 ∩ τ ^{-1} ℱ$.</p>
-    </blockquote>
-  </li>
-  <li>$M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.
-    <blockquote>
-      <p>一般地, $M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T ↠ M$ 是满的.</p>
-    </blockquote>
-  </li>
-</ol>
+<div class="proposition">
+  <p>(Tilting 对象与 torsion pair, 证明). 对 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$.</p>
+  <ol>
+    <li>
+      <p>对任意 $M ∈ 𝒯$, 存在满的右 $𝐚𝐝𝐝 (T)$-逼近 $T^n ↠ M$ 使得</p>
+      <p>$$
+   0 → K → T^n → M → 0 \quad ∈ 𝒯.
+   $$</p>
+    </li>
+    <li>$(^⟂𝒯) ∩ 𝒯 = 𝐚𝐝𝐝(T)$, 即 $𝒯 ∩ τ ^{-1} ℱ = 𝐚𝐝𝐝(T)$.       <blockquote>
+        <p>一般地, 只有 $(^⟂𝒯) ∩ 𝒯 = 𝒯 ∩ τ ^{-1} ℱ$.</p>
+      </blockquote>
+    </li>
+    <li>$M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.       <blockquote>
+        <p>一般地, $M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T ↠ M$ 是满的.</p>
+      </blockquote>
+    </li>
+  </ol>
 </div>
 
-<div class="proposition"><p>给定 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$. 对任意 $M ∈ 𝒯$, 存在满的右 $𝐚𝐝𝐝 (T)$-逼近 $T^n ↠ M$ 使得</p>
-
-\[0 → K → T^n → M → 0 \quad ∈ 𝒯.\]
+<div class="proposition">
+  <p>给定 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$. 对任意 $M ∈ 𝒯$, 存在满的右 $𝐚𝐝𝐝 (T)$-逼近 $T^n ↠ M$ 使得</p>
+  <p>$$
+0 → K → T^n → M → 0 \quad ∈ 𝒯.
+$$</p>
 </div>
 
-<div class="proof"><p>先构造右逼近. 取有限集 $𝒮 = (f_i)$ 为 $(T,M)$ 的生成元, 此时</p>
-
-\[T^𝒮 → M, \quad t ↦ ∑ f_i(t_i),\]
-
-<p>与 $\mathrm{End}(T)^n ↠ (T,M)$ 都是满态射.
-<br />
-依照长正合列, $\mathrm{Ext}^1(T,K) = 0$, 从而 $K ∈ T^⟂ = 𝒯$.</p>
+<div class="proof">
+  <p>先构造右逼近. 取有限集 $𝒮 = (f_i)$ 为 $(T,M)$ 的生成元, 此时</p>
+  <p>$$
+T^𝒮 → M, \quad t ↦ ∑ f_i(t_i),
+$$</p>
+  <p>与 $\mathrm{End}(T)^n ↠ (T,M)$ 都是满态射. <br /> 依照长正合列, $\mathrm{Ext}^1(T,K) = 0$, 从而 $K ∈ T^⟂ = 𝒯$.</p>
 </div>
 
-<div class="proposition"><p>给定 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$. $(^⟂𝒯) ∩ 𝒯 = 𝐚𝐝𝐝(T)$, 即 $𝒯 ∩ τ ^{-1} ℱ = 𝐚𝐝𝐝(T)$.</p>
+<div class="proposition">
+  <p>给定 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$. $(^⟂𝒯) ∩ 𝒯 = 𝐚𝐝𝐝(T)$, 即 $𝒯 ∩ τ ^{-1} ℱ = 𝐚𝐝𝐝(T)$.</p>
 </div>
 
-<div class="proof"><p>下证明 $({}^⟂ 𝒯) ∩ 𝒯 = 𝐚𝐝𝐝 (T)$.</p>
-
-<ol>
-  <li>一方面, $𝐚𝐝𝐝 (T) ⊆ {}^⟂ 𝒯 = {}^⟂ (T^⟂)$.</li>
-  <li>另一方面, 若 $X ∈ ({}^⟂ 𝒯) ∩ 𝒯$, 考虑满的极小右-$𝐚𝐝𝐝(T)$ 逼近, 得 $𝒯$ 中的 ses</li>
-</ol>
-
-\[0 → K → T^n → X → 0\quad ∈ 𝒯.\]
-
-<p>由假定, $\mathrm{Ext}^1(X, K) = 0$. 从而上述 ses 可裂.</p>
+<div class="proof">
+  <p>下证明 $({}^⟂ 𝒯) ∩ 𝒯 = 𝐚𝐝𝐝 (T)$.</p>
+  <ol>
+    <li>一方面, $𝐚𝐝𝐝 (T) ⊆ {}^⟂ 𝒯 = {}^⟂ (T^⟂)$.</li>
+    <li>另一方面, 若 $X ∈ ({}^⟂ 𝒯) ∩ 𝒯$, 考虑满的极小右-$𝐚𝐝𝐝(T)$ 逼近, 得 $𝒯$ 中的 ses</li>
+  </ol>
+  <p>$$
+0 → K → T^n → X → 0\quad ∈ 𝒯.
+$$</p>
+  <p>由假定, $\mathrm{Ext}^1(X, K) = 0$. 从而上述 ses 可裂.</p>
 </div>
 
-<div class="proposition"><p>给定 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$. $M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.</p>
+<div class="proposition">
+  <p>给定 tilting 对象诱导的 torsion pair $(𝒯, ℱ)$. $M ∈ 𝒯$ 当且仅当配对 $(T, M) ⊗ T → M$ 是同构.</p>
 </div>
 
-<div class="proof"><p>最后证明 $M ∈ 𝒯$ 时, 配对 $(T, M) ⊗ T → M$ 是同构. 类似<a href="Gen_Eq_T">此证明</a>, 取 $(T,-)$-右正合列</p>
-
-\[T_1 → T_0 → X → 0.\]
-
-<p>此时, 有右正合列的交换图</p>
-
-\[\begin{bmatrix}
- (T,T_1) ⊗ T &amp; →  &amp; (T,T_0) ⊗ T &amp; →  &amp; (T,X) ⊗ T &amp; →  &amp; 0\\
-∥  &amp;  &amp; ∥  &amp;  &amp; ↓  &amp;  &amp; \\
-T_1 &amp; →  &amp; T_0 &amp; →  &amp; M &amp; →  &amp; 0.
-\end{bmatrix}.\]
-
-<p>由五引理, $(T,X) ⊗ T → X$ 是同构.</p>
+<div class="proof">
+  <p>最后证明 $M ∈ 𝒯$ 时, 配对 $(T, M) ⊗ T → M$ 是同构. 类似<a href="Gen_Eq_T">此证明</a>, 取 $(T,-)$-右正合列</p>
+  <p>$$
+T_1 → T_0 → X → 0.
+$$</p>
+  <p>此时, 有右正合列的交换图</p>
+  <p>$$
+\begin{bmatrix}
+ (T,T_1) ⊗ T & →  & (T,T_0) ⊗ T & →  & (T,X) ⊗ T & →  & 0\\
+∥  &  & ∥  &  & ↓  &  & \\
+T_1 & →  & T_0 & →  & M & →  & 0.
+\end{bmatrix}.
+$$</p>
+  <p>由五引理, $(T,X) ⊗ T → X$ 是同构.</p>
 </div>
 
 
@@ -155,7 +163,7 @@ T_1 &amp; →  &amp; T_0 &amp; →  &amp; M &amp; →  &amp; 0.
     
       <a
         class="next"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Torsion_Pair_Ext_Orth"
+        href="http://localhost:4000/website/posts/Torsion_Pair_Ext_Orth"
         title="NEXT: Torsion Class 与 $\mathrm{Ext}^1$">&lt;&lt;</a>
       <span>
         &middot;
@@ -163,7 +171,7 @@ T_1 &amp; →  &amp; T_0 &amp; →  &amp; M &amp; →  &amp; 0.
     
     <a
       class="home"
-      href="https://zhangchenchengsjtu.github.io/website/"
+      href="http://localhost:4000/website/"
       title="Back to Homepage">Home</a>
     
       <span>
@@ -171,7 +179,7 @@ T_1 &amp; →  &amp; T_0 &amp; →  &amp; M &amp; →  &amp; 0.
       </span>
       <a
         class="prev"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs"
+        href="http://localhost:4000/website/posts/Partial_Tilting_Two_Torsion_pairs"
         title="PREV: 局部 tilting 模诱导的 torsion pair">&gt;&gt;</a>
     
   </div>

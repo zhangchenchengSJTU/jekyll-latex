@@ -7,6 +7,8 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
+
+
   <title>Gabriel 主定理 (I)
     ·
     Jekyll Latex</title>
@@ -18,15 +20,15 @@
   <meta name="google-site-verification" content="abc123">
 
 
-<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
-<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
-<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
-<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Gabriel_1">
+<link rel="icon" href="http://localhost:4000/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:4000/website/assets/touch-icon.png">
+<link rel="stylesheet" href="http://localhost:4000/website/assets/core.css">
+<link rel="canonical" href="http://localhost:4000/website/posts/Gabriel_1">
 <link
   rel="alternate"
   type="application/atom+xml"
   title="Jekyll Latex"
-  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+  href="http://localhost:4000/website/feed.xml" />
 
 
 
@@ -50,6 +52,9 @@
     id="MathJax-script"
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+
+
+
 </head>
 
 <body class="latex-dark">
@@ -57,7 +62,7 @@
 	<aside class="logo">
   
 
-  <a href="https://zhangchenchengsjtu.github.io/website/">
+  <a href="http://localhost:4000/website/">
     <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
   </a>
   <span class="logo-prompt">Back to Home</span>
@@ -80,78 +85,68 @@
 
     <h2 id="证明">证明</h2>
 
-<div class="theorem"><p>(<a href="Gabriel_1">证明</a>).
-给定 $kQ$, 其中 $\overline Q$ 是有限型 Dynkin quiver. 考虑映射</p>
-
-\[𝐝𝐢𝐦 : \mathbf{rep}_k (Q) → \mathbf{rep}_k (Q_0),\quad [M] ↦  𝐝𝐢𝐦 \ M.\]
-
-<p>这一映射建立了不可分解表示与 $Δ ^+$ 的双射对应:</p>
-
-\[𝐝𝐢𝐦 : \mathbf{Indecomp} (Q) ⇆  Δ _+(Q) : \text{Maximal Orbit}.\]
-
-<ol>
-  <li>给定不可分解模 $M$, 表示 $[M]$ 对应 $𝐝𝐢𝐦 \ M$;</li>
-  <li>给定正根 $𝐯$, 则 $𝐫𝐞𝐩(𝐯)$ 存在极大轨道 $[M]$, 对应不可约表示.</li>
-</ol>
+<div class="theorem">
+  <p>(<a href="Gabriel_1">证明</a>). 给定 $kQ$, 其中 $\overline Q$ 是有限型 Dynkin quiver. 考虑映射</p>
+  <p>$$
+𝐝𝐢𝐦 : \mathbf{rep}_k (Q) → \mathbf{rep}_k (Q_0),\quad [M] ↦  𝐝𝐢𝐦 \ M.
+$$</p>
+  <p>这一映射建立了不可分解表示与 $Δ ^+$ 的双射对应:</p>
+  <p>$$
+𝐝𝐢𝐦 : \mathbf{Indecomp} (Q) ⇆  Δ _+(Q) : \text{Maximal Orbit}.
+$$</p>
+  <ol>
+    <li>给定不可分解模 $M$, 表示 $[M]$ 对应 $𝐝𝐢𝐦 \ M$;</li>
+    <li>给定正根 $𝐯$, 则 $𝐫𝐞𝐩(𝐯)$ 存在极大轨道 $[M]$, 对应不可约表示.</li>
+  </ol>
 </div>
 
-<div class="proof"><p>记 $𝐝𝐢𝐦 : \mathbf{Indecomp}(kQ) → Δ  _+$.</p>
-
-<ol>
-  <li>(良定义) 若 $M$ 不可分解, 以下就 $M$ 是否为 brick 进行分类讨论.
-    <ol>
-      <li>
-        <p>若 $M = B$, 则 $\dim \mathrm{End}(M)$. 依照</p>
-
-\[0 &lt; q(𝐝𝐢𝐦 \ M) = \dim {\mathrm{End}(M)} - \dim \mathrm{Ext}^1(M,M),\]
-
-        <p>此时只能有 $\mathrm{Ext}^1(M,M) = 0$, 以及 $q(𝐝𝐢𝐦 \ M) = 1$.</p>
-      </li>
-      <li>
-        <p>若 $M$ 非 brick, 则存在非同构的 $f : M → M$. 此时, 则</p>
-
-\[0 ≠ \operatorname{im} f ∈ 𝐬𝐮𝐛(M) ∩ 𝐪𝐮𝐨𝐭(M).\]
-
-        <p>取 $𝐬𝐮𝐛(M) ∩ 𝐪𝐮𝐨𝐭(M)$ 中维度最小的非零对象 $B$, 显然 $B$ 是 brick.
-<br />
-若 $B ≇ M$, 则合成 $B ↪ M ↠ B$ 为 $0$, 因此 $B$ 是 $M/B$ 的商对象. 由 $B$ 的极小性, $M/B ↠ B$ 限制在任意直和项上或零或满. 不妨取不可分解直和项 $M_1$ 使得 $M_1 ↠ B$.
-<br />
-显然 $M_1 ↪ M/B$ 不通过 $M ↠ M/B$ 分解. 这说明以下是不可裂 ses 的交换图</p>
-
-\[\begin{bmatrix}
-B &amp; \rightarrow  &amp; E &amp; \twoheadrightarrow  &amp; M_{1}\\
-\parallel  &amp;  &amp; ⇣  &amp;  &amp; \downarrow \\
-B &amp; \hookrightarrow  &amp; M &amp; \twoheadrightarrow  &amp; M/B
-\end{bmatrix}\]
-
-        <p>由 $\mathrm{Ext}^1$ 右正合, 得 $\mathrm{Ext}^1(M_1,M_1) ↠ \mathrm{Ext}^1(M_1,B) ≠ 0$. 
-<br />
-重复上述步骤, 得一列不可分解对象的满态射</p>
-
-\[M ↠ M_1 ↠ \cdots \quad (\mathrm{Ext}^1(M_k, M_k) ≠ 0)\]
-
-        <p>满态射降至 $0$ 时, 前一项必然是 brick.
-<br />
-以上构造了 $\mathrm{Ext}^1(-,-) ≠ 0$ 的 brick, 矛盾.</p>
-      </li>
-    </ol>
-
-    <p>综上, $𝐝𝐢𝐦$ 的去向确实是 $Δ _+$. 特别地, $\mathbf{Indecomp}(kQ) = \mathrm{Brick}(kQ)$, 且任意 brick 都是 $\mathrm{Ext}^1$-自垂直的.</p>
-  </li>
-  <li>(单射) 由<a href="Key_Lemma_Gabriel">关键公式</a>, 自垂直的 $M$ 满足 $𝐫𝐞𝐩(𝐝𝐢𝐦 \ M) = \dim \ [M]$. 由 $𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$ 不可约, 极大轨道若存在则必唯一.</li>
-  <li>
-    <p>(满射) 只需证明 $𝐫𝐞𝐩(𝐯)$ 中的最大轨道 $[M]$ 是不可分解的. 若 $M = ⨁_{i ∈ I}M_i$, 由 <a href="Uniqueness_of_Maximal_Orbit">ses 三项的轨道关系</a>知 $\mathrm{Ext}^1(M_i, M_j) =0$. 此时,</p>
-
-\[1 = q(𝐯) = q\left(∑ _{i ∈  I}𝐝𝐢𝐦 \ M_i\right) = ∑  _{i ∈  I} q(𝐝𝐢𝐦 \ M_i) + ∑ _{i ≠  j} \dim (M_i, M_j).\]
-
-    <p>矛盾.</p>
-  </li>
-</ol>
-
-<p>综上, $𝐝𝐢𝐦$ 确实是双射.</p>
+<div class="proof">
+  <p>记 $𝐝𝐢𝐦 : \mathbf{Indecomp}(kQ) → Δ  _+$.</p>
+  <ol>
+    <li>(良定义) 若 $M$ 不可分解, 以下就 $M$ 是否为 brick 进行分类讨论.       <ol>
+        <li>
+          <p>若 $M = B$, 则 $\dim \mathrm{End}(M)$. 依照</p>
+          <p>$$
+      0 < q(𝐝𝐢𝐦 \ M) = \dim {\mathrm{End}(M)} - \dim \mathrm{Ext}^1(M,M),
+      $$</p>
+          <p>此时只能有 $\mathrm{Ext}^1(M,M) = 0$, 以及 $q(𝐝𝐢𝐦 \ M) = 1$.</p>
+        </li>
+        <li>
+          <p>若 $M$ 非 brick, 则存在非同构的 $f : M → M$. 此时, 则</p>
+          <p>$$
+      0 ≠ \operatorname{im} f ∈ 𝐬𝐮𝐛(M) ∩ 𝐪𝐮𝐨𝐭(M).
+      $$</p>
+          <p>取 $𝐬𝐮𝐛(M) ∩ 𝐪𝐮𝐨𝐭(M)$ 中维度最小的非零对象 $B$, 显然 $B$ 是 brick. <br /> 若 $B ≇ M$, 则合成 $B ↪ M ↠ B$ 为 $0$, 因此 $B$ 是 $M/B$ 的商对象. 由 $B$ 的极小性, $M/B ↠ B$ 限制在任意直和项上或零或满. 不妨取不可分解直和项 $M_1$ 使得 $M_1 ↠ B$. <br /> 显然 $M_1 ↪ M/B$ 不通过 $M ↠ M/B$ 分解. 这说明以下是不可裂 ses 的交换图</p>
+          <p>$$
+      \begin{bmatrix}
+      B & \rightarrow  & E & \twoheadrightarrow  & M_{1}\\
+      \parallel  &  & ⇣  &  & \downarrow \\
+      B & \hookrightarrow  & M & \twoheadrightarrow  & M/B
+      \end{bmatrix}
+      $$</p>
+          <p>由 $\mathrm{Ext}^1$ 右正合, 得 $\mathrm{Ext}^1(M_1,M_1) ↠ \mathrm{Ext}^1(M_1,B) ≠ 0$. <br /> 重复上述步骤, 得一列不可分解对象的满态射</p>
+          <p>$$
+      M ↠ M_1 ↠ \cdots \quad (\mathrm{Ext}^1(M_k, M_k) ≠ 0)
+      $$</p>
+          <p>满态射降至 $0$ 时, 前一项必然是 brick. <br /> 以上构造了 $\mathrm{Ext}^1(-,-) ≠ 0$ 的 brick, 矛盾.</p>
+        </li>
+      </ol>
+      <p>综上, $𝐝𝐢𝐦$ 的去向确实是 $Δ _+$. 特别地, $\mathbf{Indecomp}(kQ) = \mathrm{Brick}(kQ)$, 且任意 brick 都是 $\mathrm{Ext}^1$-自垂直的.</p>
+    </li>
+    <li>(单射) 由<a href="Key_Lemma_Gabriel">关键公式</a>, 自垂直的 $M$ 满足 $𝐫𝐞𝐩(𝐝𝐢𝐦 \ M) = \dim \ [M]$. 由 $𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$ 不可约, 极大轨道若存在则必唯一.</li>
+    <li>
+      <p>(满射) 只需证明 $𝐫𝐞𝐩(𝐯)$ 中的最大轨道 $[M]$ 是不可分解的. 若 $M = ⨁_{i ∈ I}M_i$, 由 <a href="Uniqueness_of_Maximal_Orbit">ses 三项的轨道关系</a>知 $\mathrm{Ext}^1(M_i, M_j) =0$. 此时,</p>
+      <p>$$
+   1 = q(𝐯) = q\left(∑ _{i ∈  I}𝐝𝐢𝐦 \ M_i\right) = ∑  _{i ∈  I} q(𝐝𝐢𝐦 \ M_i) + ∑ _{i ≠  j} \dim (M_i, M_j).
+   $$</p>
+      <p>矛盾.</p>
+    </li>
+  </ol>
+  <p>综上, $𝐝𝐢𝐦$ 确实是双射.</p>
 </div>
 
-<div class="slogan"><p>由第一部分, $kQ$ 中的不可分解对象恰是 brick. 这些 brick 是 $\mathrm{Ext}^1$ 自垂直的.</p>
+<div class="slogan">
+  <p>由第一部分, $kQ$ 中的不可分解对象恰是 brick. 这些 brick 是 $\mathrm{Ext}^1$ 自垂直的.</p>
 </div>
 
 
@@ -161,7 +156,7 @@ B &amp; \hookrightarrow  &amp; M &amp; \twoheadrightarrow  &amp; M/B
     
       <a
         class="next"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Gabriel_2"
+        href="http://localhost:4000/website/posts/Gabriel_2"
         title="NEXT: Gabriel 主定理 (II)">&lt;&lt;</a>
       <span>
         &middot;
@@ -169,7 +164,7 @@ B &amp; \hookrightarrow  &amp; M &amp; \twoheadrightarrow  &amp; M/B
     
     <a
       class="home"
-      href="https://zhangchenchengsjtu.github.io/website/"
+      href="http://localhost:4000/website/"
       title="Back to Homepage">Home</a>
     
       <span>
@@ -177,7 +172,7 @@ B &amp; \hookrightarrow  &amp; M &amp; \twoheadrightarrow  &amp; M/B
       </span>
       <a
         class="prev"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Finite_and_Affine_Root_System"
+        href="http://localhost:4000/website/posts/Finite_and_Affine_Root_System"
         title="PREV: 有限型与仿射型 Dynkin 图">&gt;&gt;</a>
     
   </div>

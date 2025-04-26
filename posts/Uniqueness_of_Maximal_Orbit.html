@@ -7,6 +7,8 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
+
+
   <title>关于轨道的若干结论
     ·
     Jekyll Latex</title>
@@ -18,15 +20,15 @@
   <meta name="google-site-verification" content="abc123">
 
 
-<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
-<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
-<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
-<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/Uniqueness_of_Maximal_Orbit">
+<link rel="icon" href="http://localhost:4000/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:4000/website/assets/touch-icon.png">
+<link rel="stylesheet" href="http://localhost:4000/website/assets/core.css">
+<link rel="canonical" href="http://localhost:4000/website/posts/Uniqueness_of_Maximal_Orbit">
 <link
   rel="alternate"
   type="application/atom+xml"
   title="Jekyll Latex"
-  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+  href="http://localhost:4000/website/feed.xml" />
 
 
 
@@ -50,6 +52,9 @@
     id="MathJax-script"
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+
+
+
 </head>
 
 <body class="latex-dark">
@@ -57,7 +62,7 @@
 	<aside class="logo">
   
 
-  <a href="https://zhangchenchengsjtu.github.io/website/">
+  <a href="http://localhost:4000/website/">
     <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
   </a>
   <span class="logo-prompt">Back to Home</span>
@@ -80,105 +85,104 @@
 
     <h2 id="证明">证明</h2>
 
-<div class="proposition"><p>(<a href="Uniqueness_of_Maximal_Orbit">证明</a>)
-以下是一些几何的结论.</p>
-
-<ol>
-  <li>极大轨道满足以下等价定义:
-    <ol>
-      <li>$\mathrm{Ext}^1(M,M) =0$;</li>
-      <li>$[M]$ 是开集;</li>
-      <li>$\overline{[M]} = 𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$.</li>
-    </ol>
-  </li>
-  <li>固定 $𝐯$, 极大轨道若存在则必唯一.</li>
-  <li>极大轨道不存在的必要条件: $q(𝐯) ≤ 0$.</li>
-  <li>(不证明此条). 极小轨道就是半单表示; 等价地, $[X]$ 是闭集.</li>
-  <li>
-    <p>给定 ses $0 →  X →  Y →  Z →  0$, 该 ses 不可裂当且仅当</p>
-
-\[[X ⊕ Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y]\quad (\text{视作} \ 𝐫𝐞𝐩(\dim Y) \ \text{中的轨道}).\]
-  </li>
-</ol>
+<div class="proposition">
+  <p>(<a href="Uniqueness_of_Maximal_Orbit">证明</a>) 以下是一些几何的结论.</p>
+  <ol>
+    <li>极大轨道满足以下等价定义:       <ol>
+        <li>$\mathrm{Ext}^1(M,M) =0$;</li>
+        <li>$[M]$ 是开集;</li>
+        <li>$\overline{[M]} = 𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$.</li>
+      </ol>
+    </li>
+    <li>固定 $𝐯$, 极大轨道若存在则必唯一.</li>
+    <li>极大轨道不存在的必要条件: $q(𝐯) ≤ 0$.</li>
+    <li>(不证明此条). 极小轨道就是半单表示; 等价地, $[X]$ 是闭集.</li>
+    <li>
+      <p>给定 ses $0 →  X →  Y →  Z →  0$, 该 ses 不可裂当且仅当</p>
+      <p>$$
+   [X ⊕ Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y]\quad (\text{视作} \ 𝐫𝐞𝐩(\dim Y) \ \text{中的轨道}).
+   $$</p>
+    </li>
+  </ol>
 </div>
 
-<div class="proposition"><p>极大轨道满足以下等价定义:</p>
-
-<ol>
-  <li>$\mathrm{Ext}^1(M,M) =0$;</li>
-  <li>$[M]$ 是开集;</li>
-  <li>$\overline{[M]} = 𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$.</li>
-</ol>
+<div class="proposition">
+  <p>极大轨道满足以下等价定义:</p>
+  <ol>
+    <li>$\mathrm{Ext}^1(M,M) =0$;</li>
+    <li>$[M]$ 是开集;</li>
+    <li>$\overline{[M]} = 𝐫𝐞𝐩(𝐝𝐢𝐦 \ M)$.</li>
+  </ol>
 </div>
 
-<div class="proof"><p>由关键公式</p>
-
-\[\dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M) = \dim \mathrm{End}(M) - q(𝐯),\]
-
-<p>$\dim \mathrm{Ext}^1(M,M) = 0$ 当且仅当 $\dim 𝐫𝐞𝐩(𝐯) = \dim \ [M]$, 即 1 ⟺ 3.</p>
-
-<ol>
-  <li>(1 ⇒ 2). 若 $\mathrm{Ext}^1(M,M) = 0$, 则 $\overline{[M]} = 𝐫𝐞𝐩(𝐯)$. 由于 $[M]$ 是 $\overline{[M]}$ 中的开集, 得 $[M]$ 是 $𝐫𝐞𝐩 (𝐯)$ 中的开集.</li>
-  <li>(2 ⇒ 1). 若 $[M]$ 是 $𝐫𝐞𝐩 (𝐯)$ 中的开集, 则必是稠密的. 此时 $\dim \ [M] = \dim 𝐫𝐞𝐩(𝐯 )$, 因此 $\mathrm{Ext}^1(M,M) = 0$.</li>
-</ol>
+<div class="proof">
+  <p>由关键公式</p>
+  <p>$$
+\dim 𝐫𝐞𝐩(𝐯) - \dim \ [M] = \dim \mathrm{Ext}^1(M,M) = \dim \mathrm{End}(M) - q(𝐯),
+$$</p>
+  <p>$\dim \mathrm{Ext}^1(M,M) = 0$ 当且仅当 $\dim 𝐫𝐞𝐩(𝐯) = \dim \ [M]$, 即 1 ⟺ 3.</p>
+  <ol>
+    <li>(1 ⇒ 2). 若 $\mathrm{Ext}^1(M,M) = 0$, 则 $\overline{[M]} = 𝐫𝐞𝐩(𝐯)$. 由于 $[M]$ 是 $\overline{[M]}$ 中的开集, 得 $[M]$ 是 $𝐫𝐞𝐩 (𝐯)$ 中的开集.</li>
+    <li>(2 ⇒ 1). 若 $[M]$ 是 $𝐫𝐞𝐩 (𝐯)$ 中的开集, 则必是稠密的. 此时 $\dim \ [M] = \dim 𝐫𝐞𝐩(𝐯 )$, 因此 $\mathrm{Ext}^1(M,M) = 0$.</li>
+  </ol>
 </div>
 
-<div class="note"><p>由不可约空间, 固定 $𝐯$, 极大轨道若存在则必唯一.</p>
+<div class="note">
+  <p>由不可约空间, 固定 $𝐯$, 极大轨道若存在则必唯一.</p>
 </div>
 
-<div class="proposition"><p>极大轨道不存在的必要条件: $q(𝐯) ≤ 0$.</p>
+<div class="proposition">
+  <p>极大轨道不存在的必要条件: $q(𝐯) ≤ 0$.</p>
 </div>
 
-<div class="proof"><p>若 $q(𝐯) ≤ 0$, 则对任意非零 $M$ 都有 $\dim 𝐫𝐞𝐩 (𝐯) &gt; \dim [M]$. 特别地, 此时的轨道数量必无穷.</p>
+<div class="proof">
+  <p>若 $q(𝐯) ≤ 0$, 则对任意非零 $M$ 都有 $\dim 𝐫𝐞𝐩 (𝐯) > \dim [M]$. 特别地, 此时的轨道数量必无穷.</p>
 </div>
 
-<div class="proposition"><p>给定 ses $0 →  X →  Y →  Z →  0$, 该 ses 不可裂当且仅当</p>
-
-\[[X ⊕ Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y]\quad (\text{视作} \ 𝐫𝐞𝐩(\dim Y) \ \text{中的轨道}).\]
+<div class="proposition">
+  <p>给定 ses $0 →  X →  Y →  Z →  0$, 该 ses 不可裂当且仅当</p>
+  <p>$$
+[X ⊕ Z] \quad ⊆ \quad \overline {[Y]} ∖ [Y]\quad (\text{视作} \ 𝐫𝐞𝐩(\dim Y) \ \text{中的轨道}).
+$$</p>
 </div>
 
-<div class="proof"><p>若 $0 → L \xrightarrow f M \xrightarrow g N → 0$ 可裂, 则 $[L ⊕ N] ⊈ \overline{[M]} ∖ [M]$. 下证明反向, 假定 ses 不可裂.
-<br />
-模的分量由 $Q_0 ∪ Q_1$ 中分量决定的. 对任意 $λ ∈ (Q_0 ∪ Q_1)$, 存在同时分块上三角化</p>
-
-\[0 → \begin{pmatrix}
-L_λ  &amp; O
+<div class="proof">
+  <p>若 $0 → L \xrightarrow f M \xrightarrow g N → 0$ 可裂, 则 $[L ⊕ N] ⊈ \overline{[M]} ∖ [M]$. 下证明反向, 假定 ses 不可裂. <br /> 模的分量由 $Q_0 ∪ Q_1$ 中分量决定的. 对任意 $λ ∈ (Q_0 ∪ Q_1)$, 存在同时分块上三角化</p>
+  <p>$$
+0 → \begin{pmatrix}
+L_λ  & O
 \end{pmatrix}\xrightarrow{\binom{f_λ }{0}} \begin{pmatrix}
-M^1_λ  &amp; M^2_λ  \\ O &amp; M^4 _λ  
+M^1_λ  & M^2_λ  \\ O & M^4 _λ  
 \end{pmatrix}\xrightarrow{(0 \ \ g_λ )} \begin{pmatrix}
 O \\
 N_λ
-\end{pmatrix} →  0.\]
-
-<blockquote>
-  <p>此处使用了子表示与商表示的矩阵表述, 也可理解做不变子空间与商空间.</p>
-</blockquote>
-
-<p>取 $G$ 中元素为</p>
-
-\[g_t := \begin{pmatrix}
-t ⋅  \mathrm{id}_{L_i} &amp; O \\ O &amp; \mathrm{id}_{N_i}
-\end{pmatrix},\]
-
-<p>考虑 $M$ 在单参数子群 $g_t$ 共轭作用下的轨道 $[M]_t$. 由 $k ∖ {0}$ 在 $k$ 中稠密, 得</p>
-
-<p>\([M]_0 ∈  \overline{\{[M]_t ∣  t ≠  0\}}.\)
-<br />
-最后说明 $L ⊕  N ≇  M$.</p>
-
-<blockquote>
-  <p>即便以上 ses 不可列, 但本命题需要证明 $L ⊕  N ≇  M$.</p>
-</blockquote>
-
-<p>若 $L ⊕ N ≅ M$, 考虑长正合列</p>
-
-\[0 → (M,L) → (N,L) → (L,L) → \mathrm{Ext}^1(M,L) \overset δ → \cdots.\]
-
-<p>带入 $L ⊕ N ≅ M$, 并比较维数, 得</p>
-
-\[\operatorname{im} \left(\mathrm{Hom}(L, L) \overset δ → \mathrm{Ext}^1(N, L)\right) = 0.\]
-
-<p>由上述不可裂 ses 正合列是 $δ (\mathrm{id}_L)$, 得矛盾.</p>
+\end{pmatrix} →  0.
+$$</p>
+  <blockquote>
+    <p>此处使用了子表示与商表示的矩阵表述, 也可理解做不变子空间与商空间.</p>
+  </blockquote>
+  <p>取 $G$ 中元素为</p>
+  <p>$$
+g_t := \begin{pmatrix}
+t ⋅  \mathrm{id}_{L_i} & O \\ O & \mathrm{id}_{N_i}
+\end{pmatrix},
+$$</p>
+  <p>考虑 $M$ 在单参数子群 $g_t$ 共轭作用下的轨道 $[M]_t$. 由 $k ∖ \{0\}$ 在 $k$ 中稠密, 得</p>
+  <p>$$
+[M]_0 ∈  \overline{\{[M]_t ∣  t ≠  0\}}.
+$$ <br /> 最后说明 $L ⊕  N ≇  M$.</p>
+  <blockquote>
+    <p>即便以上 ses 不可列, 但本命题需要证明 $L ⊕  N ≇  M$.</p>
+  </blockquote>
+  <p>若 $L ⊕ N ≅ M$, 考虑长正合列</p>
+  <p>$$
+0 → (M,L) → (N,L) → (L,L) → \mathrm{Ext}^1(M,L) \overset δ → \cdots.
+$$</p>
+  <p>带入 $L ⊕ N ≅ M$, 并比较维数, 得</p>
+  <p>$$
+\operatorname{im} \left(\mathrm{Hom}(L, L) \overset δ → \mathrm{Ext}^1(N, L)\right) = 0.
+$$</p>
+  <p>由上述不可裂 ses 正合列是 $δ (\mathrm{id}_L)$, 得矛盾.</p>
 </div>
 
 
@@ -188,7 +192,7 @@ t ⋅  \mathrm{id}_{L_i} &amp; O \\ O &amp; \mathrm{id}_{N_i}
     
       <a
         class="next"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Gl_Dim_A_B"
+        href="http://localhost:4000/website/posts/Gl_Dim_A_B"
         title="NEXT: $\dim A$ 与 $\dim \mathrm{End}(T_A)$">&lt;&lt;</a>
       <span>
         &middot;
@@ -196,7 +200,7 @@ t ⋅  \mathrm{id}_{L_i} &amp; O \\ O &amp; \mathrm{id}_{N_i}
     
     <a
       class="home"
-      href="https://zhangchenchengsjtu.github.io/website/"
+      href="http://localhost:4000/website/"
       title="Back to Homepage">Home</a>
     
       <span>
@@ -204,7 +208,7 @@ t ⋅  \mathrm{id}_{L_i} &amp; O \\ O &amp; \mathrm{id}_{N_i}
       </span>
       <a
         class="prev"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Ringel_Resolution"
+        href="http://localhost:4000/website/posts/Ringel_Resolution"
         title="PREV: Canonical Resolution of Quiver algebra">&gt;&gt;</a>
     
   </div>

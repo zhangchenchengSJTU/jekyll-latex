@@ -7,26 +7,28 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
+
+
   <title>$\LaTeX$ Template (v 1.2)
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="  Abstract  This is a $\LaTeX$ template for writing articles.">
+<meta name="description" content="">
 
 
   <meta name="google-site-verification" content="abc123">
 
 
-<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
-<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
-<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
-<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/template">
+<link rel="icon" href="http://localhost:4000/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:4000/website/assets/touch-icon.png">
+<link rel="stylesheet" href="http://localhost:4000/website/assets/core.css">
+<link rel="canonical" href="http://localhost:4000/website/posts/template">
 <link
   rel="alternate"
   type="application/atom+xml"
   title="Jekyll Latex"
-  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+  href="http://localhost:4000/website/feed.xml" />
 
 
 
@@ -50,6 +52,9 @@
     id="MathJax-script"
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+
+
+
 </head>
 
 <body class="latex-dark">
@@ -57,7 +62,7 @@
 	<aside class="logo">
   
 
-  <a href="https://zhangchenchengsjtu.github.io/website/">
+  <a href="http://localhost:4000/website/">
     <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
   </a>
   <span class="logo-prompt">Back to Home</span>
@@ -78,135 +83,186 @@
 
     <div class="divider"></div>
 
-    <div class="abstract">
-  <h5>Abstract</h5>
-  <div><p>This is a $\LaTeX$ template for writing articles.</p>
-</div>
-</div>
-
-<h2 id="table-of-contents">Table of Contents</h2>
-
-<ul id="markdown-toc">
-  <li><a href="#table-of-contents" id="markdown-toc-table-of-contents">Table of Contents</a></li>
-  <li><a href="#why-this-template" id="markdown-toc-why-this-template">Why this template?</a>    <ul>
-      <li><a href="#示例" id="markdown-toc-示例">示例</a></li>
-    </ul>
-  </li>
+    <ul id="markdown-toc">
+  <li><a href="#abstract" id="markdown-toc-abstract">Abstract</a></li>
+  <li><a href="#对原模板的若干修改" id="markdown-toc-对原模板的若干修改">对原模板的若干修改</a></li>
+  <li><a href="#why-this-template" id="markdown-toc-why-this-template">Why this template?</a></li>
 </ul>
+
+<div class="abstract">
+  <h5 id="abstract">Abstract</h5>
+  <div>
+    <p>This is a html-based $\LaTeX$ template for writing articles. This website is based on <a href="https://github.com/ryanmcdermott/jekyll-latex">this</a> outstanding repository, to whose author(s) we extend our sincere gratitude.</p>
+    <ul>
+      <li>The repository: <code class="language-plaintext highlighter-rouge">git@github.com:zhangchenchengSJTU/jekyll-latex.git</code>.</li>
+    </ul>
+  </div>
+</div>
+
+<h2 id="对原模板的若干修改">对原模板的若干修改</h2>
+
+<div class="example">
+  <p>(Add blocks). 本模板添加了若干数学公式环境, 例如</p>
+  <!-- 使用 <ul> 控制缩进, 虽然不是 markdown 语法, 但是高效准确. -->
+  <ul>
+    <div class="lemma">
+      <p>This is a lemma.</p>
+    </div>
+    <div class="proof">
+      <p>This is a proof.</p>
+    </div>
+    <div class="corollary">
+      <p>This is a corollary.</p>
+    </div>
+    <div class="definition">
+      <p>This is a definition. 作者有意将 <code class="language-plaintext highlighter-rouge">bottom-margin</code> 调整至 <code class="language-plaintext highlighter-rouge">2em</code>.</p>
+    </div>
+    <div class="example">
+      <p>This is an example.</p>
+    </div>
+    <div class="solution">
+      <p>This is a solution.</p>
+    </div>
+    <div class="problem">
+      <p>This is a problem.</p>
+    </div>
+    <div class="proposition">
+      <p>This is a proposition.</p>
+    </div>
+    <div class="slogan">
+      <p>This is a slogan.</p>
+    </div>
+    <div class="note">
+      <p>This is a note.</p>
+    </div>
+    <div class="question">
+      <p>This is a question.</p>
+    </div>
+  </ul>
+</div>
+
+<div class="note">
+  <p>对 block 之图标, 样式, 编号逻辑等, 可在 <code class="language-plaintext highlighter-rouge">_sass/main.scss</code> 与 <code class="language-plaintext highlighter-rouge">_plugins/latex.rb</code> 中修改.</p>
+</div>
+
+<div class="example">
+  <p>(Block 内正常 <code class="language-plaintext highlighter-rouge">markdown</code> 语法). 数学环境中可直接使用 <code class="language-plaintext highlighter-rouge">markdown</code> 语言. 方法是将原插件 <code class="language-plaintext highlighter-rouge">_plugins/latex.rb</code> 中的</p>
+  <div class="language-rb highlighter-rouge">
+    <div class="highlight">
+      <div class="language-plaintext highlight highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    class DefinitionBlock &lt; Liquid::Block
+      def render(context)
+        text = super
+        "&lt;div class='definition'&gt;#{text}&lt;/div&gt;"
+      end
+    end
+  end
+</code></pre></div>      </div>
+    </div>
+  </div>
+  <p>添加 <code class="language-plaintext highlighter-rouge">Jekyll::Converters::Markdown</code> 过滤器. 最终效果是</p>
+  <div class="language-rb highlighter-rouge">
+    <div class="highlight">
+      <div class="language-plaintext highlight highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    class DefinitionBlock &lt; Liquid::Block
+      def render(context)
+        text = super  # 获取块内原始内容
+        site = context.registers[:site]  # 获取 Jekyll 的 site 对象
+        converter = site.find_converter_instance(Jekyll::Converters::Markdown)  # 获取 Markdown 转换器
+        converted_content = converter.convert(text.strip)  # 将内容转换为 HTML
+        "&lt;div class='definition'&gt;#{converted_content}&lt;/div&gt;"  # 包裹转换后的内容
+      end
+    end
+</code></pre></div>      </div>
+    </div>
+  </div>
+  <p>同时完美解决了下划线问题. 例如</p>
+  <ul>
+    <li>输入 1: <code class="language-plaintext highlighter-rouge">$a_1$ and $a_2()_5$ and $(a_3)_2$</code></li>
+    <li>输出 1: $a_1$ and $a_2()_5$ and $(a_3)_2$</li>
+    <li>输入 2: <code class="language-plaintext highlighter-rouge">_1_ + $2_3$ + 66_</code></li>
+    <li>输出 2: <em>1</em> + $2_3$ + 66_</li>
+  </ul>
+  <p>实现方式是脚本 <code class="language-plaintext highlighter-rouge">_plugins/消灭傻逼下划线.rb</code>, 让 <code class="language-plaintext highlighter-rouge">markdown</code> 文本努力变成过滤器能识别的样子.</p>
+</div>
+
+<div class="example">
+  <p>(编号). 解决了原模板中无序编号显示有序的 🐛.</p>
+</div>
 
 <h2 id="why-this-template">Why this template?</h2>
 
-<div class="theorem"><p>The real numbers $ℝ$ are uncountable.</p>
+<div class="theorem">
+  <p>The real numbers $ℝ$ are uncountable.</p>
 </div>
 
-<div class="proof"><p>By <a href="https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument">Cantor’s diagonal argument</a>, we can show that the set of real numbers is uncountable.</p>
-
-\[\begin{bmatrix}
-    a_{1,1} &amp; a_{1,2} &amp; a_{1,3} &amp; \cdots \\
-    a_{2,1} &amp; a_{2,2} &amp; a_{2,3} &amp; \cdots \\
-    a_{3,1} &amp; a_{3,2} &amp; a_{3,3} &amp; \cdots \\
-    ⋮ &amp; ⋮ &amp; ⋮ &amp; ⋱.
-\end{bmatrix}\]
+<div class="proof">
+  <p>By <a href="https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument">Cantor’s diagonal argument</a>, we can show that the set of real numbers is uncountable.</p>
+  <p>$$
+\begin{bmatrix}
+    a_{1,1} & a_{1,2} & a_{1,3} & \cdots \\
+    a_{2,1} & a_{2,2} & a_{2,3} & \cdots \\
+    a_{3,1} & a_{3,2} & a_{3,3} & \cdots \\
+    ⋮ & ⋮ & ⋮ & ⋱.
+\end{bmatrix}
+$$</p>
 </div>
 
-<div class="theorem"><p>(<code class="language-plaintext highlighter-rouge">html</code> 较 $\LaTeX$ 的优越性). 该模板相较传统 $\LaTeX$ 模板之优点包括但不限于</p>
-
-<ol>
-  <li>零秒编译.</li>
-  <li>输出连续网页, 避免 <code class="language-plaintext highlighter-rouge">PDF</code> 割裂图片或公式等.
-当然, 打印网页即得 <code class="language-plaintext highlighter-rouge">PDF</code> 文档</li>
-  <li>使用 URL 运行图片 ($\LaTeX$ 永远无法做到, 权宜的方式是使用 <code class="language-plaintext highlighter-rouge">write18</code>).</li>
-  <li>发布网页, 随时随地都可查看.</li>
-  <li>使用 <code class="language-plaintext highlighter-rouge">localhost</code> 端口: 电脑代码, 平板查看编译结果.</li>
-  <li>兼容 <code class="language-plaintext highlighter-rouge">Unicode-math</code> $ℝ$ (数学环境), ℝ (文本环境), 无需手动调整 assymb 包的兼容性问题, 或字体问题等.</li>
-  <li>兼容多国语言混排, 这是一句废话, 但对 $\LaTeX$ 来说过于困难.</li>
-  <li>排版语言公式简单 (前提: 配上合适的 <code class="language-plaintext highlighter-rouge">html</code> 代码环境).</li>
-</ol>
+<div class="theorem">
+  <p>(<code class="language-plaintext highlighter-rouge">html</code> 较 $\LaTeX$ 的优越性). 该模板相较传统 $\LaTeX$ 模板之优点包括但不限于</p>
+  <ol>
+    <li>零秒编译.</li>
+    <li>输出连续网页, 避免 <code class="language-plaintext highlighter-rouge">PDF</code> 割裂图片或公式等. 当然, 打印网页即得 <code class="language-plaintext highlighter-rouge">PDF</code> 文档.</li>
+    <li>使用 URL 运行图片 ($\LaTeX$ 永远无法做到, 权宜的方式是使用 <code class="language-plaintext highlighter-rouge">write18</code>).</li>
+    <li>发布网页, 随时随地都可查看.</li>
+    <li>使用 <code class="language-plaintext highlighter-rouge">localhost</code> 端口: 电脑代码, 平板查看编译结果.</li>
+    <li>兼容 <code class="language-plaintext highlighter-rouge">Unicode-math</code> $ℝ$ (数学环境), ℝ (文本环境), 无需手动调整 assymb 包的兼容性问题, 或字体问题等.</li>
+    <li>兼容多国语言混排: Hello, Bonjour, Olá, Здравствуйте, $\overset{\text{こん}}{\text{今}}\overset{\text{にち}}{\text{日}}\text{は}$, $\overset{\text{안}}{\text{安}}\overset{\text{녕}}{\text{寧}} \ \text{하세요}$, السلام عليكم, नमस्ते, Γειά σας, Cześć, สวัสดี, שלום, [ɲ̟ã̠ɴ].</li>
+    <li>
+      <p>插入在线图片, 甚至 gif</p>
+      <p><img src="https://raw.githubusercontent.com/czhang271828/imgs/New_img//n_imgcat-space.gif" alt="cat-space" /></p>
+    </li>
+    <li>
+      <p>视频也行</p>
+      <p><a href="https://youtu.be/dQw4w9WgXcQ"><img src="https://markdown-videos-api.jorgenkh.no/youtube/dQw4w9WgXcQ" alt="上当了" /></a></p>
+    </li>
+    <li>排版语言公式简单 (前提: 配上合适的 <code class="language-plaintext highlighter-rouge">html</code> 代码环境).</li>
+  </ol>
 </div>
 
-<div class="example"><p>(在 block 外使用 markdown 与 $\LaTeX$ 写作).
-在 {% — %} — {% end— %} 外可直接使用 markdown 语言与 $\LaTeX$.</p>
-
-<p>一个小 bug 是将公式内的 underscore 识别为下标 (目前已修复).</p>
+<div class="example">
+  <p>(在 block 外使用 markdown 与 $\LaTeX$ 写作). 在 {% — %} — {% end— %} 外可直接使用 markdown 语言与 $\LaTeX$.</p>
 </div>
 
-<div class="example"><p>(<code class="language-plaintext highlighter-rouge">Tikz</code> 功能). 使用插件 <code class="language-plaintext highlighter-rouge">quiver</code> 画图.</p>
-
-<center>
-<!-- https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcbWF0aHNjciBDIl0sWzAsMSwiXFxtYXRoYmIgQV9rICJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxXSxbMiwzXSxbMyw0XSxbMSw0XSxbNSw3LCIiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV0sWzIsOSwiIiwyLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XV0= -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcbWF0aHNjciBDIl0sWzAsMSwiXFxtYXRoYmIgQV9rICJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxXSxbMiwzXSxbMyw0XSxbMSw0XSxbNSw3LCIiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV0sWzIsOSwiIiwyLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XV0=&amp;embed" width="432" height="304" style="border-radius: 8px; border: none;"></iframe>
-</center>
-
-<p>图像大小容易失衡, 建议使用 <code class="language-plaintext highlighter-rouge">mathcha</code> 画图, 输出矩阵, 例如</p>
-
-\[\begin{bmatrix}
-M &amp; →  &amp; F( M) &amp; ↠  &amp; C( M)\\
-h⇣ \  &amp;  &amp; g⇣ \  &amp;  &amp; f⇣ \ \\
-Ω ( N) &amp; →  &amp; P( M) &amp; ↠  &amp; N
-\end{bmatrix}.\]
-
-<p>或者, 直接插入图片也行.</p>
+<div class="example">
+  <p>(<code class="language-plaintext highlighter-rouge">Tikz</code> 功能). 使用插件 <code class="language-plaintext highlighter-rouge">quiver</code> 画图.</p>
+  <center> <!-- https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcbWF0aHNjciBDIl0sWzAsMSwiXFxtYXRoYmIgQV9rICJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxXSxbMiwzXSxbMyw0XSxbMSw0XSxbNSw3LCIiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV0sWzIsOSwiIiwyLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XV0= --> <iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcbWF0aHNjciBDIl0sWzAsMSwiXFxtYXRoYmIgQV9rICJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxXSxbMiwzXSxbMyw0XSxbMSw0XSxbNSw3LCIiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV0sWzIsOSwiIiwyLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XV0=&amp;embed" width="432" height="304" style="border-radius: 8px; border: none;"></iframe> </center>
+  <p>图像大小容易失衡, 建议使用 <code class="language-plaintext highlighter-rouge">mathcha</code> 画图, 输出矩阵, 例如</p>
+  <p>$$
+\begin{bmatrix}
+M & →  & F( M) & ↠  & C( M)\\
+h⇣ \  &  & g⇣ \  &  & f⇣ \ \\
+Ω ( N) & →  & P( M) & ↠  & N
+\end{bmatrix}.
+$$</p>
+  <p>或者, 直接插入图片也行.</p>
 </div>
 
-<div class="example"><p>(Use <code class="language-plaintext highlighter-rouge">mathcha</code> to draw picture).</p>
-
-<p><img src="https:/raw.githubusercontent.com/czhang271828/imgs/New_img/n_imgdiagram-20250420%20(2).png" alt="image-20250423194403416" /></p>
+<div class="example">
+  <p>(Use <code class="language-plaintext highlighter-rouge">mathcha</code> to draw picture).</p>
+  <p><img src="https:/raw.githubusercontent.com/czhang271828/imgs/New_img/n_imgdiagram-20250420%20(2).png" alt="image-20250423194403416" /></p>
 </div>
 
-<div class="example"><p>(Block).
-支持 Definition, Theorem, Lemma, Proof, Solution, Example, Remark, Note, Corollary, Proposition, Slogan. 实现方式如下:</p>
-
-<ol>
-  <li>在 <code class="language-plaintext highlighter-rouge">/_sass/main.scss</code> 中定义 solution 的样式 (包含前, 中, 后, 以及 QED 正方形).</li>
-  <li>在 <code class="language-plaintext highlighter-rouge">/_plugins/latex.rb</code> 中定义 solution 公式块环境, 此处使用  {% sol %} {% endsol %} .</li>
-</ol>
+<div class="example">
+  <p>(Block). 支持 Definition, Theorem, Lemma, Proof, Solution, Example, Remark, Note, Corollary, Proposition, Slogan. 实现方式如下:</p>
+  <ol>
+    <li>在 <code class="language-plaintext highlighter-rouge">/_sass/main.scss</code> 中定义 solution 的样式 (包含前, 中, 后, 以及 QED 正方形).</li>
+    <li>在 <code class="language-plaintext highlighter-rouge">/_plugins/latex.rb</code> 中定义 solution 公式块环境, 此处使用 {% sol %} {% endsol %} .</li>
+  </ol>
 </div>
 
-<div class="example"><p>(我的写作界面).</p>
-
-<p>下图左是简陋的 markdown 编辑器 (<code class="language-plaintext highlighter-rouge">VScode</code>, 配 Unicode-math 输入, 类似 <a href="https://live.lean-lang.org/">L∃∀N</a>, 下图右是 <code class="language-plaintext highlighter-rouge">edge</code> 浏览器. 一般来说, 左侧 $\texttt{ctrl + S}$ 保存, 右侧 $\texttt{ctrl + R}$ 直接刷新即可, 用时不超过一秒.</p>
-
-<p><img src="https://raw.githubusercontent.com/czhang271828/imgs/New_img//n_imgimage-20250423194804974.png" alt="image-20250423194804974" /></p>
-</div>
-
-<h3 id="示例">示例</h3>
-
-<div class="slogan"><p>The empty set $∅$ is the initial object of $𝐒𝐞𝐭𝐬$.</p>
-</div>
-
-<div class="note"><p>This is a note.</p>
-</div>
-
-<div class="question"><p>This is a question.</p>
-</div>
-
-<div class="proposition"><p>This is a proposition.</p>
-</div>
-
-<div class="theorem"><p>This is a theorem.</p>
-</div>
-
-<div class="lemma"><p>This is a lemma.</p>
-</div>
-
-<div class="proof"><p>This is a proof.</p>
-</div>
-
-<div class="corollary"><p>This is a corollary.</p>
-</div>
-
-<div class="definition"><p>This is a definition. 作者有意将 <code class="language-plaintext highlighter-rouge">bottom-margin</code> 调整至 <code class="language-plaintext highlighter-rouge">2em</code>.</p>
-</div>
-
-<div class="example"><p>This is an example.</p>
-</div>
-
-<div class="solution"><p>This is a solution.</p>
-</div>
-
-<div class="example"><p>测试视频?</p>
-
-<p><a href="https://youtu.be/dQw4w9WgXcQ"><img src="https://markdown-videos-api.jorgenkh.no/youtube/dQw4w9WgXcQ" alt="上当了" /></a></p>
+<div class="example">
+  <p>(我的写作界面).</p>
+  <p>下图左是简陋的 markdown 编辑器 (<code class="language-plaintext highlighter-rouge">VScode</code>, 配 Unicode-math 输入, 类似 <a href="https://live.lean-lang.org/">L∃∀N</a>, 下图右是 <code class="language-plaintext highlighter-rouge">edge</code> 浏览器. 一般来说, 左侧 $\texttt{ctrl + S}$ 保存, 右侧 $\texttt{ctrl + R}$ 直接刷新即可, 用时不超过一秒.</p>
+  <p><img src="https://raw.githubusercontent.com/czhang271828/imgs/New_img//n_imgimage-20250423194804974.png" alt="image-20250423194804974" /></p>
 </div>
 
 
@@ -216,7 +272,7 @@ h⇣ \  &amp;  &amp; g⇣ \  &amp;  &amp; f⇣ \ \\
     
       <a
         class="next"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting"
+        href="http://localhost:4000/website/posts/Notes_on_Tilting"
         title="NEXT: Notes on Classical Tilting Theory">&lt;&lt;</a>
       <span>
         &middot;
@@ -224,7 +280,7 @@ h⇣ \  &amp;  &amp; g⇣ \  &amp;  &amp; f⇣ \ \\
     
     <a
       class="home"
-      href="https://zhangchenchengsjtu.github.io/website/"
+      href="http://localhost:4000/website/"
       title="Back to Homepage">Home</a>
     
       <span>
@@ -232,8 +288,8 @@ h⇣ \  &amp;  &amp; g⇣ \  &amp;  &amp; f⇣ \ \\
       </span>
       <a
         class="prev"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Reflexive_sub_cat"
-        title="PREV: Notes for Reflexive Subcategories">&gt;&gt;</a>
+        href="http://localhost:4000/website/posts/Reflexive_sub_cat"
+        title="PREV: Notes on Reflexive Subcategories">&gt;&gt;</a>
     
   </div>
 </main>

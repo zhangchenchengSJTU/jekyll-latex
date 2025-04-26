@@ -7,6 +7,8 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
+
+
   <title>$\dim M$ 与 $\dim (T,M)$
     ·
     Jekyll Latex</title>
@@ -18,15 +20,15 @@
   <meta name="google-site-verification" content="abc123">
 
 
-<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
-<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
-<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
-<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/posts/T_Y_Dim">
+<link rel="icon" href="http://localhost:4000/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:4000/website/assets/touch-icon.png">
+<link rel="stylesheet" href="http://localhost:4000/website/assets/core.css">
+<link rel="canonical" href="http://localhost:4000/website/posts/T_Y_Dim">
 <link
   rel="alternate"
   type="application/atom+xml"
   title="Jekyll Latex"
-  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+  href="http://localhost:4000/website/feed.xml" />
 
 
 
@@ -50,6 +52,9 @@
     id="MathJax-script"
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+
+
+
 </head>
 
 <body class="latex-dark">
@@ -57,7 +62,7 @@
 	<aside class="logo">
   
 
-  <a href="https://zhangchenchengsjtu.github.io/website/">
+  <a href="http://localhost:4000/website/">
     <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
   </a>
   <span class="logo-prompt">Back to Home</span>
@@ -80,49 +85,48 @@
 
     <h2 id="证明">证明</h2>
 
-<div class="lemma"><p>($𝒯$, $𝒴$ 与投射维数). 对 $M ∈ 𝒯$.</p>
-
-<ol>
-  <li>若 $p.\dim M ≠ 1$, 则 $p.\dim M = p.\dim (T,M)$.</li>
-  <li>若 $p.\dim M = 1$, 则 $p.\dim (T,M)$ 为 $0$ 或 $1$.</li>
-</ol>
+<div class="lemma">
+  <p>($𝒯$, $𝒴$ 与投射维数). 对 $M ∈ 𝒯$.</p>
+  <ol>
+    <li>若 $p.\dim M ≠ 1$, 则 $p.\dim M = p.\dim (T,M)$.</li>
+    <li>若 $p.\dim M = 1$, 则 $p.\dim (T,M)$ 为 $0$ 或 $1$.</li>
+  </ol>
 </div>
 
-<div class="proof"><p>使用数学归纳法.</p>
-
-<ol>
-  <li>假定 $p.\dim M = 0$. 此时 $M$ 投射. 由 $M ∈ \mathrm{Gen}(T)$ 知 $M ∈ 𝐚𝐝𝐝(T)$. 因此 $p.\dim (T,M) = 0$.</li>
-  <li>
-    <p>假定 $p.\dim M = 1$. 取右逼近的 ses $θ : 0 → K → T^n → M → 0$ 使得 $K ∈ 𝒯$. 此时 $(T, θ)$-正合, 只需证明 $K ∈ 𝐚𝐝𝐝(T)$. 等价地, $\mathrm{Ext}^1(K, 𝒯) = 0$, 考虑以下 ses 即可:</p>
-
-\[0 → \underset{\text{ses}}{\underbrace{(M, 𝒯) → (T^n, 𝒯) → (K, 𝒯)}} → {}^1(M, 𝒯) → {}^1 (T^n, 𝒯) = 0.\]
-  </li>
-  <li>
-    <p>(归纳). 假定 $p.\dim M = n+1 ≥ 2$, 只需证明 $p.\dim (T,K) ≤ n$. 由归纳假设, 只需证明 $p.\dim K ≤ n$. 由</p>
-
-\[0 → \underset{p.\dim = ?}{\underbrace{K}} → \underset{p.\dim ≤ 1}{\underbrace{T^n}} → \underset{p.\dim = n + 1}{\underbrace{M}} → 0,\]
-
-    <p>因此 $p.\dim K = p.\dim M - 1 = n + 1$.</p>
-  </li>
-</ol>
-
-<p>关于取等条件的讨论如下.</p>
-
-<ol>
-  <li>$p. \dim M = 0$ 时 $p. \dim (T, M) = 0$.</li>
-  <li>$p.\dim M = 1$ 时 $p.\dim (T,M) ∈ {0,1}$. 例如取 $M = T ∉ 𝐩𝐫𝐨𝐣$, 则 $p.\dim T = 1$ 但 $p.\dim (T, M) = 0$.</li>
-  <li>
-    <p>$p.\dim M = n ≥ 2$ 时 $p.\dim (T, M) ≥ 2$: 考虑函子的正合列:</p>
-
-\[\mathrm{Ext}{}^1 (M, -)→\mathrm{Ext}{}^1 (T^n, -)→\mathrm{Ext}{}^1 (K, -)→ \mathrm{Ext}{}^2(M, -) → 0 → \cdots.\]
-
-    <p>以及</p>
-
-\[\cdots → 0 → \mathrm{Ext}{}^{k} (K, -) ≃ \mathrm{Ext}{}^{k+1} (M, -) → 0 → \cdots\quad (k ≥ 2).\]
-
-    <p>此时 $\mathrm{Ext}{}^{1,\ldots, n-1} (K, -) ≠ 0$, 但 $\mathrm{Ext}{}^n(K, -) =0$.</p>
-  </li>
-</ol>
+<div class="proof">
+  <p>使用数学归纳法.</p>
+  <ol>
+    <li>假定 $p.\dim M = 0$. 此时 $M$ 投射. 由 $M ∈ \mathrm{Gen}(T)$ 知 $M ∈ 𝐚𝐝𝐝(T)$. 因此 $p.\dim (T,M) = 0$.</li>
+    <li>
+      <p>假定 $p.\dim M = 1$. 取右逼近的 ses $θ : 0 → K → T^n → M → 0$ 使得 $K ∈ 𝒯$. 此时 $(T, θ)$-正合, 只需证明 $K ∈ 𝐚𝐝𝐝(T)$. 等价地, $\mathrm{Ext}^1(K, 𝒯) = 0$, 考虑以下 ses 即可:</p>
+      <p>$$
+    0 → \underset{\text{ses}}{\underbrace{(M, 𝒯) → (T^n, 𝒯) → (K, 𝒯)}} → {}^1(M, 𝒯) → {}^1 (T^n, 𝒯) = 0.
+    $$</p>
+    </li>
+    <li>
+      <p>(归纳). 假定 $p.\dim M = n+1 ≥ 2$, 只需证明 $p.\dim (T,K) ≤ n$. 由归纳假设, 只需证明 $p.\dim K ≤ n$. 由</p>
+      <p>$$
+   0 → \underset{p.\dim = ?}{\underbrace{K}} → \underset{p.\dim ≤ 1}{\underbrace{T^n}} → \underset{p.\dim = n + 1}{\underbrace{M}} → 0,
+   $$</p>
+      <p>因此 $p.\dim K = p.\dim M - 1 = n + 1$.</p>
+    </li>
+  </ol>
+  <p>关于取等条件的讨论如下.</p>
+  <ol>
+    <li>$p. \dim M = 0$ 时 $p. \dim (T, M) = 0$.</li>
+    <li>$p.\dim M = 1$ 时 $p.\dim (T,M) ∈ \{0,1\}$. 例如取 $M = T ∉ 𝐩𝐫𝐨𝐣$, 则 $p.\dim T = 1$ 但 $p.\dim (T, M) = 0$.</li>
+    <li>
+      <p>$p.\dim M = n ≥ 2$ 时 $p.\dim (T, M) ≥ 2$: 考虑函子的正合列:</p>
+      <p>$$
+    \mathrm{Ext}{}^1 (M, -)→\mathrm{Ext}{}^1 (T^n, -)→\mathrm{Ext}{}^1 (K, -)→ \mathrm{Ext}{}^2(M, -) → 0 → \cdots.
+    $$</p>
+      <p>以及</p>
+      <p>$$
+    \cdots → 0 → \mathrm{Ext}{}^{k} (K, -) ≃ \mathrm{Ext}{}^{k+1} (M, -) → 0 → \cdots\quad (k ≥ 2).
+    $$</p>
+      <p>此时 $\mathrm{Ext}{}^{1,\ldots, n-1} (K, -) ≠ 0$, 但 $\mathrm{Ext}{}^n(K, -) =0$.</p>
+    </li>
+  </ol>
 </div>
 
 
@@ -132,7 +136,7 @@
     
       <a
         class="next"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Talk"
+        href="http://localhost:4000/website/posts/Talk"
         title="NEXT: 2025-04-25-讨论班">&lt;&lt;</a>
       <span>
         &middot;
@@ -140,7 +144,7 @@
     
     <a
       class="home"
-      href="https://zhangchenchengsjtu.github.io/website/"
+      href="http://localhost:4000/website/"
       title="Back to Homepage">Home</a>
     
       <span>
@@ -148,7 +152,7 @@
       </span>
       <a
         class="prev"
-        href="https://zhangchenchengsjtu.github.io/website/posts/Hom_D_Hereditary"
+        href="http://localhost:4000/website/posts/Hom_D_Hereditary"
         title="PREV: 遗传范畴的 $\mathrm{Hom}_{D𝒜}(-,-)$.">&gt;&gt;</a>
     
   </div>
