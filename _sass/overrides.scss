@@ -303,24 +303,88 @@ pre {
 }
 
 article {
-
-    /* Nested ordered list for ToC */
-    .markdown-toc ol,
-    ul {
-        counter-reset: item;
-        padding-left: 2rem;
-
-        li {
-            display: block;
-        }
-
-        li:before {
-            content: counters(item, ".") " ";
-            counter-increment: item;
-            padding-right: 0.85rem;
-        }
+    /* 只针对目录的有序列表 */
+#markdown-toc,
+.markdown-toc {
+    margin-left: 2rem; 
+    list-style-type: none;
+    counter-reset: toc-item;
+    padding-left: 1.5rem;
+  
+  li {
+    display: block;
+    position: relative;
+    counter-increment: toc-item;
+    
+    &::before {
+      content: counters(toc-item, ".") ". ";
+      position: absolute;
+      left: -2rem;
+      width: 1.3rem;
+      text-align: right;
     }
+    
+    ul {
+      counter-reset: toc-item;
+      padding-left: 2rem;
+    }
+  }
 }
+
+/* 普通无序列表样式 */
+ul:not(#markdown-toc):not(.markdown-toc) {
+  list-style-type: disc;
+  padding-left: 2rem;
+  
+  li::before {
+    content: none !important; /* 确保不显示编号 */
+  }
+}
+}
+
+// article {
+
+//     /* Nested ordered list for ToC */
+//     .markdown-toc ol,
+//     ul {
+//         counter-reset: item;
+//         padding-left: 2rem;
+
+//         li {
+//             display: block;
+//         }
+
+//         li:before {
+//             content: counters(item, ".") " ";
+//             counter-increment: item;
+//             padding-right: 0.85rem;
+//         }
+//     }
+//     // /* 普通列表保持原样 */
+//     // ul:not(.markdown-toc) {
+//     //     list-style-type: disc;
+//     //     li:before { content: none !important; } /* 禁用计数器 */
+//     // }
+    
+// }
+
+// 新 scss
+// article {
+//     /* 仅针对目录的计数器 */
+//     .markdown-toc ol {
+//       counter-reset: item;
+//       li:before {
+//         content: counters(item, ".") " ";
+//         counter-increment: item;
+//       }
+//     }
+  
+//     /* 普通列表保持原样 */
+//     ul:not(.markdown-toc) {
+//       list-style-type: disc;
+//       li:before { content: none !important; } /* 禁用计数器 */
+//     }
+//   }
 
 .main-container {
     display: flex;

@@ -55,6 +55,14 @@ module Jekyll
       end
     end
 
+    # class DefinitionBlock < Liquid::Block
+
+    #   def render(context)
+    #     text = super
+    #     "<div class='definition'>#{text}</div>"
+    #   end
+    # end
+
     class ProblemBlock < Liquid::Block
       def render(context)
         text = super  # 获取块内原始内容
@@ -65,12 +73,11 @@ module Jekyll
       end
     end
 
-
-    # class DefinitionBlock < Liquid::Block
+    # class ProblemBlock < Liquid::Block
 
     #   def render(context)
     #     text = super
-    #     "<div class='definition'>#{text}</div>"
+    #     "<div class='problem'>#{text}</div>"
     #   end
     # end
 
