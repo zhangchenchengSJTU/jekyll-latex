@@ -2,6 +2,7 @@
 title: $𝐅𝐩 → 𝐏𝐥𝐚𝐭 → 𝐏𝐫𝐨𝐣$
 author: Chencheng Zhang
 layout: post
+category: proof
 ---
 
 {% prop %}

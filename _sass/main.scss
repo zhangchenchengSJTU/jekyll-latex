@@ -103,7 +103,8 @@
 :root {
   // --body-color: hsl(0, 5%, 10%);
   --body-color: hsl(0, 0%, 0%);
-  --body-bg-color: hsl(210, 20%, 98%);
+  // --body-bg-color: hsl(210, 20%, 98%);
+  --body-bg-color: hsl(0, 0%, 100%);
   --link-visited: hsl(0, 100%, 33%);
   --link-focus-outline: hsl(220, 90%, 52%);
   --pre-bg-color: hsl(210, 28%, 93%);
@@ -121,9 +122,10 @@
 }
 
 .latex-dark {
-  --body-color: hsl(0, 0%, 86%);
+  // --body-color: hsl(0, 0%, 86%);
+  --body-color: hsl(0, 0%, 0%);
   // --body-bg-color: hsl(0, 0%, 16%);
-  --body-bg-color: hsl(0, 0%, 0%);
+  --body-bg-color: hsl(0, 0%, 100%);
   --link-visited: hsl(196 80% 77%);
   --link-focus-outline: hsl(215, 63%, 73%);
   --pre-bg-color: hsl(0, 1%, 25%);
@@ -145,7 +147,7 @@
     --link-focus-outline: hsl(215, 63%, 73%);
     --pre-bg-color: hsl(0, 1%, 25%);
     // --kbd-bg-color: hsl(0, 0%, 16%);
-    --kbd-bg-color: hsl(0, 0%, 0%);
+    --kbd-bg-color: hsl(0, 0%, 100%);
     --kbd-border-color: hsl(210, 5%, 70%);
     --table-border-color: white;
     --sidenote-target-border-color: hsl(0, 0%, 59%);
@@ -635,6 +637,26 @@ dl dd {
 }
 
 .definition p {
+  display: inline;  /* 取消段落换行 */
+  margin: 0 !important;  /* 清除默认边距 */
+}
+
+
+/* Problem */
+.problem {
+  counter-increment: problem;
+  display: block;
+  margin: 12px 0;
+  font-style: normal;
+}
+
+.problem::before {
+  content: 'Problem ' counter(problem) '. ';
+  font-weight: bold;
+  font-style: normal;
+}
+
+.problem p {
   display: inline;  /* 取消段落换行 */
   margin: 0 !important;  /* 清除默认边距 */
 }

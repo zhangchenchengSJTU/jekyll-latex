@@ -2,6 +2,7 @@
 title: 有可数积或可数余积的三角范畴必 Karoubi
 author: Chencheng Zhang
 layout: post
+category: proof
 --- 
 
 {% lem %}

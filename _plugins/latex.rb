@@ -55,6 +55,16 @@ module Jekyll
       end
     end
 
+    class ProblemBlock < Liquid::Block
+      def render(context)
+        text = super  # 获取块内原始内容
+        site = context.registers[:site]  # 获取 Jekyll 的 site 对象
+        converter = site.find_converter_instance(Jekyll::Converters::Markdown)  # 获取 Markdown 转换器
+        converted_content = converter.convert(text.strip)  # 将内容转换为 HTML
+        "<div class='problem'>#{converted_content}</div>"  # 包裹转换后的内容
+      end
+    end
+
 
     # class DefinitionBlock < Liquid::Block
 
@@ -258,5 +268,6 @@ Liquid::Template.register_tag('slo', Jekyll::SloganBlock)
 Liquid::Template.register_tag('note', Jekyll::NoteBlock)
 Liquid::Template.register_tag('qs', Jekyll::QuestionBlock)
 Liquid::Template.register_tag('prop', Jekyll::PropositionBlock)
+Liquid::Template.register_tag('pro', Jekyll::ProblemBlock)
 Liquid::Template.register_tag('sol', Jekyll::SolutionBlock)
 Liquid::Template.register_tag('bl', Jekyll::BlankBlock)

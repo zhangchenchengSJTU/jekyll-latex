@@ -2,6 +2,7 @@
 title: 局部 tilting 模诱导的 torsion pair
 author: Chencheng Zhang
 layout: post
+category: proof
 ---
 
 ## 证明

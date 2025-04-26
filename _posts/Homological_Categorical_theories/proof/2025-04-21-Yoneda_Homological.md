@@ -2,7 +2,10 @@
 title: 米田嵌入是上同调函子
 author: Chencheng Zhang
 layout: post
+category: proof
 --- 
+## 证明
+
 {% lem %}
 反变的米田嵌入 $𝒯^{\mathrm{op}} → 𝐅𝐮𝐧𝐜𝐭(𝒞, 𝐌𝐨𝐝_k)$ 是上同调函子. 
 {% endlem %}

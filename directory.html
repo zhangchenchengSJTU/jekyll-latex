@@ -1,0 +1,65 @@
+---
+layout: default
+sidebar: main
+---
+<style>
+  /* 彻底释放宽度限制 */
+  body, .main-container {
+    max-width: 100%;
+    padding: 0 -1000px;  /* 仅保留最小边距 */
+    margin: 0;
+  }
+
+  /* 列表项布局优化 */
+  .post-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .post-list li {
+    display: flex;
+    gap: 30px;       /* 增加时间和标题间距 */
+    align-items: flex-start; /* 顶部对齐 */
+    margin-bottom: 15px;
+  }
+
+  /* 左侧时间/分类 */
+  .post-meta {
+    width: 120px;    /* 加宽左侧区域 */
+    text-align: right;
+    flex-shrink: 0;
+    padding-top: 2px; /* 微调垂直对齐 */
+  }
+
+  /* 右侧标题 */
+  .title {
+    flex: 1;
+    min-width: 0;    /* 允许标题压缩 */
+  }
+
+  .title a {
+    word-break: break-word; /* 强制长单词换行 */
+    display: inline-block;
+  }
+</style>
+
+<main class="main-container">
+  <section class="post-list">
+    {% for post in site.posts %}
+      <ul style="margin: 0; padding: 0; list-style: none;">
+        <li>
+          <div class="post-meta">
+            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+            <span class="post-category">
+              {% if post.category %}{{ post.category }}{% elsif post.categories %}{{ post.categories | join: ", " }}{% endif %}
+            </span>
+          </div>
+          <div class="title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </div>
+        </li>
+      </ul>
+    {% endfor %}
+  </section>
+</main>

@@ -2,6 +2,7 @@
 title: Finitely Presented Flat is Projective
 author: Chencheng Zhang
 layout: post
+category: notes
 ---
 {% thm %}
 (有限表现 + 平坦 = 投射).

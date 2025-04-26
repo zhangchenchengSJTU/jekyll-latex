@@ -2,7 +2,10 @@
 title: 具有投射盖的平坦对象必投射
 author: Chencheng Zhang
 layout: post
+category: notes
 --- 
+
+## 证明
 
 试思考以下问题: 若平坦模有投射盖, 则必是投射模.
 

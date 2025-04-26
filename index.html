@@ -1,4 +1,44 @@
 ---
 layout: default
 ---
-{% include index.liquid %}
+
+<h2>Seminare</h2>
+
+{% for post in site.posts %}
+  {% if 
+    post.categories contains "seminare" 
+  %}
+    <h5><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h5>
+    <p>{{ post.date | date: "%Y-%m-%d" }} • {{ post.categories | join: ", " }}</p>
+  {% endif %}
+{% endfor %}
+
+<h2>Notes</h2>
+
+{% for post in site.posts %}
+  {% if 
+    post.categories contains "notes" 
+  %}
+    <h5><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h5>
+    <p>{{ post.date | date: "%Y-%m-%d" }} • {{ post.categories | join: ", " }}</p>
+  {% endif %}
+{% endfor %}
+
+<h2>The $\LaTeX$ Template</h2>
+
+{% for post in site.posts %}
+  {% if 
+    post.categories contains "latex" 
+  %}
+    <h5><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h5>
+    <p>{{ post.date | date: "%Y-%m-%d" }} • {{ post.categories | join: ", " }}</p>
+  {% endif %}
+{% endfor %}
+
+<h2>Statistics</h2>
+
+<p>The website was last built on {{ site.time | date: "%Y-%m-%d %H:%M:%S" }}, and <a href = "directory">this</a> is a directory for all published posts.</p>
+
+<h2>Acknowledgement</h2>
+
+<p>This website is based on <a href = "https://github.com/ryanmcdermott/jekyll-latex">this outstanding repository</a>, to whose author we extend our sincere gratitude.</p>

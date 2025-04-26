@@ -14,23 +14,29 @@ url:                "https://zhangchenchengsjtu.github.io" # Change to your site
 baseurl:            "/website"
 permalink:          posts/:title # Post permalink
 timezone:           Asia/Shanghai # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-mathjax:            true  # enables support for mathjax - set to false to disable
 
-# Site Build
-highlighter:        rouge
-markdown:           kramdown
+# markdown: kramdown
+# kramdown:
+#   input: Kramdown   # <---- not GFM!!
+#   disable_emphasis: true
+#   math_engine: mathjax
+#   entity_output: as_char
+#   math_engine_opts:
+#     allow_dollar_delimiter: true
+#     allow_underscore: true
+
+markdown: CustomKramdown
 kramdown:
-    # parse_block_html: true
-    # syntax_highlighter: rouge
-    # # 禁用下划线作为强调符号
-    # smart_quotes: lsquo,rsquo,ldquo,rdquo
-    # enable_coderay: false
-    # # 关键配置：关闭下划线强调
-    # hard_wrap: false
-    input: GFM
-    # # 禁用下划线规则
-    # translator_class: Kramdown::Converter::Html
-    # footnote_backlink: "↩"
+  math_engine: mathjax
+  input: GFM
+  syntax_highlighter: rouge
+ 
+syntax_highlighter: rouge
+hard_wrap: false
+
+mathjax: true
+
+
 sass:
     style:          :compressed
 

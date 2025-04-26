@@ -2,7 +2,11 @@
 title: 上同调函子保持弱核
 author: Chencheng Zhang
 layout: post
+category: proof
 ---
+
+## 证明
+
 {% lem %}
 (上) 同调函子保持弱核.
 {% endlem %}

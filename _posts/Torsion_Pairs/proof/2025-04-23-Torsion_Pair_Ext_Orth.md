@@ -2,6 +2,7 @@
 title: Torsion Class 与 $\mathrm{Ext}^1$
 author: Chencheng Zhang
 layout: post
+category: proof
 ---
 ## 证明
 

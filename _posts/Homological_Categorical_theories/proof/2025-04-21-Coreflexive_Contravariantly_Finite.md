@@ -2,6 +2,7 @@
 title: 余反射子范畴与反变有限子范畴
 author: Chencheng Zhang
 layout: post
+category: proof
 --- 
 {% prop %}
 (余反射与反变有限).
