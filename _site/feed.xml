@@ -3,7 +3,777 @@
   <channel>
     <title>Jekyll Latex</title>
     <description>A pretty good Jekyll theme</description>
-    <link>http://localhost:4000/website</link>
+    <link>https://zhangchenchengsjtu.github.io/website</link>
+    
+      
+        <item>
+          <title>遗传范畴的 tilting 对象给出 $𝐦𝐨𝐝_{B}$ 的可裂 torsion pair</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;p&gt;以下遗传范畴要求有足够投射对象, 且 tilting 对象 $T$ 使得一切 $(T,X)$ 均是有限生成右 $\mathrm{End}(T)$-模. 一个较弱的条件是 $\mathrm{Hom}$-群有限维.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(遗传范畴的 torsion pair, &lt;a href=&quot;KerHom_KerExt_TP&quot;&gt;证明&lt;/a&gt;). 对上述遗传范畴与 tilting 对象 $T$.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$(\ker \mathrm{Ext}^0(T,-), \ker \mathrm{Ext}^1(T,-))$ 是 torsion pair, 记作 $(𝒯, ℱ)$.&lt;/li&gt;
+    &lt;li&gt;BB 导出等价给出 $(𝒳 , 𝒴) ≃ (ℱ[1], 𝒯)$.&lt;/li&gt;
+    &lt;li&gt;$gl.\dim B ≤ 2$.&lt;/li&gt;
+    &lt;li&gt;若 $B$ 遗传, 则 $(𝒯, ℱ)$ 可裂.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(遗传范畴的 torsion pair, &lt;a href=&quot;KerHom_KerExt_TP&quot;&gt;证明&lt;/a&gt;). 对上述遗传范畴与 tilting 对象 $T$, 则&lt;/p&gt;
+  &lt;p&gt;$$
+(\ker \mathrm{Ext}^0(T,-), \ker \mathrm{Ext}^1(T,-))
+$$&lt;/p&gt;
+  &lt;p&gt;是 torsion pair, 记作 $(𝒯, ℱ)$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;先说明 $X ∈ 𝒯 ∩ ℱ$ 必然是零元.&lt;/p&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;若不然, 则 $\mathrm{Ext}^∙ (T, X) =0$, 由厚子范畴的二推知 $\mathrm{Ext}^∙ (X, X) =0$.&lt;/p&gt;
+  &lt;/blockquote&gt;
+  &lt;p&gt;继而对 $X$ 构造典范正合列.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;(构造可裂的六项正合列). $𝒯$ 部分是 $e_X : (T,X) ⊗_B T → X$ 的像. 考虑六项正合列&lt;/p&gt;
+      &lt;p&gt;$$
+   \begin{bmatrix}
+   0 &amp; \rightarrow  &amp; \left( T,\operatorname{im} e_{X}\right) &amp; \to &amp; ( T,X) &amp; \rightarrow  &amp; \left( T,\frac{X}{\operatorname{im} e_{X}}\right) &amp;  &amp; \\
+    &amp;  &amp; \operatorname{Ext}^{1}\left( T,\operatorname{im} e_{X}\right) &amp; \rightarrow  &amp; \operatorname{Ext}^{1}( T,X) &amp; \rightarrow  &amp; \operatorname{Ext}^{1}\left( T,\frac{X}{\operatorname{im} e_{X}}\right) &amp; \rightarrow  &amp; 0
+   \end{bmatrix}.
+   $$&lt;/p&gt;
+      &lt;p&gt;今断言 $(T, \operatorname{im}e_X) → (T,X)$ 是同构, 下只需证明满射. 实际上, 任给定 $φ : T → X$, 考虑&lt;/p&gt;
+      &lt;p&gt;$$
+   Φ : T → (T,X) ⊗_B T → X,\quad t ↦ φ ⊗ t.
+   $$&lt;/p&gt;
+      &lt;p&gt;由 $e _X(Φ) = φ$, 得 $φ$ 通过 $e_X$ 分解, 进而通过 $\operatorname{im} e_X$ 分解.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;(证明 $𝒯 ⊆ \ker \mathrm{Ext}^1(T,-)$). 注意到遗传范畴中 $\mathrm{Ext}^1$ 右正合, 且 $\operatorname{im}e_X$ 是 $T^n$ 的商对象.&lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;(证明 $t^2 = t$). 下证明 $e_{\operatorname{im} e_X}$ 的单射部分 $\operatorname{im} e_{\operatorname{im} e_X} ↪ \operatorname{im} e_X$ 是同构. 考虑交换图&lt;/p&gt;
+      &lt;p&gt;$$
+    \begin{bmatrix}
+    \left( T,\operatorname{im} e_{X}\right) \otimes T &amp; \rightarrow  &amp; \operatorname{im} e_{\operatorname{im} e_{X}} &amp; \hookrightarrow  &amp; \operatorname{im} e_{X}\\
+    \sim \downarrow \ \  &amp;  &amp; ⤵  &amp;  &amp; ⤵ \\
+    ( T,X) \otimes T &amp; \twoheadrightarrow  &amp; \operatorname{im} e_{X} &amp; \hookrightarrow  &amp; X
+    \end{bmatrix}.
+    $$&lt;/p&gt;
+      &lt;p&gt;此时 $\operatorname{im} e_{\operatorname{im} e_X} ↪ \operatorname{im} e_X$ 是满的, 因此是同构.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;(证明 $ℱ ⊆ \ker \mathrm{Ext}^0(T,-)$). 选取 torsion-free 部分 $\frac{X}{\mathrm{im}(e_X)}$. 考虑如下正合列:&lt;/p&gt;
+      &lt;p&gt;$$
+   \begin{bmatrix}
+   0 &amp; \rightarrow  &amp; {\color{red}\left( T,\operatorname{im} e_{X}\right)} &amp; {\color{red}\xrightarrow{\sim }} &amp; {\color{red}( T,X)} &amp; \rightarrow  &amp; \left( T,\frac{X}{\operatorname{im} e_{X}}\right) &amp;  &amp; \\
+    &amp;  &amp; {\color{blue}\operatorname{Ext}^{1}\left( T,\operatorname{im} e_{X}\right)} &amp; \rightarrow  &amp; \operatorname{Ext}^{1}( T,X) &amp; \rightarrow  &amp; \operatorname{Ext}^{1}\left( T,\frac{X}{\operatorname{im} e_{X}}\right) &amp; \rightarrow  &amp; 0
+   \end{bmatrix}.
+   $$&lt;/p&gt;
+      &lt;p&gt;蓝处为零, 红处为同构. 此时 $(T,\frac X{\mathrm{im}(e_X)})=0$.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;(证明 $\mathrm{Hom}(𝒯 , ℱ) =0$). 由 $(𝐚𝐝𝐝 (T), ℱ)=0$, 以及左垂直对商封闭.&lt;/li&gt;
+    &lt;li&gt;(证明 $\ker \mathrm{Ext}^1(T,-) ⊆ 𝒯$). 对任意 $M ∈ \ker \mathrm{Ext}^1(T,-)$, 易知 $\mathrm{Ext}^∙ (T, M / \operatorname{im}e_M) = 0$. 由 $T$ 生成 Serre 子范畴, 得 $(M / \operatorname{im}e_M) = 0$, 即 $M ∈ 𝒯$.&lt;/li&gt;
+    &lt;li&gt;(证明 $\ker \mathrm{Ext}^0(T,-) ⊆ ℱ$). 类似地, 若 $N ∈ \ker \mathrm{Ext}^0(T,-)$, 则 $\mathrm{Ext}^∙ (T, \operatorname{im}e_N) = 0$.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;最后说明这一构造的函子性. 显然 $e_X$ 是函子的, 故 $𝒯$ 部分的构造是函子的. 因此, 典范正合列是函子的.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;由通常的 BB 定理, BB 导出等价给出 $(𝒳 , 𝒴) ≃ (ℱ[1], 𝒯)$. 此处的证明也可以由 &lt;a href=&quot;Happel_Derived_Equivalence&quot;&gt;Happel 导出等价&lt;/a&gt;定理完成.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;$gl.\dim B ≤ 2$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;回顾&lt;a href=&quot;Gl_Dim_A_B&quot;&gt;此处&lt;/a&gt;. 证明的前半部分没有使用 $A$ 是环这一条件. 记 $p.\dim 𝒜$ 是范畴 $𝒜$ 的投射维数, 则&lt;/p&gt;
+  &lt;p&gt;$$
+gl.\dim B ≤ p.\dim 𝒜  + 1 ≤ 2.
+$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;若 $B$ 遗传, 则 $(𝒯, ℱ)$ 可裂.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-27T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/KerHom_KerExt_TP</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/KerHom_KerExt_TP</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Happel 的导出等价定理</title>
+          <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#abstract&quot; id=&quot;markdown-toc-abstract&quot;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#happel-导出等价定理&quot; id=&quot;markdown-toc-happel-导出等价定理&quot;&gt;Happel 导出等价定理&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#谱序列方法&quot; id=&quot;markdown-toc-谱序列方法&quot;&gt;谱序列方法&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#bb-定理的原始证明&quot; id=&quot;markdown-toc-bb-定理的原始证明&quot;&gt;BB 定理的原始证明&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;abstract&quot;&gt;
+  &lt;h5 id=&quot;abstract&quot;&gt;Abstract&lt;/h5&gt;
+  &lt;div&gt;
+    &lt;p&gt;关于 BB 定理的若干证明.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;(BB 定理的原始证明). 函子 $(T,-)$ 建立了 $𝐚𝐝𝐝 (T)$ 与 $𝐩𝐫𝐨𝐣 (\mathrm{End}(T_A))$ 之间的范畴等价. 若 $T$ 是 tilting 模, 则这一范畴等价可以扩大至商对象上, 即 $𝒯 ≃ (T, 𝒯)$. 类似的检验对 $\mathrm{Ext}^1(T,-)$ 奏效. 注意: $p.\dim T ≤ 1$ 时, $(T, - )$ 与 $\mathrm{Ext}^1(T,-)$ 分别是左正合与右正合函子.&lt;/li&gt;
+      &lt;li&gt;(Happel 的导出等价定理) 这将结论推广至投射维度有限的 tilting 对象.&lt;/li&gt;
+      &lt;li&gt;(谱序列方法). 这是对 Happel 导出等价定理的完善, 其更精细地给出导出等价中轴复形的对应关系.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;happel-导出等价定理&quot;&gt;Happel 导出等价定理&lt;/h2&gt;
+
+&lt;p&gt;以下 $𝒜$ 是有足够投射的 Abel 范畴.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;若 $T ∈ 𝒜$ 满足 $\mathrm{Ext}^{≥ 1}(T) = 0$, 则局部化 $C^b(𝐚𝐝𝐝 T) ↣ C^b𝒜 → D^b𝒜$ 诱导的态射&lt;/p&gt;
+  &lt;p&gt;$$
+K^b(𝐚𝐝𝐝 (T)) → D^b 𝒜
+$$&lt;/p&gt;
+  &lt;p&gt;是全忠实的嵌入.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;以下使用数学归纳法证明. 记 $P(m,n)$ 是:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;p&gt;对一切长度不超过 $m$ 与 $n$ 的复形 $P$ 与 $Q$, 以下是同构&lt;/p&gt;
+      &lt;p&gt;$$
+  (P,Q)_{K^b(𝐚𝐝𝐝 (T))} → (P,Q)_{K^b𝒜} → (P,Q)_{D^b 𝒜}.
+  $$&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;显然 $P(0,0)$ 成立, 因为对轴复形 $X,Y ∈ C^b (𝐚𝐝𝐝(T))$ 总有 $\mathrm{Ext}^{≥ 1}(X,Y) = 0$. &lt;br /&gt; 下进行归纳, 假定 $P(≤ m, ≤ n)$ 成立. 对任意长度为 $m+1$ 的 $X$, 考虑强制截断, 则有同伦范畴以及导出范畴的好三角 $LX → X → RX → LX[1]$. 对 $(-,Y)_{K^b(𝐚𝐝𝐝 (T))}$ 与 $(-,Y)_{D^b 𝒜}$ 使用同调代数基本定理, 得交换图&lt;/p&gt;
+  &lt;p&gt;$$
+\scriptsize\begin{bmatrix}
+( LX[ 1] ,Y)_{K^{b}(\mathbf{add}( T))} &amp; \rightarrow  &amp; ( RX,Y)_{K^{b}(\mathbf{add}( T))} &amp; \rightarrow  &amp; ( X,Y)_{K^{b}(\mathbf{add}( T))} &amp; \rightarrow  &amp; ( LX,Y)_{K^{b}(\mathbf{add}( T))} &amp; \rightarrow  &amp; ( RX[ -1] ,Y)_{K^{b}(\mathbf{add}( T))}\\
+\parallel  &amp;  &amp; \parallel  &amp;  &amp; \downarrow  &amp;  &amp; \parallel  &amp;  &amp; \parallel \\
+( LX[ 1] ,Y)_{D^{b} 𝒜 } &amp; \rightarrow  &amp; ( RX,Y)_{D^{b} 𝒜 } &amp; \rightarrow  &amp; ( X,Y)_{D^{b} 𝒜 } &amp; \rightarrow  &amp; ( LX,Y)_{D^{b} 𝒜 } &amp; \rightarrow  &amp; ( RX[ -1] ,Y)_{D^{b} 𝒜 }
+\end{bmatrix}
+$$&lt;/p&gt;
+  &lt;p&gt;此时, 中间箭头是同构. 这完成了归纳 $P(≤ m, ≤ n) ⇒ P(≤ m+1, ≤ n)$. 另一方向同理. 综上, 以上 $K^b(𝐚𝐝𝐝 (T)) → D^b 𝒜$ 是全忠实的.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;$𝒜$ 的整体维度有限, 当且仅当局部化函子诱导的 $K^b(𝐩𝐫𝐨𝐣(𝒜)) ≃ D^b(𝒜)$ 是范畴等价.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;略.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;记 Abel 范畴 $𝒜$ 有足够投射且整体维数有限. 若存在 $T ∈ 𝒜$ 满足 $\mathrm{Ext}^{≥ 1}(T,T) = 0$, 记 $B = \mathrm{End}(T_A)$. 此时, 以下 tilting 函子给出范畴等价:&lt;/p&gt;
+  &lt;p&gt;$$
+(T,-)_A : 𝐚𝐝𝐝 (T) ⇆ 𝐩𝐫𝐨𝐣 : (- ⊗ _BT).
+$$&lt;/p&gt;
+  &lt;p&gt;特别地, 以下是三角等价 (右侧是导出等价):&lt;/p&gt;
+  &lt;p&gt;$$
+\begin{bmatrix}
+\mathbf{add}( T) &amp;  &amp; K^{b}(\mathbf{add}( T)) &amp; \xrightarrow[\sim ]{\text{lem.}} &amp; D^{b} 𝒜 \\
+{\small( T,-)} ⇅ {\small -⊗ _{B} T} &amp; ⇒  &amp; ⇅  &amp;  &amp; ⇅ \\
+\mathbf{proj} &amp;  &amp; K^{b}(\mathbf{proj}) &amp; \xrightarrow[∼ ]{} &amp; D^{b}( B)
+\end{bmatrix}.
+$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;使用上述引理即可.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;谱序列方法&quot;&gt;谱序列方法&lt;/h2&gt;
+
+&lt;p&gt;待补充.&lt;/p&gt;
+
+&lt;h2 id=&quot;bb-定理的原始证明&quot;&gt;BB 定理的原始证明&lt;/h2&gt;
+
+&lt;p&gt;待补充.&lt;/p&gt;
+</description>
+          <pubDate>2025-04-27T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Happel_Derived_Equivalence</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Happel_Derived_Equivalence</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>遗传范畴与可裂 torsion pair</title>
+          <description>&lt;h2 id=&quot;遗传范畴的-torsion-pair&quot;&gt;遗传范畴的 torsion pair&lt;/h2&gt;
+
+&lt;p&gt;本节的范畴要求有足够投射对象, 且 tilting 对象 $T$ 使得一切 $(T,X)$ 均是有限生成右 $\mathrm{End}(T)$-模. 一个较弱的条件是 $\mathrm{Hom}$-群有限维.&lt;/p&gt;
+
+&lt;p&gt;仿照三角范畴, 定义 Abel 范畴的厚子范畴为, 关于 ses 二推三封闭的全子范畴.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(遗传范畴). 称 Abel 范畴遗传, 若米田积意义下的 $\mathrm{Ext}^2(-,-)$ 函子消失.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(&lt;a href=&quot;Hereditary_PBPO&quot;&gt;证明&lt;/a&gt;) 遗传范畴中的满单分解均可补全作推出拉回方块.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(&lt;a href=&quot;Hom_D_Hereditary&quot;&gt;证明&lt;/a&gt;). 遗传范畴中, $X^∙$ 与 $H^∙(X)$ (同调群构成的轴复形) 导出等价.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(遗传范畴的 Tilting 对象). 称 $T ∈ 𝒜$ 是 tilting 对象, 若 $T$ 生成的厚子范畴是 $𝒜$, 且 $\mathrm{Ext}^1(T,T)=0$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;可以发现, 遗传范畴中的 tilting 对象与通常意义的 tilting 模是兼容的.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;遗传对应 $p.\dim T ≤ 1$,&lt;/li&gt;
+  &lt;li&gt;$T$ 生成厚子范畴的条件对应 $A$ 的 $𝐚𝐝𝐝(T)$-余消解维度 $≤1$,&lt;/li&gt;
+  &lt;li&gt;$\mathrm{Ext}^1(T,T) = 0$ 保持不变.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(遗传范畴的 torsion pair, &lt;a href=&quot;KerHom_KerExt_TP&quot;&gt;证明&lt;/a&gt;). 对上述遗传范畴与 tilting 对象 $T$.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$(\ker \mathrm{Ext}^0(T,-), \ker \mathrm{Ext}^1(T,-))$ 是 torsion pair, 记作 $(𝒯, ℱ)$.&lt;/li&gt;
+    &lt;li&gt;BB 导出等价给出 $(𝒳 , 𝒴) ≃ (ℱ[1], 𝒯)$.&lt;/li&gt;
+    &lt;li&gt;若 $B$ 遗传, 则 $(𝒯, ℱ)$ 可裂.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;示意图如下:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/czhang271828/imgs/New_img//n_imgimage-20250424135358118.png&quot; alt=&quot;image-20250424135358118&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(可裂 torsion pair 的等价定义). 称 Abel 范畴 $𝒜$ 中的 torsion pair $(𝒯, ℱ)$ 可裂, 若以下等价命题成立.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$𝒯∪ℱ$ 包含一切不可分解对象.&lt;/li&gt;
+    &lt;li&gt;$\mathrm{Ext}_𝒜^1(ℱ, 𝒯) = 0$.&lt;/li&gt;
+    &lt;li&gt;$𝒯$ 关于 $τ⁻¹$ 封闭.&lt;/li&gt;
+    &lt;li&gt;$ℱ$ 关于 $τ$ 封闭.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;依次证明所有命题与 1. 等价.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;p&gt;(1 ⇒ 2). 对任意 ses $0 → T → E → F → 0$. 由假定, $E ∈ ℱ ⊕ 𝒯$. 上述 ses 的矩阵形式是&lt;/p&gt;
+      &lt;p&gt;$$
+  0 → T \xrightarrow {\binom a0} E_𝒯 ⊕ E_ℱ \xrightarrow{(0 \ b)} 0.
+  $$&lt;/p&gt;
+      &lt;p&gt;显然 $a$ 与 $b$ 必是同构.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;(2 ⇒ 1). 若不然, 则存在不可分解的对象 $X ∉ (𝒯 ∪ ℱ)$. 此时存在三项非零的典范短正合列&lt;/p&gt;
+      &lt;p&gt;$$
+  0 → tX → X → fX → 0
+  $$&lt;/p&gt;
+      &lt;p&gt;由 ses 可裂, 得 $X ∈ 𝒯 ⊕ ℱ$, 与假定矛盾.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;(1 ⇒ 3). 任取 $T ∈ 𝒯$, 考虑几乎可裂 ses $0 → T → ⨁ E_i → τ⁻¹ T → 0$. 由 $(T,E_i) ≠ 0$, 以及不可分解对象 $E_i ∈ 𝒯 ∪ ℱ$, 只能有 $E_i ∈ 𝒯$. 因此, $τ⁻¹ T ∈ 𝒯$.&lt;/li&gt;
+    &lt;li&gt;(3 ⇒ 2 ⇒ 1). 若 $(τ⁻¹𝒯 , ℱ) = 0$, 由 &lt;a href=&quot;AR_Formula&quot;&gt;AR 公式&lt;/a&gt;知 $\mathrm{Ext}^1(ℱ , 𝒯 ) = 0$. 进而有 1.&lt;/li&gt;
+    &lt;li&gt;(1 ⇒ 4 ⇒ 1). 与 1 ⇒ 3 ⇒ 1 d 证明完全对偶.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-27T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Hereditary_TP_Split</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hereditary_TP_Split</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>关于谱序列与滤过复形等</title>
+          <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#abstract&quot; id=&quot;markdown-toc-abstract&quot;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;abstract&quot;&gt;
+  &lt;h5 id=&quot;abstract&quot;&gt;Abstract&lt;/h5&gt;
+  &lt;div&gt;
+    &lt;p&gt;本节通过滤过复形构造谱序列, 并将之引申至双复形的谱序列, 以此证明同调代数中的若干的基本定理.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;$2 × 2$ 交换图的同调群, 推出拉回等;&lt;/li&gt;
+      &lt;li&gt;复形态射基本定理 (包括正合复形的态射, 强形式的 $3 × 3$ 引理, 强形式蛇引理等);&lt;/li&gt;
+      &lt;li&gt;AR 公式与高阶导出函子, 主要是 $\mathrm{Tor}$ (见 torsionless 模), 高阶 $\mathrm{Ext}$ (见 Auslander-Bridger 公式);&lt;/li&gt;
+      &lt;li&gt;Grothendieck 谱序列 (复合函子求导);&lt;/li&gt;
+      &lt;li&gt;投射维度有限的 tilting 模 (广义 tilting 模) 的 Brenner-Butler 定理.&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;需要一些技巧, 例如:&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;$E_2$ 步的长正合列;&lt;/li&gt;
+      &lt;li&gt;Eilenberg-Cartan 消解;&lt;/li&gt;
+      &lt;li&gt;函子同构 $(- ⊗{}_R P) ≃ (P_R, -)$;&lt;/li&gt;
+      &lt;li&gt;等等.&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;&lt;strong&gt;特别注释: 没有正合耦.&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+          <pubDate>2025-04-27T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Spectral_sequence_filtered</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Spectral_sequence_filtered</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>On a lemma of Harada-Sai</title>
+          <description>&lt;h2 id=&quot;harada-sai-估计的证明&quot;&gt;Harada-Sai 估计的证明&lt;/h2&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;方便起见, 记 $ℓ (-)$ 为合成列的长度.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;对一族合成列长度不超过 $b$ 的不可分解模 $M_∙$, 假定以下映射链中的所有 $f_∙$ 均非同构:&lt;/p&gt;
+  &lt;p&gt;$$
+M_1 \xrightarrow {f_1} M_2 → \cdots → M_{2^b - 1} \xrightarrow{f_{2^b - 1}} M_{2^b}.
+$$&lt;/p&gt;
+  &lt;p&gt;以上态射的合成是 $0$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;以下归纳地证明 $ℓ (\mathrm{im}(f_{2^k-1} \cdots f_1)) ≤ (b-k)$.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;若 $k=1$, 由 $f_1$ 非同构, 故 $ℓ (\mathrm{im}(f_1))&lt; \max(ℓ (M_1), ℓ (M_2)) ≤ b$.&lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;若 $k=m$ 成立, 下证明 $k=m+1$ 时成立. 考虑 $M_1 \xrightarrow {f_α } M_{2^m -1} \xrightarrow{f _β} M_{2^{m+1}-1}$. 回顾六项长正合列&lt;/p&gt;
+      &lt;p&gt;$$
+   0 → \ker f_α → \ker f_α ∘ f_β → \ker f_β → \operatorname{cok} f_α → \operatorname{cok} f_α ∘ f_β → \operatorname{cok} f_β → 0.
+   $$&lt;/p&gt;
+      &lt;ol&gt;
+        &lt;li&gt;若第一处 $\ker f_α ↪ \ker f_α ∘ f_β$ 是严格的单射, 则 $\operatorname{im} f_α ↠ \operatorname{im} f_α ∘ f_β$ 是严格的商对象. 自然有 $ℓ(\operatorname{im} f_α ) &gt; ℓ (\operatorname{im} f_α ∘ f_β)$.&lt;/li&gt;
+        &lt;li&gt;若最后一处 $\operatorname{cok} f_α ∘ f_β ↠ \operatorname{cok} f_β$ 是严格的满射, 则 $\operatorname{im} f_α ∘ f_β ↪  \operatorname{im}f_β$ 是严格的单射. 自然有 $ℓ(\operatorname{im} f_α ∘ f_β) &lt; ℓ (\operatorname{im} f_β)$.&lt;/li&gt;
+        &lt;li&gt;若以上两处态射均是同构, 则 $\ker f_β ≃ \operatorname{cok} f_α$ 是 $M_{2^m -1}$ 的直和项. 由 $M_{2^m -1}$ 不可分解, 以及 $f_α$ 与 $f_β$ 非同构, 这只能是零态射.&lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;连接态射拆解如下:&lt;/p&gt;
+  &lt;p&gt;$$
+\ker f_β ↠ \frac{\ker f_β }{\operatorname{im} f_α ∩ \ker f_β } ≃ \frac{\ker f_β + \operatorname{im} f_α }{\operatorname{im} f_α} ↪ \operatorname{cok} f_α.
+$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;harada-sai-估计上界严格&quot;&gt;Harada-Sai 估计上界严格&lt;/h2&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;给定考虑以下带关系的 quiver&lt;/p&gt;
+  &lt;p&gt;\begin{equation} 0 \underset{b_1}{\overset {a_1} ⇄} 1 \underset{b_2}{\overset {a_2} ⇄} \cdots \underset{b_n}{\overset {a_n} ⇄} n. \end{equation}&lt;/p&gt;
+  &lt;p&gt;取 $S := \{a_i b_i, b_ia_i\}_{1 ≤ i ≤ n} ∪ \{a_{i+1}a_{i}, b_i b_{i+1}\}_{i=1}^{n-1}$, 也就是 $a^2 = b^2 = ab = ba = 0$. 记代数 $A= kQ / (S)$. &lt;br /&gt; &lt;br /&gt; 考虑每点处维度为 $1$ 的连通模, 也就是形如 $0 → 1 ← \cdots → n$ 的模 (共计 $2^n$ 个). 对这些模进行字典序排列, 则存在一列互相连接的非同构的同态, 且限制在 $Me_0$ 上是同构. 取满-单分解项, 得 $2^{n+1} - 2$ 个态射, 其合成非零. 此处 $ℓ = (n+1)$.&lt;/p&gt;
+  &lt;p&gt;\begin{equation} [0 → 1 ← 2 → 3 → 4 ← 5] ↠ [0 → 1 ← 2 → 3] ↪ [0 → 1 ← 2 → 3 ← 4 → 5]. \end{equation}&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-27T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Harada_Sai</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Harada_Sai</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>APR tilting 模的定义</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;给定遗传路代数 $A= kQ$ 上的点 $i$, 使得 $P(i)$ 是&lt;strong&gt;非内射的投射单模&lt;/strong&gt;. 定义 $i$ 点处的 APR tilting 模为&lt;/p&gt;
+  &lt;p&gt;$$
+T := τ⁻¹ P(4) ⊕ ⨁_{i ≠ 4} P(i).
+$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;APR tilting 模 ($T$) 是 tilting 模.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;依次验证即可.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$p.\dim P ≤ 1$. 这是遗传代数的性质.&lt;/li&gt;
+    &lt;li&gt;$A$ 的 $𝐚𝐝𝐝 (T)$-相对内射维数 $≤ 1$. 此时只需验证所有不可分解投射对象的相对内射维度.       &lt;ol&gt;
+        &lt;li&gt;若 $P ∈ 𝐚𝐝𝐝 (T)$, 则显然.&lt;/li&gt;
+        &lt;li&gt;若 $P ∉ 𝐚𝐝𝐝 (T)$, 则 $P ≃ P(i)$. 对一切 $i → i'$, 考虑几乎可裂 ses&lt;/li&gt;
+      &lt;/ol&gt;
+      &lt;p&gt;$$
+   0 → P(i) →  ⨁_{i'} P(i') → τ ⁻¹ P(i) → 0.
+   $$&lt;/p&gt;
+      &lt;p&gt;这说明 $P(i)$ 的 $𝐚𝐝𝐝 (T)$-相对内射维数 $≤ 1$.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;最后考虑 $\mathrm{Ext}^1(T,T)=0$. 只需证明&lt;/p&gt;
+      &lt;p&gt;$$
+    \mathrm{Ext}^1(τ⁻¹ P(i), T) = 0.
+    $$&lt;/p&gt;
+      &lt;p&gt;由 &lt;a href=&quot;AR_Formula&quot;&gt;AR 公式&lt;/a&gt;, 只需证明 $(T, P(i)) = 0$. 由 $P_i$ 是单投射对象, 故没有 $i$ 指出的箭头. 故 Hom 对象是 $0$.&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-26T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/APR_tilting_def</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/APR_tilting_def</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>$𝔓$ 是 $ℤ 𝔓$ 的截面</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;($𝔓$ 是 $ℤ 𝔓$ 的截面). 给定连通, 有限表示表示的遗传代数.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$𝔓$ 是 $ℤ𝔓$ 的截面.&lt;/li&gt;
+    &lt;li&gt;$Γ$ 是 $ℤ𝔓$ 的子图.&lt;/li&gt;
+    &lt;li&gt;$ℤ 𝔓$ 视同 $ℤΓ$ 的全子范畴.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;内射对象同理.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;先明确 $𝔓$ 的结构.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;(道路封闭) 由 $A$ 遗传, 投射模的子模是投射模, 从而指向投射模的不可约态射都是 $𝔓$ 中的态射. 这说明 $𝔓$ 对道路封闭.&lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;(连通, 无环的全子范畴). 由不可约态射空间的刻画&lt;/p&gt;
+      &lt;p&gt;$$
+   \mathrm{Irr}(P(i), P(j)) ≃ e_j ⋅ \frac{\mathrm{Rad}(A)}{\mathrm{Rad}^2(A)} ⋅ e_i,
+   $$&lt;/p&gt;
+      &lt;p&gt;得 $𝔓 ≃ Q^{\mathrm{op}}$.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;(截面). 直接由定义得到.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;往后证明 $Γ ⊆ ℤ𝔓$ 是全子范畴. 依照几乎可裂短正合列的性质, 有线性同构&lt;/p&gt;
+  &lt;p&gt;$$
+\mathrm{Irr}(τ X, Y) ≃ \mathrm{Irr}(Y, X) ≃ \cdots .
+$$&lt;/p&gt;
+  &lt;p&gt;依照反射, 归纳地验证全子范畴 $Γ ⊆ ℤ 𝔓$ 即可. 特别地, $Γ$ 有限连通, 故归纳在有限步内结束.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-26T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/P_is_Section</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/P_is_Section</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>$D_4$ 与交换图方块代数.</title>
+          <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#计算示例-mathjax_protectedjeigpsbcbwf0ahjte0vuzh0oqskkmathjax_protected&quot; id=&quot;markdown-toc-计算示例-mathjax_protectedjeigpsbcbwf0ahjte0vuzh0oqskkmathjax_protected&quot;&gt;计算示例: $B = \mathrm{End}(A)$&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#mathjax_protectedjeekmathjax_protected-的-ar-quiver&quot; id=&quot;markdown-toc-mathjax_protectedjeekmathjax_protected-的-ar-quiver&quot;&gt;$A$ 的 AR quiver&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#mathjax_protectedjeekmathjax_protected-的-apr-tilting-模&quot; id=&quot;markdown-toc-mathjax_protectedjeekmathjax_protected-的-apr-tilting-模&quot;&gt;$A$ 的 APR tilting 模&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#非-apr-tilting-模&quot; id=&quot;markdown-toc-非-apr-tilting-模&quot;&gt;非 APR tilting 模&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;计算示例-mathjax_protectedjeigpsbcbwf0ahjte0vuzh0oqskkmathjax_protected&quot;&gt;计算示例: $B = \mathrm{End}(A)$&lt;/h2&gt;
+
+&lt;h3 id=&quot;mathjax_protectedjeekmathjax_protected-的-ar-quiver&quot;&gt;$A$ 的 AR quiver&lt;/h3&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;记遗传代数 $A = kQ$, $Q$ 是下列 Dynkin 图:&lt;/p&gt;
+  &lt;p&gt;$$
+\begin{bmatrix}
+ &amp;  &amp; 2 &amp;  &amp; \\
+ &amp;  &amp; \downarrow  &amp;  &amp; \\
+1 &amp; \rightarrow  &amp; 4 &amp; \leftarrow  &amp; 3
+\end{bmatrix}
+$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;计算 AR quiver:&lt;/p&gt;
+  &lt;!-- https://q.uiver.app/#q=WzAsMTIsWzEsMiwiXFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAwfSJdLFsxLDEsIlxcc3Vic3RhY2t7MFxcXFwxIFxcIDEgXFwgMH0iXSxbMSwwLCJcXHN1YnN0YWNrezBcXFxcMCBcXCAxIFxcIDF9Il0sWzIsMSwiXFxzdWJzdGFja3sxXFxcXDEgXFwgMiBcXCAxfSJdLFszLDAsIlxcc3Vic3RhY2t7MVxcXFwxIFxcIDEgXFwgMH0iXSxbMywyLCJcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDF9Il0sWzMsMSwiXFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAxfSJdLFswLDEsIlxcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMH0iXSxbNCwxLCJcXHN1YnN0YWNrezFcXFxcMSBcXCAxIFxcIDF9Il0sWzUsMSwiXFxzdWJzdGFja3swXFxcXDEgXFwgMCBcXCAwfSJdLFs1LDIsIlxcc3Vic3RhY2t7MVxcXFwwIFxcIDAgXFwgMH0iXSxbNSwwLCJcXHN1YnN0YWNrezBcXFxcMCBcXCAwIFxcIDF9Il0sWzIsM10sWzEsM10sWzAsM10sWzMsNV0sWzMsNl0sWzcsMl0sWzcsMV0sWzcsMF0sWzQsOF0sWzUsOF0sWzYsOF0sWzgsOV0sWzgsMTBdLFs4LDExXSxbMyw0XSxbMTEsNCwiIiwxLHsiY3VydmUiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFs0LDIsIiIsMSx7ImN1cnZlIjozLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbOSw2LCIiLDEseyJjdXJ2ZSI6Mywic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzYsMSwiIiwxLHsiY3VydmUiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFsxMCw1LCIiLDEseyJjdXJ2ZSI6Mywic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzUsMCwiIiwxLHsiY3VydmUiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFs4LDMsIiIsMSx7ImN1cnZlIjozLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMyw3LCIiLDEseyJjdXJ2ZSI6Mywic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV1d --&gt;
+  &lt;iframe class=&quot;quiver-embed&quot; src=&quot;https://q.uiver.app/#q=WzAsMTIsWzEsMiwiXFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAwfSJdLFsxLDEsIlxcc3Vic3RhY2t7MFxcXFwxIFxcIDEgXFwgMH0iXSxbMSwwLCJcXHN1YnN0YWNrezBcXFxcMCBcXCAxIFxcIDF9Il0sWzIsMSwiXFxzdWJzdGFja3sxXFxcXDEgXFwgMiBcXCAxfSJdLFszLDAsIlxcc3Vic3RhY2t7MVxcXFwxIFxcIDEgXFwgMH0iXSxbMywyLCJcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDF9Il0sWzMsMSwiXFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAxfSJdLFswLDEsIlxcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMH0iXSxbNCwxLCJcXHN1YnN0YWNrezFcXFxcMSBcXCAxIFxcIDF9Il0sWzUsMSwiXFxzdWJzdGFja3swXFxcXDEgXFwgMCBcXCAwfSJdLFs1LDIsIlxcc3Vic3RhY2t7MVxcXFwwIFxcIDAgXFwgMH0iXSxbNSwwLCJcXHN1YnN0YWNrezBcXFxcMCBcXCAwIFxcIDF9Il0sWzIsM10sWzEsM10sWzAsM10sWzMsNV0sWzMsNl0sWzcsMl0sWzcsMV0sWzcsMF0sWzQsOF0sWzUsOF0sWzYsOF0sWzgsOV0sWzgsMTBdLFs4LDExXSxbMyw0XSxbMTEsNCwiIiwxLHsiY3VydmUiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFs0LDIsIiIsMSx7ImN1cnZlIjozLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbOSw2LCIiLDEseyJjdXJ2ZSI6Mywic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzYsMSwiIiwxLHsiY3VydmUiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFsxMCw1LCIiLDEseyJjdXJ2ZSI6Mywic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzUsMCwiIiwxLHsiY3VydmUiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFs4LDMsIiIsMSx7ImN1cnZlIjozLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMyw3LCIiLDEseyJjdXJ2ZSI6Mywic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV1d&amp;amp;embed&quot; width=&quot;600&quot; height=&quot;300&quot; style=&quot;border-radius: 8px; border: dashed;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;mathjax_protectedjeekmathjax_protected-的-apr-tilting-模&quot;&gt;$A$ 的 APR tilting 模&lt;/h3&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;对非内射的投射对象 $P(4)$, 此时的 &lt;a href=&quot;APR_tilting_def&quot;&gt;APR tilting 模&lt;/a&gt;是&lt;/p&gt;
+  &lt;p&gt;$$
+τ⁻¹ S(4) ⊕ ⨁_{i ≠ 4} P(i).
+$$&lt;/p&gt;
+  &lt;!-- https://q.uiver.app/#q=WzAsMTIsWzEsMSwiXFxib3hlZHtcXHN1YnN0YWNrezFcXFxcMCBcXCAxIFxcIDB9fSJdLFsxLDIsIlxcYm94ZWR7XFxzdWJzdGFja3swXFxcXDEgXFwgMSBcXCAwfX0iXSxbMSwwLCJcXGJveGVke1xcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMX19Il0sWzIsMSwiXFxib3hlZHtcXHN1YnN0YWNrezFcXFxcMSBcXCAyIFxcIDF9fSJdLFszLDAsIlxcc3Vic3RhY2t7MVxcXFwxIFxcIDEgXFwgMH0iXSxbMywyLCJcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDF9Il0sWzMsMSwiXFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAxfSJdLFswLDEsIlxcY29sb3J7Z3JlZW59XFxzdWJzdGFja3swXFxcXDAgXFwgMSBcXCAwfSJdLFs0LDEsIlxcc3Vic3RhY2t7MVxcXFwxIFxcIDEgXFwgMX0iXSxbNSwxLCJcXHN1YnN0YWNrezBcXFxcMSBcXCAwIFxcIDB9Il0sWzUsMiwiXFxzdWJzdGFja3sxXFxcXDAgXFwgMCBcXCAwfSJdLFs1LDAsIlxcc3Vic3RhY2t7MFxcXFwwIFxcIDAgXFwgMX0iXSxbMiwzXSxbMSwzXSxbMCwzXSxbMyw0XSxbMyw1XSxbMyw2XSxbNywyXSxbNywxXSxbNywwXSxbNCw4XSxbNSw4XSxbNiw4XSxbOCw5XSxbOCwxMF0sWzgsMTFdXQ== --&gt;
+  &lt;iframe class=&quot;quiver-embed&quot; src=&quot;https://q.uiver.app/#q=WzAsMTIsWzEsMSwiXFxib3hlZHtcXHN1YnN0YWNrezFcXFxcMCBcXCAxIFxcIDB9fSJdLFsxLDIsIlxcYm94ZWR7XFxzdWJzdGFja3swXFxcXDEgXFwgMSBcXCAwfX0iXSxbMSwwLCJcXGJveGVke1xcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMX19Il0sWzIsMSwiXFxib3hlZHtcXHN1YnN0YWNrezFcXFxcMSBcXCAyIFxcIDF9fSJdLFszLDAsIlxcc3Vic3RhY2t7MVxcXFwxIFxcIDEgXFwgMH0iXSxbMywyLCJcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDF9Il0sWzMsMSwiXFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAxfSJdLFswLDEsIlxcY29sb3J7Z3JlZW59XFxzdWJzdGFja3swXFxcXDAgXFwgMSBcXCAwfSJdLFs0LDEsIlxcc3Vic3RhY2t7MVxcXFwxIFxcIDEgXFwgMX0iXSxbNSwxLCJcXHN1YnN0YWNrezBcXFxcMSBcXCAwIFxcIDB9Il0sWzUsMiwiXFxzdWJzdGFja3sxXFxcXDAgXFwgMCBcXCAwfSJdLFs1LDAsIlxcc3Vic3RhY2t7MFxcXFwwIFxcIDAgXFwgMX0iXSxbMiwzXSxbMSwzXSxbMCwzXSxbMyw0XSxbMyw1XSxbMyw2XSxbNywyXSxbNywxXSxbNywwXSxbNCw4XSxbNSw4XSxbNiw4XSxbOCw5XSxbOCwxMF0sWzgsMTFdXQ==&amp;amp;embed&quot; width=&quot;600&quot; height=&quot;300&quot; style=&quot;border-radius: 8px; border: dashed;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;这一 tilting 模给出的 torsion pair $({\color{blue}𝒯}, {\color{green}ℱ})$是&lt;/p&gt;
+  &lt;!-- https://q.uiver.app/#q=WzAsMTIsWzEsMSwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAwfX0iXSxbMSwyLCJcXGNvbG9ye2JsdWV9XFxib3hlZHtcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDB9fSJdLFsxLDAsIlxcY29sb3J7Ymx1ZX1cXGJveGVke1xcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMX19Il0sWzIsMSwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3sxXFxcXDEgXFwgMiBcXCAxfX0iXSxbMywwLCJcXGNvbG9ye2JsdWV9XFxzdWJzdGFja3sxXFxcXDEgXFwgMSBcXCAwfSJdLFszLDIsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDF9Il0sWzMsMSwiXFxjb2xvcntibHVlfVxcc3Vic3RhY2t7MVxcXFwwIFxcIDEgXFwgMX0iXSxbMCwxLCJcXGNvbG9ye2dyZWVufVxcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMH0iXSxbNCwxLCJcXGNvbG9ye2JsdWV9XFxzdWJzdGFja3sxXFxcXDEgXFwgMSBcXCAxfSJdLFs1LDEsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezBcXFxcMSBcXCAwIFxcIDB9Il0sWzUsMiwiXFxjb2xvcntibHVlfVxcc3Vic3RhY2t7MVxcXFwwIFxcIDAgXFwgMH0iXSxbNSwwLCJcXGNvbG9ye2JsdWV9XFxzdWJzdGFja3swXFxcXDAgXFwgMCBcXCAxfSJdLFsyLDNdLFsxLDNdLFswLDNdLFszLDRdLFszLDVdLFszLDZdLFs3LDJdLFs3LDFdLFs3LDBdLFs0LDhdLFs1LDhdLFs2LDhdLFs4LDldLFs4LDEwXSxbOCwxMV1d --&gt;
+  &lt;iframe class=&quot;quiver-embed&quot; src=&quot;https://q.uiver.app/#q=WzAsMTIsWzEsMSwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAwfX0iXSxbMSwyLCJcXGNvbG9ye2JsdWV9XFxib3hlZHtcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDB9fSJdLFsxLDAsIlxcY29sb3J7Ymx1ZX1cXGJveGVke1xcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMX19Il0sWzIsMSwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3sxXFxcXDEgXFwgMiBcXCAxfX0iXSxbMywwLCJcXGNvbG9ye2JsdWV9XFxzdWJzdGFja3sxXFxcXDEgXFwgMSBcXCAwfSJdLFszLDIsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDF9Il0sWzMsMSwiXFxjb2xvcntibHVlfVxcc3Vic3RhY2t7MVxcXFwwIFxcIDEgXFwgMX0iXSxbMCwxLCJcXGNvbG9ye2dyZWVufVxcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMH0iXSxbNCwxLCJcXGNvbG9ye2JsdWV9XFxzdWJzdGFja3sxXFxcXDEgXFwgMSBcXCAxfSJdLFs1LDEsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezBcXFxcMSBcXCAwIFxcIDB9Il0sWzUsMiwiXFxjb2xvcntibHVlfVxcc3Vic3RhY2t7MVxcXFwwIFxcIDAgXFwgMH0iXSxbNSwwLCJcXGNvbG9ye2JsdWV9XFxzdWJzdGFja3swXFxcXDAgXFwgMCBcXCAxfSJdLFsyLDNdLFsxLDNdLFswLDNdLFszLDRdLFszLDVdLFszLDZdLFs3LDJdLFs3LDFdLFs3LDBdLFs0LDhdLFs1LDhdLFs2LDhdLFs4LDldLFs4LDEwXSxbOCwxMV1d&amp;amp;embed&quot; width=&quot;600&quot; height=&quot;300&quot; style=&quot;border-radius: 8px; border: dashed;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(Tilted 代数). 容易计算&lt;/p&gt;
+  &lt;p&gt;$$
+\mathrm{End}(P_1 ⊕ P_2 ⊕ P_3 ⊕ τ ⁻¹ P_4) ≃ \begin{bmatrix}
+k &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; k &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; k &amp; 0 \\
+k &amp; k &amp; k &amp; k
+\end{bmatrix}.
+$$&lt;/p&gt;
+  &lt;p&gt;对应的 quiver 是&lt;/p&gt;
+  &lt;p&gt;$$
+\mathrm{End}(T_A) = k ⋅
+\begin{bmatrix}
+ &amp;  &amp; P_2 &amp;  &amp; \\
+ &amp;  &amp; \uparrow  &amp;  &amp; \\
+P_1 &amp; \leftarrow  &amp; τ⁻¹P_4 &amp; \rightarrow  &amp; P_3
+\end{bmatrix}.
+$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(BB 定理如何工作)?&lt;/p&gt;
+  &lt;!-- https://q.uiver.app/#q=WzAsMjQsWzEsMSwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAwfX0iXSxbMSwyLCJcXGNvbG9ye2JsdWV9XFxib3hlZHtcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDB9fSJdLFsxLDAsIlxcY29sb3J7Ymx1ZX1cXGJveGVke1xcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMX19Il0sWzIsMSwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3sxXFxcXDEgXFwgMiBcXCAxfX0iXSxbMywwLCJcXGNvbG9ye2JsdWV9XFxzdWJzdGFja3sxXFxcXDEgXFwgMSBcXCAwfSJdLFszLDIsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDF9Il0sWzMsMSwiXFxjb2xvcntibHVlfVxcc3Vic3RhY2t7MVxcXFwwIFxcIDEgXFwgMX0iXSxbMCwxLCJcXGNvbG9ye2dyZWVufVxcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMH0iXSxbNCwxLCJcXGNvbG9ye2JsdWV9XFxzdWJzdGFja3sxXFxcXDEgXFwgMSBcXCAxfSJdLFs1LDEsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezBcXFxcMSBcXCAwIFxcIDB9Il0sWzUsMiwiXFxjb2xvcntibHVlfVxcc3Vic3RhY2t7MVxcXFwwIFxcIDAgXFwgMH0iXSxbNSwwLCJcXGNvbG9ye2JsdWV9XFxzdWJzdGFja3swXFxcXDAgXFwgMCBcXCAxfSJdLFsxLDMsIlxcY29sb3J7Y3lhbn1cXGJveGVke1xcc3Vic3RhY2t7MFxcXFwwIFxcIDAgXFwgMX19Il0sWzEsNCwiXFxjb2xvcntjeWFufVxcYm94ZWR7XFxzdWJzdGFja3sxXFxcXDAgXFwgMCBcXCAwfX0iXSxbMSw1LCJcXGNvbG9ye2N5YW59XFxib3hlZHtcXHN1YnN0YWNrezBcXFxcMSBcXCAwIFxcIDB9fSJdLFsyLDQsIlxcY29sb3J7Y3lhbn1cXGJveGVke1xcc3Vic3RhY2t7MVxcXFwxIFxcIDEgXFwgMX19Il0sWzMsMywiXFxjb2xvcntjeWFufVxcc3Vic3RhY2t7MVxcXFwxIFxcIDEgXFwgMH0iXSxbMyw0LCJcXGNvbG9ye2N5YW59XFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAxfSJdLFszLDUsIlxcY29sb3J7Y3lhbn1cXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDF9Il0sWzQsNCwiXFxjb2xvcntjeWFufXtcXHN1YnN0YWNrezFcXFxcMSBcXCAyIFxcIDF9fSJdLFs1LDMsIlxcY29sb3J7Y3lhbn17XFxzdWJzdGFja3swXFxcXDAgXFwgMSBcXCAxfX0iXSxbNSw0LCJcXGNvbG9ye2N5YW59e1xcc3Vic3RhY2t7MVxcXFwwIFxcIDEgXFwgMH19Il0sWzUsNSwiXFxjb2xvcntjeWFufXtcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDB9fSJdLFs2LDQsIlxcY29sb3J7b2xpdmV9XFxzdWJzdGFja3swXFxcXDAgXFwgMSBcXCAwfSJdLFsyLDNdLFsxLDNdLFswLDNdLFszLDRdLFszLDVdLFszLDZdLFs3LDJdLFs3LDFdLFs3LDBdLFs0LDhdLFs1LDhdLFs2LDhdLFs4LDldLFs4LDEwXSxbOCwxMV0sWzEyLDE1XSxbMTUsMTZdLFsxNiwxOV0sWzE5LDIwXSxbMTQsMTVdLFsxNSwxOF0sWzE4LDE5XSxbMTksMjJdLFsxMywxNV0sWzE1LDE3XSxbMTcsMTldLFsxOSwyMV0sWzIwLDIzXSxbMjEsMjNdLFsyMiwyM11d --&gt;
+  &lt;iframe class=&quot;quiver-embed&quot; src=&quot;https://q.uiver.app/#q=WzAsMjQsWzEsMSwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAwfX0iXSxbMSwyLCJcXGNvbG9ye2JsdWV9XFxib3hlZHtcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDB9fSJdLFsxLDAsIlxcY29sb3J7Ymx1ZX1cXGJveGVke1xcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMX19Il0sWzIsMSwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3sxXFxcXDEgXFwgMiBcXCAxfX0iXSxbMywwLCJcXGNvbG9ye2JsdWV9XFxzdWJzdGFja3sxXFxcXDEgXFwgMSBcXCAwfSJdLFszLDIsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDF9Il0sWzMsMSwiXFxjb2xvcntibHVlfVxcc3Vic3RhY2t7MVxcXFwwIFxcIDEgXFwgMX0iXSxbMCwxLCJcXGNvbG9ye2dyZWVufVxcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMH0iXSxbNCwxLCJcXGNvbG9ye2JsdWV9XFxzdWJzdGFja3sxXFxcXDEgXFwgMSBcXCAxfSJdLFs1LDEsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezBcXFxcMSBcXCAwIFxcIDB9Il0sWzUsMiwiXFxjb2xvcntibHVlfVxcc3Vic3RhY2t7MVxcXFwwIFxcIDAgXFwgMH0iXSxbNSwwLCJcXGNvbG9ye2JsdWV9XFxzdWJzdGFja3swXFxcXDAgXFwgMCBcXCAxfSJdLFsxLDMsIlxcY29sb3J7Y3lhbn1cXGJveGVke1xcc3Vic3RhY2t7MFxcXFwwIFxcIDAgXFwgMX19Il0sWzEsNCwiXFxjb2xvcntjeWFufVxcYm94ZWR7XFxzdWJzdGFja3sxXFxcXDAgXFwgMCBcXCAwfX0iXSxbMSw1LCJcXGNvbG9ye2N5YW59XFxib3hlZHtcXHN1YnN0YWNrezBcXFxcMSBcXCAwIFxcIDB9fSJdLFsyLDQsIlxcY29sb3J7Y3lhbn1cXGJveGVke1xcc3Vic3RhY2t7MVxcXFwxIFxcIDEgXFwgMX19Il0sWzMsMywiXFxjb2xvcntjeWFufVxcc3Vic3RhY2t7MVxcXFwxIFxcIDEgXFwgMH0iXSxbMyw0LCJcXGNvbG9ye2N5YW59XFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAxfSJdLFszLDUsIlxcY29sb3J7Y3lhbn1cXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDF9Il0sWzQsNCwiXFxjb2xvcntjeWFufXtcXHN1YnN0YWNrezFcXFxcMSBcXCAyIFxcIDF9fSJdLFs1LDMsIlxcY29sb3J7Y3lhbn17XFxzdWJzdGFja3swXFxcXDAgXFwgMSBcXCAxfX0iXSxbNSw0LCJcXGNvbG9ye2N5YW59e1xcc3Vic3RhY2t7MVxcXFwwIFxcIDEgXFwgMH19Il0sWzUsNSwiXFxjb2xvcntjeWFufXtcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDB9fSJdLFs2LDQsIlxcY29sb3J7b2xpdmV9XFxzdWJzdGFja3swXFxcXDAgXFwgMSBcXCAwfSJdLFsyLDNdLFsxLDNdLFswLDNdLFszLDRdLFszLDVdLFszLDZdLFs3LDJdLFs3LDFdLFs3LDBdLFs0LDhdLFs1LDhdLFs2LDhdLFs4LDldLFs4LDEwXSxbOCwxMV0sWzEyLDE1XSxbMTUsMTZdLFsxNiwxOV0sWzE5LDIwXSxbMTQsMTVdLFsxNSwxOF0sWzE4LDE5XSxbMTksMjJdLFsxMywxNV0sWzE1LDE3XSxbMTcsMTldLFsxOSwyMV0sWzIwLDIzXSxbMjEsMjNdLFsyMiwyM11d&amp;amp;embed&quot; width=&quot;600&quot; height=&quot;500&quot; style=&quot;border-radius: 8px; border: dashed;&quot;&gt;&lt;/iframe&gt;
+  &lt;p&gt;&lt;br /&gt; 以上,&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$(T, -) : {\color{blue}𝒯} → {\color{cyan}𝒴}$ 是范畴等价, 从 torsion 映至 torsion-free;&lt;/li&gt;
+    &lt;li&gt;$\mathrm{Ext}^1(T, -) : {\color{green}ℱ} → {\color{olive}𝒳}$ 是范畴等价, 从 torsion-free 映至 torsion.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;从效果上看, 确实只是相差 $i=4$ 处的 Coxeter 反射.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;此案例中, $A$ 与 $B$ 都是遗传代数, torsion pair 都是可裂的.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;非-apr-tilting-模&quot;&gt;非 APR tilting 模&lt;/h3&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;以下 $T := ⨁ \boxed {\substack{a \\b \ c \ d}}$ 不是 APR tilting 模:&lt;/p&gt;
+  &lt;!-- https://q.uiver.app/#q=WzAsMTIsWzEsMiwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3swXFxcXDEgXFwgMSBcXCAwfX0iXSxbMSwxLCJcXGNvbG9ye0dyZWVufVxcc3Vic3RhY2t7MVxcXFwwIFxcIDEgXFwgMH0iXSxbMSwwLCJcXGNvbG9ye0dyZWVufVxcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMX0iXSxbMiwxLCJcXHN1YnN0YWNrezFcXFxcMSBcXCAyIFxcIDF9Il0sWzMsMCwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3sxXFxcXDEgXFwgMSBcXCAwfX0iXSxbMywxLCJcXGNvbG9ye2JsdWV9XFxib3hlZHtcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDF9fSJdLFszLDIsIlxcY29sb3J7R3JlZW59XFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAxfSJdLFswLDEsIlxcY29sb3J7R3JlZW59XFxzdWJzdGFja3swXFxcXDAgXFwgMSBcXCAwfSJdLFs0LDEsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezFcXFxcMSBcXCAxIFxcIDF9Il0sWzUsMiwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3swXFxcXDEgXFwgMCBcXCAwfX0iXSxbNSwxLCJcXGNvbG9ye2JsdWV9XFxzdWJzdGFja3sxXFxcXDAgXFwgMCBcXCAwfSJdLFs1LDAsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezBcXFxcMCBcXCAwIFxcIDF9Il0sWzIsM10sWzAsM10sWzMsNF0sWzMsNl0sWzcsMl0sWzcsMV0sWzcsMF0sWzQsOF0sWzUsOF0sWzYsOF0sWzgsOV0sWzgsMTBdLFs4LDExXSxbMSwzXSxbMyw1XV0= --&gt;
+  &lt;iframe class=&quot;quiver-embed&quot; src=&quot;https://q.uiver.app/#q=WzAsMTIsWzEsMiwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3swXFxcXDEgXFwgMSBcXCAwfX0iXSxbMSwxLCJcXGNvbG9ye0dyZWVufVxcc3Vic3RhY2t7MVxcXFwwIFxcIDEgXFwgMH0iXSxbMSwwLCJcXGNvbG9ye0dyZWVufVxcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMX0iXSxbMiwxLCJcXHN1YnN0YWNrezFcXFxcMSBcXCAyIFxcIDF9Il0sWzMsMCwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3sxXFxcXDEgXFwgMSBcXCAwfX0iXSxbMywxLCJcXGNvbG9ye2JsdWV9XFxib3hlZHtcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDF9fSJdLFszLDIsIlxcY29sb3J7R3JlZW59XFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAxfSJdLFswLDEsIlxcY29sb3J7R3JlZW59XFxzdWJzdGFja3swXFxcXDAgXFwgMSBcXCAwfSJdLFs0LDEsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezFcXFxcMSBcXCAxIFxcIDF9Il0sWzUsMiwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3swXFxcXDEgXFwgMCBcXCAwfX0iXSxbNSwxLCJcXGNvbG9ye2JsdWV9XFxzdWJzdGFja3sxXFxcXDAgXFwgMCBcXCAwfSJdLFs1LDAsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezBcXFxcMCBcXCAwIFxcIDF9Il0sWzIsM10sWzAsM10sWzMsNF0sWzMsNl0sWzcsMl0sWzcsMV0sWzcsMF0sWzQsOF0sWzUsOF0sWzYsOF0sWzgsOV0sWzgsMTBdLFs4LDExXSxbMSwzXSxbMyw1XV0=&amp;amp;embed&quot; width=&quot;600&quot; height=&quot;300&quot; style=&quot;border-radius: 8px; border: dashed;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;以上是 $T$ tilting 模.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;(投射维度). 由遗传代数, $p.\dim T ≤ 1$.&lt;/li&gt;
+    &lt;li&gt;(相对内射维度). 只需证明不可分解投射模的 $𝐚𝐝𝐝(T)$-相对内射维度 $≤1$. 计算得       &lt;ol&gt;
+        &lt;li&gt;$0 → {\color{Green}\substack{0\\0 \ 1 \ 0}} → {\color{blue}\boxed{\substack{0\\1 \ 1 \ 0}}} → {\color{blue}\boxed{\substack{0\\1 \ 0 \ 0}}} → 0$;&lt;/li&gt;
+        &lt;li&gt;$0 → {\color{Green}\substack{1\\0 \ 1 \ 0}} → {\color{blue}\boxed{\substack{1\\1 \ 1 \ 0}}}→ {\color{blue}\boxed{\substack{0\\1 \ 0 \ 0}}} → 0$;&lt;/li&gt;
+        &lt;li&gt;$0 → {\color{Green}\substack{0\\0 \ 1 \ 1}} → {\color{blue}\boxed{\substack{0\\1 \ 1 \ 1}}} → {\color{blue}\boxed{\substack{0\\1 \ 0 \ 0}}} → 0$;&lt;/li&gt;
+        &lt;li&gt;$0 → {\color{blue}\boxed{\substack{0\\1 \ 1 \ 0}}} → {\color{blue}\boxed{\substack{0\\1 \ 1 \ 0}}} → 0$.&lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;(自垂直). 由 $p.\dim T ≤ 1$, 此时 $D\mathrm{Ext}^1(T,T) ≃ \mathrm{Hom}(T, τ T)$, 即,&lt;/p&gt;
+      &lt;p&gt;$$
+    \mathrm{Hom}\left({\color{blue}\boxed{\substack{0\\1 \ 1 \ 0}}_A}⊕ {\color{blue}\boxed{\substack{1\\1 \ 1 \ 0}}_B}⊕{ \color{blue}\boxed{\substack{0\\1 \ 1 \ 1}} _C}⊕{ \color{blue}\boxed{\substack{0\\1 \ 0 \ 0}}_D}, {\color{Green}\substack{0\\0 \ 1 \ 1}} ⊕ {\color{Green}\substack{1\\0 \ 1 \ 0}} ⊕ {\color{Green}\substack{1\\0 \ 1 \ 1}\color{black}}\right).
+    $$&lt;/p&gt;
+      &lt;p&gt;对任意分量间的态射 $φ$, 必有 $φ_1 =0$, 此时 $φ_4=0$. 简单验证知 $φ_2$ 与 $φ_3$ 恒零.&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;上述 torsion pair 是不裂的. 特别地, 有典范分解&lt;/p&gt;
+  &lt;p&gt;$$
+0 → {\color{blue}\boxed{\substack{0\\1 \ 1 \ 0}}} → \substack{1\\1 \ 2 \ 1} → {\color{Green}\substack{1\\0 \ 1 \ 1}} → 0.
+$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;($\mathrm{End}_A(T_A)$). 下求 Tilting 代数 $B := \mathrm{End}(T_A)$. 依定义将 $B$ 写作矩阵代数 $(B_{i,j})_{1 ≤ i,j ≤ 4}$. 直接计算得&lt;/p&gt;
+  &lt;p&gt;$$
+B ≃ \begin{pmatrix}
+k\operatorname{id}_A &amp; 0 &amp; 0 &amp; 0 \\
+kf_{BA} &amp; k\operatorname{id}_B &amp; 0 &amp; 0 \\
+kf_{CA} &amp; 0 &amp; k\operatorname{id}_C &amp; 0 \\
+kf_{DA} &amp; kf_{DB} &amp; kf_{DC} &amp; k\operatorname{id}_D. 
+\end{pmatrix}
+$$&lt;/p&gt;
+  &lt;p&gt;以上 $f_{j,i}$ 是 $i → j$ 类型的态射, 对应 quiver with relation:&lt;/p&gt;
+  &lt;p&gt;$$
+\begin{bmatrix}
+    A &amp; → &amp; B \\ 
+    ↓ &amp; ↻ &amp; ↓\\
+    C &amp; → &amp; D
+\end{bmatrix}.
+$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;($B$ 的 AR quiver). $B$ 的 AR quiver 如下 $\boxed{\substack {b \\ a \quad c \\ d}}$:&lt;/p&gt;
+  &lt;!-- https://q.uiver.app/#q=WzAsMTEsWzMsMiwiXFxzdWJzdGFja3swIFxcXFwgMCBcXHF1YWQgMCBcXFxcIDF9Il0sWzMsMCwiXFxzdWJzdGFja3sxIFxcXFwgMCBcXHF1YWQgMCBcXFxcIDB9Il0sWzEsMiwiXFxjb2xvcntjeWFufVxcc3Vic3RhY2t7MSBcXFxcIDAgXFxxdWFkIDEgXFxcXCAwfSJdLFsyLDEsIlxcc3Vic3RhY2t7MSBcXFxcIDAgXFxxdWFkIDEgXFxcXCAxfSJdLFswLDEsIlxcY29sb3J7Y3lhbn1cXHN1YnN0YWNrezAgXFxcXCAwIFxccXVhZCAxIFxcXFwgMH0iXSxbMSwwLCJcXGNvbG9ye2N5YW59XFxzdWJzdGFja3swIFxcXFwgMCBcXHF1YWQgMSBcXFxcIDF9Il0sWzMsMSwiXFxjb2xvcntjeWFufVxcc3Vic3RhY2t7MSBcXFxcIDEgXFxxdWFkIDEgXFxcXCAxfSJdLFs0LDEsIlxcc3Vic3RhY2t7MSBcXFxcIDEgXFxxdWFkIDAgXFxcXCAxfSJdLFs1LDIsIlxcc3Vic3RhY2t7MSBcXFxcIDEgXFxxdWFkIDAgXFxcXCAwfSJdLFs1LDAsIlxcc3Vic3RhY2t7MCBcXFxcIDEgXFxxdWFkIDAgXFxcXCAxfSJdLFs2LDEsIlxcc3Vic3RhY2t7MCBcXFxcIDEgXFxxdWFkIDAgXFxcXCAwfSJdLFs0LDVdLFs1LDNdLFs0LDJdLFsyLDNdLFszLDBdLFszLDFdLFsxLDddLFswLDddLFs3LDldLFs3LDhdLFszLDZdLFs2LDddLFs5LDEwXSxbOCwxMF1d --&gt;
+  &lt;iframe class=&quot;quiver-embed&quot; src=&quot;https://q.uiver.app/#q=WzAsMTEsWzMsMiwiXFxzdWJzdGFja3swIFxcXFwgMCBcXHF1YWQgMCBcXFxcIDF9Il0sWzMsMCwiXFxzdWJzdGFja3sxIFxcXFwgMCBcXHF1YWQgMCBcXFxcIDB9Il0sWzEsMiwiXFxjb2xvcntjeWFufVxcc3Vic3RhY2t7MSBcXFxcIDAgXFxxdWFkIDEgXFxcXCAwfSJdLFsyLDEsIlxcc3Vic3RhY2t7MSBcXFxcIDAgXFxxdWFkIDEgXFxcXCAxfSJdLFswLDEsIlxcY29sb3J7Y3lhbn1cXHN1YnN0YWNrezAgXFxcXCAwIFxccXVhZCAxIFxcXFwgMH0iXSxbMSwwLCJcXGNvbG9ye2N5YW59XFxzdWJzdGFja3swIFxcXFwgMCBcXHF1YWQgMSBcXFxcIDF9Il0sWzMsMSwiXFxjb2xvcntjeWFufVxcc3Vic3RhY2t7MSBcXFxcIDEgXFxxdWFkIDEgXFxcXCAxfSJdLFs0LDEsIlxcc3Vic3RhY2t7MSBcXFxcIDEgXFxxdWFkIDAgXFxcXCAxfSJdLFs1LDIsIlxcc3Vic3RhY2t7MSBcXFxcIDEgXFxxdWFkIDAgXFxcXCAwfSJdLFs1LDAsIlxcc3Vic3RhY2t7MCBcXFxcIDEgXFxxdWFkIDAgXFxcXCAxfSJdLFs2LDEsIlxcc3Vic3RhY2t7MCBcXFxcIDEgXFxxdWFkIDAgXFxcXCAwfSJdLFs0LDVdLFs1LDNdLFs0LDJdLFsyLDNdLFszLDBdLFszLDFdLFsxLDddLFswLDddLFs3LDldLFs3LDhdLFszLDZdLFs2LDddLFs5LDEwXSxbOCwxMF1d&amp;amp;embed&quot; width=&quot;600&quot; height=&quot;300&quot; style=&quot;border-radius: 8px; border: dashed;&quot;&gt;&lt;/iframe&gt;
+  &lt;p&gt;&lt;br /&gt; 以上 $\color{cyan} {_B(T,\{A,B,C,D\})}$ 是投射对象.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(BB 定理如何工作?). 此处解释 tilting 的含义&lt;/p&gt;
+  &lt;!-- https://q.uiver.app/#q=WzAsMzMsWzYsNCwiXFxjb2xvcntjeWFufVxcc3Vic3RhY2t7MCBcXFxcIDAgXFxxdWFkIDAgXFxcXCAxfSJdLFs2LDYsIlxcY29sb3J7Y3lhbn1cXHN1YnN0YWNrezEgXFxcXCAwIFxccXVhZCAwIFxcXFwgMH0iXSxbNCw0LCJcXGNvbG9ye2N5YW59XFxib3hlZHtcXHN1YnN0YWNrezEgXFxcXCAwIFxccXVhZCAxIFxcXFwgMH19Il0sWzUsNSwiXFxjb2xvcntjeWFufVxcc3Vic3RhY2t7MSBcXFxcIDAgXFxxdWFkIDEgXFxcXCAxfSJdLFsyLDUsIlxcY29sb3J7Y3lhbn1cXGJveGVke1xcc3Vic3RhY2t7MCBcXFxcIDAgXFxxdWFkIDEgXFxcXCAwfX0iXSxbNCw2LCJcXGNvbG9ye2N5YW59XFxib3hlZHtcXHN1YnN0YWNrezAgXFxcXCAwIFxccXVhZCAxIFxcXFwgMX19Il0sWzYsNSwiXFxjb2xvcntjeWFufVxcYm94ZWR7XFxzdWJzdGFja3sxIFxcXFwgMSBcXHF1YWQgMSBcXFxcIDF9fSJdLFs3LDUsIlxcY29sb3J7b2xpdmV9XFxzdWJzdGFja3sxIFxcXFwgMSBcXHF1YWQgMCBcXFxcIDF9Il0sWzgsNCwiXFxjb2xvcntvbGl2ZX1cXHN1YnN0YWNrezEgXFxcXCAxIFxccXVhZCAwIFxcXFwgMH0iXSxbOCw2LCJcXGNvbG9ye29saXZlfVxcc3Vic3RhY2t7MCBcXFxcIDEgXFxxdWFkIDAgXFxcXCAxfSJdLFsxMCw1LCJcXGNvbG9ye29saXZlfVxcc3Vic3RhY2t7MCBcXFxcIDEgXFxxdWFkIDAgXFxcXCAwfSJdLFs1LDAsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezBcXFxcMCBcXCAwIFxcIDF9Il0sWzUsMiwiXFxjb2xvcntibHVlfVxcc3Vic3RhY2t7MVxcXFwwIFxcIDAgXFwgMH0iXSxbNSwxLCJcXGNvbG9ye2JsdWV9XFxib3hlZHtcXHN1YnN0YWNrezBcXFxcMSBcXCAwIFxcIDB9fSJdLFs0LDEsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezFcXFxcMSBcXCAxIFxcIDF9Il0sWzMsMCwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3sxXFxcXDEgXFwgMSBcXCAwfX0iXSxbMywyLCJcXGNvbG9ye2JsdWV9XFxib3hlZHtcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDF9fSJdLFszLDEsIlxcY29sb3J7R3JlZW59XFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAxfSJdLFsyLDEsIlxcc3Vic3RhY2t7MVxcXFwxIFxcIDIgXFwgMX0iXSxbMSwwLCJcXGNvbG9ye0dyZWVufVxcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMX0iXSxbMSwyLCJcXGNvbG9ye0dyZWVufVxcc3Vic3RhY2t7MVxcXFwwIFxcIDEgXFwgMH0iXSxbMSwxLCJcXGNvbG9ye2JsdWV9XFxib3hlZHtcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDB9fSJdLFswLDEsIlxcY29sb3J7R3JlZW59XFxzdWJzdGFja3swXFxcXDAgXFwgMSBcXCAwfSJdLFs2LDEsIlxcY29sb3J7U3ByaW5nR3JlZW59XFxzdWJzdGFja3swXFxcXDAgXFwgMSBcXCAwfSJdLFs3LDIsIlxcY29sb3J7U3ByaW5nR3JlZW59XFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAwfSJdLFs3LDAsIlxcY29sb3J7U3ByaW5nR3JlZW59XFxzdWJzdGFja3swXFxcXDAgXFwgMSBcXCAxfSJdLFs3LDEsIlxcY29sb3J7WWVsbG93fVxcYm94ZWR7XFxzdWJzdGFja3swXFxcXDEgXFwgMSBcXCAwfX0iXSxbOCwxLCJcXGNvbG9ye0dyYXl9XFxzdWJzdGFja3sxXFxcXDEgXFwgMiBcXCAxfSJdLFs5LDEsIlxcY29sb3J7U3ByaW5nR3JlZW59XFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAxfSJdLFs0LDUsIjAiXSxbMiw0LCIwIl0sWzIsNiwiMCJdLFsxLDUsIjAiXSxbNCw1XSxbNSwzXSxbNCwyXSxbMiwzXSxbMywwXSxbMywxXSxbMSw3XSxbMCw3XSxbNyw5XSxbNyw4XSxbMyw2XSxbNiw3XSxbOSwxMF0sWzgsMTBdLFsyMiwxOV0sWzE5LDE4XSxbMTgsMTddLFsxNywxNF0sWzE0LDExXSxbMjIsMjFdLFsyMSwxOF0sWzE4LDE1XSxbMTUsMTRdLFsyMiwyMF0sWzE4LDE2XSxbMTYsMTRdLFsxNCwxMl0sWzE0LDEzXSxbMTUsMiwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzE2LDUsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFsxNCwzLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMTIsMSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzIxLDQsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFsxMyw2LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMjAsMThdLFsyMywyNSwiIiwxLHsiY29sb3VyIjpbMCwwLDc1XSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzI1LDI3LCIiLDEseyJjb2xvdXIiOlswLDAsNzVdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMjMsMjQsIiIsMSx7ImNvbG91ciI6WzAsMCw3NV0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyNCwyNywiIiwxLHsiY29sb3VyIjpbMCwwLDc1XSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIzLDI2LCIiLDEseyJjb2xvdXIiOlswLDAsNzVdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMjYsMjcsIiIsMSx7ImNvbG91ciI6WzAsMCw3NV0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyNywyOCwiIiwxLHsiY29sb3VyIjpbMCwwLDc1XSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIzLDcsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFsyNSw4LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMjQsOSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzE3LDI5LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMjIsMzIsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFsxOSwzMCwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzIwLDMxLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMjgsMTAsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFsxMSwwLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0= --&gt;
+  &lt;iframe class=&quot;quiver-embed&quot; src=&quot;https://q.uiver.app/#q=WzAsMzMsWzYsNCwiXFxjb2xvcntjeWFufVxcc3Vic3RhY2t7MCBcXFxcIDAgXFxxdWFkIDAgXFxcXCAxfSJdLFs2LDYsIlxcY29sb3J7Y3lhbn1cXHN1YnN0YWNrezEgXFxcXCAwIFxccXVhZCAwIFxcXFwgMH0iXSxbNCw0LCJcXGNvbG9ye2N5YW59XFxib3hlZHtcXHN1YnN0YWNrezEgXFxcXCAwIFxccXVhZCAxIFxcXFwgMH19Il0sWzUsNSwiXFxjb2xvcntjeWFufVxcc3Vic3RhY2t7MSBcXFxcIDAgXFxxdWFkIDEgXFxcXCAxfSJdLFsyLDUsIlxcY29sb3J7Y3lhbn1cXGJveGVke1xcc3Vic3RhY2t7MCBcXFxcIDAgXFxxdWFkIDEgXFxcXCAwfX0iXSxbNCw2LCJcXGNvbG9ye2N5YW59XFxib3hlZHtcXHN1YnN0YWNrezAgXFxcXCAwIFxccXVhZCAxIFxcXFwgMX19Il0sWzYsNSwiXFxjb2xvcntjeWFufVxcYm94ZWR7XFxzdWJzdGFja3sxIFxcXFwgMSBcXHF1YWQgMSBcXFxcIDF9fSJdLFs3LDUsIlxcY29sb3J7b2xpdmV9XFxzdWJzdGFja3sxIFxcXFwgMSBcXHF1YWQgMCBcXFxcIDF9Il0sWzgsNCwiXFxjb2xvcntvbGl2ZX1cXHN1YnN0YWNrezEgXFxcXCAxIFxccXVhZCAwIFxcXFwgMH0iXSxbOCw2LCJcXGNvbG9ye29saXZlfVxcc3Vic3RhY2t7MCBcXFxcIDEgXFxxdWFkIDAgXFxcXCAxfSJdLFsxMCw1LCJcXGNvbG9ye29saXZlfVxcc3Vic3RhY2t7MCBcXFxcIDEgXFxxdWFkIDAgXFxcXCAwfSJdLFs1LDAsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezBcXFxcMCBcXCAwIFxcIDF9Il0sWzUsMiwiXFxjb2xvcntibHVlfVxcc3Vic3RhY2t7MVxcXFwwIFxcIDAgXFwgMH0iXSxbNSwxLCJcXGNvbG9ye2JsdWV9XFxib3hlZHtcXHN1YnN0YWNrezBcXFxcMSBcXCAwIFxcIDB9fSJdLFs0LDEsIlxcY29sb3J7Ymx1ZX1cXHN1YnN0YWNrezFcXFxcMSBcXCAxIFxcIDF9Il0sWzMsMCwiXFxjb2xvcntibHVlfVxcYm94ZWR7XFxzdWJzdGFja3sxXFxcXDEgXFwgMSBcXCAwfX0iXSxbMywyLCJcXGNvbG9ye2JsdWV9XFxib3hlZHtcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDF9fSJdLFszLDEsIlxcY29sb3J7R3JlZW59XFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAxfSJdLFsyLDEsIlxcc3Vic3RhY2t7MVxcXFwxIFxcIDIgXFwgMX0iXSxbMSwwLCJcXGNvbG9ye0dyZWVufVxcc3Vic3RhY2t7MFxcXFwwIFxcIDEgXFwgMX0iXSxbMSwyLCJcXGNvbG9ye0dyZWVufVxcc3Vic3RhY2t7MVxcXFwwIFxcIDEgXFwgMH0iXSxbMSwxLCJcXGNvbG9ye2JsdWV9XFxib3hlZHtcXHN1YnN0YWNrezBcXFxcMSBcXCAxIFxcIDB9fSJdLFswLDEsIlxcY29sb3J7R3JlZW59XFxzdWJzdGFja3swXFxcXDAgXFwgMSBcXCAwfSJdLFs2LDEsIlxcY29sb3J7U3ByaW5nR3JlZW59XFxzdWJzdGFja3swXFxcXDAgXFwgMSBcXCAwfSJdLFs3LDIsIlxcY29sb3J7U3ByaW5nR3JlZW59XFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAwfSJdLFs3LDAsIlxcY29sb3J7U3ByaW5nR3JlZW59XFxzdWJzdGFja3swXFxcXDAgXFwgMSBcXCAxfSJdLFs3LDEsIlxcY29sb3J7WWVsbG93fVxcYm94ZWR7XFxzdWJzdGFja3swXFxcXDEgXFwgMSBcXCAwfX0iXSxbOCwxLCJcXGNvbG9ye0dyYXl9XFxzdWJzdGFja3sxXFxcXDEgXFwgMiBcXCAxfSJdLFs5LDEsIlxcY29sb3J7U3ByaW5nR3JlZW59XFxzdWJzdGFja3sxXFxcXDAgXFwgMSBcXCAxfSJdLFs0LDUsIjAiXSxbMiw0LCIwIl0sWzIsNiwiMCJdLFsxLDUsIjAiXSxbNCw1XSxbNSwzXSxbNCwyXSxbMiwzXSxbMywwXSxbMywxXSxbMSw3XSxbMCw3XSxbNyw5XSxbNyw4XSxbMyw2XSxbNiw3XSxbOSwxMF0sWzgsMTBdLFsyMiwxOV0sWzE5LDE4XSxbMTgsMTddLFsxNywxNF0sWzE0LDExXSxbMjIsMjFdLFsyMSwxOF0sWzE4LDE1XSxbMTUsMTRdLFsyMiwyMF0sWzE4LDE2XSxbMTYsMTRdLFsxNCwxMl0sWzE0LDEzXSxbMTUsMiwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzE2LDUsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFsxNCwzLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMTIsMSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzIxLDQsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFsxMyw2LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMjAsMThdLFsyMywyNSwiIiwxLHsiY29sb3VyIjpbMCwwLDc1XSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzI1LDI3LCIiLDEseyJjb2xvdXIiOlswLDAsNzVdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMjMsMjQsIiIsMSx7ImNvbG91ciI6WzAsMCw3NV0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyNCwyNywiIiwxLHsiY29sb3VyIjpbMCwwLDc1XSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIzLDI2LCIiLDEseyJjb2xvdXIiOlswLDAsNzVdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMjYsMjcsIiIsMSx7ImNvbG91ciI6WzAsMCw3NV0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyNywyOCwiIiwxLHsiY29sb3VyIjpbMCwwLDc1XSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIzLDcsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFsyNSw4LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMjQsOSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzE3LDI5LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMjIsMzIsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFsxOSwzMCwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzIwLDMxLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMjgsMTAsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFsxMSwwLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0=&amp;amp;embed&quot; width=&quot;600&quot; height=&quot;400&quot; style=&quot;border-radius: 8px; border: dashed;&quot;&gt;&lt;/iframe&gt;
+  &lt;p&gt;&lt;br /&gt; 以下是几点发现.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Tilted 代数 $B = \mathrm{End}(T_A)$ 整体维数是 $2$. 满足 $|gl.\dim A - gl. \dim B| ≤ 1$ 的&lt;a href=&quot;Hom_D_Hereditary&quot;&gt;结论&lt;/a&gt;.&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;Hereditary_TP_Split&quot;&gt;由&lt;/a&gt; $A$ 遗传, ${_B}T ∈ 𝐦𝐨𝐝_B$ 诱导的 torsion pair 是可裂的.&lt;/li&gt;
+    &lt;li&gt;从 $Γ(A)$ 至 $Γ(B)$, 不可分解对象的个数减少了.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-04-26T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Commutative_Diagram_Alg</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Commutative_Diagram_Alg</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Notes on AR Quivers over Hereditary Algebras.</title>
+          <description>&lt;h2 id=&quot;遗传代数的-ar-quiver&quot;&gt;遗传代数的 AR quiver&lt;/h2&gt;
+
+&lt;h3 id=&quot;ar-平移-截面等&quot;&gt;AR 平移, 截面等&lt;/h3&gt;
+
+&lt;p&gt;先从以下例子开始.&lt;/p&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;给定 quiver $Q := [1 → 2 → 3]$. 记代数闭域上的路代数 $A= kQ$, 以及 AR quiver&lt;/p&gt;
+  &lt;p&gt;$$
+Γ (A) :=
+\begin{bmatrix}
+ &amp;  &amp;  &amp;  &amp; A &amp;  &amp;  &amp;  &amp; \\
+ &amp;  &amp;  &amp; \nearrow  &amp;  &amp; \searrow  &amp;  &amp;  &amp; \\
+ &amp;  &amp; P( 2) &amp;  &amp; \overset τ\dashleftarrow  &amp;  &amp; I( 2) &amp;  &amp; \\
+ &amp; \nearrow  &amp;  &amp; \searrow  &amp;  &amp; \nearrow  &amp;  &amp; \searrow  &amp; \\
+P( 3) &amp;  &amp; \overset τ\dashleftarrow  &amp;  &amp; S( 2) &amp;  &amp; \overset τ\dashleftarrow   &amp;  &amp; I( 3)
+\end{bmatrix}
+$$&lt;/p&gt;
+  &lt;p&gt;注意到如下事实.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$𝐩𝐫𝐨𝐣 ∩ Γ (A) ≃ Q^{\mathrm{op}} ≃ 𝐢𝐧𝐣 ∩ Γ (A)$.&lt;/li&gt;
+    &lt;li&gt;所有箭头由 $Q^{\mathrm{op}}$ 关于顶点的反射得到.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;以上 AR quiver 可视作无限 quiver (点集是 $ℤ × Q^{\mathrm{op}}$) 的一部分, 如下图所示.&lt;/p&gt;
+  &lt;p&gt;$$
+\begin{bmatrix}
+ &amp;  &amp;  &amp;  &amp; \bullet  &amp; \rightarrow  &amp; \bullet \\
+ &amp;  &amp;  &amp; \textcolor[rgb]{0.96,0.65,0.14}{⤢ }  &amp; \uparrow  &amp; \textcolor[rgb]{0.96,0.65,0.14}{⤢ }  &amp; \uparrow \\
+ &amp;  &amp; \bullet  &amp; \rightarrow  &amp; \bullet  &amp; \rightarrow  &amp; \bullet \\
+ &amp; \textcolor[rgb]{0.96,0.65,0.14}{⤢ }  &amp; \uparrow  &amp; \textcolor[rgb]{0.96,0.65,0.14}{⤢ }  &amp; \uparrow  &amp; \textcolor[rgb]{0.96,0.65,0.14}{⤢ }  &amp; \\
+\textcolor[rgb]{0.29,0.56,0.89}{A} &amp; \textcolor[rgb]{0.82,0.01,0.11}{\rightarrow } &amp; \textcolor[rgb]{0.82,0.01,0.11}{I( 2)} &amp; \textcolor[rgb]{0.82,0.01,0.11}{\rightarrow } &amp; \textcolor[rgb]{0.82,0.01,0.11}{I( 1)} &amp;  &amp; \\
+\textcolor[rgb]{0.29,0.56,0.89}{\uparrow } &amp; \textcolor[rgb]{0.96,0.65,0.14}{⤢ }  &amp; \textcolor[rgb]{0.82,0.01,0.11}{\uparrow } &amp; \textcolor[rgb]{0.96,0.65,0.14}{⤢ }  &amp;  &amp;  &amp; \\
+\textcolor[rgb]{0.29,0.56,0.89}{P( 2)} &amp; \textcolor[rgb]{0.82,0.01,0.11}{\rightarrow } &amp; \textcolor[rgb]{0.82,0.01,0.11}{S( 2)} &amp;  &amp;  &amp;  &amp; \\
+\textcolor[rgb]{0.29,0.56,0.89}{\uparrow } &amp; \textcolor[rgb]{0.96,0.65,0.14}{⤢ }  &amp;  &amp;  &amp;  &amp;  &amp; \\
+\textcolor[rgb]{0.29,0.56,0.89}{P( 3)} &amp;  &amp;  &amp;  &amp;  &amp;  &amp;
+\end{bmatrix}
+$$&lt;/p&gt;
+  &lt;p&gt;对以上, $P(2) → A$ 通过反射得到 $A → I(2)$.&lt;/p&gt;
+  &lt;div class=&quot;note&quot;&gt;
+    &lt;p&gt;对子图, 此处沿用子范畴与全子范畴的称呼.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;称 $Q' ⊆ Q$ 是子范畴, 若 $Q'$ 是 $Q$ 的子图&lt;/li&gt;
+      &lt;li&gt;称 $Q' ⊆ Q$ 是全子范畴, 若 $Q' ⊆ Q$ 是子图, 且 $\mathrm{Hom}_{Q'}(i,j) = \mathrm{Hom}_{Q}(i,j)$.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;假定以下 quiver $Q$ 都是有界连通无环的.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(quiver 的无界化). 给定 $Q$, 定义 $ℤ Q$ 如下.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;顶点集是 Catersian 积 $(ℤ × Q_0) := ℤ × Q_0$.&lt;/li&gt;
+    &lt;li&gt;箭头集是 $S_1 ⊔ S_2$. 其中       &lt;ol&gt;
+        &lt;li&gt;$S_1 := ℤ × Q_1$, 形如 $(n, α) : (n, x) → (n, y)$.&lt;/li&gt;
+        &lt;li&gt;$S_2$ 中箭头刻画如下: 若 $(n, α) : (n, x) → (n, y)$, 则作&lt;/li&gt;
+      &lt;/ol&gt;
+      &lt;p&gt;$$
+   θ(n, α) : (n + 1, y) → (n , x).
+   $$&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;简而言之, $(n + 1, y) \xrightarrow[\text{反射}]{θ (n , α)} (n, x) \xrightarrow{(n,α)} (n, y)$. 朝向与 AR quiver 一致:&lt;/p&gt;
+  &lt;p&gt;$$
+\begin{bmatrix}
+ &amp;  &amp; ( n,x) &amp;  &amp; \\
+ &amp; \nearrow  &amp;  &amp; \searrow  &amp; \\
+( n+1,y) &amp;  &amp; \overset{\tau }{\dashleftarrow } &amp;  &amp; ( n,y)
+\end{bmatrix}
+$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;定义 $ℤQ$ 上的两类运算.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$τ : ℤQ → ℤQ ,\quad (n, -) → (n-1, -)$ 是平移.&lt;/li&gt;
+    &lt;li&gt;$θ : ℤQ_1 → ℤQ_1$ 是朝向 $τ$ 的反射.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;对 $A_3$ 而言, $Q^{\mathrm{op}} = Γ (A) ∩ 𝐩𝐫𝐨𝐣$ 是类似截面的东西. 以下是对 AR quiver 截面的公理化定义.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(截面). 称 $Σ ⊆ ℤ Q$ 是子图, 若&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;(连通无环的全子范畴). $Σ$ 是连通, 无环的全子范畴,&lt;/li&gt;
+    &lt;li&gt;(截面). 对任意 $x ∈ Q_0$, 存在唯一的 $n ∈ ℤ$ 使得 $(n, x) ∈ Σ$.&lt;/li&gt;
+    &lt;li&gt;(道路封闭). 对 $ℤ Q$ 中的任意道路, 若起点与终点属于 $Σ$, 则道路上的所有点都属于 $Σ$.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;$ℤ Γ (k [∙ → ∙ → ∙])$ 的截面可以是 $𝐩𝐫𝐨𝐣 ∩ Γ$, 也可以是&lt;/p&gt;
+  &lt;p&gt;$$
+(0, I(1)) → (0, I(2)) → (-1, A).
+$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;以下是一些组合学的事实, 对后续证明无帮助. 证明从略.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$ℤ Q$ 是无环图.&lt;/li&gt;
+    &lt;li&gt;取 $ℤ Q$ 的截面 $Σ$, 则截面的嵌入诱导了同构 $ℤ Σ ≃ ℤ Q$.&lt;/li&gt;
+    &lt;li&gt;记 $T_1$ 与 $T_2$ 是同一棵无向树的两种定向, 则 $ℤ T_1 ≃ ℤ T_2$.&lt;/li&gt;
+    &lt;li&gt;给定环 $C$, 假定其定向是无环的. 此时 $ℤ Q$ 的结构唯一取决于 $C$ 中顺时针箭头个数与逆时针箭头个数, 与具体的排列无关.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;若除去遗传条件, 则上述定理不再成立. 见&lt;a href=&quot;Commutative_Diagram_Alg#非-apr-tilting-模&quot;&gt;此文中的 $B = \mathrm{End}(T_A)$&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;选定 AR quiver $Γ$, 使用&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$𝔓$ 表示投射对象所在的连通分支.&lt;/li&gt;
+  &lt;li&gt;$ℑ$ 表示内射对象所在的连通分支.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;对有限表示的遗传代数 (不必选择代数闭域), 下将 $𝔓$ 是截面的事实归纳作如下引理.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;($𝔓$ 是 $ℤ 𝔓$ 的截面, &lt;a href=&quot;P_is_Section&quot;&gt;证明&lt;/a&gt;). 给定连通, 有限表示表示的遗传代数.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$𝔓$ 是 $ℤ𝔓$ 的截面.&lt;/li&gt;
+    &lt;li&gt;$Γ$ 是 $ℤ𝔓$ 的子图.&lt;/li&gt;
+    &lt;li&gt;$ℤ 𝔓$ 视同 $ℤΓ$ 的全子范畴.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;内射对象同理.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;若去除有限表示条件, 则 $ℤ 𝔓$ 与 $ℤ ℑ$ 是连通分支的子图.&lt;/p&gt;
+</description>
+          <pubDate>2025-04-26T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Hereditary-AR-Quiver</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hereditary-AR-Quiver</guid>
+        </item>
+      
     
       
         <item>
@@ -41,8 +811,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-25T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Gabriel_2</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Gabriel_2</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Gabriel_2</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gabriel_2</guid>
         </item>
       
     
@@ -116,8 +886,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-25T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Gabriel_1</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Gabriel_1</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Gabriel_1</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gabriel_1</guid>
         </item>
       
     
@@ -212,8 +982,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-25T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Finite_and_Affine_Root_System</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Finite_and_Affine_Root_System</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Finite_and_Affine_Root_System</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Finite_and_Affine_Root_System</guid>
         </item>
       
     
@@ -275,8 +1045,8 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;Proof-Gabriel&quot;&gt;Gabriel 定理的证明&lt;/a&gt;.&lt;/p&gt;
 </description>
           <pubDate>2025-04-25T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Talk</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Talk</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Talk</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Talk</guid>
         </item>
       
     
@@ -330,8 +1100,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/T_Y_Dim</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/T_Y_Dim</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/T_Y_Dim</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/T_Y_Dim</guid>
         </item>
       
     
@@ -372,8 +1142,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Hom_D_Hereditary</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Hom_D_Hereditary</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Hom_D_Hereditary</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hom_D_Hereditary</guid>
         </item>
       
     
@@ -383,7 +1153,7 @@ $$&lt;/p&gt;
           <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
 
 &lt;div class=&quot;theorem&quot;&gt;
-  &lt;p&gt;(整体维数, &lt;a href=&quot;Gl_Dim_A_B&quot;&gt;证明&lt;/a&gt;). $\|gl.\dim A - gl.\dim B\|≤ 1$.&lt;/p&gt;
+  &lt;p&gt;(整体维数). $|gl.\dim A - gl.\dim B|≤ 1$.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;proof&quot;&gt;
@@ -397,12 +1167,12 @@ $$&lt;/p&gt;
   &lt;p&gt;$$
 gl.\dim A ≤ gl.\dim \mathrm{End}(_BT) ≤ gl.\dim B + 1.
 $$&lt;/p&gt;
-  &lt;p&gt;综上, $\|gl.\dim A - gl.\dim B\|≤ 1$.&lt;/p&gt;
+  &lt;p&gt;综上, $|gl.\dim A - gl.\dim B|≤ 1$.&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Gl_Dim_A_B</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Gl_Dim_A_B</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Gl_Dim_A_B</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gl_Dim_A_B</guid>
         </item>
       
     
@@ -512,8 +1282,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Uniqueness_of_Maximal_Orbit</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Uniqueness_of_Maximal_Orbit</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Uniqueness_of_Maximal_Orbit</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Uniqueness_of_Maximal_Orbit</guid>
         </item>
       
     
@@ -659,8 +1429,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Ringel_Resolution</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Ringel_Resolution</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Ringel_Resolution</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Ringel_Resolution</guid>
         </item>
       
     
@@ -704,8 +1474,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Key_Lemma_Gabriel</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Key_Lemma_Gabriel</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Key_Lemma_Gabriel</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Key_Lemma_Gabriel</guid>
         </item>
       
     
@@ -890,8 +1660,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Proof-Gabriel</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Proof-Gabriel</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Proof-Gabriel</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Proof-Gabriel</guid>
         </item>
       
     
@@ -929,8 +1699,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/gen_and_cog</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/gen_and_cog</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/gen_and_cog</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/gen_and_cog</guid>
         </item>
       
     
@@ -958,24 +1728,34 @@ $$&lt;/p&gt;
 &lt;div class=&quot;proof&quot;&gt;
   &lt;p&gt;给定 $X ∈ 𝒯$, 往证 $\mathrm{Ext}^1(X,  𝒯) = 0$ 当且仅当 $τ X ∈ ℱ$.&lt;/p&gt;
   &lt;ol&gt;
-    &lt;li&gt;假定 $\mathrm{Ext}^1(X, 𝒯) = 0$. 若 $X$ 投射, 则 $τ M ∈ ℱ$; 若 $X$ 非投射, 则考虑几乎可裂 ses $$
-0 → τ X → E → X → 0.
-$$ 若 $τ X ↠ f(τX)$ 是同构, 则证毕. 若不然, $τX ↠ f(τX)$ 通过 $τ X ↪ E$ 分解 (几乎可裂 ses 定义). 此时有交换图 ($▩$ 是推出拉回): $$
-\begin{bmatrix}
- &amp;  &amp; 0 &amp;  &amp; 0 &amp;  &amp;  &amp;  &amp; \\
- &amp;  &amp; ↓  &amp;  &amp; ↓   &amp;  &amp;  &amp;  &amp; \\
-0 &amp; →  &amp; t( τ  X) &amp; →   &amp; ? &amp; →   &amp; X &amp; →   &amp; 0\\
- &amp;  &amp; ↓   &amp; ▩  &amp; ↓   &amp;  &amp; ∥   &amp;  &amp; \\
-0 &amp; →   &amp; τ  X &amp; →   &amp; E &amp; →   &amp; X &amp; →   &amp; 0\\
- &amp;  &amp; ↓   &amp; ↙   &amp; ↓   &amp;  &amp;  &amp;  &amp; \\
-0 &amp; →   &amp; f( τ  X) &amp; = &amp; f( τ  X) &amp;  &amp;  &amp;  &amp; \\
- &amp;  &amp; ↓   &amp;  &amp; ↓   &amp;  &amp;  &amp;  &amp; \\
- &amp;  &amp; 0 &amp;  &amp; 0 &amp;  &amp;  &amp;  &amp; 
-\end{bmatrix}
-$$ 由假定, $\mathrm{Ext}^1(X, t(τX)) = 0$, 从而第一横行可裂. 由推出保持可裂单, 得 $τX ↪ E$ 可裂, 矛盾.&lt;/li&gt;
-    &lt;li&gt;反之, 若 $τ X ∈ ℱ$, 则 AR 公式表明 $$
-\mathrm{Ext}^1(X, 𝒯) ≃ D\overline {(𝒯 , τ X)} ↪ D(𝒯 , τ X) = 0.
-$$ 因此 $X ∈ {}^⟂𝒯$.&lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;假定 $\mathrm{Ext}^1(X, 𝒯) = 0$. 若 $X$ 投射, 则 $τ M ∈ ℱ$; 若 $X$ 非投射, 则考虑几乎可裂 ses&lt;/p&gt;
+      &lt;p&gt;$$
+   0 → τ X → E → X → 0.
+   $$&lt;/p&gt;
+      &lt;p&gt;若 $τ X ↠ f(τX)$ 是同构, 则证毕. 若不然, $τX ↠ f(τX)$ 通过 $τ X ↪ E$ 分解 (几乎可裂 ses 定义). 此时有交换图 ($▩$ 是推出拉回):&lt;/p&gt;
+      &lt;p&gt;$$
+   \begin{bmatrix}
+    &amp;  &amp; 0 &amp;  &amp; 0 &amp;  &amp;  &amp;  &amp; \\
+    &amp;  &amp; ↓  &amp;  &amp; ↓   &amp;  &amp;  &amp;  &amp; \\
+   0 &amp; →  &amp; t( τ  X) &amp; →   &amp; ? &amp; →   &amp; X &amp; →   &amp; 0\\
+    &amp;  &amp; ↓   &amp; ▩  &amp; ↓   &amp;  &amp; ∥   &amp;  &amp; \\
+   0 &amp; →   &amp; τ  X &amp; →   &amp; E &amp; →   &amp; X &amp; →   &amp; 0\\
+    &amp;  &amp; ↓   &amp; ↙   &amp; ↓   &amp;  &amp;  &amp;  &amp; \\
+   0 &amp; →   &amp; f( τ  X) &amp; = &amp; f( τ  X) &amp;  &amp;  &amp;  &amp; \\
+    &amp;  &amp; ↓   &amp;  &amp; ↓   &amp;  &amp;  &amp;  &amp; \\
+    &amp;  &amp; 0 &amp;  &amp; 0 &amp;  &amp;  &amp;  &amp; 
+   \end{bmatrix}
+   $$&lt;/p&gt;
+      &lt;p&gt;由假定, $\mathrm{Ext}^1(X, t(τX)) = 0$, 从而第一横行可裂. 由推出保持可裂单, 得 $τX ↪ E$ 可裂, 矛盾.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;反之, 若 $τ X ∈ ℱ$, 则 AR 公式表明&lt;/p&gt;
+      &lt;p&gt;$$
+   \mathrm{Ext}^1(X, 𝒯) ≃ D\overline {(𝒯 , τ X)} ↪ D(𝒯 , τ X) = 0.
+   $$&lt;/p&gt;
+      &lt;p&gt;因此 $X ∈ {}^⟂𝒯$.&lt;/p&gt;
+    &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
 
@@ -986,18 +1766,26 @@ $$ 因此 $X ∈ {}^⟂𝒯$.&lt;/li&gt;
 &lt;div class=&quot;proof&quot;&gt;
   &lt;p&gt;给定 $X ∈ 𝒯$, 往证 $\mathrm{Ext}^1(𝒯, X) = 0$ 当且仅当 $X$ 是某个内射对象的 $t$-部分.&lt;/p&gt;
   &lt;ol&gt;
-    &lt;li&gt;假定 $\mathrm{Ext}^1(𝒯, X) = 0$. 考虑内射包 $X ↪ I(X)$. 依照 $t$ 的函子性, 得 $X ↪ t(I(X)) ↪ I(X)$. 由于 $$
-0 → X → t(I(X)) → \frac{t(I(X))}{X} → 0 \quad ∈ 𝒯 .
-$$ 依照 $\mathrm{Ext}^1(𝒯, X) = 0$, 得 ses 可裂. 由 $I$ 与 $t$ 是加法函子, $X$ 必形如内射模的 $t$ 部分.&lt;/li&gt;
-    &lt;li&gt;若 $X$ 是内射对象的 $t$ 部分, 记 $X = tI$. 对 $I$ 的 $(t,f)$-ses 导出, 得 $$
-\cdots → \underset 0 {\underbrace{(-, fI)|_{𝒯}}} → \mathrm{Ext}^1(-, tI)|_{𝒯} → \underset 0 {\underbrace{\mathrm{Ext}^1(-, I)|_{𝒯}}} → \cdots.
-$$ 从而 $\mathrm{Ext}^1(𝒯, X) = 0$.&lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;假定 $\mathrm{Ext}^1(𝒯, X) = 0$. 考虑内射包 $X ↪ I(X)$. 依照 $t$ 的函子性, 得 $X ↪ t(I(X)) ↪ I(X)$. 由于&lt;/p&gt;
+      &lt;p&gt;$$
+    0 → X → t(I(X)) → \frac{t(I(X))}{X} → 0 \quad ∈ 𝒯 .
+    $$&lt;/p&gt;
+      &lt;p&gt;依照 $\mathrm{Ext}^1(𝒯, X) = 0$, 得 ses 可裂. 由 $I$ 与 $t$ 是加法函子, $X$ 必形如内射模的 $t$ 部分.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;若 $X$ 是内射对象的 $t$ 部分, 记 $X = tI$. 对 $I$ 的 $(t,f)$-ses 导出, 得&lt;/p&gt;
+      &lt;p&gt;$$
+    \cdots → \underset 0 {\underbrace{(-, fI)|_{𝒯}}} → \mathrm{Ext}^1(-, tI)|_{𝒯} → \underset 0 {\underbrace{\mathrm{Ext}^1(-, I)|_{𝒯}}} → \cdots.
+    $$&lt;/p&gt;
+      &lt;p&gt;从而 $\mathrm{Ext}^1(𝒯, X) = 0$.&lt;/p&gt;
+    &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Torsion_Pair_Ext_Orth</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Torsion_Pair_Ext_Orth</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Torsion_Pair_Ext_Orth</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Torsion_Pair_Ext_Orth</guid>
         </item>
       
     
@@ -1078,8 +1866,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Tilting_Obj_Torsion_Pair</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Tilting_Obj_Torsion_Pair</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Tilting_Obj_Torsion_Pair</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Tilting_Obj_Torsion_Pair</guid>
         </item>
       
     
@@ -1107,8 +1895,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Partial_Tilting_Two_Torsion_pairs</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Partial_Tilting_Two_Torsion_pairs</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs</guid>
         </item>
       
     
@@ -1173,8 +1961,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Hereditary_PBPO</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Hereditary_PBPO</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Hereditary_PBPO</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hereditary_PBPO</guid>
         </item>
       
     
@@ -1210,8 +1998,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Gen_Eq_T</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Gen_Eq_T</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Gen_Eq_T</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gen_Eq_T</guid>
         </item>
       
     
@@ -1233,8 +2021,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/AR_Formula</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/AR_Formula</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/AR_Formula</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR_Formula</guid>
         </item>
       
     
@@ -1332,8 +2120,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-22T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Def_de_TP</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Def_de_TP</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Def_de_TP</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Def_de_TP</guid>
         </item>
       
     
@@ -1364,8 +2152,8 @@ $$&lt;/p&gt;
 
 </description>
           <pubDate>2025-04-22T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Homological_Wk_Ker</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Homological_Wk_Ker</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Homological_Wk_Ker</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Homological_Wk_Ker</guid>
         </item>
       
     
@@ -1393,8 +2181,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Yoneda_Homological</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Yoneda_Homological</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Yoneda_Homological</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Yoneda_Homological</guid>
         </item>
       
     
@@ -1438,8 +2226,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Plat_et_Proj_Cover_Proj</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Plat_et_Proj_Cover_Proj</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Plat_et_Proj_Cover_Proj</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Plat_et_Proj_Cover_Proj</guid>
         </item>
       
     
@@ -1457,8 +2245,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Mod_Tri_is_Frobenius</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Mod_Tri_is_Frobenius</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Mod_Tri_is_Frobenius</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Mod_Tri_is_Frobenius</guid>
         </item>
       
     
@@ -1494,8 +2282,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Lazard_thm</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Lazard_thm</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Lazard_thm</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Lazard_thm</guid>
         </item>
       
     
@@ -1537,8 +2325,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Fp_et_Plat_est_Proj</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Fp_et_Plat_est_Proj</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Fp_et_Plat_est_Proj</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Fp_et_Plat_est_Proj</guid>
         </item>
       
     
@@ -1568,8 +2356,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Fp_Proj_Plat</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Fp_Proj_Plat</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Fp_Proj_Plat</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Fp_Proj_Plat</guid>
         </item>
       
     
@@ -1667,8 +2455,8 @@ $$ 由于后两项保持积, 蛇引理给出函子的满的自然变换 $(K ⊗ 
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Finitely_Presented_Functor</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Finitely_Presented_Functor</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Finitely_Presented_Functor</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Finitely_Presented_Functor</guid>
         </item>
       
     
@@ -1696,8 +2484,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Countable_Karoubi</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Countable_Karoubi</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Countable_Karoubi</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Countable_Karoubi</guid>
         </item>
       
     
@@ -1751,8 +2539,8 @@ $$ 由于 $(i(-),A)_𝒯$ 是有限表现的平坦对象, 从而投射 (&lt;a hr
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Coreflexive_Contravariantly_Finite</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Coreflexive_Contravariantly_Finite</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Coreflexive_Contravariantly_Finite</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Coreflexive_Contravariantly_Finite</guid>
         </item>
       
     
@@ -2146,8 +2934,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/mid</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/mid</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/mid</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/mid</guid>
         </item>
       
     
@@ -2253,8 +3041,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/mid-copy</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/mid-copy</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/mid-copy</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/mid-copy</guid>
         </item>
       
     
@@ -2306,8 +3094,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Almost_Split</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Almost_Split</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Almost_Split</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Almost_Split</guid>
         </item>
       
     
@@ -2315,26 +3103,20 @@ $$&lt;/p&gt;
         <item>
           <title>Notes on Classical Tilting Theory</title>
           <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#tilting-理论&quot; id=&quot;markdown-toc-tilting-理论&quot;&gt;Tilting 理论&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#经典-tilting-投射维度-mathjax_protectedjokjpcaxjamathjax_protected&quot; id=&quot;markdown-toc-经典-tilting-投射维度-mathjax_protectedjokjpcaxjamathjax_protected&quot;&gt;经典 Tilting: 投射维度 $≤ 1$&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#记号-对象类&quot; id=&quot;markdown-toc-记号-对象类&quot;&gt;记号: 对象类&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#torsion-pair-确定的对象类&quot; id=&quot;markdown-toc-torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#局部-tilting-模-两类-torsion-pair&quot; id=&quot;markdown-toc-局部-tilting-模-两类-torsion-pair&quot;&gt;局部 Tilting 模: 两类 torsion pair&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#tilting-模诱导的-torsion-pair&quot; id=&quot;markdown-toc-tilting-模诱导的-torsion-pair&quot;&gt;Tilting 模诱导的 torsion pair&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#brenner-butler-理论&quot; id=&quot;markdown-toc-brenner-butler-理论&quot;&gt;Brenner-Butler 理论&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#同调维度&quot; id=&quot;markdown-toc-同调维度&quot;&gt;同调维度&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#遗传范畴的-torsion-pair&quot; id=&quot;markdown-toc-遗传范畴的-torsion-pair&quot;&gt;遗传范畴的 torsion pair&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#经典-tilting-投射维度-mathjax_protectedjokjpcaxjamathjax_protected&quot; id=&quot;markdown-toc-经典-tilting-投射维度-mathjax_protectedjokjpcaxjamathjax_protected&quot;&gt;经典 Tilting: 投射维度 $≤ 1$&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#记号-对象类&quot; id=&quot;markdown-toc-记号-对象类&quot;&gt;记号: 对象类&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#torsion-pair-确定的对象类&quot; id=&quot;markdown-toc-torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#局部-tilting-模-两类-torsion-pair&quot; id=&quot;markdown-toc-局部-tilting-模-两类-torsion-pair&quot;&gt;局部 Tilting 模: 两类 torsion pair&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#tilting-模诱导的-torsion-pair&quot; id=&quot;markdown-toc-tilting-模诱导的-torsion-pair&quot;&gt;Tilting 模诱导的 torsion pair&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#brenner-butler-理论&quot; id=&quot;markdown-toc-brenner-butler-理论&quot;&gt;Brenner-Butler 理论&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#同调维度&quot; id=&quot;markdown-toc-同调维度&quot;&gt;同调维度&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;tilting-理论&quot;&gt;Tilting 理论&lt;/h2&gt;
+&lt;h2 id=&quot;经典-tilting-投射维度-mathjax_protectedjokjpcaxjamathjax_protected&quot;&gt;经典 Tilting: 投射维度 $≤ 1$&lt;/h2&gt;
 
-&lt;h3 id=&quot;经典-tilting-投射维度-mathjax_protectedjokjpcaxjamathjax_protected&quot;&gt;经典 Tilting: 投射维度 $≤ 1$&lt;/h3&gt;
-
-&lt;h4 id=&quot;记号-对象类&quot;&gt;记号: 对象类&lt;/h4&gt;
+&lt;h3 id=&quot;记号-对象类&quot;&gt;记号: 对象类&lt;/h3&gt;
 
 &lt;div class=&quot;definition&quot;&gt;
   &lt;p&gt;(垂直). 以下使用&lt;/p&gt;
@@ -2364,7 +3146,7 @@ $$&lt;/p&gt;
   &lt;p&gt;此外, 需要对 $𝐅(𝒳)$ 与 $𝐓(𝒳)$ 的等价定义做一些说明, 见&lt;a href=&quot;Def_de_TP&quot;&gt;此处&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&quot;torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/h4&gt;
+&lt;h3 id=&quot;torsion-pair-确定的对象类&quot;&gt;Torsion Pair 确定的对象类&lt;/h3&gt;
 
 &lt;div class=&quot;definition&quot;&gt;
   &lt;p&gt;(Torsion pair 的等价定义, &lt;a href=&quot;Def_de_TP&quot;&gt;证明&lt;/a&gt;). 称两个对象类 $(𝒯 , ℱ)$ 构成 torsion class, 若以下等价条件满足.&lt;/p&gt;
@@ -2435,7 +3217,7 @@ $$&lt;/p&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&quot;局部-tilting-模-两类-torsion-pair&quot;&gt;局部 Tilting 模: 两类 torsion pair&lt;/h4&gt;
+&lt;h3 id=&quot;局部-tilting-模-两类-torsion-pair&quot;&gt;局部 Tilting 模: 两类 torsion pair&lt;/h3&gt;
 
 &lt;div class=&quot;definition&quot;&gt;
   &lt;p&gt;(局部 Tilting 模). 称 $T$ 是局部 tilting 的, 若 $p.\dim T ≤ 1$ 且 $\mathrm{Ext}^1(T,T)=0$.&lt;/p&gt;
@@ -2482,7 +3264,7 @@ $$&lt;/p&gt;
   &lt;p&gt;内射模属于 $T^⟂$. 若投射模属于 $𝐠𝐞𝐧(T)$, 则其属于 $𝐚𝐝𝐝(T)$.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&quot;tilting-模诱导的-torsion-pair&quot;&gt;Tilting 模诱导的 torsion pair&lt;/h4&gt;
+&lt;h3 id=&quot;tilting-模诱导的-torsion-pair&quot;&gt;Tilting 模诱导的 torsion pair&lt;/h3&gt;
 
 &lt;div class=&quot;theorem&quot;&gt;
   &lt;p&gt;(&lt;a href=&quot;404&quot;&gt;证明待补充&lt;/a&gt;). 给定局部 tilting 模 $T$, 以下是 $T$ 成为 tilting 模的等价条件.&lt;/p&gt;
@@ -2544,7 +3326,7 @@ $$&lt;/p&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&quot;brenner-butler-理论&quot;&gt;Brenner-Butler 理论&lt;/h4&gt;
+&lt;h3 id=&quot;brenner-butler-理论&quot;&gt;Brenner-Butler 理论&lt;/h3&gt;
 
 &lt;div class=&quot;lemma&quot;&gt;
   &lt;p&gt;考虑函子 $(T,-) : 𝐦𝐨𝐝_A → 𝐦𝐨𝐝_{\mathrm{End}(T)^{\mathrm{op}}}$.&lt;/p&gt;
@@ -2633,7 +3415,7 @@ $$&lt;/p&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&quot;同调维度&quot;&gt;同调维度&lt;/h4&gt;
+&lt;h3 id=&quot;同调维度&quot;&gt;同调维度&lt;/h3&gt;
 
 &lt;div class=&quot;lemma&quot;&gt;
   &lt;p&gt;($𝒯$, $𝒴$ 与投射维数, &lt;a href=&quot;T_Y_Dim&quot;&gt;证明&lt;/a&gt;). 对 $M ∈ 𝒯$.&lt;/p&gt;
@@ -2656,73 +3438,21 @@ $$&lt;/p&gt;
     &lt;li&gt;若 $𝒜$ 投射维数有限, 则典范函子 $K^b(𝐩𝐫𝐨𝐣(𝒜)) → D^b(𝒜)$ 是等价. 此时有导出等价 $D^b(𝒜) ≃ D^b(B)$.&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
-
-&lt;h4 id=&quot;遗传范畴的-torsion-pair&quot;&gt;遗传范畴的 torsion pair&lt;/h4&gt;
-
-&lt;p&gt;本节的范畴要求有足够投射对象, 且 tilting 对象 $T$ 使得一切 $(T,X)$ 均是有限生成右 $\mathrm{End}(T)$-模. 一个较弱的条件是 $\mathrm{Hom}$-群有限维.&lt;/p&gt;
-
-&lt;p&gt;仿照三角范畴, 定义 Abel 范畴的厚子范畴为, 关于 ses 二推三封闭的全子范畴.&lt;/p&gt;
-
-&lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;(遗传范畴). 称 Abel 范畴遗传, 若米田积意义下的 $\mathrm{Ext}^2(-,-)$ 函子消失.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;proposition&quot;&gt;
-  &lt;p&gt;(&lt;a href=&quot;Hereditary_PBPO&quot;&gt;证明&lt;/a&gt;) 遗传范畴中的满单分解均可补全作推出拉回方块.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-  &lt;p&gt;(&lt;a href=&quot;Hom_D_Hereditary&quot;&gt;证明&lt;/a&gt;). 遗传范畴中, $X^∙$ 与 $H^∙(X)$ (同调群构成的轴复形) 导出等价.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;(遗传范畴的 Tilting 对象). 称 $T ∈ 𝒜$ 是 tilting 对象, 若 $T$ 生成的厚子范畴是 $𝒜$, 且 $\mathrm{Ext}^1(T,T)=0$.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;p&gt;可以发现, 遗传范畴中的 tilting 对象与通常意义的 tilting 模是兼容的.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;遗传对应 $p.\dim T ≤ 1$,&lt;/li&gt;
-  &lt;li&gt;$T$ 生成厚子范畴的条件对应 $A$ 的 $𝐚𝐝𝐝(T)$-余消解维度 $≤1$,&lt;/li&gt;
-  &lt;li&gt;$\mathrm{Ext}^1(T,T) = 0$ 保持不变.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-  &lt;p&gt;(遗传范畴的 torsion pair). 对上述遗传范畴与 tilting 对象 $T$.&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;$(\ker \mathrm{Ext}^0(T,-), \ker \mathrm{Ext}^1(T,-))$ 是 torsion pair, 记作 $(𝒯, ℱ)$.&lt;/li&gt;
-    &lt;li&gt;BB 导出等价给出 $(𝒳 , 𝒴) ≃ (ℱ[1], 𝒯)$.&lt;/li&gt;
-    &lt;li&gt;若 $B$ 遗传, 则 $(𝒯, ℱ)$ 可裂.&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;p&gt;示意图如下:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/czhang271828/imgs/New_img//n_imgimage-20250424135358118.png&quot; alt=&quot;image-20250424135358118&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-  &lt;p&gt;(可裂 torsion pair 的等价定义). 称 Abel 范畴 $𝒜$ 中的 torsion pair $(𝒯, ℱ)$ 可裂, 若以下等价命题成立.&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;$𝒯∪ℱ$ 包含一切不可分解对象.&lt;/li&gt;
-    &lt;li&gt;$\mathrm{Ext}_𝒜^1(ℱ, 𝒯) = 0$.&lt;/li&gt;
-    &lt;li&gt;$𝒯$ 关于 $τ⁻¹$ 封闭.&lt;/li&gt;
-    &lt;li&gt;$ℱ$ 关于 $τ$ 封闭.&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Notes_on_Tilting</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Notes_on_Tilting</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting</guid>
         </item>
       
     
       
         <item>
-          <title>$\LaTeX$ Template (v 1.2)</title>
+          <title>$\LaTeX$ Template (v 1.2.1)</title>
           <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#abstract&quot; id=&quot;markdown-toc-abstract&quot;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#对原模板的若干修改&quot; id=&quot;markdown-toc-对原模板的若干修改&quot;&gt;对原模板的若干修改&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#why-this-template&quot; id=&quot;markdown-toc-why-this-template&quot;&gt;Why this template?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#个性化&quot; id=&quot;markdown-toc-个性化&quot;&gt;个性化&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;abstract&quot;&gt;
@@ -2837,8 +3567,15 @@ $$&lt;/p&gt;
     a_{1,1} &amp; a_{1,2} &amp; a_{1,3} &amp; \cdots \\
     a_{2,1} &amp; a_{2,2} &amp; a_{2,3} &amp; \cdots \\
     a_{3,1} &amp; a_{3,2} &amp; a_{3,3} &amp; \cdots \\
-    ⋮ &amp; ⋮ &amp; ⋮ &amp; ⋱.
-\end{bmatrix}
+    ⋮ &amp; ⋮ &amp; ⋮ &amp; ⋱
+\end{bmatrix}.
+$$&lt;/p&gt;
+  &lt;p&gt;\begin{equation} \mathtt{equation} 环境使用 𝒜 𝔟 ⊭ \frac 汉 字 也不会报错. \end{equation}&lt;/p&gt;
+  &lt;p&gt;$$
+\begin{aligned}
+  多行公式, &amp; align\\
+  显然. &amp; Q.E.D.
+\end{aligned}
 $$&lt;/p&gt;
 &lt;/div&gt;
 
@@ -2870,7 +3607,7 @@ $$&lt;/p&gt;
 
 &lt;div class=&quot;example&quot;&gt;
   &lt;p&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tikz&lt;/code&gt; 功能). 使用插件 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;quiver&lt;/code&gt; 画图.&lt;/p&gt;
-  &lt;center&gt; &lt;!-- https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcbWF0aHNjciBDIl0sWzAsMSwiXFxtYXRoYmIgQV9rICJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxXSxbMiwzXSxbMyw0XSxbMSw0XSxbNSw3LCIiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV0sWzIsOSwiIiwyLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XV0= --&gt; &lt;iframe class=&quot;quiver-embed&quot; src=&quot;https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcbWF0aHNjciBDIl0sWzAsMSwiXFxtYXRoYmIgQV9rICJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxXSxbMiwzXSxbMyw0XSxbMSw0XSxbNSw3LCIiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV0sWzIsOSwiIiwyLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XV0=&amp;amp;embed&quot; width=&quot;432&quot; height=&quot;304&quot; style=&quot;border-radius: 8px; border: none;&quot;&gt;&lt;/iframe&gt; &lt;/center&gt;
+  &lt;center&gt; &lt;!-- https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcbWF0aHNjciBDIl0sWzAsMSwiXFxtYXRoYmIgQV9rICJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxXSxbMiwzXSxbMyw0XSxbMSw0XSxbNSw3LCIiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV0sWzIsOSwiIiwyLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XV0= --&gt; &lt;iframe class=&quot;quiver-embed&quot; src=&quot;https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcbWF0aHNjciBDIl0sWzAsMSwiXFxtYXRoYmIgQV9rICJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxXSxbMiwzXSxbMyw0XSxbMSw0XSxbNSw3LCIiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV0sWzIsOSwiIiwyLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XV0=&amp;amp;embed&quot; width=&quot;300&quot; height=&quot;200&quot; style=&quot;border-radius: 8px; border: dashed;&quot;&gt;&lt;/iframe&gt; &lt;/center&gt;
   &lt;p&gt;图像大小容易失衡, 建议使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mathcha&lt;/code&gt; 画图, 输出矩阵, 例如&lt;/p&gt;
   &lt;p&gt;$$
 \begin{bmatrix}
@@ -2887,8 +3624,10 @@ $$&lt;/p&gt;
   &lt;p&gt;&lt;img src=&quot;https:/raw.githubusercontent.com/czhang271828/imgs/New_img/n_imgdiagram-20250420%20(2).png&quot; alt=&quot;image-20250423194403416&quot; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 
+&lt;h2 id=&quot;个性化&quot;&gt;个性化&lt;/h2&gt;
+
 &lt;div class=&quot;example&quot;&gt;
-  &lt;p&gt;(Block). 支持 Definition, Theorem, Lemma, Proof, Solution, Example, Remark, Note, Corollary, Proposition, Slogan. 实现方式如下:&lt;/p&gt;
+  &lt;p&gt;(自定义 Block). 支持 Definition, Theorem, Lemma, Proof, Solution, Example, Remark, Note, Corollary, Proposition, Slogan. 实现方式如下:&lt;/p&gt;
   &lt;ol&gt;
     &lt;li&gt;在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/_sass/main.scss&lt;/code&gt; 中定义 solution 的样式 (包含前, 中, 后, 以及 QED 正方形).&lt;/li&gt;
     &lt;li&gt;在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/_plugins/latex.rb&lt;/code&gt; 中定义 solution 公式块环境, 此处使用 {% sol %} {% endsol %} .&lt;/li&gt;
@@ -2896,14 +3635,33 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;example&quot;&gt;
-  &lt;p&gt;(我的写作界面).&lt;/p&gt;
-  &lt;p&gt;下图左是简陋的 markdown 编辑器 (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VScode&lt;/code&gt;, 配 Unicode-math 输入, 类似 &lt;a href=&quot;https://live.lean-lang.org/&quot;&gt;L∃∀N&lt;/a&gt;, 下图右是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;edge&lt;/code&gt; 浏览器. 一般来说, 左侧 $\texttt{ctrl + S}$ 保存, 右侧 $\texttt{ctrl + R}$ 直接刷新即可, 用时不超过一秒.&lt;/p&gt;
-  &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/czhang271828/imgs/New_img//n_imgimage-20250423194804974.png&quot; alt=&quot;image-20250423194804974&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;(创建 block 快捷键). 假设你是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vscode&lt;/code&gt; 用户, 以下是创建 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\def&lt;/code&gt; 快捷键的方式.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;打开 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl+Shift+P &amp;gt; snippets : Configure Snippets&lt;/code&gt;,&lt;/li&gt;
+    &lt;li&gt;选择或新建 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;liquid.json&lt;/code&gt;,&lt;/li&gt;
+    &lt;li&gt;输入&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;blockquote&gt;
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;
+      &lt;div class=&quot;highlight&quot;&gt;
+        &lt;div class=&quot;language-plaintext highlight highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;def&quot;: {
+  &quot;prefix&quot;: [&quot;\\def&quot;, &quot;defblock&quot;],
+  &quot;body&quot;: [
+  &quot;{% def %}&quot;,
+  &quot;$0&quot;,
+  &quot;{% enddef %}&quot;
+  ]
+},
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/blockquote&gt;
+  &lt;p&gt;即可通过 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\def&lt;/code&gt; + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;enter&lt;/code&gt; 快速创建 definition 块.&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/template</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/template</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/template</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/template</guid>
         </item>
       
     
@@ -3213,8 +3971,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Reflexive_sub_cat</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Reflexive_sub_cat</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Reflexive_sub_cat</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Reflexive_sub_cat</guid>
         </item>
       
     
@@ -3274,8 +4032,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/syzygy_und_approx</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/syzygy_und_approx</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</guid>
         </item>
       
     
@@ -3291,8 +4049,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/stable_subquot</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/stable_subquot</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</guid>
         </item>
       
     
@@ -3310,8 +4068,8 @@ $$ 依照 $\mathrm{Rad}$ 的性质, 只能由于 $\mathrm{im}(f) = Y$. 故 $f$ �
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Top_surjective</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Top_surjective</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</guid>
         </item>
       
     
@@ -3345,8 +4103,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/exists_left_proj_app</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/exists_left_proj_app</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/exists_left_proj_app</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/exists_left_proj_app</guid>
         </item>
       
     
@@ -3376,8 +4134,8 @@ $$ 即为所求之单射.&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Torsion_Less</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Torsion_Less</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Torsion_Less</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Torsion_Less</guid>
         </item>
       
     
@@ -3404,8 +4162,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Left_proj_approx</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Left_proj_approx</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Left_proj_approx</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Left_proj_approx</guid>
         </item>
       
     
@@ -3971,8 +4729,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/AR-notes</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/AR-notes</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/AR-notes</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR-notes</guid>
         </item>
       
     

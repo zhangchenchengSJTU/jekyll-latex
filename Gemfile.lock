@@ -260,6 +260,7 @@ GEM
     unf_ext (0.0.8.2)
     unf_ext (0.0.8.2-x64-mingw32)
     unicode-display_width (1.8.0)
+    wdm (0.2.0)
     webrick (1.8.1)
 
 PLATFORMS
@@ -274,6 +275,7 @@ DEPENDENCIES
   jekyll-toc (~> 0.19.0)
   redcarpet
   tzinfo-data
+  wdm (>= 0.1.0)
   webrick
 
 BUNDLED WITH

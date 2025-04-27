@@ -2,7 +2,7 @@
 title: 有限型与仿射型 Dynkin 图
 author: Chencheng Zhang
 layout: post
-category: proof
+category: fact
 ---
 
 ##

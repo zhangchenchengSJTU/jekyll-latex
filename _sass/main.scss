@@ -101,58 +101,47 @@
 }
 
 :root {
-  // --body-color: hsl(0, 5%, 10%);
-  --body-color: hsl(0, 0%, 0%);
-  // --body-bg-color: hsl(210, 20%, 98%);
-  --body-bg-color: hsl(0, 0%, 100%);
-  --link-visited: hsl(0, 100%, 33%);
-  --link-focus-outline: hsl(220, 90%, 52%);
-  --pre-bg-color: hsl(210, 28%, 93%);
-  --kbd-bg-color: hsl(210, 5%, 100%);
-  --kbd-border-color: hsl(210, 5%, 70%);
-  --table-border-color: black;
-  --sidenote-target-border-color: hsl(55, 55%, 70%);
-  --footnotes-border-color: hsl(0, 0%, 39%);
-  --text-indent-size: 1.463rem;
-  /* In 12pt [Latin Modern font] LaTeX article
-  \parindent =~ 17.625pt; taking also into account the ratio
-  1pt[LaTeX] = (72 / 72.27) * 1pt[HTML], with default 12pt/1rem LaTeX.css font
-  size, the identation value in rem CSS units is: 
-  \parindent =~ 17.625 * (72 / 72.27) / 12 = 1.463rem. */
+  --body-color: hsl(0, 0%, 5%); /* 更深黑的文字（原10%→5%） */
+  --body-bg-color: hsl(0, 0%, 100%); /* 保持纯白背景 */
+  --link-visited: hsl(0, 70%, 35%); /* 更饱和的暖棕（原50%→70%） */
+  --link-focus-outline: hsl(30, 100%, 50%); /* 更鲜艳的橙色（原90%→100%） */
+  --pre-bg-color: hsl(42, 30%, 97%); /* 更接近纯白的米白（原95%→97%） */
+  --kbd-bg-color: hsl(42, 30%, 93%); /* 更浅的米色（原90%→93%） */
+  --kbd-border-color: hsl(42, 25%, 60%); /* 更深的米灰边框（原70%→60%） */
+  --table-border-color: hsl(0, 0%, 15%); /* 更黑的表格线（原20%→15%） */
+  --sidenote-target-border-color: hsl(42, 72%, 64%); /* 更明显的金色（原65%→55%） */
+  --footnotes-border-color: hsl(0, 0%, 30%); /* 更深的脚注线（原40%→30%） */
+  --text-indent-size: 1.463rem; /* 保持原有缩进 */
 }
 
 .latex-dark {
-  // --body-color: hsl(0, 0%, 86%);
-  --body-color: hsl(0, 0%, 0%);
-  // --body-bg-color: hsl(0, 0%, 16%);
-  --body-bg-color: hsl(0, 0%, 100%);
-  --link-visited: hsl(196 80% 77%);
-  --link-focus-outline: hsl(215, 63%, 73%);
-  --pre-bg-color: hsl(0, 1%, 25%);
-  // --kbd-bg-color: hsl(0, 0%, 16%);
-  --kbd-bg-color: hsl(0, 0%, 0%);
-  --kbd-border-color: hsl(210, 5%, 70%);
-  --table-border-color: white;
-  --sidenote-target-border-color: hsl(0, 0%, 59%);
-  --footnotes-border-color: hsl(0, 0%, 59%);
-  --proof-symbol-filter: invert(80%);
+  --body-color: hsl(0, 0%, 0%); /* 更亮的文字（原85%→90%） */
+  --body-bg-color: hsl(0, 0%, 100%); /* 更黑的背景（原10%→5%） */
+  --link-visited: hsl(30, 100%, 50%); /* 更亮的暖橙（原70%→75%） */
+  --link-focus-outline: hsl(30, 100%, 75%); /* 更亮的聚焦边框 */
+  --pre-bg-color: hsl(42, 25%, 15%); /* 更暗的代码背景（原20%→15%） */
+  --kbd-bg-color: hsl(42, 25%, 25%); /* 更暗的键盘背景 */
+  --kbd-border-color: hsl(42, 15%, 45%); /* 更明显的边框 */
+  --table-border-color: hsl(0, 0%, 85%); /* 更亮的表格线 */
+  --sidenote-target-border-color: hsl(42, 40%, 55%); /* 保持一致性 */
+  --footnotes-border-color: hsl(0, 0%, 50%); /* 更明显的脚注线 */
+  --proof-symbol-filter: invert(90%); /* 更高对比度反转 */
 }
 
 @media (prefers-color-scheme: dark) {
   .latex-dark-auto {
-    --body-color: hsl(0, 0%, 86%);
-    // --body-bg-color: hsl(0, 0%, 16%);
-    --body-bg-color: hsl(0, 0%, 0%);
-    --link-visited: hsl(196 80% 77%);
-    --link-focus-outline: hsl(215, 63%, 73%);
-    --pre-bg-color: hsl(0, 1%, 25%);
-    // --kbd-bg-color: hsl(0, 0%, 16%);
-    --kbd-bg-color: hsl(0, 0%, 100%);
-    --kbd-border-color: hsl(210, 5%, 70%);
-    --table-border-color: white;
-    --sidenote-target-border-color: hsl(0, 0%, 59%);
-    --footnotes-border-color: hsl(0, 0%, 59%);
-    --proof-symbol-filter: invert(80%);
+    /* 与.latex-dark相同的高对比度值 */
+    --body-color: hsl(0, 0%, 90%);
+    --body-bg-color: hsl(0, 0%, 5%);
+    --link-visited: hsl(30, 100%, 50%);
+    --link-focus-outline: hsl(30, 100%, 60%);
+    --pre-bg-color: hsl(42, 25%, 15%);
+    --kbd-bg-color: hsl(42, 25%, 25%);
+    --kbd-border-color: hsl(42, 15%, 45%);
+    --table-border-color: hsl(0, 0%, 85%);
+    --sidenote-target-border-color: hsl(42, 40%, 55%);
+    --footnotes-border-color: hsl(0, 0%, 50%);
+    --proof-symbol-filter: invert(90%);
   }
 }
 
