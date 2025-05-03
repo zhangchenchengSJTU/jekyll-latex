@@ -11,7 +11,7 @@ category: proof
 给定遗传路代数 $A= kQ$ 上的点 $i$, 使得 $P(i)$ 是<b>非内射的投射单模</b>. 定义 $i$ 点处的 APR tilting 模为
 
 $$
-T := τ⁻¹ P(4) ⊕ ⨁_{i ≠ 4} P(i).
+T := τ⁻¹ P(i) ⊕ ⨁_{j ≠ i} P(j).
 $$
 
 {% enddef %}

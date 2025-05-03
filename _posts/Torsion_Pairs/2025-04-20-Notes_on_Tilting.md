@@ -326,7 +326,7 @@ $T$ 是 $(B,A)$-双模. 特别地, 代数 $A$ 与 $B$ 的关系如下.
 
 {% thm %}
 
-(整体维数, [证明](Gl_Dim_A_B)). $\|gl.\dim A - gl.\dim B\|≤ 1$.
+(整体维数, [证明](Gl_Dim_A_B)). $|gl.\dim A - gl.\dim B|≤ 1$.
 
 {% endthm %}
 

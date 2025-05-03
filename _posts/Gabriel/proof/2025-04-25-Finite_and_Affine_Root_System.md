@@ -5,7 +5,7 @@ layout: post
 category: fact
 ---
 
-##
+## 图示
 
 {% def %}
 ($A_n$). 该图具有 $n$ 个顶点, 形如
