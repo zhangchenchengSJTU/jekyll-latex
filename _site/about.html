@@ -20,15 +20,15 @@
   <meta name="google-site-verification" content="abc123">
 
 
-<link rel="icon" href="https://zhangchenchengsjtu.github.io/website/assets/favicon.png">
-<link rel="apple-touch-icon" href="https://zhangchenchengsjtu.github.io/website/assets/touch-icon.png">
-<link rel="stylesheet" href="https://zhangchenchengsjtu.github.io/website/assets/core.css">
-<link rel="canonical" href="https://zhangchenchengsjtu.github.io/website/about">
+<link rel="icon" href="/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
+<link rel="stylesheet" href="/website/assets/core.css">
+<link rel="canonical" href="/website/about">
 <link
   rel="alternate"
   type="application/atom+xml"
   title="Jekyll Latex"
-  href="https://zhangchenchengsjtu.github.io/website/feed.xml" />
+  href="/website/feed.xml" />
 
 
 
@@ -59,15 +59,21 @@
 
 <body class="latex-dark">
 
-	<aside class="logo">
-  
-
-  <a href="https://zhangchenchengsjtu.github.io/website/">
+	<aside class="logo" id="logo-section">
+  <a href="/website/about" id="logo-link">
     <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
   </a>
-  <span class="logo-prompt">Back to Home</span>
-
+  <span class="logo-prompt" id="logo-prompt">About the Author</span>
 </aside>
+
+<script>
+  // 根据当前页URL动态修改
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+    document.getElementById('logo-link').href = "/website";
+    document.getElementById('logo-prompt').textContent = 'Back to Home';
+  }
+</script>
+
 
 	<main>
   <article>

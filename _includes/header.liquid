@@ -1,15 +1,14 @@
-<aside class="logo">
-  {% if page.url == '/index.liquid' or page.url == '/' %}
-    {% assign link = '/about' %}
-    {% assign prompt = 'About the Author' %}
-  {% else %}
-    {% assign link = '/website/' %}
-    {% assign prompt = 'Back to Home' %}
-  {% endif %}
-
-  <a href="{{ link | prepend: site.url }}">
-    <img class="gravatar" src="https://www.gravatar.com/avatar/{{ site.author_gravatar }}.png?s=80">
+<aside class="logo" id="logo-section">
+  <a href="{{ "/about" | relative_url }}" id="logo-link">
+    <img class="gravatar" src="https://www.gravatar.com/avatar/0f20ebcc66f10f16c36a6013e485771f.png?s=80">
   </a>
-  <span class="logo-prompt">{{ prompt }}</span>
-
+  <span class="logo-prompt" id="logo-prompt">About the Author</span>
 </aside>
+
+<script>
+  // 根据当前页URL动态修改
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+    document.getElementById('logo-link').href = "{{ site.baseurl }}";
+    document.getElementById('logo-prompt').textContent = 'Back to Home';
+  }
+</script>

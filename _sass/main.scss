@@ -910,3 +910,18 @@ h6 {
   margin-bottom: 0.8rem;
 }
 
+
+/* 平板设备（宽度小于等于 1050px）消除左右边距 */
+@media (max-width: 1050px) {
+  body {
+    padding-left: 0.5rem !important;  /* 大幅减少左边距 */
+    padding-right: 0.5rem !important; /* 大幅减少右边距 */
+    max-width: 100%;                  /* 允许内容占满屏幕宽度 */
+  }
+  
+  /* 可选：调整其他元素避免内容贴边 */
+  .sidenote, table, pre {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+  }
+}

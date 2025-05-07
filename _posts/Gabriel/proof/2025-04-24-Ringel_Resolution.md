@@ -5,6 +5,9 @@ layout: post
 category: proof
 ---
 
+* toc
+{:toc}
+
 ## 有限维代数的极小投射分解
 
 ### $kQ$ 的标准分解
