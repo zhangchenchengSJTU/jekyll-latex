@@ -17,7 +17,7 @@ category: example
 $$
 \begin{bmatrix}
 P_{1} &  & I_{1} &  & I_{2}^{2} &  & \\
-[ 1\mid 0]0[ 0\mid 0] & \hookrightarrow  & [ 1\mid 2]0[ 0\mid 0] & \rightarrow  & ([ 0\mid 1]1\ [ 0\mid 0])^{2} &  & \\
+[ 1\mid 0]0[ 0\mid 0] & \hookrightarrow  & [ 1\mid 2]0[ 0\mid 0] & \rightarrow  & ([ 0\mid 1]1[ 0\mid 0])^{2} &  & \\
  &  & ⇣  &  & ⇣  &  & \\
  &  & [ 1\mid 0]0[ 0\mid 0] & \hookrightarrow  & ([ 2\mid 1]0[ 0\mid 0])^{2} & \rightarrow  & [ 3\mid 2]0[ 0\mid 0]\\
  &  & P_{1} &  & P_{2}^{2} &  & \tau ^{-1} P_{1}

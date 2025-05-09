@@ -5,7 +5,7 @@ layout: post
 category: notes
 ---
 
-## Harada-Sai 估计的证明
+## 原田-斎长度估计
 
 {% def %}
 方便起见, 记 $ℓ (-)$ 为合成列的长度.
@@ -38,10 +38,6 @@ $$
 
 {% endpf %}
 
-{% ex %}
-
-{% endex %}
-
 {% note %}
 连接态射拆解如下:
 
@@ -51,22 +47,22 @@ $$
 
 {% endnote %}
 
-## Harada-Sai 估计上界严格
+## 原田-斎长度估计有严格上界
 
 {% ex %}
 给定考虑以下带关系的 quiver
 
-\begin{equation}
-    0 \underset{b_1}{\overset {a_1} ⇄} 1 \underset{b_2}{\overset {a_2} ⇄} \cdots \underset{b_n}{\overset {a_n} ⇄} n.
-\end{equation}
+$$\begin{equation}
+    0  \ \underset{b_1}{\overset {a_1} ⇄} \  1  \ \underset{b_2}{\overset {a_2} ⇄}  \ \cdots \ \underset{b_n}{\overset {a_n} ⇄} \ n.
+\end{equation}$$
 
 取 $S := \{a_i b_i, b_ia_i\}_{1 ≤ i ≤ n} ∪ \{a_{i+1}a_{i}, b_i b_{i+1}\}_{i=1}^{n-1}$, 也就是 $a^2 = b^2 = ab = ba = 0$. 记代数 $A= kQ / (S)$.
 \\
 \\
 考虑每点处维度为 $1$ 的连通模, 也就是形如 $0 → 1 ← \cdots → n$ 的模 (共计 $2^n$ 个). 对这些模进行字典序排列, 则存在一列互相连接的非同构的同态, 且限制在 $Me_0$ 上是同构. 取满-单分解项, 得 $2^{n+1} - 2$ 个态射, 其合成非零. 此处 $ℓ = (n+1)$.
 
-\begin{equation}
+$$\begin{equation}
     [0 → 1 ← 2 → 3 → 4 ← 5] ↠ [0 → 1 ← 2 → 3] ↪ [0 → 1 ← 2 → 3 ← 4 → 5].
-\end{equation}
+\end{equation}$$
 
 {% endex %}
