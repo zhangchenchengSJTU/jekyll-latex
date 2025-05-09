@@ -2,36 +2,35 @@ require "rubygems"
 require "tmpdir"
 require "bundler/setup"
 require "jekyll"
-require 'rake'
-require 'json'
-require 'front_matter_parser'
-require 'open3'
 
-desc "Create corpus for search"
-file './corpus.json' => ['./', *Rake::FileList['_posts/*.md'].exclude()] do |md_file|
-     unsafe_loader = ->(string) { YAML.load(string) } #required by front matter parser. Read more at the githu brepo
-     corpus = md_file.sources.grep(/\.md$/)
-     .map do |path|
-        file_path = './' + path
-        parsed = FrontMatterParser::Parser.parse_file(file_path, loader: unsafe_loader)
-         {
-            id: path.pathmap('%n'),
-            name: parsed['title'],
-            url: parsed['title'].downcase.strip.gsub(' ', '-'),
-            content: parsed.content,
-         }
-     end
-     File.open(md_file.name, 'w') do |f|
-        f << JSON.generate(corpus)
-     end
-end
+GITHUB_REPONAME = "ryanmcdermott/jekyll-latex"
 
-file './search_index.json' => ['./corpus.json'] do |t|
-  Open3.popen2('node script/build-index') do |stdin, stdout, wt|
-     IO.copy_stream(t.source, stdin)
-     stdin.close
-     IO.copy_stream(stdout, t.name)
+namespace :site do
+  desc "Generate static site for Github"
+  task :generate do
+    Jekyll::Site.new(Jekyll.configuration({
+      "source"      => ".",
+      "destination" => "_site"
+    })).process
+  end
+
+  desc "Generate static site for Github"
+  task :publish => [:generate] do
+    Dir.mktmpdir do |tmp|
+      cp_r "_site/.", tmp
+
+      pwd = Dir.pwd
+      Dir.chdir tmp
+      File.open(".nojekyll", "wb") { |f| f.puts("") }
+
+      system "git init"
+      system "git add ."
+      message = "Site generated at #{Time.now.utc}"
+      system "git commit -m #{message.inspect}"
+      system "git remote add origin git@github.com:#{GITHUB_REPONAME}.git"
+      system "git push origin master:refs/heads/gh-pages --force"
+
+      Dir.chdir pwd
+    end
   end
 end
-
-task :default => ['./corpus.json', './search_index.json']

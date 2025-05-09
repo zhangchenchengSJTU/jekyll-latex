@@ -74,6 +74,3 @@ defaults:
       type:         "posts"
     values:
       layout:       "post"
-
-search:
-  provider: custom # "default" (default), false, "google", "custom"

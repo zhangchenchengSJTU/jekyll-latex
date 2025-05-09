@@ -2,7 +2,7 @@
 title: Happel 的导出等价定理
 author: Chencheng Zhang
 layout: post
-category: [notes, pending]
+category: notes
 ---
 
 * TOC
@@ -15,10 +15,6 @@ category: [notes, pending]
 2. (Happel 的导出等价定理) 这将结论推广至投射维度有限的 tilting 对象.
 3. (谱序列方法). 这是对 Happel 导出等价定理的完善, 其更精细地给出导出等价中轴复形的对应关系.
 {% endabs %}
-
-{% note %}
-第一部分证明待补全.
-{% endnote %}
 
 ## Happel 导出等价定理
 
