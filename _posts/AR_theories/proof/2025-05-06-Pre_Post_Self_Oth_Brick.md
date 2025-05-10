@@ -24,3 +24,7 @@ category: proof
    因此, 存在 $M$ 指向 $τM$ 的不可约态射路, 该预投射分支存在环路, 矛盾.
 
 {% endpf %}
+
+{% note %}
+Say a brick $B$ is [exceptional](https://arxiv.org/pdf/2501.13476), provided $\mathrm{Ext}^1(M,M) = 0$.
+{% endnote %}
