@@ -23,11 +23,19 @@ category: collection
 
 [mathcha](https://www.mathcha.io/editor): 强大的 `tikzpicture` 制作网站.
 
+[手写识别](https://webdemo.myscript.com/): 识别公式, 多语言, 甚至 PPT.
+
+[`pan-doc`](https://pandoc.org/): 著名的 `pan-doc`, 啥都能转换.
+
 #### Unicode $\LaTeX$
 
-字典: [Wiki](https://en.wikipedia.org/wiki/Mathematical_operators_and_symbols_in_Unicode), [ctan](https://ctan.math.illinois.edu/fonts/erewhon-math/unimath-erewhon.pdf), [输入快捷键](Unicode_math_Table).
+Unicode 名称查询: [在线: 符号 → 名称](https://w3c.github.io/xml-entities/unicode-names), [PDF](https://milde.users.sourceforge.net/LUCR/Math/unimathsymbols.pdf), [输入快捷字典](Unicode_math_Table).
 
-输入法: 使用 vscode 插件 [Fast Unicode Math Characters](https://marketplace.visualstudio.com/items?itemName=GuidoTapia2.unicode-math-vscode), [Unicode Latex](https://marketplace.visualstudio.com/items?itemName=oijaz.unicode-latex); [L∃∀N 在线](https://live.lean-lang.org/).
+输入法: 使用 vscode 插件 [Fast Unicode Math Characters](https://marketplace.visualstudio.com/items?itemName=GuidoTapia2.unicode-math-vscode), [Unicode $\LaTeX$](https://marketplace.visualstudio.com/items?itemName=oijaz.unicode-latex); [L∃∀N 在线](https://live.lean-lang.org/).
+
+Unicode Math: [Wiki](https://en.wikipedia.org/wiki/Mathematical_operators_and_symbols_in_Unicode), [ctan](https://ctan.math.illinois.edu/fonts/erewhon-math/unimath-erewhon.pdf)
+
+其他 Unicode: [符号查询 (高级)](https://www.dickimaw-books.com/latex/symbol-lookup.php), [Unicode 大全](https://www.compart.com/en/unicode/), [IPA](https://westonruter.github.io/ipa-chart/keyboard/), [炫酷文字生成](https://cool-letters-generator.blogspot.com/).
 
 #### Bib$\TeX$ 转换
 
@@ -37,7 +45,7 @@ category: collection
 
 ### Special Latin Orthography
 
-For Drançais, Deutsch, Español, Dansk, etc.
+For Drançais, Deutsch, Español, Dansk, etc. [link](https://unicodelookup.com/).
 
 - Ä À Â Å Æ Ç É È Ê Ë Î Ï Ñ Ö Ô Ø Œ ẞ Ù Û Ü Ÿ
 - ä à â å æ ç é è ê ë î ï ñ ö ô ø œ ß ù û ü ÿ

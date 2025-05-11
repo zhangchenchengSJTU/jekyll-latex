@@ -7,6 +7,269 @@
     
       
         <item>
+          <title>(线性代数) C-特征空间</title>
+          <description>&lt;div class=&quot;abstract&quot;&gt;
+  &lt;h5 id=&quot;abstract&quot;&gt;Abstract&lt;/h5&gt;
+  &lt;div&gt;
+    &lt;p&gt;选自作业题.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Problem Set for 08 May 2025: A New Jordan form over $\mathbb C$&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt; (Ceigen-). Let $A\in \mathbb C^{n \times n}$. We say that $(v, \lambda)$ is a ceigenpair of $A$ provided $A \overline v = \lambda v$ for some $\lambda \in \mathbb C$. The vector $v$ is referred to as a ceigenvector and $\lambda$ a ceigenvalue, correspondingly. For matrices, we say $A$ is csimilar to $B$ provided $A = PB\overline P^{-1}$ for some non-singular matrix $P$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise 1&lt;/strong&gt; Characterise the ceigenspace corresponding to the ceigenvalue $0$.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;就是 $\overline {\ker (λ I - A)}$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise 2&lt;/strong&gt; Demonstrate that if $\lambda$ is a ceigenvalue, then so too is $e^{i \theta} \cdot \lambda$. Furthermore, show that for any ceigenvector $v$, there exists a ceigenvector associated with a ceigenvalue $\geq 0$.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;若有 $A \overline v = λ v$, 则对任意 $t ∈ ℝ$ 总有 $A \overline {e^{i t}v}= e^{-i⋅ 2t}λ (e^{i t}v)$. 取 $θ = -t/2$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise 3&lt;/strong&gt; Suppose $(v, \sigma)$ is a ceigenpair of $A$; then $(v, \sigma \overline \sigma)$ is an eigenpair of $A \overline A$. In particular,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;if $A \in \mathbb C^{d \times d}$ possesses $d$ ceigenpairs which are linearly independent over $\mathbb C$, then $A\overline A$ is diagonalisable with all eigenvalues non-negative.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now consider the following &lt;strong&gt;partial converse statement&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$A$ has no ceigenvectors if and only if $A \overline A$ admits no eigenvalues in $\mathbb R_{\geq 0}$;&lt;/li&gt;
+  &lt;li&gt;$A \in \mathbb C^{d \times d}$ has $d$ linearly independent ceigenpairs over $\mathbb C$ if and only if $A\overline A$ is diagonalisable with non-negative eigenvalues.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Prove the &lt;strong&gt;partial converse statement&lt;/strong&gt;: suppose that $(v, \sigma \overline {\sigma })$ is an eigenpair of $A\overline A$; then $\sigma$ is a ceigenvalue of $A$.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;错误解答: $u := \overline σ v + A\overline v$, 则 $A \overline u = σ A\overline v + σ \overline σ v = σ u$.&lt;/p&gt;
+
+  &lt;p&gt;注: 应当要求 $u ≠ 0$. 取 $u_t := e^{-it}\overline σ v + e^{it}A\overline v$, 则 $A \overline {u_t} = e^{i t}σ A\overline v + e^{-i t}σ \overline σ v = σ u_t$. 至少存在一个 $t$ 使得 $u_t ≠ 0$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise 4&lt;/strong&gt; Elucidate &lt;strong&gt;Exercise 3&lt;/strong&gt; (particularly the warning) with the following example:
+$$
+A = \begin{pmatrix} 1 &amp; i \\ 0 &amp; 1 \end{pmatrix},\quad v = \begin{pmatrix}1 \\ i \end{pmatrix}.
+$$&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;由 $A \overline A = I$, $v$ 是 $A\overline A$ 的特征向量, 但不是 $A$ 的 ceigenvector.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise 5&lt;/strong&gt; This serves to complete &lt;strong&gt;Exercise 2&lt;/strong&gt;. Suppose $\{(v_i , \lambda_i)\}_{i=1}^n$ are ceigenpairs of $A$ such that $|\lambda_i| \neq |\lambda_j|$; show that $\{v_i\}_{i=1}^n$ are linearly independent.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;$\{v_i\}$ 是 $A\overline A$ 不同特征根的特征向量, 从而线性无关.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise 6&lt;/strong&gt; We aim to identify the analogue of the Jordan canonical form in the c-version, namely, $X =P J\overline P^{-1}$. We commence with a very special case:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$P\overline {P} = I$ if and only if $P = Q\overline Q^{-1}$ for some invertible $Q$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;假定 $P\overline P = I$. 记 $Q_t := e^{-it}I + e^{it}P$, 此时 $P \overline {Q_t} =  e^{it}P + e^{-it}I = Q_t$. 比较特征根, 存在 $t$ 使得 $Q_t ≠ 0$.&lt;/p&gt;
+
+  &lt;p&gt;假定 $P = Q\overline Q^{-1}$, 则 $P \overline P = Q \overline Q^{-1}\overline Q Q^{-1} = I$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise 7&lt;/strong&gt; The most elementary Jordan matrix is the diagonal matrix. Show that $A$ is cdiagonalisable (i.e., $A = PD\overline P^{-1}$ for some $P$) if and only if   &lt;font color=&quot;red&quot;&gt;$A\overline A$ is diagonalisable and $\mathrm{rank}(A) = \mathrm{rank}(A\overline A)$ &lt;/font&gt;
+. In this scenario, $A\overline A$ has only non-negative eigenvalues.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;若 $A = PD\overline P^{-1}$, 则 $A \overline A = PD\overline D P^{-1}$ 是可对角化的矩阵.&lt;/p&gt;
+
+  &lt;p&gt;若 $A \overline A$ 可对角化, 记 $P (A\overline A) P^{-1} = D$, 其中 $D$ 是以数量矩阵 $λ_i I_{s_i}$ 为分块的对角矩阵. 形式地取 $B := PA\overline P^{-1}$, 以下计算表明 $B$ 是分块对角矩阵:&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;由 $B\overline B = D = \overline D = \overline B B$, 得 $BD = B \overline B B = DB$. 由交换性, $B$ 必然是分块对角矩阵.&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;此时, 对 $A$ 的每一个分块作 c-对角化即可. 不妨设 $A\overline A$ 是零矩阵或者恒等矩阵.&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;若 $A\overline A$ 是零矩阵, 由秩关系得 $A = O$.&lt;/li&gt;
+    &lt;li&gt;若 $A\overline A = I$, 则存在可逆矩阵 $Q$ 使得 $A = Q I\overline Q^{-1}$.&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;作为推论: 若 $A \overline A$ 可对角化, 则 $A$ c-相似于某个全为非负实数的 Jordan 型, 从而 $A \overline A$ 的特征值均为非负实数.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise 8&lt;/strong&gt; (Nilpotent part). Show that there exists a matrix $P$ such that $PA\overline P^{-1} = \binom{N \ \ O}{O \ \ B}$, where $N$ comprises nilpotent Jordan blocks and $B$ is invertible.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;直接使用 Fitting 引理, 得两种直和分解: $V = \mathrm{im}(\cdots \overline AA\overline A A) ⊕ \ker (\cdots \overline AA\overline A A)$.&lt;/p&gt;
+
+  &lt;p&gt;取 $ℝ$-线性自同态 $φ$, 使得有 $ℂ$-线性自同态 $φ ∘ \overline {(-)}$. 称这一自同态在基 $u_i$ 下的 c-表示为矩阵 $A$, 若
+$$
+&gt; φ (u_1 ∣ \cdots ∣ u_n) = (\overline{u_1} ∣ \cdots ∣ \overline{u_n}) ⋅ A.
+&gt; $$&lt;/p&gt;
+
+  &lt;p&gt;存在 c-相似变换 $PA\overline P^{-1} = A'$, 当且仅当存在一组基 $(v_i) = (u_i) P^{-1}$ 使得 $φ(v_∙) = (\overline{v_∙}) ⋅ A'$. 比对 Fitting 引理,&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;存在 $\mathrm{im}(\cdots \overline AA\overline A A)$ 的一组基, 使得在 $φ ∘ \overline {(-)}$ 下是同构;&lt;/li&gt;
+    &lt;li&gt;存在 $\mathrm{ker}(\cdots \overline AA\overline A A)$ 的一组基, 使得在 $φ ∘ \overline {(-)}$ 下是幂零变换.&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;这就完成了 c-分块对角化.&lt;/p&gt;
+
+  &lt;p&gt;考虑增长的零空间 $\ker A$, $\ker \overline A A$, $\ker A\overline A A$, $\ker \overline A A \overline A A$ 等等. 记 $V_{-1}$ 是最后一个不为零的零空间, $V_{-k-1}$ 是 $V_{-k}$ 的前项. 这些都是互相包含的 $ℂ$-线性空间, 因为 $A$ 与 $\overline A$ 是向左添加的.&lt;/p&gt;
+
+  &lt;p&gt;取 $V_{-1}$ 的基 $\{v^0_{(0,∙)}\}$. 此时存在一组 $\{v_{(0,∙)}^1\}$ 使得 $A v_{(0,i)}^1 = v_{(0,i)}^0$. 另取 $\{v^1_{(1, ∙)}\}$ 使得 $\{v^1_{(0, ∙)}\} ⊔ \{v^1_{(1, ∙)}\}$ 是 $V_{-2}$ 的基. 归纳地, 取 $\{v^2_{(k, ∙)}\}_{k = 1,2,3}$ 使得有双射 $\overline A : \{v^2_{(k, ∙)}\}_{k=1,2} \overset ∼ → \{v^1_{(k, ∙)}\}_{k=1,2}$.&lt;/p&gt;
+
+  &lt;p&gt;将归纳过程总结作下图 (同一般 Jordan 型的归纳):&lt;/p&gt;
+
+  &lt;p&gt;$$
+&gt; \begin{bmatrix}
+&gt; V_{-3} &amp; \xrightarrow{\overline{A}} &amp; V_{-2} &amp; \xrightarrow{A} &amp; V_&gt; {-1} &amp; \xrightarrow{\overline{A}} &amp; 0\\
+&gt; \left\{v_{( 0,\bullet )}^{2}\right\} &amp; \xrightarrow{\sim } &amp; \left\{v_{( 0,\bullet )}^{1}\right\} &amp; \xrightarrow{\sim } &amp; \left\{v_{( 0,\bullet )}^{0}\right\} &amp; \twoheadrightarrow  &amp; 0\\
+&gt; \left\{v_{( 1,\bullet )}^{2}\right\} &amp; \xrightarrow{\sim } &amp; \left\{v_{( 1,\bullet )}^{1}\right\} &amp; \twoheadrightarrow  &amp; 0 &amp;  &amp; \\
+&gt; \left\{v_{( 2,\bullet )}^{2}\right\} &amp; \twoheadrightarrow  &amp; 0 &amp;  &amp;  &amp;  &amp;
+&gt; \end{bmatrix}.
+&gt; $$&lt;/p&gt;
+
+  &lt;p&gt;固定 $(i,j)$, 则一条链 $\{v_{(i,j)}^k\}$ 对应一个幂零 Jordan 块 $J(0)$. 矩阵 (视作线性映射) 的功效是平移链上的点.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise 9&lt;/strong&gt; To analyse the Jordan form of $A$, we begin by studying the Jordan form of $A \overline A$. Demonstrate the following:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$A \overline A$ has a characteristic polynomial with real coefficients;&lt;/li&gt;
+  &lt;li&gt;non-real Jordan blocks occur in conjugate pairs;&lt;/li&gt;
+  &lt;li&gt;if $\dim \ker (\lambda I - A\overline A) = 1$ and $\lambda \in \mathbb R$, then $\lambda \geq 0$;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;(optional)&lt;/strong&gt; Generalise item 3 by showing that for any eigenvalue $\lambda &lt;0$, the dimension of the null space $\dim \ker (\lambda I - A \overline A)^p$ is always even ($\forall p \geq 1$), implying that negative Jordan blocks occur in pairs.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;(1.) 由方阵 $\det (x I - AB) = \det (xI - BA)$, 得 $A\overline A$ 与 $\overline A A$ 特征多项式相同. 由共轭不变, 该特征多项式是从而是是实系数的.&lt;/p&gt;
+
+  &lt;p&gt;(2.) 讨论广义特征向量的对应关系即可. 若 $λ v = A \overline A u$, 则 $e^{it}\overline {λ v} = \overline A A (e^{it}\overline u)$. 取 $t$ 使得 $e^{it}\overline λ = λ$ 即可. 由于 $t$ 是取定的, 故 $A\overline A$ 与 $\overline AA$ 关于 $λ$ 的特征空间是同构的, 通过取共轭再数乘 $e^{it}$ 实现.&lt;/p&gt;
+
+  &lt;p&gt;(3.) 若 $λ &lt; 0$, 取 $v ∈ \ker (λ I - A \overline A)$, 则 $A\overline A (A \overline v) = λ (A\overline v)$. 由特征空间一维, 必有 $z v = A \overline v$. 此时 $A \overline Av = z\overline z v$, 与 $λ &lt; 0$ 矛盾.&lt;/p&gt;
+
+  &lt;p&gt;(4.) 通过商空间归纳即可. 对 $λ &lt; 0$, 假定 $\ker (λ I - A \overline A)^k$ 是偶数维的, 往证 $\ker (λ I - A \overline A)^{k+1}$ 也是偶数维的. 考虑限制在不变子空间 $\ker (λ I - A \overline A)^k$ 上的线性变换, $\ker (λ I - A \overline A)|_{\ker (λ I - A \overline A)^{k}}$ 是偶数维的. 由 Rank-Nulity 与归纳假设得证.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise 10&lt;/strong&gt; Show that there exists a matrix $P$ such that $P A \overline P^{-1}$ is block diagonal with the following summands:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;(Jordan type): $J_s(\lambda)$ where $\lambda \geq 0$;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(Half-Jordan type): Let $H_{2s}(\lambda) := \binom{O \ \  \ J_s(\lambda)}{I \quad O \  \ }$.&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;(For non-real eigenvalues): Since each complex Jordan block in $A \overline A$ appears in a pair, i.e., $\binom{J_s(z) \quad O \ \ \ }{\ \ \ O \quad J_s(\overline z)}$, define $H_{2s}(z)$ as a block of $P A \overline P^{-1}$ satisfying&lt;/p&gt;
+
+        &lt;p&gt;$$
+      H_{2s}(z) = \begin{pmatrix}O&amp;I\\ J_s(z) &amp; O\end{pmatrix}.
+      $$&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;(For negative eigenvalues): For a negative eigenvalue $\lambda$ of $A$, the Jordan blocks also appear in pairs (see &lt;strong&gt;Exercise 9&lt;/strong&gt;).&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We refer to this as the cJordan form of $A$. It is uniquely determined by $A$.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;这是直接的验证. 关键点 (幂零部分的结构, 各阶广义负特征空间为偶数) 已在前文给出证明.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise 11 (optional)&lt;/strong&gt; (The uniqueness between the cJordan form of $A$ and the Jordan form of $A \overline A$). The cJordan form is essentially unique.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Find distinct matrices $A \neq B$ such that  $A \overline A = B \overline B$;
+    &lt;blockquote&gt;
+      &lt;p&gt;$A = \binom{0 \ \ 1}{0 \ \ 0}$ 与 $B = O$.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Suppose $A\overline A = B\overline B$ are invertible; then there exists a matrix $P$ such that $PA \overline P^{-1} = B$. In this case, we say $A$ is scimilar to $B$.&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;在相差一个旋转 ($e^{it}$) 的情形下, $J(≠ 0)$ 与 $H(≠ 0)$ 部分唯一确定. 相差的旋转部分可通过 $e^{it / 2} ⋅ I$ (及其构成的分块对角矩阵) 的 c-相似所用抵消.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In summary, $A$ is csimilar to $B$ if and only if the following hold:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$A \overline A$ is similar to $B \overline B$;&lt;/li&gt;
+  &lt;li&gt;$\mathrm{rank}(A\overline A A\cdots A (\overline A)) \equiv \mathrm{rank}(B\overline B B \cdots B(\overline B))$; that is, $A$ and $B$ possess the same $J(0)$-portion in their cJordan forms.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise 12 (optional)&lt;/strong&gt; Utilise the cJordan form to show that any complex matrix $A$ is csimilar to:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$\lambda A$ for $|\lambda| = 1$;&lt;/li&gt;
+  &lt;li&gt;$\overline A$;&lt;/li&gt;
+  &lt;li&gt;$A^T$;&lt;/li&gt;
+  &lt;li&gt;a real matrix;&lt;/li&gt;
+  &lt;li&gt;a symmetric matrix&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;前三条就是直接的验证 ($A \overline A$ 相似, 且 $J_0$ 部分相同).&lt;/p&gt;
+
+  &lt;p&gt;对第四条, 直接构造分块实矩阵 $\binom{N \ \ O}{O \ \ R}$ 使得 $N$ 是 $A$ 的 c-幂零部分, $R$ 是 $A \overline A$ 可逆部分的平方根 (对复特征部分, 考虑 $\binom{O \ \ +}{- \ \ 0}$ 一类的旋转矩阵; 负特征部分总是成对出现, 从而存在实的平方根).&lt;/p&gt;
+
+  &lt;p&gt;对第五条, $PA\overline P^{-1}$ 是对称的, 当且仅当 $PA\overline P ^{-1} = ({ {PA\overline P ^{-1} } })^T$, 也就是 $(P^TP) ⋅ A =  {A^T} ⋅ {(P^TP)}$. 由 Choleskey 分解, 复矩阵对称当且仅当其形如 $P^TP$. 由往期作业 (考察有理标准型以及多项式友矩阵), 任意域上的矩阵通过对称矩阵与其转置相似.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise 13 (optional)&lt;/strong&gt; Show that for any complex square matrix $A$,
+$$
+\det(AA^H+I)\geq \det(A\overline{A}+I) &gt; 0.
+$$&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;由特征多项式实系数, 以上三项都在 $ℝ$ 中.&lt;/p&gt;
+
+  &lt;p&gt;(第二个不等式). 由 $A = PR\overline P^{-1}$, 得 $\det (A \overline A + I) = \det (R^2 + I) = |\det (I + iR)|^2&gt;0$.&lt;/p&gt;
+
+  &lt;p&gt;(第一个不等式). 记增广矩阵 $T := (I \ \ A)$, 第一个不等式等价于 $\det T\overline T^T ≥ \det T T^T$. 由 Cauchy-Binet 公式展开, 左侧是右侧的复数求和各项取模长所得, 取等当且仅当 $A$ 是实矩阵.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise 14 (optional)&lt;/strong&gt; Using cJordan forms, show that any complex matrix is the product of a symmetric matrix and a positive definite Hermitian matrix.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;由 Choleskey 分解与 Krull-Schmidt 酉正交化, 任意对称的复矩阵形如 $U^TDU$, 其中 $D$ 是取值 $ℝ_{≥ 0}$ 的对角矩阵, $U$ 是酉矩阵. 先将复矩阵 c-相似作对称矩阵, 得 $P S \overline P^{-1}$. 将 $S$ 写作 $U^TDU$, 得&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;任意复矩阵是对称矩阵与正定 Hermitian 矩阵乘积, $PU^TDUP^T ⋅ (P^T)^{-1}\overline P^{-1}$;&lt;/li&gt;
+    &lt;li&gt;任意复矩阵是可逆对称矩阵与半正定 Hermitian 矩阵乘积, $PU^TU P^T⋅ P^{T,-1}\overline U^{T} DU \overline P^{-1}$.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Exercise 15 (optional)&lt;/strong&gt; Show that $\binom{O\quad A}{\overline A\quad O}$ is similar to $\binom{O\quad B}{\overline B\quad O}$, if and only if $\binom{O\quad A}{-\overline A\quad O}$ is similar to $\binom{O\quad B}{-\overline B\quad O}$.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;若 $\binom{O\quad A}{\overline A\quad O}$ 与 $\binom{O\quad B}{\overline B\quad O}$ 相似, 则平方后亦然. 结合 $A \overline A ∼ \overline A A$, 得 $A\overline A ∼ B \overline B$. 比较零空间维数, 得 $A$ 与 $B$ c-相似.&lt;/p&gt;
+
+  &lt;p&gt;若 $A$ 与 $B$ c-相似, 记作 $A = PB\overline P^{-1}$. 此时 $\binom{P\quad O}{O \quad \overline P} \binom{O\quad A}{\overline A\quad O} \binom{P\quad O}{O \quad \overline P}^{-1} = \binom{O\quad B}{\overline B\quad O}$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+          <pubDate>2025-05-11T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/C_Similar_matrix</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/C_Similar_matrix</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>局部化与积范畴交换</title>
           <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
 
@@ -148,6 +411,130 @@ F : 𝒜 × ℬ → ℰ,\quad (A,B) ↦ (𝔉(A))(B).
     
       
         <item>
+          <title>三角范畴的定义, 八面体公理</title>
+          <description>&lt;h2 id=&quot;预三角范畴&quot;&gt;预三角范畴&lt;/h2&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(预三角范畴). 给定以下资料&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;加法范畴 $𝒞$,&lt;/li&gt;
+    &lt;li&gt;自同构函子 $T : 𝒞 ≃ 𝒞$ (平移函子),&lt;/li&gt;
+    &lt;li&gt;三角类 $ℰ = \{X \xrightarrow u Y\xrightarrow vZ\xrightarrow w TX\}$.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;称 $(𝒞 , T, ℰ)$ 是预三角范畴, 若三角类满足以下关系.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;(TR 1-1, $ℰ$ 对同构封闭). 任给定态射的交换图:       &lt;center&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_f3500e602729b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;/center&gt;
+      &lt;p&gt;其纵向是同构. 若某横行属于 $ℰ$, 则另一横行亦属于 $ℰ$&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;(TR 1-2, 态射可嵌入三角). 任意态射 $f ∈ 𝖬𝗈𝗋 (𝒞)$ 可以嵌入好三角 $[∙ \xrightarrow f ∙ → ∙ → ∙]$.&lt;/li&gt;
+    &lt;li&gt;(TR 1-3, 平凡三角). 对任意 $X$, $[X = X → 0 → TX] ∈ ℰ$, 称作平凡三角.&lt;/li&gt;
+    &lt;li&gt;(TR 2, 顺时针旋转). 若 $[X \xrightarrow u Y\xrightarrow vZ\xrightarrow w TX] ∈ ℰ$, 则 $[Y\xrightarrow vZ\xrightarrow w TX \xrightarrow {-Tu} TY] ∈ ℰ$.&lt;/li&gt;
+    &lt;li&gt;(TR 3, 二推三原则). 态射范畴的态射 ($2 × 2$ 交换方块) 可以嵌入三角射 (TR 1-2 的态射表述).       &lt;center&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_0358420be95ea.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;/center&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;规范一些名词:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;(好三角). 指 $ℰ$ 中元素, 由六元组 $(X,Y,Z,u,v,w)$ 表示;&lt;/li&gt;
+    &lt;li&gt;(三角射). 好三角的作成的交换图, 形如 ($TX → TX'$ 必须是 $Tf$) $$\begin{equation}
+  \begin{bmatrix}
+  X &amp; \rightarrow  &amp; Y &amp; \rightarrow  &amp; Z &amp; \rightarrow  &amp; TX\\
+  f\downarrow  \ \ \ \ &amp;  &amp; \downarrow  &amp;  &amp; \downarrow  &amp;  &amp; \ \ \ \ \downarrow Tf  \\
+  X &amp; \rightarrow  &amp; Y &amp; \rightarrow  &amp; X &amp; \rightarrow  &amp; TX'
+  \end{bmatrix};
+  \end{equation}$$&lt;/li&gt;
+    &lt;li&gt;(平移函子, 悬挂函子). 经常使用 $Σ$ 与 $[1]$ 表示平移.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;以下是一些注意事项.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;请注意 TR 2 中的符号. 顺时针旋转改变符号, 但对三角射而言, $Tf$ 不加负号.&lt;/li&gt;
+    &lt;li&gt;TR3 中延拓的态射未必唯一.&lt;/li&gt;
+    &lt;li&gt;函子 $T^2$ 给出三角范畴的同构, 但这不以为着对 $\triangle ∈ ℰ$, 有三角同构 $Δ ≃ T^2 Δ$.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;由定义, 以下是预三角范畴的性质.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;(三角关于逆时针旋转封闭). 若 $[X \xrightarrow u Y\xrightarrow vZ\xrightarrow w TX] ∈ ℰ$, 则 $[T^{-1} Z \xrightarrow {T^{-1}(w)}X \xrightarrow u Y\xrightarrow vZ] ∈ ℰ$.&lt;/li&gt;
+    &lt;li&gt;(嵌入唯一). TR 1-2 中态射嵌入的三角 (在同构的意义下) 是唯一的.&lt;/li&gt;
+    &lt;li&gt;(嵌入无向). TR 1-2 中的态射可以嵌入三角的任意位置.&lt;/li&gt;
+    &lt;li&gt;(&lt;a href=&quot;Yoneda_Homological&quot;&gt;上同调函子&lt;/a&gt;). 米田嵌入是上同调函子, 换言之, 任意可表函子导出长正合列.&lt;/li&gt;
+    &lt;li&gt;三角中的单态射是可裂单, 满态射是可裂满.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;称预三角范畴 $(𝒞 , [1], ℰ)$ 是三角范畴, 若其满足以下公理.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(八面体公理). 若下图中 $r_1$, $r_2$ 与 $c_3$ 均为好三角, 则 $c_2$ 是好三角且所有方块交换:&lt;/p&gt;
+  &lt;center&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_2dc02638f927e.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;/center&gt;
+  &lt;p&gt;红色箭头是题设中的, 强调了 $u[1]$ 与 $v[1]$ 的符号.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;由 TR 1-2 (态射嵌入三角), 可精简八面体公理的表述: 若有态射 &lt;span class=&quot;tikzinline-diagram&quot;&gt;       &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_93b04a455f3a3.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt;, 则可以向下且向右地补全八面体公理的描述图.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;将好三角横向放置的三项 $[X → Y → Z]$ 类比作 ses, 回顾米田积 $\mathrm{Ext}^1$ 的函子性.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;八面体公理对 $Y$ 处态射做了手脚. 根本上是 &lt;span class=&quot;tikzinline-diagram&quot;&gt;         &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_7917ec2b7c647.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt; 对做分析.&lt;/li&gt;
+  &lt;li&gt;类似 ses 的推出, 余积变换对 $X → ?$ 做了手脚. 根本上是对 &lt;span class=&quot;tikzinline-diagram&quot;&gt;         &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_1748c5950601e.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt; 做分析.&lt;/li&gt;
+  &lt;li&gt;类似 ses 的拉回, 基变换对 $? → Z$ 做了手脚. 根本上是对 &lt;span class=&quot;tikzinline-diagram&quot;&gt;         &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_2a61ad9da973f.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt; 做分析.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;每一项命题均有完整版本 (三个好三角推一个好三角) 与精简版本 (两个态射延拓成全图)&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(基变换, 余积变换). 以下是八面体公理的等价形式 (请注意符号).&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;(基变换, 完整版本). 若下图中 $r_1$, $r_2$ 与 $c_3$ 均为好三角, 则 $c_2$ 是好三角且所有方块交换:&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;center&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_2df4711a5dfb6.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;/center&gt;
+  &lt;center&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_70676a59c7062.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;/center&gt;
+  &lt;ol&gt;
+    &lt;li&gt;(基变换, 精简版本). 基变换中, 绿色部分 (横三角 + 纵箭头) 补成全图.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;八面体公理是同伦的推出拉回&quot;&gt;八面体公理是同伦的推出拉回&lt;/h2&gt;
+
+&lt;center&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_cee0ed34749c1.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;/center&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(三角扩张). 给定三角范畴的两个对象类 $O_1$ 与 $O_2$, 定义 $$\begin{equation}
+O_1\star O_2=\{Y\mid \exists X\in O_1\,\text{与}\, Z\in O_2\,\text{ 使得存在好三角 }\, X\to Y\to Z\to X[1]\}.
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
+
+</description>
+          <pubDate>2025-05-10T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Tri_Cat_Def</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Tri_Cat_Def</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>外三角范畴 (基本定义?)</title>
           <description>&lt;h2 id=&quot;参考资料&quot;&gt;参考资料&lt;/h2&gt;
 
@@ -158,6 +545,23 @@ F : 𝒜 × ℬ → ℰ,\quad (A,B) ↦ (𝔉(A))(B).
 &lt;/ul&gt;
 
 &lt;p&gt;若干&lt;a href=&quot;https://arxiv.org/pdf/2307.10019&quot;&gt;应用&lt;/a&gt;与推广: &lt;a href=&quot;https://www.ams.org/journals/btran/2024-11-08/S2330-0000-2024-00159-0/S2330-0000-2024-00159-0.pdf&quot;&gt;AR 理论&lt;/a&gt;, &lt;a href=&quot;https://link.springer.com/article/10.1007/s11464-020-0811-7&quot;&gt;Tilting&lt;/a&gt;, &lt;a href=&quot;https://arxiv.org/pdf/2502.18257&quot;&gt;张量三角范畴&lt;/a&gt;, &lt;a href=&quot;https://arxiv.org/pdf/1702.00244&quot;&gt;心&lt;/a&gt;, &lt;a href=&quot;https://arxiv.org/pdf/2402.10694&quot;&gt;dg 范畴&lt;/a&gt;, 等等.&lt;/p&gt;
+
+&lt;h2 id=&quot;定义&quot;&gt;定义&lt;/h2&gt;
+
+&lt;div class=&quot;abstract&quot;&gt;
+  &lt;h5 id=&quot;abstract&quot;&gt;Abstract&lt;/h5&gt;
+  &lt;div&gt;
+    &lt;p&gt;外三角范畴兼有正合范畴与&lt;a href=&quot;Tri_Cat_Def&quot;&gt;三角范畴&lt;/a&gt;的特性, 但绝非简单的混合:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;三角范畴与正合范畴可视作特殊的外三角范畴;&lt;/li&gt;
+      &lt;li&gt;也存在既非三角范畴亦非正合范畴的外三角范畴.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;本小结介绍外三角范畴的定义.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;约定所有范畴都是加法范畴.&lt;/p&gt;
+
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
           <link>https://zhangchenchengsjtu.github.io/website/posts/Extriangulated_Category</link>
@@ -11460,11 +11864,19 @@ F : 𝒜 × ℬ → ℰ,\quad (A,B) ↦ (𝔉(A))(B).
 
 &lt;p&gt;&lt;a href=&quot;https://www.mathcha.io/editor&quot;&gt;mathcha&lt;/a&gt;: 强大的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tikzpicture&lt;/code&gt; 制作网站.&lt;/p&gt;
 
+&lt;p&gt;&lt;a href=&quot;https://webdemo.myscript.com/&quot;&gt;手写识别&lt;/a&gt;: 识别公式, 多语言, 甚至 PPT.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pandoc.org/&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pan-doc&lt;/code&gt;&lt;/a&gt;: 著名的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pan-doc&lt;/code&gt;, 啥都能转换.&lt;/p&gt;
+
 &lt;h4 id=&quot;unicode-mathjax_protectedjfxmyvrlwcqmathjax_protected&quot;&gt;Unicode $\LaTeX$&lt;/h4&gt;
 
-&lt;p&gt;字典: &lt;a href=&quot;https://en.wikipedia.org/wiki/Mathematical_operators_and_symbols_in_Unicode&quot;&gt;Wiki&lt;/a&gt;, &lt;a href=&quot;https://ctan.math.illinois.edu/fonts/erewhon-math/unimath-erewhon.pdf&quot;&gt;ctan&lt;/a&gt;, &lt;a href=&quot;Unicode_math_Table&quot;&gt;输入快捷键&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Unicode 名称查询: &lt;a href=&quot;https://w3c.github.io/xml-entities/unicode-names&quot;&gt;在线: 符号 → 名称&lt;/a&gt;, &lt;a href=&quot;https://milde.users.sourceforge.net/LUCR/Math/unimathsymbols.pdf&quot;&gt;PDF&lt;/a&gt;, &lt;a href=&quot;Unicode_math_Table&quot;&gt;输入快捷字典&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;输入法: 使用 vscode 插件 &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=GuidoTapia2.unicode-math-vscode&quot;&gt;Fast Unicode Math Characters&lt;/a&gt;, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=oijaz.unicode-latex&quot;&gt;Unicode Latex&lt;/a&gt;; &lt;a href=&quot;https://live.lean-lang.org/&quot;&gt;L∃∀N 在线&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;输入法: 使用 vscode 插件 &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=GuidoTapia2.unicode-math-vscode&quot;&gt;Fast Unicode Math Characters&lt;/a&gt;, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=oijaz.unicode-latex&quot;&gt;Unicode $\LaTeX$&lt;/a&gt;; &lt;a href=&quot;https://live.lean-lang.org/&quot;&gt;L∃∀N 在线&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Unicode Math: &lt;a href=&quot;https://en.wikipedia.org/wiki/Mathematical_operators_and_symbols_in_Unicode&quot;&gt;Wiki&lt;/a&gt;, &lt;a href=&quot;https://ctan.math.illinois.edu/fonts/erewhon-math/unimath-erewhon.pdf&quot;&gt;ctan&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;其他 Unicode: &lt;a href=&quot;https://www.dickimaw-books.com/latex/symbol-lookup.php&quot;&gt;符号查询 (高级)&lt;/a&gt;, &lt;a href=&quot;https://www.compart.com/en/unicode/&quot;&gt;Unicode 大全&lt;/a&gt;, &lt;a href=&quot;https://westonruter.github.io/ipa-chart/keyboard/&quot;&gt;IPA&lt;/a&gt;, &lt;a href=&quot;https://cool-letters-generator.blogspot.com/&quot;&gt;炫酷文字生成&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;bibmathjax_protectedjfxuzvgkmathjax_protected-转换&quot;&gt;Bib$\TeX$ 转换&lt;/h4&gt;
 
@@ -11474,7 +11886,7 @@ F : 𝒜 × ℬ → ℰ,\quad (A,B) ↦ (𝔉(A))(B).
 
 &lt;h3 id=&quot;special-latin-orthography&quot;&gt;Special Latin Orthography&lt;/h3&gt;
 
-&lt;p&gt;For Drançais, Deutsch, Español, Dansk, etc.&lt;/p&gt;
+&lt;p&gt;For Drançais, Deutsch, Español, Dansk, etc. &lt;a href=&quot;https://unicodelookup.com/&quot;&gt;link&lt;/a&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Ä À Â Å Æ Ç É È Ê Ë Î Ï Ñ Ö Ô Ø Œ ẞ Ù Û Ü Ÿ&lt;/li&gt;
@@ -18292,15 +18704,16 @@ $$&lt;/p&gt;
 
 &lt;div class=&quot;proof&quot;&gt;
   &lt;p&gt;只需证明一切 $(-,W)_{𝒯}$ 是上同调函子. 任意给定三角 $X^∙ ∈ \triangle$, 上链复形 $(X^∙ , W)_{𝒯} ∈ C(k)$ 在 $n$ 处的正合性描述作以下命题:&lt;/p&gt;
-  &lt;ol&gt;
-  &lt;/ol&gt;
+  &lt;ul&gt;
+    &lt;li&gt;对 $f^n : X^n → W$, 复合态射 $[X^{n-1} → X^n → W] = 0$, 当且仅当 $f^n$ 通过 $[X^n → X^{n+1}]$ 分解.&lt;/li&gt;
+  &lt;/ul&gt;
   &lt;p&gt;对 $\{f^{n-1},f^n,f^{n+1}\}$ 使用二推三原则, 研究以下三角射即可:&lt;/p&gt;
   &lt;p&gt;$$
 \begin{bmatrix}
 X^{\bullet } &amp;:&amp; \cdots  &amp; \rightarrow  &amp; X^{n-1} &amp; \rightarrow  &amp; X^{n} &amp; \rightarrow  &amp; X^{n} +1 &amp; \rightarrow  &amp; \cdots \\
 \downarrow &amp; &amp;  &amp;  &amp; \downarrow  &amp;  &amp; \downarrow  &amp;  &amp; \downarrow  &amp;  &amp; \\
-W^{\bullet }&amp;: &amp; 0 &amp; \rightarrow  &amp; W &amp; = &amp; W &amp; \rightarrow  &amp; 0 &amp; \rightarrow  &amp; \cdots 
-\end{bmatrix}. 
+W^{\bullet }&amp;: &amp; 0 &amp; \rightarrow  &amp; W &amp; = &amp; W &amp; \rightarrow  &amp; 0 &amp; \rightarrow  &amp; \cdots
+\end{bmatrix}.
 $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -19575,7 +19988,10 @@ $$&lt;/p&gt;
           <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#abstract&quot; id=&quot;markdown-toc-abstract&quot;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#对原模板的若干修改&quot; id=&quot;markdown-toc-对原模板的若干修改&quot;&gt;对原模板的若干修改&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#why-this-template&quot; id=&quot;markdown-toc-why-this-template&quot;&gt;Why this template?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#why-this-template&quot; id=&quot;markdown-toc-why-this-template&quot;&gt;Why this template?&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#graphs&quot; id=&quot;markdown-toc-graphs&quot;&gt;Graphs&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#个性化&quot; id=&quot;markdown-toc-个性化&quot;&gt;个性化&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -19750,6 +20166,8 @@ _posts/Gabriel/proof/2025-04-24-Ringel_Resolution.md                            
   &lt;p&gt;(在 block 外使用 markdown 与 $\LaTeX$ 写作). 在 {% — %} — {% end— %} 外可直接使用 markdown 语言与 $\LaTeX$.&lt;/p&gt;
 &lt;/div&gt;
 
+&lt;h3 id=&quot;graphs&quot;&gt;Graphs&lt;/h3&gt;
+
 &lt;div class=&quot;example&quot;&gt;
   &lt;p&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tikz&lt;/code&gt; 功能). 使用插件 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;quiver&lt;/code&gt; 画图.&lt;/p&gt;
   &lt;center&gt; &lt;!-- https://q.uiver.app/#q=WzAsMjksWzAsMCwiR0ZNIixbMzAsNjAsNjAsMV1dLFsxLDAsIkdGSV4wICIsWzE4MCw2MCw2MCwxXV0sWzIsMCwiR0ZJXjEiLFsxODAsNjAsNjAsMV1dLFszLDAsIkdGSV4yIixbMTgwLDYwLDYwLDFdXSxbMCwxLCJGTVxcb3RpbWVzIChUXjAsIFQpIixbMTgwLDYwLDYwLDFdXSxbMCwyLCJGTVxcb3RpbWVzIChUXjEsIFQpIixbMTgwLDYwLDYwLDFdXSxbMCwzLCJGTVxcb3RpbWVzIChUXjIsIFQpIixbMTgwLDYwLDYwLDFdXSxbMSwxLCIoVF4wLEleMCkiXSxbMSwyLCIoVF4xLEleMCkiXSxbMiwxLCIoVF4wLEleMSkiXSxbMywxLCIoVF4wLEleMikiXSxbMiwyLCIoVF4xLEleMSkiXSxbMywyLCIoVF4xLEleMikiXSxbMSwzLCIoVF4yLEleMCkiXSxbMiwzLCIoVF4yLEleMSkiXSxbMywzLCIoVF4yLEleMikiXSxbNCwzLCJcXGJveGVke0VfMH0iXSxbMSw0LCIoQSwgSV4wICkiXSxbMSw1LCIoSF4xKFQpLCBJXjApIixbMCwwLDc1LDFdXSxbMiw0LCIoQSwgSV4xKSJdLFszLDQsIihBLCBJXjIpIl0sWzIsNSwiKEheMShUKSwgSV4xKSIsWzAsMCw3NSwxXV0sWzMsNSwiKEheMShUKSwgSV4yKSIsWzAsMCw3NSwxXV0sWzQsNSwiXFxib3hlZHtFXzF9Il0sWzAsNSwiXFx0ZXh0e+a2iOWksSF9IixbMCwwLDc1LDFdXSxbMSw2LCIoQSxNKSJdLFsyLDYsIjAiLFswLDAsNzUsMV1dLFszLDYsIjAiLFswLDAsNzUsMV1dLFs0LDYsIlxcYm94ZWR7RV8yfSJdLFswLDEsIiIsMix7ImNvbG91ciI6WzE4MCw2MCw2MF19XSxbMSwyLCIiLDIseyJjb2xvdXIiOlsxODAsNjAsNjBdfV0sWzIsMywiIiwyLHsiY29sb3VyIjpbMTgwLDYwLDYwXX1dLFs1LDQsIiIsMix7ImNvbG91ciI6WzE4MCw2MCw2MF19XSxbNCwwLCIiLDIseyJjb2xvdXIiOlsxODAsNjAsNjBdfV0sWzEyLDEwXSxbMTUsMTJdLFs4LDddLFsxMyw4XSxbMTEsOV0sWzYsNSwiIiwyLHsiY29sb3VyIjpbMTgwLDYwLDYwXX1dLFsxNCwxMV0sWzE3LDE5XSxbMTksMjBdLFsxOCwyMSwiIiwyLHsiY29sb3VyIjpbMCwwLDc1XX1dLFsyMSwyMiwiIiwyLHsiY29sb3VyIjpbMCwwLDc1XX1dXQ== --&gt; &lt;iframe class=&quot;quiver-embed&quot; src=&quot;https://q.uiver.app/#q=WzAsMjksWzAsMCwiR0ZNIixbMzAsNjAsNjAsMV1dLFsxLDAsIkdGSV4wICIsWzE4MCw2MCw2MCwxXV0sWzIsMCwiR0ZJXjEiLFsxODAsNjAsNjAsMV1dLFszLDAsIkdGSV4yIixbMTgwLDYwLDYwLDFdXSxbMCwxLCJGTVxcb3RpbWVzIChUXjAsIFQpIixbMTgwLDYwLDYwLDFdXSxbMCwyLCJGTVxcb3RpbWVzIChUXjEsIFQpIixbMTgwLDYwLDYwLDFdXSxbMCwzLCJGTVxcb3RpbWVzIChUXjIsIFQpIixbMTgwLDYwLDYwLDFdXSxbMSwxLCIoVF4wLEleMCkiXSxbMSwyLCIoVF4xLEleMCkiXSxbMiwxLCIoVF4wLEleMSkiXSxbMywxLCIoVF4wLEleMikiXSxbMiwyLCIoVF4xLEleMSkiXSxbMywyLCIoVF4xLEleMikiXSxbMSwzLCIoVF4yLEleMCkiXSxbMiwzLCIoVF4yLEleMSkiXSxbMywzLCIoVF4yLEleMikiXSxbNCwzLCJcXGJveGVke0VfMH0iXSxbMSw0LCIoQSwgSV4wICkiXSxbMSw1LCIoSF4xKFQpLCBJXjApIixbMCwwLDc1LDFdXSxbMiw0LCIoQSwgSV4xKSJdLFszLDQsIihBLCBJXjIpIl0sWzIsNSwiKEheMShUKSwgSV4xKSIsWzAsMCw3NSwxXV0sWzMsNSwiKEheMShUKSwgSV4yKSIsWzAsMCw3NSwxXV0sWzQsNSwiXFxib3hlZHtFXzF9Il0sWzAsNSwiXFx0ZXh0e+a2iOWksSF9IixbMCwwLDc1LDFdXSxbMSw2LCIoQSxNKSJdLFsyLDYsIjAiLFswLDAsNzUsMV1dLFszLDYsIjAiLFswLDAsNzUsMV1dLFs0LDYsIlxcYm94ZWR7RV8yfSJdLFswLDEsIiIsMix7ImNvbG91ciI6WzE4MCw2MCw2MF19XSxbMSwyLCIiLDIseyJjb2xvdXIiOlsxODAsNjAsNjBdfV0sWzIsMywiIiwyLHsiY29sb3VyIjpbMTgwLDYwLDYwXX1dLFs1LDQsIiIsMix7ImNvbG91ciI6WzE4MCw2MCw2MF19XSxbNCwwLCIiLDIseyJjb2xvdXIiOlsxODAsNjAsNjBdfV0sWzEyLDEwXSxbMTUsMTJdLFs4LDddLFsxMyw4XSxbMTEsOV0sWzYsNSwiIiwyLHsiY29sb3VyIjpbMTgwLDYwLDYwXX1dLFsxNCwxMV0sWzE3LDE5XSxbMTksMjBdLFsxOCwyMSwiIiwyLHsiY29sb3VyIjpbMCwwLDc1XX1dLFsyMSwyMiwiIiwyLHsiY29sb3VyIjpbMCwwLDc1XX1dXQ==&amp;amp;embed&quot; width=&quot;600&quot; height=&quot;500&quot; style=&quot;border-radius: 8px; border: dashed;&quot;&gt;&lt;/iframe&gt; &lt;/center&gt;
@@ -19767,6 +20185,21 @@ $$&lt;/p&gt;
 &lt;div class=&quot;example&quot;&gt;
   &lt;p&gt;(Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mathcha&lt;/code&gt; to draw picture).&lt;/p&gt;
   &lt;p&gt;&lt;img src=&quot;https:/raw.githubusercontent.com/czhang271828/imgs/New_img/n_imgdiagram-20250420%20(2).png&quot; alt=&quot;image-20250423194403416&quot; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;在特殊情况下, 可直接使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tikz&lt;/code&gt; 环境插入 &lt;a href=&quot;https://q.uiver.app/&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;quiver&lt;/code&gt;&lt;/a&gt; 代码 (小 bug, 需要将 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;textcolor&lt;/code&gt; 替换作 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;color&lt;/code&gt;). 可以使用行内公式 &lt;span class=&quot;tikzinline-diagram&quot;&gt;       &lt;embed src=&quot;/website/svg/template/diagram_05a3a81d6ad38.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt;, 或是行间公式&lt;/p&gt;
+  &lt;center&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/template/diagram_2df4711a5dfb6.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;/center&gt;
+  &lt;div class=&quot;note&quot;&gt;
+    &lt;p&gt;原理: 本地插件 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-tikz&lt;/code&gt; 将 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;q.uiver&lt;/code&gt; 语法下的箭图编译为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PDF&lt;/code&gt; 文件 (存放在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./_tikz_tmp&lt;/code&gt;), 并通过上古神器 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pdf2svg&lt;/code&gt; 自动生成 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;svg&lt;/code&gt; 矢量图 (存放在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./svg&lt;/code&gt;).&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;slogan&quot;&gt;
+  &lt;p&gt;一个重要的问题: 网页无法正常打印 &lt;a href=&quot;https://q.uiver.app/&quot;&gt;q.uiver.app&lt;/a&gt; 的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iframe&lt;/code&gt; 标签!&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&quot;个性化&quot;&gt;个性化&lt;/h2&gt;

@@ -145,6 +145,16 @@
   }
 }
 
+@media print {
+  iframe.quiver-embed {
+    visibility: visible !important;
+    display: block !important;
+    width: 100% !important;
+    height: 500px !important; /* 适当调整高度 */
+    overflow: visible !important;
+  }
+}
+
 /* Remove default margin */
 body,
 h1,
