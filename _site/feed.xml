@@ -7,6 +7,375 @@
     
       
         <item>
+          <title>八面体公理的等价定义</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;p&gt;给定&lt;a href=&quot;Tri_Cat_Def&quot;&gt;预三角范畴&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(八面体公理的等价定义, &lt;a href=&quot;Homotopic_PBPO_Oct&quot;&gt;证明&lt;/a&gt;). 预三角范畴是三角范畴, 当且仅当&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;预三角范畴满足八面体公理;&lt;/li&gt;
+    &lt;li&gt;任意两个红色态射给出如下三角射与交换图:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Homotopic_PBPO_Oct/diagram_2ed4ffc418ca6.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+    &lt;li&gt;给定红色处三角与同伦推出拉回方块, 则可补全下图三角与三角射       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Homotopic_PBPO_Oct/diagram_276effd110343.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;(1 ⇒ 2). 如有上图红色箭头, 则依照八面体公理得下图, 回推上图 (证明下行是好三角):&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Homotopic_PBPO_Oct/diagram_39dbbab778ed0.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;只需证明 $c_3$ 是好三角. &lt;br /&gt; &lt;br /&gt; (2 ⇒ 3). 给定 3. 的资料 (上图红色部分), 则可以通过 $2$ 补全 (下图绿色部分):&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Homotopic_PBPO_Oct/diagram_b18e02e024af7.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;由态射嵌入的唯一性, 得 $W ≃ W'$ (这一同构不改变同伦推出拉回方块中的态射). 由 $Z ≃ Z'$, 三角射与同伦推出拉回方块同时相差一个 $φ ∘ \mathrm{id}_Z ∘ φ^{-1}$, 从而保持结论. &lt;br /&gt; &lt;br /&gt; (3 ⇒ 1). 下证明八面体公理: 给定初始资料 (蓝), 取同伦的推出拉回 (红), 依照题设补全四个好三角的交换图 (如下所示)&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Homotopic_PBPO_Oct/diagram_f1a977e2b3fb5.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;继而证明绿色方块的交换性:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Homotopic_PBPO_Oct/diagram_6e0edaf05739c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;依定义, $j$ 恰是同伦推出拉回方块中的态射&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
+X\xrightarrow{\binom{a_1}{b_1}} Y_2\oplus Y_1\xrightarrow{(- b_2,a_2)} Z\overset j \to X[1].
+\end{equation}$$&lt;/p&gt;
+  &lt;p&gt;同理, $-j$ 是同伦推出拉回方块中的态射&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
+X\xrightarrow{\binom{a_1}{b_1}} Y_2\oplus Y_1\xrightarrow{(b_2,- a_2)} Z\overset {-j} \to X[1].
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-05-12T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Homotopic_PBPO_Oct</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Homotopic_PBPO_Oct</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>同伦推出拉回的等价定义</title>
+          <description>&lt;h2 id=&quot;证明&quot;&gt;证明&lt;/h2&gt;
+
+&lt;p&gt;给定&lt;a href=&quot;Tri_Cat_Def&quot;&gt;三角范畴&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;(同伦推出拉回的特例). 若 $⋆$ 处 $2 × 2$ 规格的交换方块补全作两行两列的好三角&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Homotopic_PBPO/diagram_281e65eddf85c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;当且仅当存在好三角&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
+X\xrightarrow{\binom{a_1}{b_1}} Y_2⊕ Y_1\xrightarrow{(b_2,-a_2)} Z\xrightarrow h X[1].
+\end{equation}$$&lt;/p&gt;
+  &lt;p&gt;考虑其同伦背景, 有时将第二项记作 $Y_2∨ Y_1$. 将满足以上条件的方块 $⋆$ 称作同伦的推出拉回.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;一方面, 若有上述同伦的推出拉回, 下验证基变换的交换图:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Homotopic_PBPO/diagram_e3ce1f8085d0b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;以上实线处均为好三角 (右下方块的复号由好三角的顺时针旋转得到), 不难验证所有方块交换 ($h$ 通过交换方块定义), 从而虚线处是好三角.&lt;/p&gt;
+  &lt;div class=&quot;note&quot;&gt;
+    &lt;p&gt;$h$ 既是 $Z \overset ∙ → P[1] \overset {- ∙ [1]}→ X[1]$, 也是 $Z \overset ∙ → Q[1] \overset {- ∙ [1]}→ X[1]$. 请注意符号.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-05-12T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Homotopic_PBPO</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Homotopic_PBPO</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>正合范畴</title>
+          <description>&lt;h2 id=&quot;正合范畴的定义与常见结论&quot;&gt;正合范畴的定义与常见结论&lt;/h2&gt;
+
+&lt;h3 id=&quot;正合范畴的定义&quot;&gt;正合范畴的定义&lt;/h3&gt;
+
+&lt;p&gt;Quillen 的原始定义&lt;sup id=&quot;fnref:Qui72&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Qui72&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, 以及 Keller 的等价定义&lt;sup id=&quot;fnref:DR99&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:DR99&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&quot;fnref:Kel90&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Kel90&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;. 笔记的大部分结论可以在&lt;sup id=&quot;fnref:Buh10&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Buh10&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; 中找到.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(Quillen). 正合范畴描述作二元组 $(ℬ , 𝒮)$. 其中&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;$ℬ$ 是某个 Abel 范畴 $𝒜$ 关于扩张封闭的加法全子范畴,&lt;/li&gt;
+    &lt;li&gt;$𝒮$ 是落在 $ℬ$ 中的 $𝒜$ 中的 ses.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(Keller 的等价定义). 正合范畴描述作二元组 $(ℬ, 𝒮)$. $ℬ$ 是加法范畴, $𝒮 = \{X \xrightarrow i Y \xrightarrow d Z\}$ 由 $ℬ$ 中三项映射序列构成, 满足如下关系.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;(EX -2). $𝒮$ 关于同构封闭 (视作函子范畴 $ℬ^{1 → 2 → 3}$ 中的对象).&lt;/li&gt;
+    &lt;li&gt;(EX -1). 任意 $(i,d) ∈ 𝒮$ 需满足 $i = \ker d$ 与 $d = \operatorname{cok} i$. 对 $(i,d) ∈ 𝒮$, 定义惯用称呼:       &lt;ul&gt;
+        &lt;li&gt;$i$ 是 inflation (admissible monic), 通常用 $↣$ 表示,&lt;/li&gt;
+        &lt;li&gt;$d$ 是 deflation (admissible epic), 通常用 $↠$ 表示,&lt;/li&gt;
+        &lt;li&gt;$(i,d)$ 是 conflation (短正合列),&lt;/li&gt;
+        &lt;li&gt;$𝒮$ 是一个正合结构 (exact structure).&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;(EX 0). $\mathrm{id}_0$ 是 inflation.&lt;/li&gt;
+    &lt;li&gt;(EX 0’). $\mathrm{id}_0$ 是 deflation.&lt;/li&gt;
+    &lt;li&gt;(EX 1). Inflation 关于合成封闭.&lt;/li&gt;
+    &lt;li&gt;(EX 1’). Deflation 关于合成封闭.&lt;/li&gt;
+    &lt;li&gt;(EX 2). Inflation 关于任何态射的推出存在, 其对边态射仍是 inflation. 给定推出方块 &lt;span class=&quot;tikzinline-diagram&quot;&gt;           &lt;embed src=&quot;/website/svg/Exact_Cat/diagram_61463d3e04f95.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt;, 若 $i$ 是 inflation, 则 $i'$ 亦然.&lt;/li&gt;
+    &lt;li&gt;(EX 2’). Deflation 关于任何态射的拉回存在. 给定拉回方块 &lt;span class=&quot;tikzinline-diagram&quot;&gt;           &lt;embed src=&quot;/website/svg/Exact_Cat/diagram_f9a38b0d2b42b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt;, 若 $d$ 是 deflation, 则 $d'$ 亦然.&lt;/li&gt;
+    &lt;li&gt;(EX 3). 存在 cokernel 的态射 $i$ 未必是 inflation; 若存在形如 $f ∘ ip$ 的 inflation, 则 $p$ 是 inflation.&lt;/li&gt;
+    &lt;li&gt;(EX 3’). 存在 kernel 的态射 $p$ 未必是 deflation; 若存在形如 $p ∘ f$ 的 deflation, 则 $p$ 是 deflation.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;以上条件存在冗余之处&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;文&lt;sup id=&quot;fnref:Yon60&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Yon60&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;指出 EX 3 与 EX 3’ 是不必的.&lt;/li&gt;
+  &lt;li&gt;文&lt;sup id=&quot;fnref:Kel90:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Kel90&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;指出 EX0, EX1, EX2, EX2’ 可以推出其余条件.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;由 Quillen 的定义 &lt;sup id=&quot;fnref:Qui72:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Qui72&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, inflation (deflation) 必然是单态射 (满态射).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对任意范畴, 可裂满关于拉回封闭.&lt;/li&gt;
+  &lt;li&gt;对 Abel 范畴, 满态射的拉回自动是推出拉回方块 (由 ses 观点), 从而所有满态射均关于拉回封闭.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;随着范畴的特殊化, 被拉回保持的满态射似乎是增加的. 正合范畴介于通常加法范畴与 Abel 范畴之间.&lt;/p&gt;
+
+&lt;h3 id=&quot;正合范畴的重要结论&quot;&gt;正合范畴的重要结论&lt;/h3&gt;
+
+&lt;p&gt;以下结论选自&lt;sup id=&quot;fnref:Buh10:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Buh10&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, 单独编号.&lt;/p&gt;
+
+&lt;h4 id=&quot;推出拉回方块&quot;&gt;推出拉回方块&lt;/h4&gt;
+
+&lt;p&gt;Remark 2.2. $(𝒜, ℰ)$ 是正合范畴当且仅当 $(𝒜^{\mathrm{op}}, ℰ^{\mathrm{op}})$ 亦然.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;正合范畴是对称的, 反范畴反转 inflation 与 deflation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Remark 2.3. 同构既是 inflation, 也是 deflation.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;inflation ∩ epimorphism = isomorphism;&lt;/li&gt;
+  &lt;li&gt;deflation ∩ monomorphism = isomorphism.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Lemma 2.7. 可裂 ses 属于 $𝒮$; Proposition 2.9. $𝒮$ 对直和封闭.&lt;/p&gt;
+
+&lt;p&gt;Proposition 2.12. (单态射方块何时是推出拉回?). 给定交换图 &lt;span class=&quot;tikzinline-diagram&quot;&gt;     &lt;embed src=&quot;/website/svg/Exact_Cat/diagram_a184e02eac443.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt;, 以下等价.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;这是推出方块;&lt;/li&gt;
+  &lt;li&gt;$[A \xrightarrow{\binom i f} A ⊕ A' \xrightarrow{(- i' \ f')} B'] ∈ 𝒮$;&lt;/li&gt;
+  &lt;li&gt;这是推出拉回方块;&lt;/li&gt;
+  &lt;li&gt;$i$ 与 $i'$ 有同构的 deflation 对象, 且下图是 conflation 的交换图:
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Exact_Cat/diagram_907f257d39f08.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;特别地, 有如下推论:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;将 Abel 范畴视作特殊的正合范畴, 以上结论自动成立;&lt;/li&gt;
+  &lt;li&gt;对两条 inflation 与两条 deflation 的交换图 &lt;span class=&quot;tikzinline-diagram&quot;&gt;         &lt;embed src=&quot;/website/svg/Exact_Cat/diagram_96222e9d8831f.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt;, 推出等价于拉回.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Proposition 2.16 (Obscure axiom). 即 EX 3 与 EX 3’. 特别地, 有如下推论&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;若 $(i ⊕ i', d ⊕ d')$ 是 conflation (假定 $di$ 与 $d'i'$ 可复合), 则 $(i,d)$ 与 $(i',d')$ 均是 conflation.&lt;/li&gt;
+  &lt;li&gt;若推出方块 &lt;span class=&quot;tikzinline-diagram&quot;&gt;         &lt;embed src=&quot;/website/svg/Exact_Cat/diagram_c01674bb5aa6c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt; 包含三处 inflation, 则虚线处也是 inflation.&lt;/li&gt;
+  &lt;li&gt;若拉回方块 &lt;span class=&quot;tikzinline-diagram&quot;&gt;         &lt;embed src=&quot;/website/svg/Exact_Cat/diagram_59da5fec8e315.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt; 包含三处 deflation, 则虚线处也是 deflation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;短正合列的变换&quot;&gt;短正合列的变换&lt;/h4&gt;
+
+&lt;p&gt;Proposition 3.1. 若 $(α , β , γ) : (i,d) → (i',d')$ 是 conflation 的态射, 即交换图&lt;/p&gt;
+&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/Exact_Cat/diagram_109b156030193.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+
+&lt;p&gt;则 $(α , β , γ)$ 分解作推出与拉回 ($∘$ 是推出拉回方块):&lt;/p&gt;
+
+&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/Exact_Cat/diagram_0e0f8319bf95a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;若 $α$ 与 $γ$ 是同构, 则 $β$ 亦然: 这类似将 $\mathrm{Ext}^1$ 定义作 ses 的等价类.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Lemma 3.5. 若 $(\mathrm{id}_A, i, i')$ 是 conflation $r_1$ 与 $r_2$ 间的态射. 将 $c_2$ 与 $c_3$ 补全, 则虚线处态射是同构:&lt;/p&gt;
+
+&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/Exact_Cat/diagram_25e574074c8bd.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对于 Abel 范畴 (或群范畴的特殊等式) 而言, 这类似 Noether 同构 $\frac{C / A}{B / A} ≃ \frac{C}{B}$.&lt;/li&gt;
+  &lt;li&gt;对三角范畴而言, 这类似&lt;a href=&quot;Tri_Cat_Def#八面体公理的解释&quot;&gt;八面体公理&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Exercise 3.11. (八面体公理的另一方向). 给定红色方块中的初始资料 ($i$ 是 inflation, $d$ 是 deflation), 则有两行两列 conflation 的交换图:&lt;/p&gt;
+
+&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/Exact_Cat/diagram_0dd4bd29b0756.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+
+&lt;p&gt;Corollary 3.6. (九引理). 以下各行 ($r_∙$) 是 conflation.&lt;/p&gt;
+
+&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/Exact_Cat/diagram_ec3f43f3c6369.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+
+&lt;p&gt;则有如下结论:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;若存在 conflation $c_1$ 与 $c_2$ 使得相应方块交换, 则存在唯一的 conflation $c_3$ 使得相应方块交换.&lt;/li&gt;
+  &lt;li&gt;若存在 conflation $c_3$ 与 $c_2$ 使得相应方块交换, 则存在唯一的 conflation $c_1$ 使得相应方块交换.&lt;/li&gt;
+  &lt;li&gt;若存在 conflation $c_1$ 与 $c_3$ 使得相应方块交换, 且 $c_2$ 复合为零, 则 $c_2$ 是 conflation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Exercise 3.9. (Heller 的正合范畴). 给定正合范畴 $(ℬ , 𝒮)$, 则有正合范畴 $(𝒮, ℱ)$. 其中&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$𝒮$ 视同函子范畴 $ℬ^{1 → 2 → 3}$ 的全子范畴;&lt;/li&gt;
+  &lt;li&gt;$ℱ$ 是 conflation 的 conflation, 其态射形如
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Exact_Cat/diagram_aa73aa71b0eac.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;/li&gt;
+  &lt;li&gt;对 Abel 范畴, 上述构造所得的 ses 的范畴不再是 Abel 范畴.&lt;/li&gt;
+  &lt;li&gt;对三角范畴, 上述构造类似 $4 × 4$ 引理 (好三角的好三角 $Δ_A → Δ_B → Δ_C$ 后一项需要适当地反号).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;正合范畴的例子&quot;&gt;正合范畴的例子&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(平凡的例子). Abel 范畴及其 ses.&lt;/li&gt;
+  &lt;li&gt;(平凡的例子). 加法范畴及其可裂 ses.&lt;/li&gt;
+  &lt;li&gt;拟 Abel 范畴及其 kernel-cokernel 对.
+    &lt;ul&gt;
+      &lt;li&gt;拟 Abel 范畴存在 $\ker$ 与 $\operatorname{cok}$ 的加法范畴, 且典范态射 $\operatorname{coim} \overset c→ \operatorname{im}$ 是双态射 ($(c,-)$ 与 $(-, c)$ 总是单的, 但 $c$ 未必是同构).&lt;/li&gt;
+      &lt;li&gt;代表例子: 连续线性拓扑空间, 有限滤过子对象.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;正合范畴间, 好函子的像与核.&lt;/li&gt;
+  &lt;li&gt;Hella 的构造 $(ℬ , 𝒮) ⇒ (𝒮 , ℱ)$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;mathjax_protectedjfxtyxrocm17rxh0fv4xjamathjax_protected-大-群&quot;&gt;$\mathrm{Ext}^1$-(大) 群&lt;/h3&gt;
+
+&lt;h2 id=&quot;同调代数的类似定理&quot;&gt;同调代数的类似定理&lt;/h2&gt;
+
+&lt;h3 id=&quot;嵌入定理&quot;&gt;嵌入定理&lt;/h3&gt;
+
+&lt;p&gt;介绍 Mitchell 嵌入定理&lt;sup id=&quot;fnref:Fry64&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Fry64&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;, 以及正合范畴的类似物: Thomason 嵌入定理&lt;sup id=&quot;fnref:TT90&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:TT90&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt; (证明见 Appendix A., &lt;sup id=&quot;fnref:Buh10:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Buh10&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;通常的表述是 embedding theorem; 但原文&lt;sup id=&quot;fnref:Fry64:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Fry64&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;使用的是 imbedding theorem.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(Freyd-Mitchell 嵌入入定理). 给定本质小的 Abel 范畴 $𝒜$, 则存在含幺环 $R$ 与全忠实的正合函子 $F : 𝒜 → 𝐌𝐨𝐝_R$. 此时, 复杂的图表定理可用追图操作. &lt;br /&gt; &lt;br /&gt; 证明思路: 证明有限表现左正合函子范畴 $𝐅𝐮𝐧𝐜𝐭_{Lex} (𝒜 , 𝐀𝐛)$ 是 Abel 范畴 (参考&lt;a href=&quot;Reflexive_sub_cat&quot;&gt;此文&lt;/a&gt;第一部分), 米田嵌入 $$\begin{equation}
+h^∙ : 𝒜 → 𝐅𝐮𝐧𝐜𝐭_{Lex} (𝒜 , 𝐀𝐛),\quad X ↦ (X,-)
+\end{equation}$$ 构造了是全忠实的正合 (反变) 函子, $\operatorname{im}h^∙$ 所在的 Abel 范畴是有限表现函子范畴, 其&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;去向是 $𝐀𝐛$, 因此满足 AB3 与 AB5 条件.&lt;/li&gt;
+    &lt;li&gt;同时, $⨁_{X ∈ 𝒜 } h^X$ 是生成元.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;从而 $\operatorname{im}h^∙$ 是 Grothendieck 范畴, 取内射余生成元 $C$. 此时, $R = \mathrm{End}(C)^{\mathrm{op}}$ 即为所求. 最后的复合函子是 $$\begin{equation}
+𝒜 \xrightarrow[\text{反变}] {h^∙ } \operatorname{im} h^∙ \xrightarrow[\text{反变}] {(-,C)} 𝐌𝐨𝐝_R.
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;关于追图: 若有全忠实正合函子 $F : 𝒜 → 𝐌𝐨𝐝_R$,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$F(-)$ 正合, 从而保持小极限.
+    &lt;ul&gt;
+      &lt;li&gt;例如, $0 → K → X → C → 0$ 是 $𝒜$ 中的 ses, 仅当 $0 → F(K) → F(X) → F(C) → 0$ 是 $𝐌𝐨𝐝_R$ 中的 ses.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;$F(-)$ 全忠实, 返回一切极限与余极限.
+    &lt;ul&gt;
+      &lt;li&gt;例如, 若 $0 → K → X → C → 0$ 是 $𝒜$ 中的 ses, 当 $0 → F(K) → F(X) → F(C) → 0$ 是 $𝐌𝐨𝐝_R$ 中的 ses.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;(直接进行最后一步). 通常的范畴 (例如 $𝐌𝐨𝐝_R^{\mathrm{op}}$) 是局部小的 (未必本质小). 若&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;存在投射生成元 $U$, 则 $(U, - )$ 是全忠实的正合函子;&lt;/li&gt;
+    &lt;li&gt;存在内射余生成元 $C$, 则 $(- , C)$ 是全忠实的正合函子.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;此时仍可追图操作. 这是嵌入定理原始证明中的最后一步,&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(Thomason 嵌入定理). 给定本质小的正合范畴 $(ℬ , 𝒮)$, 则存在 Abel 范畴 $𝒜$ 与全忠实, 正合, 且返回正合列的函子 $F : ℬ → 𝒜$. 结合 Mitchell 嵌入定理, 复杂的图表定理可用追图操作. &lt;br /&gt; &lt;br /&gt; 证明思路 (deflation 版本): 对任意对象 $X$ 构造 deflation 的覆盖空间 $\mathrm{Cov}(X) := \{d ∣ ∙ \overset d ↠ X\}$, 定义 Grothendieck 拓扑 $𝒥$ (关键点是 EX2’). 取 $𝒜 := \mathrm{Ab}(ℬ, 𝒥)$ 是 Abel 层空间, 验证可表函子是 Abel 层, 则 $i : X ↦ (-, X)$ 即为所求.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Thomason 的推论: 假定正合范畴弱幂等完备 (形变收缩写作直和项), 若 $i(f)$ 满, 则 $f$ 是 deflation.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;关于弱幂等完备&quot;&gt;关于弱幂等完备&lt;/h3&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:Qui72&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;(&lt;a href=&quot;https://link.springer.com/chapter/10.1007/BFb0067053&quot;&gt;Springer&lt;/a&gt;). D. Quillen, &lt;em&gt;Higher algebraic K-theory I&lt;/em&gt;, Algebraic K-theory, I: Higher K-theories (Proc. Conf., Battelle Memorial Inst., Seattle, Wash., 1972), Springer, Berlin, 1973, pp. 85–147. Lecture Notes in Math., Vol. 341. &lt;a href=&quot;#fnref:Qui72&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:Qui72:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:DR99&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;(&lt;a href=&quot;https://oyvinso.folk.ntnu.no/Papers/exactvectorcat.pdf&quot;&gt;Online version&lt;/a&gt;). P. Draexler, I. Reiten, S. O. Smalo, and O. Solberg, &lt;em&gt;Exact categories and vector space categories&lt;/em&gt;, Trans. Amer. Math. Soc. &lt;strong&gt;351&lt;/strong&gt; (1999), no. 2, 647–682. With an appendix by B. Keller. &lt;a href=&quot;#fnref:DR99&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:Kel90&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;(&lt;a href=&quot;https://link.springer.com/article/10.1007/BF02568439&quot;&gt;Springer&lt;/a&gt;) B. Keller, &lt;em&gt;Chain complexes and stable categories&lt;/em&gt;, Manuscripta Math. &lt;strong&gt;67&lt;/strong&gt; (1990), no. 4, 379–417. &lt;a href=&quot;#fnref:Kel90&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:Kel90:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:Buh10&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;(&lt;a href=&quot;https://arxiv.org/abs/0811.1480&quot;&gt;arXiv&lt;/a&gt;). T. Bühler, &lt;em&gt;Exact categories&lt;/em&gt;. Expositiones Mathematicae, &lt;strong&gt;28&lt;/strong&gt; (2010), no. 1, 1-69. &lt;a href=&quot;#fnref:Buh10&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:Buh10:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:Buh10:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:Yon60&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;(&lt;a href=&quot;http://alpha.math.uga.edu/~lorenz/YonedaExtExactSequences.pdf&quot;&gt;Online version&lt;/a&gt;) N. Yoneda (米田信夫), &lt;em&gt;On Ext and exact sequences&lt;/em&gt;, J. Fac. Sci. Univ. Tokyo Sect. I &lt;strong&gt;8&lt;/strong&gt; (1960), 507–576 (1960). &lt;a href=&quot;#fnref:Yon60&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:Fry64&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;(&lt;a href=&quot;https://doi.org/10.2307/2373027&quot;&gt;JSTOR&lt;/a&gt;). Mitchell, B. (1964). &lt;em&gt;The Full Imbedding Theorem&lt;/em&gt;. American Journal of Mathematics, 86(3), 619–637. &lt;a href=&quot;#fnref:Fry64&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:Fry64:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:TT90&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;(&lt;a href=&quot;https://link.springer.com/chapter/10.1007/978-0-8176-4576-2_10&quot;&gt;Springer&lt;/a&gt;). R.W. Thomason, T. Trobaugh, &lt;em&gt;Higher algebraic K-theory of schemes and of derived categories&lt;/em&gt;, The Grothendieck Festschrift, vol. III, Progress in Mathematics, vol. 88, Birkhäuser Boston, Boston, MA, 1990, pp. 247–435. MR1106918 (92f:19001). &lt;a href=&quot;#fnref:TT90&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-05-12T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Exact_Cat</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Exact_Cat</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>(线性代数) C-特征空间</title>
           <description>&lt;div class=&quot;abstract&quot;&gt;
   &lt;h5 id=&quot;abstract&quot;&gt;Abstract&lt;/h5&gt;
@@ -412,7 +781,18 @@ F : 𝒜 × ℬ → ℰ,\quad (A,B) ↦ (𝔉(A))(B).
       
         <item>
           <title>三角范畴的定义, 八面体公理</title>
-          <description>&lt;h2 id=&quot;预三角范畴&quot;&gt;预三角范畴&lt;/h2&gt;
+          <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#预三角范畴-三角范畴&quot; id=&quot;markdown-toc-预三角范畴-三角范畴&quot;&gt;预三角范畴, 三角范畴&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#八面体公理是同伦的推出拉回&quot; id=&quot;markdown-toc-八面体公理是同伦的推出拉回&quot;&gt;八面体公理是同伦的推出拉回&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#拓扑学背景&quot; id=&quot;markdown-toc-拓扑学背景&quot;&gt;拓扑学背景&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#八面体公理的解释&quot; id=&quot;markdown-toc-八面体公理的解释&quot;&gt;八面体公理的解释&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#同伦的推出拉回&quot; id=&quot;markdown-toc-同伦的推出拉回&quot;&gt;同伦的推出拉回&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#应用-mv-序列&quot; id=&quot;markdown-toc-应用-mv-序列&quot;&gt;应用: MV 序列?&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;预三角范畴-三角范畴&quot;&gt;预三角范畴, 三角范畴&lt;/h2&gt;
 
 &lt;div class=&quot;definition&quot;&gt;
   &lt;p&gt;(预三角范畴). 给定以下资料&lt;/p&gt;
@@ -423,29 +803,26 @@ F : 𝒜 × ℬ → ℰ,\quad (A,B) ↦ (𝔉(A))(B).
   &lt;/ul&gt;
   &lt;p&gt;称 $(𝒞 , T, ℰ)$ 是预三角范畴, 若三角类满足以下关系.&lt;/p&gt;
   &lt;ul&gt;
-    &lt;li&gt;(TR 1-1, $ℰ$ 对同构封闭). 任给定态射的交换图:       &lt;center&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;li&gt;(TR 1-1, $ℰ$ 对同构封闭). 任给定态射的交换图:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
           &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_f3500e602729b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-        &lt;/div&gt; &lt;/center&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
       &lt;p&gt;其纵向是同构. 若某横行属于 $ℰ$, 则另一横行亦属于 $ℰ$&lt;/p&gt;
     &lt;/li&gt;
     &lt;li&gt;(TR 1-2, 态射可嵌入三角). 任意态射 $f ∈ 𝖬𝗈𝗋 (𝒞)$ 可以嵌入好三角 $[∙ \xrightarrow f ∙ → ∙ → ∙]$.&lt;/li&gt;
     &lt;li&gt;(TR 1-3, 平凡三角). 对任意 $X$, $[X = X → 0 → TX] ∈ ℰ$, 称作平凡三角.&lt;/li&gt;
     &lt;li&gt;(TR 2, 顺时针旋转). 若 $[X \xrightarrow u Y\xrightarrow vZ\xrightarrow w TX] ∈ ℰ$, 则 $[Y\xrightarrow vZ\xrightarrow w TX \xrightarrow {-Tu} TY] ∈ ℰ$.&lt;/li&gt;
-    &lt;li&gt;(TR 3, 二推三原则). 态射范畴的态射 ($2 × 2$ 交换方块) 可以嵌入三角射 (TR 1-2 的态射表述).       &lt;center&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;li&gt;(TR 3, 二推三原则). 态射范畴的态射 ($2 × 2$ 交换方块) 可以嵌入三角射 (TR 1-2 的态射表述).       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
           &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_0358420be95ea.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-        &lt;/div&gt; &lt;/center&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
   &lt;p&gt;规范一些名词:&lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;(好三角). 指 $ℰ$ 中元素, 由六元组 $(X,Y,Z,u,v,w)$ 表示;&lt;/li&gt;
-    &lt;li&gt;(三角射). 好三角的作成的交换图, 形如 ($TX → TX'$ 必须是 $Tf$) $$\begin{equation}
-  \begin{bmatrix}
-  X &amp; \rightarrow  &amp; Y &amp; \rightarrow  &amp; Z &amp; \rightarrow  &amp; TX\\
-  f\downarrow  \ \ \ \ &amp;  &amp; \downarrow  &amp;  &amp; \downarrow  &amp;  &amp; \ \ \ \ \downarrow Tf  \\
-  X &amp; \rightarrow  &amp; Y &amp; \rightarrow  &amp; X &amp; \rightarrow  &amp; TX'
-  \end{bmatrix};
-  \end{equation}$$&lt;/li&gt;
+    &lt;li&gt;(三角射). 好三角的作成的交换图, 形如 ($TX → TX'$ 必须是 $Tf$)       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_81127c1e93fd9.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
     &lt;li&gt;(平移函子, 悬挂函子). 经常使用 $Σ$ 与 $[1]$ 表示平移.&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
@@ -462,7 +839,11 @@ F : 𝒜 × ℬ → ℰ,\quad (A,B) ↦ (𝔉(A))(B).
 &lt;div class=&quot;proposition&quot;&gt;
   &lt;p&gt;由定义, 以下是预三角范畴的性质.&lt;/p&gt;
   &lt;ol&gt;
-    &lt;li&gt;(三角关于逆时针旋转封闭). 若 $[X \xrightarrow u Y\xrightarrow vZ\xrightarrow w TX] ∈ ℰ$, 则 $[T^{-1} Z \xrightarrow {T^{-1}(w)}X \xrightarrow u Y\xrightarrow vZ] ∈ ℰ$.&lt;/li&gt;
+    &lt;li&gt;(逆平移函子). 平移函子是范畴 $𝒞$ 的自同构, 依照 &lt;a href=&quot;NBGC&quot;&gt;NBGC&lt;/a&gt; 公理选定骨架, 从而构造逆函子 $T^{-1}$. 一般地, 只能找到 $G$ 使得有自然同构 $GF ≃ \mathrm{id}$ 与 $FG ≃ \mathrm{id}$.&lt;/li&gt;
+    &lt;li&gt;(三角关于逆时针旋转封闭). 使用类的选则公理.       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_0e3dc6bb4172c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
     &lt;li&gt;(嵌入唯一). TR 1-2 中态射嵌入的三角 (在同构的意义下) 是唯一的.&lt;/li&gt;
     &lt;li&gt;(嵌入无向). TR 1-2 中的态射可以嵌入三角的任意位置.&lt;/li&gt;
     &lt;li&gt;(&lt;a href=&quot;Yoneda_Homological&quot;&gt;上同调函子&lt;/a&gt;). 米田嵌入是上同调函子, 换言之, 任意可表函子导出长正合列.&lt;/li&gt;
@@ -474,9 +855,9 @@ F : 𝒜 × ℬ → ℰ,\quad (A,B) ↦ (𝔉(A))(B).
 
 &lt;div class=&quot;definition&quot;&gt;
   &lt;p&gt;(八面体公理). 若下图中 $r_1$, $r_2$ 与 $c_3$ 均为好三角, 则 $c_2$ 是好三角且所有方块交换:&lt;/p&gt;
-  &lt;center&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_2dc02638f927e.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-    &lt;/div&gt; &lt;/center&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_c244f93c0f3e9.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
   &lt;p&gt;红色箭头是题设中的, 强调了 $u[1]$ 与 $v[1]$ 的符号.&lt;/p&gt;
 &lt;/div&gt;
 
@@ -499,31 +880,181 @@ F : 𝒜 × ℬ → ℰ,\quad (A,B) ↦ (𝔉(A))(B).
 &lt;p&gt;每一项命题均有完整版本 (三个好三角推一个好三角) 与精简版本 (两个态射延拓成全图)&lt;/p&gt;
 
 &lt;div class=&quot;proposition&quot;&gt;
-  &lt;p&gt;(基变换, 余积变换). 以下是八面体公理的等价形式 (请注意符号).&lt;/p&gt;
+  &lt;p&gt;(基变换, 余积变换). 以下是八面体公理的等价形式 (请注意符号). 以下默认初始三角 $[X → Y → W]$ 的坐标是 $(r;c) = (1;[1,2,3])$.&lt;/p&gt;
   &lt;ol&gt;
-    &lt;li&gt;(基变换, 完整版本). 若下图中 $r_1$, $r_2$ 与 $c_3$ 均为好三角, 则 $c_2$ 是好三角且所有方块交换:&lt;/li&gt;
-  &lt;/ol&gt;
-  &lt;center&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_2df4711a5dfb6.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-    &lt;/div&gt; &lt;/center&gt;
-  &lt;center&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_70676a59c7062.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-    &lt;/div&gt; &lt;/center&gt;
-  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;(基变换, 完整版本). 若下图中 $r_1$, $r_2$ 与 $c_3$ 均为好三角, 则 $c_2$ 是好三角且所有方块交换:&lt;/p&gt;
+      &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_d0d1f8d515813.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
     &lt;li&gt;(基变换, 精简版本). 基变换中, 绿色部分 (横三角 + 纵箭头) 补成全图.&lt;/li&gt;
+    &lt;li&gt;(基变换, 完整版本). 余基变换中, 若下图中 $r_2$, $r_3$ 与 $c_1$ 均为好三角, 则 $c_2$ 是好三角且所有方块交换:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_8cfe7cd75451d.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+    &lt;li&gt;(基变换, 精简版本). 余基变换中, 绿色部分 (横三角 + 纵箭头) 补成全图.&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&quot;八面体公理是同伦的推出拉回&quot;&gt;八面体公理是同伦的推出拉回&lt;/h2&gt;
 
-&lt;center&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-    &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_cee0ed34749c1.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-  &lt;/div&gt; &lt;/center&gt;
+&lt;h3 id=&quot;拓扑学背景&quot;&gt;拓扑学背景&lt;/h3&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(映射锥). 拓扑地看, 态射 $f:X → Y$ 对应的映射锥如下:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikzmathcha-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_828368fb720ab.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(映射筒). 拓扑地看, 态射 $f:X → Y$ 对应的映射筒如下:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikzmathcha-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_da394a07eb8d0.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(悬挂). 依照 Puppe 的长纤维序列, $\mathrm{Cone}(i(f):Y\to \mathrm{Cone}(f))$ 对应 $X$ 的悬挂:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikzmathcha-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_8efe8370a2609.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;同理, $\mathrm{Cone}(p(f):\mathrm{Cone}(f)\to X[1])$ 对应 $Y$ 的悬挂:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikzmathcha-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_f8d7f008440a1.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(符号法则: 为什么顺时针/逆时针旋转需要加上负号?). 给定好三角 $X\xrightarrow f Y\xrightarrow{\binom 01} \mathrm{Cone}(f)\xrightarrow{(1\,\,0)} X[1]$. 以下给出 $\mathrm{Cyl}(f)$:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikzmathcha-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_e6489b190bda2.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;八面体公理的解释&quot;&gt;八面体公理的解释&lt;/h3&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;取标准三角 $X\xrightarrow f Y\xrightarrow{i(f)} \mathrm{Cone}(f)\xrightarrow {p(f)} X[1]$ 为标准三角, 则下图交换:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_84c0c09d3225a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;此处 $f$ 与 $g$ 是任意选取的, 从而八面体公理等价于&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;对任意 $g$, 总有同伦范畴中的同构 $\mathrm{Cone}(g) ≃ \mathrm{Cone}(g_∗)$&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;虚线处类似 Noether 同构 $A/B ≃ (A/C)/(B/C)$, 图示如下:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikzmathcha-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_4ec9380fc9324.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;将上图沿虚线压缩至一点 (这是同伦关系), 得下图. 对大多数拓扑情形而言, 八面体公理是可以直接证出的.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;($⋆$ 处的同构). 八面体公理中有如下交换方块:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_f55c9d795ea26.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;拓扑地解释如下:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikzmathcha-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_c535b0c73f133.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;同伦的推出拉回&quot;&gt;同伦的推出拉回&lt;/h3&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(Abel 范畴的推出-拉回方块). 称交换图 &lt;span class=&quot;tikzinline-diagram&quot;&gt;       &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_958c8d8eca773.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt; 是推出拉回方块, 当且仅当以下是四条 ses 的交换图&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_f5ce26b48e667.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;也当且仅当存在短正合列 $$\begin{equation}
+0\to X\xrightarrow{\binom{a_1}{b_1}} Y_2\oplus Y_1\xrightarrow{(b_2,-a_2)} Z\to 0.
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
 
 &lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;(三角扩张). 给定三角范畴的两个对象类 $O_1$ 与 $O_2$, 定义 $$\begin{equation}
-O_1\star O_2=\{Y\mid \exists X\in O_1\,\text{与}\, Z\in O_2\,\text{ 使得存在好三角 }\, X\to Y\to Z\to X[1]\}.
+  &lt;p&gt;(同伦推出拉回). 若 $⋆$ 处 $2 × 2$ 规格的交换方块是同伦推出拉回的, 若存在好三角&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
+X\xrightarrow{\binom{a_1}{b_1}} Y_2⊕ Y_1\xrightarrow{(b_2,-a_2)} Z\xrightarrow h X[1].
 \end{equation}$$&lt;/p&gt;
+  &lt;p&gt;考虑其同伦背景, 有时将第二项记作 $Y_2∨ Y_1$. 将满足以上条件的方块 $⋆$ 称作同伦的推出拉回.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(三角范畴中同伦推出拉回的特例, &lt;a href=&quot;Homotopic_PBPO&quot;&gt;证明&lt;/a&gt;). 若以上 $⋆$ 能补全作两行两列的好三角&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_281e65eddf85c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;则 $⋆$ 是同伦推出拉回.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(八面体公理的等价定义, &lt;a href=&quot;Homotopic_PBPO_Oct&quot;&gt;证明&lt;/a&gt;). 预预三角范畴是三角范畴, 当且仅当&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;预三角范畴满足八面体公理;&lt;/li&gt;
+    &lt;li&gt;任意两个红色态射给出如下三角射与交换图:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_2ed4ffc418ca6.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+    &lt;li&gt;给定红色处三角与同伦推出拉回方块, 则可补全下图三角与三角射       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_276effd110343.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;注意: 对条件 2. 与 3. 的同伦推出拉回方块, 需要反号的态射是 $⇒$:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_a2484d7dfcde4.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/002186939190292G&quot;&gt;Neeman 公理&lt;/a&gt;). 预三角范畴是三角范畴, 若对任意交换图 &lt;span class=&quot;tikzinline-diagram&quot;&gt;       &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_e015c8674b31a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt;, 存在态射 $h$ 使得有三角射&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_0376f20e45fde.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;以及好三角 $$\begin{equation}
+Y \oplus X' \xrightarrow{\begin{pmatrix}-v&amp;0\\g&amp;u'\end{pmatrix}} Z \oplus Y' \xrightarrow{\begin{pmatrix}-w&amp;0\\h&amp;v'\end{pmatrix}} X[1] \oplus W\xrightarrow{\begin{pmatrix}-u[1]&amp;0\\f[1]&amp;w'\end{pmatrix}} Y[1]\oplus X'[1]
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;slogan&quot;&gt;
+  &lt;p&gt;TR3 中二推三态射可以选的好一些.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;应用-mv-序列&quot;&gt;应用: MV 序列?&lt;/h3&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(MV-序列). 考虑以下同伦的推出拉回:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikzmathcha-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_9a1c49ac48632.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;此时有函子的长正合列 $$
+\begin{align}
+\cdots\to [M,Y]&amp;\xrightarrow{\begin{pmatrix}{[M,g_\ast]} \ \ {[M,i(f)]}\end{pmatrix}} [M,Z]\oplus [M,\mathrm{Cone}(f)]\\[6pt]
+&amp;\xrightarrow{\begin{pmatrix}[M,i(f\circ g)]&amp; -[M,g_\ast]\end{pmatrix}} [M,\mathrm{Cone}(g\circ f)]\xrightarrow{[M,\delta]}[M,Y[1]]\to \cdots. 
+\end{align}
+$$&lt;/p&gt;
+  &lt;p&gt;作为特例, 传统的 MV 序列 $$\begin{aligned}
+\cdots &amp;\to H_n(X\cap Y)\to H_n(X)\oplus H_n (Y) \to\\
+&amp;\to H_n(X\cup Y)\to H_{n-1}(X\cap Y)\to\cdots 
+\end{aligned}$$ 连接态射 $\delta$ 定义作以下两种相同的复合 (八面体公理). 一者是 $$\begin{equation}
+\mathrm{Cone}(g\circ f)\to \mathrm{Cone}[Z\to \mathrm{Cone}(g\circ f)]\to Y[1]. 
+\end{equation}$$&lt;/p&gt;
+  &lt;p&gt;对应示意图&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikzmathcha-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_66e70587b8c58.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;另一者是 $\mathrm{Cone}(g\circ f)\to X[1]\to Y[1]$, 对应示意图&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikzmathcha-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Tri_Cat_Def/diagram_598762190ee29.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
 &lt;/div&gt;
 
 </description>
@@ -551,7 +1082,7 @@ O_1\star O_2=\{Y\mid \exists X\in O_1\,\text{与}\, Z\in O_2\,\text{ 使得存�
 &lt;div class=&quot;abstract&quot;&gt;
   &lt;h5 id=&quot;abstract&quot;&gt;Abstract&lt;/h5&gt;
   &lt;div&gt;
-    &lt;p&gt;外三角范畴兼有正合范畴与&lt;a href=&quot;Tri_Cat_Def&quot;&gt;三角范畴&lt;/a&gt;的特性, 但绝非简单的混合:&lt;/p&gt;
+    &lt;p&gt;外三角范畴兼有&lt;a href=&quot;Exact_Cat&quot;&gt;正合范畴&lt;/a&gt;与&lt;a href=&quot;Tri_Cat_Def&quot;&gt;三角范畴&lt;/a&gt;的特性, 但绝非简单的混合:&lt;/p&gt;
     &lt;ul&gt;
       &lt;li&gt;三角范畴与正合范畴可视作特殊的外三角范畴;&lt;/li&gt;
       &lt;li&gt;也存在既非三角范畴亦非正合范畴的外三角范畴.&lt;/li&gt;
@@ -19036,11 +19567,11 @@ $$&lt;/p&gt;
 &lt;div class=&quot;proof&quot;&gt;
   &lt;p&gt;若 $ℬ$ 余反射, 记嵌入的右伴随 $t$, 即&lt;/p&gt;
   &lt;p&gt;$$
-(X, t(A))_{ℬ} ≃ (i(X), A)_{𝒯}. 
+(X, t(A))_{ℬ} ≃ (i(X), A)_{𝒯}.
 $$&lt;/p&gt;
   &lt;p&gt;任意 $X ∈ 𝒯$ 都有预盖 $ε_X: t(X) → X$, 因为&lt;/p&gt;
   &lt;p&gt;$$
-(i(A), ε_X)_{𝒜} ≃ \mathrm{id}_{(A, t(X))}. 
+(i(A), ε_X)_{𝒜} ≃ \mathrm{id}_{(A, t(X))}.
 $$&lt;/p&gt;
   &lt;p&gt;反之, 若 $ℬ$ 反变有限, 以下求解 $A ∈ 𝒯$ 在 $ℬ$ 中的右伴随像. 记&lt;/p&gt;
   &lt;p&gt;$$
@@ -19060,7 +19591,7 @@ $$&lt;/p&gt;
 &lt;div class=&quot;proof&quot;&gt;
   &lt;p&gt;若 $ℬ$ 余反射, 则反变有限 (见前一命题).&lt;/p&gt;
   &lt;p&gt;若 $ℬ$ 反变有限, 对任意 $A ∈ 𝒯$ 构造 $$
-X_K \xrightarrow c K \xrightarrow b X_A \xrightarrow a A. 
+X_K \xrightarrow c K \xrightarrow b X_A \xrightarrow a A.
 $$ 其中 $X_M → M$ 是预盖, $b$ 是 $a$ 的弱核. 此时有正合列 $$
 (-, X_K)_ℬ → (-,X_A)_ℬ → (i(-),A)_𝒯 → 0.
 $$ 由于 $(i(-),A)_𝒯$ 是有限表现的平坦对象, 从而投射 (&lt;a href=&quot;Plat_et_Proj_Cover_Proj&quot;&gt;证明&lt;/a&gt;). 再由 Karoubi 性, 该函子可表, 因此 $i$ 存在右伴随.&lt;/p&gt;
@@ -20188,11 +20719,15 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;example&quot;&gt;
-  &lt;p&gt;在特殊情况下, 可直接使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tikz&lt;/code&gt; 环境插入 &lt;a href=&quot;https://q.uiver.app/&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;quiver&lt;/code&gt;&lt;/a&gt; 代码 (小 bug, 需要将 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;textcolor&lt;/code&gt; 替换作 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;color&lt;/code&gt;). 可以使用行内公式 &lt;span class=&quot;tikzinline-diagram&quot;&gt;       &lt;embed src=&quot;/website/svg/template/diagram_05a3a81d6ad38.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+  &lt;p&gt;在特殊情况下, 可直接使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tikz&lt;/code&gt; 环境插入 &lt;a href=&quot;https://q.uiver.app/&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;quiver&lt;/code&gt;&lt;/a&gt; 代码 (小 bug, 需要将 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;textcolor&lt;/code&gt; 替换作 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;color&lt;/code&gt;). 可以使用行内公式 (推荐使用占位符, 使图宽度为 $4$ 格) &lt;span class=&quot;tikzinline-diagram&quot;&gt;       &lt;embed src=&quot;/website/svg/template/diagram_05a3a81d6ad38.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
  &lt;/span&gt;, 或是行间公式&lt;/p&gt;
-  &lt;center&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
       &lt;embed src=&quot;/website/svg/template/diagram_2df4711a5dfb6.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-    &lt;/div&gt; &lt;/center&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;也可以使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mathhcha&lt;/code&gt; (有时大小不匹配, 请自动加上 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\scalebox{0.8}&lt;/code&gt;):&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikzmathcha-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/template/diagram_c48b1fa63f678.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
   &lt;div class=&quot;note&quot;&gt;
     &lt;p&gt;原理: 本地插件 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-tikz&lt;/code&gt; 将 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;q.uiver&lt;/code&gt; 语法下的箭图编译为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PDF&lt;/code&gt; 文件 (存放在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./_tikz_tmp&lt;/code&gt;), 并通过上古神器 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pdf2svg&lt;/code&gt; 自动生成 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;svg&lt;/code&gt; 矢量图 (存放在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./svg&lt;/code&gt;).&lt;/p&gt;
   &lt;/div&gt;

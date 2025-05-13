@@ -10,16 +10,16 @@ category: proof
 {% endprop %}
 
 {% pf %}
-若 $ℬ$ 余反射, 记嵌入的右伴随 $t$, 即 
+若 $ℬ$ 余反射, 记嵌入的右伴随 $t$, 即
 
 $$
-(X, t(A))_{ℬ} ≃ (i(X), A)_{𝒯}. 
+(X, t(A))_{ℬ} ≃ (i(X), A)_{𝒯}.
 $$
 
 任意 $X ∈ 𝒯$ 都有预盖 $ε_X: t(X) → X$, 因为
 
 $$
-(i(A), ε_X)_{𝒜} ≃ \mathrm{id}_{(A, t(X))}. 
+(i(A), ε_X)_{𝒜} ≃ \mathrm{id}_{(A, t(X))}.
 $$
 
 反之, 若 $ℬ$ 反变有限, 以下求解 $A ∈ 𝒯$ 在 $ℬ$ 中的右伴随像. 记 
@@ -34,7 +34,7 @@ $$
 h_X ↠ (i(-), A)_{𝒯} \quad ∈ 𝐦𝐨𝐝_ℬ
 $$
 
-由于平坦对象 $(i(-), A)_{𝒯}$ 存在投射盖, 且 $𝒯^{\mathrm{op}}$ 存在弱余核, 从而只能是投射对象 (<a href = "Fp_et_Plat_est_Proj">证明</a>). 这一对象也是有限生成的. 再由 Karoubi 性, 该函子可表, 因此 $i$ 存在右伴随.
+由于平坦对象 $(i(-), A)_{𝒯}$ 存在投射盖, 且 $𝒯^{\mathrm{op}}$ 存在弱余核, 从而只能是投射对象 ([证明](Fp_et_Plat_est_Proj)). 这一对象也是有限生成的. 再由 Karoubi 性, 该函子可表, 因此 $i$ 存在右伴随.
 {% endpf %}
 
 {% prop %}
@@ -46,24 +46,20 @@ $$
 
 若 $ℬ$ 反变有限, 对任意 $A ∈ 𝒯$ 构造
 $$
-X_K \xrightarrow c K \xrightarrow b X_A \xrightarrow a A. 
+X_K \xrightarrow c K \xrightarrow b X_A \xrightarrow a A.
 $$
 其中 $X_M → M$ 是预盖, $b$ 是 $a$ 的弱核. 此时有正合列
 $$
 (-, X_K)_ℬ → (-,X_A)_ℬ → (i(-),A)_𝒯 → 0.
 $$
-由于 $(i(-),A)_𝒯$ 是有限表现的平坦对象, 从而投射 (<a href = "Plat_et_Proj_Cover_Proj">证明</a>). 再由 Karoubi 性, 该函子可表, 因此 $i$ 存在右伴随.
+由于 $(i(-),A)_𝒯$ 是有限表现的平坦对象, 从而投射 ([证明](Plat_et_Proj_Cover_Proj)). 再由 Karoubi 性, 该函子可表, 因此 $i$ 存在右伴随.
 {% endpf %}
 
 {% note %}
 总结地看, 从余反射 (反射) 到反变有限的论证仅使用了伴随函子的单位与余单位. 反之, 需要参照模论中的一些定理.
-<ol>
-<li>
-有投射盖的平坦模是投射模, <a href = "Fp_et_Plat_est_Proj">函子版本</a>.
-</li>
-<li>
-有限表现的平坦模是投射模, <a href = "Plat_et_Proj_Cover_Proj">函子版本</a>.
-</li>
-</ol>
+
+1. 有投射盖的平坦模是投射模, [函子版本](Fp_et_Plat_est_Proj).
+2. 有限表现的平坦模是投射模, [函子版本](Plat_et_Proj_Cover_Proj).
+
 此处, 可表对应投射对象.
 {% endnote %}
