@@ -1,0 +1,22 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsOCxbMiwxLCJDIl0sWzAsMSwiQV8xXFxvcGx1cyBBXzIiXSxbMSwxLCJNIl0sWzAsMCwiQV8yIl0sWzAsMiwiQV8xIl0sWzEsMiwiQV8xIl0sWzEsMCwiQl8yJyJdLFsyLDAsIkMiXSxbMiwwLCJrIl0sWzEsMiwibSJdLFszLDEsImVfMiIsMl0sWzEsNCwicF8xIiwyXSxbMyw2LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw3LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwyLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw1LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw1LCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs3LDAsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}
+	{A_2} & {B_2'} & C \\
+	{A_1\oplus A_2} & M & C \\
+	{A_1} & {A_1}
+	\arrow[dashed, from=1-1, to=1-2]
+	\arrow["{e_2}"', from=1-1, to=2-1]
+	\arrow[dashed, from=1-2, to=1-3]
+	\arrow[dashed, from=1-2, to=2-2]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["m", from=2-1, to=2-2]
+	\arrow["{p_1}"', from=2-1, to=3-1]
+	\arrow["k", from=2-2, to=2-3]
+	\arrow[dashed, from=2-2, to=3-2]
+	\arrow[equals, from=3-1, to=3-2]
+\end{tikzcd}
+\end{document}

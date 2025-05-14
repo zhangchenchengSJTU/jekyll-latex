@@ -3,7 +3,843 @@
   <channel>
     <title>Jekyll Latex</title>
     <description>A pretty good Jekyll theme</description>
-    <link>http://localhost:4000/website</link>
+    <link>https://zhangchenchengsjtu.github.io/website</link>
+    
+      
+        <item>
+          <title>外三角范畴 (2025-05-15 讲稿)</title>
+          <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#目标&quot; id=&quot;markdown-toc-目标&quot;&gt;目标&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#外三角范畴的定义&quot; id=&quot;markdown-toc-外三角范畴的定义&quot;&gt;外三角范畴的定义&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#et1-扩张结构&quot; id=&quot;markdown-toc-et1-扩张结构&quot;&gt;ET1: 扩张结构&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#et2-扩张的-加法-实现&quot; id=&quot;markdown-toc-et2-扩张的-加法-实现&quot;&gt;ET2: 扩张的 (加法) 实现&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#外三角范畴的定义-et3-et4&quot; id=&quot;markdown-toc-外三角范畴的定义-et3-et4&quot;&gt;外三角范畴的定义 (ET3, ET4)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#外三角范畴的基本性质&quot; id=&quot;markdown-toc-外三角范畴的基本性质&quot;&gt;外三角范畴的基本性质&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#上同调函子&quot; id=&quot;markdown-toc-上同调函子&quot;&gt;上同调函子&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#主定理-特殊的稳定范畴保持外三角结构&quot; id=&quot;markdown-toc-主定理-特殊的稳定范畴保持外三角结构&quot;&gt;主定理: 特殊的稳定范畴保持外三角结构&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#外三角范畴的引理-类比正合范畴&quot; id=&quot;markdown-toc-外三角范畴的引理-类比正合范畴&quot;&gt;外三角范畴的引理 (类比正合范畴)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#投射对象-内射对象&quot; id=&quot;markdown-toc-投射对象-内射对象&quot;&gt;投射对象, 内射对象&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#三角范畴视作外三角范畴&quot; id=&quot;markdown-toc-三角范畴视作外三角范畴&quot;&gt;三角范畴视作外三角范畴&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;目标&quot;&gt;目标&lt;/h2&gt;
+
+&lt;p&gt;外三角范畴的定义, 重要定义, 引理等.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;五项长正合列 (重点是 ET4 的使用);&lt;/li&gt;
+  &lt;li&gt;Kuenth 引理的类似物 (推出拉回).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;与正合范畴, 三角范畴的关系&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;正合范畴实现为特殊的外三角范畴,&lt;/li&gt;
+  &lt;li&gt;三角范畴实现为特殊的外三角范畴,&lt;/li&gt;
+  &lt;li&gt;存在既非正合范畴, 亦非三角范畴的外三角范畴;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;主定理: 给定加法全子范畴 $ℐ ⊆ 𝐏𝐫𝐨𝐣 ∩ 𝐈𝐧𝐣$, 外三角范畴关于 $ℐ$ 的稳定范畴仍是外三角范畴.&lt;/p&gt;
+
+&lt;h2 id=&quot;外三角范畴的定义&quot;&gt;外三角范畴的定义&lt;/h2&gt;
+
+&lt;h3 id=&quot;et1-扩张结构&quot;&gt;ET1: 扩张结构&lt;/h3&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(带扩张结构的加法范畴) 给定加法范畴 $𝒞$, 扩张结构是指双加法函子 $$\begin{equation}
+𝔼 : 𝒞 ^{\mathrm{op}} × 𝒞 → 𝐀𝐛.
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;记 $𝔼(X,Y)$ 中的一个元素为 $(X, δ, Y)$, 或简单地, $δ$. 若无歧义, 记群同态&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;$𝔼 (f,X) =: f^∗$, 称作拉回;&lt;/li&gt;
+    &lt;li&gt;$𝔼 (X,g) =: g_∗$, 称作推出.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;由 $𝔼$ 是双函子, 推出与拉回交换.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;简单验证 $𝔼$ 中加法结构: 加法定义作 Baer 和&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_44a9e35980c01.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;零元即 $δ ⊕ (-δ)$ 的像, 加法结合律是因为 $\binom{\binom 11}{1} = \binom{1}{\binom 11}$, 交换律检验类似. &lt;br /&gt; &lt;br /&gt; 为说明 $f_∗$ 是群同态, 即验证交换图&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_381cbb8922265.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;显然 $$\begin{equation}
+(1,1)_∗ (f ⊕ f)_∗ = (f,f)_∗ = (1,1)_∗ f_∗
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(扩张的态射). 称态射 $f : X → X'$ 与 $g : Y → Y'$ 建立了扩张 $(X,δ , Y)$ 与 $(X', δ ' , Y ')$ 之间的态射, 若 $f_∗ δ' = δ g^∗$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;扩张的态射类似正合列间的态射. 以上并不是 $𝔼$-群同态.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;et2-扩张的-加法-实现&quot;&gt;ET2: 扩张的 (加法) 实现&lt;/h3&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(二项态射的类). 定义如下类的等价类, 并配上二元运算 $⊕$.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;对象选取形如 $X \overset f→ Y \overset g→ Z$ 的二项态射序列.&lt;/li&gt;
+    &lt;li&gt;以下上下两行等价       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_be3928296562d.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+    &lt;li&gt;等价类的直和运算, 定义做等价类的直和 ($[x ⊕ y] =: [x] ⊕ [y]$).&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;两个对象决定了子类 $[Y, X] := \{X → E → Z\} / ∼$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;以上既未给出 $[Y, X]$ 内部的群 (大群) 结构, 也未给出 $[Y,f]$ 或 $[g,X]$ 之类的运算. 形式地, 仍将可裂短正合列所在类记作 $0$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(加法实现, 简称实现). 称 $𝔰$ 是 $(𝒞, 𝔼)$ 的一个实现, 若 $𝔰$ 是类之间的对应: $$\begin{equation}
+⋃_{X,Y}𝔼(Y,X) → ⋃_{X,Y}[Y,X],\quad (X, δ , Y) ↦ 𝔰 (δ)
+\end{equation}$$&lt;/p&gt;
+  &lt;p&gt;且满足以下条件.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$𝔰 (0) = 0$, 此处 $X, Y$ 任取.&lt;/li&gt;
+    &lt;li&gt;$𝔰$ 保持直和结构, 即, $𝔰(δ) ⊕ 𝔰(δ ') = 𝔰(δ ⊕ δ ')$.&lt;/li&gt;
+    &lt;li&gt;$f : X → X'$ 与 $g : Y → Y'$ 建立了扩张 $(X,δ , Y)$ 与 $(X', δ ' , Y ')$ 之间的态射, 则存在 $φ$ 使得下图交换       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_00c9493eccc11.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;以上视作局部的二推三.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;($𝔼$-三角). 指实现中的元素, 即, 等价类 $𝔰((X, δ , Y)) ∈ [Y, X]$ 的任意代表元.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;外三角范畴的定义-et3-et4&quot;&gt;外三角范畴的定义 (ET3, ET4)&lt;/h3&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;外三角范畴描述作三元组 $(𝒞 , 𝔼 , 𝔰)$, 其中 $𝔼$ 是加法范畴. 满足&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;(ET1). $𝔼$ 是扩张结构, 即双函子 $𝔼 : 𝒞 ^{\mathrm{op}} × 𝒞 → 𝐀𝐛$&lt;/li&gt;
+    &lt;li&gt;(ET2). $𝔰$ 是实现, 也就是局部的二推三.&lt;/li&gt;
+    &lt;li&gt;(ET3). 假定以下横行是 $𝔼$-三角, 且存在态射 $f$ 与 $φ$ 使得下图交换, 则存在 $g$ 使得下图交换:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_df80c47924cb0.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+    &lt;li&gt;(ET3’). 假定以下横行是 $𝔼$-三角, 且存在态射 $g$ 与 $φ$ 使得下图交换, 则存在 $f$ 使得下图交换:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_51465971a07c1.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+    &lt;li&gt;(ET4). 假定初始资料是如下 $⊤$-型的 $𝔼$-三角 ($\mathfrak s(\delta_{r1})$, $\mathfrak s(\delta_{c2})$), 则可以补全作如下四个 $𝔼$-三角的交换图:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_100936645cbb0.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+      &lt;p&gt;同时, 以上好三角对应的扩张满足以下条件:&lt;/p&gt;
+      &lt;ol&gt;
+        &lt;li&gt;$y_∗ (\delta_{c2}) = \delta_{c3}$,&lt;/li&gt;
+        &lt;li&gt;$\delta_{r1} = x^∗ \delta_{r2}$,&lt;/li&gt;
+        &lt;li&gt;$s^∗ (\delta_{c2}) = x_∗ (\delta_{r2})$.&lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;(ET4’). 假定初始资料是如下 $⊣$-型的 $𝔼$-三角 ($\mathfrak s(\delta_{r2})$, $\mathfrak s(\delta_{c3})$), 则可以补全作如下四个 $𝔼$-三角的交换图:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_00cfe5bd7f911.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+      &lt;p&gt;同时, 以上好三角对应的扩张满足以下条件 (同 ET4):&lt;/p&gt;
+      &lt;ol&gt;
+        &lt;li&gt;$y_∗ (\delta_{c2}) = \delta_{c3}$,&lt;/li&gt;
+        &lt;li&gt;$\delta_{r1} = x^∗ \delta_{r2}$,&lt;/li&gt;
+        &lt;li&gt;$s^∗ (\delta_{c2}) = x_∗ (\delta_{r2})$.&lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;ET4 与 ET4’ 是不同输入的同一结果, 都是给定一个 T 构造另一个 T. 类比作八面体公理, 以下类似交换方块的 $\boxed 1$, $\boxed{2}$ 与 $\boxed{3}$ 对应 ET4 中三处约束:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_207fc38a74aaf.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;另一种理解方式是正合范畴中的 Noether 同构.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;若正合范畴 $(𝒜 ,ℰ)$ 本质小, 或是有足够投射, 则 $\mathrm{Ext}^1$ 总是集合. 此时, $(𝒜, \mathrm{Ext}^1, 𝔰)$ 是外三角范畴, $𝔰$ 由 $\mathrm{Ext}^1$ 的米田群定义给出.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;外三角范畴的基本性质&quot;&gt;外三角范畴的基本性质&lt;/h2&gt;
+
+&lt;h3 id=&quot;上同调函子&quot;&gt;上同调函子&lt;/h3&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(充实在 $𝐀𝐛$ 范畴上的米田引理). 表述证明略.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;($δ_!$ 与 $δ^!$). 由米田引理, 扩张 $δ$ 对应自然变换 $δ_!$ (被拉回) 与 $δ^!$ (被突出):&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_8942286d70080.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(函子的同调长正合序列). 给定 $𝔼$-三角 $𝔰 (δ ) = [A\xrightarrow f B \xrightarrow g C]$, 则有六项反变函子的长正合列&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_ffa3112489174.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;需要提及, $𝔼(-, B)$ 处的正合性需要 ET4, 前五项长正合列仅通过 ET1, ET2, 与 ET3 推得.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;先看看 $(-,B)$ 处正合性.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;由函子性, $\ker (g ∘ - ) ⊇ \mathrm{im}(f ∘ -)$.&lt;/li&gt;
+      &lt;li&gt;若 $h ∈ \ker (g ∘ - )$, 则有 $𝔼$ 三角间的交换图         &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+            &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_d2d12493a2930.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+          &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+        &lt;p&gt;因此 $h ∈ \mathrm{im}(f ∘ -)$.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;再看 $(-,C)$ 处正合性.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;对任意 $h ∈ \mathrm{im}(g ∘ - )$, 不妨记作 $g ∘ l$. 下证明 $δ_!(g ∘ l) = 0$. 由定义, 只需证明 $l^∗g^∗δ = 0$. 下图表明 $g^∗ δ =0_∗ (0)$:         &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+            &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_a1e89ed1c6c83.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+          &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+      &lt;/li&gt;
+      &lt;li&gt;若 $δ_!(h) = 0$, 下证明 $h$ 通过 $g$ 分解. 由 $𝔰(δ_!(h))$ 是可裂短正合列, 对于中项加上适当的同构, 得交换图         &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+            &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_f927834bfa2c3.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+          &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+        &lt;p&gt;此处 $s$ 即为所求.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;下证明 $𝔼 (- ,A)$ 处的正合性.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;对任意 $δ_!$ 的像, 即形如 $h^∗ δ$ 的正合列, 下证明 $f_∗(h^∗ δ) = 0$. 直接地, $f_∗ δ = 0$.&lt;/li&gt;
+      &lt;li&gt;若 $η ∈ 𝔼 (-, A)$ 满足 $f_∗ η = 0$, 下证明 $η$ 形如 $δ$ 的拉回. 仍不妨设 $f_∗ η$ 是直和形式, 则下图给出分解 $f = sa$:         &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+            &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_cf047fcd80223.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+          &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+        &lt;p&gt;由 $f$ 通过 $s$ 分解, ET3 给出的虚线处态射即为所求:&lt;/p&gt;
+        &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+            &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_182feb6db6a9f.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+          &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;最后考虑 $𝔼(-, B)$ 处的正合性.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;一方面, 函子性表明 $\mathrm{ker} (g_∗ )⊇ \mathrm{im}(f_∗)$.&lt;/li&gt;
+      &lt;li&gt;另一方面, 若 $g_∗ (η) = 0$, 则有交换图         &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+            &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_c91b8251b71f3.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+          &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+        &lt;p&gt;此时, 依照 ET4 补全四个 $𝔼$-三角的交换图&lt;/p&gt;
+        &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+            &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_b8fcc297b4272.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+          &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+        &lt;p&gt;此处 $f_∗ κ = η$.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;主定理-特殊的稳定范畴保持外三角结构&quot;&gt;主定理: 特殊的稳定范畴保持外三角结构&lt;/h2&gt;
+
+&lt;h3 id=&quot;外三角范畴的引理-类比正合范畴&quot;&gt;外三角范畴的引理 (类比正合范畴)&lt;/h3&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;若无歧义, 将使用正合范畴的名词称呼 $𝔼$-三角. 称 $𝔰 (δ)$ 是 conflation, 其第一项态射与第二项态射分别为 inflation 与 deflation.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(EX1 类似物). 由 ET4, inflation 与 deflation 对合成封闭.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(EX 2 类似物). 这一类比是困难的, 因为外三角范畴通常没有态射嵌入 $𝔼$-三角的结论, 更没有一般的推出拉回.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(Noether 同构 ≈ 八面体引理 ≈ ET4). 这是正合范畴, 三角范畴与外三角范畴的共性.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(Noether ≈ ET4 的推论). 这是正合范畴与外三角范畴共有的. 在三角范畴中, 好三角灵活的旋转特性埋没了这一推论. &lt;br /&gt; &lt;br /&gt; 给定来源相同的 inflation 与 deflation, 其拉回就是推出拉回方块, 且有四条 conflation 的交换图:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_0aff9ad22701b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;对外三角范畴, 将某一 inflation 或 deflation 补全作 $𝔼$-三角, 使用八面体公理即可.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(双 deflation 拉回, 双 inflation 推出). 对正合范畴,&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;若两个 deflation 具有相同的去向, 则其拉回补全作四条 conflation 的交换图:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_99d430bcc026d.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+    &lt;li&gt;若两个 inflation 具有相同的来源, 则其推出补全作四条 conflation 的交换图:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_70ef0b5dd0470.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(双 deflation 拉回 ≈ Verdier 的 $4 × 4$ 公理). 给定外三角范畴中 $δ_{i} ∈ 𝔼 (C, A_i)$ 的实现, 则可补全以下四条 $𝔼$-三角的交换图:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_91ec854cf2a91.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;中间行列恰是 $(y_i)_∗ δ_j$ 的实现.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;选用辅助的 $𝔼$-三角 $\binom 11 ^∗ (δ _1 ⊕ δ _2)$, 定义作下图的上行:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_bceb613330240.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;使用 ET4, 重新构造 $𝔼 (C, A_2)$ 中某个扩张的实现, 见四个 $𝔼$-三角的交换图:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_7f86ffbe271b2.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;左侧是 $(p_2)_\ast\binom11^\ast(\delta_1\oplus\delta_2) = (1,1)_\ast\binom11^∗ (0 ⊕ δ _2) = δ _2$. 因此第一横行与题设的 $𝔰 (δ_2)$ 相差一个同构, 不妨设两者相等 (给 $M → B_2'$ 复合一个同构). 对称地, 构造&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_273e15ea8b326.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;删去平凡的投影, 拼接下图即可:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_4246bf6c49f62.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;corollary&quot;&gt;
+  &lt;p&gt;将之类比作 $4 × 4$ 公理, 是因为 $$\begin{aligned}
+(m_1)_∗ δ _1 &amp;= m_∗ (e_1)_∗ (p_1)_∗\binom 11^∗ (δ _1 ⊕ δ _2);\\
+(m_2)_∗ δ _2 &amp;= m_∗ (e_2)_∗ (p_2)_∗\binom 11^∗ (δ _1 ⊕ δ _2).
+\end{aligned}$$&lt;/p&gt;
+  &lt;p&gt;相加得&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
+(m_1)_∗ δ _1 + (m_2)_∗ δ _2 = m_∗ \binom 11^∗ (δ _1 ⊕ δ _2) = 0.
+\end{equation}$$&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_f0ce84a60623d.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;综上, 两处 deflation 的拉回不但给出两处扩张的拉回, 另给出一个反交换方块.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(EX3). 以下是正合范畴中的若干结论.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;若 $gf$ 是 inflation, $f$ 有余核, 则 $f$ 是 inflation.&lt;/li&gt;
+    &lt;li&gt;当且仅当正合范畴弱幂等完备, 恒有 $[gf ∈ 𝐢𝐧𝐟 ] ⇒ [f ∈ 𝐢𝐧𝐟]$.&lt;/li&gt;
+    &lt;li&gt;假定 $gf$ 是 inflation, 且 $g$ 是 deflation. 此时, $f$ 是 inflation, 同时可补全四条 conflation 的交换图:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_3badd948694ea.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(外三角范畴的 EX3 类似物). 假定 $gf$ 是 inflation, 且 $g$ 是 deflation. 此时, $f$ 是 inflation, 同时可补全四条 conflation 的交换图.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_eaa55573c4a51.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;将 $gf$ 补全作 $𝔼$-三角:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_829f506a76123.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;由长正合列, $δ ∈ \ker ((gf)^∗) = \mathrm{im}(d^∗)$. 此时, 下图底行与两纵列是 $𝔼$-三角, 但虚线处未必是 $𝔼$-三角.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_b366a6d3cd26b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;暂时忽略态射 $E' → T$. 使用两个 deflation 的所谓拉回, 构造核心方块 $\binom{E'T}{YZ}$ 以及四个 $𝔼$-三角的交换图. 由最右行对应的扩张关于 $d$ 的拉回唯一, 故存在同构 $φ$ 使得下图交换&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_9b74c308da331.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;由于 $[X → E' → T]$ 是 $𝔼$-三角, 与之等价的 $[X → E → T]$ 是 $𝔼$-三角.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;corollary&quot;&gt;
+  &lt;p&gt;给定 ET4 图, 双 deflation 所谓拉回图, 以及双 inflation 的所谓推出图. 若四个态射链中有三个 $𝔼$-三角, 则第四者亦然.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(特殊的 inflation, 添加直和项). 若 $x : A → B$ 是 inflation, 则对任意 $A$ 出发的态射 $f$, $\binom x f$ 也是 inflation. 这在正合范畴中成立, 也在外三角范畴中成立.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;记 $f : A → D$. 令 conflation $A \overset x→ B \overset y→ C$ 是 $δ$ 的实现. 考虑推出&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_fe7d390d1f69a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;构造四个 $𝔼$-三角的交换图:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_b691f5049ae1e.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;由 $y^∗ δ = 0$, 故第二横行的 $𝔼$-三角可裂. 不妨选作 $D ⊕ B$, 相应的 $\{e_1,e_2,p_1,p_2\}$ 自明. 依照 $4 × 4$-类似物, 得 $$\begin{equation}
+(e_1)_∗ f_∗ δ + m_∗ δ = 0.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;由长正合列, $$\begin{aligned}
+(e_1f+m) &amp;∈ \ker[(A, D ⊕ B) \xrightarrow{δ _!} 𝔼 (C, D ⊕ B)]\\
+&amp; = \mathrm{im} [(B, D ⊕ B) \xrightarrow{- ∘ x} (A, D ⊕ B)].
+\end{aligned}$$&lt;/p&gt;
+    &lt;p&gt;记 $(e_1f+m) = s ∘ x$, 矩阵形式: $\binom f 0 + \binom {g}{x} = \binom{s_1x}{s_2x}$.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_ffb83304c36ce.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;我们希望 $m = \binom g x : A → D ⊕ B$ 就是 $\binom f x$. 若要实现之, 现需要给 $D ⊕ B$ 添加合适的自同构 $φ$. 若要使 $p_1φm =f$, 计算得 $$\begin{equation}
+p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
+\end{equation}$$&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;我们希望 $φ_{1,1} = -1_D$;&lt;/li&gt;
+      &lt;li&gt;我们希望右项消去, 因此 $φ$ 的第一横行不平凡;&lt;/li&gt;
+      &lt;li&gt;我们希望 $φ$ 是形式简单的可逆矩阵, 例如三角矩阵.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;从而假定 $φ = \binom{-1 \ \ \ \ u}{0\quad 1}$, 其中 $u:B → D$.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;一方面, $$\begin{aligned}
+   f = p_1e_1f = p_1(sx - m) = p_1sp_2m - p_1m.
+   \end{aligned}$$&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;另一方面, $$\begin{aligned}
+   p_1φ m &amp; = p_1((-1)⊕ 1 +e_1up_2)m \\
+   &amp;= - p_1 m + up_2m
+   \end{aligned}$$&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;取 $u = p_1s = s_1$ 即可. 这就给出了构造.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;事后发现, 这是 &lt;span class=&quot;tikzinline-diagram&quot;&gt;       &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_bdcc0d89e4efe.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt; 的直接使用. $\binom fx$ 必然是 inflation, 同时存在四条 $𝔼$-三角的交换图.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;投射对象-内射对象&quot;&gt;投射对象, 内射对象&lt;/h3&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(外三角范畴的投射对象). 称 $P$ 是外三角范畴的投射对象, 若以下论断成立:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;对任意 deflation $d : B → C$, 一切 $P → C$ 通过 $d$ 分解;&lt;/li&gt;
+    &lt;li&gt;$(P, -)$ 是正合函子;&lt;/li&gt;
+    &lt;li&gt;$𝔼 (P, -)$ 消失;&lt;/li&gt;
+    &lt;li&gt;对任意 $δ ∈ 𝔼 (C,A)$, 任意 $f : P → C$, 则 $f^∗ δ = 0$.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1 ⟺ 2). 两者等价于左正合函子 $(P, -)$ 将 deflation 对应至满射. &lt;br /&gt; &lt;br /&gt; (1 ⟺ 3). 若 $𝔼 (P, -)$ 消失, 由长正合列知 $(P, -)$-将 deflation 对应至满射. 若 $(P, -)$ 将 deflation 对应至满射, 则任意 $δ ∈ 𝔼 (P, A)$ 实现作可裂短正合列, 得 $𝔼 (P, -)$ 消失. &lt;br /&gt; &lt;br /&gt; (1 ⟺ 4). 由长正合列, $\ker δ _!$ 是相应的 deflation 的 image.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;给定外三角范畴 $(𝒞 , 𝔼 , 𝔰 )$. 若加法子范畴 $𝒳 ⊂ 𝐏𝐫𝐨𝐣 ∩ 𝐈𝐧𝐣$, 则 $𝒞 / 𝒳$ 也是外三角范畴, 且继承了外三角结构.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;依次验证 ET1 至 ET4. 统一用上划线表示商 Hom 与商群中的的态射.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;(ET1). 对象层面, $\overline{E}(Z,X) := 𝔼 (Z,X)$. 态射层面, $\overline{f_∗} := \overline f _∗$, 以及 $\overline {g^∗} := \overline g^∗$.         &lt;ul&gt;
+          &lt;li&gt;由 $𝔼 (𝐏𝐫𝐨𝐣 , -)$ 与 $𝔼 (-, 𝐈𝐧𝐣 )$ 消失, 故 $𝔼$ 将 $\ker [\mathrm{Hom} → \underline{\mathrm{Hom}}]$ 映至 $0$, 进而可定义在 $(𝒞 / 𝒳)^{\mathrm{op}} × (𝒞 / 𝒳)$ 上. 由加法商, 以上定义的 $\overline 𝔼$ 确实是加法双函子.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;(ET2). 定义对应 $\overline 𝔰 : \overline 𝔼 (Y,X) = 𝔼 (Y,X) → [Y,X] / ∼$. 其中, $[Y,X] / ∼$ 中对象形如 $[X \xrightarrow{\overline f} Y \xrightarrow{\overline g} Z]$. 这一对应仅是对象间的 (自始至终未要求 $𝔰$ 函子). 下验证 $\overline 𝔰$ 是 $(𝒞 / 𝒳 , \overline 𝔼 )$ 的加法实现.         &lt;ul&gt;
+          &lt;li&gt;对应 $[Y, X] → [Y, X] / ∼$ 保持直和结构, 从而 $\overline 𝔰$ 保持零 (可裂短正合列) 以及映射链的直和.&lt;/li&gt;
+          &lt;li&gt;继而证明 $\overline 𝔰$ 是 $𝒞 / 𝒳$ 是加法实现, 关键是局部二推三. 给定商范畴的交换图             &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+                &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_4df9dc41e0771.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+              &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+            &lt;p&gt;其上下横行是 $𝔼$ 中对象所在的等价类, 也就是某两个 $𝔼$-三角的像, 选定这两个 $𝔼$-三角. 由长正合列, 上下复合为 $0$, 因此任取 $a$ 与 $c$ 均能得到 $𝒞$ 中交换图. 由 $𝔰$ 是实现, 添加合适的 $Y → Y'$ 使得以上是 $𝒞$ 中交换图, 再放至 $𝒞 / 𝒳$ 中看即可.&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;(ET3). ET3’ 的证明是对偶的 (使用投射对象的性质). 对 ET3, 任取商范畴的交换图         &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+            &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_71d71cace9dc2.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+          &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+        &lt;p&gt;原范畴中, 态射 $(x'a - bx)$ 通过内射对象 $I$ 分解. 原范畴中有 $𝔼$-三角的交换图&lt;/p&gt;
+        &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+            &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_2d90fe7372f05.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+          &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+        &lt;p&gt;我们仅知道 $\binom xi$ 是 inflation, 我们需要将问好处的对象以及 deflation 取得好一些. 依照 EX3 类似物, 构造四个 $𝔼$-三角的交换图:&lt;/p&gt;
+        &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+            &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_be6b3d3ac4fe6.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+          &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+        &lt;p&gt;由 $I$ 是内射对象, 右侧正合列可裂, 不妨取作直和项 (仅需调整 $B ⊕ I → C ⊕ I$ 处态射). 简单计算得&lt;/p&gt;
+        &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+            &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_171d7d50f8d7c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+          &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+        &lt;p&gt;其中, $r$ 是待定的系数. 回归原态射图:&lt;/p&gt;
+        &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+            &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_906a3fa3626e6.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+          &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+        &lt;p&gt;左侧交换, 右侧方块与相差一个态射 $$\begin{equation}
+	(y'b-cy, cyj-y'j): B ⊕ I → C.
+	\end{equation}$$ 这一态射左侧经 $I$ 分解, 右侧亦然.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;(ET4). 这是直接的. 取 $⊤$-型的两个 $\overline 𝔼$-三角, 找对应的 $𝔼$-三角. 在原范畴中使用 ET4, 得商范畴的 ET4.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;三角范畴视作外三角范畴&quot;&gt;三角范畴视作外三角范畴&lt;/h3&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(自等价诱导的扩张结构). 给定局部小的加法范畴的自等价 $Σ$, 定义扩张为如下加法双函子 $$\begin{equation}
+𝔼 : 𝒞 ^{\mathrm{op}} × 𝒞 → 𝐀𝐛 ,\quad (Y, X) ↦ \mathrm{Hom}(Y,ΣX).
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;对 $δ ∈ 𝔼 (C,A) = (C,ΣA)$. $δ_!$ 与 $δ^!$ 解释如下.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;$δ_! ∈ 𝖭𝖺𝗍 [(- , C), 𝔼 (- , A)] ≃ 𝔼(C, A) ∋ δ$,       &lt;ul&gt;
+        &lt;li&gt;此处, 自然变换 $(- , C) \xrightarrow{(-, δ)} (-, ΣA)$ 对应态射 $C \xrightarrow δ  ΣA$.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;$δ^! ∈ 𝖭𝖺𝗍 [(A, -), 𝔼 (C, -)] ≃ 𝔼 (C,A) ∋ δ$,       &lt;ul&gt;
+        &lt;li&gt;此处, 自然变换 $(A, -) ≃ (ΣA, Σ-) \xrightarrow{(δ , -)} (C, Σ-)$ 对应态射 $C \xrightarrow δ  ΣA$.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(泛元的实现). 米田引理的泛元: $$\begin{equation}
+1_{ΣA} ∈ \mathrm{End}(ΣA) = 𝔼 (ΣA, A) = 𝖭𝖺𝗍 [(-, ΣA), 𝔼 (-, A)] ∋ u_A.
+\end{equation}$$&lt;/p&gt;
+  &lt;p&gt;假定 ET2. 此时存在实现 $𝔰(1_{ΣA}) = [A \xrightarrow f E \xrightarrow g ΣA]$. 长正合列给出 $$\begin{equation}
+(-, A) → (-, E) → (-, ΣA) \xrightarrow{u_A} 𝔼 (-, A) → 𝔼 (-, X).
+\end{equation}$$ $u_A$ 是自然同构, 因此 $(-, g)$ 与 $𝔼 (-, f)$ 均为 $0$. 由 $𝔼$ 是自等价给出的, 故 $f$ 与 $g$ 是零态射. 由正合性, $E = 0$. &lt;br /&gt; &lt;br /&gt; 综上, $1_{ΣA} ∈ 𝔼 (ΣA, A)$ 的实现必然是 $[A → 0 → ΣA]$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(三角范畴的外三角结构). 给定三角范畴 $(𝒞 , Σ, \triangle)$.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;(ET1). $Σ$ 诱导了扩张 $𝔼 (-,⋅) := (-, Σ⋅ )$. 显然这是加法双函子.&lt;/li&gt;
+    &lt;li&gt;(ET2). 定义 $δ ∈ 𝔼(Z,X) = (Z, ΣX)$ 的实现为好三角所在的同构类 $[X \xrightarrow f Y \xrightarrow g Z]$. 在对象 $Y$ 相差一个同构的意义下, 态射 $δ$ 可以嵌入唯一好三角 $X \xrightarrow f Y \xrightarrow g Z \xrightarrow δ ΣX$. 下验证这是加法实现:       &lt;ul&gt;
+        &lt;li&gt;若实现是零, 也就是可裂短正合列, 则 $δ$ 处必然取零态射;&lt;/li&gt;
+        &lt;li&gt;好三角关于直和封闭;&lt;/li&gt;
+        &lt;li&gt;二推三性质给出局部的二推三性质.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;(ET3). 这就是通常的二推三.&lt;/li&gt;
+    &lt;li&gt;(ET4). ET4 的三个限制条件与八面体公理的三个限制条件完全匹配:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_7c1ae7a0f2c91.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;自等价诱导的外三角范畴 $(𝒞 , 𝔼 , 𝔰)$ 是三角范畴. 此处, 平移取自等价 $Σ$, 称 $X \xrightarrow f Y \xrightarrow g Z \xrightarrow h X[1]$ 是好三角, 若 $𝔰 (δ ) = [X \xrightarrow f Y \xrightarrow g Z]$.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;(TR1-1). 好三角对同构封闭. 仅看好三角的前三项, 同构的拆分作两处等号 + 一处同构的形式. 对 $(∥, ∥, ∼)$ 或是 $(∼ , ∥, ∥)$, 使用 $φ^∗$ ($φ_∗$) 转化作 $(∥ , ∼ , ∥)$. 对 $(∥ , ∼ , ∥)$, 依照 $[Z,X]$ 的定义即可.&lt;/li&gt;
+    &lt;li&gt;(TR1-2). 任意态射可嵌入好三角. 在证明顺时针旋转的情形下, 任意态射形如 $δ$.&lt;/li&gt;
+    &lt;li&gt;(TR1-3). 对任意对象 $X$, 存在平凡三角 $X = X → 0 → X[1]$. 在证明顺时针旋转的情形下, 考虑 $u_A$ 即可.&lt;/li&gt;
+    &lt;li&gt;(TR2). 若有好三角 $X \xrightarrow u Y \xrightarrow v \xrightarrow w Z$, 下证明顺时针旋转也是好三角. 取双 inflation 的所谓推出方块, 得四个 $𝔼$-三角的交换图:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_910852b3e2a7b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+      &lt;p&gt;依照 $4 × 4$ 引理类似物, 得&lt;/p&gt;
+      &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_86d997aa4f394.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+      &lt;p&gt;反交换关系表明 $w' = -w$. 因此, $𝔰 (u_∗ (1_{X[1]})) =  [Y\xrightarrow v Z \xrightarrow {-w}X[1]]$. 依照米田引理计算得, $$\begin{equation}
+	u_∗ 1_{X[1]} = (1_{X[1]})^!(u) ∼ \begin{bmatrix}(X,-) &amp; → &amp; (X[1] , - [1]) &amp; = &amp; (X[1] , - [1])\\ u &amp; ↦ u[1] &amp; = &amp; u[1] ∘ 1_{X[1]} \end{bmatrix}.
+	\end{equation}$$ 因此, $𝔰 (u[1]) = [Y \xrightarrow v Z \xrightarrow {-w} X[1]]$. 依照 TR1-1, 得好三角的顺时针旋转.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;(TR3). 二推三. 几乎是 ET2, ET3, ET3’ 的定义.&lt;/li&gt;
+    &lt;li&gt;(TR4). 八面体公理. 几乎是 ET4 的定义.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-05-14T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Stable_Cat_Analogue</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Stable_Cat_Analogue</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>正合范畴的重要结论 (精简版)</title>
+          <description>&lt;h2 id=&quot;定义&quot;&gt;定义&lt;/h2&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(Quillen 定义). 正合范畴记作 $(𝒜 , ℰ)$. $𝒜$ 是加法范畴, $ℰ$ 是满足如下性质对同构封闭的的 kernel-coker 对 $(i,d)$.&lt;/p&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;以上 $\ker d = i$, 且 $\mathrm{cok} i = d$.&lt;/p&gt;
+  &lt;/blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;(EX 0). 任意 $\mathrm{0}_X ∈ 𝐢𝐧𝐟$;&lt;/li&gt;
+    &lt;li&gt;(EX 0’). 任意 $\mathrm{0}_X ∈ 𝐝𝐞𝐟$;&lt;/li&gt;
+    &lt;li&gt;(EX 1). 全体 $𝐢𝐧𝐟$ 对合成封闭;&lt;/li&gt;
+    &lt;li&gt;(EX 1’). 全体 $𝐝𝐞𝐟$ 对合成封闭;&lt;/li&gt;
+    &lt;li&gt;(EX 2). 任意 $𝐢𝐧𝐟$ 关于任意态射的推出总是 $𝐢𝐧𝐟$;&lt;/li&gt;
+    &lt;li&gt;(EX 2’). 任意 $𝐝𝐞𝐟$ 关于任意态射的拉回总是 $𝐝𝐞𝐟$.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;EX0, EX1, EX2, EX2’ 推导出其余条件.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;通用名称:&lt;/p&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;对象 (描述)&lt;/th&gt;
+        &lt;th&gt;名称 1&lt;/th&gt;
+        &lt;th&gt;名称 2&lt;/th&gt;
+        &lt;th&gt;记号&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;ker-cok 对&lt;/td&gt;
+        &lt;td&gt;conflation&lt;/td&gt;
+        &lt;td&gt;admissible ses&lt;/td&gt;
+        &lt;td&gt;$(i,d)$&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;好的 ker 态射&lt;/td&gt;
+        &lt;td&gt;inflation&lt;/td&gt;
+        &lt;td&gt;admissible monic&lt;/td&gt;
+        &lt;td&gt;$↣$&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;好的 cok 态射&lt;/td&gt;
+        &lt;td&gt;deflation&lt;/td&gt;
+        &lt;td&gt;admissible epic&lt;/td&gt;
+        &lt;td&gt;$↠$&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;好的满-单合成&lt;/td&gt;
+        &lt;td&gt;regular morphism&lt;/td&gt;
+        &lt;td&gt;admissible morphism&lt;/td&gt;
+        &lt;td&gt;$⇒$&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;例子&quot;&gt;例子&lt;/h2&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;简单结论.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;$0 → X ≃ Y$ 与 $X ≃ Y → 0$ 属于 $ℰ$;&lt;/li&gt;
+    &lt;li&gt;可裂 ses 含于 $ℰ$;&lt;/li&gt;
+    &lt;li&gt;$ℰ ⊕ ℰ ⊆ ℰ$;&lt;/li&gt;
+    &lt;li&gt;$𝐢𝐧𝐟$ 未必单, 但满的 $𝐢𝐧𝐟$ 等价于同构;&lt;/li&gt;
+    &lt;li&gt;$𝐝𝐞𝐟$ 未必满, 但单的 $𝐝𝐞𝐟$ 等价于同构;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;Heller 构造.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;(Heller). $(ℰ , ℱ)$ 是正合范畴, $ℱ$ 选 $3 × 3$ 态射 (六条 conflation).&lt;/li&gt;
+    &lt;li&gt;此构造未必保持 Abel 范畴.&lt;/li&gt;
+    &lt;li&gt;(Hulher). 以上结论推广至小 diagram.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;以下是原始的正合范畴的 EX3 (EX3’) 公理, 可证明由其他推出.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;若 $f$ 有 $\mathrm{cok}$, 则 $[gf ∈ 𝐢𝐧𝐟] ⟹ [f ∈ 𝐢𝐧𝐟]$;&lt;/li&gt;
+    &lt;li&gt;若 $g$ 有 $\mathrm{ker}$, 则 $[gf ∈ 𝐝𝐞𝐟] ⟹ [g ∈ 𝐝𝐞𝐟]$.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;交换方块&quot;&gt;交换方块&lt;/h2&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(交换方块). 给定 EX 2 中 $𝐢𝐧𝐟$ 对应的推出 &lt;span class=&quot;tikzinline-diagram&quot;&gt;       &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_034ddb53c1c0a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt;, 以下等价.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;这是拉回;&lt;/li&gt;
+    &lt;li&gt;这是推出拉回;&lt;/li&gt;
+    &lt;li&gt;存在 ses (下图上)       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_cf20054b102c9.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+    &lt;li&gt;可向右补全作 $𝐜𝐨𝐧$ 的交换图 (上图下).&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;称以上为 $𝐜𝐨𝐧$ 的推出 (固定尾, 推出首). 对偶地, 给出两种推出拉回&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_e0d371be42c64.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;($𝐜𝐨𝐧$ 的态射分解). 给定 conflation 间的态射,&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_d9a74b9697f20.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;有以下结论&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$γ$ 由 $α$ 与 $β$ 唯一决定;&lt;/li&gt;
+    &lt;li&gt;$α$ 由 $β$ 与 $γ$ 唯一决定;&lt;/li&gt;
+    &lt;li&gt;任意 $𝐜𝐨𝐧$ 间的态射通过 $𝐜𝐨𝐧$ 分解, 使得以下两处是推出拉回方块:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_6f93374fa108e.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+    &lt;li&gt;若 $α$ 与 $γ$ 是同构, 则 $β$ 必然是同构;&lt;/li&gt;
+    &lt;li&gt;若 $α$ 与 $γ$ 决定 $β$, 则 $β$ 在前后复合同构的意义下是唯一的.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(双). 两个 $𝐝𝐞𝐟$ 的拉回是推出拉回, 同时也是四个 $𝐜𝐨𝐧$ 的交换图; 对称地, 两个 $𝐢𝐧𝐟$ 的拉回是推出拉回, 同时也是四个 $𝐜𝐨𝐧$ 的交换图.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_b6845a0d4071d.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(Kunzer, EX 3 的特殊形式). 若有左侧交换图, 或是右侧的满态射方块 (上一定理), 则能补全作以下四条 $𝐜𝐨𝐧$ 的交换图:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_6d05c5e92c700.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;($𝐢𝐧𝐟 + 𝐝𝐞𝐟 = PBPO$). 任意左侧类型推出与右侧类型的拉回, 均能补全作中间类型的推出拉回方块.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_e576dbbdb8058.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;特别地, 这也给出了以下类型的四条正合列的交换图&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_56e6a46a0c140.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(Noether 同构). 给定 $𝐢𝐧𝐟$ 的初始资料 (下图左) 与 $𝐝𝐞𝐟$ 的初始资料 (下图右), 则有四处 $𝐜𝐨𝐧$ 的交换图:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_9e9377c16ae7c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;以上均是特殊的 $3 × 3$ 引理的使用. 一般地, 假定以下各行 ($r_∙$) 是 $𝐜𝐨𝐧$&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_ec3f43f3c6369.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;则有如下结论:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;若存在 $𝐜𝐨𝐧$ $c_1$ 与 $c_2$ 使得相应方块交换, 则存在唯一的 $𝐜𝐨𝐧$ $c_3$ 使得相应方块交换.&lt;/li&gt;
+    &lt;li&gt;若存在 $𝐜𝐨𝐧$ $c_3$ 与 $c_2$ 使得相应方块交换, 则存在唯一的 $𝐜𝐨𝐧$ $c_1$ 使得相应方块交换.&lt;/li&gt;
+    &lt;li&gt;若存在 $𝐜𝐨𝐧$ $c_1$ 与 $c_3$ 使得相应方块交换, 且 $c_2$ 复合为零, 则 $c_2$ 是 $𝐜𝐨𝐧$.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;幂等完备-弱幂等完备&quot;&gt;幂等完备, 弱幂等完备&lt;/h2&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;称加法范畴 $𝒜$ 是&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;幂等完备的, 若以下等价条件成立:       &lt;ul&gt;
+        &lt;li&gt;任意幂等自同态 $e^2 = e$ 有核,&lt;/li&gt;
+        &lt;li&gt;任意幂等自同态 $e^2 = e$ 有余核,&lt;/li&gt;
+        &lt;li&gt;任意幂等自同态 $e^2 = e$ 可写作矩阵形式 $\binom{I \ \ O}{O \ \ O}$.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;弱幂等完备的, 若以下等价条件成立:       &lt;ul&gt;
+        &lt;li&gt;若 $f$ 有左逆元, 则 $f$ 是可裂单,&lt;/li&gt;
+        &lt;li&gt;若 $f$ 有右逆元, 则 $f$ 是可裂满,&lt;/li&gt;
+        &lt;li&gt;(正合范畴特有). 可裂单是 $𝐢𝐧𝐟$,&lt;/li&gt;
+        &lt;li&gt;(正合范畴特有). 可裂满是 $𝐝𝐞𝐟$,&lt;/li&gt;
+        &lt;li&gt;(正合范畴特有). 若 $gf ∈ 𝐝𝐞𝐟$, 则 $g ∈ 𝐝𝐞𝐟$,&lt;/li&gt;
+        &lt;li&gt;(正合范畴特有). 若 $gf ∈ 𝐢𝐧𝐟$, 则 $g ∈ 𝐢𝐧𝐟$,&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;弱幂等完备严格弱于幂等完备, 例如偶数维有限线性空间范畴是弱幂等完备的, 但非幂等完备.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;通俗地说, 弱幂等完备类似模的直和分解, 幂等完备类似环的直和分解.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;同调引理&quot;&gt;同调引理&lt;/h2&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;称 $f$ 是 admissible 态射, 若 $f ∈ 𝐢𝐧𝐟 ∘ 𝐜𝐨𝐟$, 记作 $⇒$. 类似满-单分解.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;(所谓满-单分解唯一). 将 $⇒$ 的拆解在同构意义下唯一. 换言之, 以下交换图中总能引入虚线的同构态射, 使得两个三角交换.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_faf33a261e271.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;Admissible 映射关于单态射的拉回以及满态射的推出封闭.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;若所有态射均 admissible, 则该正合范畴是 Abel 范畴.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;类似地, 称 $A ⇒ B ⇒ C$ 是正合列, 若分解 $A ↠ X ↣ B ↠ Y ↣ C$ 给出 $[X ↣ B ↠ Y] ∈ ℰ$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(五引理). 若下图横行正合, 竖向 (除中间列) 是同构, 则竖向态射是同构.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_c521f10532f62.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;p&gt;以上定理不需要幂等完备条件.
+&lt;br /&gt;
+&lt;br /&gt;
+以下定理需要幂等完备条件.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;若有以下交换图, 则 $? ∈ 𝐢𝐧𝐟$:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_79e2308accfdc.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;若有以下交换图, 则 $? ∈ 𝐝𝐞𝐟$:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_f0d1c480b0d55.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(六引理). 若中间三角是 admissible 态射的合成, 则有外周的六项正合列:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_f62e76fc5f115.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(正合范畴中的强形式蛇引理). 若有中间, 则有六项正合列:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Exact_Cat_Short_Note/diagram_7d1a34707e0c7.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-05-13T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Exact_Cat_Short_Note</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Exact_Cat_Short_Note</guid>
+        </item>
+      
     
       
         <item>
@@ -55,8 +891,8 @@ X\xrightarrow{\binom{a_1}{b_1}} Y_2\oplus Y_1\xrightarrow{(b_2,- a_2)} Z\overset
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-12T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Homotopic_PBPO_Oct</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Homotopic_PBPO_Oct</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Homotopic_PBPO_Oct</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Homotopic_PBPO_Oct</guid>
         </item>
       
     
@@ -91,8 +927,8 @@ X\xrightarrow{\binom{a_1}{b_1}} Y_2⊕ Y_1\xrightarrow{(b_2,-a_2)} Z\xrightarrow
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-12T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Homotopic_PBPO</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Homotopic_PBPO</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Homotopic_PBPO</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Homotopic_PBPO</guid>
         </item>
       
     
@@ -106,7 +942,7 @@ X\xrightarrow{\binom{a_1}{b_1}} Y_2⊕ Y_1\xrightarrow{(b_2,-a_2)} Z\xrightarrow
 &lt;p&gt;Quillen 的原始定义&lt;sup id=&quot;fnref:Qui72&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Qui72&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, 以及 Keller 的等价定义&lt;sup id=&quot;fnref:DR99&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:DR99&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&quot;fnref:Kel90&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Kel90&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;. 笔记的大部分结论可以在&lt;sup id=&quot;fnref:Buh10&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Buh10&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; 中找到.&lt;/p&gt;
 
 &lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;(Quillen). 正合范畴描述作二元组 $(ℬ , 𝒮)$. 其中&lt;/p&gt;
+  &lt;p&gt;(Keller 的等价定义). 正合范畴描述作二元组 $(ℬ , 𝒮)$. 其中&lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;$ℬ$ 是某个 Abel 范畴 $𝒜$ 关于扩张封闭的加法全子范畴,&lt;/li&gt;
     &lt;li&gt;$𝒮$ 是落在 $ℬ$ 中的 $𝒜$ 中的 ses.&lt;/li&gt;
@@ -114,7 +950,7 @@ X\xrightarrow{\binom{a_1}{b_1}} Y_2⊕ Y_1\xrightarrow{(b_2,-a_2)} Z\xrightarrow
 &lt;/div&gt;
 
 &lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;(Keller 的等价定义). 正合范畴描述作二元组 $(ℬ, 𝒮)$. $ℬ$ 是加法范畴, $𝒮 = \{X \xrightarrow i Y \xrightarrow d Z\}$ 由 $ℬ$ 中三项映射序列构成, 满足如下关系.&lt;/p&gt;
+  &lt;p&gt;(Quillen 的原始定义). 正合范畴描述作二元组 $(ℬ, 𝒮)$. $ℬ$ 是加法范畴, $𝒮 = \{X \xrightarrow i Y \xrightarrow d Z\}$ 由 $ℬ$ 中三项映射序列构成, 满足如下关系.&lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;(EX -2). $𝒮$ 关于同构封闭 (视作函子范畴 $ℬ^{1 → 2 → 3}$ 中的对象).&lt;/li&gt;
     &lt;li&gt;(EX -1). 任意 $(i,d) ∈ 𝒮$ 需满足 $i = \ker d$ 与 $d = \operatorname{cok} i$. 对 $(i,d) ∈ 𝒮$, 定义惯用称呼:       &lt;ul&gt;
@@ -154,6 +990,8 @@ X\xrightarrow{\binom{a_1}{b_1}} Y_2⊕ Y_1\xrightarrow{(b_2,-a_2)} Z\xrightarrow
 &lt;p&gt;随着范畴的特殊化, 被拉回保持的满态射似乎是增加的. 正合范畴介于通常加法范畴与 Abel 范畴之间.&lt;/p&gt;
 
 &lt;h3 id=&quot;正合范畴的重要结论&quot;&gt;正合范畴的重要结论&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;Exact_Cat_Short_Note&quot;&gt;精简版&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;以下结论选自&lt;sup id=&quot;fnref:Buh10:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Buh10&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, 单独编号.&lt;/p&gt;
 
@@ -267,21 +1105,6 @@ X\xrightarrow{\binom{a_1}{b_1}} Y_2⊕ Y_1\xrightarrow{(b_2,-a_2)} Z\xrightarrow
   &lt;li&gt;对三角范畴, 上述构造类似 $4 × 4$ 引理 (好三角的好三角 $Δ_A → Δ_B → Δ_C$ 后一项需要适当地反号).&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;正合范畴的例子&quot;&gt;正合范畴的例子&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;(平凡的例子). Abel 范畴及其 ses.&lt;/li&gt;
-  &lt;li&gt;(平凡的例子). 加法范畴及其可裂 ses.&lt;/li&gt;
-  &lt;li&gt;拟 Abel 范畴及其 kernel-cokernel 对.
-    &lt;ul&gt;
-      &lt;li&gt;拟 Abel 范畴存在 $\ker$ 与 $\operatorname{cok}$ 的加法范畴, 且典范态射 $\operatorname{coim} \overset c→ \operatorname{im}$ 是双态射 ($(c,-)$ 与 $(-, c)$ 总是单的, 但 $c$ 未必是同构).&lt;/li&gt;
-      &lt;li&gt;代表例子: 连续线性拓扑空间, 有限滤过子对象.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;正合范畴间, 好函子的像与核.&lt;/li&gt;
-  &lt;li&gt;Hella 的构造 $(ℬ , 𝒮) ⇒ (𝒮 , ℱ)$.&lt;/li&gt;
-&lt;/ul&gt;
-
 &lt;h3 id=&quot;mathjax_protectedjfxtyxrocm17rxh0fv4xjamathjax_protected-大-群&quot;&gt;$\mathrm{Ext}^1$-(大) 群&lt;/h3&gt;
 
 &lt;h2 id=&quot;同调代数的类似定理&quot;&gt;同调代数的类似定理&lt;/h2&gt;
@@ -369,8 +1192,8 @@ h^∙ : 𝒜 → 𝐅𝐮𝐧𝐜𝐭_{Lex} (𝒜 , 𝐀𝐛),\quad X ↦ (X,-)
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-12T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Exact_Cat</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Exact_Cat</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Exact_Cat</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Exact_Cat</guid>
         </item>
       
     
@@ -632,8 +1455,8 @@ $$&lt;/p&gt;
 
 </description>
           <pubDate>2025-05-11T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/C_Similar_matrix</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/C_Similar_matrix</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/C_Similar_matrix</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/C_Similar_matrix</guid>
         </item>
       
     
@@ -671,8 +1494,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Prod_Localisation</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Prod_Localisation</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Prod_Localisation</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Prod_Localisation</guid>
         </item>
       
     
@@ -698,8 +1521,8 @@ Q^∗:𝐅𝐮𝐧𝐜𝐭(𝒜[S^{-1}] , ℬ) ↣ 𝐅𝐮𝐧𝐜𝐭(𝒜,ℬ
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/PB_Localisation_Fullyfaithful</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/PB_Localisation_Fullyfaithful</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/PB_Localisation_Fullyfaithful</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/PB_Localisation_Fullyfaithful</guid>
         </item>
       
     
@@ -746,8 +1569,8 @@ F : 𝒜 × ℬ → ℰ,\quad (A,B) ↦ (𝔉(A))(B).
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Currying_Functor_Cat</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Currying_Functor_Cat</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Currying_Functor_Cat</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Currying_Functor_Cat</guid>
         </item>
       
     
@@ -773,8 +1596,8 @@ F : 𝒜 × ℬ → ℰ,\quad (A,B) ↦ (𝔉(A))(B).
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Additive_Oplus_Closed_Implies</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Additive_Oplus_Closed_Implies</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Additive_Oplus_Closed_Implies</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Additive_Oplus_Closed_Implies</guid>
         </item>
       
     
@@ -1059,8 +1882,8 @@ $$&lt;/p&gt;
 
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Tri_Cat_Def</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Tri_Cat_Def</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Tri_Cat_Def</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Tri_Cat_Def</guid>
         </item>
       
     
@@ -1091,12 +1914,82 @@ $$&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;约定所有范畴都是加法范畴.&lt;/p&gt;
+&lt;p&gt;约定所有范畴 ($𝒞$) 都是加法范畴. 外三角范畴的基本资料是 $(𝒞, 𝔼, 𝔰)$.&lt;/p&gt;
 
+&lt;h3 id=&quot;扩张结构&quot;&gt;扩张结构&lt;/h3&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(带扩张的加法范畴 $(𝒞 , 𝔼)$). $𝒞$ 上的一个扩张结构是指双加法函子 $$\begin{equation}
+𝔼 : 𝒞^{\mathrm{op}} × 𝒞 → 𝐀𝐛 ,\quad (X,Y) ↦ 𝔼 (X,Y).
+\end{equation}$$ 若无混淆, 简单地记群同态&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$𝔼(f,Y) := f^∗$,&lt;/li&gt;
+    &lt;li&gt;$𝔼 (X, g) := g_∗$.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;依照双加法函子的定义, $f^∗ g_∗ = 𝔼 (f,g) = g_∗ f^∗$.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Extriangulated_Category/diagram_05e9cda18e575.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(扩张元). 对 $δ ∈ 𝔼 (X,Y)$, 记 $(Y, δ , X)$ 是 $(𝒞 , 𝔼)$ 的扩张元. 请注意朝向.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;将 $(𝒞 , 𝔼)$ 想象作 $(𝐀𝐛 , \mathrm{Ext}^1)$; $(Y, δ, X)$ 类比作 $0 → Y → E → X → 0$ 类型的短正合列.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(加群结构). 记 $Δ := \binom 11$ 与 $∇ := (1,1)$, 定义 Baer 和 $$\begin{equation}
+∇_∗ Δ ^∗ : 𝔼(X ⊕ X, Y ⊕ Y) → 𝔼(X,Y),\quad δ _1 ⊕ δ _2 ↦  δ _1 + δ _2.
+\end{equation}$$&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Extriangulated_Category/diagram_0241a97add813.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;特别地, $(δ_1, -δ_1)$ 的像是 $0$ 元.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;扩张的实现&quot;&gt;扩张的实现&lt;/h3&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;($[→  → ]$). 对任意对象 $X$ 与 $Y$, 定义 $[X,Y]$ 如下:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;考虑三项映射链 $[X \overset a → Y \overset b → Z]$ 构成的类;&lt;/li&gt;
+    &lt;li&gt;称 $[X \overset a → Y \overset b → Z]$ 与 $[X \overset {a'} → Y' \overset {b'} → Z]$ 等价, 若存在同构 $φ$ 使得有交换图       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+          &lt;embed src=&quot;/website/svg/Extriangulated_Category/diagram_26a5306acf399.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+        &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;以上, $[X,Y]$ 定义作类的等价类. &lt;br /&gt; &lt;br /&gt; 为方便操作,&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;形式地记 $[X,Y]$ 中的 $0$ 是可裂短正合列所在的等价类 $[X → X ⊕ Y → Y]$.&lt;/li&gt;
+    &lt;li&gt;约定 $[,]$ 对直和封闭. 对 $[X_i → Y_i → Z_i]$ ($i=1,2$), 等价类与直和交换: $$\begin{align}
+  &amp; [X_1 → Y_1 → Z_1] ⊕ [X_2 → Y_2 → Z_2]\\
+  = \ &amp;[X_1 ⊕ X_2 → Y_1 ⊕ Y_2 → Z_1 ⊕ Z_2]\\
+  ∈ \ &amp;[X_1 ⊕ X_2, Z_1 ⊕ Z_2]
+  \end{align}$$ 相应的态射也是直和关系, 此处从略.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(实现). 扩张结构 $(𝒞 , 𝔼)$ 的一个实现是指对应 $𝔰$, 其类型是 $$\begin{equation}
+𝔰 : 𝔼 (Y,X) → [X,Y],\quad (X, δ, Y) ↦ 𝔰 (δ) = [X → E → Y].
+\end{equation}$$&lt;/p&gt;
+  &lt;p&gt;同时, 对任意推出 $f_∗$, 总存在 $φ$ 使得右侧是 $[,]$ 中的交换图:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Extriangulated_Category/diagram_94de8f634d7b1.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;对于拉回的要求对偶.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;实现 $𝔰$ 不能简单地看作函子 (例如 $𝔰 (f_∗)$) 的&lt;/p&gt;
+&lt;/div&gt;
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Extriangulated_Category</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Extriangulated_Category</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Extriangulated_Category</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Extriangulated_Category</guid>
         </item>
       
     
@@ -12369,8 +13262,8 @@ $$&lt;/p&gt;
 &lt;/table&gt;
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Unicode_math_Table</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Unicode_math_Table</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Unicode_math_Table</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Unicode_math_Table</guid>
         </item>
       
     
@@ -12449,8 +13342,8 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.lexilogos.com/keyboard/russian.htm&quot;&gt;Cyrillic-Latin Converter&lt;/a&gt;.&lt;/p&gt;
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Collection_of_Websites</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Collection_of_Websites</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Collection_of_Websites</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Collection_of_Websites</guid>
         </item>
       
     
@@ -12533,8 +13426,8 @@ $$&lt;/p&gt;
 &lt;p&gt;关于预投射部分存在性之判准, 留至 Directing 模.&lt;/p&gt;
 </description>
           <pubDate>2025-05-09T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/20250925Talk</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/20250925Talk</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/20250925Talk</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/20250925Talk</guid>
         </item>
       
     
@@ -12603,8 +13496,8 @@ C(ℬ) → C(ℬ) [S^{-1}] → K(ℬ)
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-09T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Stable_Add_Cat</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Stable_Add_Cat</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Stable_Add_Cat</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Stable_Add_Cat</guid>
         </item>
       
     
@@ -12705,8 +13598,8 @@ X &amp;  &amp;  &amp;  &amp; ⋅  &amp;   &amp; ⋅  &amp;  &amp;  &amp;  &amp; 
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-09T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Gabriel_Zisman</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Gabriel_Zisman</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Gabriel_Zisman</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gabriel_Zisman</guid>
         </item>
       
     
@@ -12853,8 +13746,8 @@ Q^∗:𝐅𝐮𝐧𝐜𝐭(𝒜[S^{-1}] , ℬ) ↣ 𝐅𝐮𝐧𝐜𝐭(𝒜,ℬ
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-09T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Additive_Localisation</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Additive_Localisation</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Additive_Localisation</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Additive_Localisation</guid>
         </item>
       
     
@@ -12921,8 +13814,8 @@ where $(z,w_1,w_2,\ldots, w_n,x)$ are free variables ($y$ is not free).
 &lt;p&gt;When non-set-theoretic mathematicians talk about NBG, AC for Sets or even Axiom of Global Choice is possibly included.&lt;/p&gt;
 </description>
           <pubDate>2025-05-09T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/NBGC</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/NBGC</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/NBGC</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/NBGC</guid>
         </item>
       
     
@@ -12944,8 +13837,8 @@ where $(z,w_1,w_2,\ldots, w_n,x)$ are free variables ($y$ is not free).
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-07T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Morphism_Directed</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Morphism_Directed</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Morphism_Directed</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Morphism_Directed</guid>
         </item>
       
     
@@ -12968,8 +13861,8 @@ where $(z,w_1,w_2,\ldots, w_n,x)$ are free variables ($y$ is not free).
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-07T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/From_Simp_Proj</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/From_Simp_Proj</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/From_Simp_Proj</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/From_Simp_Proj</guid>
         </item>
       
     
@@ -13014,8 +13907,8 @@ where $(z,w_1,w_2,\ldots, w_n,x)$ are free variables ($y$ is not free).
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-07T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Finite_Pre_Post</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Finite_Pre_Post</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Finite_Pre_Post</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Finite_Pre_Post</guid>
         </item>
       
     
@@ -13052,8 +13945,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-06T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Non_Existence_of_Proproj</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Non_Existence_of_Proproj</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Non_Existence_of_Proproj</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Non_Existence_of_Proproj</guid>
         </item>
       
     
@@ -13083,8 +13976,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-06T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Preproj_cyclic</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Preproj_cyclic</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Preproj_cyclic</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Preproj_cyclic</guid>
         </item>
       
     
@@ -13137,8 +14030,8 @@ $$&lt;/p&gt;
 &lt;/ol&gt;
 </description>
           <pubDate>2025-05-06T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Preproj_Disconnected</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Preproj_Disconnected</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Preproj_Disconnected</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Preproj_Disconnected</guid>
         </item>
       
     
@@ -13170,8 +14063,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-06T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Pre_Post_Self_Oth_Brick</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Pre_Post_Self_Oth_Brick</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Pre_Post_Self_Oth_Brick</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Pre_Post_Self_Oth_Brick</guid>
         </item>
       
     
@@ -13227,8 +14120,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-06T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Post_Proj_Left_Finite</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Post_Proj_Left_Finite</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Post_Proj_Left_Finite</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Post_Proj_Left_Finite</guid>
         </item>
       
     
@@ -13266,8 +14159,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-05T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Kronecker_Regular</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Kronecker_Regular</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Kronecker_Regular</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Kronecker_Regular</guid>
         </item>
       
     
@@ -13309,8 +14202,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-05T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Kronecker_Dim_Vec</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Kronecker_Dim_Vec</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Kronecker_Dim_Vec</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Kronecker_Dim_Vec</guid>
         </item>
       
     
@@ -13346,8 +14239,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-05T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/C_is_tau_for_Proj</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/C_is_tau_for_Proj</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/C_is_tau_for_Proj</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/C_is_tau_for_Proj</guid>
         </item>
       
     
@@ -13379,8 +14272,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-05T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/C_is_tau</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/C_is_tau</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/C_is_tau</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/C_is_tau</guid>
         </item>
       
     
@@ -13603,8 +14496,8 @@ $$&lt;/p&gt;
 &lt;h3 id=&quot;导出等价-mathjax_protectedjereyiaoxg1hdghybxtjb2h9kokemv9rxjepksdiiymgrf5iicjwnzcr8j2qnvcdkkkoa1viijkg4oejiokimv0pksqmathjax_protected&quot;&gt;导出等价 $D^b (\mathrm{coh}(ℙ_k^1)) ≃ D^b (𝐫𝐞𝐩(k[∙ ⇉ ∙]))$&lt;/h3&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Kronecker_Rep</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Kronecker_Rep</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Kronecker_Rep</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Kronecker_Rep</guid>
         </item>
       
     
@@ -13641,8 +14534,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Proj_Inj_Coxeter</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Proj_Inj_Coxeter</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Proj_Inj_Coxeter</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Proj_Inj_Coxeter</guid>
         </item>
       
     
@@ -13684,8 +14577,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/L_Here_not_R_Here</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/L_Here_not_R_Here</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/L_Here_not_R_Here</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/L_Here_not_R_Here</guid>
         </item>
       
     
@@ -13762,8 +14655,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Hereditary_Alg_Eq_Def</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Hereditary_Alg_Eq_Def</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Hereditary_Alg_Eq_Def</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hereditary_Alg_Eq_Def</guid>
         </item>
       
     
@@ -13793,8 +14686,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Coxeter_Ref_Idem</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Coxeter_Ref_Idem</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Coxeter_Ref_Idem</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Coxeter_Ref_Idem</guid>
         </item>
       
     
@@ -13833,8 +14726,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Coxeter_PM_Adjoint</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Coxeter_PM_Adjoint</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Coxeter_PM_Adjoint</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Coxeter_PM_Adjoint</guid>
         </item>
       
     
@@ -13890,8 +14783,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Complete_Coxeter_Reflection</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Complete_Coxeter_Reflection</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Complete_Coxeter_Reflection</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Complete_Coxeter_Reflection</guid>
         </item>
       
     
@@ -13915,8 +14808,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/AR_Proj</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/AR_Proj</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/AR_Proj</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR_Proj</guid>
         </item>
       
     
@@ -13946,8 +14839,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/AR_Finite_No_Multiple_Arrows</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/AR_Finite_No_Multiple_Arrows</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/AR_Finite_No_Multiple_Arrows</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR_Finite_No_Multiple_Arrows</guid>
         </item>
       
     
@@ -14235,8 +15128,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Quiver-and-Hereditary-Algebra</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Quiver-and-Hereditary-Algebra</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Quiver-and-Hereditary-Algebra</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Quiver-and-Hereditary-Algebra</guid>
         </item>
       
     
@@ -14370,8 +15263,8 @@ $$&lt;/p&gt;
 &lt;p&gt;对偶地, $C^- = τ ⁻¹$.&lt;/p&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Coxeter-Reflection</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Coxeter-Reflection</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Coxeter-Reflection</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Coxeter-Reflection</guid>
         </item>
       
     
@@ -14474,8 +15367,8 @@ $$&lt;/p&gt;
 &lt;h2 id=&quot;投射模&quot;&gt;投射模&lt;/h2&gt;
 </description>
           <pubDate>2025-05-03T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/FP_P_I_F</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/FP_P_I_F</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/FP_P_I_F</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/FP_P_I_F</guid>
         </item>
       
     
@@ -14509,8 +15402,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-03T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Equi_Def_Generator</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Equi_Def_Generator</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Equi_Def_Generator</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Equi_Def_Generator</guid>
         </item>
       
     
@@ -14655,8 +15548,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-03T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Projective_Generators</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Projective_Generators</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Projective_Generators</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Projective_Generators</guid>
         </item>
       
     
@@ -14706,8 +15599,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-03T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/ML_analysis</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/ML_analysis</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/ML_analysis</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/ML_analysis</guid>
         </item>
       
     
@@ -14911,8 +15804,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-03T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Forget</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Forget</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Forget</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Forget</guid>
         </item>
       
     
@@ -14931,8 +15824,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-01T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/When_1_m_epi</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/When_1_m_epi</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/When_1_m_epi</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/When_1_m_epi</guid>
         </item>
       
     
@@ -14987,8 +15880,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-01T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Proj_is_1_Derivative</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Proj_is_1_Derivative</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Proj_is_1_Derivative</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Proj_is_1_Derivative</guid>
         </item>
       
     
@@ -15015,8 +15908,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-01T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Proj_0_is_Lim</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Proj_0_is_Lim</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Proj_0_is_Lim</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Proj_0_is_Lim</guid>
         </item>
       
     
@@ -15047,8 +15940,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-01T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/ML_Mod</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/ML_Mod</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/ML_Mod</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/ML_Mod</guid>
         </item>
       
     
@@ -15089,8 +15982,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-29T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Happel_Fully_Faithful</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Happel_Fully_Faithful</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Happel_Fully_Faithful</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Happel_Fully_Faithful</guid>
         </item>
       
     
@@ -15120,8 +16013,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-29T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Four_Dim_Equal</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Four_Dim_Equal</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Four_Dim_Equal</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Four_Dim_Equal</guid>
         </item>
       
     
@@ -15164,8 +16057,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-29T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Dual_Tilting</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Dual_Tilting</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Dual_Tilting</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Dual_Tilting</guid>
         </item>
       
     
@@ -15212,8 +16105,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-29T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/BB_Spectral_Sequence</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/BB_Spectral_Sequence</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/BB_Spectral_Sequence</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/BB_Spectral_Sequence</guid>
         </item>
       
     
@@ -15322,8 +16215,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-29T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Projlim_1_Vanish</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Projlim_1_Vanish</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Projlim_1_Vanish</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Projlim_1_Vanish</guid>
         </item>
       
     
@@ -15341,8 +16234,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-29T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Injlim_Ext_Seq</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Injlim_Ext_Seq</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Injlim_Ext_Seq</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Injlim_Ext_Seq</guid>
         </item>
       
     
@@ -15362,8 +16255,8 @@ $$&lt;/p&gt;
 
 </description>
           <pubDate>2025-04-29T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/AB5_Derived_Limit</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/AB5_Derived_Limit</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/AB5_Derived_Limit</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AB5_Derived_Limit</guid>
         </item>
       
     
@@ -15379,8 +16272,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Z_Infty_Spectral_Not_Converge</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Z_Infty_Spectral_Not_Converge</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Z_Infty_Spectral_Not_Converge</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Z_Infty_Spectral_Not_Converge</guid>
         </item>
       
     
@@ -15410,8 +16303,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Six_Lemma</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Six_Lemma</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Six_Lemma</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Six_Lemma</guid>
         </item>
       
     
@@ -15450,8 +16343,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Proj_Epi_Complex</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Proj_Epi_Complex</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Proj_Epi_Complex</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Proj_Epi_Complex</guid>
         </item>
       
     
@@ -15483,8 +16376,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Nine_Lemma</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Nine_Lemma</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Nine_Lemma</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Nine_Lemma</guid>
         </item>
       
     
@@ -15590,8 +16483,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Kunneth_Spectral_Seq</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Kunneth_Spectral_Seq</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Kunneth_Spectral_Seq</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Kunneth_Spectral_Seq</guid>
         </item>
       
     
@@ -15635,8 +16528,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Horse_Shoe_Lemma</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Horse_Shoe_Lemma</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Horse_Shoe_Lemma</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Horse_Shoe_Lemma</guid>
         </item>
       
     
@@ -15752,8 +16645,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Grothendieck_Spectral_Sequence</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Grothendieck_Spectral_Sequence</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Grothendieck_Spectral_Sequence</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Grothendieck_Spectral_Sequence</guid>
         </item>
       
     
@@ -15801,8 +16694,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Fundamental_Thm_Homological_Algebra</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Fundamental_Thm_Homological_Algebra</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Fundamental_Thm_Homological_Algebra</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Fundamental_Thm_Homological_Algebra</guid>
         </item>
       
     
@@ -15855,8 +16748,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Four_Lemma</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Four_Lemma</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Four_Lemma</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Four_Lemma</guid>
         </item>
       
     
@@ -15899,8 +16792,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Five_Lemma</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Five_Lemma</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Five_Lemma</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Five_Lemma</guid>
         </item>
       
     
@@ -15936,8 +16829,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/First_Five_Terms</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/First_Five_Terms</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/First_Five_Terms</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/First_Five_Terms</guid>
         </item>
       
     
@@ -15960,8 +16853,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/E_2_Trick</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/E_2_Trick</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/E_2_Trick</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/E_2_Trick</guid>
         </item>
       
     
@@ -16012,8 +16905,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/AR_Tor</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/AR_Tor</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/AR_Tor</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR_Tor</guid>
         </item>
       
     
@@ -16033,8 +16926,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/AR_Defect</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/AR_Defect</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/AR_Defect</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR_Defect</guid>
         </item>
       
     
@@ -16133,8 +17026,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/KerHom_KerExt_TP</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/KerHom_KerExt_TP</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/KerHom_KerExt_TP</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/KerHom_KerExt_TP</guid>
         </item>
       
     
@@ -16366,8 +17259,8 @@ $$&lt;/p&gt;
 &lt;p&gt;待补充.&lt;/p&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Happel_Derived_Equivalence</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Happel_Derived_Equivalence</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Happel_Derived_Equivalence</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Happel_Derived_Equivalence</guid>
         </item>
       
     
@@ -16451,8 +17344,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Hereditary_TP_Split</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Hereditary_TP_Split</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Hereditary_TP_Split</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hereditary_TP_Split</guid>
         </item>
       
     
@@ -16474,8 +17367,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Gr_Iso_is_Complete_Iso</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Gr_Iso_is_Complete_Iso</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Gr_Iso_is_Complete_Iso</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gr_Iso_is_Complete_Iso</guid>
         </item>
       
     
@@ -16540,8 +17433,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/FFX_vs_FX</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/FFX_vs_FX</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/FFX_vs_FX</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/FFX_vs_FX</guid>
         </item>
       
     
@@ -16562,8 +17455,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Complete_Filtration</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Complete_Filtration</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Complete_Filtration</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Complete_Filtration</guid>
         </item>
       
     
@@ -17071,8 +17964,8 @@ $$&lt;/p&gt;
 &lt;p&gt;见&lt;a href=&quot;Happel_Derived_Equivalence#谱序列方法&quot;&gt;此章节&lt;/a&gt;.&lt;/p&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Spectral_sequence_filtered</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Spectral_sequence_filtered</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Spectral_sequence_filtered</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Spectral_sequence_filtered</guid>
         </item>
       
     
@@ -17140,8 +18033,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Complete_Z_Filtration</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Complete_Z_Filtration</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Complete_Z_Filtration</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Complete_Z_Filtration</guid>
         </item>
       
     
@@ -17201,8 +18094,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Harada_Sai</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Harada_Sai</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Harada_Sai</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Harada_Sai</guid>
         </item>
       
     
@@ -17246,8 +18139,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-26T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/APR_tilting_def</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/APR_tilting_def</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/APR_tilting_def</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/APR_tilting_def</guid>
         </item>
       
     
@@ -17287,8 +18180,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-26T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/P_is_Section</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/P_is_Section</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/P_is_Section</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/P_is_Section</guid>
         </item>
       
     
@@ -17448,8 +18341,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-26T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Commutative_Diagram_Alg</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Commutative_Diagram_Alg</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Commutative_Diagram_Alg</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Commutative_Diagram_Alg</guid>
         </item>
       
     
@@ -17807,8 +18700,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-26T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Hereditary-AR-Quiver</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Hereditary-AR-Quiver</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Hereditary-AR-Quiver</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hereditary-AR-Quiver</guid>
         </item>
       
     
@@ -17872,8 +18765,8 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;Proof-Gabriel&quot;&gt;Gabriel 定理的证明&lt;/a&gt;.&lt;/p&gt;
 </description>
           <pubDate>2025-04-25T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/20250425Talk</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/20250425Talk</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/20250425Talk</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/20250425Talk</guid>
         </item>
       
     
@@ -17913,8 +18806,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-25T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Gabriel_2</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Gabriel_2</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Gabriel_2</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gabriel_2</guid>
         </item>
       
     
@@ -17988,8 +18881,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-25T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Gabriel_1</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Gabriel_1</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Gabriel_1</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gabriel_1</guid>
         </item>
       
     
@@ -18084,8 +18977,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-25T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Finite_and_Affine_Root_System</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Finite_and_Affine_Root_System</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Finite_and_Affine_Root_System</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Finite_and_Affine_Root_System</guid>
         </item>
       
     
@@ -18139,8 +19032,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/T_Y_Dim</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/T_Y_Dim</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/T_Y_Dim</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/T_Y_Dim</guid>
         </item>
       
     
@@ -18181,8 +19074,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Hom_D_Hereditary</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Hom_D_Hereditary</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Hom_D_Hereditary</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hom_D_Hereditary</guid>
         </item>
       
     
@@ -18210,8 +19103,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Gl_Dim_A_B</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Gl_Dim_A_B</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Gl_Dim_A_B</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gl_Dim_A_B</guid>
         </item>
       
     
@@ -18321,8 +19214,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Uniqueness_of_Maximal_Orbit</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Uniqueness_of_Maximal_Orbit</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Uniqueness_of_Maximal_Orbit</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Uniqueness_of_Maximal_Orbit</guid>
         </item>
       
     
@@ -18479,8 +19372,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Ringel_Resolution</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Ringel_Resolution</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Ringel_Resolution</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Ringel_Resolution</guid>
         </item>
       
     
@@ -18524,8 +19417,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Key_Lemma_Gabriel</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Key_Lemma_Gabriel</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Key_Lemma_Gabriel</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Key_Lemma_Gabriel</guid>
         </item>
       
     
@@ -18710,8 +19603,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Proof-Gabriel</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Proof-Gabriel</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Proof-Gabriel</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Proof-Gabriel</guid>
         </item>
       
     
@@ -18749,8 +19642,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/gen_and_cog</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/gen_and_cog</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/gen_and_cog</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/gen_and_cog</guid>
         </item>
       
     
@@ -18834,8 +19727,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Torsion_Pair_Ext_Orth</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Torsion_Pair_Ext_Orth</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Torsion_Pair_Ext_Orth</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Torsion_Pair_Ext_Orth</guid>
         </item>
       
     
@@ -18916,8 +19809,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Tilting_Obj_Torsion_Pair</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Tilting_Obj_Torsion_Pair</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Tilting_Obj_Torsion_Pair</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Tilting_Obj_Torsion_Pair</guid>
         </item>
       
     
@@ -18945,8 +19838,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Partial_Tilting_Two_Torsion_pairs</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Partial_Tilting_Two_Torsion_pairs</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs</guid>
         </item>
       
     
@@ -19011,8 +19904,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Hereditary_PBPO</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Hereditary_PBPO</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Hereditary_PBPO</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hereditary_PBPO</guid>
         </item>
       
     
@@ -19048,8 +19941,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Gen_Eq_T</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Gen_Eq_T</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Gen_Eq_T</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gen_Eq_T</guid>
         </item>
       
     
@@ -19088,8 +19981,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/AR_Formula</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/AR_Formula</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/AR_Formula</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR_Formula</guid>
         </item>
       
     
@@ -19187,8 +20080,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-22T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Def_de_TP</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Def_de_TP</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Def_de_TP</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Def_de_TP</guid>
         </item>
       
     
@@ -19219,8 +20112,8 @@ $$&lt;/p&gt;
 
 </description>
           <pubDate>2025-04-22T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Homological_Wk_Ker</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Homological_Wk_Ker</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Homological_Wk_Ker</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Homological_Wk_Ker</guid>
         </item>
       
     
@@ -19249,8 +20142,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Yoneda_Homological</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Yoneda_Homological</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Yoneda_Homological</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Yoneda_Homological</guid>
         </item>
       
     
@@ -19294,8 +20187,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Plat_et_Proj_Cover_Proj</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Plat_et_Proj_Cover_Proj</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Plat_et_Proj_Cover_Proj</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Plat_et_Proj_Cover_Proj</guid>
         </item>
       
     
@@ -19313,8 +20206,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Mod_Tri_is_Frobenius</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Mod_Tri_is_Frobenius</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Mod_Tri_is_Frobenius</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Mod_Tri_is_Frobenius</guid>
         </item>
       
     
@@ -19350,8 +20243,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Lazard_thm</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Lazard_thm</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Lazard_thm</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Lazard_thm</guid>
         </item>
       
     
@@ -19393,8 +20286,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Fp_et_Plat_est_Proj</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Fp_et_Plat_est_Proj</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Fp_et_Plat_est_Proj</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Fp_et_Plat_est_Proj</guid>
         </item>
       
     
@@ -19424,8 +20317,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Fp_Proj_Plat</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Fp_Proj_Plat</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Fp_Proj_Plat</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Fp_Proj_Plat</guid>
         </item>
       
     
@@ -19523,8 +20416,8 @@ $$ 由于后两项保持积, 蛇引理给出函子的满的自然变换 $(K ⊗ 
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Finitely_Presented_Functor</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Finitely_Presented_Functor</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Finitely_Presented_Functor</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Finitely_Presented_Functor</guid>
         </item>
       
     
@@ -19552,8 +20445,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Countable_Karoubi</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Countable_Karoubi</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Countable_Karoubi</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Countable_Karoubi</guid>
         </item>
       
     
@@ -19607,8 +20500,8 @@ $$ 由于 $(i(-),A)_𝒯$ 是有限表现的平坦对象, 从而投射 (&lt;a hr
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Coreflexive_Contravariantly_Finite</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Coreflexive_Contravariantly_Finite</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Coreflexive_Contravariantly_Finite</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Coreflexive_Contravariantly_Finite</guid>
         </item>
       
     
@@ -20002,8 +20895,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/mid</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/mid</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/mid</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/mid</guid>
         </item>
       
     
@@ -20109,8 +21002,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/mid-copy</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/mid-copy</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/mid-copy</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/mid-copy</guid>
         </item>
       
     
@@ -20162,8 +21055,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Almost_Split</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Almost_Split</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Almost_Split</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Almost_Split</guid>
         </item>
       
     
@@ -20508,8 +21401,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Notes_on_Tilting</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Notes_on_Tilting</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting</guid>
         </item>
       
     
@@ -20773,8 +21666,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/template</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/template</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/template</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/template</guid>
         </item>
       
     
@@ -21096,8 +21989,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Reflexive_sub_cat</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Reflexive_sub_cat</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Reflexive_sub_cat</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Reflexive_sub_cat</guid>
         </item>
       
     
@@ -21157,8 +22050,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/syzygy_und_approx</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/syzygy_und_approx</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</guid>
         </item>
       
     
@@ -21174,8 +22067,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/stable_subquot</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/stable_subquot</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</guid>
         </item>
       
     
@@ -21193,8 +22086,8 @@ $$ 依照 $\mathrm{Rad}$ 的性质, 只能由于 $\mathrm{im}(f) = Y$. 故 $f$ �
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Top_surjective</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Top_surjective</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</guid>
         </item>
       
     
@@ -21228,8 +22121,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/exists_left_proj_app</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/exists_left_proj_app</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/exists_left_proj_app</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/exists_left_proj_app</guid>
         </item>
       
     
@@ -21263,8 +22156,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Torsion_Less</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Torsion_Less</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Torsion_Less</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Torsion_Less</guid>
         </item>
       
     
@@ -21291,8 +22184,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Left_proj_approx</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Left_proj_approx</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/Left_proj_approx</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Left_proj_approx</guid>
         </item>
       
     
@@ -21856,8 +22749,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/AR-notes</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/AR-notes</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/AR-notes</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR-notes</guid>
         </item>
       
     
@@ -21882,8 +22775,8 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;Notes_on_Tilting&quot;&gt;Tilting 模的基本定义, 定理等&lt;/a&gt;.&lt;/p&gt;
 </description>
           <pubDate>2025-04-18T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/20250418Talk</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/20250418Talk</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/20250418Talk</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/20250418Talk</guid>
         </item>
       
     
@@ -21912,8 +22805,8 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 </description>
           <pubDate>2025-03-28T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/20250328Talk</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/20250328Talk</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/20250328Talk</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/20250328Talk</guid>
         </item>
       
     
@@ -21926,8 +22819,8 @@ $$&lt;/p&gt;
 
 </description>
           <pubDate>2025-03-21T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/20250321Talk</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/20250321Talk</guid>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/20250321Talk</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/20250321Talk</guid>
         </item>
       
     

@@ -1,0 +1,27 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+   % https://q.uiver.app/#q=WzAsMTksWzEsMSwiQSJdLFsyLDEsIkIiXSxbMywxLCJDIl0sWzIsMiwiRCJdLFsyLDMsIkUiXSxbNSwxLCJBIl0sWzYsMSwiQiJdLFs3LDEsIkMiXSxbNiwyLCJEIl0sWzYsMywiRSJdLFs1LDIsIkEiXSxbNywyLCJGIl0sWzcsMywiRSJdLFswLDEsIlxcbWF0aGZyYWsgcyhcXGRlbHRhX3tyMX0pIl0sWzQsMSwiXFxtYXRoZnJhayBzKFxcZGVsdGFfe3IxfSkiXSxbNCwyLCJcXG1hdGhmcmFrIHMoXFxkZWx0YV97cjJ9KSJdLFsyLDAsIlxcbWF0aGZyYWsgcyhcXGRlbHRhX3tjMn0pIl0sWzYsMCwiXFxtYXRoZnJhayBzKFxcZGVsdGFfe2MyfSkiXSxbNywwLCJcXG1hdGhmcmFrIHMoXFxkZWx0YV97YzN9KSJdLFswLDEsIngiXSxbMSwyLCJ5Il0sWzEsMywiYSJdLFszLDQsImIiXSxbNSw2LCJ4Il0sWzYsNywieSJdLFs2LDgsImEiXSxbOCw5LCJiIl0sWzEwLDgsInAiXSxbOCwxMSwicSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDEwLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs5LDEyLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs3LDExLCJyIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzExLDEyLCJzIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+   \begin{tikzcd}[ampersand replacement=\&]
+   	\&\& {\mathfrak s(\delta_{c2})} \&\&\&\& {\mathfrak s(\delta_{c2})} \& {\mathfrak s(\delta_{c3})} \\
+   	{\mathfrak s(\delta_{r1})} \& A \& B \& C \& {\mathfrak s(\delta_{r1})} \& A \& B \& C \\
+   	\&\& D \&\& {\mathfrak s(\delta_{r2})} \& A \& D \& F \\
+   	\&\& E \&\&\&\& E \& E
+   	\arrow["x", from=2-2, to=2-3]
+   	\arrow["y", from=2-3, to=2-4]
+   	\arrow["a", from=2-3, to=3-3]
+   	\arrow["x", from=2-6, to=2-7]
+   	\arrow[equals, from=2-6, to=3-6]
+   	\arrow["y", from=2-7, to=2-8]
+   	\arrow["a", from=2-7, to=3-7]
+   	\arrow["r", dashed, from=2-8, to=3-8]
+   	\arrow["b", from=3-3, to=4-3]
+   	\arrow["p", from=3-6, to=3-7]
+   	\arrow["q", dashed, from=3-7, to=3-8]
+   	\arrow["b", from=3-7, to=4-7]
+   	\arrow["s", dashed, from=3-8, to=4-8]
+   	\arrow[equals, from=4-7, to=4-8]
+   \end{tikzcd}
+   \end{document}

@@ -131,7 +131,7 @@ $$\begin{equation}
 𝔰 : 𝔼 (Y,X) → [X,Y],\quad (X, δ, Y) ↦ 𝔰 (δ) = [X → E → Y].
 \end{equation}$$
 
-同时, 对任意推出 $f_∗$, 总有右侧 $[,]$ 中的交换图
+同时, 对任意推出 $f_∗$, 总存在 $φ$ 使得右侧是 $[,]$ 中的交换图:
 
 {% tikz %}
 % https://q.uiver.app/#q=WzAsMTQsWzMsMCwiWCJdLFs0LDAsIlkiXSxbNSwwLCJaIl0sWzMsMSwiWCciXSxbNCwxLCJZJyJdLFs1LDEsIloiXSxbMiwxLCJbWCcsWl0iXSxbMiwwLCJbWCxaXSJdLFsxLDAsIlxcbWF0aGJiIEVbWixYXSJdLFsxLDEsIlxcbWF0aGJiIEVbWixYJ10iXSxbMCwwLCJcXGRlbHRhICJdLFswLDEsImZfXFxhc3QgXFxkZWx0YSAiXSxbNiwwLCJcXG1hdGhmcmFrIHMoXFxkZWx0YSkiXSxbNiwxLCJcXG1hdGhmcmFrIHMoZl9cXGFzdFxcZGVsdGEpIl0sWzAsMSwiYSJdLFsxLDIsImIiXSxbMiw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDQsImEnIl0sWzQsNSwiYiciXSxbMSw0LCJcXGV4aXN0cyBcXHZhcnBoaSAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwzLCJmIl0sWzgsOSwiZl9cXGFzdCJdLFsxMCwxMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFs4LDcsIlxcbWF0aGZyYWsgcyJdLFs5LDYsIlxcbWF0aGZyYWsgcyJdLFsxMiwxMywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dXQ==
@@ -153,4 +153,9 @@ $$\begin{equation}
 \end{tikzcd}
 {% endtikz %}
 
+对于拉回的要求对偶.
 {% enddef %}
+
+{% note %}
+实现 $𝔰$ 不能简单地看作函子 (例如 $𝔰 (f_∗)$) 的
+{% endnote %}
