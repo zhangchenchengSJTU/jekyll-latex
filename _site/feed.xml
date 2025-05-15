@@ -58,10 +58,10 @@
 &lt;/div&gt;
 
 &lt;div class=&quot;note&quot;&gt;
-  &lt;p&gt;记 $𝔼(X,Y)$ 中的一个元素为 $(X, δ, Y)$, 或简单地, $δ$. 若无歧义, 记群同态&lt;/p&gt;
+  &lt;p&gt;记 $𝔼(Y, X)$ 中的一个元素为 $(X, δ, Y)$, 或简单地, $δ$. 给定 $f : Y → Y'$ 与 $g: X → X'$, 记群同态&lt;/p&gt;
   &lt;ul&gt;
-    &lt;li&gt;$𝔼 (f,X) =: f^∗$, 称作拉回;&lt;/li&gt;
-    &lt;li&gt;$𝔼 (X,g) =: g_∗$, 称作推出.&lt;/li&gt;
+    &lt;li&gt;给定 $𝔼 (f,X) =: f^∗$, 称作拉回;&lt;/li&gt;
+    &lt;li&gt;$𝔼 (Y,g) =: g_∗$, 称作推出.&lt;/li&gt;
   &lt;/ul&gt;
   &lt;p&gt;由 $𝔼$ 是双函子, 推出与拉回交换.&lt;/p&gt;
 &lt;/div&gt;
@@ -81,7 +81,7 @@
 &lt;/div&gt;
 
 &lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;(扩张的态射). 称态射 $f : X → X'$ 与 $g : Y → Y'$ 建立了扩张 $(X,δ , Y)$ 与 $(X', δ ' , Y ')$ 之间的态射, 若 $f_∗ δ' = δ g^∗$.&lt;/p&gt;
+  &lt;p&gt;(扩张的链接). 称态射 $f : X → X'$ 与 $g : Y → Y'$ 建立了扩张 $(X, δ , Y)$ 与 $(X', δ ' , Y ')$ 之间的态射, 若 $f_∗ δ' = δ g^∗$.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;note&quot;&gt;
@@ -122,15 +122,20 @@
   &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;note&quot;&gt;
-  &lt;p&gt;以上视作局部的二推三.&lt;/p&gt;
-&lt;/div&gt;
+&lt;h3 id=&quot;外三角范畴的定义-et3-et4&quot;&gt;外三角范畴的定义 (ET3, ET4)&lt;/h3&gt;
 
 &lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;($𝔼$-三角). 指实现中的元素, 即, 等价类 $𝔰((X, δ , Y)) ∈ [Y, X]$ 的任意代表元.&lt;/p&gt;
+  &lt;p&gt;(实现). 实现 $𝔰$ 将类 $⋃_{X,Y} 𝔼 (Y,X)$ 对应至 $⋃_{Y,X} [Y,X]$.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$𝔰 (δ)$ 的结果是一个等价类, 称作 $δ$ 的加法实现.&lt;/li&gt;
+    &lt;li&gt;等价类 $𝔰 (δ)$ 中的代表元称作 $𝔼$-三角.&lt;/li&gt;
+    &lt;li&gt;称 $(f,g)$ 是 $𝔼$-三角 $δ_s ∈ 𝔼(s(g), s(f))$ 与 $δ_t ∈ 𝔼 (t(g), t(f))$ 中的连接, 若 $f_∗ δ_s = g^∗ δ _t$.&lt;/li&gt;
+  &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&quot;外三角范畴的定义-et3-et4&quot;&gt;外三角范畴的定义 (ET3, ET4)&lt;/h3&gt;
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;对等价的 $𝔼$ 三角, 态射合成相等 (在外三角范畴中, 该合成为 $0$).&lt;/p&gt;
+&lt;/div&gt;
 
 &lt;div class=&quot;definition&quot;&gt;
   &lt;p&gt;外三角范畴描述作三元组 $(𝒞 , 𝔼 , 𝔰)$, 其中 $𝔼$ 是加法范畴. 满足&lt;/p&gt;
@@ -140,10 +145,12 @@
     &lt;li&gt;(ET3). 假定以下横行是 $𝔼$-三角, 且存在态射 $f$ 与 $φ$ 使得下图交换, 则存在 $g$ 使得下图交换:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
           &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_df80c47924cb0.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
         &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+      &lt;p&gt;同时, $(f,g)$ 是一个连接.&lt;/p&gt;
     &lt;/li&gt;
     &lt;li&gt;(ET3’). 假定以下横行是 $𝔼$-三角, 且存在态射 $g$ 与 $φ$ 使得下图交换, 则存在 $f$ 使得下图交换:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
           &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_51465971a07c1.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
         &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+      &lt;p&gt;同时, $(f,g)$ 是一个连接.&lt;/p&gt;
     &lt;/li&gt;
     &lt;li&gt;(ET4). 假定初始资料是如下 $⊤$-型的 $𝔼$-三角 ($\mathfrak s(\delta_{r1})$, $\mathfrak s(\delta_{c2})$), 则可以补全作如下四个 $𝔼$-三角的交换图:       &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
           &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_100936645cbb0.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
@@ -151,7 +158,7 @@
       &lt;p&gt;同时, 以上好三角对应的扩张满足以下条件:&lt;/p&gt;
       &lt;ol&gt;
         &lt;li&gt;$y_∗ (\delta_{c2}) = \delta_{c3}$,&lt;/li&gt;
-        &lt;li&gt;$\delta_{r1} = x^∗ \delta_{r2}$,&lt;/li&gt;
+        &lt;li&gt;$\delta_{r1} = r^∗ \delta_{r2}$,&lt;/li&gt;
         &lt;li&gt;$s^∗ (\delta_{c2}) = x_∗ (\delta_{r2})$.&lt;/li&gt;
       &lt;/ol&gt;
     &lt;/li&gt;
@@ -161,11 +168,20 @@
       &lt;p&gt;同时, 以上好三角对应的扩张满足以下条件 (同 ET4):&lt;/p&gt;
       &lt;ol&gt;
         &lt;li&gt;$y_∗ (\delta_{c2}) = \delta_{c3}$,&lt;/li&gt;
-        &lt;li&gt;$\delta_{r1} = x^∗ \delta_{r2}$,&lt;/li&gt;
+        &lt;li&gt;$\delta_{r1} = r^∗ \delta_{r2}$,&lt;/li&gt;
         &lt;li&gt;$s^∗ (\delta_{c2}) = x_∗ (\delta_{r2})$.&lt;/li&gt;
       &lt;/ol&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+  &lt;p&gt;请注意 ET2 与 ET3 (ET3’) 关于二推三类似性质的表述.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;ET2 先给定连接与外周态射, 再声明中间态射与交换图之存在性.&lt;/li&gt;
+    &lt;li&gt;ET3 先给定 $𝔼$-三角的的交换图, 再声明该态射可以补全为连接.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;一般地, $𝔼$-三角之间的态射不再是连接.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;note&quot;&gt;
@@ -183,6 +199,15 @@
 &lt;h2 id=&quot;外三角范畴的基本性质&quot;&gt;外三角范畴的基本性质&lt;/h2&gt;
 
 &lt;h3 id=&quot;上同调函子&quot;&gt;上同调函子&lt;/h3&gt;
+
+&lt;p&gt;先证明一则实用的引理.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;一般而言, $𝔼$-三角间的态射不是连接; 若 $δ$ 可裂, 则任意 $δ$ 至 $δ'$ 的态射是连接, 且任意 $δ'$ 至 $δ$ 的态射也是连接.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;只看 $δ$ 至 $δ '$ 的态射 $(a,b,c)$. 依照 ET3, 存在态射 $(a',b,c)$ 使得 $(a', c)$ 是连接. 因此 $c^∗ δ = a'_∗ δ = 0 = a_∗ δ$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
 &lt;div class=&quot;theorem&quot;&gt;
   &lt;p&gt;(充实在 $𝐀𝐛$ 范畴上的米田引理). 表述证明略.&lt;/p&gt;
@@ -251,6 +276,21 @@
   &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;一般地, $𝔼$-三角之间的态射不再是连接; 但对某些特殊情形, $𝔼$-三角间的交换图是连接. 假定以下是 $𝔼$-三角的交换图&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Stable_Cat_Analogue/diagram_851ede2b91b3a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;只看 $(f', X)$ 满的情形. 使用 ET3 建立 $a' : X → X'$ 使得以下两点成立.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;有交换图且 $f' a' = bf$. 等价地, $f' (a-a') = 0$.&lt;/li&gt;
+      &lt;li&gt;$(a', c)$ 是连接, 即 $(a')_∗ δ = c^∗ δ'$. 等价地, $(a-a') ∈ \ker δ ^!$.&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;由 $(a-a') ∈ \ker δ ^! = \mathrm{im}(- ∘ f')$, 只需证明 $(a-a')$ 通过 $f'$ 分解, 这由 $(f', X)$ 满直接得到.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&quot;主定理-特殊的稳定范畴保持外三角结构&quot;&gt;主定理: 特殊的稳定范畴保持外三角结构&lt;/h2&gt;
 
 &lt;h3 id=&quot;外三角范畴的引理-类比正合范畴&quot;&gt;外三角范畴的引理 (类比正合范畴)&lt;/h3&gt;
@@ -264,7 +304,7 @@
 &lt;/div&gt;
 
 &lt;div class=&quot;example&quot;&gt;
-  &lt;p&gt;(EX 2 类似物). 这一类比是困难的, 因为外三角范畴通常没有态射嵌入 $𝔼$-三角的结论, 更没有一般的推出拉回.&lt;/p&gt;
+  &lt;p&gt;(EX2 类似物). 这一类比是困难的, 因为外三角范畴通常没有态射嵌入 $𝔼$-三角的结论, 更没有一般的推出拉回.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;example&quot;&gt;
@@ -445,7 +485,7 @@ p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
   &lt;div class=&quot;proof&quot;&gt;
     &lt;p&gt;依次验证 ET1 至 ET4. 统一用上划线表示商 Hom 与商群中的的态射.&lt;/p&gt;
     &lt;ol&gt;
-      &lt;li&gt;(ET1). 对象层面, $\overline{E}(Z,X) := 𝔼 (Z,X)$. 态射层面, $\overline{f_∗} := \overline f _∗$, 以及 $\overline {g^∗} := \overline g^∗$.         &lt;ul&gt;
+      &lt;li&gt;(ET1). 对象层面, $\overline 𝔼 (Z,X) := 𝔼 (Z,X)$. 态射层面, $\overline{f_∗} := \overline f _∗$, 以及 $\overline {g^∗} := \overline g^∗$.         &lt;ul&gt;
           &lt;li&gt;由 $𝔼 (𝐏𝐫𝐨𝐣 , -)$ 与 $𝔼 (-, 𝐈𝐧𝐣 )$ 消失, 故 $𝔼$ 将 $\ker [\mathrm{Hom} → \underline{\mathrm{Hom}}]$ 映至 $0$, 进而可定义在 $(𝒞 / 𝒳)^{\mathrm{op}} × (𝒞 / 𝒳)$ 上. 由加法商, 以上定义的 $\overline 𝔼$ 确实是加法双函子.&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;

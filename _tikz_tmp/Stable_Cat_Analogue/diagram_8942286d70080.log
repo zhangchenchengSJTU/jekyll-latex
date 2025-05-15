@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.28)  14 MAY 2025 17:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.28)  15 MAY 2025 01:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -727,8 +727,7 @@ File: UTF8.enc 2021/10/16 4.8.5
 (c:/texlive/2024/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
 )
-(D:/GitHub/jekyll-latex/_tikz_tmp/Stable_Cat_Analogue/diagram_8942286d70080.aux
-)
+No file diagram_8942286d70080.aux.
 \openout1 = `diagram_8942286d70080.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
@@ -809,7 +808,6 @@ LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
-
 Preview: Fontsize 10.53937pt
 Preview: PDFoutput 1
 (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -873,10 +871,10 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 19348 strings out of 474116
- 402485 string characters out of 5747717
+ 19345 strings out of 474116
+ 402291 string characters out of 5747717
  1941190 words of memory out of 5000000
- 41302 multiletter control sequences out of 15000+600000
+ 41301 multiletter control sequences out of 15000+600000
  564259 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,25n,121p,1366b,986s stack positions out of 10000i,1000n,20000p,200000b,200000s

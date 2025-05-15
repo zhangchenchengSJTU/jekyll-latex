@@ -36,10 +36,10 @@ $$\begin{equation}
 {% enddef %}
 
 {% note %}
-记 $𝔼(X,Y)$ 中的一个元素为 $(X, δ, Y)$, 或简单地, $δ$. 若无歧义, 记群同态
+记 $𝔼(Y, X)$ 中的一个元素为 $(X, δ, Y)$, 或简单地, $δ$. 给定 $f : Y → Y'$ 与 $g: X → X'$, 记群同态
 
-- $𝔼 (f,X) =: f^∗$, 称作拉回;
-- $𝔼 (X,g) =: g_∗$, 称作推出.
+- 给定 $𝔼 (f,X) =: f^∗$, 称作拉回;
+- $𝔼 (Y,g) =: g_∗$, 称作推出.
 
 由 $𝔼$ 是双函子, 推出与拉回交换.
 {% endnote %}
@@ -83,7 +83,7 @@ $$\begin{equation}
 {% endex %}
 
 {% def %}
-(扩张的态射). 称态射 $f : X → X'$ 与 $g : Y → Y'$ 建立了扩张 $(X,δ , Y)$ 与 $(X', δ ' , Y ')$ 之间的态射, 若 $f_∗ δ' = δ g^∗$.
+(扩张的链接). 称态射 $f : X → X'$ 与 $g : Y → Y'$ 建立了扩张 $(X, δ , Y)$ 与 $(X', δ ' , Y ')$ 之间的态射, 若 $f_∗ δ' = δ g^∗$.
 {% enddef %}
 
 {% note %}
@@ -156,16 +156,20 @@ $$\begin{equation}
 
 {% enddef %}
 
-{% note %}
-以上视作局部的二推三.
-{% endnote %}
+### 外三角范畴的定义 (ET3, ET4)
 
 {% def %}
-($𝔼$-三角). 指实现中的元素, 即, 等价类 $𝔰((X, δ , Y)) ∈ [Y, X]$ 的任意代表元.
+(实现). 实现 $𝔰$ 将类 $⋃_{X,Y} 𝔼 (Y,X)$ 对应至 $⋃_{Y,X} [Y,X]$.
+
+1. $𝔰 (δ)$ 的结果是一个等价类, 称作 $δ$ 的加法实现.
+2. 等价类 $𝔰 (δ)$ 中的代表元称作 $𝔼$-三角.
+3. 称 $(f,g)$ 是 $𝔼$-三角 $δ_s ∈ 𝔼(s(g), s(f))$ 与 $δ_t ∈ 𝔼 (t(g), t(f))$ 中的连接, 若 $f_∗ δ_s = g^∗ δ _t$.
 
 {% enddef %}
 
-### 外三角范畴的定义 (ET3, ET4)
+{% note %}
+对等价的 $𝔼$ 三角, 态射合成相等 (在外三角范畴中, 该合成为 $0$).
+{% endnote %}
 
 {% def %}
 外三角范畴描述作三元组 $(𝒞 , 𝔼 , 𝔰)$, 其中 $𝔼$ 是加法范畴. 满足
@@ -189,6 +193,7 @@ $$\begin{equation}
    	\arrow[from=2-3, to=2-4]
    \end{tikzcd}
    {% endtikz %}
+   同时, $(f,g)$ 是一个连接.
 4. (ET3'). 假定以下横行是 $𝔼$-三角, 且存在态射 $g$ 与 $φ$ 使得下图交换, 则存在 $f$ 使得下图交换:
    {% tikz %}
    % https://q.uiver.app/#q=WzAsOCxbMCwwLCJcXG1hdGhmcmFrIHMoXFxkZWx0YSkiXSxbMCwxLCJcXG1hdGhmcmFrIHMoXFxkZWx0YScpIl0sWzEsMCwiWCJdLFsyLDAsIkUiXSxbMywwLCJZIl0sWzEsMSwiWCciXSxbMiwxLCJFJyJdLFszLDEsIlknIl0sWzIsM10sWzMsNF0sWzQsNywiZyJdLFsyLDUsImYiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw2XSxbNiw3XSxbMyw2LCJcXHZhcnBoaSAiLDJdLFswLDIsIjoiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSw1LCI6IiwzLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
@@ -206,6 +211,7 @@ $$\begin{equation}
    \arrow[from=2-3, to=2-4]
    \end{tikzcd}
    {% endtikz %}
+   同时, $(f,g)$ 是一个连接.
 5. (ET4). 假定初始资料是如下 $⊤$-型的 $𝔼$-三角 ($\mathfrak s(\delta_{r1})$, $\mathfrak s(\delta_{c2})$), 则可以补全作如下四个 $𝔼$-三角的交换图:
     {% tikz %}
     % https://q.uiver.app/#q=WzAsMTIsWzEsMSwiQSJdLFsyLDEsIkIiXSxbMywxLCJDIl0sWzIsMiwiRCJdLFsyLDMsIkUiXSxbMSwyLCJBIl0sWzMsMiwiRiJdLFszLDMsIkUiXSxbMCwxLCJcXG1hdGhmcmFrIHMoXFxkZWx0YV97cjF9KSJdLFswLDIsIlxcbWF0aGZyYWsgcyhcXGRlbHRhX3tyMn0pIl0sWzIsMCwiXFxtYXRoZnJhayBzKFxcZGVsdGFfe2MyfSkiXSxbMywwLCJcXG1hdGhmcmFrIHMoXFxkZWx0YV97YzN9KSJdLFswLDEsIngiXSxbMSwyLCJ5Il0sWzEsMywiYSJdLFszLDQsImIiXSxbNSwzLCJwIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsNiwicSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw2LCJyIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsNywicyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
@@ -229,9 +235,9 @@ $$\begin{equation}
     同时, 以上好三角对应的扩张满足以下条件:
 
     1. $y_∗ (\delta_{c2}) = \delta_{c3}$,
-    2. $\delta_{r1} = x^∗ \delta_{r2}$,
+    2. $\delta_{r1} = r^∗ \delta_{r2}$,
     3. $s^∗ (\delta_{c2}) = x_∗ (\delta_{r2})$.
-6. (ET4'). 假定初始资料是如下 $⊣$-型的 $𝔼$-三角 ($\mathfrak s(\delta_{r2})$, $\mathfrak s(\delta_{c3})$), 则可以补全作如下四个 $𝔼$-三角的交换图:
+1. (ET4'). 假定初始资料是如下 $⊣$-型的 $𝔼$-三角 ($\mathfrak s(\delta_{r2})$, $\mathfrak s(\delta_{c3})$), 则可以补全作如下四个 $𝔼$-三角的交换图:
     {% tikz %}
     % https://q.uiver.app/#q=WzAsMTIsWzEsMSwiQSJdLFsyLDEsIkIiXSxbMywxLCJDIl0sWzIsMiwiRCJdLFsyLDMsIkUiXSxbMSwyLCJBIl0sWzMsMiwiRiJdLFszLDMsIkUiXSxbMCwxLCJcXG1hdGhmcmFrIHMoXFxkZWx0YV97cjF9KSJdLFswLDIsIlxcbWF0aGZyYWsgcyhcXGRlbHRhX3tyMn0pIl0sWzIsMCwiXFxtYXRoZnJhayBzKFxcZGVsdGFfe2MyfSkiXSxbMywwLCJcXG1hdGhmcmFrIHMoXFxkZWx0YV97YzN9KSJdLFswLDEsIngiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwyLCJ5IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMywiYSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDQsImIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwzLCJwIl0sWzMsNiwicSJdLFswLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw2LCJyIl0sWzYsNywicyJdXQ==
 \begin{tikzcd}
@@ -254,10 +260,20 @@ $$\begin{equation}
     同时, 以上好三角对应的扩张满足以下条件 (同 ET4):
 
     1. $y_∗ (\delta_{c2}) = \delta_{c3}$,
-    2. $\delta_{r1} = x^∗ \delta_{r2}$,
+    2. $\delta_{r1} = r^∗ \delta_{r2}$,
     3. $s^∗ (\delta_{c2}) = x_∗ (\delta_{r2})$.
 
 {% enddef %}
+
+{% note %}
+请注意 ET2 与 ET3 (ET3') 关于二推三类似性质的表述.
+
+- ET2 先给定连接与外周态射, 再声明中间态射与交换图之存在性.
+- ET3 先给定 $𝔼$-三角的的交换图, 再声明该态射可以补全为连接.
+
+一般地, $𝔼$-三角之间的态射不再是连接.
+
+{% endnote %}
 
 {% note %}
 ET4 与 ET4' 是不同输入的同一结果, 都是给定一个 T 构造另一个 T. 类比作八面体公理, 以下类似交换方块的 $\boxed 1$, $\boxed{2}$ 与 $\boxed{3}$ 对应 ET4 中三处约束:
@@ -301,6 +317,15 @@ ET4 与 ET4' 是不同输入的同一结果, 都是给定一个 T 构造另一�
 ## 外三角范畴的基本性质
 
 ### 上同调函子
+
+先证明一则实用的引理.
+
+{% lem %}
+一般而言, $𝔼$-三角间的态射不是连接; 若 $δ$ 可裂, 则任意 $δ$ 至 $δ'$ 的态射是连接, 且任意 $δ'$ 至 $δ$ 的态射也是连接.
+{% pf %}
+只看 $δ$ 至 $δ '$ 的态射 $(a,b,c)$. 依照 ET3, 存在态射 $(a',b,c)$ 使得 $(a', c)$ 是连接. 因此 $c^∗ δ = a'_∗ δ = 0 = a_∗ δ$.
+{% endpf %}
+{% endlem %}
 
 {% thm %}
 (充实在 $𝐀𝐛$ 范畴上的米田引理). 表述证明略.
@@ -479,6 +504,37 @@ ET4 与 ET4' 是不同输入的同一结果, 都是给定一个 T 构造另一�
 {% endpf %}
 {% endthm %}
 
+{% prop %}
+
+一般地, $𝔼$-三角之间的态射不再是连接; 但对某些特殊情形, $𝔼$-三角间的交换图是连接. 假定以下是 $𝔼$-三角的交换图
+{% tikz %}
+% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzIsMCwiWSJdLFs0LDAsIloiXSxbNCwxLCJaJyJdLFswLDEsIlgnIl0sWzIsMSwiWSciXSxbNSwwLCJcXG1hdGhmcmFrIHMoXFxkZWx0YSkiXSxbNSwxLCJcXG1hdGhmcmFrIHMoXFxkZWx0YScpIl0sWzAsMSwiZiJdLFsxLDIsImciXSxbMiwzLCJjIl0sWzAsNCwiYSJdLFs0LDUsImYnIl0sWzEsNSwiYiJdLFs1LDMsImcnIl1d
+\begin{tikzcd}[ampersand replacement=\&]
+	X \&\& Y \&\& Z \& {\mathfrak s(\delta)} \\
+	{X'} \&\& {Y'} \&\& {Z'} \& {\mathfrak s(\delta')}
+	\arrow["f", from=1-1, to=1-3]
+	\arrow["a", from=1-1, to=2-1]
+	\arrow["g", from=1-3, to=1-5]
+	\arrow["b", from=1-3, to=2-3]
+	\arrow["c", from=1-5, to=2-5]
+	\arrow["{f'}", from=2-1, to=2-3]
+	\arrow["{g'}", from=2-3, to=2-5]
+\end{tikzcd}
+
+若 $(f', X)$ 满或是 $(Z' ,g)$ 满, 则以上是连接.
+
+{% endtikz %}
+{% pf %}
+只看 $(f', X)$ 满的情形. 使用 ET3 建立 $a' : X → X'$ 使得以下两点成立.
+
+1. 有交换图且 $f' a' = bf$. 等价地, $f' (a-a') = 0$.
+2. $(a', c)$ 是连接, 即 $(a')_∗ δ = c^∗ δ'$. 等价地, $(a-a') ∈ \ker δ ^!$.
+
+由 $(a-a') ∈ \ker δ ^! = \mathrm{im}(- ∘ f')$, 只需证明 $(a-a')$ 通过 $f'$ 分解, 这由 $(f', X)$ 满直接得到. 
+
+{% endpf %}
+{% endprop %}
+
 ## 主定理: 特殊的稳定范畴保持外三角结构
 
 ### 外三角范畴的引理 (类比正合范畴)
@@ -492,7 +548,7 @@ ET4 与 ET4' 是不同输入的同一结果, 都是给定一个 T 构造另一�
 {% endex %}
 
 {% ex %}
-(EX 2 类似物). 这一类比是困难的, 因为外三角范畴通常没有态射嵌入 $𝔼$-三角的结论, 更没有一般的推出拉回.
+(EX2 类似物). 这一类比是困难的, 因为外三角范畴通常没有态射嵌入 $𝔼$-三角的结论, 更没有一般的推出拉回.
 {% endex %}
 
 {% ex %}
@@ -1006,7 +1062,7 @@ p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
 
 {% pf %}
 依次验证 ET1 至 ET4. 统一用上划线表示商 Hom 与商群中的的态射.
-1. (ET1). 对象层面, $\overline{E}(Z,X) := 𝔼 (Z,X)$. 态射层面, $\overline{f_∗} := \overline f _∗$, 以及 $\overline {g^∗} := \overline g^∗$.
+1. (ET1). 对象层面, $\overline 𝔼 (Z,X) := 𝔼 (Z,X)$. 态射层面, $\overline{f_∗} := \overline f _∗$, 以及 $\overline {g^∗} := \overline g^∗$.
    - 由 $𝔼 (𝐏𝐫𝐨𝐣 , -)$ 与 $𝔼 (-, 𝐈𝐧𝐣 )$ 消失, 故 $𝔼$ 将 $\ker [\mathrm{Hom} → \underline{\mathrm{Hom}}]$ 映至 $0$, 进而可定义在 $(𝒞 / 𝒳)^{\mathrm{op}} × (𝒞 / 𝒳)$ 上. 由加法商, 以上定义的 $\overline 𝔼$ 确实是加法双函子.
 2. (ET2). 定义对应 $\overline 𝔰 : \overline 𝔼 (Y,X) = 𝔼 (Y,X) → [Y,X] / ∼$. 其中, $[Y,X] / ∼$ 中对象形如 $[X \xrightarrow{\overline f} Y \xrightarrow{\overline g} Z]$. 这一对应仅是对象间的 (自始至终未要求 $𝔰$ 函子). 下验证 $\overline 𝔰$ 是 $(𝒞 / 𝒳 , \overline 𝔼 )$ 的加法实现.
    - 对应 $[Y, X] → [Y, X] / ∼$ 保持直和结构, 从而 $\overline 𝔰$ 保持零 (可裂短正合列) 以及映射链的直和.
