@@ -1,5 +1,5 @@
 ---
-title: 同伦推出拉回的等价定义
+title: 特殊的同伦推出拉回
 author: Chencheng Zhang
 layout: post
 category: proof

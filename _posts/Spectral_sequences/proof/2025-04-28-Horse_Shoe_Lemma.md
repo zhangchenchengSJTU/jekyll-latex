@@ -28,10 +28,20 @@ category: proof
   0 → L \xrightarrow ι  M \xrightarrow π  N → 0.
 \end{equation}
 取 $p : P ↠ L$ 与 $q : Q ↠ M$, 此时有
-<center>
-<!-- https://q.uiver.app/#q=WzAsMTAsWzEsMCwiUCJdLFsxLDEsIkwiXSxbMywxLCJNIl0sWzUsMSwiTiJdLFs2LDEsIjAiXSxbMCwxLCIwIl0sWzMsMCwiUCBcXG9wbHVzIFEiXSxbNSwwLCJRIl0sWzAsMCwiMCJdLFs2LDAsIjAiXSxbMCwxLCJwIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzYsMiwiKFxcaW90YSAgcCBcXCBcXCBxKSIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxLDIsIlxcaW90YSJdLFsyLDMsIlxccGkgIl0sWzAsNiwiXFxiaW5vbSAxMCJdLFs1LDFdLFs4LDBdLFs2LDcsIigwIFxcIFxcIFxcIDEpIl0sWzcsMywicSIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs3LDldLFszLDRdXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMTAsWzEsMCwiUCJdLFsxLDEsIkwiXSxbMywxLCJNIl0sWzUsMSwiTiJdLFs2LDEsIjAiXSxbMCwxLCIwIl0sWzMsMCwiUCBcXG9wbHVzIFEiXSxbNSwwLCJRIl0sWzAsMCwiMCJdLFs2LDAsIjAiXSxbMCwxLCJwIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzYsMiwiKFxcaW90YSAgcCBcXCBcXCBxKSIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxLDIsIlxcaW90YSJdLFsyLDMsIlxccGkgIl0sWzAsNiwiXFxiaW5vbSAxMCJdLFs1LDFdLFs4LDBdLFs2LDcsIigwIFxcIFxcIFxcIDEpIl0sWzcsMywicSIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs3LDldLFszLDRdXQ==&embed" width="600" height="200" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsNixbMCwwLCJQIl0sWzAsMSwiTCJdLFsyLDEsIk0iXSxbNCwxLCJOIl0sWzIsMCwiUCBcXG9wbHVzIFEiXSxbNCwwLCJRIl0sWzAsMSwicCIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs0LDIsIihcXGlvdGEgIHAgXFwgXFwgcSkiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSwyLCJcXGlvdGEiXSxbMiwzLCJcXHBpICJdLFswLDQsIlxcYmlub20gMTAiXSxbNCw1LCIoMCBcXCBcXCBcXCAxKSJdLFs1LDMsIlxccGkgcSIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dXQ==
+\begin{tikzcd}
+	P && {P \oplus Q} && Q \\
+	L && M && N
+	\arrow["{\binom 10}", from=1-1, to=1-3]
+	\arrow["p"', two heads, from=1-1, to=2-1]
+	\arrow["{(0 \ \ \ 1)}", from=1-3, to=1-5]
+	\arrow["{(\iota  p \ \ q)}"', two heads, from=1-3, to=2-3]
+	\arrow["{\pi q}"', two heads, from=1-5, to=2-5]
+	\arrow["\iota", from=2-1, to=2-3]
+	\arrow["{\pi }", from=2-3, to=2-5]
+\end{tikzcd}
+{% endtikz %}
 这就完成了归纳.
 {% endpf %}
 

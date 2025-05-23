@@ -1,0 +1,31 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsMTAsWzAsMiwiXFxwaSBcXG1hdGhzY3IgQyJdLFsyLDAsIlxccGkgXFxtYXRoc2NyIEYiXSxbMCwxLCJcXHBpIChcXG1hdGhzY3IgQyBcXGNhcCBcXG1hdGhzY3IgRikiXSxbMiwzLCJcXG1hdGhzZntIb30oXFxtYXRoc2NyIEEpIl0sWzEsMywiXFxtYXRoc2Z7SG99KFxcbWF0aHNjciBDKSJdLFszLDIsIlxcbWF0aHNme0hvfShcXG1hdGhzY3IgRikiXSxbMSwxLCJcXG1hdGhzY3IgQyBcXGNhcCBcXG1hdGhzY3IgRiJdLFsyLDIsIlxcbWF0aHNjciBBIl0sWzEsMiwiXFxtYXRoc2NyIEMiXSxbMiwxLCJcXG1hdGhzY3IgRiJdLFsyLDAsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMiwxLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzQsMywiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMywiIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNSwiXFxvdmVybGluZSB7XFxnYW1tYV97XFxtYXRoc2NyIEZ9fSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDcsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMCw0LCJcXG92ZXJsaW5lIHtcXGdhbW1hX3tcXG1hdGhzY3IgQ319IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsM10sWzYsMl0sWzYsOCwiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs2LDksIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbOCwwXSxbOSwxXSxbOCw0XSxbOSw1XSxbOCw3LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzksNywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsyLDMsIlxcb3ZlcmxpbmUgXFxnYW1tYSAiLDEseyJjdXJ2ZSI6NSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	\&\& {\pi \mathscr F} \\
+	{\pi (\mathscr C \cap \mathscr F)} \& {\mathscr C \cap \mathscr F} \& {\mathscr F} \\
+	{\pi \mathscr C} \& {\mathscr C} \& {\mathscr A} \& {\mathsf{Ho}(\mathscr F)} \\
+	\& {\mathsf{Ho}(\mathscr C)} \& {\mathsf{Ho}(\mathscr A)}
+	\arrow["{\overline {\gamma_{\mathscr F}}}"{description}, dashed, from=1-3, to=3-4]
+	\arrow[tail, from=2-1, to=1-3]
+	\arrow[tail, from=2-1, to=3-1]
+	\arrow["{\overline \gamma }"{description}, curve={height=150pt}, dashed, from=2-1, to=4-3]
+	\arrow[from=2-2, to=2-1]
+	\arrow[tail, from=2-2, to=2-3]
+	\arrow[tail, from=2-2, to=3-2]
+	\arrow[tail, from=2-2, to=3-3]
+	\arrow[from=2-3, to=1-3]
+	\arrow[tail, from=2-3, to=3-3]
+	\arrow[from=2-3, to=3-4]
+	\arrow["{\overline {\gamma_{\mathscr C}}}"{description}, dashed, from=3-1, to=4-2]
+	\arrow[from=3-2, to=3-1]
+	\arrow[tail, from=3-2, to=3-3]
+	\arrow[from=3-2, to=4-2]
+	\arrow[from=3-3, to=4-3]
+	\arrow[dashed, from=3-4, to=4-3]
+	\arrow[dashed, from=4-2, to=4-3]
+\end{tikzcd}
+\end{document}

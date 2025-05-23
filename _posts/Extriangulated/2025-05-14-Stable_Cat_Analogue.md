@@ -38,7 +38,7 @@ $$\begin{equation}
 {% note %}
 记 $𝔼(Y, X)$ 中的一个元素为 $(X, δ, Y)$, 或简单地, $δ$. 给定 $f : Y → Y'$ 与 $g: X → X'$, 记群同态
 
-- 给定 $𝔼 (f,X) =: f^∗$, 称作拉回;
+- $𝔼 (f,X) =: f^∗$, 称作拉回;
 - $𝔼 (Y,g) =: g_∗$, 称作推出.
 
 由 $𝔼$ 是双函子, 推出与拉回交换.
@@ -310,6 +310,10 @@ ET4 与 ET4' 是不同输入的同一结果, 都是给定一个 T 构造另一�
 另一种理解方式是正合范畴中的 Noether 同构.
 {% endnote %}
 
+{% note %}
+对预三角范畴, 八面体公理的等价形式间[同伦的推出拉回](Homotopic_PBPO_Oct)一节. ET4 蕴含同伦推出拉回[此文](Homotopic_PBPO_Extri), 但反之未必 (Gap: 态射未必能嵌入外三角!).
+{% endnote %}
+
 {% ex %}
 若正合范畴 $(𝒜 ,ℰ)$ 本质小, 或是有足够投射, 则 $\mathrm{Ext}^1$ 总是集合. 此时, $(𝒜, \mathrm{Ext}^1, 𝔰)$ 是外三角范畴, $𝔰$ 由 $\mathrm{Ext}^1$ 的米田群定义给出.
 {% endex %}
@@ -355,7 +359,7 @@ ET4 与 ET4' 是不同输入的同一结果, 都是给定一个 T 构造另一�
 {% enddef %}
 
 {% thm %}
-(函子的同调长正合序列). 给定 $𝔼$-三角 $𝔰 (δ ) = [A\xrightarrow f B \xrightarrow g C]$, 则有六项反变函子的长正合列
+(函子的同调长正合序列, [证明](Long_Exact_Seq_Extriangulated)). 给定 $𝔼$-三角 $𝔰 (δ ) = [A\xrightarrow f B \xrightarrow g C]$, 则有六项反变函子的长正合列
 {% tikz %}
 % https://q.uiver.app/#q=WzAsNixbMCwwLCIoLSxBKSJdLFsxLDAsIigtLEIpIl0sWzIsMCwiKC0sQykiXSxbMCwxLCJcXG1hdGhiYiBFKC0sQSkiXSxbMSwxLCJcXG1hdGhiYiBFKC0sQikiXSxbMiwxLCJcXG1hdGhiYiBFKC0sQykiXSxbMCwxLCJmXFxjaXJjIC0iXSxbMSwyLCJnXFxjaXJjIC0iXSxbMyw0LCJmX1xcYXN0IiwyXSxbNCw1LCJnX1xcYXN0IiwyXSxbMiwzLCJcXGRlbHRhXyEiLDFdXQ==
 \begin{tikzcd}
@@ -370,138 +374,6 @@ ET4 与 ET4' 是不同输入的同一结果, 都是给定一个 T 构造另一�
 {% endtikz %}
 需要提及, $𝔼(-, B)$ 处的正合性需要 ET4, 前五项长正合列仅通过 ET1, ET2, 与 ET3 推得.
 
-{% pf %}
-先看看 $(-,B)$ 处正合性.
-
-1. 由函子性, $\ker (g ∘ - ) ⊇ \mathrm{im}(f ∘ -)$.
-2. 若 $h ∈ \ker (g ∘ - )$, 则有 $𝔼$ 三角间的交换图
-    {% tikz %}
-    % https://q.uiver.app/#q=WzAsOCxbMiwxLCJCIl0sWzMsMSwiQyJdLFsyLDAsIlxcYnVsbGV0Il0sWzMsMCwiMCJdLFsxLDAsIlxcYnVsbGV0Il0sWzEsMSwiQSJdLFswLDEsIlxcLCJdLFs0LDEsIlxcLCJdLFswLDEsImciLDJdLFsyLDAsImgiLDJdLFsyLDNdLFszLDFdLFs0LDIsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsMCwiZiIsMl0sWzQsNSwiIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
-\begin{tikzcd}
-	& \bullet & \bullet & 0 \\
-	{\,} & A & B & C & {\,}
-	\arrow[equals, from=1-2, to=1-3]
-	\arrow[dashed, from=1-2, to=2-2]
-	\arrow[from=1-3, to=1-4]
-	\arrow["h"', from=1-3, to=2-3]
-	\arrow[from=1-4, to=2-4]
-	\arrow["f"', from=2-2, to=2-3]
-	\arrow["g"', from=2-3, to=2-4]
-\end{tikzcd}
-    {% endtikz %}
-    因此 $h ∈ \mathrm{im}(f ∘ -)$.
-
-再看 $(-,C)$ 处正合性.
-1. 对任意 $h ∈ \mathrm{im}(g ∘ - )$, 不妨记作 $g ∘ l$. 下证明 $δ_!(g ∘ l) = 0$. 由定义, 只需证明 $l^∗g^∗δ = 0$. 下图表明 $g^∗ δ =0_∗ (0)$:
-    {% tikz %}
-% https://q.uiver.app/#q=WzAsOCxbMiwxLCJCIl0sWzMsMSwiQyJdLFsyLDAsIkIiXSxbMywwLCJCIl0sWzEsMCwiMCJdLFsxLDEsIkEiXSxbMCwxLCJcXCwiXSxbNCwxLCJcXCwiXSxbMCwxLCJnIiwyXSxbMywxLCJnIl0sWzUsMCwiZiIsMl0sWzQsNSwiMCIsMl0sWzQsMl0sWzIsMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiwwLCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
-\begin{tikzcd}
-	& 0 & B & B \\
-	{\,} & A & B & C & {\,}
-	\arrow[from=1-2, to=1-3]
-	\arrow["0"', from=1-2, to=2-2]
-	\arrow[equals, from=1-3, to=1-4]
-	\arrow[equals, from=1-3, to=2-3]
-	\arrow["g", from=1-4, to=2-4]
-	\arrow["f"', from=2-2, to=2-3]
-	\arrow["g"', from=2-3, to=2-4]
-\end{tikzcd}
-    {% endtikz %}
-2. 若 $δ_!(h) = 0$, 下证明 $h$ 通过 $g$ 分解. 由 $𝔰(δ_!(h))$ 是可裂短正合列, 对于中项加上适当的同构, 得交换图
-    {% tikz %}
-    % https://q.uiver.app/#q=WzAsOCxbMiwxLCJCIl0sWzMsMSwiQyJdLFsyLDAsIkEgXFxvcGx1cyBcXGJ1bGxldCJdLFszLDAsIlxcYnVsbGV0Il0sWzEsMCwiQSJdLFsxLDEsIkEiXSxbMCwxLCJcXCwiXSxbNCwxLCJcXCwiXSxbMCwxLCJnIiwyXSxbMywxLCJoIl0sWzUsMCwiZiIsMl0sWzQsMiwiZV8xIl0sWzQsNSwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiwwLCJcXGJpbm9tIGZzIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsMywicF8yIl1d
-\begin{tikzcd}
-	& A & {A \oplus \bullet} & \bullet \\
-	{\,} & A & B & C & {\,}
-	\arrow["{e_1}", from=1-2, to=1-3]
-	\arrow[equals, from=1-2, to=2-2]
-	\arrow["{p_2}", from=1-3, to=1-4]
-	\arrow["{\binom fs}"', dashed, from=1-3, to=2-3]
-	\arrow["h", from=1-4, to=2-4]
-	\arrow["f"', from=2-2, to=2-3]
-	\arrow["g"', from=2-3, to=2-4]
-\end{tikzcd}
-    {% endtikz %}
-    此处 $s$ 即为所求.
-
-下证明 $𝔼 (- ,A)$ 处的正合性.
-
-1. 对任意 $δ_!$ 的像, 即形如 $h^∗ δ$ 的正合列, 下证明 $f_∗(h^∗ δ) = 0$. 直接地, $f_∗ δ = 0$.
-2. 若 $η ∈ 𝔼 (-, A)$ 满足 $f_∗ η = 0$, 下证明 $η$ 形如 $δ$ 的拉回. 仍不妨设 $f_∗ η$ 是直和形式, 则下图给出分解 $f = sa$:
-    {% tikz %}
-    % https://q.uiver.app/#q=WzAsOCxbMSwwLCJBIl0sWzIsMCwiRSJdLFszLDAsIlxcYnVsbGV0Il0sWzEsMSwiQiJdLFszLDEsIlxcYnVsbGV0Il0sWzIsMSwiQiBcXG9wbHVzIFxcYnVsbGV0Il0sWzAsMSwiXFwsIl0sWzQsMSwiXFwsIl0sWzAsMSwiYSJdLFsxLDIsInQiXSxbMCwzLCJmIiwyXSxbMiw0LCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDUsImVfMSIsMl0sWzUsNCwicF8yIiwyXSxbMSw1LCJcXGJpbm9tIHN0IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
-\begin{tikzcd}
-	& A & E & \bullet \\
-	{\,} & B & {B \oplus \bullet} & \bullet & {\,}
-	\arrow["a", from=1-2, to=1-3]
-	\arrow["f"', from=1-2, to=2-2]
-	\arrow["t", from=1-3, to=1-4]
-	\arrow["{\binom st}", dashed, from=1-3, to=2-3]
-	\arrow[equals, from=1-4, to=2-4]
-	\arrow["{e_1}"', from=2-2, to=2-3]
-	\arrow["{p_2}"', from=2-3, to=2-4]
-\end{tikzcd}
-    {% endtikz %}
-    由 $f$ 通过 $s$ 分解, ET3 给出的虚线处态射即为所求:
-    {% tikz %}
-    % https://q.uiver.app/#q=WzAsOCxbMSwxLCJBIl0sWzIsMSwiRSJdLFszLDEsIlxcYnVsbGV0Il0sWzAsMSwiXFwsIl0sWzQsMSwiXFwsIl0sWzEsMCwiQSJdLFsyLDAsIkIiXSxbMywwLCJDIl0sWzAsMSwiYSJdLFsxLDIsInQiXSxbNSwwLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDYsImYiXSxbNiw3LCJnIl0sWzIsNywiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNiwicyJdXQ==
-\begin{tikzcd}
-	& A & B & C \\
-	{\,} & A & E & \bullet & {\,}
-	\arrow["f", from=1-2, to=1-3]
-	\arrow[equals, from=1-2, to=2-2]
-	\arrow["g", from=1-3, to=1-4]
-	\arrow["a", from=2-2, to=2-3]
-	\arrow["s", from=2-3, to=1-3]
-	\arrow["t", from=2-3, to=2-4]
-	\arrow[dashed, from=2-4, to=1-4]
-\end{tikzcd}
-    {% endtikz %}
-
-最后考虑 $𝔼(-, B)$ 处的正合性.
-1. 一方面, 函子性表明 $\mathrm{ker} (g_∗ )⊇ \mathrm{im}(f_∗)$.
-2. 另一方面, 若 $g_∗ (η) = 0$, 则有交换图
-    {% tikz %}
-    % https://q.uiver.app/#q=WzAsMTAsWzEsMSwiQiJdLFsyLDEsIk0iXSxbMywxLCJcXGJ1bGxldCJdLFsxLDIsIkMiXSxbMiwyLCJDIFxcb3BsdXMgXFxidWxsZXQiXSxbMSwwLCJBIl0sWzMsMiwiXFxidWxsZXQiXSxbNCwyLCJcXCwiXSxbMCwyLCJcXCwiXSxbMCwxLCJcXGV0YSJdLFswLDEsInMiXSxbMSwyLCJyIl0sWzAsMywiZyIsMl0sWzUsMCwiZiIsMl0sWzEsNCwiXFxiaW5vbSBxciIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDQsImVfMSJdLFs0LDYsInBfMSJdLFsyLDYsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMCwiOiIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
-\begin{tikzcd}
-	& A \\
-	\eta & B & M & \bullet \\
-	{\,} & C & {C \oplus \bullet} & \bullet & {\,}
-	\arrow["f"', from=1-2, to=2-2]
-	\arrow["{:}"{marking, allow upside down}, draw=none, from=2-1, to=2-2]
-	\arrow["s", from=2-2, to=2-3]
-	\arrow["g"', from=2-2, to=3-2]
-	\arrow["r", from=2-3, to=2-4]
-	\arrow["{\binom qr}"', dashed, from=2-3, to=3-3]
-	\arrow[equals, from=2-4, to=3-4]
-	\arrow["{e_1}", from=3-2, to=3-3]
-	\arrow["{p_1}", from=3-3, to=3-4]
-\end{tikzcd}
-    {% endtikz %}
-    此时, 依照 ET4 补全四个 $𝔼$-三角的交换图
-    {% tikz %}
-% https://q.uiver.app/#q=WzAsMTIsWzEsMSwiQiJdLFsyLDEsIk0iXSxbMywxLCJcXGJ1bGxldCJdLFsxLDIsIkMiXSxbMiwyLCJDIl0sWzEsMCwiQSJdLFs0LDIsIlxcLCJdLFswLDIsIlxcLCJdLFswLDEsIlxcZXRhIl0sWzMsMCwiXFxidWxsZXQiXSxbMiwwLCJOIl0sWzAsMCwiXFxrYXBwYSJdLFswLDEsInMiXSxbMSwyLCJyIl0sWzAsMywiZyIsMl0sWzUsMCwiZiIsMl0sWzEsNCwicSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDAsIjoiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMyw0LCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs5LDIsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsMTAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMCw5LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzExLDUsIjoiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
-\begin{tikzcd}
-	\kappa & A & N & \bullet \\
-	\eta & B & M & \bullet \\
-	{\,} & C & C && {\,}
-	\arrow["{:}"{marking, allow upside down}, draw=none, from=1-1, to=1-2]
-	\arrow[dashed, from=1-2, to=1-3]
-	\arrow["f"', from=1-2, to=2-2]
-	\arrow[dashed, from=1-3, to=1-4]
-	\arrow[dashed, from=1-3, to=2-3]
-	\arrow[equals, from=1-4, to=2-4]
-	\arrow["{:}"{marking, allow upside down}, draw=none, from=2-1, to=2-2]
-	\arrow["s", from=2-2, to=2-3]
-	\arrow["g"', from=2-2, to=3-2]
-	\arrow["r", from=2-3, to=2-4]
-	\arrow["q"', dashed, from=2-3, to=3-3]
-	\arrow[equals, from=3-2, to=3-3]
-\end{tikzcd}
-    {% endtikz %}
-    此处 $f_∗ κ = η$.
-
-{% endpf %}
 {% endthm %}
 
 {% prop %}
@@ -520,17 +392,17 @@ ET4 与 ET4' 是不同输入的同一结果, 都是给定一个 T 构造另一�
 	\arrow["{f'}", from=2-1, to=2-3]
 	\arrow["{g'}", from=2-3, to=2-5]
 \end{tikzcd}
+{% endtikz %}
 
 若 $(f', X)$ 满或是 $(Z' ,g)$ 满, 则以上是连接.
 
-{% endtikz %}
 {% pf %}
 只看 $(f', X)$ 满的情形. 使用 ET3 建立 $a' : X → X'$ 使得以下两点成立.
 
 1. 有交换图且 $f' a' = bf$. 等价地, $f' (a-a') = 0$.
 2. $(a', c)$ 是连接, 即 $(a')_∗ δ = c^∗ δ'$. 等价地, $(a-a') ∈ \ker δ ^!$.
 
-由 $(a-a') ∈ \ker δ ^! = \mathrm{im}(- ∘ f')$, 只需证明 $(a-a')$ 通过 $f'$ 分解, 这由 $(f', X)$ 满直接得到. 
+由 $(a-a') ∈ \ker δ ^! = \mathrm{im}(- ∘ f')$, 只需证明 $(a-a')$ 通过 $f'$ 分解, 这由 $(f', X)$ 满直接得到.
 
 {% endpf %}
 {% endprop %}
@@ -629,7 +501,7 @@ ET4 与 ET4' 是不同输入的同一结果, 都是给定一个 T 构造另一�
 {% endex %}
 
 {% prop %}
-(双 deflation 拉回 ≈ Verdier 的 $4 × 4$ 公理). 给定外三角范畴中 $δ_{i} ∈ 𝔼 (C, A_i)$ 的实现, 则可补全以下四条 $𝔼$-三角的交换图:
+(双 deflation 拉回 ≈ Verdier 的 $4 × 4$ 公理, [证明](4_times_4_extri)). 给定外三角范畴中 $δ_{i} ∈ 𝔼 (C, A_i)$ 的实现, 则可补全以下四条 $𝔼$-三角的交换图:
 {% tikz %}
 % https://q.uiver.app/#q=WzAsMTIsWzEsMSwiXFxidWxsZXQiXSxbMiwxLCJCXzIiXSxbMiwwLCJBXzIiXSxbMSwwLCJBXzIiXSxbMCwxLCJBXzEiXSxbMCwyLCJBXzEiXSxbMSwyLCJCXzEiXSxbMywyLCJcXG1hdGhmcmFrIHMoXFxkZWx0YV8xKSJdLFsyLDIsIkMiXSxbMiwzLCJcXG1hdGhmcmFrIHMoXFxkZWx0YV8yKSJdLFsxLDMsIlxcbWF0aGZyYWsgcygoeV8xKV9cXGFzdCBcXGRlbHRhXzIpIl0sWzMsMSwiXFxtYXRoZnJhayBzKCh5XzIpX1xcYXN0IFxcZGVsdGFfMSkiXSxbMCwxLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsMSwieF8yIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFszLDIsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw2LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzQsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCwwLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDgsInlfMiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs2LDgsInlfMSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs1LDYsInhfMSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbOSwxMF0sWzcsMTFdXQ==
 \begin{tikzcd}
@@ -653,105 +525,6 @@ ET4 与 ET4' 是不同输入的同一结果, 都是给定一个 T 构造另一�
 {% endtikz %}
 
 中间行列恰是 $(y_i)_∗ δ_j$ 的实现.
-
-{% pf %}
-选用辅助的 $𝔼$-三角 $\binom 11 ^∗ (δ _1 ⊕ δ _2)$, 定义作下图的上行:
-{% tikz %}
-% https://q.uiver.app/#q=WzAsOCxbMSwxLCJBXzFcXG9wbHVzIEFfMiJdLFsyLDEsIkJfMVxcb3BsdXMgQl8yIl0sWzMsMSwiQ1xcb3BsdXMgQyJdLFszLDAsIkMiXSxbMSwwLCJBXzFcXG9wbHVzIEFfMiJdLFsyLDAsIk0iXSxbMCwxLCJcXGRlbHRhXzEgXFxvcGx1cyBcXGRlbHRhXzIiXSxbMCwwLCJcXGJpbm9tezF9ezF9XlxcYXN0IChcXGRlbHRhX3sxfSBcXG9wbHVzIFxcZGVsdGEgXzIpIl0sWzAsMSwieF8xIFxcb3BsdXMgeF8yIiwyXSxbMSwyLCJ5XzEgXFxvcGx1cyB5XzIiLDJdLFszLDIsIlxcYmlub20gMTEiXSxbNCwwLCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDMsImsiXSxbNCw1LCJtIl0sWzUsMSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsN10sWzE1LDExLCJcXG1hdGhmcmFrIHMiLDEseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV1d
-\begin{tikzcd}
-	{\binom{1}{1}^\ast (\delta_{1} \oplus \delta _2)} & {A_1\oplus A_2} & M & C \\
-	{\delta_1 \oplus \delta_2} & {A_1\oplus A_2} & {B_1\oplus B_2} & {C\oplus C}
-	\arrow["m", from=1-2, to=1-3]
-	\arrow[""{name=0, anchor=center, inner sep=0}, equals, from=1-2, to=2-2]
-	\arrow["k", from=1-3, to=1-4]
-	\arrow[dashed, from=1-3, to=2-3]
-	\arrow["{\binom 11}", from=1-4, to=2-4]
-	\arrow[""{name=1, anchor=center, inner sep=0}, from=2-1, to=1-1]
-	\arrow["{x_1 \oplus x_2}"', from=2-2, to=2-3]
-	\arrow["{y_1 \oplus y_2}"', from=2-3, to=2-4]
-	\arrow["{\mathfrak s}"{description}, shorten <=10pt, shorten >=10pt, Rightarrow, from=1, to=0]
-\end{tikzcd}
-{% endtikz %}
-
-使用 ET4, 重新构造 $𝔼 (C, A_2)$ 中某个扩张的实现, 见四个 $𝔼$-三角的交换图:
-{% tikz %}
-% https://q.uiver.app/#q=WzAsMTAsWzMsMSwiQyJdLFsxLDEsIkFfMVxcb3BsdXMgQV8yIl0sWzIsMSwiTSJdLFsxLDAsIkFfMiJdLFsxLDIsIkFfMSJdLFsyLDIsIkFfMSJdLFsyLDAsIkJfMiciXSxbMywwLCJDIl0sWzAsMSwiXFxiaW5vbTExXlxcYXN0KFxcZGVsdGFfMVxcb3BsdXNcXGRlbHRhXzIpIl0sWzAsMCwiPyJdLFsyLDAsImsiXSxbMSwyLCJtIl0sWzEsMywicF8yIl0sWzQsMSwiZV8xIl0sWzMsNiwieF8yJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDcsInlfMiciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwyLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw1LCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs3LDAsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsNiwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsOSwiKHBfMilfXFxhc3QiXV0=
-\begin{tikzcd}
-	{?} & {A_2} & {B_2'} & C \\
-	{\binom11^\ast(\delta_1\oplus\delta_2)} & {A_1\oplus A_2} & M & C \\
-	& {A_1} & {A_1}
-	\arrow["{x_2'}", dashed, from=1-2, to=1-3]
-	\arrow["{y_2'}", dashed, from=1-3, to=1-4]
-	\arrow[equals, from=1-4, to=2-4]
-	\arrow["{(p_2)_\ast}", from=2-1, to=1-1]
-	\arrow["{p_2}", from=2-2, to=1-2]
-	\arrow["m", from=2-2, to=2-3]
-	\arrow[dashed, from=2-3, to=1-3]
-	\arrow["k", from=2-3, to=2-4]
-	\arrow["{e_1}", from=3-2, to=2-2]
-	\arrow[equals, from=3-2, to=3-3]
-	\arrow[dashed, from=3-3, to=2-3]
-\end{tikzcd}
-{% endtikz %}
-
-左侧是 $(p_2)_\ast\binom11^\ast(\delta_1\oplus\delta_2) = (1,1)_\ast\binom11^∗ (0 ⊕ δ _2) = δ _2$. 因此第一横行与题设的 $𝔰 (δ_2)$ 相差一个同构, 不妨设两者相等 (给 $M → B_2'$ 复合一个同构). 对称地, 构造
-{% tikz %}
-% https://q.uiver.app/#q=WzAsMTYsWzEsMywiQyJdLFsxLDEsIkFfMVxcb3BsdXMgQV8yIl0sWzEsMiwiTSJdLFsyLDEsIkFfMiJdLFswLDEsIkFfMSJdLFswLDIsIkFfMSJdLFsyLDIsIkJfMiJdLFsyLDMsIkMiXSxbMywwLCJBXzIiXSxbNCwwLCJBXzIiXSxbMywxLCJBXzFcXG9wbHVzIEFfMiJdLFszLDIsIkFfMSJdLFs0LDIsIkJfMSJdLFs1LDIsIkMiXSxbNSwxLCJDIl0sWzQsMSwiTSJdLFsyLDAsImsiXSxbMSwyLCJtIl0sWzEsMywicF8yIl0sWzMsNiwieF8yIl0sWzYsNywieV8yIl0sWzUsMiwibV8xIl0sWzQsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNywwLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDYsIlxcbGFtYmRhXzIiXSxbOCw5LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs4LDEwLCJlXzIiLDJdLFs0LDEsImVfMSJdLFsxMCwxMSwicF8xIiwyXSxbMTAsMTUsIm0iLDJdLFsxNSwxNCwiayIsMl0sWzksMTUsIm1fMiIsMl0sWzExLDEyLCJ4XzEiLDJdLFsxMiwxMywieV8xIiwyXSxbMTUsMTIsIlxcbGFtYmRhXzEiLDJdLFsxNCwxMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
-\begin{tikzcd}
-	&&& {A_2} & {A_2} \\
-	{A_1} & {A_1\oplus A_2} & {A_2} & {A_1\oplus A_2} & M & C \\
-	{A_1} & M & {B_2} & {A_1} & {B_1} & C \\
-	& C & C
-	\arrow[equals, from=1-4, to=1-5]
-	\arrow["{e_2}"', from=1-4, to=2-4]
-	\arrow["{m_2}"', from=1-5, to=2-5]
-	\arrow["{e_1}", from=2-1, to=2-2]
-	\arrow[equals, from=2-1, to=3-1]
-	\arrow["{p_2}", from=2-2, to=2-3]
-	\arrow["m", from=2-2, to=3-2]
-	\arrow["{x_2}", from=2-3, to=3-3]
-	\arrow["m"', from=2-4, to=2-5]
-	\arrow["{p_1}"', from=2-4, to=3-4]
-	\arrow["k"', from=2-5, to=2-6]
-	\arrow["{\lambda_1}"', from=2-5, to=3-5]
-	\arrow[equals, from=2-6, to=3-6]
-	\arrow["{m_1}", from=3-1, to=3-2]
-	\arrow["{\lambda_2}", from=3-2, to=3-3]
-	\arrow["k", from=3-2, to=4-2]
-	\arrow["{y_2}", from=3-3, to=4-3]
-	\arrow["{x_1}"', from=3-4, to=3-5]
-	\arrow["{y_1}"', from=3-5, to=3-6]
-	\arrow[equals, from=4-3, to=4-2]
-\end{tikzcd}
-{% endtikz %}
-
-删去平凡的投影, 拼接下图即可:
-
-{% tikz %}
-% https://q.uiver.app/#q=WzAsMTIsWzEsMSwiQV8yIl0sWzEsMiwiTSJdLFsyLDEsIkFfMiJdLFsyLDIsIkJfMiJdLFsyLDMsIkMiXSxbNCwwLCJBXzIiXSxbMywxLCJBXzEiXSxbMywyLCJBXzEiXSxbNCwyLCJCXzEiXSxbNSwyLCJDIl0sWzQsMSwiTSJdLFswLDIsIkFfMSJdLFswLDEsIm1fMiJdLFswLDIsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsMywieF8yIl0sWzMsNCwieV8yIl0sWzEsMywiXFxsYW1iZGFfMiJdLFs2LDEwLCJtXzEiLDJdLFs1LDEwLCJtXzIiLDJdLFs3LDgsInhfMSIsMl0sWzgsOSwieV8xIiwyXSxbMTAsOCwiXFxsYW1iZGFfMSIsMl0sWzEwLDksImsiLDJdLFsxLDQsImsiXSxbMTEsMSwibV8xIl0sWzYsNywiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
-\begin{tikzcd}
-	&&&& {A_2} \\
-	& {A_2} & {A_2} & {A_1} & M \\
-	{A_1} & M & {B_2} & {A_1} & {B_1} & C \\
-	&& C
-	\arrow["{m_2}"', from=1-5, to=2-5]
-	\arrow[equals, from=2-2, to=2-3]
-	\arrow["{m_2}", from=2-2, to=3-2]
-	\arrow["{x_2}", from=2-3, to=3-3]
-	\arrow["{m_1}"', from=2-4, to=2-5]
-	\arrow[equals, from=2-4, to=3-4]
-	\arrow["{\lambda_1}"', from=2-5, to=3-5]
-	\arrow["k"', from=2-5, to=3-6]
-	\arrow["{m_1}", from=3-1, to=3-2]
-	\arrow["{\lambda_2}", from=3-2, to=3-3]
-	\arrow["k", from=3-2, to=4-3]
-	\arrow["{y_2}", from=3-3, to=4-3]
-	\arrow["{x_1}"', from=3-4, to=3-5]
-	\arrow["{y_1}"', from=3-5, to=3-6]
-\end{tikzcd}
-{% endtikz %}
-
-{% endpf %}
 
 {% endprop %}
 
@@ -823,7 +596,7 @@ $$\begin{equation}
 {% endex %}
 
 {% prop %}
-(外三角范畴的 EX3 类似物). 假定 $gf$ 是 inflation, 且 $g$ 是 deflation. 此时, $f$ 是 inflation, 同时可补全四条 conflation 的交换图.
+(外三角范畴的 EX3 类似物, [证明](Exact_Cat_Short_Note)). 假定 $gf$ 是 inflation, 且 $g$ 是 deflation. 此时, $f$ 是 inflation, 同时可补全四条 conflation 的交换图.
 {% tikz %}
 % https://q.uiver.app/#q=WzAsMTAsWzEsMSwiXFxidWxsZXQiXSxbMiwxLCJcXGJ1bGxldCJdLFsyLDIsIlxcYnVsbGV0Il0sWzEsMiwiXFxidWxsZXQiXSxbMywxLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzMsMCwiXFxidWxsZXQiXSxbMywyLCJcXGJ1bGxldCJdLFswLDIsIlxcLCJdLFs0LDIsIlxcLCJdLFswLDEsImYiXSxbMSwyLCJnIl0sWzAsMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMywyLCJnZiJdLFs1LDYsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsMV0sWzYsNF0sWzEsNF0sWzIsN10sWzQsN11d
 \begin{tikzcd}
@@ -842,78 +615,7 @@ $$\begin{equation}
 	\arrow[from=3-3, to=3-4]
 \end{tikzcd}
 {% endtikz %}
-{% pf %}
-将 $gf$ 补全作 $𝔼$-三角:
-{% tikz %}
-% https://q.uiver.app/#q=WzAsMTQsWzEsMSwiWCBcXG9wbHVzIFciXSxbMiwxLCJFIl0sWzIsMiwiWSJdLFsxLDIsIlgiXSxbMywxLCJUIl0sWzIsMCwiVyJdLFszLDAsIlciXSxbMywyLCJaIl0sWzEsMCwiVyJdLFsyLDMsIlxcZGVsdGEiXSxbMSwzLCIwIl0sWzMsMywiXFxldGEiXSxbMCwyLCJcXCwiXSxbNCwyLCJcXCwiXSxbMCwxLCJmIl0sWzEsMiwiZyJdLFszLDIsImdmIl0sWzUsNiwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiw0LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw0LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw3LCJkIl0sWzQsNywiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMV0sWzgsMCwiZV8yIl0sWzAsMywicF8xIl0sWzgsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOSwxMCwiKGdmKV5cXGFzdCIsMl0sWzExLDksImReXFxhc3QiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
-\begin{tikzcd}
-	& W & W & W \\
-	& {X \oplus W} & E & T \\
-	{\,} & X & Y & Z & {\,} \\
-	& 0 & \delta & \eta
-	\arrow[equals, from=1-2, to=1-3]
-	\arrow["{e_2}", from=1-2, to=2-2]
-	\arrow[equals, from=1-3, to=1-4]
-	\arrow[from=1-3, to=2-3]
-	\arrow[dashed, from=1-4, to=2-4]
-	\arrow["f", from=2-2, to=2-3]
-	\arrow["{p_1}", from=2-2, to=3-2]
-	\arrow[dashed, from=2-3, to=2-4]
-	\arrow["g", from=2-3, to=3-3]
-	\arrow[dashed, from=2-4, to=3-4]
-	\arrow["gf", from=3-2, to=3-3]
-	\arrow["d", from=3-3, to=3-4]
-	\arrow["{(gf)^\ast}"', from=4-3, to=4-2]
-	\arrow["{d^\ast}"', dashed, from=4-4, to=4-3]
-\end{tikzcd}
-{% endtikz %}
-由长正合列, $δ ∈ \ker ((gf)^∗) = \mathrm{im}(d^∗)$. 此时, 下图底行与两纵列是 $𝔼$-三角, 但虚线处未必是 $𝔼$-三角.
-{% tikz %}
-% https://q.uiver.app/#q=WzAsMTAsWzEsMSwiWCJdLFsyLDEsIkUiXSxbMiwyLCJZIl0sWzEsMiwiWCJdLFszLDEsIlQiXSxbMiwwLCJXIl0sWzMsMCwiVyJdLFszLDIsIloiXSxbMCwyLCJcXCwiXSxbNCwyLCJcXCwiXSxbMCwxLCJmIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMiwiZyJdLFszLDIsImdmIl0sWzUsNiwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiw0XSxbMSw0LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw3LCJkIl0sWzQsN10sWzUsMV0sWzAsMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
-\begin{tikzcd}
-	&& W & W \\
-	& X & E & T \\
-	{\,} & X & Y & Z & {\,}
-	\arrow[equals, from=1-3, to=1-4]
-	\arrow[from=1-3, to=2-3]
-	\arrow[from=1-4, to=2-4]
-	\arrow["f", dashed, from=2-2, to=2-3]
-	\arrow[equals, from=2-2, to=3-2]
-	\arrow[dashed, from=2-3, to=2-4]
-	\arrow["g", from=2-3, to=3-3]
-	\arrow[from=2-4, to=3-4]
-	\arrow["gf", from=3-2, to=3-3]
-	\arrow["d", from=3-3, to=3-4]
-\end{tikzcd}
-{% endtikz %}
 
-暂时忽略态射 $E' → T$. 使用两个 deflation 的所谓拉回, 构造核心方块 $\binom{E'T}{YZ}$ 以及四个 $𝔼$-三角的交换图. 由最右行对应的扩张关于 $d$ 的拉回唯一, 故存在同构 $φ$ 使得下图交换
-{% tikz %}
-% https://q.uiver.app/#q=WzAsMTEsWzAsMSwiWCJdLFsxLDEsIkUiXSxbMSwyLCJZIl0sWzAsMiwiWCJdLFszLDEsIlQiXSxbMSwwLCJXIl0sWzMsMCwiVyJdLFszLDIsIloiXSxbMiwxLCJFJyJdLFsyLDAsIlciXSxbMiwyLCJZIl0sWzAsMSwiZiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDIsImciXSxbMywyLCJnZiJdLFs2LDRdLFs0LDddLFs1LDFdLFswLDMsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsNF0sWzEsOCwiXFx2YXJwaGkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOSw2LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs5LDhdLFs1LDksIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEwLDddLFs4LDEwXSxbMiwxMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
-\begin{tikzcd}
-	& W & W & W \\
-	X & E & {E'} & T \\
-	X & Y & Y & Z
-	\arrow[equals, from=1-2, to=1-3]
-	\arrow[from=1-2, to=2-2]
-	\arrow[equals, from=1-3, to=1-4]
-	\arrow[from=1-3, to=2-3]
-	\arrow[from=1-4, to=2-4]
-	\arrow["f", dashed, from=2-1, to=2-2]
-	\arrow[equals, from=2-1, to=3-1]
-	\arrow["\varphi", dashed, from=2-2, to=2-3]
-	\arrow["g", from=2-2, to=3-2]
-	\arrow[from=2-3, to=2-4]
-	\arrow[from=2-3, to=3-3]
-	\arrow[from=2-4, to=3-4]
-	\arrow["gf", from=3-1, to=3-2]
-	\arrow[equals, from=3-2, to=3-3]
-	\arrow[from=3-3, to=3-4]
-\end{tikzcd}
-{% endtikz %}
-由于 $[X → E' → T]$ 是 $𝔼$-三角, 与之等价的 $[X → E → T]$ 是 $𝔼$-三角.
-
-{% endpf %}
 {% endprop %}
 
 {% cor %}
@@ -924,105 +626,7 @@ $$\begin{equation}
 (特殊的 inflation, 添加直和项). 若 $x : A → B$ 是 inflation, 则对任意 $A$ 出发的态射 $f$, $\binom x f$ 也是 inflation. 这在正合范畴中成立, 也在外三角范畴中成立.
 
 {% pf %}
-记 $f : A → D$. 令 conflation $A \overset x→ B \overset y→ C$ 是 $δ$ 的实现. 考虑推出
-{% tikz %}
-% https://q.uiver.app/#q=WzAsOCxbMCwwLCJBIl0sWzEsMCwiQiJdLFsyLDAsIkMiXSxbMCwxLCJEIl0sWzEsMSwiRSJdLFsyLDEsIkMiXSxbMywwLCJcXG1hdGhmcmFrIHMoXFxkZWx0YSkiXSxbMywxLCJcXG1hdGhmcmFrIHMoZl9cXGFzdFxcZGVsdGEpIl0sWzAsMSwieCJdLFsxLDIsInkiXSxbMCwzLCJmIiwyXSxbMiw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDQsImQiLDJdLFs0LDUsImUiLDJdLFsxLDQsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
-\begin{tikzcd}
-	A & B & C & {\mathfrak s(\delta)} \\
-	D & E & C & {\mathfrak s(f_\ast\delta)}
-	\arrow["x", from=1-1, to=1-2]
-	\arrow["f"', from=1-1, to=2-1]
-	\arrow["y", from=1-2, to=1-3]
-	\arrow[dashed, from=1-2, to=2-2]
-	\arrow[equals, from=1-3, to=2-3]
-	\arrow["d"', from=2-1, to=2-2]
-	\arrow["e"', from=2-2, to=2-3]
-\end{tikzcd}
-{% endtikz %}
-
-构造四个 $𝔼$-三角的交换图:
-{% tikz %}
-% https://q.uiver.app/#q=WzAsMTIsWzIsMCwiQSJdLFsyLDEsIkIiXSxbMCwyLCJEIl0sWzEsMiwiRSJdLFsyLDIsIkMiXSxbMiwzLCJcXG1hdGhmcmFrIHMoXFxkZWx0YSkiXSxbMywyLCJcXG1hdGhmcmFrIHMoZl9cXGFzdFxcZGVsdGEpIl0sWzEsMCwiQSJdLFswLDEsIkQiXSxbMSwxLCJNIl0sWzMsMSwiXFxtYXRoZnJhayBzKHleXFxhc3QgZl9cXGFzdFxcZGVsdGEpIl0sWzEsMywiXFxtYXRoZnJhayBzKGVeXFxhc3QgXFxkZWx0YSkiXSxbMCwxLCJ4Il0sWzIsMywiZCIsMl0sWzMsNCwiZSIsMl0sWzEsNCwieSJdLFs3LDAsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsMiwiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNyw5LCJtIiwyXSxbOCw5XSxbOSwxXSxbOSwzXV0=
-\begin{tikzcd}
-	& A & A \\
-	D & M & B & {\mathfrak s(y^\ast f_\ast\delta)} \\
-	D & E & C & {\mathfrak s(f_\ast\delta)} \\
-	& {\mathfrak s(e^\ast \delta)} & {\mathfrak s(\delta)}
-	\arrow[equals, from=1-2, to=1-3]
-	\arrow["m"', from=1-2, to=2-2]
-	\arrow["x", from=1-3, to=2-3]
-	\arrow[from=2-1, to=2-2]
-	\arrow[equals, from=2-1, to=3-1]
-	\arrow[from=2-2, to=2-3]
-	\arrow[from=2-2, to=3-2]
-	\arrow["y", from=2-3, to=3-3]
-	\arrow["d"', from=3-1, to=3-2]
-	\arrow["e"', from=3-2, to=3-3]
-\end{tikzcd}
-{% endtikz %}
-
-由 $y^∗ δ = 0$, 故第二横行的 $𝔼$-三角可裂. 不妨选作 $D ⊕ B$, 相应的 $\{e_1,e_2,p_1,p_2\}$ 自明. 依照 $4 × 4$-类似物, 得
-$$\begin{equation}
-(e_1)_∗ f_∗ δ + m_∗ δ = 0.
-\end{equation}$$
-
-由长正合列,
-$$\begin{aligned}
-(e_1f+m) &∈ \ker[(A, D ⊕ B) \xrightarrow{δ _!} 𝔼 (C, D ⊕ B)]\\
-& = \mathrm{im} [(B, D ⊕ B) \xrightarrow{- ∘ x} (A, D ⊕ B)].
-\end{aligned}$$
-
-记 $(e_1f+m) = s ∘ x$, 矩阵形式: $\binom f 0 + \binom {g}{x} = \binom{s_1x}{s_2x}$.
-
-{% tikz %}
-% https://q.uiver.app/#q=WzAsMTIsWzIsMCwiQSJdLFsyLDEsIkIiXSxbMCwyLCJEIl0sWzEsMiwiRSJdLFsyLDIsIkMiXSxbMiwzLCJcXG1hdGhmcmFrIHMoXFxkZWx0YSkiXSxbMywyLCJcXG1hdGhmcmFrIHMoZl9cXGFzdFxcZGVsdGEpIl0sWzEsMCwiQSJdLFswLDEsIkQiXSxbMSwxLCJEIFxcb3BsdXMgQiJdLFszLDEsIlxcbWF0aGZyYWsgcyh5XlxcYXN0IGZfXFxhc3RcXGRlbHRhKSJdLFsxLDMsIlxcbWF0aGZyYWsgcyhlXlxcYXN0IFxcZGVsdGEpIl0sWzAsMSwieCJdLFsyLDMsImQiLDJdLFszLDQsImUiLDJdLFsxLDQsInkiXSxbNywwLCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs4LDIsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsOSwiXFxiaW5vbSBnIHgiLDJdLFs4LDksImVfMSJdLFs5LDEsInBfMiJdLFs5LDNdLFsxLDksInMiLDEseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
-\begin{tikzcd}
-	& A & A \\
-	D & {D \oplus B} & B & {\mathfrak s(y^\ast f_\ast\delta)} \\
-	D & E & C & {\mathfrak s(f_\ast\delta)} \\
-	& {\mathfrak s(e^\ast \delta)} & {\mathfrak s(\delta)}
-	\arrow[equals, from=1-2, to=1-3]
-	\arrow["{\binom g x}"', from=1-2, to=2-2]
-	\arrow["x", from=1-3, to=2-3]
-	\arrow["{e_1}", from=2-1, to=2-2]
-	\arrow[equals, from=2-1, to=3-1]
-	\arrow["{p_2}", from=2-2, to=2-3]
-	\arrow[from=2-2, to=3-2]
-	\arrow["s"{description}, curve={height=-12pt}, dashed, from=2-3, to=2-2]
-	\arrow["y", from=2-3, to=3-3]
-	\arrow["d"', from=3-1, to=3-2]
-	\arrow["e"', from=3-2, to=3-3]
-\end{tikzcd}
-{% endtikz %}
-我们希望 $m = \binom g x : A → D ⊕ B$ 就是 $\binom f x$. 若要实现之, 现需要给 $D ⊕ B$ 添加合适的自同构 $φ$. 若要使 $p_1φm =f$, 计算得
-$$\begin{equation}
-p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
-\end{equation}$$
-
-- 我们希望 $φ_{1,1} = -1_D$;
-- 我们希望右项消去, 因此 $φ$ 的第一横行不平凡;
-- 我们希望 $φ$ 是形式简单的可逆矩阵, 例如三角矩阵.
-
-从而假定 $φ = \binom{-1 \ \ \ \ u}{0\quad 1}$, 其中 $u:B → D$.
-
-1. 一方面,
-   $$\begin{aligned}
-   f = p_1e_1f = p_1(sx - m) = p_1sp_2m - p_1m.
-   \end{aligned}$$
-
-2. 另一方面,
-   $$\begin{aligned}
-   p_1φ m & = p_1((-1)⊕ 1 +e_1up_2)m \\
-   &= - p_1 m + up_2m
-   \end{aligned}$$
-
-取 $u = p_1s = s_1$ 即可. 这就给出了构造.
-{% endpf %}
-
-{% endprop %}
-
-{% note %}
-事后发现, 这是 {% tikzinline %} % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGJ1bGxldCJdLFswLDEsIlxcYnVsbGV0Il0sWzEsMCwiXFxidWxsZXQiXSxbMSwxLCJcXGJ1bGxldCJdLFswLDEsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMiwiXFxiaW5vbSBmeCJdLFsyLDMsIigxLDApIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsMywiZiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XV0=
+([原证明](Inflation_add_Inflation), 现已无用). 这是 {% tikzinline %} % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGJ1bGxldCJdLFswLDEsIlxcYnVsbGV0Il0sWzEsMCwiXFxidWxsZXQiXSxbMSwxLCJcXGJ1bGxldCJdLFswLDEsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMiwiXFxiaW5vbSBmeCJdLFsyLDMsIigxLDApIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsMywiZiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XV0=
 \begin{tikzcd}
 	\bullet & \bullet \\
 	\bullet & \bullet
@@ -1030,9 +634,9 @@ p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
 	\arrow[equals, from=1-1, to=2-1]
 	\arrow["{(1,0)}", two heads, from=1-2, to=2-2]
 	\arrow["f", tail, from=2-1, to=2-2]
-\end{tikzcd} {% endtikzinline %} 的直接使用. $\binom fx$ 必然是 inflation, 同时存在四条 $𝔼$-三角的交换图.
-
-{% endnote %}
+\end{tikzcd} {% endtikzinline %} 的直接使用. 由 $f$ 是 inflation 且 $(1,0)$ 是 deflation, 则 $\binom fx$ 必然是 inflation. 同时存在四条 $𝔼$-三角的交换图.
+{% endpf %}
+{% endprop %}
 
 ### 投射对象, 内射对象
 
@@ -1058,120 +662,9 @@ p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
 {% enddef %}
 
 {% thm %}
-给定外三角范畴 $(𝒞 , 𝔼 , 𝔰 )$. 若加法子范畴 $𝒳 ⊂ 𝐏𝐫𝐨𝐣 ∩ 𝐈𝐧𝐣$, 则 $𝒞 / 𝒳$ 也是外三角范畴, 且继承了外三角结构.
+([证明](Ideal_Quotient)). 给定外三角范畴 $(𝒞 , 𝔼 , 𝔰 )$. 若加法子范畴 $𝒳 ⊂ 𝐏𝐫𝐨𝐣 ∩ 𝐈𝐧𝐣$, 则 $𝒞 / 𝒳$ 也是外三角范畴, 且继承了外三角结构.
 
-{% pf %}
-依次验证 ET1 至 ET4. 统一用上划线表示商 Hom 与商群中的的态射.
-1. (ET1). 对象层面, $\overline 𝔼 (Z,X) := 𝔼 (Z,X)$. 态射层面, $\overline{f_∗} := \overline f _∗$, 以及 $\overline {g^∗} := \overline g^∗$.
-   - 由 $𝔼 (𝐏𝐫𝐨𝐣 , -)$ 与 $𝔼 (-, 𝐈𝐧𝐣 )$ 消失, 故 $𝔼$ 将 $\ker [\mathrm{Hom} → \underline{\mathrm{Hom}}]$ 映至 $0$, 进而可定义在 $(𝒞 / 𝒳)^{\mathrm{op}} × (𝒞 / 𝒳)$ 上. 由加法商, 以上定义的 $\overline 𝔼$ 确实是加法双函子.
-2. (ET2). 定义对应 $\overline 𝔰 : \overline 𝔼 (Y,X) = 𝔼 (Y,X) → [Y,X] / ∼$. 其中, $[Y,X] / ∼$ 中对象形如 $[X \xrightarrow{\overline f} Y \xrightarrow{\overline g} Z]$. 这一对应仅是对象间的 (自始至终未要求 $𝔰$ 函子). 下验证 $\overline 𝔰$ 是 $(𝒞 / 𝒳 , \overline 𝔼 )$ 的加法实现.
-   - 对应 $[Y, X] → [Y, X] / ∼$ 保持直和结构, 从而 $\overline 𝔰$ 保持零 (可裂短正合列) 以及映射链的直和.
-   - 继而证明 $\overline 𝔰$ 是 $𝒞 / 𝒳$ 是加法实现, 关键是局部二推三. 给定商范畴的交换图
-     {% tikz %}
-     % https://q.uiver.app/#q=WzAsNixbMCwwLCJYIl0sWzIsMCwiWSJdLFs0LDAsIloiXSxbNCwxLCJaJyJdLFswLDEsIlgnIl0sWzIsMSwiWSciXSxbMCwxLCJcXG92ZXJsaW5lIHgiXSxbMSwyLCJcXG92ZXJsaW5lIHkiXSxbMiwzLCJcXG92ZXJsaW5lIGMiXSxbMCw0LCJcXG92ZXJsaW5lIGEiLDJdLFs0LDUsIlxcb3ZlcmxpbmUge3gnfSIsMl0sWzUsMywiXFxvdmVybGluZSB7eSd9IiwyXV0=
-     \begin{tikzcd}[ampersand replacement=\&]
-     X \&\& Y \&\& Z \\
-     {X'} \&\& {Y'} \&\& {Z'}
-     \arrow["{\overline x}", from=1-1, to=1-3]
-     \arrow["{\overline a}"', from=1-1, to=2-1]
-     \arrow["{\overline y}", from=1-3, to=1-5]
-     \arrow["{\overline c}", from=1-5, to=2-5]
-     \arrow["{\overline {x'}}"', from=2-1, to=2-3]
-     \arrow["{\overline {y'}}"', from=2-3, to=2-5]
-     \end{tikzcd}
-     {% endtikz %}
-     其上下横行是 $𝔼$ 中对象所在的等价类, 也就是某两个 $𝔼$-三角的像, 选定这两个 $𝔼$-三角. 由长正合列, 上下复合为 $0$, 因此任取 $a$ 与 $c$ 均能得到 $𝒞$ 中交换图. 由 $𝔰$ 是实现, 添加合适的 $Y → Y'$ 使得以上是 $𝒞$ 中交换图, 再放至 $𝒞 / 𝒳$ 中看即可.
-3. (ET3). ET3' 的证明是对偶的 (使用投射对象的性质). 对 ET3, 任取商范畴的交换图
-	{% tikz %}
-	% https://q.uiver.app/#q=WzAsNixbMCwwLCJBIl0sWzIsMCwiQiJdLFs0LDAsIkMiXSxbNCwxLCJDJyJdLFswLDEsIkEnIl0sWzIsMSwiQiciXSxbMCwxLCJcXG92ZXJsaW5lIHgiXSxbMSwyLCJcXG92ZXJsaW5lIHkgIl0sWzAsNCwiXFxvdmVybGluZSBhIiwyXSxbNCw1LCJcXG92ZXJsaW5lIHt4J30iLDJdLFs1LDMsIlxcb3ZlcmxpbmUge3knfSIsMl0sWzEsNSwiXFxvdmVybGluZSBiIiwyXV0=
-\begin{tikzcd}[ampersand replacement=\&]
-	A \&\& B \&\& C \\
-	{A'} \&\& {B'} \&\& {C'}
-	\arrow["{\overline x}", from=1-1, to=1-3]
-	\arrow["{\overline a}"', from=1-1, to=2-1]
-	\arrow["{\overline y }", from=1-3, to=1-5]
-	\arrow["{\overline b}"', from=1-3, to=2-3]
-	\arrow["{\overline {x'}}"', from=2-1, to=2-3]
-	\arrow["{\overline {y'}}"', from=2-3, to=2-5]
-\end{tikzcd}
-	{% endtikz %}
-	原范畴中, 态射 $(x'a - bx)$ 通过内射对象 $I$ 分解. 原范畴中有 $𝔼$-三角的交换图
-	{% tikz %}
-	% https://q.uiver.app/#q=WzAsNixbMCwwLCJBIl0sWzIsMCwiQiBcXG9wbHVzIEkiXSxbMCwxLCJBJyJdLFsyLDEsIkInIl0sWzQsMCwiPyJdLFs0LDEsIkMnIl0sWzAsMiwiYSIsMl0sWzAsMSwiXFxiaW5vbSB4aSJdLFsyLDMsIngnIiwyXSxbMSwzLCIoYixqKSIsMl0sWzEsNF0sWzMsNSwieSciLDJdXQ==
-\begin{tikzcd}[ampersand replacement=\&]
-	A \&\& {B \oplus I} \&\& {?} \\
-	{A'} \&\& {B'} \&\& {C'}
-	\arrow["{\binom xi}", from=1-1, to=1-3]
-	\arrow["a"', from=1-1, to=2-1]
-	\arrow[from=1-3, to=1-5]
-	\arrow["{(b,j)}"', from=1-3, to=2-3]
-	\arrow["{x'}"', from=2-1, to=2-3]
-	\arrow["{y'}"', from=2-3, to=2-5]
-\end{tikzcd}
-	{% endtikz %}
-	我们仅知道 $\binom xi$ 是 inflation, 我们需要将问好处的对象以及 deflation 取得好一些. 依照 EX3 类似物, 构造四个 $𝔼$-三角的交换图:
-	{% tikz %}
-	% https://q.uiver.app/#q=WzAsOCxbMCwxLCJBIl0sWzIsMSwiQiBcXG9wbHVzIEkiXSxbNCwxLCJNIl0sWzAsMiwiQSJdLFsyLDIsIkIiXSxbNCwyLCJDIl0sWzQsMCwiSSJdLFsyLDAsIkkiXSxbMCwxLCJcXGJpbm9tIHhpIl0sWzEsMiwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsNCwieCJdLFs0LDUsInkiXSxbMCwzLCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDUsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDYsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsMSwiZV8yIiwyXSxbMSw0LCJwXzEiLDJdLFs2LDIsIiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
-\begin{tikzcd}[ampersand replacement=\&]
-	\&\& I \&\& I \\
-	A \&\& {B \oplus I} \&\& M \\
-	A \&\& B \&\& C
-	\arrow[equals, from=1-3, to=1-5]
-	\arrow["{e_2}"', from=1-3, to=2-3]
-	\arrow[dashed, from=1-5, to=2-5]
-	\arrow["{\binom xi}", from=2-1, to=2-3]
-	\arrow[equals, from=2-1, to=3-1]
-	\arrow[dashed, from=2-3, to=2-5]
-	\arrow["{p_1}"', from=2-3, to=3-3]
-	\arrow[dashed, from=2-5, to=3-5]
-	\arrow["x", from=3-1, to=3-3]
-	\arrow["y", from=3-3, to=3-5]
-\end{tikzcd}
-	{% endtikz %}
-	由 $I$ 是内射对象, 右侧正合列可裂, 不妨取作直和项 (仅需调整 $B ⊕ I → C ⊕ I$ 处态射). 简单计算得
-	{% tikz %}
-% https://q.uiver.app/#q=WzAsOCxbMCwxLCJBIl0sWzIsMSwiQiBcXG9wbHVzIEkiXSxbNCwxLCJDIFxcb3BsdXMgSSJdLFswLDIsIkEiXSxbMiwyLCJCIl0sWzQsMiwiQyJdLFs0LDAsIkkiXSxbMiwwLCJJIl0sWzAsMSwiXFxiaW5vbSB4aSJdLFsxLDIsIlxcYmlub20ge3kgXFwgXFwgXFwgXFwgeWogXFwgXFwgXFwgfXtyIFxcIFxcIDErcmp9Il0sWzMsNCwieCJdLFs0LDUsInkiXSxbMCwzLCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDUsInBfMSJdLFs3LDYsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsMSwiXFxiaW5vbSB7LWp9ezF9IiwyXSxbMSw0LCIoMSxqKSIsMl0sWzYsMiwiZV8yIl1d
-\begin{tikzcd}[ampersand replacement=\&]
-	\&\& I \&\& I \\
-	A \&\& {B \oplus I} \&\& {C \oplus I} \\
-	A \&\& B \&\& C
-	\arrow[equals, from=1-3, to=1-5]
-	\arrow["{\binom {-j}{1}}"', from=1-3, to=2-3]
-	\arrow["{e_2}", from=1-5, to=2-5]
-	\arrow["{\binom xi}", from=2-1, to=2-3]
-	\arrow[equals, from=2-1, to=3-1]
-	\arrow["{\binom {y \ \ \ yj \ \ }{r \ \ 1+rj}}", from=2-3, to=2-5]
-	\arrow["{(1,j)}"', from=2-3, to=3-3]
-	\arrow["{p_1}", from=2-5, to=3-5]
-	\arrow["x", from=3-1, to=3-3]
-	\arrow["y", from=3-3, to=3-5]
-\end{tikzcd}
-	{% endtikz %}
-	其中, $r$ 是待定的系数. 回归原态射图:
-	{% tikz %}
-% https://q.uiver.app/#q=WzAsNixbMCwwLCJBIl0sWzIsMCwiQiBcXG9wbHVzIEkiXSxbNCwwLCJDIFxcb3BsdXMgSSJdLFswLDEsIkEnIl0sWzIsMSwiQiciXSxbNCwxLCJDJyJdLFswLDEsIlxcYmlub20geGkiXSxbMSwyLCJcXGJpbm9tIHt5IFxcIFxcIHlqIFxcIFxcIFxcIH17ciBcXCBcXCAxK3JqfSJdLFszLDQsIngnIl0sWzQsNSwieSciXSxbMiw1LCJjcF8xIl0sWzEsNCwiKGIsaikiLDJdLFswLDMsImEiLDJdXQ==
-\begin{tikzcd}[ampersand replacement=\&]
-	A \&\& {B \oplus I} \&\& {C \oplus I} \\
-	{A'} \&\& {B'} \&\& {C'}
-	\arrow["{\binom xi}", from=1-1, to=1-3]
-	\arrow["a"', from=1-1, to=2-1]
-	\arrow["{\binom {y \ \ yj \ \ \ }{r \ \ 1+rj}}", from=1-3, to=1-5]
-	\arrow["{(b,j)}"', from=1-3, to=2-3]
-	\arrow["{cp_1}", from=1-5, to=2-5]
-	\arrow["{x'}", from=2-1, to=2-3]
-	\arrow["{y'}", from=2-3, to=2-5]
-\end{tikzcd}
-	{% endtikz %}
-	左侧交换, 右侧方块与相差一个态射
-	$$\begin{equation}
-	(y'b-cy, cyj-y'j): B ⊕ I → C.
-	\end{equation}$$
-	这一态射左侧经 $I$ 分解, 右侧亦然.
-4. (ET4). 这是直接的. 取 $⊤$-型的两个 $\overline 𝔼$-三角, 找对应的 $𝔼$-三角. 在原范畴中使用 ET4, 得商范畴的 ET4.
-
-{% endpf %}
 {% endthm %}
-
 
 ### 三角范畴视作外三角范畴
 
@@ -1305,7 +798,7 @@ $u_A$ 是自然同构, 因此 $(-, g)$ 与 $𝔼 (-, f)$ 均为 $0$. 由 $𝔼$ 
 	{% endtikz %}
 	反交换关系表明 $w' = -w$. 因此, $𝔰 (u_∗ (1_{X[1]})) =  [Y\xrightarrow v Z \xrightarrow {-w}X[1]]$. 依照米田引理计算得,
 	$$\begin{equation}
-	u_∗ 1_{X[1]} = (1_{X[1]})^!(u) ∼ \begin{bmatrix}(X,-) & → & (X[1] , - [1]) & = & (X[1] , - [1])\\ u & ↦ u[1] & = & u[1] ∘ 1_{X[1]} \end{bmatrix}.
+	u_∗ 1_{X[1]} = (1_{X[1]})^!(u) ∼ \begin{bmatrix}(X,-) & → & (X[1] , - [1]) & = & (X[1] , - [1])\\ u & ↦ & u[1] & = & u[1] ∘ 1_{X[1]} \end{bmatrix}.
 	\end{equation}$$
 	因此, $𝔰 (u[1]) = [Y \xrightarrow v Z \xrightarrow {-w} X[1]]$. 依照 TR1-1, 得好三角的顺时针旋转.
 5. (TR3). 二推三. 几乎是 ET2, ET3, ET3' 的定义.

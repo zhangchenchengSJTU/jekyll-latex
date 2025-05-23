@@ -1,0 +1,51 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsMzIsWzEsMSwiNCJdLFsyLDAsIjEiXSxbMiwxLCIyIl0sWzIsMiwiMyJdLFszLDEsIlAoNCkiXSxbNCwwLCJQKDEpIl0sWzQsMiwiUCgzKSJdLFs0LDEsIlAoMikiXSxbNSwxLCJcXHN1YnN0YWNreyBcXCBcXCBcXCBcXCAxXFxcXDIgXFwgXFwgMVxcXFwgXFwgXFwgXFwgXFwgMX0iXSxbNiwwLCJcXHN1YnN0YWNreyBcXCBcXCBcXCBcXCAwXFxcXDEgXFwgXFwgMVxcXFwgXFwgXFwgXFwgXFwgMX0iXSxbNiwxLCJcXHN1YnN0YWNreyBcXCBcXCBcXCBcXCAxXFxcXDEgXFwgXFwgMFxcXFwgXFwgXFwgXFwgXFwgMX0iXSxbNiwyLCJcXHN1YnN0YWNreyBcXCBcXCBcXCBcXCAxXFxcXDEgXFwgXFwgMVxcXFwgXFwgXFwgXFwgXFwgMH0iXSxbNywxLCJJKDQpIl0sWzgsMCwiSSgxKSJdLFs4LDEsIkkoMikiXSxbOCwyLCJTKDMpIl0sWzIsMywiMSJdLFsyLDQsIjIiXSxbMSw0LCI0Il0sWzAsNSwiMyJdLFsyLDUsIlMoMykiXSxbMyw0LCJQKDQpIl0sWzQsMywiUCgxKSJdLFs0LDQsIlAoMikiXSxbNCw1LCJTKDQpIl0sWzUsNCwiXFxzdWJzdGFja3sgXFwgXFwgXFwgXFwgMVxcXFwyIFxcIFxcIDFcXFxcMSBcXCBcXCBcXCBcXCBcXCBcXCBcXCBcXCBcXCBcXCB9Il0sWzYsMywiXFxzdWJzdGFja3sgXFwgXFwgXFwgXFwgMFxcXFwxIFxcIFxcIDFcXFxcMCBcXCBcXCBcXCBcXCBcXCBcXCBcXCBcXCBcXCBcXCB9Il0sWzYsNCwiXFxzdWJzdGFja3sgXFwgXFwgXFwgXFwgMVxcXFwxIFxcIFxcIDBcXFxcMCBcXCBcXCBcXCBcXCBcXCBcXCBcXCBcXCBcXCBcXCB9Il0sWzYsNSwiSSgzKSJdLFs3LDQsIkkoNCkiXSxbOCwzLCJJKDEpIl0sWzgsNCwiSSgyKSJdLFsxLDBdLFsyLDBdLFszLDBdLFs0LDVdLFs0LDddLFs0LDZdLFs1LDhdLFs3LDhdLFs2LDhdLFs4LDldLFs4LDEwXSxbOCwxMV0sWzksMTJdLFsxMiwxM10sWzEwLDEyXSxbMTIsMTRdLFsxMSwxMl0sWzEyLDE1XSxbMTYsMThdLFsxNywxOF0sWzE4LDE5XSxbMjAsMjFdLFsyMSwyMl0sWzIxLDIzXSxbMjEsMjRdLFsyMiwyNV0sWzIzLDI1XSxbMjQsMjVdLFsyNSwyNl0sWzI1LDI3XSxbMjUsMjhdLFsyNiwyOV0sWzI3LDI5XSxbMjgsMjldLFsyOSwzMF0sWzI5LDMxXV0=
+\begin{tikzcd}
+	&& 1 && {P(1)} && \begin{array}{c} \substack{ \ \ \ \ 0\\1 \ \ 1\\ \ \ \ \ 1} \end{array} && {I(1)} \\
+	& 4 & 2 & {P(4)} & {P(2)} & \begin{array}{c} \substack{ \ \ \ \ 1\\2 \ \ 1\\ \ \ \ \ 1} \end{array} & \begin{array}{c} \substack{ \ \ \ \ 1\\1 \ \ 0\\ \ \ \ \ 1} \end{array} & {I(4)} & {I(2)} \\
+	&& 3 && {P(3)} && \begin{array}{c} \substack{ \ \ \ \ 1\\1 \ \ 1\\ \ \ \ \ 0} \end{array} && {S(3)} \\
+	&& 1 && {P(1)} && \begin{array}{c} \substack{ \ \ \ \ 0\\1 \ \ 1\\0 \ \ \ \ \ \ \ \ \ \ } \end{array} && {I(1)} \\
+	& 4 & 2 & {P(4)} & {P(2)} & \begin{array}{c} \substack{ \ \ \ \ 1\\2 \ \ 1\\1 \ \ \ \ \ \ \ \ \ \ } \end{array} & \begin{array}{c} \substack{ \ \ \ \ 1\\1 \ \ 0\\0 \ \ \ \ \ \ \ \ \ \ } \end{array} & {I(4)} & {I(2)} \\
+	3 && {S(3)} && {S(4)} && {I(3)}
+	\arrow[from=1-3, to=2-2]
+	\arrow[from=1-5, to=2-6]
+	\arrow[from=1-7, to=2-8]
+	\arrow[from=2-3, to=2-2]
+	\arrow[from=2-4, to=1-5]
+	\arrow[from=2-4, to=2-5]
+	\arrow[from=2-4, to=3-5]
+	\arrow[from=2-5, to=2-6]
+	\arrow[from=2-6, to=1-7]
+	\arrow[from=2-6, to=2-7]
+	\arrow[from=2-6, to=3-7]
+	\arrow[from=2-7, to=2-8]
+	\arrow[from=2-8, to=1-9]
+	\arrow[from=2-8, to=2-9]
+	\arrow[from=2-8, to=3-9]
+	\arrow[from=3-3, to=2-2]
+	\arrow[from=3-5, to=2-6]
+	\arrow[from=3-7, to=2-8]
+	\arrow[from=4-3, to=5-2]
+	\arrow[from=4-5, to=5-6]
+	\arrow[from=4-7, to=5-8]
+	\arrow[from=5-2, to=6-1]
+	\arrow[from=5-3, to=5-2]
+	\arrow[from=5-4, to=4-5]
+	\arrow[from=5-4, to=5-5]
+	\arrow[from=5-4, to=6-5]
+	\arrow[from=5-5, to=5-6]
+	\arrow[from=5-6, to=4-7]
+	\arrow[from=5-6, to=5-7]
+	\arrow[from=5-6, to=6-7]
+	\arrow[from=5-7, to=5-8]
+	\arrow[from=5-8, to=4-9]
+	\arrow[from=5-8, to=5-9]
+	\arrow[from=6-3, to=5-4]
+	\arrow[from=6-5, to=5-6]
+	\arrow[from=6-7, to=5-8]
+\end{tikzcd}
+\end{document}

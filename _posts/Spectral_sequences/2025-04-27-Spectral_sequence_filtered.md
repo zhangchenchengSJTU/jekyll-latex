@@ -74,10 +74,25 @@ category: notes
 
 {% ex %}
 (初始状态). 输入上链复形 $(A^∙, d)$ 和滤过 $F^∙$, 朝向为
-<center>
-<!-- https://q.uiver.app/#q=WzAsMTEsWzEsMSwiRl5wQV57cCtxfSJdLFsyLDIsIkZee3ArMX1BXntwK3F9Il0sWzAsMCwiRl57cC0xfUFee3ArcX0iXSxbMSwwLCJGXntwfUFee3ArcSsxfSJdLFsyLDEsIkZee3ArMX1BXntwK3ErMX0iXSxbMSwyLCJGXntwfUFee3ArcS0xfSJdLFswLDEsIkZee3AtMX1BXntwK3EtMX0iXSxbMCwyLCJcXGJveGVke1xcdGV4dHvovpPlhaV9IFxcIChBLEYpfSJdLFswLDMsIkZee3AtMX1BXlxcYnVsbGV0ICJdLFsxLDMsIkZee3B9QV5cXGJ1bGxldCAiXSxbMiwzLCJGXntwKzF9QV5cXGJ1bGxldCAiXSxbMCwyLCJcXHN1YnNldCIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMCwiXFxzdWJzZXQiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDMsIlxcc3Vic2V0IiwzLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw2LCJcXHN1YnNldCIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMl0sWzAsM10sWzUsMF0sWzEsNF0sWzgsOSwiXFxzdXBzZXQiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOSwxMCwiXFxzdXBzZXQiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0= -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMTEsWzEsMSwiRl5wQV57cCtxfSJdLFsyLDIsIkZee3ArMX1BXntwK3F9Il0sWzAsMCwiRl57cC0xfUFee3ArcX0iXSxbMSwwLCJGXntwfUFee3ArcSsxfSJdLFsyLDEsIkZee3ArMX1BXntwK3ErMX0iXSxbMSwyLCJGXntwfUFee3ArcS0xfSJdLFswLDEsIkZee3AtMX1BXntwK3EtMX0iXSxbMCwyLCJcXGJveGVke1xcdGV4dHvovpPlhaV9IFxcIChBLEYpfSJdLFswLDMsIkZee3AtMX1BXlxcYnVsbGV0ICJdLFsxLDMsIkZee3B9QV5cXGJ1bGxldCAiXSxbMiwzLCJGXntwKzF9QV5cXGJ1bGxldCAiXSxbMCwyLCJcXHN1YnNldCIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMCwiXFxzdWJzZXQiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDMsIlxcc3Vic2V0IiwzLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw2LCJcXHN1YnNldCIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMl0sWzAsM10sWzUsMF0sWzEsNF0sWzgsOSwiXFxzdXBzZXQiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOSwxMCwiXFxzdXBzZXQiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=&embed" width="600" height="300" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTEsWzEsMSwiRl5wQV57cCtxfSJdLFsyLDIsIkZee3ArMX1BXntwK3F9Il0sWzAsMCwiRl57cC0xfUFee3ArcX0iXSxbMSwwLCJGXntwfUFee3ArcSsxfSJdLFsyLDEsIkZee3ArMX1BXntwK3ErMX0iXSxbMSwyLCJGXntwfUFee3ArcS0xfSJdLFswLDEsIkZee3AtMX1BXntwK3EtMX0iXSxbMCwyLCJcXGJveGVke1xcdGV4dHvovpPlhaV9IFxcIChBLEYpfSJdLFswLDMsIkZee3AtMX1BXlxcYnVsbGV0ICJdLFsxLDMsIkZee3B9QV5cXGJ1bGxldCAiXSxbMiwzLCJGXntwKzF9QV5cXGJ1bGxldCAiXSxbMCwyLCJcXHN1YnNldCIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMCwiXFxzdWJzZXQiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDMsIlxcc3Vic2V0IiwzLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw2LCJcXHN1YnNldCIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMl0sWzAsM10sWzUsMF0sWzEsNF0sWzgsOSwiXFxzdXBzZXQiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOSwxMCwiXFxzdXBzZXQiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}
+	{F^{p-1}A^{p+q}} & {F^{p}A^{p+q+1}} \\
+	{F^{p-1}A^{p+q-1}} & {F^pA^{p+q}} & {F^{p+1}A^{p+q+1}} \\
+	{\boxed{\text{输入} \ (A,F)}} & {F^{p}A^{p+q-1}} & {F^{p+1}A^{p+q}} \\
+	{F^{p-1}A^\bullet } & {F^{p}A^\bullet } & {F^{p+1}A^\bullet }
+	\arrow[from=2-1, to=1-1]
+	\arrow["\subset"{marking, allow upside down}, dotted, no head, from=2-2, to=1-1]
+	\arrow[from=2-2, to=1-2]
+	\arrow["\subset"{marking, allow upside down}, dotted, no head, from=2-3, to=1-2]
+	\arrow["\subset"{marking, allow upside down}, dotted, no head, from=3-2, to=2-1]
+	\arrow[from=3-2, to=2-2]
+	\arrow["\subset"{marking, allow upside down}, dotted, no head, from=3-3, to=2-2]
+	\arrow[from=3-3, to=2-3]
+	\arrow["\supset"{description}, draw=none, from=4-1, to=4-2]
+	\arrow["\supset"{description}, draw=none, from=4-2, to=4-3]
+\end{tikzcd}
+{% endtikz %}
 {% endex %}
 
 {% note %}
@@ -86,10 +101,18 @@ category: notes
 
 {% ex %}
 (构造 $E_0$). 在每点取商, 得 $E_0$:
-<center>
-<!-- https://q.uiver.app/#q=WzAsOCxbMSwxLCJcXGZyYWN7Rl5wQV57cCtxfX17Rl57cCsxfUFee3ArcX19Il0sWzIsMiwiXFxmcmFje0Zee3ArMX1BXntwK3F9fXtGXntwKzJ9QV57cCtxfX0iXSxbMCwwLCJcXGZyYWN7Rl57cC0xfUFee3ArcX19e0ZecEFee3ArcX19Il0sWzEsMCwiXFxmcmFje0Zee3B9QV57cCtxKzF9fXtGXntwKzF9QV57cCtxKzF9fSJdLFsyLDEsIlxcZnJhY3tGXntwKzF9QV57cCtxKzF9fXtGXntwKzJ9QV57cCtxKzF9fSJdLFsxLDIsIlxcZnJhY3tGXntwfUFee3ArcS0xfX17Rl57cCsxfUFee3ArcS0xfX0iXSxbMCwxLCJcXGZyYWN7Rl57cC0xfUFee3ArcS0xfX17Rl57cH1BXntwK3EtMX19Il0sWzAsMiwiXFxib3hlZHtFXzAoQSxGKX0iXSxbMSw0XSxbNSwwXSxbMCwzXSxbNiwyXV0= -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsOCxbMSwxLCJcXGZyYWN7Rl5wQV57cCtxfX17Rl57cCsxfUFee3ArcX19Il0sWzIsMiwiXFxmcmFje0Zee3ArMX1BXntwK3F9fXtGXntwKzJ9QV57cCtxfX0iXSxbMCwwLCJcXGZyYWN7Rl57cC0xfUFee3ArcX19e0ZecEFee3ArcX19Il0sWzEsMCwiXFxmcmFje0Zee3B9QV57cCtxKzF9fXtGXntwKzF9QV57cCtxKzF9fSJdLFsyLDEsIlxcZnJhY3tGXntwKzF9QV57cCtxKzF9fXtGXntwKzJ9QV57cCtxKzF9fSJdLFsxLDIsIlxcZnJhY3tGXntwfUFee3ArcS0xfX17Rl57cCsxfUFee3ArcS0xfX0iXSxbMCwxLCJcXGZyYWN7Rl57cC0xfUFee3ArcS0xfX17Rl57cH1BXntwK3EtMX19Il0sWzAsMiwiXFxib3hlZHtFXzAoQSxGKX0iXSxbMSw0XSxbNSwwXSxbMCwzXSxbNiwyXV0=&embed" width="600" height="300" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsOCxbMSwxLCJcXGZyYWN7Rl5wQV57cCtxfX17Rl57cCsxfUFee3ArcX19Il0sWzIsMiwiXFxmcmFje0Zee3ArMX1BXntwK3F9fXtGXntwKzJ9QV57cCtxfX0iXSxbMCwwLCJcXGZyYWN7Rl57cC0xfUFee3ArcX19e0ZecEFee3ArcX19Il0sWzEsMCwiXFxmcmFje0Zee3B9QV57cCtxKzF9fXtGXntwKzF9QV57cCtxKzF9fSJdLFsyLDEsIlxcZnJhY3tGXntwKzF9QV57cCtxKzF9fXtGXntwKzJ9QV57cCtxKzF9fSJdLFsxLDIsIlxcZnJhY3tGXntwfUFee3ArcS0xfX17Rl57cCsxfUFee3ArcS0xfX0iXSxbMCwxLCJcXGZyYWN7Rl57cC0xfUFee3ArcS0xfX17Rl57cH1BXntwK3EtMX19Il0sWzAsMiwiXFxib3hlZHtFXzAoQSxGKX0iXSxbMSw0XSxbNSwwXSxbMCwzXSxbNiwyXV0=
+\begin{tikzcd}
+	{\frac{F^{p-1}A^{p+q}}{F^pA^{p+q}}} & {\frac{F^{p}A^{p+q+1}}{F^{p+1}A^{p+q+1}}} \\
+	{\frac{F^{p-1}A^{p+q-1}}{F^{p}A^{p+q-1}}} & {\frac{F^pA^{p+q}}{F^{p+1}A^{p+q}}} & {\frac{F^{p+1}A^{p+q+1}}{F^{p+2}A^{p+q+1}}} \\
+	{\boxed{E_0(A,F)}} & {\frac{F^{p}A^{p+q-1}}{F^{p+1}A^{p+q-1}}} & {\frac{F^{p+1}A^{p+q}}{F^{p+2}A^{p+q}}}
+	\arrow[from=2-1, to=1-1]
+	\arrow[from=2-2, to=1-2]
+	\arrow[from=3-2, to=2-2]
+	\arrow[from=3-3, to=2-3]
+\end{tikzcd}
+{% endtikz %}
 此处
 \begin{equation}
    E_0^{p,q} = \frac{F^p A^{p+q}}{F^{p+1}A^{p+q}},
@@ -101,7 +124,7 @@ category: notes
 {% endex %}
 
 {% note %}
-往后同调群的滤过, 决定于$\textcolor{red}{红处}$与$\textcolor{blue}{蓝处}$的指标变动, 黑处固定!
+往后同调群的滤过, 决定于$\color{red}{红处}$与$\color{blue}{蓝处}$的指标变动, 黑处固定!
 {% endnote %}
 
 {% ex %}
@@ -121,10 +144,29 @@ category: notes
 \end{equation}
 
 示意图如下
-<center>
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJGXnAg4oipIGReey0xfShGXntwKzF9KStGXntwKzF9Il0sWzAsMSwiRl5wIOKIqSAoZF57LTF9KEZee3ArcisxfSkpICsgRl57cCsxfSJdLFswLDIsIkZecCDiiKkgKFxca2VyIGQpICsgRl57cCsxfSJdLFsxLDIsIkZecCDiiKkgKFxcbWF0aHJte2ltfVxcIGQpICsgRl57cCsxfSJdLFsxLDEsIkZecCDiiKkgKGQoRl57cC1yfSkpICsgRl57cCsxfSJdLFsxLDAsIkZecCDiiKkgKDApICsgRl57cCsxfSJdLFswLDEsIlxcc3Vwc2V0IiwzLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzEsMiwiXFxzdXBzZXQiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMiwzLCJcXHN1cHNldCIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFszLDQsIlxcc3Vwc2V0IiwzLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzQsNSwiXFxzdXBzZXQiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMCwxLCIiLDMseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMSwyLCIiLDMseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMiwzLCIiLDMseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMyw0LCIiLDMseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbNCw1LCIiLDMseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMCwxLCIiLDMseyJvZmZzZXQiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFsxLDIsIiIsMyx7Im9mZnNldCI6Mywic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzIsMywiIiwzLHsib2Zmc2V0IjozLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMyw0LCIiLDMseyJvZmZzZXQiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFs0LDUsIiIsMyx7Im9mZnNldCI6Mywic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJGXnAg4oipIGReey0xfShGXntwKzF9KStGXntwKzF9Il0sWzAsMSwiRl5wIOKIqSAoZF57LTF9KEZee3ArcisxfSkpICsgRl57cCsxfSJdLFswLDIsIkZecCDiiKkgKFxca2VyIGQpICsgRl57cCsxfSJdLFsxLDIsIkZecCDiiKkgKFxcbWF0aHJte2ltfVxcIGQpICsgRl57cCsxfSJdLFsxLDEsIkZecCDiiKkgKGQoRl57cC1yfSkpICsgRl57cCsxfSJdLFsxLDAsIkZecCDiiKkgKDApICsgRl57cCsxfSJdLFswLDEsIlxcc3Vwc2V0IiwzLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzEsMiwiXFxzdXBzZXQiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMiwzLCJcXHN1cHNldCIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFszLDQsIlxcc3Vwc2V0IiwzLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzQsNSwiXFxzdXBzZXQiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMCwxLCIiLDMseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMSwyLCIiLDMseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMiwzLCIiLDMseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMyw0LCIiLDMseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbNCw1LCIiLDMseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMCwxLCIiLDMseyJvZmZzZXQiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFsxLDIsIiIsMyx7Im9mZnNldCI6Mywic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzIsMywiIiwzLHsib2Zmc2V0IjozLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMyw0LCIiLDMseyJvZmZzZXQiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFs0LDUsIiIsMyx7Im9mZnNldCI6Mywic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV1d&embed" width="600" height="300" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsNixbMCwwLCJGXnAg4oipIGReey0xfShGXntwKzF9KStGXntwKzF9Il0sWzAsMSwiRl5wIOKIqSAoZF57LTF9KEZee3ArcisxfSkpICsgRl57cCsxfSJdLFswLDIsIkZecCDiiKkgKFxca2VyIGQpICsgRl57cCsxfSJdLFsxLDIsIkZecCDiiKkgKFxcbWF0aHJte2ltfVxcIGQpICsgRl57cCsxfSJdLFsxLDEsIkZecCDiiKkgKGQoRl57cC1yfSkpICsgRl57cCsxfSJdLFsxLDAsIkZecCDiiKkgKDApICsgRl57cCsxfSJdLFswLDEsIlxcc3Vwc2V0IiwzLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzEsMiwiXFxzdXBzZXQiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMiwzLCJcXHN1cHNldCIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFszLDQsIlxcc3Vwc2V0IiwzLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzQsNSwiXFxzdXBzZXQiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMCwxLCIiLDMseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMSwyLCIiLDMseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMiwzLCIiLDMseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMyw0LCIiLDMseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbNCw1LCIiLDMseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMCwxLCIiLDMseyJvZmZzZXQiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFsxLDIsIiIsMyx7Im9mZnNldCI6Mywic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzIsMywiIiwzLHsib2Zmc2V0IjozLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMyw0LCIiLDMseyJvZmZzZXQiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFs0LDUsIiIsMyx7Im9mZnNldCI6Mywic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV1d
+\begin{tikzcd}
+	{F^p ∩ d^{-1}(F^{p+1})+F^{p+1}} & {F^p ∩ (0) + F^{p+1}} \\
+	{F^p ∩ (d^{-1}(F^{p+r+1})) + F^{p+1}} & {F^p ∩ (d(F^{p-r})) + F^{p+1}} \\
+	{F^p ∩ (\ker d) + F^{p+1}} & {F^p ∩ (\mathrm{im}\ d) + F^{p+1}}
+	\arrow["\supset"{marking, allow upside down}, dotted, from=1-1, to=2-1]
+	\arrow[shift left=3, dotted, from=1-1, to=2-1]
+	\arrow[shift right=3, dotted, from=1-1, to=2-1]
+	\arrow["\supset"{marking, allow upside down}, dotted, from=2-1, to=3-1]
+	\arrow[shift left=3, dotted, from=2-1, to=3-1]
+	\arrow[shift right=3, dotted, from=2-1, to=3-1]
+	\arrow["\supset"{marking, allow upside down}, dotted, from=2-2, to=1-2]
+	\arrow[shift left=3, dotted, from=2-2, to=1-2]
+	\arrow[shift right=3, dotted, from=2-2, to=1-2]
+	\arrow["\supset"{marking, allow upside down}, dotted, from=3-1, to=3-2]
+	\arrow[shift left=3, dotted, from=3-1, to=3-2]
+	\arrow[shift right=3, dotted, from=3-1, to=3-2]
+	\arrow["\supset"{marking, allow upside down}, dotted, from=3-2, to=2-2]
+	\arrow[shift left=3, dotted, from=3-2, to=2-2]
+	\arrow[shift right=3, dotted, from=3-2, to=2-2]
+\end{tikzcd}
+{% endtikz %}
 {% endex %}
 
 {% ex %}
@@ -150,10 +192,40 @@ $$
 
 考虑链复形的 $(X, \ker , \mathrm{cok}, \mathrm{im}, \mathrm{cim}, H)$-六要件, 得以下翻页:
 
-<center>
-<!-- https://q.uiver.app/#q=WzAsMjIsWzAsMCwiRSIsWzE4MCw2MCw2MCwxXV0sWzUsMCwiRSIsWzE4MCw2MCw2MCwxXV0sWzUsMiwiSCIsWzE4MCw2MCw2MCwxXV0sWzIsMCwiXFxtYXRocm17aW19IixbMTgwLDYwLDYwLDFdXSxbNywwLCJcXG1hdGhybXtpbX0iLFsxODAsNjAsNjAsMV1dLFs0LDEsIlxcbWF0aHJte2tlcn0iLFsxODAsNjAsNjAsMV1dLFs2LDEsIlxcbWF0aHJte2Nva30iLFsxODAsNjAsNjAsMV1dLFsxLDEsIlxcbWF0aHJte2Nva30iLFsxODAsNjAsNjAsMV1dLFswLDIsIkgiLFsxODAsNjAsNjAsMV1dLFs1LDEsIlxcZnJhY3taX3tyLTF9XnB9e0Jfe3ItMX1ecH0iXSxbNywxLCJcXGZyYWN7Wl97ci0xfV5wfXtaX3tyfV5wfSJdLFs4LDAsIlxcY2RvdHMiLFsxODAsNjAsNjAsMV1dLFs4LDEsIlxcY2RvdHMiXSxbNiwyLCJcXGZyYWN7Wl97ci0xfV5wfXtCX3tyfV5wfSJdLFs1LDMsIlxcZnJhY3taX3tyfV5wfXtCX3tyfV5wfSJdLFszLDAsIlxcbWF0aHJte2NpbX0iLFsxODAsNjAsNjAsMV1dLFs0LDIsIlxcZnJhY3taX3tyfV5wfXtCX3tyLTF9XnB9Il0sWzMsMSwiXFxmcmFje0Jfe3J9XntwfX17Ql97ci0xfV57cH19Il0sWzIsMSwiXFxmcmFje1pfe3ItMX1ee3Atcn19e1pfe3J9XntwLXJ9fSJdLFsxLDIsIlxcZnJhY3taX3tyLTF9XntwLXJ9fXtCX3tyfV57cC1yfX0iXSxbMCwxLCJcXGZyYWN7Wl97ci0xfV57cC1yfX17Ql97ci0xfV57cC1yfX0iXSxbMCwzLCJcXGZyYWN7Wl97cn1ee3Atcn19e0Jfe3J9XntwLXJ9fSJdLFswLDMsIiIsMyx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxLDQsIiIsMyx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs1LDEsIiIsMyx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsNiwiIiwzLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzUsMiwiIiwzLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsNiwiIiwzLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbNiw0LCIiLDMseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCw3LCIiLDMseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNywzLCIiLDMseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbOCw3LCIiLDMseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFs0LDExLCIiLDIseyJsZXZlbCI6MiwiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMCwxMiwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTQsMTMsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzksMTMsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxMywxMCwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzE1LDEsIiIsMyx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzE1LDUsIiIsMyx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzMsMTUsIiIsMix7ImxldmVsIjoyLCJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE2LDE0LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMTYsOSwiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMTcsMTYsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzE4LDE3LCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxOSwxOCwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIxLDE5LCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFsyMCwxOSwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMjIsWzAsMCwiRSIsWzE4MCw2MCw2MCwxXV0sWzUsMCwiRSIsWzE4MCw2MCw2MCwxXV0sWzUsMiwiSCIsWzE4MCw2MCw2MCwxXV0sWzIsMCwiXFxtYXRocm17aW19IixbMTgwLDYwLDYwLDFdXSxbNywwLCJcXG1hdGhybXtpbX0iLFsxODAsNjAsNjAsMV1dLFs0LDEsIlxcbWF0aHJte2tlcn0iLFsxODAsNjAsNjAsMV1dLFs2LDEsIlxcbWF0aHJte2Nva30iLFsxODAsNjAsNjAsMV1dLFsxLDEsIlxcbWF0aHJte2Nva30iLFsxODAsNjAsNjAsMV1dLFswLDIsIkgiLFsxODAsNjAsNjAsMV1dLFs1LDEsIlxcZnJhY3taX3tyLTF9XnB9e0Jfe3ItMX1ecH0iXSxbNywxLCJcXGZyYWN7Wl97ci0xfV5wfXtaX3tyfV5wfSJdLFs4LDAsIlxcY2RvdHMiLFsxODAsNjAsNjAsMV1dLFs4LDEsIlxcY2RvdHMiXSxbNiwyLCJcXGZyYWN7Wl97ci0xfV5wfXtCX3tyfV5wfSJdLFs1LDMsIlxcZnJhY3taX3tyfV5wfXtCX3tyfV5wfSJdLFszLDAsIlxcbWF0aHJte2NpbX0iLFsxODAsNjAsNjAsMV1dLFs0LDIsIlxcZnJhY3taX3tyfV5wfXtCX3tyLTF9XnB9Il0sWzMsMSwiXFxmcmFje0Jfe3J9XntwfX17Ql97ci0xfV57cH19Il0sWzIsMSwiXFxmcmFje1pfe3ItMX1ee3Atcn19e1pfe3J9XntwLXJ9fSJdLFsxLDIsIlxcZnJhY3taX3tyLTF9XntwLXJ9fXtCX3tyfV57cC1yfX0iXSxbMCwxLCJcXGZyYWN7Wl97ci0xfV57cC1yfX17Ql97ci0xfV57cC1yfX0iXSxbMCwzLCJcXGZyYWN7Wl97cn1ee3Atcn19e0Jfe3J9XntwLXJ9fSJdLFswLDMsIiIsMyx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxLDQsIiIsMyx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs1LDEsIiIsMyx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsNiwiIiwzLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzUsMiwiIiwzLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsNiwiIiwzLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbNiw0LCIiLDMseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCw3LCIiLDMseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNywzLCIiLDMseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbOCw3LCIiLDMseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFs0LDExLCIiLDIseyJsZXZlbCI6MiwiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMCwxMiwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTQsMTMsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzksMTMsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxMywxMCwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzE1LDEsIiIsMyx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzE1LDUsIiIsMyx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzMsMTUsIiIsMix7ImxldmVsIjoyLCJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE2LDE0LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMTYsOSwiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMTcsMTYsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzE4LDE3LCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxOSwxOCwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIxLDE5LCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFsyMCwxOSwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV1d&embed" width="600" height="300" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMjIsWzAsMCwiRSIsWzE4MCw2MCw2MCwxXV0sWzUsMCwiRSIsWzE4MCw2MCw2MCwxXV0sWzUsMiwiSCIsWzE4MCw2MCw2MCwxXV0sWzIsMCwiXFxtYXRocm17aW19IixbMTgwLDYwLDYwLDFdXSxbNywwLCJcXG1hdGhybXtpbX0iLFsxODAsNjAsNjAsMV1dLFs0LDEsIlxcbWF0aHJte2tlcn0iLFsxODAsNjAsNjAsMV1dLFs2LDEsIlxcbWF0aHJte2Nva30iLFsxODAsNjAsNjAsMV1dLFsxLDEsIlxcbWF0aHJte2Nva30iLFsxODAsNjAsNjAsMV1dLFswLDIsIkgiLFsxODAsNjAsNjAsMV1dLFs1LDEsIlxcZnJhY3taX3tyLTF9XnB9e0Jfe3ItMX1ecH0iXSxbNywxLCJcXGZyYWN7Wl97ci0xfV5wfXtaX3tyfV5wfSJdLFs4LDAsIlxcY2RvdHMiLFsxODAsNjAsNjAsMV1dLFs4LDEsIlxcY2RvdHMiXSxbNiwyLCJcXGZyYWN7Wl97ci0xfV5wfXtCX3tyfV5wfSJdLFs1LDMsIlxcZnJhY3taX3tyfV5wfXtCX3tyfV5wfSJdLFszLDAsIlxcbWF0aHJte2NpbX0iLFsxODAsNjAsNjAsMV1dLFs0LDIsIlxcZnJhY3taX3tyfV5wfXtCX3tyLTF9XnB9Il0sWzMsMSwiXFxmcmFje0Jfe3J9XntwfX17Ql97ci0xfV57cH19Il0sWzIsMSwiXFxmcmFje1pfe3ItMX1ee3Atcn19e1pfe3J9XntwLXJ9fSJdLFsxLDIsIlxcZnJhY3taX3tyLTF9XntwLXJ9fXtCX3tyfV57cC1yfX0iXSxbMCwxLCJcXGZyYWN7Wl97ci0xfV57cC1yfX17Ql97ci0xfV57cC1yfX0iXSxbMCwzLCJcXGZyYWN7Wl97cn1ee3Atcn19e0Jfe3J9XntwLXJ9fSJdLFswLDMsIiIsMyx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxLDQsIiIsMyx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs1LDEsIiIsMyx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsNiwiIiwzLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzUsMiwiIiwzLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsNiwiIiwzLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbNiw0LCIiLDMseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCw3LCIiLDMseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNywzLCIiLDMseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbOCw3LCIiLDMseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFs0LDExLCIiLDIseyJsZXZlbCI6MiwiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMCwxMiwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTQsMTMsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzksMTMsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxMywxMCwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzE1LDEsIiIsMyx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzE1LDUsIiIsMyx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzMsMTUsIiIsMix7ImxldmVsIjoyLCJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE2LDE0LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMTYsOSwiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMTcsMTYsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzE4LDE3LCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxOSwxOCwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIxLDE5LCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFsyMCwxOSwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV1d
+\begin{tikzcd}
+	\color{rgb,255:red,92;green,214;blue,214}{E} && \color{rgb,255:red,92;green,214;blue,214}{\mathrm{im}} & \color{rgb,255:red,92;green,214;blue,214}{\mathrm{cim}} && \color{rgb,255:red,92;green,214;blue,214}{E} && \color{rgb,255:red,92;green,214;blue,214}{\mathrm{im}} & \color{rgb,255:red,92;green,214;blue,214}{\cdots} \\
+	{\frac{Z_{r-1}^{p-r}}{B_{r-1}^{p-r}}} & \color{rgb,255:red,92;green,214;blue,214}{\mathrm{cok}} & {\frac{Z_{r-1}^{p-r}}{Z_{r}^{p-r}}} & {\frac{B_{r}^{p}}{B_{r-1}^{p}}} & \color{rgb,255:red,92;green,214;blue,214}{\mathrm{ker}} & {\frac{Z_{r-1}^p}{B_{r-1}^p}} & \color{rgb,255:red,92;green,214;blue,214}{\mathrm{cok}} & {\frac{Z_{r-1}^p}{Z_{r}^p}} & \cdots \\
+	\color{rgb,255:red,92;green,214;blue,214}{H} & {\frac{Z_{r-1}^{p-r}}{B_{r}^{p-r}}} &&& {\frac{Z_{r}^p}{B_{r-1}^p}} & \color{rgb,255:red,92;green,214;blue,214}{H} & {\frac{Z_{r-1}^p}{B_{r}^p}} \\
+	{\frac{Z_{r}^{p-r}}{B_{r}^{p-r}}} &&&&& {\frac{Z_{r}^p}{B_{r}^p}}
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, two heads, from=1-1, to=1-3]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, two heads, from=1-1, to=2-2]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, equals, from=1-3, to=1-4]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, hook, from=1-4, to=1-6]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, hook, from=1-4, to=2-5]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, two heads, from=1-6, to=1-8]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, two heads, from=1-6, to=2-7]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, equals, from=1-8, to=1-9]
+	\arrow[two heads, from=2-1, to=3-2]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, two heads, from=2-2, to=1-3]
+	\arrow[equals, from=2-3, to=2-4]
+	\arrow[hook, from=2-4, to=3-5]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, hook, from=2-5, to=1-6]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, two heads, from=2-5, to=3-6]
+	\arrow[two heads, from=2-6, to=3-7]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, two heads, from=2-7, to=1-8]
+	\arrow[equals, from=2-8, to=2-9]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, hook, from=3-1, to=2-2]
+	\arrow[two heads, from=3-2, to=2-3]
+	\arrow[hook, from=3-5, to=2-6]
+	\arrow[two heads, from=3-5, to=4-6]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, hook, from=3-6, to=2-7]
+	\arrow[two heads, from=3-7, to=2-8]
+	\arrow[hook, from=4-1, to=3-2]
+	\arrow[hook, from=4-6, to=3-7]
+\end{tikzcd}
+{% endtikz %}
 
 同样地, 同调群之间没有自然诱导的微分, 需借助滤过结构定义.
 {% endex %}
@@ -212,15 +284,49 @@ $$
 
 {% ex %}
 (双复形滤过). 考虑全复形 $\mathrm{Tot}(X)$ 的如下滤过
-<center>
-<!-- https://q.uiver.app/#q=WzAsMTIsWzEsMSwi4oiQX3tzK3QgPSBwK3F9XntzIFxcZ2VxIHF9IFhee3MsdH0iXSxbMCwwLCLiiJBfe3MrdCA9IHArcX1ee3MgXFxnZXEgcS0xfSBYXntzLHR9Il0sWzIsMiwi4oiQX3tzK3QgPSBwK3F9XntzIFxcZ2VxIHErMX0gWF57cyx0fSJdLFsxLDAsIuKIkF97cyt0ID0gcCtxKzF9XntzIFxcZ2VxIHF9IFhee3MsdH0iXSxbMSwyLCLiiJBfe3MrdCA9IHArcS0xfV57cyBcXGdlcSBxfSBYXntzLHR9Il0sWzIsMSwi4oiQX3tzK3QgPSBwK3ErMX1ee3MgXFxnZXEgcSsxfSBYXntzLHR9Il0sWzIsMCwi4oiQX3tzK3QgPSBwK3ErMn1ee3MgXFxnZXEgcSsxfSBYXntzLHR9Il0sWzAsMSwi4oiQX3tzK3QgPSBwK3EtMX1ee3MgXFxnZXEgcS0xfSBYXntzLHR9Il0sWzAsMiwi4oiQX3tzK3QgPSBwK3EtMn1ee3MgXFxnZXEgcS0xfSBYXntzLHR9Il0sWzEsMywiRl5xKFxcbWF0aHJte1RvdH0oWCkpIl0sWzAsMywiRl57cS0xfShcXG1hdGhybXtUb3R9KFgpKSJdLFsyLDMsIkZee3ErMX0oXFxtYXRocm17VG90fShYKSkiXSxbOCw3XSxbNywxXSxbNCwwXSxbMCwzXSxbMiw1XSxbNSw2XSxbMCwxLCJcXHN1YnNldCIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsMCwiXFxzdWJzZXQiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDMsIlxcc3Vic2V0IiwzLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw3LCJcXHN1YnNldCIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEwLDksIlxcc3Vwc2V0ZXEgIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMTEsIlxcc3Vwc2V0ZXEgIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMTIsWzEsMSwi4oiQX3tzK3QgPSBwK3F9XntzIFxcZ2VxIHF9IFhee3MsdH0iXSxbMCwwLCLiiJBfe3MrdCA9IHArcX1ee3MgXFxnZXEgcS0xfSBYXntzLHR9Il0sWzIsMiwi4oiQX3tzK3QgPSBwK3F9XntzIFxcZ2VxIHErMX0gWF57cyx0fSJdLFsxLDAsIuKIkF97cyt0ID0gcCtxKzF9XntzIFxcZ2VxIHF9IFhee3MsdH0iXSxbMSwyLCLiiJBfe3MrdCA9IHArcS0xfV57cyBcXGdlcSBxfSBYXntzLHR9Il0sWzIsMSwi4oiQX3tzK3QgPSBwK3ErMX1ee3MgXFxnZXEgcSsxfSBYXntzLHR9Il0sWzIsMCwi4oiQX3tzK3QgPSBwK3ErMn1ee3MgXFxnZXEgcSsxfSBYXntzLHR9Il0sWzAsMSwi4oiQX3tzK3QgPSBwK3EtMX1ee3MgXFxnZXEgcS0xfSBYXntzLHR9Il0sWzAsMiwi4oiQX3tzK3QgPSBwK3EtMn1ee3MgXFxnZXEgcS0xfSBYXntzLHR9Il0sWzEsMywiRl5xKFxcbWF0aHJte1RvdH0oWCkpIl0sWzAsMywiRl57cS0xfShcXG1hdGhybXtUb3R9KFgpKSJdLFsyLDMsIkZee3ErMX0oXFxtYXRocm17VG90fShYKSkiXSxbOCw3XSxbNywxXSxbNCwwXSxbMCwzXSxbMiw1XSxbNSw2XSxbMCwxLCJcXHN1YnNldCIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsMCwiXFxzdWJzZXQiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDMsIlxcc3Vic2V0IiwzLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw3LCJcXHN1YnNldCIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEwLDksIlxcc3Vwc2V0ZXEgIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMTEsIlxcc3Vwc2V0ZXEgIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d&embed" width="600" height="400" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTIsWzEsMSwi4oiQX3tzK3QgPSBwK3F9XntzIFxcZ2VxIHF9IFhee3MsdH0iXSxbMCwwLCLiiJBfe3MrdCA9IHArcX1ee3MgXFxnZXEgcS0xfSBYXntzLHR9Il0sWzIsMiwi4oiQX3tzK3QgPSBwK3F9XntzIFxcZ2VxIHErMX0gWF57cyx0fSJdLFsxLDAsIuKIkF97cyt0ID0gcCtxKzF9XntzIFxcZ2VxIHF9IFhee3MsdH0iXSxbMSwyLCLiiJBfe3MrdCA9IHArcS0xfV57cyBcXGdlcSBxfSBYXntzLHR9Il0sWzIsMSwi4oiQX3tzK3QgPSBwK3ErMX1ee3MgXFxnZXEgcSsxfSBYXntzLHR9Il0sWzIsMCwi4oiQX3tzK3QgPSBwK3ErMn1ee3MgXFxnZXEgcSsxfSBYXntzLHR9Il0sWzAsMSwi4oiQX3tzK3QgPSBwK3EtMX1ee3MgXFxnZXEgcS0xfSBYXntzLHR9Il0sWzAsMiwi4oiQX3tzK3QgPSBwK3EtMn1ee3MgXFxnZXEgcS0xfSBYXntzLHR9Il0sWzEsMywiRl5xKFxcbWF0aHJte1RvdH0oWCkpIl0sWzAsMywiRl57cS0xfShcXG1hdGhybXtUb3R9KFgpKSJdLFsyLDMsIkZee3ErMX0oXFxtYXRocm17VG90fShYKSkiXSxbOCw3XSxbNywxXSxbNCwwXSxbMCwzXSxbMiw1XSxbNSw2XSxbMCwxLCJcXHN1YnNldCIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsMCwiXFxzdWJzZXQiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDMsIlxcc3Vic2V0IiwzLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw3LCJcXHN1YnNldCIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEwLDksIlxcc3Vwc2V0ZXEgIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMTEsIlxcc3Vwc2V0ZXEgIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}
+	{∐_{s+t = p+q}^{s \geq q-1} X^{s,t}} & {∐_{s+t = p+q+1}^{s \geq q} X^{s,t}} & {∐_{s+t = p+q+2}^{s \geq q+1} X^{s,t}} \\
+	{∐_{s+t = p+q-1}^{s \geq q-1} X^{s,t}} & {∐_{s+t = p+q}^{s \geq q} X^{s,t}} & {∐_{s+t = p+q+1}^{s \geq q+1} X^{s,t}} \\
+	{∐_{s+t = p+q-2}^{s \geq q-1} X^{s,t}} & {∐_{s+t = p+q-1}^{s \geq q} X^{s,t}} & {∐_{s+t = p+q}^{s \geq q+1} X^{s,t}} \\
+	{F^{q-1}(\mathrm{Tot}(X))} & {F^q(\mathrm{Tot}(X))} & {F^{q+1}(\mathrm{Tot}(X))}
+	\arrow[from=2-1, to=1-1]
+	\arrow["\subset"{marking, allow upside down}, dotted, no head, from=2-2, to=1-1]
+	\arrow[from=2-2, to=1-2]
+	\arrow["\subset"{marking, allow upside down}, dotted, no head, from=2-3, to=1-2]
+	\arrow[from=2-3, to=1-3]
+	\arrow[from=3-1, to=2-1]
+	\arrow["\subset"{marking, allow upside down}, dotted, no head, from=3-2, to=2-1]
+	\arrow[from=3-2, to=2-2]
+	\arrow["\subset"{marking, allow upside down}, dotted, no head, from=3-3, to=2-2]
+	\arrow[from=3-3, to=2-3]
+	\arrow["{\supseteq }"{description}, draw=none, from=4-1, to=4-2]
+	\arrow["{\supseteq }"{description}, draw=none, from=4-2, to=4-3]
+\end{tikzcd}
+{% endtikz %}
 计算 $E_0$ 与 $E_1$, 结果如下:
-<center>
-<!-- https://q.uiver.app/#q=WzAsMjAsWzEsMSwiWF57cSxwfSJdLFswLDAsIlhee3EtMSwgcCsxfSJdLFsyLDIsIlhee3ErMSwgcC0xfSJdLFsxLDAsIlhee3EscCsxfSJdLFsxLDIsIlhee3EscC0xfSJdLFsyLDEsIlhee3ErMSwgcH0iXSxbMiwwLCJYXntxKzEsIHArMX0iXSxbMCwxLCJYXntxLTEsIHB9Il0sWzAsMiwiWF57cS0xLCBwLTF9Il0sWzAsMywiXFxib3hlZHtFXzB9Il0sWzMsMywiXFxib3hlZHtFXzF9Il0sWzMsMiwiSF9cXHVwYXJyb3cgXntxLTEscC0xfSJdLFszLDEsIkhfXFx1cGFycm93IF57cS0xLHB9Il0sWzMsMCwiSF9cXHVwYXJyb3cgXntxLTEscCsxfSJdLFs0LDIsIkhfXFx1cGFycm93IF57cSxwLTF9Il0sWzUsMiwiSF9cXHVwYXJyb3cgXntxKzEscC0xfSJdLFs1LDEsIkhfXFx1cGFycm93IF57cSsxLHB9Il0sWzUsMCwiSF9cXHVwYXJyb3cgXntxKzEscCsxfSJdLFs0LDEsIkhfXFx1cGFycm93IF57cSxwfSJdLFs0LDAsIkhfXFx1cGFycm93IF57cSxwKzF9Il0sWzgsNywiZF9cXHVwYXJyb3cgIl0sWzcsMSwiZF9cXHVwYXJyb3cgIl0sWzQsMCwiZF9cXHVwYXJyb3cgIl0sWzAsMywiZF9cXHVwYXJyb3cgIl0sWzIsNSwiZF9cXHVwYXJyb3cgIl0sWzUsNiwiZF9cXHVwYXJyb3cgIl0sWzEzLDE5LCI/Il0sWzE5LDE3LCI/Il0sWzEyLDE4LCI/Il0sWzE4LDE2LCI/Il0sWzExLDE0LCI/Il0sWzE0LDE1LCI/Il1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMjAsWzEsMSwiWF57cSxwfSJdLFswLDAsIlhee3EtMSwgcCsxfSJdLFsyLDIsIlhee3ErMSwgcC0xfSJdLFsxLDAsIlhee3EscCsxfSJdLFsxLDIsIlhee3EscC0xfSJdLFsyLDEsIlhee3ErMSwgcH0iXSxbMiwwLCJYXntxKzEsIHArMX0iXSxbMCwxLCJYXntxLTEsIHB9Il0sWzAsMiwiWF57cS0xLCBwLTF9Il0sWzAsMywiXFxib3hlZHtFXzB9Il0sWzMsMywiXFxib3hlZHtFXzF9Il0sWzMsMiwiSF9cXHVwYXJyb3cgXntxLTEscC0xfSJdLFszLDEsIkhfXFx1cGFycm93IF57cS0xLHB9Il0sWzMsMCwiSF9cXHVwYXJyb3cgXntxLTEscCsxfSJdLFs0LDIsIkhfXFx1cGFycm93IF57cSxwLTF9Il0sWzUsMiwiSF9cXHVwYXJyb3cgXntxKzEscC0xfSJdLFs1LDEsIkhfXFx1cGFycm93IF57cSsxLHB9Il0sWzUsMCwiSF9cXHVwYXJyb3cgXntxKzEscCsxfSJdLFs0LDEsIkhfXFx1cGFycm93IF57cSxwfSJdLFs0LDAsIkhfXFx1cGFycm93IF57cSxwKzF9Il0sWzgsNywiZF9cXHVwYXJyb3cgIl0sWzcsMSwiZF9cXHVwYXJyb3cgIl0sWzQsMCwiZF9cXHVwYXJyb3cgIl0sWzAsMywiZF9cXHVwYXJyb3cgIl0sWzIsNSwiZF9cXHVwYXJyb3cgIl0sWzUsNiwiZF9cXHVwYXJyb3cgIl0sWzEzLDE5LCI/Il0sWzE5LDE3LCI/Il0sWzEyLDE4LCI/Il0sWzE4LDE2LCI/Il0sWzExLDE0LCI/Il0sWzE0LDE1LCI/Il1d&embed" width="600" height="300" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMjAsWzEsMSwiWF57cSxwfSJdLFswLDAsIlhee3EtMSwgcCsxfSJdLFsyLDIsIlhee3ErMSwgcC0xfSJdLFsxLDAsIlhee3EscCsxfSJdLFsxLDIsIlhee3EscC0xfSJdLFsyLDEsIlhee3ErMSwgcH0iXSxbMiwwLCJYXntxKzEsIHArMX0iXSxbMCwxLCJYXntxLTEsIHB9Il0sWzAsMiwiWF57cS0xLCBwLTF9Il0sWzAsMywiXFxib3hlZHtFXzB9Il0sWzMsMywiXFxib3hlZHtFXzF9Il0sWzMsMiwiSF9cXHVwYXJyb3cgXntxLTEscC0xfSJdLFszLDEsIkhfXFx1cGFycm93IF57cS0xLHB9Il0sWzMsMCwiSF9cXHVwYXJyb3cgXntxLTEscCsxfSJdLFs0LDIsIkhfXFx1cGFycm93IF57cSxwLTF9Il0sWzUsMiwiSF9cXHVwYXJyb3cgXntxKzEscC0xfSJdLFs1LDEsIkhfXFx1cGFycm93IF57cSsxLHB9Il0sWzUsMCwiSF9cXHVwYXJyb3cgXntxKzEscCsxfSJdLFs0LDEsIkhfXFx1cGFycm93IF57cSxwfSJdLFs0LDAsIkhfXFx1cGFycm93IF57cSxwKzF9Il0sWzgsNywiZF9cXHVwYXJyb3cgIl0sWzcsMSwiZF9cXHVwYXJyb3cgIl0sWzQsMCwiZF9cXHVwYXJyb3cgIl0sWzAsMywiZF9cXHVwYXJyb3cgIl0sWzIsNSwiZF9cXHVwYXJyb3cgIl0sWzUsNiwiZF9cXHVwYXJyb3cgIl0sWzEzLDE5LCI/Il0sWzE5LDE3LCI/Il0sWzEyLDE4LCI/Il0sWzE4LDE2LCI/Il0sWzExLDE0LCI/Il0sWzE0LDE1LCI/Il1d
+\begin{tikzcd}
+	{X^{q-1, p+1}} & {X^{q,p+1}} & {X^{q+1, p+1}} & {H_\uparrow ^{q-1,p+1}} & {H_\uparrow ^{q,p+1}} & {H_\uparrow ^{q+1,p+1}} \\
+	{X^{q-1, p}} & {X^{q,p}} & {X^{q+1, p}} & {H_\uparrow ^{q-1,p}} & {H_\uparrow ^{q,p}} & {H_\uparrow ^{q+1,p}} \\
+	{X^{q-1, p-1}} & {X^{q,p-1}} & {X^{q+1, p-1}} & {H_\uparrow ^{q-1,p-1}} & {H_\uparrow ^{q,p-1}} & {H_\uparrow ^{q+1,p-1}} \\
+	{\boxed{E_0}} &&& {\boxed{E_1}}
+	\arrow["{?}", from=1-4, to=1-5]
+	\arrow["{?}", from=1-5, to=1-6]
+	\arrow["{d_\uparrow }", from=2-1, to=1-1]
+	\arrow["{d_\uparrow }", from=2-2, to=1-2]
+	\arrow["{d_\uparrow }", from=2-3, to=1-3]
+	\arrow["{?}", from=2-4, to=2-5]
+	\arrow["{?}", from=2-5, to=2-6]
+	\arrow["{d_\uparrow }", from=3-1, to=2-1]
+	\arrow["{d_\uparrow }", from=3-2, to=2-2]
+	\arrow["{d_\uparrow }", from=3-3, to=2-3]
+	\arrow["{?}", from=3-4, to=3-5]
+	\arrow["{?}", from=3-5, to=3-6]
+\end{tikzcd}
+{% endtikz %}
 以上,
 
 1. $E_0^{s,t}$ 各项由 $F^s(\mathrm{Tot}(X)^{s+t})$ 商去相邻子对象所得, 即 $X^{s,t}$.
@@ -236,10 +342,24 @@ $$
 
 {% ex %}
 (关于纵向谱序列). 相应地, 取转置 $\mathrm{Tot}(X^T)$ 的滤过, $E_1$ 页的微分是 $H_→ (d_↑)$. 谱序列微分方向如下图所示
-<center>
-<!-- https://q.uiver.app/#q=WzAsMTAsWzAsMCwiXFxidWxsZXQiXSxbMSwxLCJcXGJ1bGxldCJdLFsyLDIsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbMCwyLCJcXGJveGVke1xcdGV4dHvnurV9fSJdLFszLDIsIlxcYm94ZWR7XFx0ZXh0e+aoqn19Il0sWzQsMiwiXFxidWxsZXQiXSxbNSwyLCJcXGJ1bGxldCJdLFs0LDEsIlxcYnVsbGV0Il0sWzMsMCwiXFxidWxsZXQiXSxbMywwLCJkXzA9ZF9cXHVwYXJyb3cgIl0sWzMsMSwiZF8xPSBIX1xcdXBhcnJvdyAoZF9cXHRvICkiXSxbMywyLCJkXzIiLDJdLFs2LDcsImRfMCA9IGRfXFx0byAiLDJdLFs2LDgsImRfMSA9IEhfXFx0byAoZF9cXHVwYXJyb3cgKSIsMl0sWzYsOSwiZF8yIl0sWzAsMSwiIiwxLHsiY29sb3VyIjpbMTgwLDYwLDYwXX1dLFsxLDIsIiIsMSx7ImNvbG91ciI6WzE4MCw2MCw2MF19XSxbNyw4LCIiLDEseyJjb2xvdXIiOlsxODAsNjAsNjBdfV0sWzgsOSwiIiwxLHsiY29sb3VyIjpbMTgwLDYwLDYwXX1dXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMTAsWzAsMCwiXFxidWxsZXQiXSxbMSwxLCJcXGJ1bGxldCJdLFsyLDIsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbMCwyLCJcXGJveGVke1xcdGV4dHvnurV9fSJdLFszLDIsIlxcYm94ZWR7XFx0ZXh0e+aoqn19Il0sWzQsMiwiXFxidWxsZXQiXSxbNSwyLCJcXGJ1bGxldCJdLFs0LDEsIlxcYnVsbGV0Il0sWzMsMCwiXFxidWxsZXQiXSxbMywwLCJkXzA9ZF9cXHVwYXJyb3cgIl0sWzMsMSwiZF8xPSBIX1xcdXBhcnJvdyAoZF9cXHRvICkiXSxbMywyLCJkXzIiLDJdLFs2LDcsImRfMCA9IGRfXFx0byAiLDJdLFs2LDgsImRfMSA9IEhfXFx0byAoZF9cXHVwYXJyb3cgKSIsMl0sWzYsOSwiZF8yIl0sWzAsMSwiIiwxLHsiY29sb3VyIjpbMTgwLDYwLDYwXX1dLFsxLDIsIiIsMSx7ImNvbG91ciI6WzE4MCw2MCw2MF19XSxbNyw4LCIiLDEseyJjb2xvdXIiOlsxODAsNjAsNjBdfV0sWzgsOSwiIiwxLHsiY29sb3VyIjpbMTgwLDYwLDYwXX1dXQ==&embed" width="600" height="300" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTAsWzAsMCwiXFxidWxsZXQiXSxbMSwxLCJcXGJ1bGxldCJdLFsyLDIsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbMCwyLCJcXGJveGVke1xcdGV4dHvnurV9fSJdLFszLDIsIlxcYm94ZWR7XFx0ZXh0e+aoqn19Il0sWzQsMiwiXFxidWxsZXQiXSxbNSwyLCJcXGJ1bGxldCJdLFs0LDEsIlxcYnVsbGV0Il0sWzMsMCwiXFxidWxsZXQiXSxbMywwLCJkXzA9ZF9cXHVwYXJyb3cgIl0sWzMsMSwiZF8xPSBIX1xcdXBhcnJvdyAoZF9cXHRvICkiXSxbMywyLCJkXzIiLDJdLFs2LDcsImRfMCA9IGRfXFx0byAiLDJdLFs2LDgsImRfMSA9IEhfXFx0byAoZF9cXHVwYXJyb3cgKSIsMl0sWzYsOSwiZF8yIl0sWzAsMSwiIiwxLHsiY29sb3VyIjpbMTgwLDYwLDYwXX1dLFsxLDIsIiIsMSx7ImNvbG91ciI6WzE4MCw2MCw2MF19XSxbNyw4LCIiLDEseyJjb2xvdXIiOlsxODAsNjAsNjBdfV0sWzgsOSwiIiwxLHsiY29sb3VyIjpbMTgwLDYwLDYwXX1dXQ==
+\begin{tikzcd}
+	\bullet &&& \bullet \\
+	\bullet & \bullet &&& \bullet \\
+	{\boxed{\text{纵}}} && \bullet & {\boxed{\text{横}}} & \bullet & \bullet
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, from=1-1, to=2-2]
+	\arrow["{d_0=d_\uparrow }", from=2-1, to=1-1]
+	\arrow["{d_1= H_\uparrow (d_\to )}", from=2-1, to=2-2]
+	\arrow["{d_2}"', from=2-1, to=3-3]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, from=2-2, to=3-3]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, from=2-5, to=1-4]
+	\arrow["{d_2}", from=3-5, to=1-4]
+	\arrow["{d_1 = H_\to (d_\uparrow )}"', from=3-5, to=2-5]
+	\arrow["{d_0 = d_\to }"', from=3-5, to=3-6]
+	\arrow[draw={rgb,255:red,92;green,214;blue,214}, from=3-6, to=2-5]
+\end{tikzcd}
+{% endtikz %}
 {% endex %}
 
 {% thm %}
@@ -262,15 +382,35 @@ $$
 
 {% lem %}
 ([证明](E_2_Trick)). 假定 $E_3^{p,q} = E_∞^{p,q}$, 且同调群确定. 若 $E_2^{p,q}$ 形如以下
-<center>
-<!-- https://q.uiver.app/#q=WzAsMTEsWzEsMCwiXFxidWxsZXQiXSxbMywxLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzQsMSwiXFxidWxsZXQiXSxbMywwLCJcXGJ1bGxldCJdLFs1LDEsIlxcYnVsbGV0Il0sWzQsMCwiXFxidWxsZXQiXSxbNiwxLCJcXGJ1bGxldCJdLFswLDAsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxLCJcXGJveGVke0VfMl57XFxidWxsZXQsXFxidWxsZXR9fSJdLFswLDFdLFsyLDNdLFs0LDVdLFs2LDddLFs4LDldXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMTEsWzEsMCwiXFxidWxsZXQiXSxbMywxLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzQsMSwiXFxidWxsZXQiXSxbMywwLCJcXGJ1bGxldCJdLFs1LDEsIlxcYnVsbGV0Il0sWzQsMCwiXFxidWxsZXQiXSxbNiwxLCJcXGJ1bGxldCJdLFswLDAsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxLCJcXGJveGVke0VfMl57XFxidWxsZXQsXFxidWxsZXR9fSJdLFswLDFdLFsyLDNdLFs0LDVdLFs2LDddLFs4LDldXQ==&embed" width="600" height="200" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTEsWzEsMCwiXFxidWxsZXQiXSxbMywxLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzQsMSwiXFxidWxsZXQiXSxbMywwLCJcXGJ1bGxldCJdLFs1LDEsIlxcYnVsbGV0Il0sWzQsMCwiXFxidWxsZXQiXSxbNiwxLCJcXGJ1bGxldCJdLFswLDAsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxLCJcXGJveGVke0VfMl57XFxidWxsZXQsXFxidWxsZXR9fSJdLFswLDFdLFsyLDNdLFs0LDVdLFs2LDddLFs4LDldXQ==
+\begin{tikzcd}
+	\bullet & \bullet & \bullet & \bullet & \bullet \\
+	{\boxed{E_2^{\bullet,\bullet}}} && \bullet & \bullet & \bullet & \bullet & \bullet
+	\arrow[from=1-1, to=2-3]
+	\arrow[from=1-2, to=2-4]
+	\arrow[from=1-3, to=2-5]
+	\arrow[from=1-4, to=2-6]
+	\arrow[from=1-5, to=2-7]
+\end{tikzcd}
+{% endtikz %}
 此时有长正合列
-<center>
-<!-- https://q.uiver.app/#q=WzAsMTEsWzEsMCwiXFxidWxsZXQiXSxbMywxLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzQsMSwiXFxidWxsZXQiXSxbMywwLCJcXGJ1bGxldCJdLFs1LDEsIlxcYnVsbGV0Il0sWzQsMCwiXFxidWxsZXQiXSxbNiwxLCJcXGJ1bGxldCJdLFswLDAsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxLCJcXGJveGVke0VfMl57XFxidWxsZXQsXFxidWxsZXR9fSJdLFswLDFdLFsyLDNdLFs0LDVdLFs2LDddLFs4LDldLFs5LDAsIkgiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMSwyLCJIIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzMsNCwiSCIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFs1LDYsIkgiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0= -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMTEsWzEsMCwiXFxidWxsZXQiXSxbMywxLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzQsMSwiXFxidWxsZXQiXSxbMywwLCJcXGJ1bGxldCJdLFs1LDEsIlxcYnVsbGV0Il0sWzQsMCwiXFxidWxsZXQiXSxbNiwxLCJcXGJ1bGxldCJdLFswLDAsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxLCJcXGJveGVke0VfMl57XFxidWxsZXQsXFxidWxsZXR9fSJdLFswLDFdLFsyLDNdLFs0LDVdLFs2LDddLFs4LDldLFs5LDAsIkgiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMSwyLCJIIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzMsNCwiSCIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFs1LDYsIkgiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0=&embed" width="600" height="200" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTEsWzEsMCwiXFxidWxsZXQiXSxbMywxLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzQsMSwiXFxidWxsZXQiXSxbMywwLCJcXGJ1bGxldCJdLFs1LDEsIlxcYnVsbGV0Il0sWzQsMCwiXFxidWxsZXQiXSxbNiwxLCJcXGJ1bGxldCJdLFswLDAsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMCwxLCJcXGJveGVke0VfMl57XFxidWxsZXQsXFxidWxsZXR9fSJdLFswLDFdLFsyLDNdLFs0LDVdLFs2LDddLFs4LDldLFs5LDAsIkgiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMSwyLCJIIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzMsNCwiSCIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFs1LDYsIkgiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0=
+\begin{tikzcd}
+	\bullet & \bullet & \bullet & \bullet & \bullet \\
+	{\boxed{E_2^{\bullet,\bullet}}} && \bullet & \bullet & \bullet & \bullet & \bullet
+	\arrow[from=1-1, to=2-3]
+	\arrow[from=1-2, to=2-4]
+	\arrow[from=1-3, to=2-5]
+	\arrow[from=1-4, to=2-6]
+	\arrow[from=1-5, to=2-7]
+	\arrow["H"{description}, dotted, from=2-3, to=1-2]
+	\arrow["H"{description}, dotted, from=2-4, to=1-3]
+	\arrow["H"{description}, dotted, from=2-5, to=1-4]
+	\arrow["H"{description}, dotted, from=2-6, to=1-5]
+\end{tikzcd}
+{% endtikz %}
 {% endlem %}
 
 {% note %}
@@ -304,10 +444,26 @@ $$
    $$
 
 图示如下:
-<center>
-<!-- https://q.uiver.app/#q=WzAsOSxbNCwwLCJcXGNvbG9ye3JlZH1cXG9wZXJhdG9ybmFtZSB7aW19Il0sWzMsMSwiXFxjb2xvcntibHVlfVxcb3BlcmF0b3JuYW1lIHtjb2t9Il0sWzIsMiwiXFxjb2xvcntyZWR9SCJdLFs1LDEsIlxcY29sb3J7Ymx1ZX1cXG9wZXJhdG9ybmFtZSB7a2VyfSJdLFs2LDIsIlxcY29sb3J7cmVkfUgiXSxbMiwwLCJYIl0sWzYsMCwiWCJdLFsxLDEsIlxcY29sb3J7Ymx1ZX1cXGtlciAiXSxbMCwwLCJcXGNvbG9ye3JlZH1cXG9wZXJhdG9ybmFtZSB7aW19Il0sWzUsMCwiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzUsMSwiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsMCwiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzMsNCwiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsMSwiIiwxLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMCwzLCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFszLDYsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzAsNiwiIiwxLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbNyw1LCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFs3LDIsIiIsMSx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs4LDUsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs4LDcsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsOSxbNCwwLCJcXGNvbG9ye3JlZH1cXG9wZXJhdG9ybmFtZSB7aW19Il0sWzMsMSwiXFxjb2xvcntibHVlfVxcb3BlcmF0b3JuYW1lIHtjb2t9Il0sWzIsMiwiXFxjb2xvcntyZWR9SCJdLFs1LDEsIlxcY29sb3J7Ymx1ZX1cXG9wZXJhdG9ybmFtZSB7a2VyfSJdLFs2LDIsIlxcY29sb3J7cmVkfUgiXSxbMiwwLCJYIl0sWzYsMCwiWCJdLFsxLDEsIlxcY29sb3J7Ymx1ZX1cXGtlciAiXSxbMCwwLCJcXGNvbG9ye3JlZH1cXG9wZXJhdG9ybmFtZSB7aW19Il0sWzUsMCwiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzUsMSwiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsMCwiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzMsNCwiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsMSwiIiwxLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMCwzLCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFszLDYsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzAsNiwiIiwxLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbNyw1LCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFs3LDIsIiIsMSx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs4LDUsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs4LDcsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV1d&embed" width="600" height="250" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsOSxbNCwwLCJcXGNvbG9ye3JlZH1cXG9wZXJhdG9ybmFtZSB7aW19Il0sWzMsMSwiXFxjb2xvcntibHVlfVxcb3BlcmF0b3JuYW1lIHtjb2t9Il0sWzIsMiwiXFxjb2xvcntyZWR9SCJdLFs1LDEsIlxcY29sb3J7Ymx1ZX1cXG9wZXJhdG9ybmFtZSB7a2VyfSJdLFs2LDIsIlxcY29sb3J7cmVkfUgiXSxbMiwwLCJYIl0sWzYsMCwiWCJdLFsxLDEsIlxcY29sb3J7Ymx1ZX1cXGtlciAiXSxbMCwwLCJcXGNvbG9ye3JlZH1cXG9wZXJhdG9ybmFtZSB7aW19Il0sWzUsMCwiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzUsMSwiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsMCwiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzMsNCwiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsMSwiIiwxLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMCwzLCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFszLDYsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzAsNiwiIiwxLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbNyw1LCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFs3LDIsIiIsMSx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs4LDUsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs4LDcsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV1d
+\begin{tikzcd}
+	{\color{red}\operatorname {im}} && X && {\color{red}\operatorname {im}} && X \\
+	& {\color{blue}\ker } && {\color{blue}\operatorname {cok}} && {\color{blue}\operatorname {ker}} \\
+	&& {\color{red}H} &&&& {\color{red}H}
+	\arrow[hook, two heads, from=1-1, to=1-3]
+	\arrow[hook, from=1-1, to=2-2]
+	\arrow[two heads, from=1-3, to=1-5]
+	\arrow[two heads, from=1-3, to=2-4]
+	\arrow[hook, from=1-5, to=1-7]
+	\arrow[hook, from=1-5, to=2-6]
+	\arrow[hook, from=2-2, to=1-3]
+	\arrow[two heads, from=2-2, to=3-3]
+	\arrow[two heads, from=2-4, to=1-5]
+	\arrow[hook, from=2-6, to=1-7]
+	\arrow[two heads, from=2-6, to=3-7]
+	\arrow[hook, from=3-3, to=2-4]
+\end{tikzcd}
+{% endtikz %}
 {% endex %}
 
 EC 分解来自马蹄引理, 由[相对版本的马蹄引理](Horse_Shoe_Lemma), 得以下相对版本的 EC 分解.
@@ -358,8 +514,6 @@ EC 分解来自马蹄引理, 由[相对版本的马蹄引理](Horse_Shoe_Lemma),
 ### 维数移动
 
 以下考虑投射, 右正合版本的维度移动.
-
-<!-- 假定 Abel 范畴 $𝒜$ 有足够投射, 或相对地, 存在对象类 $𝒳$ 使得对任意 $M ∈ 𝒜$ 总有满态射 $X ↠ M$ ($X ∈ 𝒳$). -->
 
 {% lem %}
 任取无环复形 $X$, 使得投射分解满足收敛性条件. 例如以下任意一者:
@@ -555,23 +709,58 @@ $$
 
 {% ex %}
 (导出极限). 假定 $𝒜$ 是满足 AB4* 的局部小范畴. 取塔 $Y : ℕ^{\mathrm{op}}→ 𝒜$, 则极限的二次导出消失. 取函子
-<center>
-<!-- https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXG1hdGhzY3IgQSJdLFsyLDEsIlxcbWF0aGJme0FifSJdLFswLDAsIlxcbWF0aHNjcntBfV57XFxtYXRoYmIgTl57XFxtYXRocm17b3B9fX0iXSxbMiwwLCJcXG1hdGhiZntBYn1ee1xcbWF0aGJiIE5ee1xcbWF0aHJte29wfX19Il0sWzIsMywiRjo9IChYLC0pIl0sWzIsMCwiRzo9XFx2YXJwcm9qbGltICIsMl0sWzAsMSwiRjo9IChYLC0pIiwyXSxbMywxLCJHOj1cXHZhcnByb2psaW0gIl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXG1hdGhzY3IgQSJdLFsyLDEsIlxcbWF0aGJme0FifSJdLFswLDAsIlxcbWF0aHNjcntBfV57XFxtYXRoYmIgTl57XFxtYXRocm17b3B9fX0iXSxbMiwwLCJcXG1hdGhiZntBYn1ee1xcbWF0aGJiIE5ee1xcbWF0aHJte29wfX19Il0sWzIsMywiRjo9IChYLC0pIl0sWzIsMCwiRzo9XFx2YXJwcm9qbGltICIsMl0sWzAsMSwiRjo9IChYLC0pIiwyXSxbMywxLCJHOj1cXHZhcnByb2psaW0gIl1d&embed" width="600" height="200" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXG1hdGhzY3IgQSJdLFsyLDEsIlxcbWF0aGJme0FifSJdLFswLDAsIlxcbWF0aHNjcntBfV57XFxtYXRoYmIgTl57XFxtYXRocm17b3B9fX0iXSxbMiwwLCJcXG1hdGhiZntBYn1ee1xcbWF0aGJiIE5ee1xcbWF0aHJte29wfX19Il0sWzIsMywiRjo9IChYLC0pIl0sWzIsMCwiRzo9XFx2YXJwcm9qbGltICIsMl0sWzAsMSwiRjo9IChYLC0pIiwyXSxbMywxLCJHOj1cXHZhcnByb2psaW0gIl1d
+\begin{tikzcd}
+	{\mathscr{A}^{\mathbb N^{\mathrm{op}}}} && {\mathbf{Ab}^{\mathbb N^{\mathrm{op}}}} \\
+	{\mathscr A} && {\mathbf{Ab}}
+	\arrow["{F:= (X,-)}", from=1-1, to=1-3]
+	\arrow["{G:=\varprojlim }"', from=1-1, to=2-1]
+	\arrow["{G:=\varprojlim }", from=1-3, to=2-3]
+	\arrow["{F:= (X,-)}"', from=2-1, to=2-3]
+\end{tikzcd}
+{% endtikz %}
 此处 $GF \xrightarrow ∼ FG$ 是自然同构 (极限的泛性质). 同时有正合列
-<center>
-<!-- https://q.uiver.app/#q=WzAsMTIsWzEsMSwiRl4xRyJdLFsyLDEsIihGRyleMSJdLFsyLDAsIkdeMUYiXSxbMiwyLCJHRl4xIl0sWzMsMSwiRkdeMSJdLFs0LDEsIkZeMkciXSxbNSwxLCIoRkcpXjIiXSxbNiwxLCJGXjFHXjEiXSxbNSwwLCJHXjFGXjEiXSxbNSwyLCJHRl4yIl0sWzAsMSwiMCJdLFs3LDEsIlxcY2RvdHMgIl0sWzEwLDBdLFswLDFdLFsxLDRdLFs0LDVdLFs1LDZdLFs2LDddLFsyLDEsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzgsNiwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbNiw5LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNywxMV1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMTIsWzEsMSwiRl4xRyJdLFsyLDEsIihGRyleMSJdLFsyLDAsIkdeMUYiXSxbMiwyLCJHRl4xIl0sWzMsMSwiRkdeMSJdLFs0LDEsIkZeMkciXSxbNSwxLCIoRkcpXjIiXSxbNiwxLCJGXjFHXjEiXSxbNSwwLCJHXjFGXjEiXSxbNSwyLCJHRl4yIl0sWzAsMSwiMCJdLFs3LDEsIlxcY2RvdHMgIl0sWzEwLDBdLFswLDFdLFsxLDRdLFs0LDVdLFs1LDZdLFs2LDddLFsyLDEsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzgsNiwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbNiw5LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNywxMV1d&embed" width="600" height="250" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTIsWzEsMSwiRl4xRyJdLFsyLDEsIihGRyleMSJdLFsyLDAsIkdeMUYiXSxbMiwyLCJHRl4xIl0sWzMsMSwiRkdeMSJdLFs0LDEsIkZeMkciXSxbNSwxLCIoRkcpXjIiXSxbNiwxLCJGXjFHXjEiXSxbNSwwLCJHXjFGXjEiXSxbNSwyLCJHRl4yIl0sWzAsMSwiMCJdLFs3LDEsIlxcY2RvdHMgIl0sWzEwLDBdLFswLDFdLFsxLDRdLFs0LDVdLFs1LDZdLFs2LDddLFsyLDEsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzgsNiwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbNiw5LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNywxMV1d
+\begin{tikzcd}
+	&& {G^1F} &&& {G^1F^1} \\
+	0 & {F^1G} & {(FG)^1} & {FG^1} & {F^2G} & {(FG)^2} & {F^1G^1} & {\cdots } \\
+	&& {GF^1} &&& {GF^2}
+	\arrow[hook, from=1-3, to=2-3]
+	\arrow[hook, from=1-6, to=2-6]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-3, to=2-4]
+	\arrow[two heads, from=2-3, to=3-3]
+	\arrow[from=2-4, to=2-5]
+	\arrow[from=2-5, to=2-6]
+	\arrow[from=2-6, to=2-7]
+	\arrow[two heads, from=2-6, to=3-6]
+	\arrow[from=2-7, to=2-8]
+\end{tikzcd}
+{% endtikz %}
 {% endex %}
 
 {% ex %}
 ($\mathrm{Hom}(X, -)$ 与导出极限). 假定 $Y$ 是逆向极限决定的, 谱序列给纵向 ses 与横向长正合列:
-<center>
-<!-- https://q.uiver.app/#q=WzAsMTAsWzAsMSwiXFxtYXRocm17RXh0fV4xKFgsIFxcdmFycHJvamxpbSBZX1xcYnVsbGV0ICkiXSxbMSwxLCIoRkcpXjEiXSxbMSwyLCJcXHZhcnByb2psaW1eMSAoWCwgWV9cXGJ1bGxldCkiXSxbMSwwLCJcXHZhcnByb2psaW1cXG1hdGhybXtFeHR9XjEoWCwgWV9cXGJ1bGxldCApIl0sWzIsMSwiKFgsIFxcdmFycHJvamxpbV4xWV9cXGJ1bGxldCkiXSxbMywxLCJcXG1hdGhybXtFeHR9XjIoWCwgXFx2YXJwcm9qbGltIFlfXFxidWxsZXQgKSJdLFs0LDEsIihGRyleMiJdLFs1LDEsIlxcbWF0aHJte0V4dH1eMShYLCBcXHZhcnByb2psaW1eMVlfXFxidWxsZXQgKSJdLFs0LDIsIlxcdmFycHJvamxpbV4xXFxtYXRocm17RXh0fV4xKFgsIFlfXFxidWxsZXQgKSJdLFs0LDAsIlxcdmFycHJvamxpbVxcbWF0aHJte0V4dH1eMihYLCBZX1xcYnVsbGV0ICkiXSxbMSw0XSxbNCw1XSxbNSw2XSxbNiw3XSxbMiwxLCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFsxLDMsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs4LDYsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzYsOSwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsMSwiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XV0= -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMTAsWzAsMSwiXFxtYXRocm17RXh0fV4xKFgsIFxcdmFycHJvamxpbSBZX1xcYnVsbGV0ICkiXSxbMSwxLCIoRkcpXjEiXSxbMSwyLCJcXHZhcnByb2psaW1eMSAoWCwgWV9cXGJ1bGxldCkiXSxbMSwwLCJcXHZhcnByb2psaW1cXG1hdGhybXtFeHR9XjEoWCwgWV9cXGJ1bGxldCApIl0sWzIsMSwiKFgsIFxcdmFycHJvamxpbV4xWV9cXGJ1bGxldCkiXSxbMywxLCJcXG1hdGhybXtFeHR9XjIoWCwgXFx2YXJwcm9qbGltIFlfXFxidWxsZXQgKSJdLFs0LDEsIihGRyleMiJdLFs1LDEsIlxcbWF0aHJte0V4dH1eMShYLCBcXHZhcnByb2psaW1eMVlfXFxidWxsZXQgKSJdLFs0LDIsIlxcdmFycHJvamxpbV4xXFxtYXRocm17RXh0fV4xKFgsIFlfXFxidWxsZXQgKSJdLFs0LDAsIlxcdmFycHJvamxpbVxcbWF0aHJte0V4dH1eMihYLCBZX1xcYnVsbGV0ICkiXSxbMSw0XSxbNCw1XSxbNSw2XSxbNiw3XSxbMiwxLCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFsxLDMsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs4LDYsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzYsOSwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsMSwiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XV0=&embed" width="600" height="180" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTAsWzAsMSwiXFxtYXRocm17RXh0fV4xKFgsIFxcdmFycHJvamxpbSBZX1xcYnVsbGV0ICkiXSxbMSwxLCIoRkcpXjEiXSxbMSwyLCJcXHZhcnByb2psaW1eMSAoWCwgWV9cXGJ1bGxldCkiXSxbMSwwLCJcXHZhcnByb2psaW1cXG1hdGhybXtFeHR9XjEoWCwgWV9cXGJ1bGxldCApIl0sWzIsMSwiKFgsIFxcdmFycHJvamxpbV4xWV9cXGJ1bGxldCkiXSxbMywxLCJcXG1hdGhybXtFeHR9XjIoWCwgXFx2YXJwcm9qbGltIFlfXFxidWxsZXQgKSJdLFs0LDEsIihGRyleMiJdLFs1LDEsIlxcbWF0aHJte0V4dH1eMShYLCBcXHZhcnByb2psaW1eMVlfXFxidWxsZXQgKSJdLFs0LDIsIlxcdmFycHJvamxpbV4xXFxtYXRocm17RXh0fV4xKFgsIFlfXFxidWxsZXQgKSJdLFs0LDAsIlxcdmFycHJvamxpbVxcbWF0aHJte0V4dH1eMihYLCBZX1xcYnVsbGV0ICkiXSxbMSw0XSxbNCw1XSxbNSw2XSxbNiw3XSxbMiwxLCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFsxLDMsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs4LDYsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzYsOSwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsMSwiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XV0=
+\begin{tikzcd}
+	& {\varprojlim\mathrm{Ext}^1(X, Y_\bullet )} &&& {\varprojlim\mathrm{Ext}^2(X, Y_\bullet )} \\
+	{\mathrm{Ext}^1(X, \varprojlim Y_\bullet )} & {(FG)^1} & {(X, \varprojlim^1Y_\bullet)} & {\mathrm{Ext}^2(X, \varprojlim Y_\bullet )} & {(FG)^2} & {\mathrm{Ext}^1(X, \varprojlim^1Y_\bullet )} \\
+	& {\varprojlim^1 (X, Y_\bullet)} &&& {\varprojlim^1\mathrm{Ext}^1(X, Y_\bullet )}
+	\arrow[hook, from=2-1, to=2-2]
+	\arrow[two heads, from=2-2, to=1-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-3, to=2-4]
+	\arrow[from=2-4, to=2-5]
+	\arrow[two heads, from=2-5, to=1-5]
+	\arrow[from=2-5, to=2-6]
+	\arrow[hook, from=3-2, to=2-2]
+	\arrow[hook, from=3-5, to=2-5]
+\end{tikzcd}
+{% endtikz %}
 例如,
 
 1. 假定 $M$ 是投射模的逆向极限, 则有 $3$-周期长正合列
@@ -587,10 +776,17 @@ $$
 
 {% ex %}
 (导出余极限). 记 $𝒜$ 是满足 AB4 (任意余积正合) 的局部小范畴, 则 $𝒜^{\mathrm{op}}$ 是满足 AB4* 的局部小范畴. 考虑函子
-<center>
-<!-- https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXG1hdGhzY3IgQV57XFxtYXRocm17b3B9fSJdLFsyLDEsIlxcbWF0aGJme0FifSJdLFswLDAsIihcXG1hdGhzY3IgQV57XFxtYXRocm17b3B9fSlee3tcXG1hdGhiYiBOXntcXG1hdGhybXtvcH19fX0iXSxbMiwwLCJcXG1hdGhiZntBYn1ee1xcbWF0aGJiIE5ee1xcbWF0aHJte29wfX19Il0sWzAsMSwiRjo9KC0sWSkiLDJdLFsyLDMsIkY6PSgtLCBZKSJdLFszLDEsIkc6PVxcdmFycHJvamxpbSAiXSxbMiwwLCJHOj1cXHZhcnByb2psaW0gIiwyXV0= -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXG1hdGhzY3IgQV57XFxtYXRocm17b3B9fSJdLFsyLDEsIlxcbWF0aGJme0FifSJdLFswLDAsIihcXG1hdGhzY3IgQV57XFxtYXRocm17b3B9fSlee3tcXG1hdGhiYiBOXntcXG1hdGhybXtvcH19fX0iXSxbMiwwLCJcXG1hdGhiZntBYn1ee1xcbWF0aGJiIE5ee1xcbWF0aHJte29wfX19Il0sWzAsMSwiRjo9KC0sWSkiLDJdLFsyLDMsIkY6PSgtLCBZKSJdLFszLDEsIkc6PVxcdmFycHJvamxpbSAiXSxbMiwwLCJHOj1cXHZhcnByb2psaW0gIiwyXV0=&embed" width="600" height="200" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXG1hdGhzY3IgQV57XFxtYXRocm17b3B9fSJdLFsyLDEsIlxcbWF0aGJme0FifSJdLFswLDAsIihcXG1hdGhzY3IgQV57XFxtYXRocm17b3B9fSlee3tcXG1hdGhiYiBOXntcXG1hdGhybXtvcH19fX0iXSxbMiwwLCJcXG1hdGhiZntBYn1ee1xcbWF0aGJiIE5ee1xcbWF0aHJte29wfX19Il0sWzAsMSwiRjo9KC0sWSkiLDJdLFsyLDMsIkY6PSgtLCBZKSJdLFszLDEsIkc6PVxcdmFycHJvamxpbSAiXSxbMiwwLCJHOj1cXHZhcnByb2psaW0gIiwyXV0=
+\begin{tikzcd}
+	{(\mathscr A^{\mathrm{op}})^{\mathbb N^{\mathrm{op}}}} && {\mathbf{Ab}^{\mathbb N^{\mathrm{op}}}} \\
+	{\mathscr A^{\mathrm{op}}} && {\mathbf{Ab}}
+	\arrow["{F:=(-, Y)}", from=1-1, to=1-3]
+	\arrow["{G:=\varprojlim }"', from=1-1, to=2-1]
+	\arrow["{G:=\varprojlim }", from=1-3, to=2-3]
+	\arrow["{F:=(-,Y)}"', from=2-1, to=2-3]
+\end{tikzcd}
+{% endtikz %}
 {% endex %}
 
 正逆极限在一般的 Abel 范畴中是无趣的对偶. 不妨回归模范畴, 注

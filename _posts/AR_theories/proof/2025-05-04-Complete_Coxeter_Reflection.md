@@ -49,15 +49,11 @@ $$
 
 以下将频繁使用一则事实:
 
-* 若 $C_i ^+ C_j ^+$ 与 $C_j ^+ C_i ^+$ 均良定义且相等, 则 $i$ 与 $j$ 是没有公共邻点的 sink.
+* 当且仅当 $C_i ^+ C_j ^+$ 与 $C_j ^+ C_i ^+$ 均良定义且相等, $i$ 与 $j$ 是没有公共邻点的 sink.
 
-不妨假定 $C^+_{(n)} C^+_{ (n-1)} \cdots C_{ (1)}^+$ 与 $S^+_{\sigma (n)} S^+_{\sigma (n-1)} \cdots S_{\sigma (1)}^+$ 均为完全 Coxeter 反射. 此处 $S^+_p = C^+_p$, $S$ 与 $C$ 仅是记号上的区分.
-\\
-\\
-由于 $S^+_{\sigma (\sigma^{-1}(1))}$ 可定义, 从而任意 $S^+_{\sigma (\leq \sigma^{-1}(1))}$ 与 $S^+_1$ 均无邻点, 故存在移位
-
+不妨假定 $C^+_{n} C^+_{ n-1} \cdots C_{ 1}^+$ 与 $C^+_{\sigma (n)} C^+_{\sigma (n-1)} \cdots C_{\sigma (1)}^+$ 均为完全 Coxeter 反射. 下考虑 $C_1^+$ 在右式中出现的位置, 由式 $\cdots C_1 C_{\sigma (σ^{-1}(1) - 1)}^+\cdots C_{\sigma (1)}^+$ 良定义, 且 $1$ 是原图的 sink, 则不存在 $σ ( ≤ σ^{-1}(1))$ 指向 $1$ 的边. 这给出移动:
 $$
-S^+_{\sigma (n)} S^+_{\sigma (n-1)} \cdots S_{\sigma (1)}^+ = S^+_{\sigma (n)} S^+_{\sigma (n-1)} \cdots {\color{blue}\widehat{S^+_1}}\cdots  S_{\sigma (1)}^+ {\color{red}C_1^+}.
+C^+_{\sigma (n)} C^+_{\sigma (n-1)} \cdots C^+_{\sigma (1)} = C^+_{\sigma (n)} C^+_{\sigma (n-1)} \cdots {\color{blue}\widehat{C^+_1}}\cdots  C^+_{\sigma (1)} {\color{red}C_1^+}.
 $$
 
 归纳即可.

@@ -1,0 +1,27 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsOCxbMCwwLCJcXGJ1bGxldCJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMSwiXFxidWxsZXQiXSxbMSwyLCJcXGJ1bGxldCJdLFsyLDIsIlxcYnVsbGV0Il0sWzAsMywiXFxidWxsZXQiXSxbMywwLCJcXGJ1bGxldCJdLFszLDMsIlxcYnVsbGV0Il0sWzAsMV0sWzEsMl0sWzEsMywiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJib3R0b20ifSwiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XSxbMyw0XSxbMiw0LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNSwzXSxbMCw1LCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6ImJvdHRvbSJ9LCJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9fX1dLFs2LDJdLFs3LDRdLFswLDZdLFs2LDcsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6InNxdWlnZ2x5In0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs1LDddLFszLDIsInNfMSIsMV0sWzUsNiwic18yIiwxLHsiY3VydmUiOi01LCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	\bullet &&& \bullet \\
+	& \bullet & \bullet \\
+	& \bullet & \bullet \\
+	\bullet &&& \bullet
+	\arrow[from=1-1, to=1-4]
+	\arrow[from=1-1, to=2-2]
+	\arrow[squiggly, hook', from=1-1, to=4-1]
+	\arrow[from=1-4, to=2-3]
+	\arrow[squiggly, two heads, from=1-4, to=4-4]
+	\arrow[from=2-2, to=2-3]
+	\arrow[squiggly, hook', from=2-2, to=3-2]
+	\arrow[squiggly, two heads, from=2-3, to=3-3]
+	\arrow["{s_1}"{description}, from=3-2, to=2-3]
+	\arrow[from=3-2, to=3-3]
+	\arrow["{s_2}"{description}, curve={height=-30pt}, dashed, from=4-1, to=1-4]
+	\arrow[from=4-1, to=3-2]
+	\arrow[from=4-1, to=4-4]
+	\arrow[from=4-4, to=3-3]
+\end{tikzcd}
+\end{document}

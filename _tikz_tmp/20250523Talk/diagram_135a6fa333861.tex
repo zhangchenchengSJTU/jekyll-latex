@@ -1,0 +1,14 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsNSxbMCwwLCIoUCxQKSJdLFsyLDAsIihQLFBfMCkiXSxbNCwwLCIoUCxNKSJdLFswLDEsIlxcbWF0aHJte2lkfV9QIl0sWzQsMSwicCJdLFswLDEsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxLDIsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFszLDQsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{(P,P)} \&\& {(P,P_0)} \&\& {(P,M)} \\
+	{\mathrm{id}_P} \&\&\&\& p
+	\arrow[two heads, from=1-1, to=1-3]
+	\arrow[two heads, from=1-3, to=1-5]
+	\arrow[maps to, from=2-1, to=2-5]
+\end{tikzcd}
+\end{document}

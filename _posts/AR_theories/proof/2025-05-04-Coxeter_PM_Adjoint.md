@@ -8,7 +8,7 @@ category: proof
 ## 证明
 
 {% prop %}
-假定 $C_i^+ : Q_1 → Q_2$, 则以下是伴随函子:
+若 $i$ 是 $Q_1$ 的 sink, 则 $C_i^+ : Q_1 ⇄ Q_2 : C_i ^-$ 是互逆的图运算. 此时存在伴随函子:
 \begin{equation}
   C_i ^- : \mathbf{rep}_k(Q_2) ⇄ \mathbf{rep}_k(Q_1) : C_i ^+.
 \end{equation}
@@ -34,11 +34,3 @@ $$
 从而 $(C_i^-(N), M) ≃ (N, C_i^+(M))_{kQ_1}$, 这一同构是由 ker 与 coker 的泛性质诱导的.
 
 {% endpf %}
-
-{% ex %}
-容易计算,
-
-1. (单位). $M \simeq C_i^+ C_i^- M \oplus \ker[M_i → \bigoplus M_{\neq i}] \twoheadrightarrow C_i^+ C_i^- M$ 是投影;
-2. (余单位) $C_i^- C_i^+ N \hookrightarrow C_i^- C_i^+ N \oplus \mathrm{coker}[\bigoplus_{\neq i} N_i → N] \simeq N$ 是嵌入.
-
-{% endex %}
