@@ -1,0 +1,30 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsMTcsWzAsMCwiWCJdLFsxLDAsIlkiXSxbMiwwLCJaIl0sWzAsMSwiWCJdLFsxLDEsIkEiXSxbMiwxLCJCIl0sWzEsMiwiQyJdLFszLDAsIlgiXSxbNCwwLCJZIl0sWzUsMCwiWiJdLFszLDEsIlgiXSxbNCwxLCJBIl0sWzUsMSwiQiciXSxbNCwyLCJDIl0sWzUsMiwiQyJdLFs0LDMsIlxcdGV4dHtFVDR9Il0sWzEsMywiXFx0ZXh0e1NFVDR9Il0sWzAsMSwiZiJdLFsxLDIsImciXSxbMCwzLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDQsIngiXSxbNCw1LCJ5Il0sWzEsNCwicCJdLFs0LDYsInEiXSxbOCwxMSwicCJdLFsxMSwxMywicSJdLFs3LDgsImYiXSxbOCw5LCJnIl0sWzEwLDExLCJ4JyJdLFsxMSwxMiwieSciXSxbNywxMCwiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTMsMTQsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMTJdLFsxMiwxNF1d
+\begin{tikzcd}[ampersand replacement=\&]
+X \& Y \& Z \& X \& Y \& Z \\
+X \& A \& B \& X \& A \& {B'} \\
+\& C \&\&\& C \& C \\
+\& {\text{SET4}} \&\&\& {\text{ET4}}
+\arrow["f", from=1-1, to=1-2]
+\arrow[equals, from=1-1, to=2-1]
+\arrow["g", from=1-2, to=1-3]
+\arrow["p", from=1-2, to=2-2]
+\arrow["f", from=1-4, to=1-5]
+\arrow[equals, from=1-4, to=2-4]
+\arrow["g", from=1-5, to=1-6]
+\arrow["p", from=1-5, to=2-5]
+\arrow[from=1-6, to=2-6]
+\arrow["x", from=2-1, to=2-2]
+\arrow["y", from=2-2, to=2-3]
+\arrow["q", from=2-2, to=3-2]
+\arrow["{x'}", from=2-4, to=2-5]
+\arrow["{y'}", from=2-5, to=2-6]
+\arrow["q", from=2-5, to=3-5]
+\arrow[from=2-6, to=3-6]
+\arrow[equals, from=3-5, to=3-6]
+\end{tikzcd}
+\end{document}

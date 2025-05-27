@@ -31,20 +31,20 @@
 
 
 
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [
-          [
-            '$', '$'
-          ],
-          [
-            '\\(', '\\)'
-          ]
-        ]
-      }
-    };
-  </script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    chtml: {
+      scale: 0.95  // Adjust scale (0.85 = 85% of default size)
+    },
+    svg: {
+      scale: 0.95  // For SVG output
+    }
+  };
+</script>
   <script
     async
     id="MathJax-script"
@@ -159,7 +159,7 @@
             </span>
           </div>
           <div class="title">
-            <b><a href="/website/posts/Diagram_Thm_Extri">外三角范畴中的图形定理</a></b>
+            <b><a href="/website/posts/Diagram_Thm_Extri">On Diagrams Lemmas of Ex-$\triangle$ Cats</a></b>
           </div>
         </li>
       </ul>

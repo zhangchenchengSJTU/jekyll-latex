@@ -3,7 +3,7 @@
   <channel>
     <title>Jekyll Latex</title>
     <description>A pretty good Jekyll theme</description>
-    <link>https://zhangchenchengsjtu.github.io/website</link>
+    <link>http://localhost:4000/website</link>
     
       
         <item>
@@ -293,20 +293,761 @@ F(-) ≃ \mathrm{im}(ι ∘ π) = \mathrm{im}((-,α)) ≃  (-, M)
 &lt;p&gt;投射对象由 $(-, N) ∈ 𝐟𝐩 (𝒜 ^{\mathrm{op}}, 𝐌𝐨𝐝_k)$ 变作 $(N, -) ∈ 𝐟𝐩 (𝒜 , 𝐌𝐨𝐝 _k)$. 简单地说, 底范畴的箭头反转, 函子范畴的箭头不变.&lt;/p&gt;
 </description>
           <pubDate>2025-05-23T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/20250523Talk</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/20250523Talk</guid>
+          <link>http://localhost:4000/website/posts/20250523Talk</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/20250523Talk</guid>
         </item>
       
     
       
         <item>
-          <title>外三角范畴中的图形定理</title>
-          <description>&lt;h2 id=&quot;外三角范畴的图表定理&quot;&gt;外三角范畴的图表定理&lt;/h2&gt;
+          <title>On Diagrams Lemmas of Ex-$\triangle$ Cats</title>
+          <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#on-diagrams-lemmas-of-ex-mathjax_protectedjfx0cmlhbmdszsqmathjax_protected-cats&quot; id=&quot;markdown-toc-on-diagrams-lemmas-of-ex-mathjax_protectedjfx0cmlhbmdszsqmathjax_protected-cats&quot;&gt;On Diagrams Lemmas of Ex-$\triangle$ Cats&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#abstract&quot; id=&quot;markdown-toc-abstract&quot;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#the-definition-of-an-extriangulated-category&quot; id=&quot;markdown-toc-the-definition-of-an-extriangulated-category&quot;&gt;The Definition of an Extriangulated Category&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#et1&quot; id=&quot;markdown-toc-et1&quot;&gt;ET1&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#et2&quot; id=&quot;markdown-toc-et2&quot;&gt;ET2&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#et3&quot; id=&quot;markdown-toc-et3&quot;&gt;ET3&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#et4&quot; id=&quot;markdown-toc-et4&quot;&gt;ET4&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#cohomological-long-exact-sequence&quot; id=&quot;markdown-toc-cohomological-long-exact-sequence&quot;&gt;(Co)homological Long Exact Sequence&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#the-proof&quot; id=&quot;markdown-toc-the-proof&quot;&gt;The Proof&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#corollaries-on-trivial-conflations&quot; id=&quot;markdown-toc-corollaries-on-trivial-conflations&quot;&gt;Corollaries on Trivial Conflations&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#the-hom-complex&quot; id=&quot;markdown-toc-the-hom-complex&quot;&gt;The Hom Complex&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#on-isomorphisms&quot; id=&quot;markdown-toc-on-isomorphisms&quot;&gt;On Isomorphisms&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#conflations-are-closed-under-isomorphisms&quot; id=&quot;markdown-toc-conflations-are-closed-under-isomorphisms&quot;&gt;Conflations are Closed under Isomorphisms&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#remarks-on-two-out-of-three-principle&quot; id=&quot;markdown-toc-remarks-on-two-out-of-three-principle&quot;&gt;Remarks on Two out of Three Principle&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#uniqueness-of-morphism-embedding&quot; id=&quot;markdown-toc-uniqueness-of-morphism-embedding&quot;&gt;Uniqueness of Morphism Embedding&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#remarks-on-et4-axiom&quot; id=&quot;markdown-toc-remarks-on-et4-axiom&quot;&gt;Remarks on ET4 Axiom&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#on-exact-categories-and-triangulated-categories&quot; id=&quot;markdown-toc-on-exact-categories-and-triangulated-categories&quot;&gt;On Exact Categories and Triangulated Categories&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#strict-et4&quot; id=&quot;markdown-toc-strict-et4&quot;&gt;Strict ET4&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#lemmas-on-verdier-diagram-and-noether-diagram&quot; id=&quot;markdown-toc-lemmas-on-verdier-diagram-and-noether-diagram&quot;&gt;Lemmas on Verdier Diagram and Noether Diagram&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#the-squares&quot; id=&quot;markdown-toc-the-squares&quot;&gt;The Squares&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#noether-square-and-et4&quot; id=&quot;markdown-toc-noether-square-and-et4&quot;&gt;Noether Square and ET4&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#verdier-square-and-44-lemma&quot; id=&quot;markdown-toc-verdier-square-and-44-lemma&quot;&gt;Verdier Square and 4×4 Lemma&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#the-strict-44-lemma&quot; id=&quot;markdown-toc-the-strict-44-lemma&quot;&gt;The Strict 4×4 Lemma&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#the-weak-pbpo-squares&quot; id=&quot;markdown-toc-the-weak-pbpo-squares&quot;&gt;The Weak PBPO Squares&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#the-homotopic-square&quot; id=&quot;markdown-toc-the-homotopic-square&quot;&gt;The Homotopic Square&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#weakly-idempotent-completeness&quot; id=&quot;markdown-toc-weakly-idempotent-completeness&quot;&gt;Weakly Idempotent Completeness&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#composition-of-inflations&quot; id=&quot;markdown-toc-composition-of-inflations&quot;&gt;Composition of Inflations&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#weakly-idempotent-completeness-1&quot; id=&quot;markdown-toc-weakly-idempotent-completeness-1&quot;&gt;Weakly Idempotent Completeness&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
+&lt;h2 id=&quot;on-diagrams-lemmas-of-ex-mathjax_protectedjfx0cmlhbmdszsqmathjax_protected-cats&quot;&gt;On Diagrams Lemmas of Ex-$\triangle$ Cats&lt;/h2&gt;
+
+&lt;div class=&quot;abstract&quot;&gt;
+  &lt;h5 id=&quot;abstract&quot;&gt;Abstract&lt;/h5&gt;
+  &lt;div&gt;
+    &lt;p&gt;We summarise the diagram lemmas for extriangulated categories.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;the-definition-of-an-extriangulated-category&quot;&gt;The Definition of an Extriangulated Category&lt;/h3&gt;
+
+&lt;p&gt;In brief, an extriangulated category is a triple $(𝒞, 𝔼, 𝔰)$, where&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$𝒞$ is a locally small additive category;&lt;/li&gt;
+  &lt;li&gt;$𝔼 : 𝒞^{\mathrm{op}} × 𝒞 → 𝐀𝐛$ is an additive bifunctor;&lt;/li&gt;
+  &lt;li&gt;$𝔰$ is termed an additive realisation, assigning to each $δ ∈ 𝔼(Z, X)$ an isomorphism class in the comma category $X \backslash 𝒞 / Z$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Furthermore, the triple satisfies certain axioms labelled ET-$k$.&lt;/p&gt;
+
+&lt;p&gt;We commence with the ET1 axiom and the associated terminologies.&lt;/p&gt;
+
+&lt;h4 id=&quot;et1&quot;&gt;ET1&lt;/h4&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(Terminology for ET1). The pair $(𝒞, 𝔼)$ is said to satisfy ET1 if&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;$𝒞$ is a locally small additive category; and&lt;/li&gt;
+    &lt;li&gt;$𝔼 : 𝒞^{\mathrm{op}} × 𝒞 → 𝐀𝐛$ is an additive bifunctor.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;We employ the following terminologies:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;An &lt;strong&gt;element of extension&lt;/strong&gt; is an element $δ ∈ 𝔼(Z, X)$ in the $𝔼$-group. It may also be denoted by the triple $(X, δ, Z)$, or simply $δ$ when unambiguous.&lt;/li&gt;
+    &lt;li&gt;A &lt;strong&gt;pre-composition&lt;/strong&gt; is a group homomorphism $𝔼(f, X) : 𝔼(Z', X) → 𝔼(Z, X)$, given $f : Z → Z'$. We denote this by $f^∗$ when unambiguous.&lt;/li&gt;
+    &lt;li&gt;A &lt;strong&gt;post-composition&lt;/strong&gt; is a group homomorphism $𝔼(Z, g) : 𝔼(Z, X) → 𝔼(Z, X')$, given $g : X → X'$. We denote this by $g_∗$ when unambiguous.&lt;/li&gt;
+    &lt;li&gt;Since $𝔼(-,-)$ is a bifunctor, one has $f^∗ g_∗ = g_∗ f^∗ : 𝔼(Z', X) → 𝔼(Z, X')$.&lt;/li&gt;
+    &lt;li&gt;A &lt;strong&gt;communication of two extensions&lt;/strong&gt; is described as the pair of maps $(α , β ) : (X , δ , Z) → (X' , δ' , Z')$, such that $α_∗ δ = β ^∗ δ '$.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(The group structure of $𝔼(- , -)$). The additive structure of $𝔼(-,-)$ is induced by the standard Baer sum. For objects $X$ and $Z$, one may firstly define $$\begin{equation}
+(δ_1 + δ_2) := \binom{1}{1}^∗ (1,1)_∗ (δ_1 ⊕ δ_2),
+\end{equation}$$ where the group homomorphism is given by $$\begin{equation}
+\binom{1}{1}^∗ (1,1)_∗ : 𝔼(Z ⊕ Z, X ⊕ X) → 𝔼(Z, X),\quad δ_1 ⊕ δ_2 ↦ δ_1 + δ_2.
+\end{equation}$$&lt;/p&gt;
+  &lt;p&gt;It is straightforward to verify that&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;both $f_∗$ and $g^∗$ preserve the additive structure;&lt;/li&gt;
+    &lt;li&gt;$𝔼(Z, X)$ possesses a zero element, and satisfies the laws of associativity and commutativity.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;et2&quot;&gt;ET2&lt;/h4&gt;
+
+&lt;p&gt;Before we proceed to the ET2 axiom, we need to introduce the notion of an &lt;strong&gt;additive realisation&lt;/strong&gt;. Firstly, we define the equivalence relation for the class of objects of the functor category $𝐅𝐮𝐧𝐜𝐭(1 → 2 → 3, 𝒞) / ∼$, where
+$$\begin{equation}
+[X \xrightarrow{f} Z \xrightarrow{g} Y] = [X' \xrightarrow{f'} Z' \xrightarrow{g'} Y']
+\end{equation}$$
+if and only if $X = X'$, $Z = Z'$, and there exists an isomorphism $φ : Y → Y'$ making the following diagram commutative&lt;/p&gt;
+&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_1f6218005f2b2.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+
+&lt;p&gt;The equivalency class preserve the standard $⊕$ of the functor category.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(ET2). The map between classes $𝔰$ is called an &lt;strong&gt;additive realisation&lt;/strong&gt; of the pair $(𝒞, 𝔼)$, provided the following (denoted by ET2):&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;$𝔰$ sends $(X, δ, Z)$ to some equivalency class of the form $[X \xrightarrow f  E \xrightarrow g  Z]$;&lt;/li&gt;
+    &lt;li&gt;$𝔰$ sends $(X, 0, Z)$ to the class of split short exact sequences $[X \xrightarrow {e_1} X ⊕ Z \xrightarrow {p_2} Z]$;&lt;/li&gt;
+    &lt;li&gt;$𝔰(δ _1 ⊕ δ _2) = 𝔰(δ _1) ⊕ 𝔰(δ _2)$ (recall that $⊕$ is compatible with the equivalent class);&lt;/li&gt;
+    &lt;li&gt;If there is a communication of extensions $(α , β): (X, δ , Z) → (X', δ', Z')$, then for any representatives of $𝔼 (δ )$ and $𝔼 (δ ')$, there exists a morphism $β$ making the following diagram commutative:&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_14b5070219dc2.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;p&gt;One should be aware that, the morphism of triangles are not necessasy a communication of triangles.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(Terminologies for ET2). We define the following terminologies:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;The equivalency class $𝔰(δ)$ is called &lt;strong&gt;the realisation&lt;/strong&gt; of $δ$;&lt;/li&gt;
+    &lt;li&gt;A element of $𝔰 (δ)$ is called &lt;strong&gt;a realisation&lt;/strong&gt; of $δ$;&lt;/li&gt;
+    &lt;li&gt;A realisation is also known as an ($𝔼$-)&lt;strong&gt;triangle&lt;/strong&gt;, denoted by $X \xrightarrow f Y \xrightarrow g Z \xrightarrow δ (\text{blank}).$&lt;/li&gt;
+    &lt;li&gt;A realisation is also known as an ($𝔼$-)&lt;strong&gt;conflation&lt;/strong&gt;, denoted by a pair of morphisms $(f,g)$.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The expression of realisation may cause problems, &lt;strong&gt;we use triangles or conflations instead for most of the time&lt;/strong&gt;. For instance, consider the following sentences&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The beneficiaries of this policy were students.&lt;/li&gt;
+  &lt;li&gt;The victims of this rollover accident were students.&lt;/li&gt;
+  &lt;li&gt;He/She is a student.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The use of &lt;em&gt;$x$ be students&lt;/em&gt; means either $x = {\text{students}}$, $x ⊆ {\text{students}}$ or $x ∈ {\text{students}}$.&lt;/p&gt;
+
+&lt;h4 id=&quot;et3&quot;&gt;ET3&lt;/h4&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(ET3, and ET3’). For the triple $(𝒞, 𝔼, 𝔰)$ satisfying ET1 and ET2, we say that it satisfies ET3 if the following holds: for any commutative diagram ($f'α = β f$) between triangles, there exists a dashed morphism ($γ$) rendering it simultaneously a communication of extensions and a commutative diagram.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_e6fb848b2abde.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;The statement of ET3’ is dual: given the commutative diagram $γ g = g' β$, the morphism $α$ is to be determined. The completed diagram is required to satisfy the same properties as above.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;et4&quot;&gt;ET4&lt;/h4&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(ET4, and ET4’). For the ⊤-shaped diagram of triangles, there exists a way to complete the diagram to a commutative diagram of four triangles:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_69fc2c4cc7c4a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;and, satisfying $r^∗ δ_{r2} = δ _{r1}$, $g_∗ δ _{c1} = δ _{c2}$, and $f_∗ δ _{r2} = s^∗ δ _{c1}$. The final one reveals a very special the communciation of extensions:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_7b78cab132440.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;The statement of ET4’ is dual, where the dashed morphisms are given, and the solid morphisms are to be determined. The completed diagram is required to satisfy the same properties as above.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In short, ET4 means that one ⊤-shaped diagram of triangles implies another ⊣-shaped diagram of triangles, and vice versa.&lt;/p&gt;
+
+&lt;h3 id=&quot;cohomological-long-exact-sequence&quot;&gt;(Co)homological Long Exact Sequence&lt;/h3&gt;
+
+&lt;p&gt;The following notation is based on Yoneda lemma. Recall that the category $𝒞$ is locally small, and the bifunctor $𝔼(-,-)$ takes values in Abelian groups. Now there is an isomorphism between Abelian groups&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+𝖭𝖺𝗍 [(X,-), 𝔼 (Z,-)] ↔ 𝔼(Z,X),\quad Φ ↦ Φ_X(1_X).
+\end{equation}$$&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;($δ ^!$ and $δ _!$). Conversely, and element $δ ∈ 𝔼(Z, X)$ induces the following two natural transformations&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$δ^! : (X,-) → 𝔼(Z,-)$, given by $δ^! (f) = f_∗ δ$.&lt;/li&gt;
+    &lt;li&gt;$δ_! : (-,Z) → 𝔼(-,X)$, given by $δ_! (g) = g^∗ δ$.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;We employ $(⋅)_∗$ to denote post-composition, and $(⋅)^!$ to denote post-composer, the same for $(⋅)_!$ and $(⋅)^!$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;the-proof&quot;&gt;The Proof&lt;/h4&gt;
+
+&lt;p&gt;Now we shall prove the homological long exact sequence. For any triangle $X \xrightarrow f Y \xrightarrow g Z \xrightarrow δ$, we have the following long exact sequence of natural transformations:&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+(Z,-) \xrightarrow{g^∗} (Y,-) \xrightarrow{f^∗} (X,-) \xrightarrow{δ^!} 𝔼(Z,-) \xrightarrow{g^∗} 𝔼(Y,-) \xrightarrow{f^∗} 𝔼(X,-).
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;There are no $0$ terms in this long exact sequence. Moreover, the exactness of the first 5-terms can be proved without ET4 (ET4’).&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;We show the exactness at $(Z,-) \xrightarrow{g^∗} (Y,-) \xrightarrow{f^∗} (X,-)$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We take the solid map $\{f,g,β,1_M\}$ in the following diagram&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_75833d5ba7d1c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;By ET3 and ET3’, if there exists a dashed morphism $α$ makes the left rectangle commutative (equiv., $β ∈ \ker f^∗$), then there exists a dashed morphism $γ$ making the right rectangle commutative (equiv., $β ∈ \operatorname{im} g^∗$), and vise versa.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;We show the exactness at $(Y,-) \xrightarrow{f^∗} (X,-) \xrightarrow{δ^!} 𝔼(Z,-)$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;One one hand, we shall show that $0 = δ^! ∘ f^∗$. For any $g : Y → W$, one has $$\begin{equation}
+δ^! ∘ f^∗ (g) = (f^∗ g)_∗ δ = g_∗ f^∗ δ = (f^∗ δ)^! g.
+\end{equation}$$ It suffices to show that $f^∗ δ = 0$. We take the following commutative diagram of triangles:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_65eefe9d750ca.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;By ET3, there exists a dashed morphism $γ$ making the right rectangle commutative, and $f_∗ δ = γ ^∗ 0 = 0$. &lt;br /&gt; &lt;br /&gt; On the other hand, we show that any $h : Z → M$ with $h_∗ δ = 0$ factors through $g$. We take the canonical split short exact sequence as the realisation of $h_∗δ$, and obtain a commutative diagram&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_aa1a8dc94cc83.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;Now $h = a ∘ f ∈ \operatorname{im}f^∗$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;We show the exactness at $(X,-) \xrightarrow{δ^!} 𝔼(Z,-) \xrightarrow{g^∗} 𝔼(Y,-)$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;One one hand, we show that $0 = g^∗ ∘ δ^!$. For any $h : X → M$, one has $$\begin{equation}
+g^∗ ∘ δ^! (h) = g^∗ (h_∗ δ) = h_∗ (g^∗ δ).
+\end{equation}$$ It suffices to show that $g^∗ δ = 0$. We omit the proof since it is dual to the proof of $f_∗ δ =0$. &lt;br /&gt; &lt;br /&gt; One the other hand, we show that any $η ∈ 𝔼 (Z,M)$ with $g^∗ η = 0$ must takes the form $α _∗ δ$. We take the canonical split short exact sequence as the realisation of $g^∗η$, and obtain a commutative diagram of triangles:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_7c4eff32b5e28.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;Here row-III is due induced by $t$ and ET3. Now there exists $α$ such that $α_∗ δ = η$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;We show the exactness at $𝔼(Z,-) \xrightarrow{g^∗} 𝔼(Y,-) \xrightarrow{f^∗} 𝔼(X,-)$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;One one hand, one has shows that $0 = f^∗ ∘ g^∗ = (gf)^∗$. &lt;br /&gt; &lt;br /&gt; One the other hand, once $f^∗ η = 0$ for some $η ∈ 𝔼 (Y, M)$, we use ET4’ and obtain the following commutative diagram:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_ca6956dcb956d.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;By ET4, $a_∗ η = g^∗ δ '$. Since $f^∗ η = 0$, $a$ is split monomorphism whose left inverse is denoted by $x$. One has $η = g^∗ x_∗ δ '$. Hence, $η = g^∗ (x_∗ δ ')$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;corollaries-on-trivial-conflations&quot;&gt;Corollaries on Trivial Conflations&lt;/h4&gt;
+
+&lt;p&gt;There is an analogous result, in comparison with pre-triangulated categories, concerning split morphisms.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;Let $X \xrightarrow f Y \xrightarrow g Z \xrightarrow δ$ be the triangle. We only concern the first five terms of the long exact sequence (there is no ET4).&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$g$ is a monomorphism, iff $f = 0$, iff $g$ is a split monomorphism, iff $δ^!$ is a monomorphism.&lt;/li&gt;
+    &lt;li&gt;$f$ is an epimorphism, iff $g = 0$, iff $f$ is a split epimorphism, iff $δ_!$ is an epimorphism.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There are no trivial results in the case that $f$ is monomorphism or $g$ is an epimorphism, since exact categories are extriangulated.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-hom-complex&quot;&gt;The Hom Complex&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;May there be interesting theorems on adjoint functors.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We use the exact Hom complex to explore some useful lemmas. The following lemma is useful in the proof of lifting property.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;(Extension lifting lemma). Consider the following morphism between triangles:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_651354566e957.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;Suppose that $𝔼(C, K) = 0$. Then there exists some dashed arrows making the entire diagram commutative.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We take the following complex and make homological truncations (we denoted the syzygies by $∙$). By homological algebra, a bounded bicomplex with all exact rows is exact as a total complex. This is proved by induction on length or simply the spectral sequence. We use $↙_k$ to denote the degree $k$ part in the bicomplex.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_5e0d7957ee8aa.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;Since the non-existence of so-called $𝔼^2$, the exactness of $\mathbb E(C,X) → \mathbb E(C,Y) → M$ is given by the following construction:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_8203398a77f66.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;We take $(f,g)$ the element of degree $0$. Now we show that $d(f,g) = 0$.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;By commutative diagram, the entry at $(A,Z)$ is zero.&lt;/li&gt;
+      &lt;li&gt;Since $ε_!(j^∗ g) = ε (p^∗ f) = 0$ and $\mathbb E(B,K) ↪ \mathbb E(A,K)$, we see that $ε_!(g) = 0$. That is, the entry at $𝔼 (B,K)$ is zero.&lt;/li&gt;
+      &lt;li&gt;Similarly, the entry at $𝔼 (C,X)$ is zero.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;By exactness of the totoal complex, there is an triple $$\begin{equation}
+(a,b,c) ∈ (A,K) ⊕ (B,X) ⊕ (C,Y)
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;whose differential is $(f,g)$. We want this preimage to be of the form $(0, ? , 0)$. Thanks to the surjectivity of $p_∗$ and $j^∗$, there exists some element $(s,t) ∈ (B, K) ⊕ (C,X)$ such that $d(s,t) = (a,?,b)$. Hence, $(a,b,c) - d(s,t)$ is the element of the form $(0,?,0)$ whose differential is $(f,g)$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;on-isomorphisms&quot;&gt;On Isomorphisms&lt;/h3&gt;
+
+&lt;h4 id=&quot;conflations-are-closed-under-isomorphisms&quot;&gt;Conflations are Closed under Isomorphisms&lt;/h4&gt;
+
+&lt;p&gt;Here are some results of being closed under isomorphisms.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;All conflations are closed under isomorphisms. To be explicit, for any conflation $X \xrightarrow{f} Y \xrightarrow{g} Z\xrightarrow{δ}$ isomorphisms $α : X → X'$, $β : Y → Y'$ and $γ : Z → Z'$, the following is also a conflation: $$\begin{equation}
+X' \xrightarrow{β ∘ f ∘ α ⁻¹} Y' \xrightarrow{γ ∘ g ∘ β ⁻¹ } Z' \xrightarrow {α _∗ γ ⁻¹ δ}.
+\end{equation}$$&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We first demonstrate that there exists a realisation of $ε ∈ 𝔼 (Z', X)$ such that $𝔰 (δ)$ and $𝔰 (ε )$ are isomorphic as objects in $𝐅𝐮𝐧𝐜𝐭(1 → 2 → 3, 𝒞)$. We now exhibit the invertible communication of extensions: $$\begin{equation}
+(X, δ , Z) \xrightarrow{(1_X, γ)} (X, ε , Z') \xrightarrow{(α , 1_{Z})} (X', δ ', Z').
+\end{equation}$$ At this point, we deduce the isomorphism between the conflations in $\text{row 2}$ and $\text{row 3}$. $\text{row 1}$ is isomorphic to $\text{row 2}$, yet it remains unknown whether $\text{row 1}$ is a conflation.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_df09b7a4b13de.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;We apply ET2 to $\text{row 1}$ and $\text{row 3}$, and thereby obtain that they belong to the same realisation.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;remarks-on-two-out-of-three-principle&quot;&gt;Remarks on Two out of Three Principle&lt;/h4&gt;
+
+&lt;p&gt;The two out of three principles roughly means that, if we have two morphisms between triangles, then there exists the third. For extriangulated categories, it means that for any two morphism $\{α , β , γ \}$ making the small square diagram commutative, then there exists a morphism on the remaining side making the other two squares commutative.&lt;/p&gt;
+&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_2ef345f3649c7.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+
+&lt;p&gt;The commutativity of the right most square means that $(α, γ) : δ → δ '$ is a communication. This is exactly what ET3, ET3’ and (part of the) ET2 means.&lt;/p&gt;
+
+&lt;p&gt;The following lemma is an analogous result for pre-triangulated categories.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;In the diagram, suppose that $β$ is an isomorphism, then $α$ is isomorphism whenever $γ$ is.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We apply $(Z', -)$ to the diagram, and obtain the isomorphism $(Z', Z) \xrightarrow {(- ∘ γ)} (Z', Z')$ by five lemma. Now $γ$ has a left inverse. The right inverse of $γ$ is shown dually. Hence $γ$ is an isomorphism.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;uniqueness-of-morphism-embedding&quot;&gt;Uniqueness of Morphism Embedding&lt;/h4&gt;
+
+&lt;p&gt;The above lemma shows the uniqueness (regardless of the existence) of morphism embedding&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;when $f$ is an inflation, then the conflation is unique up to isomorphism of $Z$;&lt;/li&gt;
+  &lt;li&gt;when $g$ is a deflation, then the conflation is unique up to isomorphism of $X$;&lt;/li&gt;
+  &lt;li&gt;when $δ$ is an extension element, then the conflation is unique up to isomorphism of $Y$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;remarks-on-et4-axiom&quot;&gt;Remarks on ET4 Axiom&lt;/h3&gt;
+
+&lt;h4 id=&quot;on-exact-categories-and-triangulated-categories&quot;&gt;On Exact Categories and Triangulated Categories&lt;/h4&gt;
+
+&lt;p&gt;We recommend the readers to convince themselves that&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;An $\mathrm{Ext}^1$-small (e.g., $𝒜$ has enough injectives) exact category $(𝒜, ℰ)$ is extriangulated, where $𝔼 = \mathrm{Ext}^1$ and the realisation is derived from the definition of the $\mathrm{Ext}^1$-group;&lt;/li&gt;
+  &lt;li&gt;A triangulated category $(𝒯, Σ, \triangle)$ is extriangulated, where $𝔼(?,-) := \mathrm{Hom}(?, -[1])$ and the realisation is defined by embedding a morphism into a unique triangle.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(ET4 in for exact categories). As $\mathrm{Ext}^1$-small exact categories are extriangulated ET4 states the following axioms or propositions of exact categories.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Before the completion of conflations, the composition of two inflations should be an inflation;&lt;/li&gt;
+    &lt;li&gt;The rest is the usual Noether isomorphism, i.e., $W / Y ≃ (W/X) / (Y/X)$.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_527e83c5d8484.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(ET4 in for triangulated categories). As triangulated categories are extriangulated, ET4 is nothing but the TR4 axiom:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_f405d3db6d5b7.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;The commutative squares $\boxed k$ are precisely the identities in ET4.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;For $\boxed 1$, $δ _{c3} = y_∗ ∘ δ _{c2}$ is just $δ _{c3} = y_∗δ _{c2}$;&lt;/li&gt;
+    &lt;li&gt;For $\boxed 2$, $δ _{r1} = δ _{r2} ∘ r$ is just $r^∗ δ _{r2} = δ _{r1}$;&lt;/li&gt;
+    &lt;li&gt;For $\boxed 3$, $δ _{c2} ∘ s = x_∗ ∘ δ _{c3}$ is just $s^∗ δ _{c2} = x_∗δ _{r2}$.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;strict-et4&quot;&gt;Strict ET4&lt;/h4&gt;
+
+&lt;p&gt;In certain circumstances we use the strict form of ET4, which differs from the original (lax) version.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(ET4). This formulation asserts that, given any ⊤-shaped diagram of triangles, it is possible to simultaneously construct the ⊣-component of these triangles in such a way that the resulting diagram commutes, and the identities of extensions hold.&lt;/li&gt;
+  &lt;li&gt;(SET4). In contrast, the strict formulation imposes a stronger condition: for any ⊤-shaped diagram of triangles, there must exist a triangle that completes the associated ∓-shaped diagram. Furthermore, for any such ∓-shaped configuration, one must be able to derive the remaining morphisms and verify the commutativity of the entire diagram.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;We show that ET4 implies SET4.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;For any diagram on the left, we firstly complete it to a full ET4 diagram on the right:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_9f8b585b835a0.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;By two out of three principle of isomorphism, $y'$ factors through $y$ by an isomorphism $φ : B' → B$. Now we complete the remaining triangle in the left diagram, that is, $$\begin{equation}
+Z \xrightarrow {φ ∘ λ '} B \xrightarrow {μ ' ∘ λ} C.
+\end{equation}$$&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;lemmas-on-verdier-diagram-and-noether-diagram&quot;&gt;Lemmas on Verdier Diagram and Noether Diagram&lt;/h3&gt;
+
+&lt;h4 id=&quot;the-squares&quot;&gt;The Squares&lt;/h4&gt;
+
+&lt;p&gt;We mainly discuss the following two kinds of diagrams:&lt;/p&gt;
+
+&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_f63b9a79d5bb1.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+
+&lt;p&gt;The first impression should be&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The left diagram ≈ Verdier ≈ 4×4 axiom;&lt;/li&gt;
+  &lt;li&gt;The right diagram ≈ Noether ≈ octagon axiom.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The main feature of this section is are weak PBPO squares.&lt;/p&gt;
+
+&lt;h4 id=&quot;noether-square-and-et4&quot;&gt;Noether Square and ET4&lt;/h4&gt;
+
+&lt;p&gt;We refer to the square arising in ET4 (or ET4’), comprising two inflations and two deflations, as a &lt;strong&gt;Noether square&lt;/strong&gt;. For exact categories, it is a PBPO square.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(A restatement of ET4 and ET4’). Let $i$ be an inflation and $p$ a deflation.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Suppose that $i$ and $p$ share the same domain; then there exists a unique (up to composition with isomorphisms) completion to a diagram comprising four conflations.&lt;/li&gt;
+    &lt;li&gt;Suppose that $i$ and $p$ share the same codomain; then there exists a unique (up to composition with isomorphisms) completion to a diagram comprising four conflations.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;One may verify this assertion by tracing the extension elements.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;verdier-square-and-44-lemma&quot;&gt;Verdier Square and 4×4 Lemma&lt;/h4&gt;
+
+&lt;p&gt;Analogously, a Verdier square arises in a diagram consisting of four deflations or four inflations. For exact categories, it is a PBPO square. We shall first examine the behaviour of pullbacks along two deflations in extriangulated categories.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;Any two realisations of $δ_{i} ∈ 𝔼 (C, A_i)$ complets into a diagram consisting of four conflations:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_37230da02e987.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;The middle row (column) is the realisations of $(y_i)_∗ δ_j$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We introduce an intermediate conflation $\binom 11 ^∗ (δ _1 ⊕ δ _2)$.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_b498f338d2e98.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;Here $(p_i)_∗ \binom 11^∗(δ_1 ⊕ δ_2) = δ_i$. By ET4, we have the following diagrams:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_2904f468ced3a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;We make subtle adjustments to obtain the following diagrams:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_3aa58ac7e8513.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;Gluing them together, we complete the proof.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;In the above diagram, $(m_1)_∗ δ _1 + (m_2)_∗ δ _2 = 0$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Recall that $(p_i)_∗ \binom 11^∗(δ_1 ⊕ δ_2) = δ_i$. Now $$\begin{aligned}
+(m_1)_∗ δ _1 + (m_2)_∗ δ _2 &amp;= (m_1p_1 + m_2p_2)_∗ \binom 11^∗(δ_1 ⊕ δ_2)\\
+&amp;= \binom 11^∗ m_∗ (δ_1 ⊕ δ_2) \quad = 0.
+\end{aligned}$$&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;We omit the dual statement for the sake of brevity.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;It is evident that the completion of the Verdier diagram, arising from either two inflations or two deflations, is unique up to composition with isomorphisms. One may verify this assertion by tracing the extension elements.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;the-strict-44-lemma&quot;&gt;The Strict 4×4 Lemma&lt;/h4&gt;
+
+&lt;p&gt;We know that the completion of the Verdier diagram (from either two inflations or two deflations) is unique up to composition with isomorphisms. The strict form says that any ±-shaped diagram completes to Verdier diagram.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(Strict 4×4 Lemma). Consider the ±-shaped diagram of triangles realised by $η$, $δ_1$ and $ε$:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_e5b18c49e7987.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;Then there exsists $δ _2$ whose realisation makes the entire diagram commutative, while $ε = (y_2)^∗ δ _1$, $η = (y_1)^∗ δ _2$, and $(m_1)_∗ δ _1 + (m_2)_∗ δ _2 = 0$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We apply ET4’ to the composition of deflations $y_1$ and $λ _1$, and obtain&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_ad4ed79ecd676.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;We realise $(x_1)^∗ η$ with standard split triangle, since $(x_1)^∗ η = (m_1)^∗ (λ _1)^∗ η = 0$. Even though $s ≠ m_1$ in general, we see that $(s-m_1) ∈ \ker (λ _1)_∗ = \operatorname{im} (m_2)_∗$. We write $l$ such that $$\begin{equation}
+A_1 \xrightarrow {l} A_2 \xrightarrow {m_2} M \quad = \quad A_1 \xrightarrow {s-m_1} M.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;Now we wish $δ_2$ could be obtained by&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_fb12179f964d2.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;Once we take $x_2 = λ _2 m_2$, the best choice of $f_2$ is $1$. Due to the anticommutative square,&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+0 = (m_1)_∗ δ _1 + (m_2)_∗ δ _2 = (m_1p_1 + m_2f)_∗ κ.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;Hence, $(m_1 + m_2f_1, m_2f_2)$ factors through $(s,m_2)$. We take $f_1 = l$ to complete our construction. We apply SET4’ to the diagram $(f_1,f_2)_∗ κ = δ _2$, and obtain:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_fff4241e98bb3.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;It remains to show the commutativity of the diagram.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_e4d0e675be05d.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;The square 1., 2., 3. and 6. are commutative due to our construction. To show that 4. is commutative, we see that ($†$ for communications in ET4). $$\begin{equation}
+(y_2)^∗ δ _1 = (y_2)^∗ (p_1)_∗ κ = (p_1)_∗ (y_2)^∗ κ \overset †= (p_1)_∗ \binom {1}{-l}_∗ ε = ε.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;To show that 5. is commutative, we see that $$\begin{equation}
+(y_1)^∗ δ_2 = (y_1)^∗ (l,1)_∗ κ = (l,1)_∗ (y_1)^∗ κ \overset †= (l,1)_∗ (e_2)_∗ η  = η.
+\end{equation}$$&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;the-weak-pbpo-squares&quot;&gt;The Weak PBPO Squares&lt;/h4&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(Weak PO Square). A &lt;strong&gt;weak PO square&lt;/strong&gt; (or &lt;strong&gt;weak coCatersian square&lt;/strong&gt;) is an 2×2 diagram ($wf = hg$), such that for any $α f = β g$, there exists some $φ$ making the triangles commutative.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_a154fd8c8c64f.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;Equivalently, the following sequence of functors is exact at $(B ⊕ C, -)$: $$\begin{equation}
+(D, -) \xrightarrow{(-w,h)^∗} (B ⊕ C, -) \xrightarrow {\binom f g^∗ } (A, -).
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;We define &lt;strong&gt;weak PB squares&lt;/strong&gt; dually, which is also called a weak Catersian square. If a square is both weak PB and weak PO, then we call it a &lt;strong&gt;weak PBPO square&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;Noether squares are weakly PBPO.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Since the opposite category of an extriangulated category is still extriangulated, we only prove the weak PO part. &lt;br /&gt; &lt;br /&gt; We introduce arbitrary $T$, $n$ and $m$ in ET4 diagram such that $ng = mα$. It remains to show the existence of $M ⇢ T$ making the entire diagram commutative.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_131341908a562.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;We beigns with&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+0 = (mα )_∗ δ _{c1} = (ng)_∗ δ _{c1} = δ _{c2}^! (n).
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;By long exact sequence, $n$ factors through $r$. Hence, we take $l : M → T$ such that $lr = m$. Even though it is not necessary that $m = l q$, we see that&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+(m - lq) ∈ \ker α ^∗  = \operatorname{im} β ^∗.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;This introduce some $λ : K → T$ such that $(m - lq) = λ β$. We claim that $l + λ s$ is the desired morphism:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;$(l + λ s)r = lr + λ(sr) = lr = n$;&lt;/li&gt;
+      &lt;li&gt;$(l + λ s)q = lq + λ sq = (m - λ β ) + λ sq = m + λ (β - sq) = m$.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;The following diagram shows where $λ$ and $l$ appears:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_75ec7aabab93b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;Verdier squares obtained from two deflations is weak PB.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We take arbitrary $W$, $α$ and $β$ such that the $y_2 β = y_2 α$, it remains to show the existence of $W ⇢ M$ making the entire diagram commutative.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_5dd9291c13c06.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;We begin with&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+0 = (y_2α )^∗ δ _2 = β ^∗ (y_1)^∗  δ _2 = ((y_1)^∗  δ _2)_! (β).
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;Since $β ∈ \ker ((y_1)^∗  δ _2)_! = \operatorname{im} (λ _1)_∗$, we take $l : W → M$ such that $λ _1 l = β$. Even though $α ≠ λ _2 l$ in general, we consider $$\begin{equation}
+(α - λ _2 l) = \ker (y_2)_∗ = \operatorname{im} (x_2)_∗ .
+\end{equation}$$ This introduce $s: W → A_2$ such that $x_2 s = (α - λ _2 l)$. Finally, we verify that $l + m_2s$ is our desired morphism:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;$λ _2 (l + m_2s) = λ _2 l + λ _2 m_2 s = α - x_2 s + λ _2 m_2 s = α - (λ _2 m_2 -x_2)s = α$.&lt;/li&gt;
+      &lt;li&gt;$λ _1 (l + m_2s) = λ _1l + (λ _1 m_2) s = λ _1l = β$.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;The following diagram shows where $λ _1$, $λ _2$ and $l$ appears:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_ee9d1227cdf69.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;the-homotopic-square&quot;&gt;The Homotopic Square&lt;/h4&gt;
+
+&lt;p&gt;Recall that in ET2, we made no more assumption on the middle dashed arrow between conflations. However, there is a way to take a good morphism, enlightened by Neeman’s octagon axiom.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(The homotopic square theorem). For any realisations of the communication of extensions $(λ, 1): δ → λ_∗ δ$, there exists a suitable morphism $w$ rendering both diagrams commutative, and $y^∗ δ$ admits a realisation as depicted in the diagram below:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_9f2bb73e1adf2.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We construct the Verdier diagram from $b$ and $y$:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_d8d27155daf7d.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;Since $b^∗ δ =0$, we write $b^∗ λ _∗ δ$ in the standard split form which does not affect the solid arrows. By the anti commutative square in 4×4 diagram, we have $$\begin{equation}
+0 = \binom {λ '}{a} _∗ δ + \binom {1}{0} _∗  λ _∗ δ = \binom {λ ' + λ} a_∗ δ.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;Hence, $(λ ' + λ) ∈ \ker δ^!$. By long exact sequence, there exists $l$ such that $(λ + λ ' ) = l ∘ a$. To be explicit, $$\begin{equation}
+X \xrightarrow a Y \xrightarrow l A\quad  = \quad  X \xrightarrow {λ + λ '} A.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;It remains to show the existence of $w$ such that the following diagram commutes:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_fc2b7f74d1e86.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;The left square commutes due to the choice of $l$. Taking $w = xl - w'$, we see that&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;$wa - x λ = xla - w'a - xλ = xla - x λ ' - xλ = x(la - λ - λ ' ) = 0$;&lt;/li&gt;
+      &lt;li&gt;$yw - b = yxl - yw' - b = 0 l + b - b = 0$.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;Hence, the right square also commutes.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;corollary&quot;&gt;
+  &lt;p&gt;The homotopic square is also a weak PBPO square.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(The square of ET4). Consider the Noether diagram given by ET4:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_16121f7f8f9ca.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;We focus on the square $\square$.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;$\square$ is a weak PBPO square, but not a homotopic square in general.&lt;/li&gt;
+    &lt;li&gt;There is a way to replace $α$ by some $α'$ which makes the square a homotopic square, and the entire diagram is still commutative. The only sacrifice is that $α$ may not be a deflation.&lt;/li&gt;
+    &lt;li&gt;There is a way to replace $q$ by some $q'$ which makes the square a homotopic square, and the entire diagram is still commutative. The only sacrifice is that $q$ may not be a deflation.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The following proposition is useful for length category or something more general.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;If there are no retractions in $\mathrm{End}(Y)$, or there are no retractions in $\mathrm{End}(M)$, then the ET4 diagram is automatically a homotopic square.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Suppose that there are no retractions in $\mathrm{End}(Y)$. We take $α': Y → W$ and obtain the homotopic square. By factorisation between two squares, one has $m$ and $n$ such that the following diagram commutes:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_e26ebbd185a69.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;$n ∘ m$ is an isomorphism by two out of three principle. By nonexistence of retractions, $m$ and $n$ must be isomorphisms.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;weakly-idempotent-completeness&quot;&gt;Weakly Idempotent Completeness&lt;/h3&gt;
+
+&lt;h4 id=&quot;composition-of-inflations&quot;&gt;Composition of Inflations&lt;/h4&gt;
+
+&lt;p&gt;By virtue of ET4, it follows that the composition of two inflations is itself an inflation. Our primary concern is as follows: suppose that the composition $q∘p$ is an inflation; under what conditions can we conclude that $p$ is also an inflation?&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;If $q∘p$ is an inflation, $q$ is a deflation, then $p$ is also an inflation.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We apply ET4 to $q ∘ p$ and $q$. By weak PBPO, there exists $s$ making the entire diagram commutative:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_72ced3c2004ae.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;Since $p$ is a composition of a split monomorphism $s$ and an inflation $p'$, $p$ is an inflation.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;corollary&quot;&gt;
+  &lt;p&gt;$i$ is an inflation ⇒ $\binom i f$ is an inflation.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;If $i$ is an inflation, then the composition of $\binom i f$ with a deflation $(1,0)$ is an inflation. Hence, $\binom i f$ must be an inflation. In this case, the diagram completes into Verdier diagram by strict 4×4 lemma.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;weakly-idempotent-completeness-1&quot;&gt;Weakly Idempotent Completeness&lt;/h4&gt;
+
+&lt;p&gt;When $q ∘ p$ is an inflation, under what conditions can we conclude that $p$ is an inflation? The following lemma comes from obscure lemma in exact categories.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;$q ∘ p$ is an inflation ⇒ $\binom p 0$ is an inflation.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Let $X_1 \xrightarrow p X_2 \xrightarrow q X_3$ be usual morphisms. Suppose that $q ∘ p$ is an inflation, then $\binom p 0 : X_1 → X_2 ⊕ X_3$ is also an inflation. This is due to $\binom p {q ∘ p}$ is an inflation, any inflation are closed under Gaussian elimination.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To dispense with the cumbersome $0$, we introduce the following definition of weakly idempotent completeness. The initial intuition is drawn from the completion of the category of free modules.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The weakly idempotent completion of the category of free modules is the category of stable projective modules.&lt;/li&gt;
+  &lt;li&gt;The idempotent completion of the category of free modules is the category of projective modules.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We shall not pursue the notion of idempotent completeness in detail; our attention is restricted to the weakly idempotent completion.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(Weakly idempotent complete) The following are equivalent for an additive category.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;When $i$ has a left inverse $p$, then $i = \binom 1 0 : X → X ⊕ Y$;&lt;/li&gt;
+    &lt;li&gt;When $p$ has a right inverse $i$, then $p = (1,0) : X ⊕ Y → X$.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We only prove 1. ⇒ 2., the converse is dual. If $i$ has a left inverse $p$, $p$ takes the from $(1,0)$. Hence, $i$ takes the form $\binom 1 t$ so that $p ∘ i$ is an isomorphism. By the composition with an isomorphism, $i$ takes the form $\binom 1 0$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;For extriangulated categories, the following are equivalent conditions for being weakly idempotent complete.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;When $i$ has a left inverse $p$, then $i = \binom 1 0 : X → X ⊕ Y$;&lt;/li&gt;
+    &lt;li&gt;When $\binom i 0$ is an inflation, then so is $i$;&lt;/li&gt;
+    &lt;li&gt;$\binom {i \ 0}{0 \ j}$ is an inflation, iff $i$ and $j$ are inflations;&lt;/li&gt;
+    &lt;li&gt;When $f i$ is an inflation, then so is $i$;&lt;/li&gt;
+    &lt;li&gt;When $p$ has a right inverse $i$, then $p = (1,0) : X ⊕ Y → X$;&lt;/li&gt;
+    &lt;li&gt;When $(p,0)$ is a deflation, then so is $p$;&lt;/li&gt;
+    &lt;li&gt;$\binom {p \ 0}{0 \ q}$ is a deflation, iff $p$ and $q$ are deflations;&lt;/li&gt;
+    &lt;li&gt;When $p g$ is a deflation, then so is $p$.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We only proof the first four statements, the rest are dual. The equivalence 2. ⇔ 4. is already shown above.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;When 4. holds true, and $\binom 1 0 ∘ i$ is an inflation, then so is $i$;&lt;/li&gt;
+      &lt;li&gt;When 2. holds true, and $f i$ is an inflation, the lemma shows that $\binom i 0$ is an inflation, hence $i$ is an inflation;&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;Now we show 1. ⇔ 4.. Since 1. is a special case of 4. (isomorphisms are inflations), we only need to show 1. ⇒ 2. and thus 1. ⇒ 4.. Suppose that $\binom i 0$ is an inflation, then we take conflation $$\begin{equation}
+X \xrightarrow {\binom i 0} Y ⊕ Z \xrightarrow {(s,t)} W.
+\end{equation}$$ Since $(s,t) ∘ \binom {i \ 0}{0 \ 1} = 0$, by long exact sequence, there is $(a,b)$ such that $\binom {i \ 0}{0 \ 1} = (a,b) ∘ \binom i 0$. Hence, $t$ is split monomorphism, and the conflation writes as $$\begin{equation}
+X \xrightarrow {\binom i 0} Y ⊕ Z \xrightarrow {\binom {s_1 \ 0}{s_2 \ 1_Z}} Q ⊕ Z.
+\end{equation}$$ Now by strict 4×4 lemma, we have the following commutative diagram consisting four conflations:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_bcde30856c1ee.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;The only choice of the dashed arrow $X ⇢ Z$ is $i$, thus is an inflation. &lt;br /&gt; &lt;br /&gt; Now we show that 3. ⇔ 2.. We firstly omit the ← part of the statement in 3., since realisation always commutes with direct product. On one hand. 3. is a corollary of 2. by composition with $\binom 1 0$ and $\binom 0 1$. On the other hand, if $\binom i 0$ is an inflation, then so is $ \binom {i \ 0_0}{0 \ 0_0}$. Hence, $i$ is an inflation by 3..&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </description>
           <pubDate>2025-05-23T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Diagram_Thm_Extri</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Diagram_Thm_Extri</guid>
+          <link>http://localhost:4000/website/posts/Diagram_Thm_Extri</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Diagram_Thm_Extri</guid>
         </item>
       
     
@@ -360,8 +1101,8 @@ F(-) ≃ \mathrm{im}(ι ∘ π) = \mathrm{im}((-,α)) ≃  (-, M)
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Stable_Adjoint</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Stable_Adjoint</guid>
+          <link>http://localhost:4000/website/posts/Stable_Adjoint</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Stable_Adjoint</guid>
         </item>
       
     
@@ -399,8 +1140,8 @@ F(-) ≃ \mathrm{im}(ι ∘ π) = \mathrm{im}((-,α)) ≃  (-, M)
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Equi_Def_Hovey_CP</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Equi_Def_Hovey_CP</guid>
+          <link>http://localhost:4000/website/posts/Equi_Def_Hovey_CP</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Equi_Def_Hovey_CP</guid>
         </item>
       
     
@@ -435,8 +1176,8 @@ F(-) ≃ \mathrm{im}(ι ∘ π) = \mathrm{im}((-,α)) ≃  (-, M)
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/cp_complete_oth</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/cp_complete_oth</guid>
+          <link>http://localhost:4000/website/posts/cp_complete_oth</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/cp_complete_oth</guid>
         </item>
       
     
@@ -502,8 +1243,8 @@ F(-) ≃ \mathrm{im}(ι ∘ π) = \mathrm{im}((-,α)) ≃  (-, M)
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Long_Exact_Seq_Extriangulated</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Long_Exact_Seq_Extriangulated</guid>
+          <link>http://localhost:4000/website/posts/Long_Exact_Seq_Extriangulated</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Long_Exact_Seq_Extriangulated</guid>
         </item>
       
     
@@ -562,8 +1303,8 @@ p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Inflation_add_Inflation</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Inflation_add_Inflation</guid>
+          <link>http://localhost:4000/website/posts/Inflation_add_Inflation</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Inflation_add_Inflation</guid>
         </item>
       
     
@@ -619,8 +1360,8 @@ p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Ideal_Quotient</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Ideal_Quotient</guid>
+          <link>http://localhost:4000/website/posts/Ideal_Quotient</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ideal_Quotient</guid>
         </item>
       
     
@@ -666,8 +1407,8 @@ p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Homotopic_PBPO_Extri</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Homotopic_PBPO_Extri</guid>
+          <link>http://localhost:4000/website/posts/Homotopic_PBPO_Extri</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Homotopic_PBPO_Extri</guid>
         </item>
       
     
@@ -700,8 +1441,8 @@ p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Enough_Proj_Cotorsion</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Enough_Proj_Cotorsion</guid>
+          <link>http://localhost:4000/website/posts/Enough_Proj_Cotorsion</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Enough_Proj_Cotorsion</guid>
         </item>
       
     
@@ -733,8 +1474,8 @@ p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/EX3_Analogue_Extri</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/EX3_Analogue_Extri</guid>
+          <link>http://localhost:4000/website/posts/EX3_Analogue_Extri</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/EX3_Analogue_Extri</guid>
         </item>
       
     
@@ -770,8 +1511,8 @@ p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/4_times_4_extri</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/4_times_4_extri</guid>
+          <link>http://localhost:4000/website/posts/4_times_4_extri</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/4_times_4_extri</guid>
         </item>
       
     
@@ -926,8 +1667,8 @@ p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Model-Extriangulatd</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Model-Extriangulatd</guid>
+          <link>http://localhost:4000/website/posts/Model-Extriangulatd</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Model-Extriangulatd</guid>
         </item>
       
     
@@ -939,8 +1680,8 @@ p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
 &lt;p&gt;&lt;a href=&quot;Coxeter-Reflection&quot;&gt;Coxeter 反射简介&lt;/a&gt;, 以及 &lt;a href=&quot;Kronecker_Rep&quot;&gt;Kronecker_quiver&lt;/a&gt; AR quiver 的计算.&lt;/p&gt;
 </description>
           <pubDate>2025-05-16T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/20250516Talk</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/20250516Talk</guid>
+          <link>http://localhost:4000/website/posts/20250516Talk</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/20250516Talk</guid>
         </item>
       
     
@@ -1299,8 +2040,8 @@ p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
 &lt;h3 id=&quot;hovey-三元组&quot;&gt;Hovey 三元组&lt;/h3&gt;
 </description>
           <pubDate>2025-05-16T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Model</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Model</guid>
+          <link>http://localhost:4000/website/posts/Model</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Model</guid>
         </item>
       
     
@@ -1734,8 +2475,8 @@ p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-14T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Stable_Cat_Analogue</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Stable_Cat_Analogue</guid>
+          <link>http://localhost:4000/website/posts/Stable_Cat_Analogue</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Stable_Cat_Analogue</guid>
         </item>
       
     
@@ -2012,8 +2753,8 @@ p_1φ m=p_1φ (sx-e_1f)=-φ _{1,1}f +p_1φ sx.
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-13T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Exact_Cat_Short_Note</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Exact_Cat_Short_Note</guid>
+          <link>http://localhost:4000/website/posts/Exact_Cat_Short_Note</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Exact_Cat_Short_Note</guid>
         </item>
       
     
@@ -2067,8 +2808,8 @@ X\xrightarrow{\binom{a_1}{b_1}} Y_2\oplus Y_1\xrightarrow{(b_2,- a_2)} Z\overset
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-12T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Homotopic_PBPO_Oct</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Homotopic_PBPO_Oct</guid>
+          <link>http://localhost:4000/website/posts/Homotopic_PBPO_Oct</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Homotopic_PBPO_Oct</guid>
         </item>
       
     
@@ -2103,8 +2844,8 @@ X\xrightarrow{\binom{a_1}{b_1}} Y_2⊕ Y_1\xrightarrow{(b_2,-a_2)} Z\xrightarrow
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-12T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Homotopic_PBPO</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Homotopic_PBPO</guid>
+          <link>http://localhost:4000/website/posts/Homotopic_PBPO</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Homotopic_PBPO</guid>
         </item>
       
     
@@ -2368,8 +3109,8 @@ h^∙ : 𝒜 → 𝐅𝐮𝐧𝐜𝐭_{Lex} (𝒜 , 𝐀𝐛),\quad X ↦ (X,-)
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-12T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Exact_Cat</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Exact_Cat</guid>
+          <link>http://localhost:4000/website/posts/Exact_Cat</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Exact_Cat</guid>
         </item>
       
     
@@ -2631,8 +3372,8 @@ $$&lt;/p&gt;
 
 </description>
           <pubDate>2025-05-11T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/C_Similar_matrix</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/C_Similar_matrix</guid>
+          <link>http://localhost:4000/website/posts/C_Similar_matrix</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/C_Similar_matrix</guid>
         </item>
       
     
@@ -2670,8 +3411,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Prod_Localisation</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Prod_Localisation</guid>
+          <link>http://localhost:4000/website/posts/Prod_Localisation</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Prod_Localisation</guid>
         </item>
       
     
@@ -2697,8 +3438,8 @@ Q^∗:𝐅𝐮𝐧𝐜𝐭(𝒜[S^{-1}] , ℬ) ↣ 𝐅𝐮𝐧𝐜𝐭(𝒜,ℬ
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/PB_Localisation_Fullyfaithful</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/PB_Localisation_Fullyfaithful</guid>
+          <link>http://localhost:4000/website/posts/PB_Localisation_Fullyfaithful</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/PB_Localisation_Fullyfaithful</guid>
         </item>
       
     
@@ -2745,8 +3486,8 @@ F : 𝒜 × ℬ → ℰ,\quad (A,B) ↦ (𝔉(A))(B).
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Currying_Functor_Cat</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Currying_Functor_Cat</guid>
+          <link>http://localhost:4000/website/posts/Currying_Functor_Cat</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Currying_Functor_Cat</guid>
         </item>
       
     
@@ -2772,8 +3513,8 @@ F : 𝒜 × ℬ → ℰ,\quad (A,B) ↦ (𝔉(A))(B).
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Additive_Oplus_Closed_Implies</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Additive_Oplus_Closed_Implies</guid>
+          <link>http://localhost:4000/website/posts/Additive_Oplus_Closed_Implies</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Additive_Oplus_Closed_Implies</guid>
         </item>
       
     
@@ -3058,8 +3799,8 @@ $$&lt;/p&gt;
 
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Tri_Cat_Def</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Tri_Cat_Def</guid>
+          <link>http://localhost:4000/website/posts/Tri_Cat_Def</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Tri_Cat_Def</guid>
         </item>
       
     
@@ -3164,8 +3905,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Extriangulated_Category</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Extriangulated_Category</guid>
+          <link>http://localhost:4000/website/posts/Extriangulated_Category</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Extriangulated_Category</guid>
         </item>
       
     
@@ -14438,8 +15179,8 @@ $$&lt;/p&gt;
 &lt;/table&gt;
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Unicode_math_Table</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Unicode_math_Table</guid>
+          <link>http://localhost:4000/website/posts/Unicode_math_Table</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Unicode_math_Table</guid>
         </item>
       
     
@@ -14518,8 +15259,8 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.lexilogos.com/keyboard/russian.htm&quot;&gt;Cyrillic-Latin Converter&lt;/a&gt;.&lt;/p&gt;
 </description>
           <pubDate>2025-05-10T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Collection_of_Websites</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Collection_of_Websites</guid>
+          <link>http://localhost:4000/website/posts/Collection_of_Websites</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Collection_of_Websites</guid>
         </item>
       
     
@@ -14602,8 +15343,8 @@ $$&lt;/p&gt;
 &lt;p&gt;关于预投射部分存在性之判准, 留至 Directing 模.&lt;/p&gt;
 </description>
           <pubDate>2025-05-09T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/20250425Talk</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/20250425Talk</guid>
+          <link>http://localhost:4000/website/posts/20250425Talk</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/20250425Talk</guid>
         </item>
       
     
@@ -14672,8 +15413,8 @@ C(ℬ) → C(ℬ) [S^{-1}] → K(ℬ)
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-09T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Stable_Add_Cat</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Stable_Add_Cat</guid>
+          <link>http://localhost:4000/website/posts/Stable_Add_Cat</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Stable_Add_Cat</guid>
         </item>
       
     
@@ -14774,8 +15515,8 @@ X &amp;  &amp;  &amp;  &amp; ⋅  &amp;   &amp; ⋅  &amp;  &amp;  &amp;  &amp; 
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-09T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Gabriel_Zisman</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gabriel_Zisman</guid>
+          <link>http://localhost:4000/website/posts/Gabriel_Zisman</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Gabriel_Zisman</guid>
         </item>
       
     
@@ -14922,8 +15663,8 @@ Q^∗:𝐅𝐮𝐧𝐜𝐭(𝒜[S^{-1}] , ℬ) ↣ 𝐅𝐮𝐧𝐜𝐭(𝒜,ℬ
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-09T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Additive_Localisation</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Additive_Localisation</guid>
+          <link>http://localhost:4000/website/posts/Additive_Localisation</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Additive_Localisation</guid>
         </item>
       
     
@@ -14990,8 +15731,8 @@ where $(z,w_1,w_2,\ldots, w_n,x)$ are free variables ($y$ is not free).
 &lt;p&gt;When non-set-theoretic mathematicians talk about NBG, AC for Sets or even Axiom of Global Choice is possibly included.&lt;/p&gt;
 </description>
           <pubDate>2025-05-09T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/NBGC</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/NBGC</guid>
+          <link>http://localhost:4000/website/posts/NBGC</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/NBGC</guid>
         </item>
       
     
@@ -15013,8 +15754,8 @@ where $(z,w_1,w_2,\ldots, w_n,x)$ are free variables ($y$ is not free).
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-07T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Morphism_Directed</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Morphism_Directed</guid>
+          <link>http://localhost:4000/website/posts/Morphism_Directed</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Morphism_Directed</guid>
         </item>
       
     
@@ -15037,8 +15778,8 @@ where $(z,w_1,w_2,\ldots, w_n,x)$ are free variables ($y$ is not free).
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-07T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/From_Simp_Proj</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/From_Simp_Proj</guid>
+          <link>http://localhost:4000/website/posts/From_Simp_Proj</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/From_Simp_Proj</guid>
         </item>
       
     
@@ -15083,8 +15824,8 @@ where $(z,w_1,w_2,\ldots, w_n,x)$ are free variables ($y$ is not free).
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-07T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Finite_Pre_Post</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Finite_Pre_Post</guid>
+          <link>http://localhost:4000/website/posts/Finite_Pre_Post</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Finite_Pre_Post</guid>
         </item>
       
     
@@ -15121,8 +15862,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-06T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Non_Existence_of_Proproj</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Non_Existence_of_Proproj</guid>
+          <link>http://localhost:4000/website/posts/Non_Existence_of_Proproj</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Non_Existence_of_Proproj</guid>
         </item>
       
     
@@ -15152,8 +15893,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-06T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Preproj_cyclic</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Preproj_cyclic</guid>
+          <link>http://localhost:4000/website/posts/Preproj_cyclic</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Preproj_cyclic</guid>
         </item>
       
     
@@ -15206,8 +15947,8 @@ $$&lt;/p&gt;
 &lt;/ol&gt;
 </description>
           <pubDate>2025-05-06T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Preproj_Disconnected</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Preproj_Disconnected</guid>
+          <link>http://localhost:4000/website/posts/Preproj_Disconnected</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Preproj_Disconnected</guid>
         </item>
       
     
@@ -15239,8 +15980,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-06T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Pre_Post_Self_Oth_Brick</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Pre_Post_Self_Oth_Brick</guid>
+          <link>http://localhost:4000/website/posts/Pre_Post_Self_Oth_Brick</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Pre_Post_Self_Oth_Brick</guid>
         </item>
       
     
@@ -15296,8 +16037,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-06T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Post_Proj_Left_Finite</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Post_Proj_Left_Finite</guid>
+          <link>http://localhost:4000/website/posts/Post_Proj_Left_Finite</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Post_Proj_Left_Finite</guid>
         </item>
       
     
@@ -15335,8 +16076,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-05T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Kronecker_Regular</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Kronecker_Regular</guid>
+          <link>http://localhost:4000/website/posts/Kronecker_Regular</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Kronecker_Regular</guid>
         </item>
       
     
@@ -15378,8 +16119,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-05T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Kronecker_Dim_Vec</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Kronecker_Dim_Vec</guid>
+          <link>http://localhost:4000/website/posts/Kronecker_Dim_Vec</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Kronecker_Dim_Vec</guid>
         </item>
       
     
@@ -15410,8 +16151,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-05T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/C_is_tau_for_Proj</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/C_is_tau_for_Proj</guid>
+          <link>http://localhost:4000/website/posts/C_is_tau_for_Proj</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/C_is_tau_for_Proj</guid>
         </item>
       
     
@@ -15443,8 +16184,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-05T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/C_is_tau</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/C_is_tau</guid>
+          <link>http://localhost:4000/website/posts/C_is_tau</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/C_is_tau</guid>
         </item>
       
     
@@ -15556,8 +16297,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Kronecker_Rep</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Kronecker_Rep</guid>
+          <link>http://localhost:4000/website/posts/Kronecker_Rep</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Kronecker_Rep</guid>
         </item>
       
     
@@ -15602,8 +16343,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Proj_Inj_Coxeter</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Proj_Inj_Coxeter</guid>
+          <link>http://localhost:4000/website/posts/Proj_Inj_Coxeter</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Proj_Inj_Coxeter</guid>
         </item>
       
     
@@ -15645,8 +16386,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/L_Here_not_R_Here</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/L_Here_not_R_Here</guid>
+          <link>http://localhost:4000/website/posts/L_Here_not_R_Here</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/L_Here_not_R_Here</guid>
         </item>
       
     
@@ -15723,8 +16464,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Hereditary_Alg_Eq_Def</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hereditary_Alg_Eq_Def</guid>
+          <link>http://localhost:4000/website/posts/Hereditary_Alg_Eq_Def</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Hereditary_Alg_Eq_Def</guid>
         </item>
       
     
@@ -15761,8 +16502,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Coxeter_Ref_Idem</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Coxeter_Ref_Idem</guid>
+          <link>http://localhost:4000/website/posts/Coxeter_Ref_Idem</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Coxeter_Ref_Idem</guid>
         </item>
       
     
@@ -15793,8 +16534,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Coxeter_PM_Adjoint</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Coxeter_PM_Adjoint</guid>
+          <link>http://localhost:4000/website/posts/Coxeter_PM_Adjoint</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Coxeter_PM_Adjoint</guid>
         </item>
       
     
@@ -15849,8 +16590,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Complete_Coxeter_Reflection</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Complete_Coxeter_Reflection</guid>
+          <link>http://localhost:4000/website/posts/Complete_Coxeter_Reflection</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Complete_Coxeter_Reflection</guid>
         </item>
       
     
@@ -15874,8 +16615,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/AR_Proj</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR_Proj</guid>
+          <link>http://localhost:4000/website/posts/AR_Proj</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/AR_Proj</guid>
         </item>
       
     
@@ -15905,8 +16646,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/AR_Finite_No_Multiple_Arrows</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR_Finite_No_Multiple_Arrows</guid>
+          <link>http://localhost:4000/website/posts/AR_Finite_No_Multiple_Arrows</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/AR_Finite_No_Multiple_Arrows</guid>
         </item>
       
     
@@ -16194,8 +16935,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Quiver-and-Hereditary-Algebra</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Quiver-and-Hereditary-Algebra</guid>
+          <link>http://localhost:4000/website/posts/Quiver-and-Hereditary-Algebra</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Quiver-and-Hereditary-Algebra</guid>
         </item>
       
     
@@ -16356,8 +17097,8 @@ $$&lt;/p&gt;
 &lt;p&gt;对偶地, $C^- = τ ⁻¹$.&lt;/p&gt;
 </description>
           <pubDate>2025-05-04T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Coxeter-Reflection</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Coxeter-Reflection</guid>
+          <link>http://localhost:4000/website/posts/Coxeter-Reflection</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Coxeter-Reflection</guid>
         </item>
       
     
@@ -16460,8 +17201,8 @@ $$&lt;/p&gt;
 &lt;h2 id=&quot;投射模&quot;&gt;投射模&lt;/h2&gt;
 </description>
           <pubDate>2025-05-03T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/FP_P_I_F</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/FP_P_I_F</guid>
+          <link>http://localhost:4000/website/posts/FP_P_I_F</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/FP_P_I_F</guid>
         </item>
       
     
@@ -16495,8 +17236,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-03T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Equi_Def_Generator</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Equi_Def_Generator</guid>
+          <link>http://localhost:4000/website/posts/Equi_Def_Generator</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Equi_Def_Generator</guid>
         </item>
       
     
@@ -16641,8 +17382,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-03T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Projective_Generators</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Projective_Generators</guid>
+          <link>http://localhost:4000/website/posts/Projective_Generators</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Projective_Generators</guid>
         </item>
       
     
@@ -16692,8 +17433,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-03T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/ML_analysis</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/ML_analysis</guid>
+          <link>http://localhost:4000/website/posts/ML_analysis</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/ML_analysis</guid>
         </item>
       
     
@@ -16897,8 +17638,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-03T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Forget</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Forget</guid>
+          <link>http://localhost:4000/website/posts/Forget</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Forget</guid>
         </item>
       
     
@@ -16917,8 +17658,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-01T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/When_1_m_epi</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/When_1_m_epi</guid>
+          <link>http://localhost:4000/website/posts/When_1_m_epi</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/When_1_m_epi</guid>
         </item>
       
     
@@ -16973,8 +17714,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-01T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Proj_is_1_Derivative</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Proj_is_1_Derivative</guid>
+          <link>http://localhost:4000/website/posts/Proj_is_1_Derivative</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Proj_is_1_Derivative</guid>
         </item>
       
     
@@ -17001,8 +17742,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-01T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Proj_0_is_Lim</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Proj_0_is_Lim</guid>
+          <link>http://localhost:4000/website/posts/Proj_0_is_Lim</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Proj_0_is_Lim</guid>
         </item>
       
     
@@ -17033,8 +17774,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-05-01T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/ML_Mod</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/ML_Mod</guid>
+          <link>http://localhost:4000/website/posts/ML_Mod</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/ML_Mod</guid>
         </item>
       
     
@@ -17075,8 +17816,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-29T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Happel_Fully_Faithful</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Happel_Fully_Faithful</guid>
+          <link>http://localhost:4000/website/posts/Happel_Fully_Faithful</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Happel_Fully_Faithful</guid>
         </item>
       
     
@@ -17106,8 +17847,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-29T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Four_Dim_Equal</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Four_Dim_Equal</guid>
+          <link>http://localhost:4000/website/posts/Four_Dim_Equal</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Four_Dim_Equal</guid>
         </item>
       
     
@@ -17150,8 +17891,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-29T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Dual_Tilting</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Dual_Tilting</guid>
+          <link>http://localhost:4000/website/posts/Dual_Tilting</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Dual_Tilting</guid>
         </item>
       
     
@@ -17198,8 +17939,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-29T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/BB_Spectral_Sequence</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/BB_Spectral_Sequence</guid>
+          <link>http://localhost:4000/website/posts/BB_Spectral_Sequence</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/BB_Spectral_Sequence</guid>
         </item>
       
     
@@ -17308,8 +18049,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-29T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Projlim_1_Vanish</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Projlim_1_Vanish</guid>
+          <link>http://localhost:4000/website/posts/Projlim_1_Vanish</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Projlim_1_Vanish</guid>
         </item>
       
     
@@ -17327,8 +18068,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-29T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Injlim_Ext_Seq</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Injlim_Ext_Seq</guid>
+          <link>http://localhost:4000/website/posts/Injlim_Ext_Seq</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Injlim_Ext_Seq</guid>
         </item>
       
     
@@ -17348,8 +18089,8 @@ $$&lt;/p&gt;
 
 </description>
           <pubDate>2025-04-29T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/AB5_Derived_Limit</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AB5_Derived_Limit</guid>
+          <link>http://localhost:4000/website/posts/AB5_Derived_Limit</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/AB5_Derived_Limit</guid>
         </item>
       
     
@@ -17365,8 +18106,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Z_Infty_Spectral_Not_Converge</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Z_Infty_Spectral_Not_Converge</guid>
+          <link>http://localhost:4000/website/posts/Z_Infty_Spectral_Not_Converge</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Z_Infty_Spectral_Not_Converge</guid>
         </item>
       
     
@@ -17402,8 +18143,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Six_Lemma</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Six_Lemma</guid>
+          <link>http://localhost:4000/website/posts/Six_Lemma</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Six_Lemma</guid>
         </item>
       
     
@@ -17442,8 +18183,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Proj_Epi_Complex</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Proj_Epi_Complex</guid>
+          <link>http://localhost:4000/website/posts/Proj_Epi_Complex</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Proj_Epi_Complex</guid>
         </item>
       
     
@@ -17481,8 +18222,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Nine_Lemma</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Nine_Lemma</guid>
+          <link>http://localhost:4000/website/posts/Nine_Lemma</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Nine_Lemma</guid>
         </item>
       
     
@@ -17588,8 +18329,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Kunneth_Spectral_Seq</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Kunneth_Spectral_Seq</guid>
+          <link>http://localhost:4000/website/posts/Kunneth_Spectral_Seq</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Kunneth_Spectral_Seq</guid>
         </item>
       
     
@@ -17635,8 +18376,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Horse_Shoe_Lemma</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Horse_Shoe_Lemma</guid>
+          <link>http://localhost:4000/website/posts/Horse_Shoe_Lemma</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Horse_Shoe_Lemma</guid>
         </item>
       
     
@@ -17752,8 +18493,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Grothendieck_Spectral_Sequence</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Grothendieck_Spectral_Sequence</guid>
+          <link>http://localhost:4000/website/posts/Grothendieck_Spectral_Sequence</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Grothendieck_Spectral_Sequence</guid>
         </item>
       
     
@@ -17815,8 +18556,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Fundamental_Thm_Homological_Algebra</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Fundamental_Thm_Homological_Algebra</guid>
+          <link>http://localhost:4000/website/posts/Fundamental_Thm_Homological_Algebra</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Fundamental_Thm_Homological_Algebra</guid>
         </item>
       
     
@@ -17875,8 +18616,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Four_Lemma</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Four_Lemma</guid>
+          <link>http://localhost:4000/website/posts/Four_Lemma</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Four_Lemma</guid>
         </item>
       
     
@@ -17931,8 +18672,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Five_Lemma</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Five_Lemma</guid>
+          <link>http://localhost:4000/website/posts/Five_Lemma</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Five_Lemma</guid>
         </item>
       
     
@@ -17968,8 +18709,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/First_Five_Terms</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/First_Five_Terms</guid>
+          <link>http://localhost:4000/website/posts/First_Five_Terms</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/First_Five_Terms</guid>
         </item>
       
     
@@ -17992,8 +18733,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/E_2_Trick</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/E_2_Trick</guid>
+          <link>http://localhost:4000/website/posts/E_2_Trick</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/E_2_Trick</guid>
         </item>
       
     
@@ -18044,8 +18785,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/AR_Tor</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR_Tor</guid>
+          <link>http://localhost:4000/website/posts/AR_Tor</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/AR_Tor</guid>
         </item>
       
     
@@ -18065,8 +18806,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-28T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/AR_Defect</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR_Defect</guid>
+          <link>http://localhost:4000/website/posts/AR_Defect</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/AR_Defect</guid>
         </item>
       
     
@@ -18165,8 +18906,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/KerHom_KerExt_TP</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/KerHom_KerExt_TP</guid>
+          <link>http://localhost:4000/website/posts/KerHom_KerExt_TP</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/KerHom_KerExt_TP</guid>
         </item>
       
     
@@ -18398,8 +19139,8 @@ $$&lt;/p&gt;
 &lt;p&gt;待补充.&lt;/p&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Happel_Derived_Equivalence</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Happel_Derived_Equivalence</guid>
+          <link>http://localhost:4000/website/posts/Happel_Derived_Equivalence</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Happel_Derived_Equivalence</guid>
         </item>
       
     
@@ -18483,8 +19224,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Hereditary_TP_Split</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hereditary_TP_Split</guid>
+          <link>http://localhost:4000/website/posts/Hereditary_TP_Split</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Hereditary_TP_Split</guid>
         </item>
       
     
@@ -18506,8 +19247,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Gr_Iso_is_Complete_Iso</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gr_Iso_is_Complete_Iso</guid>
+          <link>http://localhost:4000/website/posts/Gr_Iso_is_Complete_Iso</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Gr_Iso_is_Complete_Iso</guid>
         </item>
       
     
@@ -18572,8 +19313,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/FFX_vs_FX</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/FFX_vs_FX</guid>
+          <link>http://localhost:4000/website/posts/FFX_vs_FX</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/FFX_vs_FX</guid>
         </item>
       
     
@@ -18594,8 +19335,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Complete_Filtration</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Complete_Filtration</guid>
+          <link>http://localhost:4000/website/posts/Complete_Filtration</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Complete_Filtration</guid>
         </item>
       
     
@@ -19129,8 +19870,8 @@ $$&lt;/p&gt;
 &lt;p&gt;见&lt;a href=&quot;Happel_Derived_Equivalence#谱序列方法&quot;&gt;此章节&lt;/a&gt;.&lt;/p&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Spectral_sequence_filtered</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Spectral_sequence_filtered</guid>
+          <link>http://localhost:4000/website/posts/Spectral_sequence_filtered</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Spectral_sequence_filtered</guid>
         </item>
       
     
@@ -19198,8 +19939,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Complete_Z_Filtration</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Complete_Z_Filtration</guid>
+          <link>http://localhost:4000/website/posts/Complete_Z_Filtration</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Complete_Z_Filtration</guid>
         </item>
       
     
@@ -19259,8 +20000,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-27T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Harada_Sai</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Harada_Sai</guid>
+          <link>http://localhost:4000/website/posts/Harada_Sai</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Harada_Sai</guid>
         </item>
       
     
@@ -19304,8 +20045,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-26T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/APR_tilting_def</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/APR_tilting_def</guid>
+          <link>http://localhost:4000/website/posts/APR_tilting_def</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/APR_tilting_def</guid>
         </item>
       
     
@@ -19345,8 +20086,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-26T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/P_is_Section</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/P_is_Section</guid>
+          <link>http://localhost:4000/website/posts/P_is_Section</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/P_is_Section</guid>
         </item>
       
     
@@ -19506,8 +20247,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-26T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Commutative_Diagram_Alg</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Commutative_Diagram_Alg</guid>
+          <link>http://localhost:4000/website/posts/Commutative_Diagram_Alg</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Commutative_Diagram_Alg</guid>
         </item>
       
     
@@ -19865,8 +20606,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-26T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Hereditary-AR-Quiver</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hereditary-AR-Quiver</guid>
+          <link>http://localhost:4000/website/posts/Hereditary-AR-Quiver</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Hereditary-AR-Quiver</guid>
         </item>
       
     
@@ -19930,8 +20671,8 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;Proof-Gabriel&quot;&gt;Gabriel 定理的证明&lt;/a&gt;.&lt;/p&gt;
 </description>
           <pubDate>2025-04-25T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/20250425Talk</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/20250425Talk</guid>
+          <link>http://localhost:4000/website/posts/20250425Talk</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/20250425Talk</guid>
         </item>
       
     
@@ -19971,8 +20712,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-25T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Gabriel_2</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gabriel_2</guid>
+          <link>http://localhost:4000/website/posts/Gabriel_2</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Gabriel_2</guid>
         </item>
       
     
@@ -20046,8 +20787,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-25T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Gabriel_1</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gabriel_1</guid>
+          <link>http://localhost:4000/website/posts/Gabriel_1</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Gabriel_1</guid>
         </item>
       
     
@@ -20142,8 +20883,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-25T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Finite_and_Affine_Root_System</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Finite_and_Affine_Root_System</guid>
+          <link>http://localhost:4000/website/posts/Finite_and_Affine_Root_System</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Finite_and_Affine_Root_System</guid>
         </item>
       
     
@@ -20197,8 +20938,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/T_Y_Dim</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/T_Y_Dim</guid>
+          <link>http://localhost:4000/website/posts/T_Y_Dim</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/T_Y_Dim</guid>
         </item>
       
     
@@ -20239,8 +20980,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Hom_D_Hereditary</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hom_D_Hereditary</guid>
+          <link>http://localhost:4000/website/posts/Hom_D_Hereditary</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Hom_D_Hereditary</guid>
         </item>
       
     
@@ -20268,8 +21009,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Gl_Dim_A_B</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gl_Dim_A_B</guid>
+          <link>http://localhost:4000/website/posts/Gl_Dim_A_B</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Gl_Dim_A_B</guid>
         </item>
       
     
@@ -20379,8 +21120,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Uniqueness_of_Maximal_Orbit</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Uniqueness_of_Maximal_Orbit</guid>
+          <link>http://localhost:4000/website/posts/Uniqueness_of_Maximal_Orbit</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Uniqueness_of_Maximal_Orbit</guid>
         </item>
       
     
@@ -20537,8 +21278,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Ringel_Resolution</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Ringel_Resolution</guid>
+          <link>http://localhost:4000/website/posts/Ringel_Resolution</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ringel_Resolution</guid>
         </item>
       
     
@@ -20582,8 +21323,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Key_Lemma_Gabriel</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Key_Lemma_Gabriel</guid>
+          <link>http://localhost:4000/website/posts/Key_Lemma_Gabriel</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Key_Lemma_Gabriel</guid>
         </item>
       
     
@@ -20768,8 +21509,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-24T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Proof-Gabriel</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Proof-Gabriel</guid>
+          <link>http://localhost:4000/website/posts/Proof-Gabriel</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Proof-Gabriel</guid>
         </item>
       
     
@@ -20807,8 +21548,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/gen_and_cog</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/gen_and_cog</guid>
+          <link>http://localhost:4000/website/posts/gen_and_cog</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/gen_and_cog</guid>
         </item>
       
     
@@ -20892,8 +21633,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Torsion_Pair_Ext_Orth</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Torsion_Pair_Ext_Orth</guid>
+          <link>http://localhost:4000/website/posts/Torsion_Pair_Ext_Orth</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Torsion_Pair_Ext_Orth</guid>
         </item>
       
     
@@ -20974,8 +21715,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Tilting_Obj_Torsion_Pair</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Tilting_Obj_Torsion_Pair</guid>
+          <link>http://localhost:4000/website/posts/Tilting_Obj_Torsion_Pair</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Tilting_Obj_Torsion_Pair</guid>
         </item>
       
     
@@ -21003,8 +21744,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Partial_Tilting_Two_Torsion_pairs</guid>
+          <link>http://localhost:4000/website/posts/Partial_Tilting_Two_Torsion_pairs</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Partial_Tilting_Two_Torsion_pairs</guid>
         </item>
       
     
@@ -21069,8 +21810,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Hereditary_PBPO</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Hereditary_PBPO</guid>
+          <link>http://localhost:4000/website/posts/Hereditary_PBPO</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Hereditary_PBPO</guid>
         </item>
       
     
@@ -21106,8 +21847,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Gen_Eq_T</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Gen_Eq_T</guid>
+          <link>http://localhost:4000/website/posts/Gen_Eq_T</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Gen_Eq_T</guid>
         </item>
       
     
@@ -21146,8 +21887,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-23T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/AR_Formula</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR_Formula</guid>
+          <link>http://localhost:4000/website/posts/AR_Formula</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/AR_Formula</guid>
         </item>
       
     
@@ -21245,8 +21986,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-22T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Def_de_TP</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Def_de_TP</guid>
+          <link>http://localhost:4000/website/posts/Def_de_TP</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Def_de_TP</guid>
         </item>
       
     
@@ -21277,8 +22018,8 @@ $$&lt;/p&gt;
 
 </description>
           <pubDate>2025-04-22T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Homological_Wk_Ker</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Homological_Wk_Ker</guid>
+          <link>http://localhost:4000/website/posts/Homological_Wk_Ker</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Homological_Wk_Ker</guid>
         </item>
       
     
@@ -21307,8 +22048,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Yoneda_Homological</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Yoneda_Homological</guid>
+          <link>http://localhost:4000/website/posts/Yoneda_Homological</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Yoneda_Homological</guid>
         </item>
       
     
@@ -21352,8 +22093,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Plat_et_Proj_Cover_Proj</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Plat_et_Proj_Cover_Proj</guid>
+          <link>http://localhost:4000/website/posts/Plat_et_Proj_Cover_Proj</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Plat_et_Proj_Cover_Proj</guid>
         </item>
       
     
@@ -21371,8 +22112,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Mod_Tri_is_Frobenius</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Mod_Tri_is_Frobenius</guid>
+          <link>http://localhost:4000/website/posts/Mod_Tri_is_Frobenius</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Mod_Tri_is_Frobenius</guid>
         </item>
       
     
@@ -21408,8 +22149,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Lazard_thm</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Lazard_thm</guid>
+          <link>http://localhost:4000/website/posts/Lazard_thm</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Lazard_thm</guid>
         </item>
       
     
@@ -21451,8 +22192,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Fp_et_Plat_est_Proj</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Fp_et_Plat_est_Proj</guid>
+          <link>http://localhost:4000/website/posts/Fp_et_Plat_est_Proj</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Fp_et_Plat_est_Proj</guid>
         </item>
       
     
@@ -21482,8 +22223,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Fp_Proj_Plat</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Fp_Proj_Plat</guid>
+          <link>http://localhost:4000/website/posts/Fp_Proj_Plat</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Fp_Proj_Plat</guid>
         </item>
       
     
@@ -21581,8 +22322,8 @@ $$ 由于后两项保持积, 蛇引理给出函子的满的自然变换 $(K ⊗ 
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Finitely_Presented_Functor</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Finitely_Presented_Functor</guid>
+          <link>http://localhost:4000/website/posts/Finitely_Presented_Functor</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Finitely_Presented_Functor</guid>
         </item>
       
     
@@ -21610,8 +22351,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Countable_Karoubi</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Countable_Karoubi</guid>
+          <link>http://localhost:4000/website/posts/Countable_Karoubi</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Countable_Karoubi</guid>
         </item>
       
     
@@ -21665,8 +22406,8 @@ $$ 由于 $(i(-),A)_𝒯$ 是有限表现的平坦对象, 从而投射 (&lt;a hr
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Coreflexive_Contravariantly_Finite</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Coreflexive_Contravariantly_Finite</guid>
+          <link>http://localhost:4000/website/posts/Coreflexive_Contravariantly_Finite</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Coreflexive_Contravariantly_Finite</guid>
         </item>
       
     
@@ -22060,8 +22801,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/mid</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/mid</guid>
+          <link>http://localhost:4000/website/posts/mid</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/mid</guid>
         </item>
       
     
@@ -22167,8 +22908,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/mid-copy</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/mid-copy</guid>
+          <link>http://localhost:4000/website/posts/mid-copy</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/mid-copy</guid>
         </item>
       
     
@@ -22220,8 +22961,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Almost_Split</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Almost_Split</guid>
+          <link>http://localhost:4000/website/posts/Almost_Split</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Almost_Split</guid>
         </item>
       
     
@@ -22566,8 +23307,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Notes_on_Tilting</guid>
+          <link>http://localhost:4000/website/posts/Notes_on_Tilting</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Notes_on_Tilting</guid>
         </item>
       
     
@@ -22831,8 +23572,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/template</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/template</guid>
+          <link>http://localhost:4000/website/posts/template</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/template</guid>
         </item>
       
     
@@ -23154,8 +23895,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Reflexive_sub_cat</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Reflexive_sub_cat</guid>
+          <link>http://localhost:4000/website/posts/Reflexive_sub_cat</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Reflexive_sub_cat</guid>
         </item>
       
     
@@ -23215,8 +23956,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/syzygy_und_approx</guid>
+          <link>http://localhost:4000/website/posts/syzygy_und_approx</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/syzygy_und_approx</guid>
         </item>
       
     
@@ -23232,8 +23973,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/stable_subquot</guid>
+          <link>http://localhost:4000/website/posts/stable_subquot</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/stable_subquot</guid>
         </item>
       
     
@@ -23251,8 +23992,8 @@ $$ 依照 $\mathrm{Rad}$ 的性质, 只能由于 $\mathrm{im}(f) = Y$. 故 $f$ �
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-20T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Top_surjective</guid>
+          <link>http://localhost:4000/website/posts/Top_surjective</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Top_surjective</guid>
         </item>
       
     
@@ -23286,8 +24027,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/exists_left_proj_app</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/exists_left_proj_app</guid>
+          <link>http://localhost:4000/website/posts/exists_left_proj_app</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/exists_left_proj_app</guid>
         </item>
       
     
@@ -23321,8 +24062,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Torsion_Less</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Torsion_Less</guid>
+          <link>http://localhost:4000/website/posts/Torsion_Less</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Torsion_Less</guid>
         </item>
       
     
@@ -23349,8 +24090,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/Left_proj_approx</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/Left_proj_approx</guid>
+          <link>http://localhost:4000/website/posts/Left_proj_approx</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Left_proj_approx</guid>
         </item>
       
     
@@ -23914,8 +24655,8 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-04-19T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/AR-notes</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/AR-notes</guid>
+          <link>http://localhost:4000/website/posts/AR-notes</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/AR-notes</guid>
         </item>
       
     
@@ -23940,8 +24681,8 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;Notes_on_Tilting&quot;&gt;Tilting 模的基本定义, 定理等&lt;/a&gt;.&lt;/p&gt;
 </description>
           <pubDate>2025-04-18T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/20250418Talk</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/20250418Talk</guid>
+          <link>http://localhost:4000/website/posts/20250418Talk</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/20250418Talk</guid>
         </item>
       
     
@@ -23970,8 +24711,8 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 </description>
           <pubDate>2025-03-28T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/20250328Talk</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/20250328Talk</guid>
+          <link>http://localhost:4000/website/posts/20250328Talk</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/20250328Talk</guid>
         </item>
       
     
@@ -23984,8 +24725,8 @@ $$&lt;/p&gt;
 
 </description>
           <pubDate>2025-03-21T00:00:00+08:00</pubDate>
-          <link>https://zhangchenchengsjtu.github.io/website/posts/20250321Talk</link>
-          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/20250321Talk</guid>
+          <link>http://localhost:4000/website/posts/20250321Talk</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/20250321Talk</guid>
         </item>
       
     

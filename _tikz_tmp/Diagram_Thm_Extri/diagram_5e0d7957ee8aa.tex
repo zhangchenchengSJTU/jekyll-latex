@@ -1,0 +1,55 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsMzEsWzEsMSwiKEMsSykiXSxbMiwxLCIoQyxYKSJdLFszLDEsIihDLFkpIl0sWzQsMSwiMCJdLFsxLDIsIihCLEspIl0sWzIsMiwiKEIsWCkiXSxbMywyLCIoQixZKSJdLFsxLDMsIihBLEspIl0sWzIsMywiKEEsWCkiXSxbMywzLCIoQSxaKSJdLFsxLDQsIjAiXSxbMiw0LCJcXG1hdGhiYiBFKEMsWCkiXSxbMyw0LCJcXG1hdGhiYiBFKEMsWSkiXSxbNCwyLCJcXG1hdGhiYiBFKEIsSykiXSxbNCwzLCJcXG1hdGhiYiBFKEEsSykiXSxbNCw0LCJNIl0sWzAsMSwiXFxidWxsZXQiXSxbMCwyLCJcXGJ1bGxldCJdLFswLDMsIlxcYnVsbGV0Il0sWzEsMCwiMCJdLFsyLDAsIjAiXSxbMiw1LCIwIl0sWzMsMCwiMCJdLFszLDUsIjAiXSxbNSwyLCJcXGJ1bGxldCJdLFs1LDMsIlxcYnVsbGV0Il0sWzUsMCwiXFxzd2Fycm93XzAiXSxbNSwxLCJcXHN3YXJyb3dfMSJdLFs0LDAsIlxcc3dhcnJvd197LTF9Il0sWzUsNCwiXFxidWxsZXQiXSxbNCw1LCIwIl0sWzEsMiwicF9cXGFzdCAiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNCw3LCJqXlxcYXN0ICIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxMywxNCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMTEsMTIsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzAsMSwiaV9cXGFzdCJdLFs0LDUsImlfXFxhc3QiXSxbNSw2LCJwX1xcYXN0ICJdLFs2LDEzLCJcXHZhcmVwc2lsb24gXyEiXSxbNyw4LCJpX1xcYXN0Il0sWzgsOSwicF9cXGFzdCAiXSxbOSwxNCwiXFx2YXJlcHNpbG9uIF8hIl0sWzEwLDExXSxbMTIsMTVdLFsxNCwxNV0sWzIsM10sWzE2LDAsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzE3LDQsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzE4LDcsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzE5LDBdLFswLDQsInFeXFxhc3QgIl0sWzcsMTBdLFsyMCwxXSxbMSw1LCJxXlxcYXN0ICJdLFs1LDgsImpeXFxhc3QgIl0sWzgsMTEsIlxcZGVsdGEgXiEiXSxbMTEsMjFdLFsyMiwyXSxbMiw2LCJxXlxcYXN0ICJdLFs2LDksImpeXFxhc3QgIl0sWzksMTIsIlxcZGVsdGEgXiEiXSxbMTIsMjNdLFszLDEzXSxbMTMsMjQsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxNCwyNSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzE1LDI5LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMTUsMzBdLFsxNiwxN10sWzE3LDE4XSxbMjQsMjVdLFsyNSwyOV1d
+\begin{tikzcd}[ampersand replacement=\&]
+\& 0 \& 0 \& 0 \& {\swarrow_{-1}} \& {\swarrow_0} \\
+\bullet \& {(C,K)} \& {(C,X)} \& {(C,Y)} \& 0 \& {\swarrow_1} \\
+\bullet \& {(B,K)} \& {(B,X)} \& {(B,Y)} \& {\mathbb E(B,K)} \& \bullet \\
+\bullet \& {(A,K)} \& {(A,X)} \& {(A,Z)} \& {\mathbb E(A,K)} \& \bullet \\
+\& 0 \& {\mathbb E(C,X)} \& {\mathbb E(C,Y)} \& M \& \bullet \\
+\&\& 0 \& 0 \& 0
+\arrow[from=1-2, to=2-2]
+\arrow[from=1-3, to=2-3]
+\arrow[from=1-4, to=2-4]
+\arrow[hook, from=2-1, to=2-2]
+\arrow[from=2-1, to=3-1]
+\arrow["{i_\ast}", from=2-2, to=2-3]
+\arrow["{q^\ast }", from=2-2, to=3-2]
+\arrow["{p_\ast }", two heads, from=2-3, to=2-4]
+\arrow["{q^\ast }", from=2-3, to=3-3]
+\arrow[from=2-4, to=2-5]
+\arrow["{q^\ast }", from=2-4, to=3-4]
+\arrow[from=2-5, to=3-5]
+\arrow[hook, from=3-1, to=3-2]
+\arrow[from=3-1, to=4-1]
+\arrow["{i_\ast}", from=3-2, to=3-3]
+\arrow["{j^\ast }", two heads, from=3-2, to=4-2]
+\arrow["{p_\ast }", from=3-3, to=3-4]
+\arrow["{j^\ast }", from=3-3, to=4-3]
+\arrow["{\varepsilon _!}", from=3-4, to=3-5]
+\arrow["{j^\ast }", from=3-4, to=4-4]
+\arrow[two heads, from=3-5, to=3-6]
+\arrow[hook, from=3-5, to=4-5]
+\arrow[from=3-6, to=4-6]
+\arrow[hook, from=4-1, to=4-2]
+\arrow["{i_\ast}", from=4-2, to=4-3]
+\arrow[from=4-2, to=5-2]
+\arrow["{p_\ast }", from=4-3, to=4-4]
+\arrow["{\delta ^!}", from=4-3, to=5-3]
+\arrow["{\varepsilon _!}", from=4-4, to=4-5]
+\arrow["{\delta ^!}", from=4-4, to=5-4]
+\arrow[two heads, from=4-5, to=4-6]
+\arrow[from=4-5, to=5-5]
+\arrow[from=4-6, to=5-6]
+\arrow[from=5-2, to=5-3]
+\arrow[hook, from=5-3, to=5-4]
+\arrow[from=5-3, to=6-3]
+\arrow[from=5-4, to=5-5]
+\arrow[from=5-4, to=6-4]
+\arrow[two heads, from=5-5, to=5-6]
+\arrow[from=5-5, to=6-5]
+\end{tikzcd}
+\end{document}
