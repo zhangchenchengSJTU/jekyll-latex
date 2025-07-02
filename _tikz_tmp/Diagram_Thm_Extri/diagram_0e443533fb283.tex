@@ -1,0 +1,24 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsNyxbMCwxLCJBIl0sWzIsMCwiWCJdLFs0LDEsIk0iXSxbNCwzLCJDIl0sWzAsMywiSCJdLFsxLDIsIkUiXSxbMywyLCJGIl0sWzAsNCwiXFxtYXRoc2Z7VENvZmlifSIsMl0sWzQsMywiXFxtYXRoc2Z7VEZpYn0iLDJdLFswLDEsIlxcbWF0aHNme0NvZmlifSJdLFsyLDMsIlxcbWF0aHNme1RGaWJ9Il0sWzEsMiwiXFxtYXRoc2Z7VENvZmlifSJdLFsxLDUsIlxcbWF0aHNme0NvZmlifSJdLFs1LDQsIlxcbWF0aHNme1RGaWJ9Il0sWzAsNSwiXFxtYXRoc2Z7Q29maWJ9Il0sWzUsNiwiXFxtYXRoc2Z7Q29maWJ9Il0sWzYsMiwiXFxtYXRoc2Z7VEZpYn0iXSxbMSw2LCJcXG1hdGhzZntDb2ZpYn0iXV0=
+\begin{tikzcd}
+	&& X \\
+	A &&&& M \\
+	& E && F \\
+	H &&&& C
+	\arrow["{\mathsf{TCofib}}", from=1-3, to=2-5]
+	\arrow["{\mathsf{Cofib}}", from=1-3, to=3-2]
+	\arrow["{\mathsf{Cofib}}", from=1-3, to=3-4]
+	\arrow["{\mathsf{Cofib}}", from=2-1, to=1-3]
+	\arrow["{\mathsf{Cofib}}", from=2-1, to=3-2]
+	\arrow["{\mathsf{TCofib}}"', from=2-1, to=4-1]
+	\arrow["{\mathsf{TFib}}", from=2-5, to=4-5]
+	\arrow["{\mathsf{Cofib}}", from=3-2, to=3-4]
+	\arrow["{\mathsf{TFib}}", from=3-2, to=4-1]
+	\arrow["{\mathsf{TFib}}", from=3-4, to=2-5]
+	\arrow["{\mathsf{TFib}}"', from=4-1, to=4-5]
+\end{tikzcd}
+\end{document}

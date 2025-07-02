@@ -1,0 +1,27 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsMTYsWzIsMCwiQV8yIl0sWzQsMCwiXFwsIl0sWzQsMSwiXFwsIl0sWzQsMiwiXFwsIl0sWzEsMywiXFwsIl0sWzIsMywiXFwsIl0sWzMsMCwiQV8zIl0sWzIsMSwiQl8yIl0sWzIsMiwiQ18yIl0sWzAsMSwiXFwsIl0sWzUsMSwiXFwsIl0sWzEsMSwiQV8xIl0sWzMsMiwiQ18yIl0sWzMsMywiXFwsIl0sWzMsMSwiRSJdLFsxLDAsIkFfMSJdLFswLDYsImdfQSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFswLDcsImlfMiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNyw4LCJwXzIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNiwxLCJcXGRlbHRhIF9BIl0sWzgsNSwiXFx2YXJlcHNpbG9uIF8yIl0sWzExLDcsImlfMmZfQSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMTIsMTMsIihnX0EpX1xcYXN0IFxcdmFyZXBzaWxvbiBfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDE0LCJ5IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNywxNCwieCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMTQsMiwiXFxldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTQsMTIsInoiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEyLDgsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE1LDAsImZfQSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMTUsMTEsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	\& {A_1} \& {A_2} \& {A_3} \& {\,} \\
+	{\,} \& {A_1} \& {B_2} \& E \& {\,} \& {\,} \\
+	\&\& {C_2} \& {C_2} \& {\,} \\
+	\& {\,} \& {\,} \& {\,}
+	\arrow["{f_A}", tail, from=1-2, to=1-3]
+	\arrow[equals, from=1-2, to=2-2]
+	\arrow["{g_A}", two heads, from=1-3, to=1-4]
+	\arrow["{i_2}", tail, from=1-3, to=2-3]
+	\arrow["{\delta _A}", from=1-4, to=1-5]
+	\arrow["y", dashed, tail, from=1-4, to=2-4]
+	\arrow["{i_2f_A}"', tail, from=2-2, to=2-3]
+	\arrow["x", dashed, two heads, from=2-3, to=2-4]
+	\arrow["{p_2}", two heads, from=2-3, to=3-3]
+	\arrow["\eta", dashed, from=2-4, to=2-5]
+	\arrow["z", dashed, two heads, from=2-4, to=3-4]
+	\arrow["{\varepsilon _2}", from=3-3, to=4-3]
+	\arrow[equals, from=3-4, to=3-3]
+	\arrow["{(g_A)_\ast \varepsilon _2}", dashed, from=3-4, to=4-4]
+\end{tikzcd}
+\end{document}

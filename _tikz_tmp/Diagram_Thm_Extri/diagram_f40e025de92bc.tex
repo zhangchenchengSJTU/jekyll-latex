@@ -1,0 +1,28 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYJyJdLFsyLDAsIlgiXSxbNCwwLCJYJyJdLFs0LDIsIlknIl0sWzIsMiwiWSJdLFswLDIsIlknIl0sWzMsMSwiUCJdLFsyLDEsIkUiXSxbMCwxLCJpX1giXSxbMSwyLCJwX1giXSxbMiwzLCJhJyJdLFs0LDMsInBfWSIsMl0sWzAsNSwiYSciLDJdLFs1LDQsImlfWSIsMl0sWzAsNSwiXFxtYXRoc2Z7Q29maWJ9IiwwLHsibGFiZWxfcG9zaXRpb24iOjIwLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsNywiYyJdLFs3LDQsImYiXSxbNyw2LCJrIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNiwiXFxtYXRoc2Z7VENvZmlifSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDIsIlxcc3F1YXJlIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNywicyIsMix7ImN1cnZlIjotMiwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMywibCIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDcsIlxcbWF0aHNme1RDb2ZpYn0iLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNyw0LCJcXG1hdGhzZntURmlifSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}
+{X'} && X && {X'} \\
+&& E & P \\
+{Y'} && Y && {Y'}
+\arrow["{i_X}", from=1-1, to=1-3]
+\arrow["{a'}"', from=1-1, to=3-1]
+\arrow["{\mathsf{Cofib}}"{pos=0.2}, no head, from=1-1, to=3-1]
+\arrow["{p_X}", from=1-3, to=1-5]
+\arrow["c", from=1-3, to=2-3]
+\arrow["{\mathsf{TCofib}}"', draw=none, from=1-3, to=2-3]
+\arrow["{\mathsf{TCofib}}", dashed, from=1-5, to=2-4]
+\arrow["{a'}", from=1-5, to=3-5]
+\arrow["\square"{description}, draw=none, from=2-3, to=1-5]
+\arrow["k"', dashed, from=2-3, to=2-4]
+\arrow["f", from=2-3, to=3-3]
+\arrow["{\mathsf{TFib}}"', draw=none, from=2-3, to=3-3]
+\arrow["l"', dashed, from=2-4, to=3-5]
+\arrow["s"', curve={height=-12pt}, dashed, from=3-1, to=2-3]
+\arrow["{i_Y}"', from=3-1, to=3-3]
+\arrow["{p_Y}"', from=3-3, to=3-5]
+\end{tikzcd}
+\end{document}

@@ -1,0 +1,22 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsNixbMCwwLCJJIl0sWzIsMiwiSiJdLFs0LDAsIlxcbWF0aGNhbCBDIl0sWzUsMCwiRiJdLFs1LDIsIlxcdmFycGhpIF8hRiIsWzM1NSwxMDAsNjAsMV1dLFs2LDEsIlIiXSxbMCwyLCJGIl0sWzAsMSwiXFx2YXJwaGkgIiwyXSxbMSwyLCJcXHZhcnBoaSBfISBGIiwwLHsibGFiZWxfcG9zaXRpb24iOjIwLCJjdXJ2ZSI6LTIsImNvbG91ciI6WzM1NSwxMDAsNjBdfSxbMzU1LDEwMCw2MCwxXV0sWzEsMiwiUiIsMix7ImN1cnZlIjoyfV0sWzMsNCwiXFxhbHBoYSAiLDIseyJsZXZlbCI6MiwiY29sb3VyIjpbMzU1LDEwMCw2MF19LFszNTUsMTAwLDYwLDFdXSxbMyw1LCJcXGdhbW1hICIsMCx7ImxldmVsIjoyfV0sWzQsNSwiXFx0aGV0YSIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw4LCJcXGFscGhhIiwwLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwiY29sb3VyIjpbMzU1LDEwMCw2MF19LFszNTUsMTAwLDYwLDFdXSxbOCw5LCJcXHRoZXRhIiwwLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEwLDUsIlxcY2lyY2xlYXJyb3dsZWZ0IiwxLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	I \&\&\&\& {\mathcal C} \& F \\
+	\&\&\&\&\&\& R \\
+	\&\& J \&\&\& \color{rgb,255:red,255;green,51;blue,68}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", from=1-1, to=1-5]
+	\arrow["{\varphi }"', from=1-1, to=3-3]
+	\arrow["{\gamma }", Rightarrow, from=1-6, to=2-7]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{\alpha }"', color={rgb,255:red,255;green,51;blue,68}, Rightarrow, from=1-6, to=3-6]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "{\varphi _! F}"{pos=0.2}, color={rgb,255:red,255;green,51;blue,68}, curve={height=-12pt}, from=3-3, to=1-5]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "R"', curve={height=12pt}, from=3-3, to=1-5]
+	\arrow["\theta"', Rightarrow, dashed, from=3-6, to=2-7]
+	\arrow["\alpha", color={rgb,255:red,255;green,51;blue,68}, shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=2]
+	\arrow["\circlearrowleft"{description}, draw=none, from=1, to=2-7]
+	\arrow["\theta", shorten <=4pt, shorten >=4pt, Rightarrow, dashed, from=2, to=3]
+\end{tikzcd}
+\end{document}

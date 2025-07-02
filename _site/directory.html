@@ -32,24 +32,25 @@
 
 
 <script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']]
-    },
-    chtml: {
-      scale: 0.95  // Adjust scale (0.85 = 85% of default size)
-    },
-    svg: {
-      scale: 0.95  // For SVG output
-    }
-  };
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  chtml: {
+    scale: 0.95,  // Adjust size
+    // No need for fontURL if you're using tex-chtml.js — TeX font is default
+  },
+  svg: {
+    scale: 0.95  // Only applies if you switch to tex-svg.js
+  }
+};
 </script>
-  <script
-    async
-    id="MathJax-script"
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+<script
+  async
+  id="MathJax-script"
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
 
 
@@ -135,6 +136,48 @@
       title="Back to Homepage">Home</a>
   </div>
   <section class="post-list">
+    
+      <ul style="margin: 0; padding: 0; list-style: none;">
+        <li>
+          <div class="post-meta">
+            <span class="post-date">2025-06-30</span>
+            <span class="post-category">
+              caprice
+            </span>
+          </div>
+          <div class="title">
+            <b><a href="/website/posts/Note-on-Quillen-Model-Structure">A Note on Quillen's Model Structure</a></b>
+          </div>
+        </li>
+      </ul>
+    
+      <ul style="margin: 0; padding: 0; list-style: none;">
+        <li>
+          <div class="post-meta">
+            <span class="post-date">2025-06-22</span>
+            <span class="post-category">
+              note
+            </span>
+          </div>
+          <div class="title">
+            <b><a href="/website/posts/DG_Cat">DG 范畴与消解</a></b>
+          </div>
+        </li>
+      </ul>
+    
+      <ul style="margin: 0; padding: 0; list-style: none;">
+        <li>
+          <div class="post-meta">
+            <span class="post-date">2025-06-06</span>
+            <span class="post-category">
+              notes
+            </span>
+          </div>
+          <div class="title">
+            <b><a href="/website/posts/Brown-Resolution">A Note on Brown Representability and Resolutions</a></b>
+          </div>
+        </li>
+      </ul>
     
       <ul style="margin: 0; padding: 0; list-style: none;">
         <li>

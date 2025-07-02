@@ -1,0 +1,20 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsOCxbMywyLCJTIl0sWzMsMCwiVCJdLFszLDEsIkUiXSxbMiwyLCJTIl0sWzIsMSwiMCJdLFszLDMsIlxcLCJdLFs1LDEsIlxcLCJdLFswLDEsIlxcLCJdLFsxLDIsIvCdlrPwnZai8J2XiPCdlr/wnZeC8J2WuyJdLFsyLDAsIvCdlqXwnZeC8J2WuyJdLFszLDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsMywi8J2Ws/CdlqLwnZeI8J2Wv/Cdl4LwnZa7IiwyXSxbNCwyXSxbMCw1LCJcXGRlbHRhICJdLFszLDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	\&\&\& T \\
+	{\,} \&\& 0 \& E \&\& {\,} \\
+	\&\& S \& S \\
+	\&\&\& {\,}
+	\arrow["{𝖳𝖢𝗈𝖿𝗂𝖻}", from=1-4, to=2-4]
+	\arrow[from=2-3, to=2-4]
+	\arrow["{𝖳𝖢𝗈𝖿𝗂𝖻}"', from=2-3, to=3-3]
+	\arrow["{𝖥𝗂𝖻}", from=2-4, to=3-4]
+	\arrow[dashed, from=3-3, to=2-4]
+	\arrow[equals, from=3-3, to=3-4]
+	\arrow["{\delta }", from=3-4, to=4-4]
+\end{tikzcd}
+\end{document}

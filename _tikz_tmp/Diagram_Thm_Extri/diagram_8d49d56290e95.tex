@@ -1,0 +1,19 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsOSxbNSwxLCJcXCwiXSxbMCwxLCJcXCwiXSxbMSwxLCJYIl0sWzIsMSwiRSJdLFsyLDIsIjAiXSxbMywxLCJTIl0sWzIsMCwiVCJdLFs0LDEsIlxcLCJdLFsyLDMsIlxcLCJdLFsyLDMsIlxcbWF0aHNme1RDb2ZpYn0iXSxbMyw1XSxbMyw0LCJcXG1hdGhzZntGaWJ9Il0sWzYsM10sWzUsN10sWzQsOF1d
+\begin{tikzcd}[ampersand replacement=\&]
+\&\& T \\
+{\,} \& X \& E \& S \& {\,} \& {\,} \\
+\&\& 0 \\
+\&\& {\,}
+\arrow[from=1-3, to=2-3]
+\arrow["{\mathsf{TCofib}}", from=2-2, to=2-3]
+\arrow[from=2-3, to=2-4]
+\arrow["{\mathsf{Fib}}", from=2-3, to=3-3]
+\arrow[from=2-4, to=2-5]
+\arrow[from=3-3, to=4-3]
+\end{tikzcd}
+\end{document}

@@ -1,0 +1,38 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsMTgsWzAsMCwiWCJdLFsxLDAsIlZfWCJdLFsyLDAsIlVfWCJdLFsyLDEsIlVfWCciXSxbMCwxLCJYIl0sWzEsMSwiVl9YJyJdLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFsyLDIsIlVfWCJdLFsxLDIsIlZfWCJdLFswLDIsIlgiXSxbMywyLCJcXCwiXSxbNCwwLCJRKFVfWCkiXSxbNSwwLCJRKFVfWSkiXSxbNCwxLCJRKFVfWCcpIl0sWzUsMSwiUShVX1knKSJdLFs0LDIsIlEoVV9YKSJdLFs1LDIsIlEoVV9ZKSJdLFswLDEsInZfWCJdLFsxLDIsInVfWCJdLFs0LDUsInZfWCciXSxbNSwzLCJ1X1gnIl0sWzIsMywibF9YIl0sWzIsNiwiXFxkZWx0YSBfWCJdLFszLDcsIlxcZGVsdGEgX1gnIl0sWzEsNSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsNCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTAsOSwidl9YIl0sWzksOCwidV9YIl0sWzUsOSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsOCwicl9YIl0sWzgsMTEsIlxcZGVsdGFfWCJdLFs0LDEwLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMiwxNCwiUShsX1gpIiwyXSxbMTIsMTMsIlEoVV9mKSJdLFsxMywxNSwiUShsX1kpIl0sWzE2LDE3LCJRKFVfZikiXSxbMTQsMTYsIlEocl9YKSIsMl0sWzE1LDE3LCJRKHJfWSkiXSxbMTQsMTUsIlEoVV9mJykiXSxbMTIsMTQsIlxcc2ltIl0sWzE0LDE2LCJcXHNpbSJdLFsxMywxNSwiXFxzaW0iLDJdLFsxNSwxNywiXFxzaW0iLDJdXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& {V_X} \& {U_X} \& {\,} \& {Q(U_X)} \& {Q(U_Y)} \\
+	X \& {V_X'} \& {U_X'} \& {\,} \& {Q(U_X')} \& {Q(U_Y')} \\
+	X \& {V_X} \& {U_X} \& {\,} \& {Q(U_X)} \& {Q(U_Y)}
+	\arrow["{v_X}", from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["{u_X}", from=1-2, to=1-3]
+	\arrow[dashed, from=1-2, to=2-2]
+	\arrow["{\delta _X}", from=1-3, to=1-4]
+	\arrow["{l_X}", from=1-3, to=2-3]
+	\arrow["{Q(U_f)}", from=1-5, to=1-6]
+	\arrow["{Q(l_X)}"', from=1-5, to=2-5]
+	\arrow["\sim", from=1-5, to=2-5]
+	\arrow["{Q(l_Y)}", from=1-6, to=2-6]
+	\arrow["\sim"', from=1-6, to=2-6]
+	\arrow["{v_X'}", from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{u_X'}", from=2-2, to=2-3]
+	\arrow[dashed, from=2-2, to=3-2]
+	\arrow["{\delta _X'}", from=2-3, to=2-4]
+	\arrow["{r_X}", from=2-3, to=3-3]
+	\arrow["{Q(U_f')}", from=2-5, to=2-6]
+	\arrow["{Q(r_X)}"', from=2-5, to=3-5]
+	\arrow["\sim", from=2-5, to=3-5]
+	\arrow["{Q(r_Y)}", from=2-6, to=3-6]
+	\arrow["\sim"', from=2-6, to=3-6]
+	\arrow["{v_X}", from=3-1, to=3-2]
+	\arrow["{u_X}", from=3-2, to=3-3]
+	\arrow["{\delta_X}", from=3-3, to=3-4]
+	\arrow["{Q(U_f)}", from=3-5, to=3-6]
+\end{tikzcd}
+\end{document}

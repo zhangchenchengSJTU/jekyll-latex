@@ -1,0 +1,26 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsMTAsWzEsMiwiWiJdLFsyLDIsIlonIl0sWzIsMSwiWSciXSxbMSwxLCJZIl0sWzAsMCwiWSciXSxbMywwLCJYIl0sWzQsMSwiWSJdLFs1LDEsIlknIl0sWzUsMiwiWiciXSxbNCwyLCJaIl0sWzAsMSwicF9aIl0sWzIsMSwiYiciXSxbMywyLCJwX1kiXSxbMywwLCJiIl0sWzQsMCwiaV9aIGInIiwyLHsiY3VydmUiOjJ9XSxbNCwyLCIxX3tZJ30iLDAseyJjdXJ2ZSI6LTJ9XSxbNCwzLCJpX1kiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw5LCJiIl0sWzcsOCwiYiciXSxbNiw3LCJwX1kiXSxbOSw4LCJwX1oiXSxbNSw3LCJhJ3BfWCIsMCx7ImN1cnZlIjotMn1dLFs1LDksImciLDIseyJjdXJ2ZSI6Mn1dLFs1LDYsImEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+{Y'} &&& X \\
+& Y & {Y'} && Y & {Y'} \\
+& Z & {Z'} && Z & {Z'}
+\arrow["{i_Y}", dashed, from=1-1, to=2-2]
+\arrow["{1_{Y'}}", curve={height=-12pt}, from=1-1, to=2-3]
+\arrow["{i_Z b'}"', curve={height=12pt}, from=1-1, to=3-2]
+\arrow["a", dashed, from=1-4, to=2-5]
+\arrow["{a'p_X}", curve={height=-12pt}, from=1-4, to=2-6]
+\arrow["g"', curve={height=12pt}, from=1-4, to=3-5]
+\arrow["{p_Y}", from=2-2, to=2-3]
+\arrow["b", from=2-2, to=3-2]
+\arrow["{b'}", from=2-3, to=3-3]
+\arrow["{p_Y}", from=2-5, to=2-6]
+\arrow["b", from=2-5, to=3-5]
+\arrow["{b'}", from=2-6, to=3-6]
+\arrow["{p_Z}", from=3-2, to=3-3]
+\arrow["{p_Z}", from=3-5, to=3-6]
+\end{tikzcd}
+\end{document}

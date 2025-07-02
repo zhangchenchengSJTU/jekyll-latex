@@ -1,0 +1,17 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsNixbMiwwLCJcXG1hdGhzY3IgQ1xcY2FwIFxcbWF0aHNjciBGIl0sWzIsMiwiXFxmcmFje1xcbWF0aHNjciBDXFxjYXAgXFxtYXRoc2NyIEZ9e1xcbWF0aHNjciBDXFxjYXAgXFxtYXRoc2NyIFcgXFxjYXAgXFxtYXRoc2NyIEZ9Il0sWzEsMSwiXFxwaSAoXFxtYXRoc2NyIENcXGNhcCBcXG1hdGhzY3IgRikiXSxbMCwyLCJcXCwiXSxbNCwyLCJcXCwiXSxbMywxLCIoXFxtYXRoc2NyIENcXGNhcCBcXG1hdGhzY3IgRilbXFxtYXRoc2Z7V2VxfV57LTF9XSJdLFswLDIsIlxccGkiLDJdLFswLDEsIlxcdGV4dHtTdGFibGlzZWR9IiwxXSxbMSwyLCI/Pz8iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw1LCJcXHRleHR7TG9jYWxpc2VkfSJdLFs1LDEsIlxcY29uZyIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ==
+\begin{tikzcd}
+&& {\mathscr C\cap \mathscr F} \\
+& {\pi (\mathscr C\cap \mathscr F)} && {(\mathscr C\cap \mathscr F) [\mathsf{Weq}^{-1}]} \\
+{\,} && {\frac{\mathscr C\cap \mathscr F}{\mathscr C\cap \mathscr W \cap \mathscr F}} && {\,}
+\arrow["\pi"', from=1-3, to=2-2]
+\arrow["{\text{Localised}}", from=1-3, to=2-4]
+\arrow["{\text{Stablised}}"{description}, from=1-3, to=3-3]
+\arrow["\cong", tail reversed, from=2-4, to=3-3]
+\arrow["{???}", dashed, from=3-3, to=2-2]
+\end{tikzcd}
+\end{document}

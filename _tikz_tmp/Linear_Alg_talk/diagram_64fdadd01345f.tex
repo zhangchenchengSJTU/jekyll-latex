@@ -1,0 +1,14 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXHRleHR75Lic6KW/fSJdLFswLDEsIlxcdGV4dHvniannsbt9Il0sWzIsMCwiXFxtYXRoYmIgRl8yIl0sWzAsMiwiXFx0ZXh0e+afkOW6l+iDveWNlueahH0iXSxbMSwyLCJcXHRleHR75p+Q5bqX57uP6JCl6IyD5Zu0fSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDEsIlxccGkgIiwyXV0=
+\begin{tikzcd}[ampersand replacement=\&]
+{\text{东西}} \&\& {\mathbb F_2} \\
+{\text{物类}}
+\arrow["{\text{某店能卖的}}", from=1-1, to=1-3]
+\arrow["{\pi }"', from=1-1, to=2-1]
+\arrow["{\text{某店经营范围}}"', dashed, from=2-1, to=1-3]
+\end{tikzcd}
+\end{document}

@@ -1,0 +1,22 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsNixbMCwwLCJJIl0sWzIsMiwiSiJdLFs0LDAsIlxcbWF0aGNhbCBDIl0sWzUsMCwiRiJdLFs1LDIsIlxcdmFycGhpIF8hRiJdLFs2LDEsIlIiXSxbMCwyLCJGIl0sWzAsMSwiXFx2YXJwaGkgIiwyXSxbMSwyLCJcXHZhcnBoaSBfISBGIiwwLHsibGFiZWxfcG9zaXRpb24iOjIwLCJjdXJ2ZSI6LTJ9XSxbMSwyLCJSIiwyLHsiY3VydmUiOjJ9XSxbMyw0LCJcXGFscGhhICIsMix7ImxldmVsIjoyfV0sWzMsNSwiXFxnYW1tYSAiLDAseyJsZXZlbCI6Mn1dLFs0LDUsIlxcdGhldGEiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsOCwiXFxhbHBoYSIsMCx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH19XSxbOCw5LCJcXHRoZXRhIiwwLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEwLDUsIlxcY2lyY2xlYXJyb3dsZWZ0IiwxLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	I \&\&\&\& {\mathcal C} \& F \\
+	\&\&\&\&\&\& R \\
+	\&\& J \&\&\& {\varphi _!F}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", from=1-1, to=1-5]
+	\arrow["{\varphi }"', from=1-1, to=3-3]
+	\arrow["{\gamma }", Rightarrow, from=1-6, to=2-7]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{\alpha }"', Rightarrow, from=1-6, to=3-6]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "{\varphi _! F}"{pos=0.2}, curve={height=-12pt}, from=3-3, to=1-5]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "R"', curve={height=12pt}, from=3-3, to=1-5]
+	\arrow["\theta"', Rightarrow, dashed, from=3-6, to=2-7]
+	\arrow["\alpha", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=2]
+	\arrow["\circlearrowleft"{description}, draw=none, from=1, to=2-7]
+	\arrow["\theta", shorten <=4pt, shorten >=4pt, Rightarrow, dashed, from=2, to=3]
+\end{tikzcd}
+\end{document}

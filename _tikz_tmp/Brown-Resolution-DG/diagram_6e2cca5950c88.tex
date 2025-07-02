@@ -1,0 +1,26 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsMTIsWzIsMSwiKC0sIFhfaSlfe1xcbWF0aGNhbCBUfSJdLFszLDEsIkYoLSkiXSxbMiwyLCIoLSwgWF97aSsxfSlfe1xcbWF0aGNhbCBUfSJdLFsyLDAsIigtLCA/KV97XFxtYXRoY2FsIFR9Il0sWzMsMiwiRigtKSJdLFszLDAsIjAiXSxbMSwxLCJcXGtlciBbKFxccGkgX2kpX1NdIl0sWzEsMiwiXFxrZXIgWyhcXHBpIF97aSsxfSlfU10iXSxbNCwyLCIwIl0sWzQsMSwiMCJdLFswLDIsIjAiXSxbMCwxLCIwIl0sWzAsMiwiKFxccGhpIF9pKV9cXGFzdCJdLFszLDAsIihcXGthcHBhIF9pKV9cXGFzdCJdLFswLDEsIihcXHBpIF9pKV9TIl0sWzEsNCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMyw1XSxbNSwxXSxbMiw0LCIoXFxwaSBfe2krMX0pX1MiXSxbNiwwXSxbNywyXSxbNiw3XSxbNCw4XSxbMSw5XSxbMTAsN10sWzExLDZdXQ==
+\begin{tikzcd}
+	&& {(-, ?)_{\mathcal T}} & 0 \\
+	0 & {\ker [(\pi _i)_S]} & {(-, X_i)_{\mathcal T}} & {F(-)} & 0 \\
+	0 & {\ker [(\pi _{i+1})_S]} & {(-, X_{i+1})_{\mathcal T}} & {F(-)} & 0
+	\arrow[from=1-3, to=1-4]
+	\arrow["{(\kappa _i)_\ast}", from=1-3, to=2-3]
+	\arrow[from=1-4, to=2-4]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-2, to=3-2]
+	\arrow["{(\pi _i)_S}", from=2-3, to=2-4]
+	\arrow["{(\phi _i)_\ast}", from=2-3, to=3-3]
+	\arrow[from=2-4, to=2-5]
+	\arrow[equals, from=2-4, to=3-4]
+	\arrow[from=3-1, to=3-2]
+	\arrow[from=3-2, to=3-3]
+	\arrow["{(\pi _{i+1})_S}", from=3-3, to=3-4]
+	\arrow[from=3-4, to=3-5]
+\end{tikzcd}
+\end{document}

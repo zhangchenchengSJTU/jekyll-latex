@@ -1,0 +1,19 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsMTAsWzEsMCwiWCJdLFszLDAsIlkiXSxbNSwwLCJaIl0sWzUsMSwiWiciXSxbMywxLCJZJyJdLFsxLDEsIlgnIl0sWzYsMCwiXFwsIl0sWzYsMSwiXFwsIl0sWzAsMCwiXFwsIl0sWzcsMCwiXFwsIl0sWzEsMiwiXFx1bmRlcmxpbmUgZyJdLFswLDEsIlxcdW5kZXJsaW5lIGYiXSxbNCwzLCJcXHVuZGVybGluZSB7Zyd9Il0sWzEsNCwiXFx1bmRlcmxpbmUge1xcYmV0YX0iXSxbNSw0LCJcXHVuZGVybGluZSB7Zid9Il0sWzAsNSwiXFx1bmRlcmxpbmUge1xcYWxwaGEgfSJdLFsyLDYsIlxcZGVsdGEiXSxbMyw3LCJcXGRlbHRhJyJdXQ==
+\begin{tikzcd}
+{\,} & X && Y && Z & {\,} & {\,} \\
+& {X'} && {Y'} && {Z'} & {\,}
+\arrow["{\underline f}", from=1-2, to=1-4]
+\arrow["{\underline {\alpha }}", from=1-2, to=2-2]
+\arrow["{\underline g}", from=1-4, to=1-6]
+\arrow["{\underline {\beta}}", from=1-4, to=2-4]
+\arrow["\delta", from=1-6, to=1-7]
+\arrow["{\underline {f'}}", from=2-2, to=2-4]
+\arrow["{\underline {g'}}", from=2-4, to=2-6]
+\arrow["{\delta'}", from=2-6, to=2-7]
+\end{tikzcd}
+\end{document}

@@ -1,0 +1,19 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsNixbMCwwLCJJIl0sWzEsMSwiXFx7XFxhc3RcXH0iXSxbMiwwLCJcXG1hdGhjYWwgQyJdLFs0LDAsIkkiXSxbNiwwLCJcXG1hdGhjYWwgQyJdLFs1LDEsIlxce1xcYXN0XFx9Il0sWzAsMiwiRiJdLFswLDEsIlxcdmFycGhpICIsMl0sWzEsMiwiXFx2YXJwaGkgX1xcYXN0IEY9XFx2YXJpbmpsaW0gRiIsMix7ImxhYmVsX3Bvc2l0aW9uIjo4MCwiY29sb3VyIjpbMzU1LDEwMCw2MF19LFszNTUsMTAwLDYwLDFdXSxbMyw1LCJcXHZhcnBoaSAiLDJdLFszLDQsIkYiXSxbNSw0LCJcXHZhcnBoaSBfISBGID0gXFx2YXJwcm9qbGltIEYiLDIseyJsYWJlbF9wb3NpdGlvbiI6OTAsImNvbG91ciI6WzM1NSwxMDAsNjBdfSxbMzU1LDEwMCw2MCwxXV0sWzEsNiwiIiwwLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwiY29sb3VyIjpbMzU1LDEwMCw2MF19XSxbMTAsNSwiIiwyLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwiY29sb3VyIjpbMzU1LDEwMCw2MF19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+I \&\& {\mathcal C} \&\& I \&\& {\mathcal C} \\
+\& {\{\ast\}} \&\&\&\& {\{\ast\}}
+\arrow[""{name=0, anchor=center, inner sep=0}, "F", from=1-1, to=1-3]
+\arrow["{\varphi }"', from=1-1, to=2-2]
+\arrow[""{name=1, anchor=center, inner sep=0}, "F", from=1-5, to=1-7]
+\arrow["{\varphi }"', from=1-5, to=2-6]
+\arrow["{\varphi _\ast F=\varinjlim F}"'{pos=0.8}, color={rgb,255:red,255;green,51;blue,68}, from=2-2, to=1-3]
+\arrow["{\varphi _! F = \varprojlim F}"'{pos=0.9}, color={rgb,255:red,255;green,51;blue,68}, from=2-6, to=1-7]
+\arrow[color={rgb,255:red,255;green,51;blue,68}, shorten <=3pt, shorten >=3pt, Rightarrow, from=1, to=2-6]
+\arrow[color={rgb,255:red,255;green,51;blue,68}, shorten <=3pt, shorten >=3pt, Rightarrow, from=2-2, to=0]
+\end{tikzcd}
+\end{document}

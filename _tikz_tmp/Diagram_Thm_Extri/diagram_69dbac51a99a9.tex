@@ -1,0 +1,31 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsMTcsWzEsMCwiQV8xIl0sWzIsMCwiQV8yIl0sWzMsMCwiQV8zIl0sWzEsMSwiQl8xIl0sWzIsMSwiQl8yIl0sWzMsMSwiQl8zIl0sWzEsMiwiQ18xIl0sWzIsMiwiQ18yIl0sWzMsMiwiQ18zIl0sWzQsMCwiXFwsIl0sWzQsMSwiXFwsIl0sWzQsMiwiXFwsIl0sWzEsMywiXFwsIl0sWzIsMywiXFwsIl0sWzMsMywiXFwsIl0sWzAsMSwiXFwsIl0sWzUsMSwiXFwsIl0sWzAsMSwiZl9BIl0sWzEsMiwiZ19BIl0sWzIsOSwiXFxkZWx0YSBfe3IxfSJdLFs1LDEwLCJcXGRlbHRhIF97cjJ9Il0sWzgsMTEsIlxcZGVsdGEgX3tyM30iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwxMiwiXFxkZWx0YSBfe2MxfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDEzLCJcXGRlbHRhIF97YzJ9Il0sWzgsMTQsIlxcZGVsdGEgX3tjM30iXSxbMyw0LCJmX0IiXSxbNCw1LCJnX0EiXSxbNiw3LCJmX0MiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNyw4LCJnX0MiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwzLCJtXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMyw2LCJuXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw0LCJtXzIiXSxbNCw3LCJuXzIiXSxbMiw1LCJtXzMiXSxbNSw4LCJuXzMiXV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	\& {A_1} \& {A_2} \& {A_3} \& {\,} \\
+	{\,} \& {B_1} \& {B_2} \& {B_3} \& {\,} \& {\,} \\
+	\& {C_1} \& {C_2} \& {C_3} \& {\,} \\
+	\& {\,} \& {\,} \& {\,}
+	\arrow["{f_A}", from=1-2, to=1-3]
+	\arrow["{m_1}", dashed, from=1-2, to=2-2]
+	\arrow["{g_A}", from=1-3, to=1-4]
+	\arrow["{m_2}", from=1-3, to=2-3]
+	\arrow["{\delta _{r1}}", from=1-4, to=1-5]
+	\arrow["{m_3}", from=1-4, to=2-4]
+	\arrow["{f_B}", from=2-2, to=2-3]
+	\arrow["{n_1}", dashed, from=2-2, to=3-2]
+	\arrow["{g_A}", from=2-3, to=2-4]
+	\arrow["{n_2}", from=2-3, to=3-3]
+	\arrow["{\delta _{r2}}", from=2-4, to=2-5]
+	\arrow["{n_3}", from=2-4, to=3-4]
+	\arrow["{f_C}", dashed, from=3-2, to=3-3]
+	\arrow["{\delta _{c1}}", dashed, from=3-2, to=4-2]
+	\arrow["{g_C}", dashed, from=3-3, to=3-4]
+	\arrow["{\delta _{c2}}", from=3-3, to=4-3]
+	\arrow["{\delta _{r3}}", dashed, from=3-4, to=3-5]
+	\arrow["{\delta _{c3}}", from=3-4, to=4-4]
+\end{tikzcd}
+\end{document}
