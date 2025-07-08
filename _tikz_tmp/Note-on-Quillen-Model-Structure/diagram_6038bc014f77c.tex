@@ -1,0 +1,23 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsMTAsWzAsMCwiXFxiaW5vbSAwMCJdLFsyLDAsIlxcYmlub20gMDEiXSxbNSwwLCJcXGNkb3RzICJdLFs2LDAsIlxcYmlub20gMG4iXSxbMCwxLCJcXGJpbm9tIDEwIl0sWzIsMSwiXFxiaW5vbSAxMSJdLFs2LDEsIlxcYmlub20gMW4iXSxbNSwxLCJcXGNkb3RzICJdLFs0LDAsIlxcYmlub20gMDIiXSxbNCwxLCJcXGJpbm9tIDEyIl0sWzAsMV0sWzIsM10sWzQsNSwiXFxzcWN1cF97KFxcTGFtYmRhXntuKzF9XzApfVxcRGVsdGFee24rMX0iLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw0XSxbNyw2LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw1XSxbMyw2XSxbMSw4XSxbOCwyXSxbNSw5LCJcXHNxY3VwX3soXFxMYW1iZGFee24rMX1fMSl9XFxEZWx0YV57bisxfSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDcsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDldXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+{\binom 00} \&\& {\binom 01} \&\& {\binom 02} \& {\cdots } \& {\binom 0n} \\
+{\binom 10} \&\& {\binom 11} \&\& {\binom 12} \& {\cdots } \& {\binom 1n}
+\arrow[from=1-1, to=1-3]
+\arrow[from=1-1, to=2-1]
+\arrow[from=1-3, to=1-5]
+\arrow[from=1-3, to=2-3]
+\arrow[from=1-5, to=1-6]
+\arrow[from=1-5, to=2-5]
+\arrow[from=1-6, to=1-7]
+\arrow[from=1-7, to=2-7]
+\arrow["{\sqcup_{(\Lambda^{n+1}_0)}\Delta^{n+1}}"', dashed, from=2-1, to=2-3]
+\arrow["{\sqcup_{(\Lambda^{n+1}_1)}\Delta^{n+1}}"', dashed, from=2-3, to=2-5]
+\arrow[dashed, from=2-5, to=2-6]
+\arrow[dashed, from=2-6, to=2-7]
+\end{tikzcd}
+\end{document}

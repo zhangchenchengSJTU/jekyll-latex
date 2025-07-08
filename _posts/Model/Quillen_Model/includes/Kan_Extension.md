@@ -1,4 +1,5 @@
 ## Kan Extension
+
 In this section, we endeavour to elucidate the universal construction known as the **Kan extension**. The concept originates from the [book](https://www.math.stonybrook.edu/~mmovshev/BOOKS/homologicalalgeb033541mbp.pdf) by [H. P. Cartan](https://www.genealogy.math.ndsu.nodak.edu/id.php?id=49555) and [S. Eilenberg](https://www.genealogy.math.ndsu.nodak.edu/id.php?id=7643) in 1956, wherein it was introduced for the computation of derived functors. Further computational aspects are explored in [D. Kan](https://www.genealogy.math.ndsu.nodak.edu/id.php?id=12549)'s paper on [adjoint functors](https://www.ams.org/journals/tran/1958-087-02/S0002-9947-1958-0131451-0/S0002-9947-1958-0131451-0.pdf) in 1958. The general notion of extension, attributed to [D. Kan](https://www.genealogy.math.ndsu.nodak.edu/id.php?id=12549), emerged circa 1960, and a modern treatment is presented in Mac Lane's book [Categories for the Working Mathematician](https://link.springer.com/book/10.1007/978-1-4757-4721-8).
 
 ### The Basic Definitions
@@ -121,10 +122,10 @@ In conclusion, there exists a universe that accommodates the standard set-theore
 Before we proceed, it is advisable to be acquainted with the following phenomenon:
 
 {% slo %}
-The functor of restriction is expected to possess bi-adjoints.
+The functor of restriction is expected to commute with functors; under suitable circumstances, the restriction possesses bi-adjoints.
 {% endslo %}
 
-Let $\mathcal{C}^→ = 𝐅𝐮𝐧𝐜𝐭 (→ , \mathcal{C})$ denote the morphism category, wherein the collection of objects is $𝖬𝗈𝗋(\mathcal{C})$ and the morphisms are commutative squares.
+This likely arises from the principle of associativity, as the restriction operates on the right. Let $\mathcal{C}^→ = 𝐅𝐮𝐧𝐜𝐭 (→ , \mathcal{C})$ denote the morphism category, wherein the collection of objects is $𝖬𝗈𝗋(\mathcal{C})$ and the morphisms are commutative squares.
 
 {% pro %}
 Show in steps that
@@ -208,7 +209,9 @@ Suppose $φ$ is an inclusion of a subcategory that is bijective on objects (a [l
 
 {% endpro %}
 
-#### Kan Extension
+### A note on Kan Extension
+
+#### The Definition
 
 The ideal of Kan extension is simple: to find the biadjoints of the pullback functor $φ ^∗$. Both limits and colimits are special cases of Kan extensions. We use $φ_!$ and $φ_∗$ to denote the functorial construction of left and right Kan extension, respectively. The desired adjoints are $φ_! ⊣ φ^! = φ^∗ ⊣ φ_∗$ (we shall not discuss the sheaf theory here, the notion is not misleading).
 
@@ -282,21 +285,23 @@ Here $α : (φ _∗ F) ∘ φ ⇒ F$ is *terminal* amongst the pairs $? : (-) �
 {% pro %}
 Show that (co)limits are special cases of Kan extensions via the diagrams below. The double arrow are nothing but the (co)unit of the adjunction.
 {% tikz %}
-% https://q.uiver.app/#q=WzAsNixbMCwwLCJJIl0sWzEsMSwiXFx7XFxhc3RcXH0iXSxbMiwwLCJcXG1hdGhjYWwgQyJdLFszLDAsIkkiXSxbNSwwLCJcXG1hdGhjYWwgQyJdLFs0LDEsIlxce1xcYXN0XFx9Il0sWzAsMiwiRiJdLFswLDEsIlxcdmFycGhpICIsMl0sWzEsMiwiXFx2YXJwaGkgX1xcYXN0IEY9XFx2YXJpbmpsaW0gRiIsMix7ImxhYmVsX3Bvc2l0aW9uIjo3MH1dLFszLDUsIlxcdmFycGhpICIsMl0sWzMsNCwiRiJdLFs1LDQsIlxcdmFycGhpIF8hIEYgPSBcXHZhcnByb2psaW0gRiIsMix7ImxhYmVsX3Bvc2l0aW9uIjo3MH1dLFsxLDYsIiIsMCx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH19XSxbMTAsNSwiIiwyLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfX1dXQ==
-\begin{tikzcd}[ampersand replacement=\&]
-I \&\& {\mathcal C} \& I \&\& {\mathcal C} \\
-\& {\{\ast\}} \&\&\& {\{\ast\}}
+% https://q.uiver.app/#q=WzAsNixbMywwLCJJIl0sWzQsMSwiXFx7XFxhc3RcXH0iXSxbNSwwLCJcXG1hdGhjYWwgQyJdLFswLDAsIkkiXSxbMiwwLCJcXG1hdGhjYWwgQyJdLFsxLDEsIlxce1xcYXN0XFx9Il0sWzAsMiwiRiJdLFswLDEsIlxcdmFycGhpICIsMl0sWzEsMiwiXFx2YXJwaGkgX1xcYXN0IEY9XFx2YXJpbmpsaW0gRiIsMix7ImxhYmVsX3Bvc2l0aW9uIjo3MH1dLFszLDUsIlxcdmFycGhpICIsMl0sWzMsNCwiRiJdLFs1LDQsIlxcdmFycGhpIF8hIEYgPSBcXHZhcnByb2psaW0gRiIsMix7ImxhYmVsX3Bvc2l0aW9uIjo3MH1dLFs2LDEsIiIsMix7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH19XSxbNSwxMCwiIiwwLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfX1dXQ==
+\begin{tikzcd}
+I && {\mathcal C} & I && {\mathcal C} \\
+& {\{\ast\}} &&& {\{\ast\}}
 \arrow[""{name=0, anchor=center, inner sep=0}, "F", from=1-1, to=1-3]
 \arrow["{\varphi }"', from=1-1, to=2-2]
 \arrow[""{name=1, anchor=center, inner sep=0}, "F", from=1-4, to=1-6]
 \arrow["{\varphi }"', from=1-4, to=2-5]
-\arrow["{\varphi _\ast F=\varinjlim F}"'{pos=0.7}, from=2-2, to=1-3]
-\arrow["{\varphi _! F = \varprojlim F}"'{pos=0.7}, from=2-5, to=1-6]
+\arrow["{\varphi _! F = \varprojlim F}"'{pos=0.7}, from=2-2, to=1-3]
+\arrow["{\varphi _\ast F=\varinjlim F}"'{pos=0.7}, from=2-5, to=1-6]
 \arrow[shorten <=3pt, shorten >=3pt, Rightarrow, from=1, to=2-5]
 \arrow[shorten <=3pt, shorten >=3pt, Rightarrow, from=2-2, to=0]
 \end{tikzcd}
 {% endtikz %}
 {% endpro %}
+
+#### Example: Homology from Limits
 
 We show an example of Kan extension in theory of group representation. Any group $G$ is considered as a category $BG$ with a single object, and the morphisms are the group elements. A representation of $G$ in $𝐌𝐨𝐝 _k$ is exactly a functor $F : G → 𝐌𝐨𝐝 _k$.
 
@@ -331,5 +336,99 @@ Now, $φ _!(M):= M ⊗ _{kG}kH$ and $φ _∗ (M) := \mathrm{Hom}_{kG}(kH, M)$ ar
 1. Under what conditions are these functors well-defined when restricted to $𝐦𝐨𝐝$?
 2. Examine special cases of $φ$, such as inclusions and quotients.
 3. Observe that the notions $φ _!$ and $φ _∗$ generalise to the *dependent sum* (abstract $⊗$) and *dependent product* (abstract $\mathcal{Hom}$); see section 1.5.3 of [the book](https://academic.oup.com/book/52790) by [P. T. Johnstone](https://www.genealogy.math.ndsu.nodak.edu/id.php?id=24514).
+
+{% endpro %}
+
+We leave the discussion of higher dirived (co)limits to the reader.
+
+#### The Construction
+
+We shall discuss the construction and existence of Kan extensions. Let $φ : I → J$ be a functor between $𝔘$-small diagrams, and let $F : I → \mathcal{C}$ be a functor from the diagram to the category $\mathcal{C}$.
+
+{% thm %}
+(Existence of $φ_∗ F$). The following necessary and sufficient condition for the existence of $φ _∗ F$ arises from the construction. We consider only the pointwise construction of $(φ _∗ F) ∈ \mathcal{C} ^J$ and $α : (φ _∗ F) ∘ φ ⇒ F$.
+
+1. For each $j ∈ J$, associate a cone $j / I$ via the pullback of $j / J$ along $φ$, which amalgamates $j$ and $\operatorname{im} i$ in an appropriate category. As a category, the objects of $j / I$ are morphisms of the form $f : j → φ (i)$, and the morphisms are commutative squares of the form $(1_j, φ (?))$.
+2. The functor $F$ is defined on $j / I$ via the pullback along the forgetful functor $j / I → I,\quad (f , i) ↦ i$.
+3. The assignment $j ↦ \varprojlim F|_{j / I}$ is functorial, serving as the pointwise construction of $φ _∗ F$.
+4. The natural transformation $α : (φ _∗ F) ∘ φ ⇒ F$ is induced by the universal property of the limit cone. For each $i ∈ I$, the morphism $α _i : \varprojlim F|_{φ (i) / I} → F(i)$ is the structure morphism of the limit cone, where $F(i) = F|_{φ (i) / I} ((1_{φ (i)}), i)$.
+
+{% endthm %}
+
+Hence, when $\mathcal{C}$ is complete/cocomplete, the right/left Kan extension always exists.
+
+{% pro %}
+Verify the details of the above construction.
+{% endpro %}
+
+#### On Derived Functors
+
+The concept of derived functors was (probably) initially discovered by [A. Grothendieck](https://www.genealogy.math.ndsu.nodak.edu/id.php?id=31245), albeit without a functorial formulation; a formal statement is attributed to [J.-L. Verdier](https://www.genealogy.math.ndsu.nodak.edu/id.php?id=31267) in his [doctoral thesis](https://www.numdam.org/item/AST_1996__239__R1_0.pdf) in 1967. We follow [P. R. Deligne](https://www.genealogy.math.ndsu.nodak.edu/id.php?id=61289)'s [definition](https://publications.ias.edu/book/export/html/348), which is, in my view, the most accessible. Subsequently, we provide an explanation in terms of Kan extension.
+
+Broadly speaking, derived categories serve as a *universal invariant* of a category. For instance, the invariants of an algebra $A$, including $Z(A)$ the centre, $K_i(A)$ the $K$-groups, and $HH^∙ (A,A)$ the Hochschild cohomologies, are defined over $D(A)$. Consequently, derived functors induce the morphisms between these invariants.
+
+For the construction, let $F : \mathcal{A} → \mathcal{B}$ be an additive functor between additive categories, which induces the triangular functors $C(\mathcal{A}) → C(\mathcal{B})$ between **chain complexes**, and $K(\mathcal{A}) → K(\mathcal{B})$ between the **homotopy categories** of chain complexes. When the categories are Abelian, the collection of **quasi-isomorphisms** forms a **multiplicative system** for the homotopy category (or the chain complex category), which yields a relatively straightforward construction of the localisation $Q_\mathcal{A} : C(\mathcal{A}) → D(\mathcal{A})$. Since $F$ need not preserve quasi-isomorphisms, the functor $C(\mathcal{A}) → C(\mathcal{B}) → D(\mathcal{B})$ does not, in general, extend along the localisation $Q_\mathcal{A}$. It is futile to seek $D(\mathcal{A}) → D(\mathcal{B})$ which renders the square commutative; Kan extensions appear to be *the most suitable replacement*.
+
+We demonstrate, through exercises, that Deligne's construction of right derived functors is equivalent to the left Kan extension of the localisation, and clarify how a well-known criterion for the existence of right derived functors is a special case of the existence of Kan extensions.
+
+{% ex %}
+(Deligne's construction of **right derived functor $𝐑 F$**). Let $F : \mathcal{A} → \mathcal{B}$ be additive between Abelian $k$-categories. We firstly define the bi-assignment
+$$\begin{equation}
+𝐫 F : (D\mathcal{B})^{\mathrm{op}} × (D\mathcal{A}) → 𝐌𝐨𝐝 _k, \quad (b,a) ↦ (𝐫 F)(b,a),
+\end{equation}$$
+and then wish it to be *represented* by $(b, (𝐑 F)(a))_{D\mathcal{B}}$. The $𝔘$-class $(𝐫 F)(b,a)$ is defined as follows: the base set is a $𝔘$-class in general, consisting of the pairs of morphisms
+$$\begin{equation}
+\left(b \xrightarrow f Fa', a'\xleftarrow[\text{quasi-iso}] s a\right) ∈ 𝖬𝗈𝗋(\mathcal{B}) × 𝖬𝗈𝗋(\mathcal{A}).
+\end{equation}$$
+
+The equivalency relation $(f,s) ∼ (g,t)$ is generated by the following relations:
+
+{% tikz %}
+% https://q.uiver.app/#q=WzAsNixbMCwxLCJiIl0sWzIsMCwiRihhJykiXSxbMiwyLCJGKGEnJykiXSxbNSwxLCJhIl0sWzMsMCwiYSciXSxbMywyLCJhJyciXSxbMCwxLCJmIl0sWzAsMiwiZyIsMl0sWzEsMiwiRihyKSIsMl0sWzMsNCwicyIsMl0sWzMsNSwidCJdLFs0LDUsInIiXV0=
+\begin{tikzcd}[ampersand replacement=\&]
+\&\& {F(a')} \& {a'} \\
+b \&\&\&\&\& a \\
+\&\& {F(a'')} \& {a''}
+\arrow["{F(r)}"', from=1-3, to=3-3]
+\arrow["r", from=1-4, to=3-4]
+\arrow["f", from=2-1, to=1-3]
+\arrow["g"', from=2-1, to=3-3]
+\arrow["s"', from=2-6, to=1-4]
+\arrow["t", from=2-6, to=3-4]
+\end{tikzcd}
+{% endtikz %}
+
+{% endex %}
+
+{% pro %}
+Demonstrate that when $\mathcal{A}$ possesses finite injective dimension, one may select the representative of $(𝐑 F)(a)$ via the injective resolution $I(a)$. Observe that the assignment $X ↦ Q_\mathcal{A}(I(X))$ is functorial for $X ∈ \mathcal{A}$. It follows from the Eilenberg-Cartan resolution that the injective resolutions of chain complexes remain functorial when considered in $D(\mathcal{A})$.
+{% endpro %}
+
+When $\mathcal{A}$ possesses enough projectives, one may revise the aforementioned construction of $𝐑 F$.
+
+1. One may restrict the complexes to be bounded below, and work with $D^+ \mathcal{A}$ instead;
+2. One may introduce $K_{\mathrm{h \ inj}}$, the *homotopy injective* (or *$K$-injective*) complexes, and replace the injective resolution with the $K$-injective resolution.
+
+In order to combine Kan extension with derived functors, it is necessary to verify the following.
+
+{% pro %}
+Suppose that $Q_\mathcal{A} : \mathcal{A} → S^{-1}\mathcal{A}$ is the localisation of a general category with right multiplicative system $S$. For any cocomplete category $\mathcal{B}$ with the functor $F : \mathcal{A} → \mathcal{B}$, the left Kan extension of $F$ along $Q_\mathcal{A}$ is given by the filtered colimit
+$$\begin{equation}
+(Q_\mathcal{A})_∗ F : X ↦ \varinjlim _{X \xrightarrow[∈ S]{s} Y} F(Y).
+\end{equation}$$
+
+Show that $(Q_\mathcal{A})_! F$ coincides with $𝐑 F$ in the construction of Deligne.
+
+{% endpro %}
+
+In the computation of derived categories, there are usually suitable conditions such that $\varinjlim _{X \xrightarrow[∈ S]{s} Y} F(Y)$ is straightforward to compute.
+
+{% pro %}
+(The existence of right derived functor). Let $F : \mathcal{A} → \mathcal{B}$ be a functor of Abelian categories, with induced triangulated functor $F : K(\mathcal{A}) → K(\mathcal{B})$ between homotopy categories. Suppose that there is a triangulated subcategory $\mathcal{T} ⊆ K(\mathcal{A})$ such that the following conditions hold:
+
+1. any $X ∈ K(\mathcal{A})$ is quasi-isomorphic to an object $X_\mathcal{T} ∈ \mathcal{T}$;
+2. the quasi-isomorphisms in $\mathcal{T}$ are preserved by $F$.
+
+Then the filtered colimit $(Q_\mathcal{A})_! F X$ is represented by $Q_\mathcal{B}(F(X_\mathcal{T}))$. In particular, the right derived functor $𝐑 F$ exists, and is given by the Kan extension $(Q_\mathcal{A})_! F$.
 
 {% endpro %}

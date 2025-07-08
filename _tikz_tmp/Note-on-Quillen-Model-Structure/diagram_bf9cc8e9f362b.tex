@@ -1,0 +1,45 @@
+\documentclass[preview]{standalone}
+\usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+\usepackage{quiver}
+\begin{document}
+
+% https://q.uiver.app/#q=WzAsMjQsWzAsMCwiMCJdLFsxLDAsIjEiXSxbMiwwLCJcXGNkb3RzIl0sWzAsMSwiXFxjZG90Il0sWzEsMSwiXFxjZG90Il0sWzAsMiwiXFxjZG90Il0sWzEsMiwiXFxjZG90Il0sWzIsMSwiXFxjZG90cyJdLFsyLDIsIlxcY2RvdHMiXSxbMywwLCJrLTEiXSxbNCwwLCJcXGNkb3QiXSxbMywyLCJcXGNkb3QiXSxbMywxLCJcXGNkb3QiXSxbNCwyLCJcXGNkb3QiXSxbNSwyLCJrKzEiXSxbNCwxLCJrIl0sWzUsMSwiXFxjZG90Il0sWzUsMCwiXFxjZG90Il0sWzYsMCwiXFxjZG90cyJdLFs2LDEsIlxcY2RvdHMiXSxbNiwyLCJcXGNkb3RzIl0sWzcsMiwibiJdLFs3LDAsIlxcY2RvdCJdLFs3LDEsIlxcY2RvdCJdLFswLDFdLFszLDRdLFs1LDZdLFswLDNdLFszLDVdLFsxLDRdLFs0LDZdLFsxLDJdLFs0LDddLFs2LDhdLFsyLDldLFs5LDEwXSxbMTAsMTVdLFsxNSwxM10sWzksMTJdLFsxMiwxMV0sWzcsMTJdLFsxMiwxNV0sWzgsMTFdLFsxMSwxM10sWzEzLDE0XSxbMTAsMTddLFsxNSwxNl0sWzE3LDE4XSxbMTgsMjJdLFsyMiwyM10sWzIzLDIxXSxbMTYsMTldLFsxOSwyM10sWzE3LDE2XSxbMTYsMTRdLFsxNCwyMF0sWzIwLDIxXV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	0 \& 1 \& \cdots \& {k-1} \& \cdot \& \cdot \& \cdots \& \cdot \\
+	\cdot \& \cdot \& \cdots \& \cdot \& k \& \cdot \& \cdots \& \cdot \\
+	\cdot \& \cdot \& \cdots \& \cdot \& \cdot \& {k+1} \& \cdots \& n
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-2, to=2-2]
+	\arrow[from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+	\arrow[from=1-4, to=2-4]
+	\arrow[from=1-5, to=1-6]
+	\arrow[from=1-5, to=2-5]
+	\arrow[from=1-6, to=1-7]
+	\arrow[from=1-6, to=2-6]
+	\arrow[from=1-7, to=1-8]
+	\arrow[from=1-8, to=2-8]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-1, to=3-1]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-2, to=3-2]
+	\arrow[from=2-3, to=2-4]
+	\arrow[from=2-4, to=2-5]
+	\arrow[from=2-4, to=3-4]
+	\arrow[from=2-5, to=2-6]
+	\arrow[from=2-5, to=3-5]
+	\arrow[from=2-6, to=2-7]
+	\arrow[from=2-6, to=3-6]
+	\arrow[from=2-7, to=2-8]
+	\arrow[from=2-8, to=3-8]
+	\arrow[from=3-1, to=3-2]
+	\arrow[from=3-2, to=3-3]
+	\arrow[from=3-3, to=3-4]
+	\arrow[from=3-4, to=3-5]
+	\arrow[from=3-5, to=3-6]
+	\arrow[from=3-6, to=3-7]
+	\arrow[from=3-7, to=3-8]
+\end{tikzcd}
+\end{document}

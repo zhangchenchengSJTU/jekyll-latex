@@ -8,7 +8,17 @@
       
         <item>
           <title>A Note on Quillen's Model Structure</title>
-          <description>&lt;h2 id=&quot;note-on-model-category&quot;&gt;Note on Model Category&lt;/h2&gt;
+          <description>&lt;h2 id=&quot;question-on-quillen-localisation&quot;&gt;Question on Quillen Localisation&lt;/h2&gt;
+
+&lt;p&gt;Let $π : \mathcal{A} → 𝖧𝗈 \mathcal{A}$ be a localisation of a model category. The writer asked the alternative expression of left or right Kan extension of $F : \mathcal{A} → \mathcal{B}$ along $π$. We hope&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$(π_!F) : πX ↦ \varinjlim_{X \xrightarrow{𝖳𝖢𝗈𝖿𝗂𝖻} Y} FY$;&lt;/li&gt;
+  &lt;li&gt;$(π_∗F) : πX ↦ \varprojlim_{Z \xrightarrow{𝖳𝖥𝗂𝖻} X} FZ$.
+3.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;note-on-model-category&quot;&gt;Note on Model Category&lt;/h2&gt;
 
 &lt;div class=&quot;abstract&quot;&gt;
   &lt;h5 id=&quot;abstract&quot;&gt;Abstract&lt;/h5&gt;
@@ -226,7 +236,9 @@
   &lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&quot;kan-extension-1&quot;&gt;Kan Extension&lt;/h4&gt;
+&lt;h3 id=&quot;a-note-on-kan-extension&quot;&gt;A note on Kan Extension&lt;/h3&gt;
+
+&lt;h4 id=&quot;the-definition&quot;&gt;The Definition&lt;/h4&gt;
 
 &lt;p&gt;The ideal of Kan extension is simple: to find the biadjoints of the pullback functor $φ ^∗$. Both limits and colimits are special cases of Kan extensions. We use $φ_!$ and $φ_∗$ to denote the functorial construction of left and right Kan extension, respectively. The desired adjoints are $φ_! ⊣ φ^! = φ^∗ ⊣ φ_∗$ (we shall not discuss the sheaf theory here, the notion is not misleading).&lt;/p&gt;
 
@@ -259,9 +271,11 @@
 &lt;div class=&quot;problem&quot;&gt;
   &lt;p&gt;Show that (co)limits are special cases of Kan extensions via the diagrams below. The double arrow are nothing but the (co)unit of the adjunction.&lt;/p&gt;
   &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-      &lt;embed src=&quot;/website/svg/Note-on-Quillen-Model-Structure/diagram_c55ae963b226c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;embed src=&quot;/website/svg/Note-on-Quillen-Model-Structure/diagram_2c452c67be7cc.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
     &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
 &lt;/div&gt;
+
+&lt;h4 id=&quot;example-homology-from-limits&quot;&gt;Example: Homology from Limits&lt;/h4&gt;
 
 &lt;p&gt;We show an example of Kan extension in theory of group representation. Any group $G$ is considered as a category $BG$ with a single object, and the morphisms are the group elements. A representation of $G$ in $𝐌𝐨𝐝 _k$ is exactly a functor $F : G → 𝐌𝐨𝐝 _k$.&lt;/p&gt;
 
@@ -286,6 +300,22 @@ $$&lt;/p&gt;
     &lt;li&gt;Under what conditions are these functors well-defined when restricted to $𝐦𝐨𝐝$?&lt;/li&gt;
     &lt;li&gt;Examine special cases of $φ$, such as inclusions and quotients.&lt;/li&gt;
     &lt;li&gt;Observe that the notions $φ _!$ and $φ _∗$ generalise to the &lt;em&gt;dependent sum&lt;/em&gt; (abstract $⊗$) and &lt;em&gt;dependent product&lt;/em&gt; (abstract $\mathcal{Hom}$); see section 1.5.3 of &lt;a href=&quot;https://academic.oup.com/book/52790&quot;&gt;the book&lt;/a&gt; by &lt;a href=&quot;https://www.genealogy.math.ndsu.nodak.edu/id.php?id=24514&quot;&gt;P. T. Johnstone&lt;/a&gt;.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We leave the discussion of higher dirived (co)limits to the reader.&lt;/p&gt;
+
+&lt;h4 id=&quot;a-pointwise-construction&quot;&gt;A Pointwise Construction&lt;/h4&gt;
+
+&lt;p&gt;We shall discuss the construction as well as the existence of Kan extensions. We take $φ : I → J$ as as the functor between $𝔘$-small diagrams, and $F : I → \mathcal{C}$ as a functor from the diagram to the category $\mathcal{C}$.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(Existence of $φ_∗ F$). The following necessary and sufficient condition on the existence of $φ _∗ F$ comes from the construction. We only talk about the pointwise construction of $(φ _∗ F) ∈ \mathcal{C} ^J$ and $α : (φ _∗ F) ∘ φ ⇒ F$.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;We associate for each $j ∈ J$ a cone $j / I$ via the pullback of $j / J$ along $φ$, which merge $j$ and $\operatorname{im} i$ in a reasonable category. As a category, the objects of $j / I$ are morphism of the form $f : j → φ (i)$, and the morphisms are commutative squares of the form $(1_j, φ (?))$.&lt;/li&gt;
+    &lt;li&gt;The functor $F$ is defined on $j / I$ via the pullback along the forgetful functor $j / I → I,\quad (f , i) ↦ i$.&lt;/li&gt;
+    &lt;li&gt;The assignment $j ↦ \varprojlim F|_{j / I}$ is a functorial, serving as the pointwise construction of $φ _∗ F$.&lt;/li&gt;
+    &lt;li&gt;The natural transformation $α : (φ _∗ F) ∘ φ ⇒ F$ is induced by the universal property of the limit cone. For each $i ∈ I$, one has the well-defined map $α _i : \varprojlim F|_{φ (i) / I} → F(i)$&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
 
