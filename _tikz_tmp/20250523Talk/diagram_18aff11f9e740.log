@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.28)  23 MAY 2025 14:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.28)  8 JUL 2025 21:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -694,7 +694,7 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \xmathstrut@dim=\dimen275
 )
 (c:/texlive/texmf-local/tex/latex/quiver/quiver.sty
-Package: quiver 2021/01/11 quiver
+Package: quiver 2025/06/24 quiver
 
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarycalc.code.tex
@@ -718,7 +718,27 @@ ex
 \tikz@lib@dec@box=\box69
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
-orations.pathmorphing.code.tex)))
+orations.pathmorphing.code.tex))
+(c:/texlive/2024/texmf-dist/tex/latex/spath3/tikzlibraryspath3.code.tex
+(c:/texlive/2024/texmf-dist/tex/latex/spath3/spath3.sty
+Package: spath3 2022/08/24 v2.7 Functions for manipulating PGF soft paths
+
+(c:/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2024-02-18 L3 Experimental document command parser
+)
+\g__spath_output_int=\count315
+\l__spath_tmpa_dim=\dimen283
+\l__spath_tmpb_dim=\dimen284
+\l__spath_tmpa_int=\count316
+\l__spath_tmpb_int=\count317
+\l__spath_move_x_dim=\dimen285
+\l__spath_move_y_dim=\dimen286
+\l__spath_rectx_dim=\dimen287
+\l__spath_recty_dim=\dimen288
+\g__spath_anon_int=\count318
+)
+\l__tikzspath_tmpa_int=\count319
+))
 (c:/texlive/2024/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
 File: UTF8.enc 2021/10/16 4.8.5
 )
@@ -810,16 +830,16 @@ Preview: Fontsize 10.53937pt
 Preview: PDFoutput 1
 (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count315
-\scratchdimen=\dimen283
+\scratchcounter=\count320
+\scratchdimen=\dimen289
 \scratchbox=\box70
-\nofMPsegments=\count316
-\nofMParguments=\count317
+\nofMPsegments=\count321
+\nofMParguments=\count322
 \everyMPshowfont=\toks46
-\MPscratchCnt=\count318
-\MPscratchDim=\dimen284
-\MPnumerator=\count319
-\makeMPintoPDFobject=\count320
+\MPscratchCnt=\count323
+\MPscratchDim=\dimen290
+\MPnumerator=\count324
+\makeMPintoPDFobject=\count325
 \everyMPtoPDFconversion=\toks47
 ) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -867,13 +887,13 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 19315 strings out of 474116
- 401680 string characters out of 5747717
+ 20895 strings out of 474116
+ 446108 string characters out of 5747717
  1933190 words of memory out of 5000000
- 41273 multiletter control sequences out of 15000+600000
+ 42842 multiletter control sequences out of 15000+600000
  563354 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,16n,121p,771b,980s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,16n,121p,771b,988s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/tex
 live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist

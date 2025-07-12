@@ -17,3 +17,5 @@ This note serves as an introduction to the concept of model structures in the co
 {% include_relative includes/Kan_Extension.md %}
 
 {% include_relative includes/Simplicial.md %}
+
+{% include_relative includes/Model.md %}
