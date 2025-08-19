@@ -969,9 +969,18 @@ h6 {
   .container {
     flex-direction: column;
   }
-  
   .sidebar-column {
-    flex: 1;
-    width: 100%;
+    display: none !important;
+  }
+  
+  /* Expand main content to full width */
+  .content-column {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Hide the right edge trigger */
+  body::after {
+    display: none !important;
   }
 }
