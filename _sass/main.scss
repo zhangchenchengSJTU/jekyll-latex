@@ -930,12 +930,80 @@ h6 {
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px; /* Space between columns */
+  gap: 0px; /* Space between columns */
 }
 
 .content-column {
-  flex: 1; /* Takes 75% of space */
-  min-width: 300px; /* Minimum width */
+  flex: 1;
+  min-width: 800px; /* Minimum width */
+}
+
+.sidebar-column {
+  position: fixed;
+  left: 0;       /* always on left */
+  top: 0;
+  height: 100vh;
+  width: 300px;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1); /* shadow to the right */
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 1rem;
+  transition: none; /* no hover slide */
+}
+
+/* TOC Styles */
+.numbered-toc {
+  counter-reset: section;
+  padding-top: 20px;
+}
+
+.numbered-toc ol {
+  list-style: none;
+  padding-left: 1.2rem;
+  margin: 0.3rem 0;
+}
+
+.numbered-toc li {
+  margin: 0.4rem 0;
+  position: relative;
+}
+
+.numbered-toc a {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  transition: color 0.2s;
+}
+
+.numbered-toc a:hover {
+  color: hsl(42, 40%, 55%);
+}
+
+.toc-number {
+  display: inline-block;
+  min-width: 2rem;
+  color: #666;
+  font-size: 0.9em;
+  margin-right: 0.5rem;
+}
+
+.toc-title {
+  flex: 1;
+}
+
+/* Indentation for different levels */
+.toc-level-2 { margin-left: 0; }
+.toc-level-3 { margin-left: 1rem; }
+.toc-level-4 { margin-left: 2rem; }
+
+/* Active TOC link highlight */
+.numbered-toc a.active {
+  color: hsl(30, 100%, 50%);
+  font-weight: bold;
 }
 
 .sidebar-column {
@@ -964,12 +1032,16 @@ h6 {
   margin-top: 3rem;
 }
 
+main {
+  margin-left: 50px; /* Prevent overlap (sidebar width + padding) */
+}
+
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1500px) {
   .container {
     flex-direction: column;
   }
-  .sidebar-column {
+  .sidebar {
     display: none !important;
   }
   
