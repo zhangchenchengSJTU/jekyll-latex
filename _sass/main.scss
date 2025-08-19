@@ -1036,23 +1036,26 @@ main {
   margin-left: 50px; /* Prevent overlap (sidebar width + padding) */
 }
 
-/* Responsive adjustments */
-@media (max-width: 1500px) {
-  .container {
-    flex-direction: column;
+@media (max-width: 1250px) {
+  /* Hide sidebar, no matter if it's .sidebar or .sidebar-column */
+  .sidebar-column {
+    display: none !important;
   }
   .sidebar {
     display: none !important;
   }
   
-  /* Expand main content to full width */
+
+  /* Expand main content to take full width */
   .content-column {
-    width: 100% !important;
-    margin-right: 0 !important;
+    min-width: 100% !important;
+    // margin: 0 !important;
+    flex: 2 !important;
+    // max-width: 100% !important;
   }
-  
-  /* Hide the right edge trigger */
-  body::after {
-    display: none !important;
+
+  /* Optional: reset container layout */
+  .container {
+    display: block !important;
   }
 }
