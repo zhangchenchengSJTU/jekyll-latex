@@ -1,5 +1,5 @@
 ---
-title: A Note on Brown Representability and Resolutions
+title: A Note on Brown Representability
 author: Chencheng Zhang
 layout: post
 category: notes
@@ -558,8 +558,6 @@ Hence, if $\mathcal{T}$ is compactly generated, then both $\mathcal{T}$ and $\ma
 {% cor %}
 Let $\mathcal{T}$ be compactly generated (hence it has arbitrary products). Any homological functor preserving arbitrary products is corepresentable, e.g., of the form $(X, -)$.
 {% endcor %}
-
-The notion of symmetric generator.
 
 #### On Adjoint Functors
 

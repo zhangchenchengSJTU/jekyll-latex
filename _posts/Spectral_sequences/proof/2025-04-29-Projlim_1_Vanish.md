@@ -27,10 +27,18 @@ category: notes
 
 其中, $1-m$ 自动对应如下泛性质确立的序列 ($\oplus$ 强调了双积)
 
-<center>
-<!-- https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXHByb2QgTSJdLFsyLDAsIlxccHJvZCBNIl0sWzAsMSwiTV9rXFxvcGx1cyBNX3trKzF9Il0sWzIsMSwiTV9rIl0sWzAsMSwiMS1tIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMiwiKHBfayxwX3trKzF9KSIsMl0sWzEsMywicF9rIl0sWzIsMywiKFxcbWF0aHJte2lkfV97TV9rfSwgLW1fe2srMX0pIiwyXSxbMCwzXV0= -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXHByb2QgTSJdLFsyLDAsIlxccHJvZCBNIl0sWzAsMSwiTV9rXFxvcGx1cyBNX3trKzF9Il0sWzIsMSwiTV9rIl0sWzAsMSwiMS1tIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMiwiKHBfayxwX3trKzF9KSIsMl0sWzEsMywicF9rIl0sWzIsMywiKFxcbWF0aHJte2lkfV97TV9rfSwgLW1fe2srMX0pIiwyXSxbMCwzXV0=&embed" width="600" height="200" style="border-radius: 8px; border: dahsed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsNixbMSwwLCJcXHByb2QgTSJdLFszLDAsIlxccHJvZCBNIl0sWzEsMSwiTV9rXFxvcGx1cyBNX3trKzF9Il0sWzMsMSwiTV9rIl0sWzAsMSwiXFwsIl0sWzQsMSwiXFwsIl0sWzAsMSwiMS1tIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMiwiKHBfayxwX3trKzF9KSIsMl0sWzEsMywicF9rIl0sWzIsMywiKFxcbWF0aHJte2lkfV97TV9rfSwgLW1fe2srMX0pIiwyXSxbMCwzXV0=
+\begin{tikzcd}
+	& {\prod M} && {\prod M} \\
+	{\,} & {M_k\oplus M_{k+1}} && {M_k} & {\,}
+	\arrow["{1-m}", dashed, from=1-2, to=1-4]
+	\arrow["{(p_k,p_{k+1})}"', from=1-2, to=2-2]
+	\arrow[from=1-2, to=2-4]
+	\arrow["{p_k}", from=1-4, to=2-4]
+	\arrow["{(\mathrm{id}_{M_k}, -m_{k+1})}"', from=2-2, to=2-4]
+\end{tikzcd}
+{% endtikz %}
 
 {% enddef %}
 
@@ -59,10 +67,29 @@ category: notes
     h^A:[\cdots \to (A_2,-)\to (A_1,-)\to (A_0,-)].
 \end{equation}
 记正向塔的位移运算为 $f$, 由 AB5 知 $(1-f)$ 是单态射. 短正合列 $0\to \coprod A\to \coprod A\to \varinjlim A\to 0$ 给出
-<center>
-<!-- https://q.uiver.app/#q=WzAsMTMsWzEsMSwiKFxcdmFyaW5qbGltIEEsLSkiXSxbMCwxLCIwIl0sWzIsMSwiKFxcY29wcm9kIEEsLSkiXSxbMywxLCIoXFxjb3Byb2QgQSwtKSJdLFs0LDEsIlxcbWF0aHJte0V4dH1eMShcXHZhcmluamxpbSBBLC0pIl0sWzUsMSwiXFxtYXRocm17RXh0fV4xKFxcY29wcm9kIEEsLSkiXSxbNiwxLCJcXG1hdGhybXtFeHR9XjEoXFxjb3Byb2QgQSwtKSJdLFsxLDAsIlxcdmFycHJvamxpbSAoQSwtKSJdLFswLDAsIjAiXSxbMiwwLCJcXHByb2QgKEEsLSkiXSxbMywwLCJcXHByb2QgKEEsLSkiXSxbNCwwLCJ7XFx2YXJwcm9qbGltfV4xIChBLC0pIl0sWzUsMCwiMCJdLFsxLDBdLFs0LDVdLFswLDJdLFsyLDNdLFszLDRdLFs1LDZdLFs4LDddLFs3LDldLFs5LDEwXSxbMTAsMTFdLFsxMSwxMl0sWzcsMCwiXFxzaW0gIiwyXSxbOSwyLCJcXHNpbSAiLDJdLFsxMCwzLCJcXHNpbSAiLDJdXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMTMsWzEsMSwiKFxcdmFyaW5qbGltIEEsLSkiXSxbMCwxLCIwIl0sWzIsMSwiKFxcY29wcm9kIEEsLSkiXSxbMywxLCIoXFxjb3Byb2QgQSwtKSJdLFs0LDEsIlxcbWF0aHJte0V4dH1eMShcXHZhcmluamxpbSBBLC0pIl0sWzUsMSwiXFxtYXRocm17RXh0fV4xKFxcY29wcm9kIEEsLSkiXSxbNiwxLCJcXG1hdGhybXtFeHR9XjEoXFxjb3Byb2QgQSwtKSJdLFsxLDAsIlxcdmFycHJvamxpbSAoQSwtKSJdLFswLDAsIjAiXSxbMiwwLCJcXHByb2QgKEEsLSkiXSxbMywwLCJcXHByb2QgKEEsLSkiXSxbNCwwLCJ7XFx2YXJwcm9qbGltfV4xIChBLC0pIl0sWzUsMCwiMCJdLFsxLDBdLFs0LDVdLFswLDJdLFsyLDNdLFszLDRdLFs1LDZdLFs4LDddLFs3LDldLFs5LDEwXSxbMTAsMTFdLFsxMSwxMl0sWzcsMCwiXFxzaW0gIiwyXSxbOSwyLCJcXHNpbSAiLDJdLFsxMCwzLCJcXHNpbSAiLDJdXQ==&embed" width="600" height="150" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTMsWzEsMSwiKFxcdmFyaW5qbGltIEEsLSkiXSxbMCwxLCIwIl0sWzIsMSwiKFxcY29wcm9kIEEsLSkiXSxbMywxLCIoXFxjb3Byb2QgQSwtKSJdLFs0LDEsIlxcbWF0aHJte0V4dH1eMShcXHZhcmluamxpbSBBLC0pIl0sWzUsMSwiXFxtYXRocm17RXh0fV4xKFxcY29wcm9kIEEsLSkiXSxbNiwxLCJcXG1hdGhybXtFeHR9XjEoXFxjb3Byb2QgQSwtKSJdLFsxLDAsIlxcdmFycHJvamxpbSAoQSwtKSJdLFswLDAsIjAiXSxbMiwwLCJcXHByb2QgKEEsLSkiXSxbMywwLCJcXHByb2QgKEEsLSkiXSxbNCwwLCJ7XFx2YXJwcm9qbGltfV4xIChBLC0pIl0sWzUsMCwiMCJdLFsxLDBdLFs0LDVdLFswLDJdLFsyLDNdLFszLDRdLFs1LDZdLFs4LDddLFs3LDldLFs5LDEwXSxbMTAsMTFdLFsxMSwxMl0sWzcsMCwiXFxzaW0gIiwyXSxbOSwyLCJcXHNpbSAiLDJdLFsxMCwzLCJcXHNpbSAiLDJdXQ==
+\begin{tikzcd}
+	0 & {\varprojlim (A,-)} & {\prod (A,-)} & {\prod (A,-)} & { {\varprojlim}^1 (A,-)} & 0 \\
+	0 & {(\varinjlim A,-)} & {(\coprod A,-)} & {(\coprod A,-)} & {\mathrm{Ext}^1(\varinjlim A,-)} & {\mathrm{Ext}^1(\coprod A,-)} & {\mathrm{Ext}^1(\coprod A,-)}
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow["{\sim }"', from=1-2, to=2-2]
+	\arrow[from=1-3, to=1-4]
+	\arrow["{\sim }"', from=1-3, to=2-3]
+	\arrow[from=1-4, to=1-5]
+	\arrow["{\sim }"', from=1-4, to=2-4]
+	\arrow[from=1-5, to=1-6]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-3, to=2-4]
+	\arrow[from=2-4, to=2-5]
+	\arrow[from=2-5, to=2-6]
+	\arrow[from=2-6, to=2-7]
+\end{tikzcd}
+{% endtikz %}
+
 依照 AB3, $\mathrm{Ext}^1$ 与 $\coprod$ 交换. 取 $\mathrm{Ext}^1(\varinjlim A,-)$ 处的合冲子得短正合列
 \begin{equation}
     0\to {\varprojlim}^1(A,-)\to \mathrm{Ext}^1(\varinjlim A,-)\to {\varprojlim}^0\mathrm{Ext}^1(A,-)\to 0.
@@ -97,10 +124,22 @@ category: notes
 
 {% ex %}
 假定特定的核与积存在, 则对具体范畴而言, Mittag-Leffler 条件给出极限 $\{(x_n)_{n\geq 0}\mid φ_{i,i + j}(x_i)=x_{i+j}\}$. 此时
-<center>
-<!-- https://q.uiver.app/#q=WzAsOCxbMywwLCJNXzAiXSxbMiwwLCJNXzEiXSxbMSwwLCJNXzIiXSxbMCwwLCJcXGNkb3RzIl0sWzMsMSwiXFxtYXRocm17aW19KFxcdmFycGhpIF97XFxpbmZ0eSwwfSkiXSxbMiwxLCJcXG1hdGhybXtpbX0oXFx2YXJwaGkgX3tcXGluZnR5LDF9KSJdLFsxLDEsIlxcbWF0aHJte2ltfShcXHZhcnBoaSBfe1xcaW5mdHksMX0pIl0sWzAsMSwiXFxjZG90cyAiXSxbMSwwLCJcXHZhcnBoaSBfezEsMH0iXSxbMiwxLCJcXHZhcnBoaSBfezIsMH0iXSxbNSw0LCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNiw1LCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMywyXSxbNyw2XSxbNCwwLCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFs1LDEsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzYsMiwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XV0= -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsOCxbMywwLCJNXzAiXSxbMiwwLCJNXzEiXSxbMSwwLCJNXzIiXSxbMCwwLCJcXGNkb3RzIl0sWzMsMSwiXFxtYXRocm17aW19KFxcdmFycGhpIF97XFxpbmZ0eSwwfSkiXSxbMiwxLCJcXG1hdGhybXtpbX0oXFx2YXJwaGkgX3tcXGluZnR5LDF9KSJdLFsxLDEsIlxcbWF0aHJte2ltfShcXHZhcnBoaSBfe1xcaW5mdHksMX0pIl0sWzAsMSwiXFxjZG90cyAiXSxbMSwwLCJcXHZhcnBoaSBfezEsMH0iXSxbMiwxLCJcXHZhcnBoaSBfezIsMH0iXSxbNSw0LCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNiw1LCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMywyXSxbNyw2XSxbNCwwLCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFs1LDEsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzYsMiwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XV0=&embed" width="600" height="200" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsOCxbMywwLCJNXzAiXSxbMiwwLCJNXzEiXSxbMSwwLCJNXzIiXSxbMCwwLCJcXGNkb3RzIl0sWzMsMSwiXFxtYXRocm17aW19KFxcdmFycGhpIF97XFxpbmZ0eSwwfSkiXSxbMiwxLCJcXG1hdGhybXtpbX0oXFx2YXJwaGkgX3tcXGluZnR5LDF9KSJdLFsxLDEsIlxcbWF0aHJte2ltfShcXHZhcnBoaSBfe1xcaW5mdHksMX0pIl0sWzAsMSwiXFxjZG90cyAiXSxbMSwwLCJcXHZhcnBoaSBfezEsMH0iXSxbMiwxLCJcXHZhcnBoaSBfezIsMH0iXSxbNSw0LCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNiw1LCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMywyXSxbNyw2XSxbNCwwLCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFs1LDEsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzYsMiwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XV0=
+\begin{tikzcd}
+	\cdots & {M_2} & {M_1} & {M_0} \\
+	{\cdots } & {\mathrm{im}(\varphi _{\infty,1})} & {\mathrm{im}(\varphi _{\infty,1})} & {\mathrm{im}(\varphi _{\infty,0})}
+	\arrow[from=1-1, to=1-2]
+	\arrow["{\varphi _{2,0}}", from=1-2, to=1-3]
+	\arrow["{\varphi _{1,0}}", from=1-3, to=1-4]
+	\arrow[from=2-1, to=2-2]
+	\arrow[hook, from=2-2, to=1-2]
+	\arrow[two heads, from=2-2, to=2-3]
+	\arrow[hook, from=2-3, to=1-3]
+	\arrow[two heads, from=2-3, to=2-4]
+	\arrow[hook, from=2-4, to=1-4]
+\end{tikzcd}
+{% endtikz %}
 是等价的逆像系统.
 {% endex %}
 

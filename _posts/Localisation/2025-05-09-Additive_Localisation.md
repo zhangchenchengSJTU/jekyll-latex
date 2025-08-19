@@ -16,7 +16,8 @@ category: notes
 
 1. ([Gabriel-Zisman 局部化](Gabriel_Zisman)). 对包含同构的态射类 $S$, 记局部化范畴为 $𝒜[S^{-1}]$;
 2. ([稳定加法范畴](Stable_Add_Cat)). 若 $𝒜$ 是加法范畴, 记 $𝒞 ↣ 𝒜$ 是直和闭的对象类 (或视作全子范畴), 记商范畴 $𝒜 / 𝒞$;
-3. (分式范畴). 若 $S$ 是乘法系, 记 $S^{-1}𝒜$ 是局部化.
+3. (分式范畴). 若 $S$ 是乘法系, 记 $S^{-1}𝒜$ 是局部化;
+4. (模型结构). 表述略.
 
 {% enddef %}
 
@@ -111,10 +112,21 @@ $$\begin{equation}
 
 其中 $\overline{(-)}$ 通过局部化函子分解所得.
 
-<center>
-<!-- https://q.uiver.app/#q=WzAsNCxbMiwwLCJcXG1hdGhzY3IgRFtUXnstMX1dIl0sWzIsMSwiXFxtYXRoc2NyIENbU157LTF9XSJdLFswLDAsIlxcbWF0aHNjciBEIl0sWzAsMSwiXFxtYXRoc2NyIEMiXSxbMCwxLCJcXG92ZXJsaW5lIEYiLDIseyJjdXJ2ZSI6Mn1dLFsxLDAsIlxcb3ZlcmxpbmUgRyIsMix7ImN1cnZlIjoyfV0sWzIsMywiRiIsMix7ImN1cnZlIjoyfV0sWzMsMiwiRyIsMix7ImN1cnZlIjoyfV0sWzIsMCwiUCJdLFszLDEsIlEiLDJdLFs0LDUsIlxcZGFzaHYiLDEseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9LCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiw3LCJcXGRhc2h2IiwxLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMiwwLCJcXG1hdGhzY3IgRFtUXnstMX1dIl0sWzIsMSwiXFxtYXRoc2NyIENbU157LTF9XSJdLFswLDAsIlxcbWF0aHNjciBEIl0sWzAsMSwiXFxtYXRoc2NyIEMiXSxbMCwxLCJcXG92ZXJsaW5lIEYiLDIseyJjdXJ2ZSI6Mn1dLFsxLDAsIlxcb3ZlcmxpbmUgRyIsMix7ImN1cnZlIjoyfV0sWzIsMywiRiIsMix7ImN1cnZlIjoyfV0sWzMsMiwiRyIsMix7ImN1cnZlIjoyfV0sWzIsMCwiUCJdLFszLDEsIlEiLDJdLFs0LDUsIlxcZGFzaHYiLDEseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9LCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiw3LCJcXGRhc2h2IiwxLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d&embed" width="600" height="200" style="border-radius: 8px; border: dashed;"></iframe>
-</center>
+{% tikz %}
+% https://q.uiver.app/#q=WzAsNixbMywwLCJcXG1hdGhzY3IgRFtUXnstMX1dIl0sWzMsMSwiXFxtYXRoc2NyIENbU157LTF9XSJdLFsxLDAsIlxcbWF0aHNjciBEIl0sWzEsMSwiXFxtYXRoc2NyIEMiXSxbMCwwLCJcXCwiXSxbNCwxLCJcXCwiXSxbMCwxLCJcXG92ZXJsaW5lIEYiLDIseyJjdXJ2ZSI6Mn1dLFsxLDAsIlxcb3ZlcmxpbmUgRyIsMix7ImN1cnZlIjoyfV0sWzIsMywiRiIsMix7ImN1cnZlIjoyfV0sWzMsMiwiRyIsMix7ImN1cnZlIjoyfV0sWzIsMCwiUCJdLFszLDEsIlEiLDJdLFs2LDcsIlxcZGFzaHYiLDEseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9LCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOCw5LCJcXGRhc2h2IiwxLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	{\,} \& {\mathscr D} \&\& {\mathscr D[T^{-1}]} \\
+	\& {\mathscr C} \&\& {\mathscr C[S^{-1}]} \& {\,}
+	\arrow["P", from=1-2, to=1-4]
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F"', curve={height=12pt}, from=1-2, to=2-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{\overline F}"', curve={height=12pt}, from=1-4, to=2-4]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "G"', curve={height=12pt}, from=2-2, to=1-2]
+	\arrow["Q"', from=2-2, to=2-4]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "{\overline G}"', curve={height=12pt}, from=2-4, to=1-4]
+	\arrow["\dashv"{description}, draw=none, from=0, to=2]
+	\arrow["\dashv"{description}, draw=none, from=1, to=3]
+\end{tikzcd}
+{% endtikz %}
 
 {% endprop %}
 
