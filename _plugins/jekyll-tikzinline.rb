@@ -15,6 +15,7 @@ module Jekyll
         header = <<~'END'
         \documentclass[preview]{standalone}
         \usepackage{amsthm, amsfonts, amsmath, amssymb, mathrsfs, tikz-cd, tikz, ctex, mathtools}
+        \usepackage[dvipsnames]{xcolor}
         \usepackage{quiver}
         \begin{document}
         END
