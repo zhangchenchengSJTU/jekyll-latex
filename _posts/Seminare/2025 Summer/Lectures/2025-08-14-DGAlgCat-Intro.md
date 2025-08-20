@@ -2,7 +2,7 @@
 title: Differential Graded
 author: ZCC
 layout: post
-category: note
+category: notes
 ---
 
 * toc

@@ -24564,6 +24564,10 @@ $$&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://pandoc.org/&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pan-doc&lt;/code&gt;&lt;/a&gt;: 著名的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pan-doc&lt;/code&gt;, 啥都能转换.&lt;/p&gt;
 
+&lt;h4 id=&quot;色彩&quot;&gt;色彩&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/latexcolors/latexcolors.pdf&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;latexcolors&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
 &lt;h4 id=&quot;unicode-mathjax_protectedjfxmyvrlwcqmathjax_protected&quot;&gt;Unicode $\LaTeX$&lt;/h4&gt;
 
 &lt;p&gt;Unicode 名称查询: &lt;a href=&quot;https://w3c.github.io/xml-entities/unicode-names&quot;&gt;在线: 符号 → 名称&lt;/a&gt;, &lt;a href=&quot;https://milde.users.sourceforge.net/LUCR/Math/unimathsymbols.pdf&quot;&gt;PDF&lt;/a&gt;, &lt;a href=&quot;Unicode_math_Table&quot;&gt;输入快捷字典&lt;/a&gt;.&lt;/p&gt;
@@ -34096,11 +34100,23 @@ $$&lt;/p&gt;
     
       
         <item>
+          <title>Friday Seminare in 2025 Spring</title>
+          <description>&lt;h2 id=&quot;2025-spring-seminare&quot;&gt;2025 Spring Seminare&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;20250321Talk&quot;&gt;21Mar&lt;/a&gt;, &lt;a href=&quot;20250328Talk&quot;&gt;28Mar&lt;/a&gt;, &lt;a href=&quot;20250418Talk&quot;&gt;18Apr&lt;/a&gt;, &lt;a href=&quot;20250425Talk&quot;&gt;25Apr&lt;/a&gt;, &lt;a href=&quot;20250509Talk&quot;&gt;09May&lt;/a&gt;, &lt;a href=&quot;20250516Talk&quot;&gt;16May&lt;/a&gt;, &lt;a href=&quot;20250523Talk&quot;&gt;23May&lt;/a&gt;.&lt;/p&gt;
+</description>
+          <pubDate>2025-03-21T00:00:00+08:00</pubDate>
+          <link>https://zhangchenchengsjtu.github.io/website/posts/25SpringSeminare</link>
+          <guid isPermaLink="true">https://zhangchenchengsjtu.github.io/website/posts/25SpringSeminare</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>2025-03-21-讨论班</title>
           <description>&lt;p&gt;网盘地址: &lt;a href=&quot;https://pan.sjtu.edu.cn/web/share/4dd80848440b2f3eb59fe77a4b877410&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2025Mar21.mp4&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;局部化拾遗&quot;&gt;局部化拾遗&lt;/h2&gt;
-
 </description>
           <pubDate>2025-03-21T00:00:00+08:00</pubDate>
           <link>https://zhangchenchengsjtu.github.io/website/posts/20250321Talk</link>

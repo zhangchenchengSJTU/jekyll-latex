@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<h1>This is a Jekyll LaTeX Website for Math Notes</h1>
+
 <h2>Seminare (Last 2)</h2>
 
 {% assign sorted_posts=site.posts | where_exp: "post", "post.categories contains 'seminare'" | sort: "date" | reverse %}

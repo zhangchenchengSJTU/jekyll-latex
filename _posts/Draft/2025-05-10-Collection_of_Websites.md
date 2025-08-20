@@ -27,6 +27,10 @@ category: collection
 
 [`pan-doc`](https://pandoc.org/): 著名的 `pan-doc`, 啥都能转换.
 
+#### 色彩
+
+[`latexcolors`](https://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/latexcolors/latexcolors.pdf)
+
 #### Unicode $\LaTeX$
 
 Unicode 名称查询: [在线: 符号 → 名称](https://w3c.github.io/xml-entities/unicode-names), [PDF](https://milde.users.sourceforge.net/LUCR/Math/unimathsymbols.pdf), [输入快捷字典](Unicode_math_Table).
