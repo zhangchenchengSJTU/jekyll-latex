@@ -641,6 +641,10 @@
 <lastmod>2025-08-14T00:00:00+08:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/website/posts/Radicals</loc>
+<lastmod>2025-08-25T00:00:00+08:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/website/404</loc>
 </url>
 <url>
@@ -678,6 +682,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/website/blog/page8/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/website/blog/page9/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/website/assets/PDF/RHA-1.pdf</loc>
