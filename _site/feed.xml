@@ -1064,7 +1064,7 @@ M_t ⊆ ∐ _{H_t ∪ J_t} N_∙ ⊆ ∐ _{G ∪ I_t} M_∙.
       &lt;li&gt;$e^kq (1-e)^kq = 0$;&lt;/li&gt;
       &lt;li&gt;$(e^kq)^2 = e^kq (1-(1-e^k)q) = e^kq$.&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;p&gt;Let $e$ and $e'$ be liftings of $[x]$. When the ring is commutative, we conclude from $(e-e')^3 = (e-e')$ and $(e-e')^N = 0$ that $e = e'$. For non-commutative rings, the lifting is not unique in general. For instance, we take $M_2(ℤ / 4ℤ) ↠ \frac{M_2(ℤ / 4ℤ)}{J(M_2(ℤ / 4ℤ))} ≃ M_2(𝔽 _2)$, then $\mathrm{id}$ has distinct liftings $\mathrm{id}$ and $\frac{1 \ 2}{0 \ 1}$.&lt;/p&gt;
+    &lt;p&gt;Let $e$ and $e'$ be liftings of $[x]$. When the ring is commutative, we conclude from $(e-e')^3 = (e-e')$ and $(e-e')^N = 0$ that $e = e'$. For non-commutative rings, the lifting is not unique in general. For instance, we take $M_2(ℤ / 4ℤ) ↠ \frac{M_2(ℤ / 4ℤ)}{J(M_2(ℤ / 4ℤ))} ≃ M_2(𝔽 _2)$, then $\mathrm{id}$ has distinct liftings $\mathrm{id}$ and $\binom{1 \ 2}{0 \ 1}$.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1121,10 +1121,35 @@ M_t ⊆ ∐ _{H_t ∪ J_t} N_∙ ⊆ ∐ _{G ∪ I_t} M_∙.
   &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;p&gt;A semi-perfect ring looks like a matrix with finite many local diagonal blocks.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;The following are equivalent:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$R$ is semi-perfect;&lt;/li&gt;
+    &lt;li&gt;there are finite local orthogonal idempotents $\{e_i\}_{i=1}^n$. That is, $e_i e_j = δ _{i,j} e_i$ and each $e_i R e_i$ is local&lt;/li&gt;
+    &lt;li&gt;$R ≃ \mathrm{End}(⨁ M_∙ )$ for $⨁ M_∙$ is a finite direct sum of endolocal modules.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1 → 2). When $R$ is semi-perfect, then $R / J(R) ≃ ∏ M_{n}(D)$ by Wedderburn-Artin theorem. It is clear to find a complete set of primitive orthogonal idempotents $\{e_i'\}_{i=1}^n ⊆ R / J(R)$ which lifts to $\{e_i\}_{i=1}^n ⊆ R$.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;If $n = 1$, then $R ≃ \mathrm{End}(R)$ is local. We complete the proof.&lt;/li&gt;
+      &lt;li&gt;We show $n$ from $n - 1$. Let $e$ be any lifting of $e_1'$. By induction, there is $\{(1-e)e_i(1-e)\}_{i=2}^2 ⊆ (1-e)R(1-e)$ primitive orthogonal which lifts $(1-e_1')e_i'(1-e_1') = e_i$. We define $e_1 := (1-∑ _{i=2}^n e_i)$ serving as a lifting of $e_1'$. Clearly, each $\frac{\mathrm{End}(e_i R)}{J(\mathrm{End}(e_i R))}$ is a division ring (= diagonal entries of each $M_n(D)$).&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;(2 → 3). Take $M_i := e_i R$. &lt;br /&gt; (3 → 1). We arrange $M_∙$’s by isomorphism classes. By fitting lemma, $\frac{\mathrm{End}(⨁ M_∙ )}{J(\mathrm{End}(⨁ M_∙ ))} ≃ ∏ M_{n_i} (\frac{\mathrm{End}(M_i)}{J(\mathrm{End}(M_i))})$, where $n_i$ is the multiplicity of the isomorphism class of $M_i$. Hence $\frac{R}{J(R)}$ is semi-simple.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;One motivation is semi-perect ring is to characterise the finite direct sum of endolocal modules.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;$M$ is a finite direct sum of endolocal modules iff $\mathrm{End}(M)$ is semi-perfect.&lt;/p&gt;
+&lt;/div&gt;
+
 &lt;div class=&quot;theorem&quot;&gt;
   &lt;p&gt;Being semi-perfect if Morita invariant.&lt;/p&gt;
   &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;Since $J(M_n (R)) = M_n (J(R))$, $R/J(R)$ is semi-simple iff $M_n (R) / J(M_n (R))$ is semi-simple.&lt;/p&gt;
+    &lt;p&gt;Since $J(M_n (R)) = M_n (J(R))$, $R/J(R)$ is semi-simple iff $M_n (R) / J(M_n (R))$ is semi-simple. For lifting property, when $R$ is semi-perfect, then $M_n (R) = \mathrm{End}(R^n)$.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
