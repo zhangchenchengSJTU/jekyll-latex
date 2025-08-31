@@ -58,18 +58,27 @@ Throughout,
     &lt;li&gt;$1 - sxr$ is a unit for all $r,s ∈ R$.&lt;/li&gt;
   &lt;/ol&gt;
   &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;We show (1 ↔ 2) with $1:1$ correspondence between simple right modules and maximal right ideals. Note that&lt;/p&gt;
-    &lt;p&gt;$$\begin{equation}
-\text{ideals} ↔ \text{cyclic modules},\quad I ↦ R / I, \quad \mathrm{ann}(x) ↤ (x).
-\end{equation}$$&lt;/p&gt;
-    &lt;p&gt;Taking the maixmal elements, we complete the proof. &lt;br /&gt; (2 → 3). We show (2 ∧ ¬ 3 → False). If $1 - xr$ has no right inverse, then $1 - xr$ belongs to some maximal right ideal $𝔪$, and so is $rx$. Hence $1 ∈ 𝔪$, a contradiction. &lt;br /&gt; (4 → 3). Take $s = 1$. &lt;br /&gt; (3 → 1). We show (3 ∧ ¬ 1 → False). When there is some simple module $S = (s_0)$ s.t. $Sx ≠ 0$. Then $(s_0x) = (s_0)$. We take $r$ s.t. $s_0xr = s_0$. Now $s_0 (1-xr) = 0$, a contradiction. &lt;br /&gt; (2 ∧ 3 → 4). Since $sx$ annihilates all simple modules, $1 - (sx)r$ has right inverse $t$. Now $t = 1 + sxrt$ has a right inverse. Since $t$ has bi-inverses, it is a unit.&lt;/p&gt;
+    &lt;p&gt;(1 → 2). Note that $\mathrm{ann}(R/𝔪) ⊆ 𝔪$ for every maximal ideal. If $x$ annihilators each simple modules, then it lies in any maximal ideal. &lt;br /&gt; (2 → 3). We show (2 ∧ ¬ 3 → False). If $1 - xr$ has no right inverse, then $1 - xr$ belongs to some maximal right ideal $𝔪$, and so is $rx$. Hence $1 ∈ 𝔪$, a contradiction. &lt;br /&gt; (3 → 1). We show (3 ∧ ¬ 1 → False). When there is some simple module $S = (s_0)$ s.t. $Sx ≠ 0$. Then $(s_0x) = (s_0)$. We take $r$ s.t. $s_0xr = s_0$. Now $s_0 (1-xr) = 0$, a contradiction. &lt;br /&gt; (4 → 3). Take $s = 1$. &lt;br /&gt; (1 ∧ 2 ∧ 3 → 4). Since $sx$ annihilates all simple modules, $1 - (sx)r$ has right inverse $t$. Now $t = 1 + sxrt$ has a right inverse. Since $t$ has bi-inverses, it is a unit.&lt;/p&gt;
   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;The annihilator of a simple module is called primitive ideal.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Primitive ideals are two-sided;&lt;/li&gt;
+    &lt;li&gt;Every maximal ideal contains some primitive ideal;&lt;/li&gt;
+    &lt;li&gt;The matrix ring $M_2 (ℂ)$ has non-trivial right maximal ideals, by only trivial primitive ideals.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;For commutative rings, simple modules are precisely the residue fields of maximal ideals.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Note that the final definition is symmetric, hence&lt;/p&gt;
 
 &lt;div class=&quot;theorem&quot;&gt;
-  &lt;p&gt;$J(R)$ is a two-sided ideal.&lt;/p&gt;
+  &lt;p&gt;$J(R)$ is an intersection of two-sided ideals, thus it is two-sided.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;theorem&quot;&gt;
@@ -253,7 +262,18 @@ x ∈ ∑ \ \text{superfluous submodules} \quad ↔ \quad (x)\ \text{is superflu
 &lt;/div&gt;
 
 &lt;div class=&quot;example&quot;&gt;
-  &lt;p&gt;If $R / J(R)$ is semisimple, then $J(\frac{M}{MJ(R)}) = 0$. Corollary, superfluous submodules of $M$ are precisely those contained in $MJ(R)$. Hence $J(M) = M J(R)$.&lt;/p&gt;
+  &lt;p&gt;If $R / J(R)$ is semisimple, then $J(M) = MJ(R)$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Since $\frac{M}{MJ(R)}$ is a module over semisimple ring, we have $J(\frac{M}{MJ(R)}) = 0$. In this case, superfluous submodules of $M$ are precisely those contained in $MJ(R)$. Hence $J(M) = M J(R)$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;If $R / J(R)$ is commutative, then all $M𝔪$ are vector spaces over $R / 𝔪$, hence semi-simple.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Fact: for $N ⊆ M$ s.t. $\frac{M}{N}$ semisimple, $N$ is a intersection of maximal submodules. Proof: take $\frac{M}{N} = ∐ _{i ∈ I}S_i$ as a coproduct of simple modules. Then $N = ⋂ \ker [M ↠ S_i]$ is a intersection of maximal submodules.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;Now $J(M) = ⋂ _{\text{maximal}} M' ⊆ ⋂ _{𝔪} (M𝔪)$. Hence $J(M) = ⋂ _{𝔪} (M𝔪)$.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;We show some functorial property of $J : 𝐌𝐨𝐝 _R → 𝐌𝐨𝐝 _R$.&lt;/p&gt;
@@ -265,7 +285,7 @@ x ∈ ∑ \ \text{superfluous submodules} \quad ↔ \quad (x)\ \text{is superflu
     &lt;li&gt;if $f : M ↠ N$ has superfluous kernel, then $J(f) : J(M) ↠ J(N)$ and $\frac{M}{J(M)} ≃ \frac{N}{J(N)}$ by cokernel;&lt;/li&gt;
     &lt;li&gt;the quotient functor $1/J$ preserves and reflects the epimorphisms;&lt;/li&gt;
     &lt;li&gt;$J(M / J(M)) = 0$;&lt;/li&gt;
-    &lt;li&gt;$J$ preserves arbitrary coproducts and products;&lt;/li&gt;
+    &lt;li&gt;$J$ preserves arbitrary coproducts;&lt;/li&gt;
     &lt;li&gt;$\ker J$ consists of $M$ s.t. $M ⊆ ∏_i S_i$ ($S_i$’s are simple modules) and $(p_i)|_M ↠ S_i$ for each $i$.&lt;/li&gt;
   &lt;/ol&gt;
   &lt;div class=&quot;proof&quot;&gt;
@@ -274,10 +294,29 @@ x ∈ ∑ \ \text{superfluous submodules} \quad ↔ \quad (x)\ \text{is superflu
       &lt;li&gt;If $Y ⊆ N$ is maximal, then $f^{-1}(Y) ⊆ M$ is proper. Assume $f^{-1}(Y)$ is not maximal, then there is $x ∉ f^{-1}(Y)$ s.t. $(x) + f^{-1}(Y)$ is proper. Since $Y$ is maximal, $f^{-1}f((x) + f^{-1}(Y)) = f^{-1}(N) = M$. Note that $f^{-1}f((x) + f^{-1}(Y)) = (x) + f^{-1}(Y) + \ker f ≠ M$, a contradiction.&lt;/li&gt;
       &lt;li&gt;If $X ⊆ M$ is maximal, then $f(X)$ is proper as $\ker f ⊆ X$. Assume $f(X)$ is not maximal, then there is $y ∉ f(X)$ s.t. $(y) + f(X)$ is proper. We take $x ∈ f^{-1}(y)$. Note that $x ∉ X$ and $(x) + X$ is proper, a contradiction.&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;p&gt;(3). When there is $f : M ↠ N$, we see $\frac{M}{J(M)} ↠ \frac{N}{J(N)}$ by cokernel. Conversely, if $\frac{M}{J(M)} ↠ \frac{N}{J(N)}$, then $f(M) + J(N) = N$. Since $J(N) ⊆ J$ is superfluous, we obtain $f(M) = N$. &lt;br /&gt; (4). If $\frac{M}{J(M)}$ has a superfluous submodule $\frac{X}{J(M)}$, then $X ⊆ M$ is superfluous. We must have $X = J(M)$. &lt;br /&gt; (5). Any maximal submodule of $∏ M_i$ (or $∐ M_i$) differs in only one component. Hence $J(∏ M_i) = ∏ J(M_i)$ and $J(∐ M_i) = ∐ J(M_i)$. &lt;br /&gt; (6). By previous analysis, $J(M) = 0$ if $M$ is a submodule of a product of simple modules. Conversely, if $J(M) = 0$, then any non-zero element $x ∈ M$ survives in some $M → S$. Let $S$ be the product of all simple modules, then there is monomorphism&lt;/p&gt;
+    &lt;p&gt;(3). When there is $f : M ↠ N$, we see $\frac{M}{J(M)} ↠ \frac{N}{J(N)}$ by cokernel. Conversely, if $\frac{M}{J(M)} ↠ \frac{N}{J(N)}$, then $f(M) + J(N) = N$. Since $J(N) ⊆ J$ is superfluous, we obtain $f(M) = N$. &lt;br /&gt; (4). If $\frac{M}{J(M)}$ has a superfluous submodule $\frac{X}{J(M)}$, then $X ⊆ M$ is superfluous. We must have $X = J(M)$. &lt;br /&gt; (5). $J(X_∙ ) ⊆ J(∐ (X_∙ ))$ shows $∐ J(X_∙ ) ⊆ J(∐ X_∙ )$. Conversely, for any maximal submodule $X_i' ⊆ X_i$, $X_i' ⊕ ∐ _{≠ i}X_∙$ is a maximal submodule of $∐ X_∙$. Hence $∐ J(X_∙ )$ is an intersection of some maximal submodules of $∐ X_∙$. We obtain $J(∐ X_∙ ) ⊆ ∐ J(X_∙ )$. &lt;br /&gt; (6). By previous analysis, $J(M) = 0$ if $M$ is a submodule of a product of simple modules. Conversely, if $J(M) = 0$, then any non-zero element $x ∈ M$ survives in some $M → S$. Let $S$ be the product of all simple modules, then there is monomorphism&lt;/p&gt;
     &lt;p&gt;$$\begin{equation}
 φ ∈ (M, ∏ _{(M,S)} S) ≃ ∏_{(M,S)}(M,S) ∋ 1_{(M,S)}.
 \end{equation}$$&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;By analysis on summands and $∐$, one has $J(P) = PJ(R)$ for $P$ projective.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;In general, $J (∏ M_∙ ) ⊆ ∏ J(M_∙ )$. The equality may fails.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Recall that&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+J (∏ M_∙ ) = ⋂ \text{some maximal submod} ⊆ ⋂ \text{all maximal submod} = ∏ J(M_∙ ).
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;A non-exmaple takes over $R := k[x_1, x_2, \ldots ]$. The radical is the unique maximal ideal $𝔪$. Note that&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+(x_i)_{i ∈ ℕ} ∈ ∏_ℕ J(R) ⊇ J(∏_ℕ R) = 𝔪 ∏_ℕ R.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;The equality fails.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -306,7 +345,7 @@ x ∈ ∑ \ \text{superfluous submodules} \quad ↔ \quad (x)\ \text{is superflu
 &lt;p&gt;Clearly, any nilpotent element belongs to Jacobson radical.&lt;/p&gt;
 
 &lt;div class=&quot;example&quot;&gt;
-  &lt;p&gt;The Jacobson may contains no nilpotent elements. For instance, note that the units in formal power series ring $R[[x]]$ are precisely those with unital constant terms. Hence $J(R[[x]]) = (x) + J(R)$.&lt;/p&gt;
+  &lt;p&gt;The Jacobson radical may contains no nilpotent elements. For instance, note that the units in formal power series ring $R[[x]]$ are precisely those with unital constant terms. Hence $J(R[[x]]) = (x) + J(R)$.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;In the rest of the subsection, we assume $R$ is an algebra over the field $k$.&lt;/p&gt;
@@ -1040,9 +1079,9 @@ M_t ⊆ ∐ _{H_t ∪ J_t} N_∙ ⊆ ∐ _{G ∪ I_t} M_∙.
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&quot;idempotent-lifting&quot;&gt;Idempotent Lifting&lt;/h3&gt;
+&lt;h3 id=&quot;from-nilpotent-to-radical&quot;&gt;From Nilpotent to Radical&lt;/h3&gt;
 
-&lt;p&gt;When idempotent lifts modulo a certain ideal?&lt;/p&gt;
+&lt;p&gt;We generalise several properties of nilpotent ideals to radicals, e.g., the idempotent lifting property, Nakayama lemma, etc.&lt;/p&gt;
 
 &lt;h4 id=&quot;nil-lifting&quot;&gt;Nil Lifting&lt;/h4&gt;
 
@@ -1051,7 +1090,7 @@ M_t ⊆ ∐ _{H_t ∪ J_t} N_∙ ⊆ ∐ _{G ∪ I_t} M_∙.
 &lt;/div&gt;
 
 &lt;div class=&quot;example&quot;&gt;
-  &lt;p&gt;The maximal ideal of $k[x_1, x_2, \ldots] / (\{x_k^k\}_{k ≥ 1})$ is nil but not nilpotent.&lt;/p&gt;
+  &lt;p&gt;The maximal ideal of the commutative local ring $k[x_1, x_2, \ldots] / (\{x_k^k\}_{k ≥ 1})$ is nil but not nilpotent.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;theorem&quot;&gt;
@@ -1103,8 +1142,10 @@ M_t ⊆ ∐ _{H_t ∪ J_t} N_∙ ⊆ ∐ _{G ∪ I_t} M_∙.
 
 &lt;h4 id=&quot;semiperfect-rings&quot;&gt;Semiperfect Rings&lt;/h4&gt;
 
+&lt;p&gt;We generalise nil lifting to radical lifting.&lt;/p&gt;
+
 &lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;(Semiperfect rings). $R$ is semiperfect if it is semi-local (i.e., $R/J(R)$ is semi-simple) and idempotents lift modulo $J(R)$.&lt;/p&gt;
+  &lt;p&gt;(Semi-perfect rings). $R$ is semiperfect if it is semi-local (i.e., $R/J(R)$ is semi-simple) and idempotents lift modulo $J(R)$.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;example&quot;&gt;
@@ -1115,10 +1156,7 @@ M_t ⊆ ∐ _{H_t ∪ J_t} N_∙ ⊆ ∐ _{G ∪ I_t} M_∙.
 &lt;/div&gt;
 
 &lt;div class=&quot;example&quot;&gt;
-  &lt;p&gt;Any local ring $R$ is semiperfect.&lt;/p&gt;
-  &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;$R / J(R)$ is a division ring, hence semi-simple. The idempotents in the division ring are $0$ and $1$, hence they lift.&lt;/p&gt;
-  &lt;/div&gt;
+  &lt;p&gt;Semi-primitive rings (= $J(R) = 0$) with finite many primitive orthogonal idempotents are semiperfect.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;A semi-perfect ring looks like a matrix with finite many local diagonal blocks.&lt;/p&gt;
@@ -1127,7 +1165,7 @@ M_t ⊆ ∐ _{H_t ∪ J_t} N_∙ ⊆ ∐ _{G ∪ I_t} M_∙.
   &lt;p&gt;The following are equivalent:&lt;/p&gt;
   &lt;ol&gt;
     &lt;li&gt;$R$ is semi-perfect;&lt;/li&gt;
-    &lt;li&gt;there are finite local orthogonal idempotents $\{e_i\}_{i=1}^n$. That is, $e_i e_j = δ _{i,j} e_i$ and each $e_i R e_i$ is local&lt;/li&gt;
+    &lt;li&gt;there are finite local orthogonal idempotents $\{e_i\}_{i=1}^n$. That is, $e_i e_j = δ _{i,j} e_i$ and each $e_i R e_i$ is local;&lt;/li&gt;
     &lt;li&gt;$R ≃ \mathrm{End}(⨁ M_∙ )$ for $⨁ M_∙$ is a finite direct sum of endolocal modules.&lt;/li&gt;
   &lt;/ol&gt;
   &lt;div class=&quot;proof&quot;&gt;
@@ -1136,23 +1174,435 @@ M_t ⊆ ∐ _{H_t ∪ J_t} N_∙ ⊆ ∐ _{G ∪ I_t} M_∙.
       &lt;li&gt;If $n = 1$, then $R ≃ \mathrm{End}(R)$ is local. We complete the proof.&lt;/li&gt;
       &lt;li&gt;We show $n$ from $n - 1$. Let $e$ be any lifting of $e_1'$. By induction, there is $\{(1-e)e_i(1-e)\}_{i=2}^2 ⊆ (1-e)R(1-e)$ primitive orthogonal which lifts $(1-e_1')e_i'(1-e_1') = e_i$. We define $e_1 := (1-∑ _{i=2}^n e_i)$ serving as a lifting of $e_1'$. Clearly, each $\frac{\mathrm{End}(e_i R)}{J(\mathrm{End}(e_i R))}$ is a division ring (= diagonal entries of each $M_n(D)$).&lt;/li&gt;
     &lt;/ol&gt;
-    &lt;p&gt;(2 → 3). Take $M_i := e_i R$. &lt;br /&gt; (3 → 1). We arrange $M_∙$’s by isomorphism classes. By fitting lemma, $\frac{\mathrm{End}(⨁ M_∙ )}{J(\mathrm{End}(⨁ M_∙ ))} ≃ ∏ M_{n_i} (\frac{\mathrm{End}(M_i)}{J(\mathrm{End}(M_i))})$, where $n_i$ is the multiplicity of the isomorphism class of $M_i$. Hence $\frac{R}{J(R)}$ is semi-simple.&lt;/p&gt;
+    &lt;p&gt;(2 → 3). Take $M_i := e_i R$. &lt;br /&gt; (3 → 1). We arrange $M_∙$’s by isomorphism classes. By fitting lemma, $\frac{\mathrm{End}(⨁ M_∙ )}{J(\mathrm{End}(⨁ M_∙ ))} ≃ ∏ M_{n_i} (\frac{\mathrm{End}(M_i)}{J(\mathrm{End}(M_i))})$, where $n_i$ is the multiplicity of the isomorphism class of $M_i$. Hence $\frac{R}{J(R)}$ is semi-simple. This also determined a finite complete set of orthogonal idempotents in $R / J(R)$. The lifting property of idempotents follows from the finite exchangable property of $⨁ M_∙$.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;One motivation is semi-perect ring is to characterise the finite direct sum of endolocal modules.&lt;/p&gt;
+&lt;p&gt;The final definition shows $\mathrm{End}(M)$ is semi-perfect, when there is $M' = ⨁ \text{endolocal}$ s.t. $\mathrm{End}(M) ≃ \mathrm{End}(M)$. Indeed,&lt;/p&gt;
 
-&lt;div class=&quot;theorem&quot;&gt;
-  &lt;p&gt;$M$ is a finite direct sum of endolocal modules iff $\mathrm{End}(M)$ is semi-perfect.&lt;/p&gt;
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;$\mathrm{End}(M)$ is semi-perfect iff $M$ is a finite direct sum of endolocal modules.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(→). Clear. (←). Corollary of KSRA.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;$$\begin{equation}
+\boxed{\text{Semi-perfect = End (⨁ finite endolocal modules)!}}
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;There is another simple definition for commutative case.&lt;/p&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;Commutative semi-perfect rings are precisely finite products of commutative local rings.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(←). Clear. (→). Conversely, $\frac{R}{J(R)}$ is a product to fields. The lifting property shows $R ≃ ∏ R_i$ where each $R_i$ is local.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;Note that an Artinian ring has radical lifting property. Hence, commutative Artinian rings are precisely finite products of commutative local Artinian rings.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;theorem&quot;&gt;
   &lt;p&gt;Being semi-perfect if Morita invariant.&lt;/p&gt;
   &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;Since $J(M_n (R)) = M_n (J(R))$, $R/J(R)$ is semi-simple iff $M_n (R) / J(M_n (R))$ is semi-simple. For lifting property, when $R$ is semi-perfect, then $M_n (R) = \mathrm{End}(R^n)$.&lt;/p&gt;
+    &lt;p&gt;Note that semi-simple rings are precisely $\mathrm{End}(⨁ _{\text{finite}} \ \text{endolocal modules})$.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;h4 id=&quot;transfinite-nilpotent-ideals&quot;&gt;Transfinite Nilpotent Ideals&lt;/h4&gt;
+
+&lt;p&gt;The concept of transfinite nilpotent ideals has to do with a kind of compactness characterised by Nakayama lemma.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(Transfinite nilpotent). The following are equivalent for an right ideal $I$ to be transfinite nilpotent:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;for any sequence $(r_i)_{i ∈ ℕ} ⊆ I$, there is some $n$ s.t. $r_n x_{n-1} \cdots r_1 r_0 = 0$;&lt;/li&gt;
+    &lt;li&gt;for any non-zero left module $X$, there is some non-zero $x ∈ X ∖ \{0\}$ s.t. $Ix = 0$;&lt;/li&gt;
+    &lt;li&gt;for any non-zero left module $M$, there is a transfinite sequence of submodules satisfies       &lt;ul&gt;
+        &lt;li&gt;$X_0 = 0$, $X_{k+1} ⊆ I X_{k}$ for any $k$;&lt;/li&gt;
+        &lt;li&gt;$X_γ ⊆ ⋃ _{&lt; γ } X_∙$ for limit ordinal $γ$;&lt;/li&gt;
+        &lt;li&gt;$⋃ X_∙ = X$.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;there is a transfinite sequence of left ideals satisfies       &lt;ul&gt;
+        &lt;li&gt;$R_0 = 0$, $R_{k+1} ⊆ I R_{k}$ for any $k$;&lt;/li&gt;
+        &lt;li&gt;$R_γ ⊆ ⋃ _{&lt; γ } R_∙$ for limit ordinal $γ$;&lt;/li&gt;
+        &lt;li&gt;$⋃ R_∙ = R$.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;for any right module $M$, $MI = M$ implies $M = 0$;&lt;/li&gt;
+    &lt;li&gt;for any right module $M$ and submodule $L$, $N$, $N + LI = M$ implies $N = M$;&lt;/li&gt;
+    &lt;li&gt;for any right module $R^{(ω)}$ and submodule $L$, $N$, $N + LI = R^{(ω)}$ implies $N = R^{(ω)}$.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1 → 2). We show (¬ 2 → ¬ 1). If there is a left module $X$ s.t. any non-zero element $x$ satisfies $Ix ≠ 0$, then we may take $x_0 ≠ 0$ and $x_{k+1} := r_k x_k$. Note that $x_∙$ never vanishes, hence (1) fails. &lt;br /&gt; (2 → 3). We take $X_{k+1} := \{x : Ix ⊆ X_k\}$ for any $k$, and $X_γ := ⋃ _{&lt; γ} X_∙$ for limit ordinal $γ$. For $\frac{X}{X_α} ≠ 0$, we see $\frac{X_{α + 1}}{X_α} = \{[x] : I[x] = [0]\} ≠ 0$, hence $X_α ⊊ X_{α + 1}$ is proper. By cardinality argument, the chain $X_0 ⊊ X_1 ⊊ \cdots ⊊ X_α ⊊ \cdots$ stabilises at some ordinal. &lt;br /&gt; (3 → 4). We take $X := R$ in $3$. &lt;br /&gt; (4 → 5). We take $\{R_δ\}_{δ ∈ α}$ obtained by $3$, and see&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+0 = MR_0 = MIR_1 = MR_1 = \cdots.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;In particular, $MR_γ = ⋃ _{β &lt; γ} MR_β = ⋃ _{β &lt; γ} MIR_{β +1}= MI R_γ$ for limit ordinal $γ$. By transfinite induction on $α$, we see $M = 0$. &lt;br /&gt; (5 → 6). WLOG we assume $L = M$. Note that&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+\frac{M}{N}J = \{(x + N) : x ∈ MJ \} = \frac{MJ + N}{N}.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;Hence $\frac{M}{N} J = M$. By assumption, $\frac{M}{N} = 0$, thus $M = N$. &lt;br /&gt; (6 → 7). Clear. &lt;br /&gt; (7 → 1). Once $\{r_∙ \}$ is given, we take&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+M = L = ∐ _{n ∈ ℕ} R,\quad N = (\{1_{n+1} r_n - 1_n\}_{n ∈ ℕ}).
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;Now $M = LI + N$. Hence $N = M$. We take $1_0$ as a finite combination of $(1_{n+1} r_n - 1_n)$’s. The rest is clear.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;Nilpotent $⊆$ right transfinite nilpotent $⊆$ nil.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;The polynomial ring $k[x_i]_{i ∈ ℕ} / (x_i^{i+1})$ has the nil maximal ideal which is not transfinite nilpotent.       &lt;ul&gt;
+        &lt;li&gt;This example also shows that being left and right transfinite nilpotent do not imply being nilpotent.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;The free $k$-algebra with presentation $⟨ \{x_i\}_{i ≥ 0} ∣ \{x_j x_i ∣ j ≥ 1\}⟩$ has the transfinite nilpotent maximal ideal which is not nilpotent.       &lt;ul&gt;
+        &lt;li&gt;This example also shows that being left or right transfinite nilpotent does not imply each other.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;Informally, $\text{uniformly bounded} ≪ \text{well-ordered} ≪ \text{locally bounded}$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;A transfinite nilpotent ideal must be nil, thus&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;it lifts idempotents from quotient rings;&lt;/li&gt;
+    &lt;li&gt;it is contained in the Jacobson radical.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;Any finite subset $S$ of a transfinite nilpotent ideal $I$ is nilpotent.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We construct the graph $G(V,E)$ where&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;$V$ consists of all non-vanishing letters in $S$;&lt;/li&gt;
+      &lt;li&gt;$u ∼ v$ iff there is $s ∈ S$ s.t. $s u = v$ or $s v = u$.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;This is a graph of finite components and each vertex has finite degree. If $G$ is infinite, then there is an infinite path (&lt;a href=&quot;https://en.wikipedia.org/wiki/K%C5%91nig%27s_lemma&quot;&gt;Kőnig&lt;/a&gt;), contradiction.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;right-perfect-rings&quot;&gt;Right Perfect Rings&lt;/h3&gt;
+
+&lt;h4 id=&quot;def-via-idempotents&quot;&gt;Def via Idempotents&lt;/h4&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;$R$ is right prefect if $J(R)$ is right transfinite nilpotent and $\frac{R}{J(R)}$ is semi-simple.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Right perfect rings generalise semi-perfect rings by requiring radical to be transfinite nilpotent.&lt;/p&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;The local ring $l⟨ \{x_i\}_{i ≥ 0} ∣ \{x_j x_i ∣ j ≥ 1\}⟩$ is right perfect but not left-perfect, as the maximal ideal is right transfinite nilpotent but not left-transfinite nilpotent.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;Right perfect ring has no infinite set of orthogonal idempotents.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;If not, then there is also an infinite set of orthogonal idempotents in $\frac{R}{J(R)}$. This contradicts the semi-simplicity.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;Let $X$ be any non-zero left module over a right perfect ring $R$. Then $\mathrm{soc}(X) ≠ 0$ (i.e., $X$ has a simple submodule).&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;By characterisation of transfinite nilpotent ideals, there is some non-zero $x ∈ X$ s.t. $J(R)x = 0$. Hence $Rx$ is a $\frac{R}{J(R)}$ module thus it has a simple submodule.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now we show the converse.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;Let $R$ be a ring s.t.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;there are no infinite sets of orthogonal idempotents;&lt;/li&gt;
+    &lt;li&gt;any non-zero left module $X$ has a simple submodule.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;Then $R$ is right perfect.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We show $J(R)$ is right transfinite nilpotent.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Any left module $X ≠ 0$ has a simple submodule $(x)$. By radical property, $J(R) x = 0$.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;Now we show $R' := \frac{R}{J(R)}$ is semi-simple.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;By assumption, any left ideal contains a simple left ideal $S$. By $J(R') = 0$, there is a maximal ideal $𝔪 ∩ S = 0$. Hence $S ⊕ 𝔪 = R$. Note that the procedure of taking simple summands of $R'$ terminates within finite steps. $R'$ has to be semi-simple.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;projective-cover-overview&quot;&gt;Projective Cover (Overview)&lt;/h4&gt;
+
+&lt;p&gt;The projective cover are defined in several ways, by superfluous kernel (usual projective cover), right minimal precover $𝐏𝐫𝐨𝐣$-cover, etc.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(Projective precover). $p : P → M$ is a projective cover if the following equivalent conditions hold:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;(Projective precover). $p$ is an epimorphism;&lt;/li&gt;
+    &lt;li&gt;($𝐏𝐫𝐨𝐣$-precover). any $q : Q → M$ passes through $p$.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1 → 2). By lifting property of projectives. (2 → 1). If $p$ is not epic, then we take any $x ∈ (M ∖ p(P))$. The morphism $q : R → M, \quad 1 ↦ x$ does not pass through $p$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(Projective cover). $p : P → M$ is a projective cover if the following equivalent conditions hold:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;(Projective cover). $p$ is an epimorphism, and $\ker p$ (as a morphism) is small;&lt;/li&gt;
+    &lt;li&gt;($𝐏𝐫𝐨𝐣$-cover). Any morphism $Q → M$ ($Q$ projective) factors through $p$, and any $p ∘ α = p$ implies $α$ is a(n)       &lt;ol&gt;
+        &lt;li&gt;epimorphism;&lt;/li&gt;
+        &lt;li&gt;monomorphism;&lt;/li&gt;
+        &lt;li&gt;automorphism.&lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1 → 2-(3)). Clearly, $Q → M$ factors through $p$ by the lifting property of projectives. We show that $p ∘ α = p$ implies $α$ is an automorphism. We construct the pullback square of monomorphisms:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Radicals/diagram_496ecc2b2f048.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;By $p ∘ α = p$, the morphism $p|_{\operatorname{im}α }$ is epic, thus the first row is a short exact sequence. By exercise, the subobject $\operatorname{im}(α ) ↪ P$ is an isomorphism. This shows $α$ is epic. We show $α$ is also monic. Let $j$ be the right inverse of $α$ (by the lifting property of projectives). Then $p ∘ j = p ∘ α ∘ j = p$. Hence $j$ is epic. Since $j$ is also split monic, $j$ is an isomorphism. Therefore $α$ is an automorphism. &lt;br /&gt; (2(1) → 1). $p$ is epic, since any epimorphism $Q ↠ M$ factors through $p$. We show $\ker p$ is small. If not, there exists a proper subobject $N ↪ P$ such that $N + \ker p = P$. Therefore we have the pullback pushout square of short exact sequences. We introduce $l$ by the lifting property of projectives, then $α : λ ∘ l$ is a non-epimorphism such that $p ∘ α = p$, a contradiction.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Radicals/diagram_0e8ee8dcb17d4.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;&lt;br /&gt; We show 1 → 2(3) → 2(1,2), and 2(1) → 1. It remains to show 2(2) → 2(3). If there is a strict monomorphism $α$ s.t. $p ∘ α = p$, then there is an induced monomorphism $α|_{\ker p} : \ker p → \ker p$.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Radicals/diagram_832e2c634fbbb.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;In the above diagram, the left square is pullback-pushout. Hence $\operatorname{im}α + \ker p = P$. A contradiction.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;Projective cover is unique (if exists) up to isomorphism.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;$R ↠ R / I$ is a projective cover iff $I ⊆ J(R)$. Note that $J(R)$ is maximal superfluous.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;If $p$ and $q$ and projective covers, then so is $p ⊕ q$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A functorial characterisation shows more equivalent definitions.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;We assume idempotent completeness. Let $p : P → M$ be a $\mathcal{P}$-precover (e.g., $\mathcal{P} = 𝐏𝐫𝐨𝐣$), then the following are equivalent.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$p : T → M$ admits a $\mathcal{P}$-cover;&lt;/li&gt;
+    &lt;li&gt;$p_∗ : (-, P)_{\mathcal{P}} ↠ (-|_{\mathcal{P}}, M)$ admits a projective cover;&lt;/li&gt;
+    &lt;li&gt;$p_∗ : (-, P)_{𝐚𝐝𝐝 (P)} ↠ (-|_{𝐚𝐝𝐝 (P)}, M)$ admits a projective cover;&lt;/li&gt;
+    &lt;li&gt;$p_∗ : (P, P)_{\mathrm{End}(P)} ↠ (P, M)_{\mathrm{End}(P)}$ admits a projective cover.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;Note that the last three are projective precovers as they are epimorphisms. The projective cover always appears as a direct summand of any projective precovers.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1 ↔ 2) follows from the definition. In the case of $1$, a $\mathcal{P}$-cover must be a summand of $p$. Since there is no differences between $\mathcal{P}$-cover and $𝐚𝐝𝐝 (P)$-cover for $M$, we show (1 ↔ 3). (3 → 4) is given by the special Yoneda lemma. It remains to show (4 → 1). &lt;br /&gt; When $p_∗ : (P, P)_{\mathrm{End}(P)} ↠ (P, M)_{\mathrm{End}(P)}$ admits a projective cover, it takes the form&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+(P, P)_{\mathrm{End}(P)} ↠ Q ↠ (P, M)_{\mathrm{End}(P)}.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;Note that $Q ≃ (P, P_0)_{\mathrm{End}(P)}$ for $P_0 ∈ 𝐒𝐦𝐝 (P)$ by projectivisation. With the special Yoneda lemma, we may write the mapping sequence as&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+(P, P)_{\mathrm{End}(P)} \overset {a_∗ } ↠ (P, P_0)_{\mathrm{End}(P)} \overset {b_∗ } ↠ (P, M)_{\mathrm{End}(P)}.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;We show that $b : P_0 → M$ is a $\mathcal{P}$-cover. By special Yoneda lemma, $(ba)_∗ = p _∗$ yields $ba = p$. As $a$ is split epic, $b$ and $p$ factors through each other, which shows that $b$ is a $\mathcal{P}$-precover. If there exists $b ∘ γ = b$, we have $b_∗ ∘ γ _∗ = b_∗$. Now $γ _∗$ is an isomorphism as $b_∗$ is a projective cover. By projectivisation, $γ$ is an automorphism. Hence $b$ is a $\mathcal{P}$-cover.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;def-via-existence-of-projective-covers&quot;&gt;Def via Existence of Projective Covers&lt;/h4&gt;
+
+&lt;p&gt;We discuss the existence of projective covers. Recall that $J(P) = PJ$ for projective module $P$.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(Radical of projective modules). $J(P) ⊊ P$ is proper for $P ≠ 0$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;If not, then $J(P) = P ≠ 0$. For any non-zero $p ∈ P$, we can find $P ⊕ Q = R^{(I)}$ s.t. $p = (p_1, \ldots, p_n) ∈ R^n ⊆ R^{(I)}$. Now we consider the projection $π : P ⊕ Q ↠ P$ restricted to $R^n$. WLOG we assume $p (R^n) ⊆ R^m$.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;There is a $J$-matrix $A$ s.t. $π (e_{[1,n]}) = e_{[1,m]} J$.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;Consider $p = π (p)$, there is matrix $B$ s.t. $p = p AB$. Now $p(I-AB) = 0$. Since $I - AB$ is invertible by Nakayama lemma, we see $p = 0$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;We never claim that $J(P)$ is superfluous in $P$.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Nakayama lemma shows $PJ ↪ P$ is superfluous for f.g. projective modules.&lt;/li&gt;
+    &lt;li&gt;Recall we show that $J$ is transfinite nilpotent iff $J(R^{(ω)}) ↪ R^{(ω)}$ is superfluous.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;Recall an epimorphism with superfluous kernel induces a bijection on maximal submodules. Hence, the module with $M = J(M)$ has no projective covers, e.g., $ℚ$ is not a projective Abelian group.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now we use projective covers to characterise semi-perfect and right perfect rings.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;The following are equivalent for a ring $R$:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$R$ is semi-perfect (i.e., $R / J(R)$ is semi-simple and idempotents lift modulo $J(R)$);&lt;/li&gt;
+    &lt;li&gt;there are finite local orthogonal idempotents $\{e_i\}_{i=1}^n$. That is, $e_i e_j = δ _{i,j} e_i$ and each $e_i R e_i$ is local;&lt;/li&gt;
+    &lt;li&gt;$R ≃ \mathrm{End}(⨁ M_∙ )$ for $⨁ M_∙$ is a finite direct sum of endolocal modules;&lt;/li&gt;
+    &lt;li&gt;All cyclic right modules have a projective cover.&lt;/li&gt;
+    &lt;li&gt;All f.g. right modules have a projective cover.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;We show (1 ↔ 2 ↔ 3) previously. Note that being semi-perfect is symmetric.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1 → 5). When $M$ is f.g., then $\frac{M}{MJ}$ is semi-simple with finite length. By idempotent lifting, we take&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+⨁ _{i= 1}^n e_i R \overset p → M ↠ \frac{M}{MJ} ≃ ⨁ _{i= 1}^n \frac{e_i R}{e_i J}.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;Note that $\operatorname{im} p ↠ \frac{M}{MJ}$. Hence $\operatorname{im} p + MJ = M$. Nakayama lemma shows $\operatorname{im} p = M$. Hence $p$ is surjective. $\ker p ⊆ ⨁ _{i= 1}^n e_i J$ is superfluous. Hence $p$ is a projective cover. &lt;br /&gt; (5 → 4). Clear. &lt;br /&gt; (4 → 1). We show idempotent lifting property and semi-simplicity of $\frac{R}{J}$ in turns.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;(Idempotent lifting). For any $e' ∈ \frac{R}{J}$ and $f' := 1' - e'$, there are projective converse $P → \frac{eR}{eJ}$ and $Q → \frac{fR}{fJ}$. Taking direct sums, WLOG we assume $P ⊕ Q = R$, and write $P = xR$ and $Q = yR$ for $x$ and $y$ idempotents. Note that $x' + y' = 1' = e' + f'$ in $\frac{R}{J}$. Taking projection shows $x' = e'$ and $y' = f'$.&lt;/li&gt;
+      &lt;li&gt;(Semi-simplicity). For cyclic $\frac{R}{J}$-module $([x])$, there is a projective cover $p : P ↠ (x)$. Clearly $p' := \frac{P}{PJ} ↠ ([x])$ is epic as $[x]$ is mapped from $P$. Note that $\ker p' = \frac{\ker p}{PJ}$, which is superfluous in $\frac{P}{PJ}$. Hence $p'$ is also a projective cover. Since $J(\frac{P}{PJ}) = 0$, $\ker p' ⊆ J = 0$. Hence $p'$ is an isomorphism. It yields that any cyclic modules are semi-simple, thus $\frac{R}{J}$ is semi-simple.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We show anaglously the characterisation of right perfect rings.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;The following are equivalent for a ring $R$:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$J(R)$ is right transfinite nilpotent and $\frac{R}{J(R)}$ is semi-simple.&lt;/li&gt;
+    &lt;li&gt;$R$ satisfies the following:       &lt;ol&gt;
+        &lt;li&gt;there are no infinite sets of orthogonal idempotents;&lt;/li&gt;
+        &lt;li&gt;any non-zero left module $X$ has a simple submodule.&lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;All right modules have a projective cover.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;We show (1 ↔ 2) previously.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1 → 3). The proof is similar to the semi-perfect case. We summarise the procedure:&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;for any $M$, take complete set of orthogonal idempotents of the semi-simple module $\frac{M}{MJ}$;&lt;/li&gt;
+      &lt;li&gt;lifting idempotents to $R$, we obtain a projective module;&lt;/li&gt;
+      &lt;li&gt;prove the projective cover map, wherein $MJ ↪ M$ is always superfluous as $J$ is transfinite nilpotent.&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;(3 → 1). $R$ is semi-perfect. Since arbitrary $M$ has a projective cover, the $1:1$ correspondence of maximal submodules yields $J(M) ≠ 0$. Hence $MJ = M$ yields $M = 0$, i.e., $J$ is right transfinite nilpotent.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;Both semi-perfect rings and right perfect rings are stable under Morita equivalences.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Projective covers are preserved under Morita equivalences.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;Both semi-perfect rings and right perfect rings are stable under quotients rings.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Indeed, projective covers are preserved under ideal quotients. Let $R ↠ R/I$ be a quotient map, $p : P ↠ M$ be a projective cover. Then&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;$p' : \frac{P}{PI} → \frac{M}{MI}$ is epic by tracking preimages;&lt;/li&gt;
+      &lt;li&gt;$\ker p' = \frac{\ker p + p^{-1}(MI)}{PI} = \frac{\ker p}{PI}$. Since $\ker p ⊆ P$ is superfluous, $\ker p' ⊆ \frac{P}{PI}$ is also superfluous.&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;Hence, $p'$ is also a projective cover.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;def-via-flat-modules&quot;&gt;Def via Flat Modules&lt;/h4&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;Let $p : P ↠ F$ be a projective cover of a flat module, then $F$ is projective.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Set $\ker p = : K ⊆ P$. We aim to construct a defect morphism:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;for any $x ∈ K ⊆ P$, there is some $φ _x : P → K$ preserving $x$.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;Now $\operatorname{im}φ _x ⊆ P$ is superfluous. We claim $φ _x ∈ J(\mathrm{End}(P))$.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;It suffices to show $φ _x$ lies in every maximal right ideal. If not, then there is $(φ _x) + 𝔪 = R$. We take $φ _x + m = 1$. Since $\operatorname{im} (φ _x) + \operatorname{im} (m) = P$, we see $m$ is surjective and thus has a right inverse. A contradiction!&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;Hence $(1 - φ _x)$ is a unit and $(1 - φ _x)(x) = 0$. We see $x = 0$. &lt;br /&gt; $φ _x$ is constructed by purity. We show $KI = K ∩ XI$ for any ideal $I$:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;$\ker [K ↪ P ↠ P/PI] = K ∩ XI$ by definition;&lt;/li&gt;
+      &lt;li&gt;$K/KI ≃ K ⊗ R/I ↪ P ⊗ R/I ≃ P/PI$ is monic as $F$ is flat.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;WLOG assume $P$ is free by adding idempotents. Set any $x = (c_λ)_{λ ∈ Λ _0} ⊆ P$. We take $I$ as the right ideal generated by $\{c_λ\}$. Since $x ∈ K ∩ PI = KI$, we write $x = ∑ c_λ k_λ$ for $k_λ ∈ K$. We define $φ _x : P → K$ by $1_λ ↦ k_λ$ when $λ ∈ Λ _0$, and $1_λ ↦ 0$ otherwise. This is the desired morphism.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;def-via-bass-chain-condition&quot;&gt;Def via Bass’ Chain Condition&lt;/h4&gt;
+
+&lt;p&gt;Recall that once $J(R) = 0$ (= $R$ is semi-primitive), $R$ is semisimple iff it is Artinian.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;The following are equivalent for a semi-primitive ring:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$R$ is semi-simple;&lt;/li&gt;
+    &lt;li&gt;$R$ if right (or left) Artinian;&lt;/li&gt;
+    &lt;li&gt;all right (or left) principal ideals satisfies descending chain condition.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We show for right modules. Note that (1 ↔ 2 → 3). We show (3 → 1). Note that any right ideal has a simple submodule. Now $R$ has enough simple summands. We claim that that the procedure of taking simple summands of $R$ terminates within finite steps. If not, then there is an infinite descending sequence of summands ($⊆$ principal ideals), a contradiction!&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Here is a criterion on descending chain condition of principal left ideals.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;For any sequence $\{r_∙\} ⊆ R$, then there is a descending chain of principal left ideals $R r_n \cdots r_0$. We denote&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
+F:= R^{(ω )} / (\{(1_n - 1_{n+1} r_n )_{n ∈ ℕ}\}).
+\end{equation}$$&lt;/p&gt;
+  &lt;p&gt;This is flat (with projective dimension $≤ 1$). Moreover,&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;it is projective iff the chain stabilises;&lt;/li&gt;
+    &lt;li&gt;it is zero iff the chain is eventually zero.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Note that $F$ is countably presented by $F = \ker [∐ R^{ω } \overset {φ }↪ ∐ R^{ω}]$, thus is a filtered colimit of a cotower. By Lazard’s theorem, $F$ is flat. &lt;br /&gt; Consider $φ =(1-r) : (x_0,x_1,\ldots) ↦ (x_0, x_1 - x_0 a_0, x_2 - x_1a_1, \ldots)$. When it is split monic, we denote the right inverse by&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+ψ : (y_0,y_1,\ldots) ↦ (∑ y_∙ c_{∙, 0}, ∑ y_∙ c_{∙, 1}, \ldots).
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;Note that for each fixed $k$, $c_{k, ∙}$ are almost zero. We take the maximal $n$ s.t. $c_{0, n - 1} ≠ 0$. We obtain&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+c_{k,n} - c_{k+ 1,n}r_k = δ _{k, n}.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;Hence, $c_{n,n} r_{n-1} \cdots r_0 = 0$. We take $c_{n,n} =c_{n+1, n}r_n + 1$, then&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+c_{n+1, n} r_n \cdots r_0 = - r_{n-1} \cdots r_0.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;We see the ideal stablise. The rest is clear.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now we show a criterion of Bass.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;The following are equivalent for $R$:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$R$ is a right perfect ring;&lt;/li&gt;
+    &lt;li&gt;any descending chain of principal left ideals stabilises.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(2 → 1). $\frac{R}{J(R)}$ satisfies descending chain condition of principal left ideals, hence semi-simple. We show $J(R)$ is transfinite nilpotent&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;for any decsending principal left ideal $\{(r_n \cdots r_0)\}_{n ∈ ℕ}$ with each $r_∙ ∈ J$, there is $r_{n+1}$ s.t. $(r_n \cdots r_0) = (r_{n+1} \cdots r_0)$. We take $a$ s.t. $r_n \cdots r_0 = ar_{n+1} r_n \cdots r_0$. Note that $(1- ar_{n+1})$ is a unit, we see $r_n \cdots r_0 = 0$.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;(¬ 2 → ¬ 1). Assume there is an infinite descending chain of principal left ideals $\{Rx_n\}_{n ∈ ℕ}$ which never stabilises. We show the image in $R ↠ \frac{R}{J(R)}$ stabilises.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;If not, then $\frac{R}{J(R)}$ never Artinian, hence not semi-simple. This contradicts the definition of right perfect rings.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;WLOG we assume $x_n$ has the same image in $\frac{R}{J(R)}$. We also assume $⋂ Rx_∙ = 0$ by the substitution $R ↦ \frac{R}{⋂ Rx_∙}$. Note that $Rx_{n+1} + J(R) = Rx_n + J(R)$, we take&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+t_n x_{n+1} = x_n + j_n ,\quad (∀ j_n ∈ J). 
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;Here $0 ≠ j_n ∈ Rx_n ∩ J(R)$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </description>
           <pubDate>2025-08-25T00:00:00+08:00</pubDate>
           <link>http://localhost:4000/website/posts/Radicals</link>
@@ -2597,7 +3047,11 @@ m (a ⊗ b) = (-1)^{|a| + |m|} amb.
       
         <item>
           <title>五笔输入法备忘录</title>
-          <description>&lt;h2 id=&quot;86-版五笔输入法-王码&quot;&gt;86 版五笔输入法 (王码)&lt;/h2&gt;
+          <description>&lt;h2 id=&quot;86-版-五笔输入法-王码&quot;&gt;(86 版) 五笔输入法 (王码)&lt;/h2&gt;
+
+&lt;h3 id=&quot;rime-输入法&quot;&gt;Rime 输入法&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/czhang271828/Rime/tree/main&quot;&gt;下载地址&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;练习网站&quot;&gt;练习网站&lt;/h3&gt;
 
@@ -3894,7 +4348,6 @@ M → M,\quad m ↦ mr\quad (r ∈ R)
       &lt;li&gt;&lt;a href=&quot;#the-projective-cover&quot; id=&quot;markdown-toc-the-projective-cover&quot;&gt;The Projective Cover&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#functorial-approach&quot; id=&quot;markdown-toc-functorial-approach&quot;&gt;Functorial Approach&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#a-tautological-comparison&quot; id=&quot;markdown-toc-a-tautological-comparison&quot;&gt;A Tautological Comparison&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#example-mathjax_protectedjpcdkiwnzcr8j2qqpcdkkmkmathjax_protected-cover-of-flat-objects&quot; id=&quot;markdown-toc-example-mathjax_protectedjpcdkiwnzcr8j2qqpcdkkmkmathjax_protected-cover-of-flat-objects&quot;&gt;Example: $𝐏𝐫𝐨𝐣$-cover of Flat Objects&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#example-vnr-rings&quot; id=&quot;markdown-toc-example-vnr-rings&quot;&gt;Example: vNR Rings&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#example-torsion-theory&quot; id=&quot;markdown-toc-example-torsion-theory&quot;&gt;Example: Torsion Theory&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#envelopes-and-examples&quot; id=&quot;markdown-toc-envelopes-and-examples&quot;&gt;Envelopes and Examples&lt;/a&gt;&lt;/li&gt;
@@ -3948,17 +4401,27 @@ M → M,\quad m ↦ mr\quad (r ∈ R)
   &lt;p&gt;Suppose $p : P → M$ is a projective cover if the following equivalent conditions hold (projective cover = $𝐏𝐫𝐨𝐣$-cover!):&lt;/p&gt;
   &lt;ol&gt;
     &lt;li&gt;(Projective cover). $p$ is an epimorphism, and $\ker p$ (as a morphism) is small;&lt;/li&gt;
-    &lt;li&gt;($𝐏𝐫𝐨𝐣$-cover). Any morphism $Q → M$ ($Q$ projective) factors through $p$, and any $p ∘ α = p$ implies $α$ is an automorphism.&lt;/li&gt;
+    &lt;li&gt;($𝐏𝐫𝐨𝐣$-cover). Any morphism $Q → M$ ($Q$ projective) factors through $p$, and any $p ∘ α = p$ implies $α$ is a(n)       &lt;ol&gt;
+        &lt;li&gt;epimorphism;&lt;/li&gt;
+        &lt;li&gt;monomorphism;&lt;/li&gt;
+        &lt;li&gt;automorphism.&lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/li&gt;
   &lt;/ol&gt;
   &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;(1 → 2). Clearly, $Q → M$ factors through $p$ by the lifting property of projectives. We show that $p ∘ α = p$ implies $α$ is an automorphism. We construct the pullback square of monomorphisms:&lt;/p&gt;
+    &lt;p&gt;(1 → 2-(3)). Clearly, $Q → M$ factors through $p$ by the lifting property of projectives. We show that $p ∘ α = p$ implies $α$ is an automorphism. We construct the pullback square of monomorphisms:&lt;/p&gt;
     &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
         &lt;embed src=&quot;/website/svg/25SumLec3/diagram_496ecc2b2f048.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
       &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;By $p ∘ α = p$, the morphism $p|_{\operatorname{im}α }$ is epic, thus the first row is a short exact sequence. By exercise, the subobject $\operatorname{im}(α ) ↪ P$ is an isomorphism. &lt;strong&gt;This shows $α$ is epic&lt;/strong&gt;. We show $α$ is also monic. Let $j$ be the right inverse of $α$ (by the lifting property of projectives). Then $p ∘ j = p ∘ α ∘ j = p$. Hence $j$ is epic. Since $j$ is also split monic, $j$ is an isomorphism. &lt;strong&gt;Therefore $α$ is an automorphism&lt;/strong&gt;. &lt;br /&gt; (2 → 1). $p$ is epic, since any epimorphism $Q ↠ M$ factors through $p$. We show $\ker p$ is small. If not, there exists a proper subobject $N ↪ P$ such that $N + \ker p = P$. Therefore we have the pullback pushout square of short exact sequences. We introduce $l$ by the lifting property of projectives, then $α : λ ∘ l$ is a non-automorphism such that $p ∘ α = p$, a contradiction.&lt;/p&gt;
+    &lt;p&gt;By $p ∘ α = p$, the morphism $p|_{\operatorname{im}α }$ is epic, thus the first row is a short exact sequence. By exercise, the subobject $\operatorname{im}(α ) ↪ P$ is an isomorphism. This shows $α$ is epic. We show $α$ is also monic. Let $j$ be the right inverse of $α$ (by the lifting property of projectives). Then $p ∘ j = p ∘ α ∘ j = p$. Hence $j$ is epic. Since $j$ is also split monic, $j$ is an isomorphism. Therefore $α$ is an automorphism. &lt;br /&gt; (2(1) → 1). $p$ is epic, since any epimorphism $Q ↠ M$ factors through $p$. We show $\ker p$ is small. If not, there exists a proper subobject $N ↪ P$ such that $N + \ker p = P$. Therefore we have the pullback pushout square of short exact sequences. We introduce $l$ by the lifting property of projectives, then $α : λ ∘ l$ is a non-epimorphism such that $p ∘ α = p$, a contradiction.&lt;/p&gt;
     &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
         &lt;embed src=&quot;/website/svg/25SumLec3/diagram_0e8ee8dcb17d4.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
       &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;&lt;br /&gt; We show 1 → 2(3) → 2(1,2), and 2(1) → 1. It remains to show 2(2) → 2(3). If there is a strict monomorphism $α$ s.t. $p ∘ α = p$, then there is an induced monomorphism $α|_{\ker p} : \ker p → \ker p$.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/25SumLec3/diagram_832e2c634fbbb.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;In the above diagram, the left square is pullback-pushout. Hence $\operatorname{im}α + \ker p = P$. A contradiction.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -4071,35 +4534,6 @@ M → M,\quad m ↦ mr\quad (r ∈ R)
 &lt;/div&gt;
 
 &lt;p&gt;It is a local property to exhibit a projective cover. For idempotent complete cases, a $\mathcal{P}$-precover $P → M$ admits a $\mathcal{P}$-cover when $\mathrm{End}(P)$ is right semi-perfect (where f.g. modules admits a projective cover).&lt;/p&gt;
-
-&lt;h3 id=&quot;example-mathjax_protectedjpcdkiwnzcr8j2qqpcdkkmkmathjax_protected-cover-of-flat-objects&quot;&gt;Example: $𝐏𝐫𝐨𝐣$-cover of Flat Objects&lt;/h3&gt;
-
-&lt;p&gt;Not every object has a projective cover! In particular, a flat module with projective cover is projective.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The author is pleased to introduce the &lt;em&gt;equivalent definitions of a perfect ring&lt;/em&gt;; for the sake of coherence in this lecture, &lt;strong&gt;we shall only focus on flat modules and projective covers&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-  &lt;p&gt;A flat module with projective cover is projective.&lt;/p&gt;
-  &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;We provide a functorial proof which shows that it is not a non-set-theoretic property. We write a flat object $F$ as the filtered colimit of finitely generated projective objects, i.e., $F = \varinjlim ^{fil} P_∙$ along with structure morphisms $f_i : P_i → F$. Let $π : P → F$ denote the projective cover. &lt;br /&gt; Since $f_i$ factors through $π$, we obtain a collection of split pullback squares $P_i ⊕ Q_i := P × _F P_i$. This defines a new system for $\{(P ⊕ Q)_∙ , g_∙\}$:&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/25SumLec3/diagram_083431bd939e6.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;Note that if $\boxed n  \boxed c$ and $\boxed c$ are pullback squares, then $\boxed n$ is a pullback. The morphism of split exact sequences shows $ψ_{j,i} = φ _{j,i} ⊕ φ ' _{j,i}$. Now we obtain a morphism of ses:&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/25SumLec3/diagram_d43086354f5e6.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;We claim that $q$ is injective. For any compact object $K$ and morphism $l : K → \varinjlim (P_\bullet \oplus Q_\bullet )$ s.t. $ql = 0$, we show $l = 0$. By kernel, $l$ factors through $\varinjlim Q_∙$, thus it factors through some $Q_i$. Note that $Q_i ↪ (P_i ⊕ Q_i)$ is split monic, we see $K → Q_i → \ker π ↪ P$ is zero. By filtered colimits, $[K → Q_j] = 0$ for some $j$. Hence $l = 0$. &lt;br /&gt; This gives morphisms between short exact sequences&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/25SumLec3/diagram_5a0a99dffc640.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;Since $\ker π$ is small, $\varinjlim^{fil}(P_\bullet \oplus Q_\bullet) ↪ P$ must be an isomorphism. It shows that $F$ is a retract of $P$, and thus is projective.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The proof is valid for finitely presented categories.&lt;/p&gt;
 
 &lt;h3 id=&quot;example-vnr-rings&quot;&gt;Example: vNR Rings&lt;/h3&gt;
 
@@ -7437,6 +7871,10 @@ d_h ∘ d_h = 0, \quad d_v ∘ d_v = 0, \quad\text{and} \ \  d_h ∘ d_v + d_v �
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&quot;25SumLec3&quot;&gt;Lecture3&lt;/a&gt;. All cover/envelope theory studies projective covers. The defect of projective modules in covering theory. A criterion when (special) precover/preenvelope admits a (special) cover/envelope.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;Radicals&quot;&gt;Supplementary Notes on Radicals and Covers&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&quot;25SumLec4&quot;&gt;Lecture4&lt;/a&gt;. Definable subgroups, purity, and associated cotorsion theory.&lt;/p&gt;
 </description>
