@@ -1237,6 +1237,10 @@ Then there is a way **(unique up to composition of several isomorphisms)** to co
 
 ### The Weak PBPO Squares
 
+{% slo %}
+This section is obsoleted since all squares are proved to be homotopic!
+{% endslo %}
+
 {% def %}
 (Weak PO Square). A **weak PO square** (or **weak coCatersian square**) is an 2×2 diagram ($wf = hg$), such that for any $α f = β g$, there exists some $φ$ making the entire diagram commutative.
 
@@ -1438,104 +1442,279 @@ W \\
 
 Recall that in ET2, we made no more assumption on the middle dashed arrow between conflations. However, there is a way to take a good morphism.
 
-{% thm %}
-(The homotopic square theorem). For any realisations of the morphism of extensions $(λ, 1): δ → λ_∗ δ$, there exists a suitable morphism $w$ rendering both diagrams commutative, and $y^∗ δ$ admits a realisation as depicted in the diagram below:
-{% tikz %}
-% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFs0LDAsIloiXSxbMiwwLCJZIl0sWzUsMCwiXFwsIl0sWzAsMSwiQSJdLFsyLDEsIkIiXSxbNCwxLCJaIl0sWzUsMSwiXFwsIl0sWzAsMiwiWCJdLFsyLDIsIkEgXFxvcGx1cyBZIl0sWzQsMiwiQiJdLFs1LDIsIlxcLCJdLFswLDIsImEiXSxbMiwxLCJiIl0sWzEsMywiXFxkZWx0YSAiXSxbNCw1LCJcXGNvbG9ye3JlZH0geCJdLFs1LDYsIlxcY29sb3J7Ymx1ZX0geSJdLFsxLDYsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsNSwidyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDcsIlxcbGFtYmRhIF9cXGFzdCBcXGRlbHRhICJdLFs4LDksIlxcYmlub20gXFxsYW1iZGEgYSJdLFs5LDEwLCIoe1xcY29sb3J7cmVkfSAteH0sdykiXSxbMCw0LCJcXGxhbWJkYSAiXSxbMTAsMTEsIntcXGNvbG9ye2JsdWV9IHl9XlxcYXN0IFxcZGVsdGEgIl1d
+We prove several kind of homotopic squares in this section. Recall that
+
+{% def %}
+(Homotopic square). A commutative square {% tikzinline %} % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFsxLDEsIkQiXSxbMCwxLCJDIl0sWzAsMSwiZiJdLFsxLDIsImciXSxbMywyLCJ5Il0sWzAsMywieCJdXQ==
 \begin{tikzcd}
-X && Y && Z & {\,} \\
-A && B && Z & {\,} \\
-X && {A \oplus Y} && B & {\,}
-\arrow["a", from=1-1, to=1-3]
-\arrow["{\lambda }", from=1-1, to=2-1]
-\arrow["b", from=1-3, to=1-5]
-\arrow["w", dashed, from=1-3, to=2-3]
-\arrow["{\delta }", from=1-5, to=1-6]
-\arrow[equals, from=1-5, to=2-5]
-\arrow["{\color{red} x}", from=2-1, to=2-3]
-\arrow["{\color{blue} y}", from=2-3, to=2-5]
-\arrow["{\lambda _\ast \delta }", from=2-5, to=2-6]
-\arrow["{\binom \lambda a}", from=3-1, to=3-3]
-\arrow["{({\color{red} -x},w)}", from=3-3, to=3-5]
-\arrow["{ {\color{blue} y}^\ast \delta }", from=3-5, to=3-6]
-\end{tikzcd}
-{% endtikz %}
-
-Remind the sign here.
-
-{% pf %}
-We construct the Verdier diagram from $b$ and $y$:
-{% tikz %}
-% https://q.uiver.app/#q=WzAsMTQsWzEsMiwiWCJdLFsyLDIsIlkiXSxbMywyLCJaIl0sWzMsMSwiQiJdLFszLDAsIkEiXSxbMiwxLCJBIFxcb3BsdXMgWSJdLFsxLDEsIlgiXSxbMiwwLCJBIl0sWzQsMiwiXFwsIl0sWzQsMSwiXFwsIl0sWzMsMywiXFwsICJdLFsyLDMsIlxcLCJdLFswLDIsIlxcLCJdLFs1LDIsIlxcLCJdLFswLDEsImEiXSxbMSwyLCJiIl0sWzMsMiwieSJdLFs0LDMsIngiXSxbNiw1LCJcXGJpbm9tICB7XFxsYW1iZGEgJ30gYSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDQsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNyw1LCJlXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwxLCJwXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwzLCIoeCwtdycpIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsOCwiXFxkZWx0YSAiXSxbMyw5LCJ5XlxcYXN0IFxcZGVsdGEgIl0sWzIsMTAsIlxcbGFtYmRhX1xcYXN0IFxcZGVsdGEgIl0sWzEsMTEsImJeXFxhc3QgXFxsYW1iZGEgX1xcYXN0IFxcZGVsdGEgIl1d
-\begin{tikzcd}
-&& A & A \\
-& X & {A \oplus Y} & B & {\,} \\
-{\,} & X & Y & Z & {\,} & {\,} \\
-&& {\,} & {\, }
-\arrow[equals, from=1-3, to=1-4]
-\arrow["{e_1}", dashed, from=1-3, to=2-3]
-\arrow["x", from=1-4, to=2-4]
-\arrow["{\binom  {\lambda '} a}", dashed, from=2-2, to=2-3]
-\arrow[equals, from=2-2, to=3-2]
-\arrow["{(x,-w')}", dashed, from=2-3, to=2-4]
-\arrow["{p_2}", dashed, from=2-3, to=3-3]
-\arrow["{y^\ast \delta }", from=2-4, to=2-5]
-\arrow["y", from=2-4, to=3-4]
-\arrow["a", from=3-2, to=3-3]
-\arrow["b", from=3-3, to=3-4]
-\arrow["{b^\ast \lambda _\ast \delta }", from=3-3, to=4-3]
-\arrow["{\delta }", from=3-4, to=3-5]
-\arrow["{\lambda_\ast \delta }", from=3-4, to=4-4]
-\end{tikzcd}
-{% endtikz %}
-
-Since $b^∗ δ =0$, we write $b^∗ λ _∗ δ$ in the standard split form which does not affect the solid arrows. By the anticommutative square in 4×4 diagram, we have
+	A & B \\
+	C & D
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["x", from=1-1, to=2-1]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["y", from=2-1, to=2-2]
+\end{tikzcd} {% endtikzinline %} is said to be homotopic, when there is a conflation
 
 $$\begin{equation}
-0 = \binom {λ '}{a} {}_∗ δ + \binom {1}{0} {}_∗  λ _∗ δ = \binom {λ ' + λ} a {}_∗ δ.
+0 → A \xrightarrow {\binom {f}{x}} B ⊕ C \xrightarrow {(g \ -y)} D → 0.
 \end{equation}$$
 
-Hence, $(λ ' + λ) ∈ \ker δ^!$. By long exact sequence, there exists $l$ such that $(λ + λ ' ) = l ∘ a$. To be explicit,
-$$\begin{equation}
-X \xrightarrow a Y \xrightarrow l A\quad  = \quad  X \xrightarrow {λ + λ '} A.
-\end{equation}$$
-
-It remains to show the existence of $w$ such that the following diagram commutes:
-{% tikz %}
-% https://q.uiver.app/#q=WzAsOCxbMSwxLCJYIl0sWzMsMSwiQSBcXG9wbHVzIFkiXSxbNSwxLCJCIl0sWzUsMCwiQiJdLFszLDAsIkEgXFxvcGx1cyBZIl0sWzEsMCwiWCJdLFswLDEsIlxcLCJdLFs2LDEsIlxcLCJdLFswLDEsIlxcYmlub20ge1xcbGFtYmRhfSBhIl0sWzEsMiwiKC14LCB3KSJdLFszLDIsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNCwiXFxiaW5vbSB7XFxsYW1iZGEgJ30gYSJdLFs1LDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsMSwiXFxiaW5vbSB7LTEgXFwgXFwgbFxcIH17MCBcXCBcXCBcXCAxfSJdLFs0LDMsIih4LC13JykiXV0=
-\begin{tikzcd}
-& X && {A \oplus Y} && B \\
-{\,} & X && {A \oplus Y} && B & {\,}
-\arrow["{\binom {\lambda '} a}", from=1-2, to=1-4]
-\arrow[equals, from=1-2, to=2-2]
-\arrow["{(x,-w')}", from=1-4, to=1-6]
-\arrow["{\binom {-1 \ \ l\ }{0 \ \ 1}}", from=1-4, to=2-4]
-\arrow[equals, from=1-6, to=2-6]
-\arrow["{\binom {\lambda} a}", from=2-2, to=2-4]
-\arrow["{(-x, w)}", from=2-4, to=2-6]
-\end{tikzcd}
-{% endtikz %}
-
-The left square commutes due to the choice of $l$. Taking $w = xl - w'$, we see that
-
-- $wa - x λ = xla - w'a - xλ = xla - x λ ' - xλ = x(la - λ - λ ' ) = 0$;
-- $yw - b = yxl - yw' - b = 0 l + b - b = 0$.
-
-Hence, the right square also commutes.
-
-{% endpf %}
-
-{% endthm %}
+{% enddef %}
 
 {% cor %}
 The homotopic square is also a weak PBPO square.
 {% endcor %}
 
-The following proposition shows that the square in Noether diagram is automatically a homotopic square.
+{% thm %}
+(Existence of homotopic square I). For morphism of extension $(λ , 1) : δ → λ _∗ δ$, there is $w$ making the left square homotopic while the entire diagram is commutative.
 
-{% prop %}
+{% tikz %}
+% https://q.uiver.app/% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFsyLDAsIlkiXSxbNCwwLCJaIl0sWzUsMCwiXFwsIl0sWzQsMSwiWiJdLFswLDEsIkEiXSxbMiwxLCJCIl0sWzUsMSwiXFwsIl0sWzAsMiwiWCJdLFsyLDIsIkFcXG9wbHVzIFkiXSxbNCwyLCJCIl0sWzUsMiwiXFwsIl0sWzAsMSwiYSJdLFsxLDIsImIiXSxbMiwzLCJcXGRlbHRhIl0sWzUsNiwieCJdLFs2LDQsInkiXSxbNCwyLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDUsIlxcbGFtYmRhICJdLFsxLDYsInciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw3LCJcXGxhbWJkYSBfXFxhc3QgXFxkZWx0YSJdLFs4LDksIlxcYmlub20ge1xcbGFtYmRhfXthfSJdLFs5LDEwLCIoLXgsIHcpIl0sWzEwLDExLCJ5XlxcYXN0IFxcZGVsdGEiXV0=
+\begin{tikzcd}
+	X && Y && Z & {\,} \\
+	A && B && Z & {\,} \\
+	X && {A\oplus Y} && B & {\,}
+	\arrow["a", from=1-1, to=1-3]
+	\arrow["{\lambda }", from=1-1, to=2-1]
+	\arrow["b", from=1-3, to=1-5]
+	\arrow["w", dashed, from=1-3, to=2-3]
+	\arrow["\delta", from=1-5, to=1-6]
+	\arrow["x", from=2-1, to=2-3]
+	\arrow["y", from=2-3, to=2-5]
+	\arrow[equals, from=2-5, to=1-5]
+	\arrow["{\lambda _\ast \delta}", from=2-5, to=2-6]
+	\arrow["{\binom {\lambda}{a}}", from=3-1, to=3-3]
+	\arrow["{(-x, w)}", from=3-3, to=3-5]
+	\arrow["{y^\ast \delta}", from=3-5, to=3-6]
+\end{tikzcd}
+{% endtikz %}
 
-In the following ET4 diagram, $\square$ is a homotopic square.
+{% pf %}
+We construct Verdier's diagram from deflations $B \xrightarrow y Z \xleftarrow b Y$. We take $b^∗ (λ δ _∗) = 0$ as the canonical split sequence, and obtain
+
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTIsWzAsMiwiQSJdLFsyLDIsIkIiXSxbNCwyLCJaIl0sWzUsMiwiXFwsIl0sWzAsMSwiQSJdLFs0LDEsIlkiXSxbNCwwLCJYIl0sWzIsMCwiWCJdLFsyLDEsIkEgXFxvcGx1cyBZIl0sWzUsMSwiXFwsIl0sWzQsMywiXFwsIl0sWzIsMywiXFwsIl0sWzYsNSwiYSJdLFs1LDIsImIiXSxbMCwxLCJ4Il0sWzEsMiwieSJdLFs3LDYsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw4LCJcXGJpbm9tIDEwIl0sWzgsNSwiKDAgXFwgMSkiXSxbNyw4LCJcXGJpbm9tIHtcXGxhbWJkYSd9e2F9Il0sWzgsMSwiKHgsLXcnKSJdLFsyLDMsIlxcbGFtYmRhX1xcYXN0IFxcZGVsdGEiXSxbMiwxMCwiXFxkZWx0YSJdLFsxLDExLCJ5XlxcYXN0IFxcZGVsdGEgIl0sWzUsOSwiMCJdXQ==
+\begin{tikzcd}
+	&& X && X \\
+	A && {A \oplus Y} && Y & {\,} \\
+	A && B && Z & {\,} \\
+	&& {\,} && {\,}
+	\arrow[equals, from=1-3, to=1-5]
+	\arrow["{\binom {\lambda'}{a}}", from=1-3, to=2-3]
+	\arrow["a", from=1-5, to=2-5]
+	\arrow["{\binom 10}", from=2-1, to=2-3]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{(0 \ 1)}", from=2-3, to=2-5]
+	\arrow["{(x,-w')}", from=2-3, to=3-3]
+	\arrow["0", from=2-5, to=2-6]
+	\arrow["b", from=2-5, to=3-5]
+	\arrow["x", from=3-1, to=3-3]
+	\arrow["y", from=3-3, to=3-5]
+	\arrow["{y^\ast \delta }", from=3-3, to=4-3]
+	\arrow["{\lambda_\ast \delta}", from=3-5, to=3-6]
+	\arrow["\delta", from=3-5, to=4-5]
+\end{tikzcd}
+{% endtikz %}
+
+Moreover, there is an identity at the anticommute square
+
+$$\begin{equation}
+0 = \binom 10 _∗ (λ _∗ δ ) + \binom {λ '}{a}_∗ δ = \binom{λ + λ '}{a}_∗ δ .
+\end{equation}$$
+
+By long exact sequence, we take $l a = (λ + λ ')$ where $X \overset a → Y \overset l→ A$. Now
+
+{% tikz %}
+% https://q.uiver.app/#q=WzAsNyxbNCwwLCJCIl0sWzAsMSwiWCJdLFswLDAsIlgiXSxbMiwwLCJBIFxcb3BsdXMgWSJdLFs1LDAsIlxcLCJdLFs0LDEsIkIiXSxbMiwxLCJBIFxcb3BsdXMgWSJdLFsyLDEsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsMywiXFxiaW5vbSB7XFxsYW1iZGEnfXthfSJdLFszLDAsIih4LC13JykiXSxbMCw0LCJ5XlxcYXN0IFxcZGVsdGEgIl0sWzEsNiwiXFxiaW5vbSB7XFxsYW1iZGEnfXthfSJdLFswLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsNSwiKC14LHcpIl0sWzMsNiwiXFxiaW5vbSB7LTEgXFwgbH17XFwgMCBcXCBcXCAxfSJdXQ==
+\begin{tikzcd}
+	X && {A \oplus Y} && B & {\,} \\
+	X && {A \oplus Y} && B
+	\arrow["{\binom {\lambda'}{a}}", from=1-1, to=1-3]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["{(x,-w')}", from=1-3, to=1-5]
+	\arrow["{\binom {-1 \ l}{\ 0 \ 1}}", from=1-3, to=2-3]
+	\arrow["{y^\ast \delta }", from=1-5, to=1-6]
+	\arrow[equals, from=1-5, to=2-5]
+	\arrow["{\binom {\lambda'}{a}}", from=2-1, to=2-3]
+	\arrow["{(-x,w)}", from=2-3, to=2-5]
+\end{tikzcd}
+{% endtikz %}
+
+Note that our desired mapping sequence is isomorphic to a conflation.
+
+{% endpf %}
+
+{% endthm %}
+
+{% thm %}
+(Existence of homotopic square I'). For morphism of extensions $(1, μ) : μ ^∗ δ → δ$, there is $u$ making the right square homotopic while the entire diagraom is commutative.
+
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFsyLDAsIlkiXSxbNCwwLCJaIl0sWzUsMCwiXFwsIl0sWzQsMSwiQyJdLFswLDEsIlgiXSxbMiwxLCJCIl0sWzUsMSwiXFwsIl0sWzAsMiwiWSJdLFsyLDIsIkIgXFxvcGx1cyBaIl0sWzQsMiwiQyJdLFs1LDIsIlxcLCJdLFswLDEsImEiXSxbMSwyLCJiIl0sWzIsMywiXFxtdV5cXGFzdCBcXGRlbHRhIl0sWzUsNiwieCJdLFs2LDQsInkiXSxbMSw2LCJ1IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsNywiXFxkZWx0YSJdLFs5LDEwLCIoeSBcXCBcXG11KSJdLFsxMCwxMSwiYV9cXGFzdCBcXGRlbHRhIl0sWzAsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw0LCJcXG11Il0sWzgsOSwiXFxiaW5vbSB1IHstYn0iXV0=
+\begin{tikzcd}
+	X && Y && Z & {\,} \\
+	X && B && C & {\,} \\
+	Y && {B \oplus Z} && C & {\,}
+	\arrow["a", from=1-1, to=1-3]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["b", from=1-3, to=1-5]
+	\arrow["u", dashed, from=1-3, to=2-3]
+	\arrow["{\mu^\ast \delta}", from=1-5, to=1-6]
+	\arrow["\mu", from=1-5, to=2-5]
+	\arrow["x", from=2-1, to=2-3]
+	\arrow["y", from=2-3, to=2-5]
+	\arrow["\delta", from=2-5, to=2-6]
+	\arrow["{\binom u {-b}}", from=3-1, to=3-3]
+	\arrow["{(y \ \mu)}", from=3-3, to=3-5]
+	\arrow["{a_\ast \delta}", from=3-5, to=3-6]
+\end{tikzcd}
+{% endtikz %}
+
+{% pf %}
+Dual. But mind the sign!
+{% endpf %}
+
+{% endthm %}
+
+{% thm %}
+(Existence of homotopic square II). When completing with ET3', one can take $λ$ making the left square homotopic.
+
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFsyLDAsIlkiXSxbNCwwLCJaIl0sWzUsMCwiXFwsIl0sWzQsMSwiWiJdLFswLDEsIkEiXSxbMiwxLCJCIl0sWzUsMSwiXFwsIl0sWzAsMiwiWCJdLFsyLDIsIkFcXG9wbHVzIFkiXSxbNCwyLCJCIl0sWzUsMiwiXFwsIl0sWzAsMSwiYSJdLFsxLDIsImIiXSxbMiwzLCJcXGRlbHRhIl0sWzUsNiwieCJdLFs2LDQsInkiXSxbNCwyLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDUsIlxcbGFtYmRhICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDYsInciXSxbNCw3LCJcXHZhcmVwc2lsb24gIl0sWzgsOSwiXFxiaW5vbSB7XFxsYW1iZGF9e2F9Il0sWzksMTAsIigteCwgdykiXSxbMTAsMTEsInleXFxhc3QgXFxkZWx0YSJdXQ==
+\begin{tikzcd}
+	X && Y && Z & {\,} \\
+	A && B && Z & {\,} \\
+	X && {A\oplus Y} && B & {\,}
+	\arrow["a", from=1-1, to=1-3]
+	\arrow["{\lambda }", dashed, from=1-1, to=2-1]
+	\arrow["b", from=1-3, to=1-5]
+	\arrow["w", from=1-3, to=2-3]
+	\arrow["\delta", from=1-5, to=1-6]
+	\arrow["x", from=2-1, to=2-3]
+	\arrow["y", from=2-3, to=2-5]
+	\arrow[equals, from=2-5, to=1-5]
+	\arrow["{\varepsilon }", from=2-5, to=2-6]
+	\arrow["{\binom {\lambda}{a}}", from=3-1, to=3-3]
+	\arrow["{(-x, w)}", from=3-3, to=3-5]
+	\arrow["{y^\ast \delta}", from=3-5, to=3-6]
+\end{tikzcd}
+{% endtikz %}
+
+{% pf %}
+We take any $λ' : X → A$ by ET3', and choose $w' : Y → B$ by theorem **existence of homotopic square I**. Since $y(w - w') = 0$, we take $l : Y → A$ s.t. $xl = w-w'$.
+
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTUsWzAsMCwiWCJdLFsyLDAsIlkiXSxbNCwwLCJaIl0sWzUsMCwiXFwsIl0sWzQsMSwiWiJdLFswLDEsIkEiXSxbMiwxLCJCIl0sWzUsMSwiXFwsIl0sWzAsMiwiWCJdLFsyLDIsIkFcXG9wbHVzIFkiXSxbNCwyLCJCIl0sWzUsMiwiXFwsIl0sWzAsMywiWCJdLFs0LDMsIkIiXSxbMiwzLCJBIFxcb3BsdXMgWSJdLFswLDEsImEiXSxbMSwyLCJiIl0sWzIsMywiXFxkZWx0YSJdLFs1LDYsIngiXSxbNiw0LCJ5Il0sWzQsMiwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSw2LCJ3JyIsMCx7Im9mZnNldCI6LTJ9XSxbNCw3LCJcXHZhcmVwc2lsb24gIl0sWzgsOSwiXFxiaW5vbSB7XFxsYW1iZGEnIH17YX0iXSxbOSwxMCwiKC14IFxcIHcnKSJdLFsxMCwxMSwieV5cXGFzdCBcXGRlbHRhIl0sWzAsNSwiXFxsYW1iZGEgJyJdLFsxLDYsInciLDIseyJvZmZzZXQiOjJ9XSxbOCwxMiwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTAsMTMsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMTQsIlxcYmlub20gezEgXFwgbH17IDAgXFwgMX0iXSxbMTIsMTQsIlxcYmlub20ge1xcbGFtYmRhIH17YX0iXSxbMTQsMTMsIigteCBcXCB3KSJdXQ==
+\begin{tikzcd}
+	X && Y && Z & {\,} \\
+	A && B && Z & {\,} \\
+	X && {A\oplus Y} && B & {\,} \\
+	X && {A \oplus Y} && B
+	\arrow["a", from=1-1, to=1-3]
+	\arrow["{\lambda '}", from=1-1, to=2-1]
+	\arrow["b", from=1-3, to=1-5]
+	\arrow["{w'}", shift left=2, from=1-3, to=2-3]
+	\arrow["w"', shift right=2, from=1-3, to=2-3]
+	\arrow["\delta", from=1-5, to=1-6]
+	\arrow["x", from=2-1, to=2-3]
+	\arrow["y", from=2-3, to=2-5]
+	\arrow[equals, from=2-5, to=1-5]
+	\arrow["{\varepsilon }", from=2-5, to=2-6]
+	\arrow["{\binom {\lambda' }{a}}", from=3-1, to=3-3]
+	\arrow[equals, from=3-1, to=4-1]
+	\arrow["{(-x \ w')}", from=3-3, to=3-5]
+	\arrow["{\binom {1 \ l}{ 0 \ 1}}", from=3-3, to=4-3]
+	\arrow["{y^\ast \delta}", from=3-5, to=3-6]
+	\arrow[equals, from=3-5, to=4-5]
+	\arrow["{\binom {\lambda }{a}}", from=4-1, to=4-3]
+	\arrow["{(-x \ w)}", from=4-3, to=4-5]
+\end{tikzcd}
+{% endtikz %}
+
+Here $λ$ is chosen by composition.
+
+{% endpf %}
+
+{% endthm %}
+
+{% thm %}
+(Existence of homotopic square II'). When completing with ET3, one can take $λ$ making the left square homotopic.
+
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFsyLDAsIlkiXSxbNCwwLCJaIl0sWzUsMCwiXFwsIl0sWzQsMSwiQyJdLFswLDEsIlgiXSxbMiwxLCJCIl0sWzUsMSwiXFwsIl0sWzAsMiwiWSJdLFsyLDIsIkIgXFxvcGx1cyBaIl0sWzQsMiwiQyJdLFs1LDIsIlxcLCJdLFswLDEsImEiXSxbMSwyLCJiIl0sWzIsMywiXFx2YXJlcHNpbG9uIl0sWzUsNiwieCJdLFs2LDQsInkiXSxbMSw2LCJ1Il0sWzQsNywiXFxkZWx0YSJdLFs5LDEwLCIoeSBcXCBcXG11KSJdLFsxMCwxMSwiYV9cXGFzdCBcXGRlbHRhIl0sWzAsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw0LCJcXG11IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsOSwiXFxiaW5vbSB1IHstYn0iXV0=
+\begin{tikzcd}
+	X && Y && Z & {\,} \\
+	X && B && C & {\,} \\
+	Y && {B \oplus Z} && C & {\,}
+	\arrow["a", from=1-1, to=1-3]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["b", from=1-3, to=1-5]
+	\arrow["u", from=1-3, to=2-3]
+	\arrow["\varepsilon", from=1-5, to=1-6]
+	\arrow["\mu", dashed, from=1-5, to=2-5]
+	\arrow["x", from=2-1, to=2-3]
+	\arrow["y", from=2-3, to=2-5]
+	\arrow["\delta", from=2-5, to=2-6]
+	\arrow["{\binom u {-b}}", from=3-1, to=3-3]
+	\arrow["{(y \ \mu)}", from=3-3, to=3-5]
+	\arrow["{a_\ast \delta}", from=3-5, to=3-6]
+\end{tikzcd}
+{% endtikz %}
+
+{% pf %}
+Dual. But mind the sign!
+{% endpf %}
+
+{% endthm %}
+
+{% thm %}
+(Existence of homotopic square III). For either of the situation
+
+1. there is a morphism of extension $(λ , μ): δ → ε$,
+2. there is a right commuting square $(α , μ)$ from $δ$ to $ε$,
+3. there is a left commuting square $(λ , α)$ from $δ$ to $ε$.
+
+Then we can find a morphism of extension $δ → ε$ passing through a conflation $η$, so that $\square$'s are homotopic.
+
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiXFxidWxsZXQiXSxbMiwwLCJcXGJ1bGxldCJdLFs0LDAsIlxcYnVsbGV0Il0sWzAsMiwiXFxidWxsZXQiXSxbMiwyLCJcXGJ1bGxldCJdLFs0LDIsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbNCwxLCJcXGJ1bGxldCJdLFsyLDEsIlxcYnVsbGV0Il0sWzUsMCwiXFwsIl0sWzUsMiwiXFwsIl0sWzUsMSwiXFwsIl0sWzAsMV0sWzEsMl0sWzMsNF0sWzQsNV0sWzAsNiwiXFxsYW1iZGEiXSxbNyw1LCJcXG11Il0sWzYsMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw3LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDhdLFs4LDddLFsxLDgsIlxcYWxwaGEgXzEiXSxbOCw0LCJcXGFscGhhXzIiXSxbMiw5LCJcXGRlbHRhIl0sWzUsMTAsIlxcdmFyZXBzaWxvbiAiXSxbNywxMSwiXFxldGEiXSxbMSw0LCJcXGFscGhhIiwyLHsibGFiZWxfcG9zaXRpb24iOjcwLCJvZmZzZXQiOjIsImN1cnZlIjoyfV0sWzE2LDIyLCJcXHNxdWFyZSIsMSx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMywxNywiXFxzcXVhcmUiLDEseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9LCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}
+	\bullet && \bullet && \bullet & {\,} \\
+	\bullet && \bullet && \bullet & {\,} \\
+	\bullet && \bullet && \bullet & {\,}
+	\arrow[from=1-1, to=1-3]
+	\arrow[""{name=0, anchor=center, inner sep=0}, "\lambda", from=1-1, to=2-1]
+	\arrow[from=1-3, to=1-5]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{\alpha _1}", from=1-3, to=2-3]
+	\arrow["\alpha"'{pos=0.7}, shift right=2, curve={height=12pt}, from=1-3, to=3-3]
+	\arrow["\delta", from=1-5, to=1-6]
+	\arrow[equals, from=1-5, to=2-5]
+	\arrow[from=2-1, to=2-3]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow[from=2-3, to=2-5]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "{\alpha_2}", from=2-3, to=3-3]
+	\arrow["\eta", from=2-5, to=2-6]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "\mu", from=2-5, to=3-5]
+	\arrow[from=3-1, to=3-3]
+	\arrow[from=3-3, to=3-5]
+	\arrow["{\varepsilon }", from=3-5, to=3-6]
+	\arrow["\square"{description}, draw=none, from=0, to=1]
+	\arrow["\square"{description}, draw=none, from=2, to=3]
+\end{tikzcd}
+{% endtikz %}
+
+{% pf %}
+For case 1, we take $η = λ_∗  δ = μ ^∗ ε$, and choose $α _1$ ($α _2$) by theorem **existence of homotopic square I(I')**.
+\\
+For case 2, we take $η = μ ^∗ ε$ and choose $α _2$ by theorem **existence of homotopic square I'**. We take $α$ by weak pullback, and choose $λ$ by theorem **existence of homotopic square II**.
+\\
+Case 3 is dual to Case 2.
+{% endpf %}
+
+{% endthm %}
+
+{% thm %}
+(Existence of homotopic square IV). In the following ET4 diagram, $\square$ is a homotopic square.
 
 {% tikz %}
 % https://q.uiver.app/#q=WzAsMTQsWzEsMCwiWCJdLFsyLDAsIlkiXSxbMywwLCJaIl0sWzIsMSwiVyJdLFsyLDIsIksiXSxbMywyLCJLIl0sWzEsMSwiWCJdLFszLDEsIk0iXSxbNCwwLCJcXCwiXSxbNCwxLCJcXCwiXSxbMiwzLCJcXCwiXSxbMywzLCJcXCwiXSxbNSwyLCJcXCwiXSxbMCwyLCJcXCwiXSxbMCwxLCJmIl0sWzEsMiwiZyJdLFsxLDMsIlxcYWxwaGEiXSxbMyw0LCJcXGJldGEiXSxbNCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMywicCJdLFsyLDcsInIiXSxbNyw1LCJzIl0sWzMsNywicSJdLFsyLDgsIlxcZGVsdGFfe3IxfSJdLFs3LDksIlxcZGVsdGFfe3IyfSJdLFs1LDExLCJcXGRlbHRhX3tjMn0iXSxbNCwxMCwiXFxkZWx0YV97YzF9Il0sWzEsNywiXFxzcXVhcmUiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
@@ -1596,20 +1775,113 @@ We take $α': Y → W$ and obtain the homotopic square. By factorisation between
 
 Recall the two out of three principle for isomorphisms. We see that
 
-* $n ∘ m$ is an isomorphism by considering $δ _{c1}$;
-* $m ∘ n$ is an isomorphism by considering the conflation obtained by the homotopic square $\square$.
+* $n ∘ m$ is an isomorphism by 2-out-of-3 of isomorphisms for $δ _{c1}$;
+* $m ∘ n$ is an isomorphism by 2-out-of-3 of isomorphisms for conflation obtained by the homotopic square $\binom {YZ}{WM}$.
 
 {% endpf %}
-{% endprop %}
+{% endthm %}
 
-{% prop %}
-Verdier squares are also homotopic!
+{% thm %}
+(Existence of homotopic square V). The following Verdier square is homotopic:
+
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTYsWzIsMSwiTSJdLFs0LDEsIkJfMiJdLFs0LDAsIkFfMiJdLFsyLDAsIkFfMiJdLFswLDEsIkFfMSJdLFswLDIsIkFfMSJdLFsyLDIsIkJfMSJdLFs1LDIsIlxcLCJdLFs0LDIsIkMiXSxbNCwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbNSwxLCJcXCwiXSxbMCw0LCJNIl0sWzIsNCwiQl8xIFxcb3BsdXMgQl8yIl0sWzQsNCwiQyJdLFs1LDQsIlxcLCJdLFswLDEsIlxcbGFtYmRhXzIiLDAseyJjb2xvdXIiOlszNTgsMTAwLDYwXX0sWzM1OCwxMDAsNjAsMV1dLFsyLDEsInhfMiJdLFszLDIsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMCwibV8yIl0sWzAsNiwiXFxsYW1iZGFfMSJdLFs0LDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsMCwibV8xIiwwLHsiY29sb3VyIjpbMjMzLDEwMCw2MF19LFsyMzMsMTAwLDYwLDFdXSxbMSw4LCJ5XzIiXSxbNiw4LCJ5XzEiXSxbNSw2LCJ4XzEiXSxbMSwxMSwiKHlfMileXFxhc3RcXGRlbHRhIF8xIl0sWzgsNywiXFxkZWx0YV8xIiwwLHsiY29sb3VyIjpbMjMzLDEwMCw2MF19LFsyMzMsMTAwLDYwLDFdXSxbOCw5LCJcXGRlbHRhXzIiXSxbNiwxMCwiKHlfMSleXFxhc3QgXFxkZWx0YV8yIl0sWzEyLDEzLCJcXGJpbm9te1xcbGFtYmRhXzF9ey1cXGxhbWJkYSBfMn0iXSxbMTMsMTQsIih5XzEsIHlfMicpIl0sWzE0LDE1LCJtXzFeXFxhc3QgKFxcZGVsdGFfMSkiXV0=
+\begin{tikzcd}
+	&& {A_2} && {A_2} \\
+	{A_1} && M && {B_2} & {\,} \\
+	{A_1} && {B_1} && C & {\,} \\
+	&& {\,} && {\,} \\
+	M && {B_1 \oplus B_2} && C & {\,}
+	\arrow[equals, from=1-3, to=1-5]
+	\arrow["{m_2}", from=1-3, to=2-3]
+	\arrow["{x_2}", from=1-5, to=2-5]
+	\arrow["{m_1}", color={rgb,255:red,51;green,75;blue,255}, from=2-1, to=2-3]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{\lambda_2}", color={rgb,255:red,255;green,51;blue,58}, from=2-3, to=2-5]
+	\arrow["{\lambda_1}", from=2-3, to=3-3]
+	\arrow["{(y_2)^\ast\delta _1}", from=2-5, to=2-6]
+	\arrow["{y_2}", from=2-5, to=3-5]
+	\arrow["{x_1}", from=3-1, to=3-3]
+	\arrow["{y_1}", from=3-3, to=3-5]
+	\arrow["{(y_1)^\ast \delta_2}", from=3-3, to=4-3]
+	\arrow["{\delta_1}", color={rgb,255:red,51;green,75;blue,255}, from=3-5, to=3-6]
+	\arrow["{\delta_2}", from=3-5, to=4-5]
+	\arrow["{\binom{\lambda_1}{-\lambda _2}}", from=5-1, to=5-3]
+	\arrow["{(y_1, y_2')}", from=5-3, to=5-5]
+	\arrow["{m_1^\ast (\delta_1)}", from=5-5, to=5-6]
+\end{tikzcd}
+{% endtikz %}
 
 {% pf %}
-We show this by a straightforward construction.
+We erase $x_2$, $y_2$ and $δ _2$ firstly. By theorem of **existence of homotopic square II'**, we take $y_2' : B_2 → C$ making the two rows commutative, while the square is homotopic. Now there is a commutative diagram of conflations by S4×4 lemma:
+
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiTSJdLFsyLDEsIkJfMSBcXG9wbHVzIEJfMiJdLFs0LDEsIkMiXSxbNSwxLCJcXCwiXSxbMCwwLCJBXzIiXSxbMiwwLCJCXzIiXSxbNCwwLCJDIl0sWzIsMiwiQl8xIl0sWzAsMiwiQl8xIl0sWzIsMywiXFwsIl0sWzAsMywiXFwsIl0sWzUsMCwiXFwsIl0sWzAsMSwiXFxiaW5vbXtcXGxhbWJkYV8xfXstXFxsYW1iZGEgXzJ9Il0sWzEsMiwiKHlfMSwgeV8yJykiXSxbMiwzLCJtXzFeXFxhc3QgKFxcZGVsdGFfMSkiXSxbNCwwLCJtXzIiXSxbNSwxLCJcXGJpbm9tIDAxIl0sWzYsMiwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSw3LCIoMSBcXCAwKSJdLFs4LDcsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsOCwiXFxsYW1iZGFfMSJdLFs3LDksIjAiXSxbOCwxMCwiKHlfMSleXFxhc3QgXFxkZWx0YV8yIl0sWzQsNSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNiwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMTEsIlxcdmFyZXBzaWxvbiJdXQ==
+\begin{tikzcd}
+	{A_2} && {B_2} && C & {\,} \\
+	M && {B_1 \oplus B_2} && C & {\,} \\
+	{B_1} && {B_1} \\
+	{\,} && {\,}
+	\arrow[dashed, from=1-1, to=1-3]
+	\arrow["{m_2}", from=1-1, to=2-1]
+	\arrow[dashed, from=1-3, to=1-5]
+	\arrow["{\binom 01}", from=1-3, to=2-3]
+	\arrow["\varepsilon", from=1-5, to=1-6]
+	\arrow[equals, from=1-5, to=2-5]
+	\arrow["{\binom{\lambda_1}{-\lambda _2}}", from=2-1, to=2-3]
+	\arrow["{\lambda_1}", from=2-1, to=3-1]
+	\arrow["{(y_1, y_2')}", from=2-3, to=2-5]
+	\arrow["{(1 \ 0)}", from=2-3, to=3-3]
+	\arrow["{m_1^\ast (\delta_1)}", from=2-5, to=2-6]
+	\arrow[equals, from=3-1, to=3-3]
+	\arrow["{(y_1)^\ast \delta_2}", from=3-1, to=4-1]
+	\arrow["0", from=3-3, to=4-3]
+\end{tikzcd}
+{% endtikz %}
+
+The first row is a conflation whose morphisms are uniquely determined by compositions ($-λ _2m_2 = -x_2$ and $y_2'$). By uniqueness of embedding an inflation to a conflation, we may assume $ε = - δ _1$ and $y_2' = y_2$.
+\\
+We recover the original diagram by letting the square to be homotopic. Hence, the square in the original diagram is homotopic.
 {% endpf %}
 
-{% endprop %}
+{% endthm %}
+
+{% thm %}
+(Existence of homotopic square V'). The following Verdier square is homotopic:
+
+{% tikz %}
+% https://q.uiver.app/#q=WzAsMTYsWzIsMSwiTSJdLFsyLDAsIkJfMSJdLFs1LDAsIlxcLCJdLFs0LDAsIkNfMSJdLFs1LDEsIlxcLCJdLFswLDQsIkEiXSxbMiw0LCJCXzEgXFxvcGx1cyBCXzIiXSxbNCw0LCJNIl0sWzUsNCwiXFwsIl0sWzAsMCwiQSJdLFswLDEsIkJfMiJdLFswLDIsIkNfMiJdLFswLDMsIlxcLCJdLFsyLDIsIkNfMiJdLFs0LDEsIkNfMSJdLFsyLDMsIlxcLCJdLFsxLDAsIm1fMiJdLFsxLDMsInlfMSJdLFszLDIsIlxcZGVsdGFfMSIsMCx7ImNvbG91ciI6WzIzMywxMDAsNjBdfSxbMjMzLDEwMCw2MCwxXV0sWzUsNiwiXFxiaW5vbSB7eF8xfXt4XzJ9Il0sWzYsNywiKG1fMiBcXCAtbV8xKSJdLFs3LDgsIihcXG11XzEpXlxcYXN0IFxcZGVsdGEgXzEiXSxbOSwxLCJ4XzEiXSxbOSwxMCwieF8yIl0sWzEwLDExLCJ5XzIiXSxbMTEsMTIsIlxcZGVsdGFfMiJdLFsxMCwwLCJtXzEiLDAseyJjb2xvdXIiOlszNTgsMTAwLDYwXX0sWzM1OCwxMDAsNjAsMV1dLFsxMSwxMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMywxNCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwxMywiXFxtdV8yIl0sWzAsMTQsIlxcbXVfMSIsMCx7ImNvbG91ciI6WzIzMywxMDAsNjBdfSxbMjMzLDEwMCw2MCwxXV0sWzE0LDQsIih4XzIpX1xcYXN0IFxcZGVsdGFfMSJdLFsxMywxNSwiKHhfMSlfXFxhc3QgXFxkZWx0YV8yIl1d
+\begin{tikzcd}
+	A && {B_1} && {C_1} & {\,} \\
+	{B_2} && M && {C_1} & {\,} \\
+	{C_2} && {C_2} \\
+	{\,} && {\,} \\
+	A && {B_1 \oplus B_2} && M & {\,}
+	\arrow["{x_1}", from=1-1, to=1-3]
+	\arrow["{x_2}", from=1-1, to=2-1]
+	\arrow["{y_1}", from=1-3, to=1-5]
+	\arrow["{m_2}", from=1-3, to=2-3]
+	\arrow["{\delta_1}", color={rgb,255:red,51;green,75;blue,255}, from=1-5, to=1-6]
+	\arrow[equals, from=1-5, to=2-5]
+	\arrow["{m_1}", color={rgb,255:red,255;green,51;blue,58}, from=2-1, to=2-3]
+	\arrow["{y_2}", from=2-1, to=3-1]
+	\arrow["{\mu_1}", color={rgb,255:red,51;green,75;blue,255}, from=2-3, to=2-5]
+	\arrow["{\mu_2}", from=2-3, to=3-3]
+	\arrow["{(x_2)_\ast \delta_1}", from=2-5, to=2-6]
+	\arrow[equals, from=3-1, to=3-3]
+	\arrow["{\delta_2}", from=3-1, to=4-1]
+	\arrow["{(x_1)_\ast \delta_2}", from=3-3, to=4-3]
+	\arrow["{\binom {x_1}{x_2}}", from=5-1, to=5-3]
+	\arrow["{(m_2 \ -m_1)}", from=5-3, to=5-5]
+	\arrow["{(\mu_1)^\ast \delta _1}", from=5-5, to=5-6]
+\end{tikzcd}
+{% endtikz %}
+
+{% pf %}
+Dual. But mind the sign!
+{% endpf %}
+
+{% endthm %}
 
 ### Weak Snake Lemmas
 
@@ -3411,148 +3683,150 @@ The proof of $4$ and $5$ are similar to $2$, just replace S4×4 lemma with SET4.
 {% endlem %}
 
 {% lem %}
-
-(The verification of retraction closedness). For $𝖢𝗈𝖿𝗂𝖻$, $𝖥𝗂𝖻$, $𝖳𝖥𝗂𝖻$, and $𝖳𝖢𝗈𝖿𝗂𝖻$, we verify the property by means of the lifting property. We select $𝖥𝗂𝖻$ as a representative example. Suppose that $b$ is a retract of $f ∈ 𝖥𝗂𝖻$. We verify the lifting property of $b$ with respect to an arbitrarily chosen $c ∈ 𝖳𝖢𝗈𝖿𝗂𝖻$ and an arbitrarily chosen commutative square $c ⇒ b$.
-
-{% tikz %}
-% https://q.uiver.app/#q=WzAsOCxbMSwwLCJcXGJ1bGxldCJdLFszLDAsIlxcYnVsbGV0Il0sWzUsMCwiXFxidWxsZXQiXSxbNSwxLCJcXGJ1bGxldCJdLFsxLDEsIlxcYnVsbGV0Il0sWzMsMSwiXFxidWxsZXQiXSxbMCwwLCJcXGJ1bGxldCJdLFswLDEsIlxcYnVsbGV0Il0sWzAsMSwiaSJdLFsxLDIsInAiXSxbMiwzLCJiIiwyXSxbNCw1LCJqIiwyXSxbNSwzLCJxIiwyXSxbMSw1LCJcXG1hdGhzZntGaWJ9Il0sWzYsMCwiYSJdLFs3LDQsImQiLDJdLFs2LDcsIlxcbWF0aHNme1RDb2ZpYn0iLDJdLFs3LDEsInMiLDEseyJsYWJlbF9wb3NpdGlvbiI6NjAsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDcsImMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCw0LCJiIiwyXSxbMSw1LCJmIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
-\begin{tikzcd}[ampersand replacement=\&]
-\bullet \& \bullet \&\& \bullet \&\& \bullet \\
-\bullet \& \bullet \&\& \bullet \&\& \bullet
-\arrow["a", from=1-1, to=1-2]
-\arrow["{\mathsf{TCofib}}"', from=1-1, to=2-1]
-\arrow["c", draw=none, from=1-1, to=2-1]
-\arrow["i", from=1-2, to=1-4]
-\arrow["b"', from=1-2, to=2-2]
-\arrow["p", from=1-4, to=1-6]
-\arrow["{\mathsf{Fib}}", from=1-4, to=2-4]
-\arrow["f"', draw=none, from=1-4, to=2-4]
-\arrow["b"', from=1-6, to=2-6]
-\arrow["s"{description, pos=0.6}, dashed, from=2-1, to=1-4]
-\arrow["d"', from=2-1, to=2-2]
-\arrow["j"', from=2-2, to=2-4]
-\arrow["q"', from=2-4, to=2-6]
-\end{tikzcd}
-{% endtikz %}
-
-We show that $p ∘ s$ is our desired lifting morphism of the most left square:
-
-* $bps = qfs = qjd = d$;
-* $psc = pia = a$.
-
-Now we show that the retraction of $g ∈ 𝖶𝖾𝗊$, denoted by $g'$, is also an weak equivalence. We first factorise $g'$ into $𝖳𝖥𝗂𝖻 ∘ 𝖢𝗈𝖿𝗂𝖻$
+(The verification of retraction closedness). We show $𝖢𝗈𝖿𝗂𝖻$ is retraction clsoed. The proofs for $𝖳𝖢𝗈𝖿𝗂𝖻$, $𝖥𝗂𝖻$ and $𝖳𝖥𝗂𝖻$ are similar. Let $A \xrightarrow i B \xrightarrow p C \xrightarrow{δ }$ be a conflation with $i ∈ 𝖢𝗈𝖿𝗂𝖻$, and $i' : A → B$ is a retraction of $i$. Idempotent completeness shows $i'$ is an inflation. We take the corresponding conflation $δ '$, and complete $j_C$ and $q_C$ with ET3. 
 
 {% tikz %}
-% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYJyJdLFsyLDAsIlgiXSxbNCwwLCJYJyJdLFsyLDIsIloiLFsyMzcsMTAwLDYwLDFdXSxbMCwyLCJaJyJdLFs0LDIsIlonIixbMjM3LDEwMCw2MCwxXV0sWzUsMSwiWSciLFsyMzcsMTAwLDYwLDFdXSxbMywxLCJZIixbMjM3LDEwMCw2MCwxXV0sWzAsMSwiaV9YIl0sWzEsMiwicF9YIl0sWzQsMywiaV9aIiwyXSxbMyw1LCJwX1oiLDIseyJjb2xvdXIiOlsyMzcsMTAwLDYwXX0sWzIzNywxMDAsNjAsMV1dLFswLDQsImcnIiwwLHsibGFiZWxfcG9zaXRpb24iOjcwfV0sWzIsNSwiZyciLDAseyJsYWJlbF9wb3NpdGlvbiI6NzB9XSxbMSwzLCJnIiwwLHsibGFiZWxfcG9zaXRpb24iOjcwfV0sWzIsNiwiXFxtYXRoc2Z7Q29maWJ9Il0sWzYsNSwiXFxtYXRoc2Z7VEZpYn0iLDAseyJjb2xvdXIiOlsyMzcsMTAwLDYwXX0sWzIzNywxMDAsNjAsMV1dLFs3LDYsIiIsMCx7ImNvbG91ciI6WzIzNywxMDAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNywzLCJcXG1hdGhzZntURmlifSIsMCx7ImNvbG91ciI6WzIzNywxMDAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFsyMzcsMTAwLDYwLDFdXV0=
+% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiQSJdLFsyLDEsIkIiXSxbNCwxLCJDIl0sWzUsMSwiXFwsIl0sWzAsMCwiQSciXSxbMiwwLCJCJyJdLFs0LDAsIkMnIl0sWzQsMiwiQyciXSxbMiwyLCJCJyJdLFswLDIsIkEnIl0sWzUsMiwiXFwsIl0sWzUsMCwiXFwsIl0sWzIsMywiXFxkZWx0YSJdLFswLDEsImkiXSxbMSwyLCJwIl0sWzQsMCwial9BIl0sWzAsOSwicV9BIl0sWzUsMSwial9CIl0sWzEsOCwicV9CIl0sWzYsMiwial9DIl0sWzIsNywicV9DIl0sWzQsNSwiaSciXSxbNSw2LCJwJyJdLFs5LDgsImknIl0sWzgsNywiaSciXSxbNiwxMSwiXFxkZWx0YSciXSxbNywxMCwiXFxkZWx0YSciXV0=
 \begin{tikzcd}
-{X'} && X && {X'} \\
-&&& \color{rgb,255:red,51;green,61;blue,255}{Y} && \color{rgb,255:red,51;green,61;blue,255}{Y'} \\
-{Z'} && \color{rgb,255:red,51;green,61;blue,255}{Z} && \color{rgb,255:red,51;green,61;blue,255}{Z'}
-\arrow["{i_X}", from=1-1, to=1-3]
-\arrow["{g'}"{pos=0.7}, from=1-1, to=3-1]
-\arrow["{p_X}", from=1-3, to=1-5]
-\arrow["g"{pos=0.7}, from=1-3, to=3-3]
-\arrow["{\mathsf{Cofib}}", from=1-5, to=2-6]
-\arrow["{g'}"{pos=0.7}, from=1-5, to=3-5]
-\arrow[color={rgb,255:red,51;green,61;blue,255}, dashed, from=2-4, to=2-6]
-\arrow["{\mathsf{TFib}}", color={rgb,255:red,51;green,61;blue,255}, dashed, from=2-4, to=3-3]
-\arrow["{\mathsf{TFib}}", color={rgb,255:red,51;green,61;blue,255}, from=2-6, to=3-5]
-\arrow["{i_Z}"', from=3-1, to=3-3]
-\arrow["{p_Z}"', color={rgb,255:red,51;green,61;blue,255}, from=3-3, to=3-5]
+	{A'} && {B'} && {C'} & {\,} \\
+	A && B && C & {\,} \\
+	{A'} && {B'} && {C'} & {\,}
+	\arrow["{i'}", from=1-1, to=1-3]
+	\arrow["{j_A}", from=1-1, to=2-1]
+	\arrow["{p'}", from=1-3, to=1-5]
+	\arrow["{j_B}", from=1-3, to=2-3]
+	\arrow["{\delta'}", from=1-5, to=1-6]
+	\arrow["{j_C}", from=1-5, to=2-5]
+	\arrow["i", from=2-1, to=2-3]
+	\arrow["{q_A}", from=2-1, to=3-1]
+	\arrow["p", from=2-3, to=2-5]
+	\arrow["{q_B}", from=2-3, to=3-3]
+	\arrow["\delta", from=2-5, to=2-6]
+	\arrow["{q_C}", from=2-5, to=3-5]
+	\arrow["{i'}", from=3-1, to=3-3]
+	\arrow["{i'}", from=3-3, to=3-5]
+	\arrow["{\delta'}", from=3-5, to=3-6]
 \end{tikzcd}
 {% endtikz %}
 
-The object $Y$ along with the weak pullback square is constructed by 4×4 lemma, we re-draw the diagram as follows ($g' = b'∘ a'$):
+Note that $(q_A)_∗ (j_A)_∗ δ ' = (q_A)_∗ (j_C)^∗ δ =(j_C)^∗ (q_C)^∗ δ$. Hence $q_C i_C$ is an isomorphism by 2-out-of-3 property of isomorphisms. Since $\mathcal{U}$ is closed under retractions, we see $i' ∈ 𝖢𝗈𝖿𝗂𝖻$.
+\\
+We show retract closedness of $𝖶𝖾𝗊$. We take the diagram
 
 {% tikz %}
-% https://q.uiver.app/#q=WzAsOSxbMCwwLCJYJyJdLFsyLDAsIlgiXSxbNCwwLCJYJyJdLFsyLDIsIloiLFsyMzgsMTAwLDYwLDFdXSxbMCwyLCJaJyJdLFs0LDIsIlonIixbMjM4LDEwMCw2MCwxXV0sWzQsMSwiWSciXSxbMiwxLCJZIixbMjM4LDEwMCw2MCwxXV0sWzAsMSwiWSciXSxbMCwxLCJpX1giXSxbMSwyLCJwX1giXSxbNCwzLCJpX1oiLDJdLFszLDUsInBfWiIsMix7ImNvbG91ciI6WzIzOCwxMDAsNjBdfSxbMjM4LDEwMCw2MCwxXV0sWzIsNiwiYSciXSxbNiw1LCJiJyIsMCx7ImNvbG91ciI6WzIzOCwxMDAsNjBdfSxbMjM4LDEwMCw2MCwxXV0sWzcsNiwicF9ZIiwwLHsiY29sb3VyIjpbMjM4LDEwMCw2MF19LFsyMzgsMTAwLDYwLDFdXSxbNywzLCJiIiwwLHsiY29sb3VyIjpbMjM4LDEwMCw2MF19LFsyMzgsMTAwLDYwLDFdXSxbOCw0LCJiJyIsMl0sWzAsOCwiYSciLDJdLFsxLDcsImEiLDAseyJjb2xvdXIiOlszNTgsMTAwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzU4LDEwMCw2MCwxXV0sWzgsNywiaV9ZIiwwLHsiY29sb3VyIjpbMzU4LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzM1OCwxMDAsNjAsMV1dLFs4LDQsIlxcbWF0aHNme1RGaWJ9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsNiwiXFxtYXRoc2Z7Q29maWJ9IiwyXSxbMCw4LCJcXG1hdGhzZntDb2ZpYn0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiw1LCJcXG1hdGhzZntURmlifSIsMix7ImNvbG91ciI6WzIzOCwxMDAsNjBdfSxbMjM4LDEwMCw2MCwxXV0sWzcsMywiXFxtYXRoc2Z7VEZpYn0iLDIseyJjb2xvdXIiOlsyMzgsMTAwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fSxbMjM4LDEwMCw2MCwxXV0sWzEsNywiXFxtYXRoc2Z7V2VxfSIsMix7ImNvbG91ciI6WzM1OCwxMDAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19LFszNTgsMTAwLDYwLDFdXV0=
+% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYJyJdLFsyLDAsIlgiXSxbNCwwLCJYJyJdLFswLDEsIlknIl0sWzQsMSwiWSciXSxbNCwyLCJaJyJdLFswLDIsIlonIl0sWzIsMiwiWiJdLFswLDEsImlfWCJdLFsxLDIsInBfWCJdLFswLDMsImEnIl0sWzIsNCwiYSciXSxbNiw3LCJpX1oiXSxbNyw1LCJwX1oiXSxbMyw2LCJjJyJdLFs0LDUsImMnIl0sWzAsNiwiZyciLDIseyJvZmZzZXQiOjIsImN1cnZlIjoyfV0sWzIsNSwiZyciLDIseyJvZmZzZXQiOjIsImN1cnZlIjoyfV0sWzEsNywiZyIsMix7ImN1cnZlIjoyfV1d
 \begin{tikzcd}
-{X'} && X && {X'} \\
-{Y'} && \color{rgb,255:red,51;green,58;blue,255}{Y} && {Y'} \\
-{Z'} && \color{rgb,255:red,51;green,58;blue,255}{Z} && \color{rgb,255:red,51;green,58;blue,255}{Z'}
-\arrow["{i_X}", from=1-1, to=1-3]
-\arrow["{a'}"', from=1-1, to=2-1]
-\arrow["{\mathsf{Cofib}}", draw=none, from=1-1, to=2-1]
-\arrow["{p_X}", from=1-3, to=1-5]
-\arrow["a", color={rgb,255:red,255;green,51;blue,58}, dashed, from=1-3, to=2-3]
-\arrow["{\mathsf{Weq}}"', color={rgb,255:red,255;green,51;blue,58}, draw=none, from=1-3, to=2-3]
-\arrow["{a'}", from=1-5, to=2-5]
-\arrow["{\mathsf{Cofib}}"', from=1-5, to=2-5]
-\arrow["{i_Y}", color={rgb,255:red,255;green,51;blue,58}, dashed, from=2-1, to=2-3]
-\arrow["{b'}"', from=2-1, to=3-1]
-\arrow["{\mathsf{TFib}}", draw=none, from=2-1, to=3-1]
-\arrow["{p_Y}", color={rgb,255:red,51;green,58;blue,255}, from=2-3, to=2-5]
-\arrow["b", color={rgb,255:red,51;green,58;blue,255}, from=2-3, to=3-3]
-\arrow["{\mathsf{TFib}}"', color={rgb,255:red,51;green,58;blue,255}, draw=none, from=2-3, to=3-3]
-\arrow["{b'}", color={rgb,255:red,51;green,58;blue,255}, from=2-5, to=3-5]
-\arrow["{\mathsf{TFib}}"', color={rgb,255:red,51;green,58;blue,255}, from=2-5, to=3-5]
-\arrow["{i_Z}"', from=3-1, to=3-3]
-\arrow["{p_Z}"', color={rgb,255:red,51;green,58;blue,255}, from=3-3, to=3-5]
+	{X'} && X && {X'} \\
+	{Y'} &&&& {Y'} \\
+	{Z'} && Z && {Z'}
+	\arrow["{i_X}", from=1-1, to=1-3]
+	\arrow["{a'}", from=1-1, to=2-1]
+	\arrow["{g'}"', shift right=2, curve={height=12pt}, from=1-1, to=3-1]
+	\arrow["{p_X}", from=1-3, to=1-5]
+	\arrow["g"', curve={height=12pt}, from=1-3, to=3-3]
+	\arrow["{a'}", from=1-5, to=2-5]
+	\arrow["{g'}"', shift right=2, curve={height=12pt}, from=1-5, to=3-5]
+	\arrow["{c'}", from=2-1, to=3-1]
+	\arrow["{c'}", from=2-5, to=3-5]
+	\arrow["{i_Z}", from=3-1, to=3-3]
+	\arrow["{p_Z}", from=3-3, to=3-5]
 \end{tikzcd}
 {% endtikz %}
 
-Here the weak quivalence $a$ and the retraction $i_Y$ are taken from weak PB diagram:
+where $p_Xi_X = 1_{X'}$, $p_Zi_Z = Z'$, $g ∈ 𝖶𝖾𝗊$ and $g' = c' a' ∈ 𝖳𝖥𝗂𝖻 ∘ 𝖢𝗈𝖿𝗂𝖻$. It suffices to show $a' ∈ 𝖳𝖢𝗈𝖿𝗂𝖻$. We take a weak pullback (with Verdier diagram) from $Z \xrightarrow {p_Z} Z' \xleftarrow {c'} Y'$, and introduce dashed arrows:
 
 {% tikz %}
-% https://q.uiver.app/#q=WzAsMTAsWzEsMiwiWiIsWzIzOCwxMDAsNjAsMV1dLFsyLDIsIlonIixbMjM4LDEwMCw2MCwxXV0sWzIsMSwiWSciLFsyMzgsMTAwLDYwLDFdXSxbMSwxLCJZIixbMjM4LDEwMCw2MCwxXV0sWzAsMCwiWSciXSxbMywwLCJYIl0sWzQsMSwiWSIsWzIzOCwxMDAsNjAsMV1dLFs1LDEsIlknIixbMjM4LDEwMCw2MCwxXV0sWzUsMiwiWiciLFsyMzgsMTAwLDYwLDFdXSxbNCwyLCJaIixbMjM4LDEwMCw2MCwxXV0sWzAsMSwicF9aIiwwLHsiY29sb3VyIjpbMjM4LDEwMCw2MF19LFsyMzgsMTAwLDYwLDFdXSxbMiwxLCJiJyIsMCx7ImNvbG91ciI6WzIzOCwxMDAsNjBdfSxbMjM4LDEwMCw2MCwxXV0sWzMsMiwicF9ZIiwwLHsiY29sb3VyIjpbMjM4LDEwMCw2MF19LFsyMzgsMTAwLDYwLDFdXSxbMywwLCJiIiwwLHsiY29sb3VyIjpbMjM4LDEwMCw2MF19LFsyMzgsMTAwLDYwLDFdXSxbNCwwLCJpX1ogYiciLDIseyJjdXJ2ZSI6Mn1dLFs0LDIsIjFfe1knfSIsMCx7ImN1cnZlIjotMn1dLFs0LDMsImlfWSIsMCx7ImNvbG91ciI6WzM1OCwxMDAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszNTgsMTAwLDYwLDFdXSxbNiw5LCJiIiwwLHsiY29sb3VyIjpbMjM4LDEwMCw2MF19LFsyMzgsMTAwLDYwLDFdXSxbNyw4LCJiJyIsMCx7ImNvbG91ciI6WzIzOCwxMDAsNjBdfSxbMjM4LDEwMCw2MCwxXV0sWzYsNywicF9ZIiwwLHsiY29sb3VyIjpbMjM4LDEwMCw2MF19LFsyMzgsMTAwLDYwLDFdXSxbOSw4LCJwX1oiLDAseyJjb2xvdXIiOlsyMzgsMTAwLDYwXX0sWzIzOCwxMDAsNjAsMV1dLFs1LDcsImEncF9YIiwwLHsiY3VydmUiOi0yfV0sWzUsOSwiZyIsMix7ImN1cnZlIjoyfV0sWzUsNiwiYSIsMCx7ImNvbG91ciI6WzM1OCwxMDAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszNTgsMTAwLDYwLDFdXV0=
+% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCciXSxbMiwwLCJYIl0sWzQsMCwiWCciXSxbMCwxLCJZJyJdLFs0LDEsIlknIl0sWzQsMiwiWiciXSxbMCwyLCJaJyJdLFsyLDIsIloiXSxbMiwxLCJGIl0sWzEsMywiSyJdLFsyLDMsIkYiXSxbMywzLCJaIl0sWzAsMSwiaV9YIl0sWzEsMiwicF9YIl0sWzAsMywiYSciXSxbMiw0LCJhJyJdLFs2LDcsImlfWiJdLFs3LDUsInBfWiJdLFszLDYsImMnIl0sWzQsNSwiYyciXSxbOCw3LCJmIl0sWzgsNCwicV9ZIl0sWzMsOCwial9ZIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsOCwidyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDgsIlxcYm94dGltZXMiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSw0LCJcXGNpcmNsZWFycm93cmlnaHQiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMyw3LCJcXGNpcmNsZWFycm93cmlnaHQiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOCw1LCJcXHRleHR7V1BCfSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDcsImciLDIseyJsYWJlbF9wb3NpdGlvbiI6MjAsIm9mZnNldCI6MiwiY3VydmUiOjJ9XSxbMTAsMTEsImYiXSxbOSwxMCwieCJdXQ==
 \begin{tikzcd}
-{Y'} &&& X \\
-& \color{rgb,255:red,51;green,58;blue,255}{Y} & \color{rgb,255:red,51;green,58;blue,255}{Y'} && \color{rgb,255:red,51;green,58;blue,255}{Y} & \color{rgb,255:red,51;green,58;blue,255}{Y'} \\
-& \color{rgb,255:red,51;green,58;blue,255}{Z} & \color{rgb,255:red,51;green,58;blue,255}{Z'} && \color{rgb,255:red,51;green,58;blue,255}{Z} & \color{rgb,255:red,51;green,58;blue,255}{Z'}
-\arrow["{i_Y}", color={rgb,255:red,255;green,51;blue,58}, dashed, from=1-1, to=2-2]
-\arrow["{1_{Y'}}", curve={height=-12pt}, from=1-1, to=2-3]
-\arrow["{i_Z b'}"', curve={height=12pt}, from=1-1, to=3-2]
-\arrow["a", color={rgb,255:red,255;green,51;blue,58}, dashed, from=1-4, to=2-5]
-\arrow["{a'p_X}", curve={height=-12pt}, from=1-4, to=2-6]
-\arrow["g"', curve={height=12pt}, from=1-4, to=3-5]
-\arrow["{p_Y}", color={rgb,255:red,51;green,58;blue,255}, from=2-2, to=2-3]
-\arrow["b", color={rgb,255:red,51;green,58;blue,255}, from=2-2, to=3-2]
-\arrow["{b'}", color={rgb,255:red,51;green,58;blue,255}, from=2-3, to=3-3]
-\arrow["{p_Y}", color={rgb,255:red,51;green,58;blue,255}, from=2-5, to=2-6]
-\arrow["b", color={rgb,255:red,51;green,58;blue,255}, from=2-5, to=3-5]
-\arrow["{b'}", color={rgb,255:red,51;green,58;blue,255}, from=2-6, to=3-6]
-\arrow["{p_Z}", color={rgb,255:red,51;green,58;blue,255}, from=3-2, to=3-3]
-\arrow["{p_Z}", color={rgb,255:red,51;green,58;blue,255}, from=3-5, to=3-6]
+	{X'} && X && {X'} \\
+	{Y'} && F && {Y'} \\
+	{Z'} && Z && {Z'} \\
+	& K & F & Z
+	\arrow["{i_X}", from=1-1, to=1-3]
+	\arrow["{a'}", from=1-1, to=2-1]
+	\arrow["\boxtimes"{description}, draw=none, from=1-1, to=2-3]
+	\arrow["{p_X}", from=1-3, to=1-5]
+	\arrow["w", dashed, from=1-3, to=2-3]
+	\arrow["\circlearrowright"{description}, draw=none, from=1-3, to=2-5]
+	\arrow["g"'{pos=0.2}, shift right=2, curve={height=12pt}, from=1-3, to=3-3]
+	\arrow["{a'}", from=1-5, to=2-5]
+	\arrow["{j_Y}", dashed, from=2-1, to=2-3]
+	\arrow["{c'}", from=2-1, to=3-1]
+	\arrow["\circlearrowright"{description}, draw=none, from=2-1, to=3-3]
+	\arrow["{q_Y}", from=2-3, to=2-5]
+	\arrow["f", from=2-3, to=3-3]
+	\arrow["{\text{WPB}}"{description}, draw=none, from=2-3, to=3-5]
+	\arrow["{c'}", from=2-5, to=3-5]
+	\arrow["{i_Z}", from=3-1, to=3-3]
+	\arrow["{p_Z}", from=3-3, to=3-5]
+	\arrow["x", from=4-2, to=4-3]
+	\arrow["f", from=4-3, to=4-4]
 \end{tikzcd}
 {% endtikz %}
-We focus on the upper portion of the diagram; that is, we demonstrate that if $a ∈ 𝖶𝖾𝗊$ and $a'$ is a retraction of $a$ with $a' ∈ 𝖢𝗈𝖿𝗂𝖻$, then $a'$ is a weak equivalence.
 
-* The original problem was $x ∈ 𝖱𝖾𝗍𝗋𝖺𝖼(𝖶𝖾𝗊) ⟹ x ∈ 𝖶𝖾𝗊$;
-* We deduce this to $x ∈ 𝖱𝖾𝗍𝗋𝖺𝖼(𝖶𝖾𝗊) ∩ 𝖢𝗈𝖿𝗂𝖻 ⟹ x ∈ 𝖳𝖢𝗈𝖿𝗂𝖻$.
+Here $f ∈ 𝖳𝖥𝗂𝖻$ as $c' ∈ 𝖳𝖥𝗂𝖻$, $f w = g ∈ 𝖶𝖾𝗊$, and all square commutes except for $⊠$. However, one has
+
+$$\begin{equation}
+(wi_X - j_Y a') ∈ \ker (f_∗ ) = \operatorname{im} (x_∗ ).
+\end{equation}$$
+
+Hence we take $\widetilde l$ s.t.
+
+$$\begin{equation}
+X' \xrightarrow {\widetilde l} K \xrightarrow x F \quad =\quad  X' \xrightarrow{wi_X - j_Y a'} F.
+\end{equation}$$
+
+Set $l = X \xrightarrow {p_X} X' \xrightarrow {\widetilde l} K$. Then $q_Y x l = 0$. We obtain the retraction:
 
 {% tikz %}
-% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYJyJdLFsyLDAsIlgiXSxbNCwwLCJYJyJdLFs0LDIsIlknIl0sWzIsMiwiWSJdLFswLDIsIlknIl0sWzMsMSwiUCIsWzM1NywxMDAsNjAsMV1dLFsyLDEsIkUiXSxbMCwxLCJpX1giXSxbMSwyLCJwX1giXSxbMiwzLCJhJyJdLFs0LDMsInBfWSIsMl0sWzAsNSwiYSciLDJdLFs1LDQsImlfWSIsMl0sWzAsNSwiXFxtYXRoc2Z7Q29maWJ9IiwwLHsibGFiZWxfcG9zaXRpb24iOjIwLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsNywiYV97dGN9Il0sWzcsNCwiYV97dGZ9Il0sWzEsNywiXFxtYXRoc2Z7VENvZmlifSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs3LDQsIlxcbWF0aHNme1RGaWJ9IiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsNiwiayIsMix7ImNvbG91ciI6WzM1NywxMDAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszNTcsMTAwLDYwLDFdXSxbMiw2LCJcXG1hdGhzZntUQ29maWJ9IiwwLHsiY29sb3VyIjpbMzU3LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzM1NywxMDAsNjAsMV1dLFs3LDIsIlxcc3F1YXJlIiwxLHsiY29sb3VyIjpbMzU3LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX0sWzM1NywxMDAsNjAsMV1dLFs1LDcsInMiLDIseyJjdXJ2ZSI6LTIsImNvbG91ciI6WzIzMCwxMDAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFsyMzAsMTAwLDYwLDFdXSxbNiwzLCJsIiwyLHsiY29sb3VyIjpbMjMwLDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzIzMCwxMDAsNjAsMV1dXQ==
+% https://q.uiver.app/#q=WzAsNixbMCwwLCJYJyJdLFswLDEsIlknIl0sWzIsMCwiWCBcXG9wbHVzIEsiXSxbNCwwLCJYJyJdLFs0LDEsIlknIl0sWzIsMSwiRiBcXG9wbHVzIEsiXSxbMCwxLCJhJyIsMl0sWzMsNCwiYSciLDJdLFswLDIsIlxcYmlub20ge2lfWH17bCBpX1h9Il0sWzIsMywiKHBfWCwgMCkiXSxbMSw1LCJcXGJpbm9tIHtqX1l9MCJdLFs1LDQsIihxX1ksIC1xX1kgeCkiXSxbMiw1LCJcXGJpbm9te1xcIFxcIHcgXFwgeH17LWwgXFwgXFwgMX0iLDJdXQ==
 \begin{tikzcd}
-{X'} && X && {X'} \\
-&& E & \color{rgb,255:red,255;green,51;blue,61}{P} \\
-{Y'} && Y && {Y'}
-\arrow["{i_X}", from=1-1, to=1-3]
-\arrow["{a'}"', from=1-1, to=3-1]
-\arrow["{\mathsf{Cofib}}"{pos=0.2}, no head, from=1-1, to=3-1]
-\arrow["{p_X}", from=1-3, to=1-5]
-\arrow["{a_{tc}}", from=1-3, to=2-3]
-\arrow["{\mathsf{TCofib}}"', draw=none, from=1-3, to=2-3]
-\arrow["{\mathsf{TCofib}}", color={rgb,255:red,255;green,51;blue,61}, dashed, from=1-5, to=2-4]
-\arrow["{a'}", from=1-5, to=3-5]
-\arrow["\square"{description}, color={rgb,255:red,255;green,51;blue,61}, draw=none, from=2-3, to=1-5]
-\arrow["k"', color={rgb,255:red,255;green,51;blue,61}, dashed, from=2-3, to=2-4]
-\arrow["{a_{tf}}", from=2-3, to=3-3]
-\arrow["{\mathsf{TFib}}"', draw=none, from=2-3, to=3-3]
-\arrow["l"', color={rgb,255:red,51;green,85;blue,255}, dashed, from=2-4, to=3-5]
-\arrow["s"', color={rgb,255:red,51;green,85;blue,255}, curve={height=-12pt}, dashed, from=3-1, to=2-3]
-\arrow["{i_Y}"', from=3-1, to=3-3]
-\arrow["{p_Y}"', from=3-3, to=3-5]
+	{X'} && {X \oplus K} && {X'} \\
+	{Y'} && {F \oplus K} && {Y'}
+	\arrow["{\binom {i_X}{l \circ i_X}}", from=1-1, to=1-3]
+	\arrow["{a'}"', from=1-1, to=2-1]
+	\arrow["{(p_X, 0)}", from=1-3, to=1-5]
+	\arrow["{\binom{\ w \ x}{-l \ 1}}"', from=1-3, to=2-3]
+	\arrow["{a'}"', from=1-5, to=2-5]
+	\arrow["{\binom {j_Y}0}", from=2-1, to=2-3]
+	\arrow["{(q_Y, -q_Y\circ x)}", from=2-3, to=2-5]
 \end{tikzcd}
 {% endtikz %}
 
-The diagram is established with the procedure:
+We show the diagram is commutative:
 
-1. We factorise $a$ as $a_{tf} ∘ a_{tc} ∈ 𝖳𝖥𝗂𝖻 ∘ 𝖳𝖢𝗈𝖿𝗂𝖻$, and obtain all solid arrows.
-2. The homotopic $\square$ comes from ET4. We obtain the red part.
-3. By lifting property, we obtain all dashed blue arrows.
+- (Left). $\binom{\ w \ x}{-l \ 1} \binom {i_X}{l i_X} - \binom{j_Y}{0}a' = \binom{wi_X+xli_X}{-li_X+li_X} - \binom{j_Ya'}{0} = \binom {(wi_X-j_Ya')+x\widetilde l}{0} = 0$;
+- (Right). $q_Y(1,-x)\binom{\ w \ x}{-l \ 1}-a'(p_X,0) = q_Y(w+xl,0) - a'(p_X,0) = 0$.
 
-We observe that $a'$ is a retraction of $a_{tc}$, hence $a' ∈ 𝖳𝖢𝗈𝖿𝗂𝖻$. We finally demonstrate that $g' = b' ∘ a' ∈ 𝖳𝖥𝗂𝖻 ∘ 𝖳𝖢𝗈𝖿𝗂𝖻$ is a weak equivalence.
+Note that $K ∈ \mathcal{W}$, hence $\binom{\ w \ x}{-l \ 1}∈ 𝖶𝖾𝗊$. It remains to show
+
+- if $a' ∈ 𝖢𝗈𝖿𝗂𝖻$ is a retraction of $𝖶𝖾𝗊$, then $a' ∈ 𝖳𝖢𝗈𝖿𝗂𝖻$.
+
+We factorise $\binom{\ w \ x}{-l \ 1}$ into $𝖳𝖥𝗂𝖻 ∘ 𝖳𝖢𝗈𝖿𝗂𝖻$. By lifting property, we obtain the dashed arrow.
+
+{% tikz %}
+% https://q.uiver.app/#q=WzAsNyxbMCwwLCJYJyJdLFswLDIsIlknIl0sWzIsMCwiWCBcXG9wbHVzIEsiXSxbNCwwLCJYJyJdLFs0LDIsIlknIl0sWzIsMiwiRiBcXG9wbHVzIEsiXSxbMiwxLCJcXGJ1bGxldCJdLFswLDEsImEnIiwyXSxbMyw0LCJhJyIsMl0sWzAsMiwiXFxiaW5vbSB7aV9YfXtsIGlfWH0iXSxbMiwzLCIocF9YLCAwKSJdLFsxLDUsIlxcYmlub20ge2pfWX0wIl0sWzUsNCwiKHFfWSwgLXFfWSB4KSJdLFsyLDYsIlxcbWF0aHNme1RDb2ZpYn0iLDJdLFs2LDUsIlxcbWF0aHNme1RGaWJ9IiwyXSxbMSw2LCIiLDIseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDQsIiIsMix7ImN1cnZlIjotMn1dXQ==
+\begin{tikzcd}
+	{X'} && {X \oplus K} && {X'} \\
+	&& \bullet \\
+	{Y'} && {F \oplus K} && {Y'}
+	\arrow["{\binom {i_X}{l i_X}}", from=1-1, to=1-3]
+	\arrow["{a'}"', from=1-1, to=3-1]
+	\arrow["{(p_X, 0)}", from=1-3, to=1-5]
+	\arrow["{\mathsf{TCofib}}"', from=1-3, to=2-3]
+	\arrow["{a'}"', from=1-5, to=3-5]
+	\arrow["{\mathsf{TFib}}"', from=2-3, to=3-3]
+	\arrow[curve={height=-12pt}, from=2-3, to=3-5]
+	\arrow[curve={height=-12pt}, dashed, from=3-1, to=2-3]
+	\arrow["{\binom {j_Y}0}", from=3-1, to=3-3]
+	\arrow["{(q_Y, -q_Y x)}", from=3-3, to=3-5]
+\end{tikzcd}
+{% endtikz %}
+
+Hence $a'$ is a retraction of $𝖳𝖢𝗈𝖿𝗂𝖻$. We show $a' ∈ 𝖳𝖢𝗈𝖿𝗂𝖻$.
+
 {% endlem %}
+
 
 ### Remarks on $\mathcal{W}$ and $𝖶𝖾𝗊$
 
@@ -4665,7 +4939,7 @@ Let the ⊤-shaped diagram of two distinguished triangles be standard ones. We c
 
 We remark that, these verifications are closely analogous to that employed in verifying that triangulated categories are extriangulated.
 
-## The Localisation
+<!-- ## The Localisation
 
 ### Exact Functors
 
@@ -5369,4 +5643,4 @@ $$\begin{equation}
 The additive structure is given by Baer sum, that is,   
 {% endpf %}
 
-{% endprop %}  
+{% endprop %}   -->
