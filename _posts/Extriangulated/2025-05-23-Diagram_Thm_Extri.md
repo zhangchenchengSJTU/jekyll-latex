@@ -3202,7 +3202,7 @@ The localisation established by admissible model structure, $\mathcal{A} → �
 We finish this section with a non-example.
 
 {% ex %}
-Let $\mathcal{C}$ be the category of locally 
+Let $\mathcal{C}$ be the category of finite dimensional vector spaces over $k$, and $S = \{0 → k\}$. The localisation $\mathcal{C} → \mathcal{C}[S^{-1}]$ is never additive, as $k ≃ 0$ in the localised category while $k^2 \not≃ 0$.
 {% endex %}
 
 ### Extri Cats Neither Tri Nor Ex
