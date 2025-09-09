@@ -1,0 +1,61 @@
+\begin{thebibliography}{Mur07}
+
+\bibitem[BK]{buhlerElementaryConsiderationsExact}
+Theo Buhler and Matthias Kunzer.
+\newblock Some elementary considerations in exact categories.
+
+\bibitem[B{\"u}h10]{buhlerExactCategories2010a}
+Theo B{\"u}hler.
+\newblock Exact categories.
+\newblock {\em Expositiones Mathematicae}, 28(1):1--69, January 2010.
+
+\bibitem[Kel]{BasicConceptsEnriched}
+G.~M. Kelly.
+\newblock Basic {{Concepts}} of {{Enriched Category Theory}}.
+\newblock http://www.tac.mta.ca/tac/reprints/articles/10/tr10abs.html.
+
+\bibitem[Kel96]{kellerDerivedCategoriesTheir1996a}
+Bernhard Keller.
+\newblock Derived {{Categories}} and {{Their Uses}}.
+\newblock In {\em Handbook of {{Algebra}}}, volume~1, pages 671--701. Elsevier, 1996.
+
+\bibitem[May]{TriangulatedJPMay}
+John~P. May.
+\newblock The axioms for triangulated categories.
+
+\bibitem[Mit65]{mitchellTheoryCategories1965}
+Barry Mitchell.
+\newblock {\em Theory of {{Categories}}}.
+\newblock Academic Press, 1965.
+
+\bibitem[Mur07]{TriangulatedDMurfet}
+Daniel Murfet.
+\newblock Triangulated categories part i, April 2007.
+
+\bibitem[Nee91]{neemanNewAxiomsTriangulated1991}
+Amnon Neeman.
+\newblock Some new axioms for triangulated categories.
+\newblock {\em Journal of Algebra}, 139(1):221--255, May 1991.
+
+\bibitem[Nee01]{neemanTriangulatedCategories2001}
+Amnon Neeman.
+\newblock {\em Triangulated Categories}.
+\newblock Number no. 148 in Annals of Mathematics Studies. Princeton University Press, Princeton, 2001.
+
+\bibitem[NP19]{nakaoka:hal-02136919}
+Hiroyuki Nakaoka and Yann Palu.
+\newblock {Extriangulated categories, Hovey twin cotorsion pairs and model structures}.
+\newblock {\em {Cahiers de topologie et g{\'e}om{\'e}trie diff{\'e}rentielle cat{\'e}goriques}}, LX(2):117--193, 2019.
+\newblock arXiv title ''Mutation via Hovey twin cotorsion pairs and model structures in extriangulated categories''.
+
+\bibitem[Ver96]{AST_1996__239__R1_0}
+Jean-Louis Verdier.
+\newblock {\em Des cat\'egories d\'eriv\'ees des cat\'egories ab\'eliennes}.
+\newblock Number 239 in Ast\'erisque. Soci\'et\'e math\'ematique de France, 1996.
+
+\bibitem[Yon60]{MR225854}
+Nobuo Yoneda.
+\newblock On {E}xt and exact sequences.
+\newblock {\em J. Fac. Sci. Univ. Tokyo Sect. I}, 8:507--576, 1960.
+
+\end{thebibliography}
