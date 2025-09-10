@@ -1,61 +1,96 @@
 \begin{thebibliography}{Mur07}
 
 \bibitem[BK]{buhlerElementaryConsiderationsExact}
-Theo Buhler and Matthias Kunzer.
+Theo B{\"u}hler and Matthias Kunzer.
 \newblock Some elementary considerations in exact categories.
+\newblock URL: \url{https://pnp.mathematik.uni-stuttgart.de/lexmath/kuenzer/excounter.pdf}.
+
+\bibitem[BS01]{balmerIdempotentCompletionTriangulated2001}
+Paul Balmer and Marco Schlichting.
+\newblock Idempotent {{Completion}} of {{Triangulated Categories}}.
+\newblock {\em Journal of Algebra}, 236(2):819--834, February 2001.
+\newblock \href {https://doi.org/10.1006/jabr.2000.8529} {\path{doi:10.1006/jabr.2000.8529}}.
 
 \bibitem[B{\"u}h10]{buhlerExactCategories2010a}
 Theo B{\"u}hler.
 \newblock Exact categories.
 \newblock {\em Expositiones Mathematicae}, 28(1):1--69, January 2010.
+\newblock \href {https://doi.org/10.1016/j.exmath.2009.04.004} {\path{doi:10.1016/j.exmath.2009.04.004}}.
 
-\bibitem[Kel]{BasicConceptsEnriched}
+\bibitem[Kel82]{kellyBasicConceptsEnriched1982}
 G.~M. Kelly.
-\newblock Basic {{Concepts}} of {{Enriched Category Theory}}.
-\newblock http://www.tac.mta.ca/tac/reprints/articles/10/tr10abs.html.
+\newblock {\em Basic Concepts of Enriched Category Theory}.
+\newblock Number~64 in London {{Mathematical Society}} Lecture Note Series. Cambridge University Press, Cambridge ; New York, 1982.
+\newblock URL: \url{http://www.tac.mta.ca/tac/reprints/articles/10/tr10abs.html}.
 
 \bibitem[Kel96]{kellerDerivedCategoriesTheir1996a}
 Bernhard Keller.
 \newblock Derived {{Categories}} and {{Their Uses}}.
 \newblock In {\em Handbook of {{Algebra}}}, volume~1, pages 671--701. Elsevier, 1996.
+\newblock \href {https://doi.org/10.1016/S1570-7954(96)80023-4} {\path{doi:10.1016/S1570-7954(96)80023-4}}.
+
+\bibitem[LC07]{leKaroubiannessTriangulatedCategory2007}
+Jue Le and Xiao-Wu Chen.
+\newblock Karoubianness of a triangulated category.
+\newblock {\em Journal of Algebra}, 310(1):452--457, April 2007.
+\newblock \href {https://doi.org/10.1016/j.jalgebra.2006.11.027} {\path{doi:10.1016/j.jalgebra.2006.11.027}}.
 
 \bibitem[May]{TriangulatedJPMay}
 John~P. May.
 \newblock The axioms for triangulated categories.
+\newblock URL: \url{https://www.math.uchicago.edu/~may/MISC/Triangulate.pdf}.
 
 \bibitem[Mit65]{mitchellTheoryCategories1965}
 Barry Mitchell.
 \newblock {\em Theory of {{Categories}}}.
 \newblock Academic Press, 1965.
+\newblock URL: \url{https://webhomes.maths.ed.ac.uk/~v1ranick/papers/mitchell.pdf}.
 
 \bibitem[Mur07]{TriangulatedDMurfet}
 Daniel Murfet.
 \newblock Triangulated categories part i, April 2007.
+\newblock URL: \url{http://therisingsea.org/notes/TriangulatedCategories.pdf}.
 
 \bibitem[Nee91]{neemanNewAxiomsTriangulated1991}
 Amnon Neeman.
 \newblock Some new axioms for triangulated categories.
 \newblock {\em Journal of Algebra}, 139(1):221--255, May 1991.
+\newblock \href {https://doi.org/10.1016/0021-8693(91)90292-G} {\path{doi:10.1016/0021-8693(91)90292-G}}.
 
 \bibitem[Nee01]{neemanTriangulatedCategories2001}
 Amnon Neeman.
 \newblock {\em Triangulated Categories}.
 \newblock Number no. 148 in Annals of Mathematics Studies. Princeton University Press, Princeton, 2001.
+\newblock URL: \url{https://homepage.mi-ras.ru/~akuznet/homalg/Neeman%20Triangulated%20categories.pdf}.
 
 \bibitem[NP19]{nakaoka:hal-02136919}
 Hiroyuki Nakaoka and Yann Palu.
 \newblock {Extriangulated categories, Hovey twin cotorsion pairs and model structures}.
 \newblock {\em {Cahiers de topologie et g{\'e}om{\'e}trie diff{\'e}rentielle cat{\'e}goriques}}, LX(2):117--193, 2019.
 \newblock arXiv title ''Mutation via Hovey twin cotorsion pairs and model structures in extriangulated categories''.
+\newblock URL: \url{https://hal.science/hal-02136919}.
+
+\bibitem[RZ21]{rongStrongVersionSnake2021}
+Shi Rong and Pu~Zhang.
+\newblock Strong version of {{Snake Lemma}} in exact categories.
+\newblock {\em Homology, Homotopy and Applications}, 23(2):151--163, 2021.
+\newblock \href {https://doi.org/10.4310/HHA.2021.v23.n2.a9} {\path{doi:10.4310/HHA.2021.v23.n2.a9}}.
 
 \bibitem[Ver96]{AST_1996__239__R1_0}
 Jean-Louis Verdier.
 \newblock {\em Des cat\'egories d\'eriv\'ees des cat\'egories ab\'eliennes}.
 \newblock Number 239 in Ast\'erisque. Soci\'et\'e math\'ematique de France, 1996.
+\newblock URL: \url{https://www.numdam.org/item/AST_1996__239__R1_0/}.
+
+\bibitem[Wis]{wiseNONELEMENTARYPROOFSNAKE}
+Jonathan Wise.
+\newblock A {{A Non-elementary Proof of the Snake Lemma}}.
+\newblock URL: \url{https://ncatlab.org/nlab/files/Wise-SnakeLemma.pdf}.
 
 \bibitem[Yon60]{MR225854}
 Nobuo Yoneda.
 \newblock On {E}xt and exact sequences.
 \newblock {\em J. Fac. Sci. Univ. Tokyo Sect. I}, 8:507--576, 1960.
+\newblock URL: \url{https://mathscinet.ams.org/mathscinet/article?mr=225854}.
 
 \end{thebibliography}

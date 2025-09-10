@@ -1,23 +1,23 @@
 # Fdb version 4
-["bibtex Extri"] 1757484565.81082 "Extri.aux" "Extri.bbl" "Extri" 1757484595.50297 0
-  "./ref.bib" 1757425695 6169 27456d52bae312de0cc27ca7bbdfd8d3 ""
-  "Extri.aux" 1757484593 3654 d4de2ebbcc631e307c7dbfb8ea858c21 "xelatex"
-  "c:/texlive/2024/texmf-dist/bibtex/bst/base/alpha.bst" 1740726061 23907 a5f93555796fb564b924339521f10a7c ""
+["bibtex Extri"] 1757514303.72376 "Extri.aux" "Extri.bbl" "Extri" 1757514323.08742 0
+  "./ref.bib" 1757508186 9831 a585c6387594efdab525c8d13726d724 ""
+  "Extri.aux" 1757514319 7644 75ecd0eb3f4cc731a931c90a4be5cc02 "xelatex"
+  "c:/texlive/2024/texmf-dist/bibtex/bst/urlbst/alphaurl.bst" 1740728801 36789 471f9462b8363fe2bc95f4511e37e918 ""
   (generated)
   "Extri.bbl"
   "Extri.blg"
   (rewritten before read)
-["xdvipdfmx"] 1757484594.69102 "Extri.xdv" "Extri.pdf" "Extri" 1757484595.51225 0
-  "Extri.xdv" 1757484593 1042688 6bc5372e0673373ab06bc0612172e88e "xelatex"
+["xdvipdfmx"] 1757514321.32645 "Extri.xdv" "Extri.pdf" "Extri" 1757514323.10378 0
+  "Extri.xdv" 1757514319 1294924 433a0c08f16c2e2b040faf22fe630bb6 "xelatex"
   (generated)
   "Extri.pdf"
   (rewritten before read)
-["xelatex"] 1757484587.85315 "d:/GitHub/jekyll-latex/assets/PDF/Extri/Extri.tex" "Extri.xdv" "Extri" 1757484595.50328 0
-  "Extri.aux" 1757484593 3654 d4de2ebbcc631e307c7dbfb8ea858c21 "xelatex"
-  "Extri.bbl" 1757484566 2249 9f6146acc8d6633e28f3562fb258793d "bibtex Extri"
-  "Extri.out" 1757484593 1461 31d4323314279072d30196a290879f2a "xelatex"
-  "Extri.tex" 1757484587 255674 13e54997101494c2ebee9c70c07636c6 ""
-  "Extri.toc" 1757484593 997 63b9ee25499adf2a79743b9e7645ab07 "xelatex"
+["xelatex"] 1757514304.56758 "d:/GitHub/jekyll-latex/assets/PDF/Extri/Extri.tex" "Extri.xdv" "Extri" 1757514323.08794 0
+  "Extri.aux" 1757514319 7644 75ecd0eb3f4cc731a931c90a4be5cc02 "xelatex"
+  "Extri.bbl" 1757514304 4500 67f3cb2218486e99cfc57d4e6fecbaf2 "bibtex Extri"
+  "Extri.out" 1757514319 1505 d1909c237307163136384ac72e730851 "xelatex"
+  "Extri.tex" 1757514286 315766 5d4b1219caefaaef766e939f974202e5 ""
+  "Extri.toc" 1757514319 1106 177715a5560b183ad3941ca3ab8d1d76 "xelatex"
   "c:/Windows/Fonts/msyh.ttc" 1756300068 19704352 1e10e74402e59d54499af795caf0b135 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1740726853 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1740729019 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -143,6 +143,7 @@
   "c:/texlive/2024/texmf-dist/tex/latex/base/size11.clo" 1740727280 8464 59874a3b0776c73e2a138b025d8473dd ""
   "c:/texlive/2024/texmf-dist/tex/latex/base/ts1enc.def" 1740727280 8090 f16408278fc28f119d5a6757c212f57e ""
   "c:/texlive/2024/texmf-dist/tex/latex/cjk/texinput/CJKfntef.sty" 1740726205 12851 25a9b5cc006609feb5c9a20ce24a5392 ""
+  "c:/texlive/2024/texmf-dist/tex/latex/cleveref/cleveref.sty" 1740726215 329481 7fc6b003158402a4c694bc0a1b729308 ""
   "c:/texlive/2024/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg" 1740726373 1770 50e40a993c4c5ea72af9155aff7e605c ""
   "c:/texlive/2024/texmf-dist/tex/latex/ctex/config/ctex.cfg" 1740726373 1230 140911b70e325208170dc573931e772d ""
   "c:/texlive/2024/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg" 1740726373 1904 e0018b8e661c6b3e37f6e4a53f472d74 ""
@@ -154,6 +155,7 @@
   "c:/texlive/2024/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-windows.def" 1740726373 4952 f781dcade04ad6ae6d09fde004a752be ""
   "c:/texlive/2024/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-article.def" 1740726373 4622 4f152431881516d2a81822d98108b61f ""
   "c:/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1740726597 46845 3b58f70c6e861a13d927bff09d35ecbc ""
+  "c:/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty" 1740726626 18450 88279bf67c81e69f8e3f1c1bad1a26c5 ""
   "c:/texlive/2024/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty" 1740726861 163194 e97577b0d79d363e11289d4e27baa8a4 ""
   "c:/texlive/2024/texmf-dist/tex/latex/fontspec/fontspec.cfg" 1740726861 549 c4adac819276241fea8eb79c5ab7b99e ""
   "c:/texlive/2024/texmf-dist/tex/latex/fontspec/fontspec.sty" 1740726861 3484 ff877041166391bc5ca8a1e45614784e ""
@@ -161,6 +163,7 @@
   "c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1740726960 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1740726960 1224 978390e9c2234eab29404bc21b268d1e ""
   "c:/texlive/2024/texmf-dist/tex/latex/graphics-def/xetex.def" 1740726960 14788 1dde73f396dd97d88c838bee2a352abe ""
+  "c:/texlive/2024/texmf-dist/tex/latex/graphics/color.sty" 1740726959 7233 e46ce9241d2b2ca2a78155475fdd557a ""
   "c:/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty" 1740726959 18387 8f900a490197ebaf93c02ae9476d4b09 ""
   "c:/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty" 1740726959 8010 a8d949cbdbc5c983593827c9eec252e1 ""
   "c:/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty" 1740726959 2671 7e67d78d9b88c845599a85b2d41f2e39 ""
@@ -199,8 +202,10 @@
   "c:/texlive/2024/texmf-dist/tex/latex/stmaryrd/Ustmry.fd" 1740728390 1766 216b0f832c406513647608b5bb9bb8ff ""
   "c:/texlive/2024/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty" 1740728390 11080 aa7f81da60ce104f0dbb8b827dd14383 ""
   "c:/texlive/2024/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty" 1740728592 823 2375f30bf77af9357d3b4834b054bf52 ""
+  "c:/texlive/2024/texmf-dist/tex/latex/titlesec/titlesec.sty" 1740728632 48766 0b93839be28e9744a24c45075c75b2e2 ""
   "c:/texlive/2024/texmf-dist/tex/latex/url/url.sty" 1740728800 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "c:/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty" 1740728907 55487 80a65caedd3722f4c20a14a69e785d8f ""
+  "c:/texlive/2024/texmf-dist/tex/latex/xurl/xurl.sty" 1740728956 4675 e4b8c405820368c2dfb03526e16d725a ""
   "c:/texlive/2024/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg" 1740729050 5700 603e2f09dad175efabc8594730623a0b ""
   "c:/texlive/2024/texmf-dist/tex/latex/zhnumber/zhnumber.sty" 1740729050 38160 aafa8d740e4f21b62a4acd4835e54359 ""
   "c:/texlive/2024/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg" 1740728914 408 7369c27beaa819c5f46de3795b22ee3e ""
@@ -210,7 +215,7 @@
   "c:/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1740729240 10849681 69d56c4b4a15f85f81031ce1ef8c005b ""
   "c:/texlive/2024/texmf.cnf" 1740729061 713 e69b156964470283e0530f5060668171 ""
   "c:/texlive/texmf-local/tex/latex/quiver/quiver.sty" 1751804110 1999 415524e3e500d158be48459b7e09ec69 ""
-  "d:/GitHub/jekyll-latex/assets/PDF/Extri/Extri.tex" 1757484587 255674 13e54997101494c2ebee9c70c07636c6 ""
+  "d:/GitHub/jekyll-latex/assets/PDF/Extri/Extri.tex" 1757514286 315766 5d4b1219caefaaef766e939f974202e5 ""
   (generated)
   "Extri.aux"
   "Extri.log"
