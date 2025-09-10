@@ -8,4 +8,4 @@
 \contentsline {subsection}{\numberline {2.3}五项正合列的推论}{13}{subsection.2.3}%
 \contentsline {section}{\numberline {3}外三角范畴基本图表定理}{14}{section.3}%
 \contentsline {subsection}{\numberline {3.1}双 deflation (inflation) 的拉回 (推出)}{14}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}同伦的推出拉回方块}{16}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}同伦的推出拉回方块}{17}{subsection.3.2}%

@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.28)  10 SEP 2025 03:24
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.28)  10 SEP 2025 14:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/GitHub/jekyll-latex/assets/PDF/Extri/外三角范畴.tex
-(d:/GitHub/jekyll-latex/assets/PDF/Extri/外三角范畴.tex
+**d:/GitHub/jekyll-latex/assets/PDF/Extri/Extri.tex
+(d:/GitHub/jekyll-latex/assets/PDF/Extri/Extri.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (c:/texlive/2024/texmf-dist/tex/latex/ctex/ctexart.cls (c:/texlive/2024/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg
@@ -708,8 +708,8 @@ Package: quoting 2014/01/28 v0.1c Consolidated environment for displayed text
 \c@remark=\count354
 \c@lemma=\count355
 \c@corollary=\count356
- (./外三角范畴.aux)
-\openout1 = `外三角范畴.aux'.
+ (./Extri.aux)
+\openout1 = `Extri.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
@@ -823,9 +823,9 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 37.
-(./外三角范畴.out) (./外三角范畴.out)
+(./Extri.out) (./Extri.out)
 \@outlinefile=\write4
-\openout4 = `外三角范畴.out'.
+\openout4 = `Extri.out'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -840,9 +840,9 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 39.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 39.
- (c:/texlive/2024/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) (./外三角范畴.toc)
+ (c:/texlive/2024/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) (./Extri.toc)
 \tf@toc=\write5
-\openout5 = `外三角范畴.toc'.
+\openout5 = `Extri.toc'.
 
  [1
 
@@ -855,26 +855,26 @@ LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.95> not available
 LaTeX Font Info:    Trying to load font information for U+euf on input line 171.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] (./外三角范畴.bbl
+) [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] (./Extri.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 13--16
 []\TU/Caladea(0)/m/n/10.95 G. M. Kelly.  Basic Concepts of Enriched Category Theory.
  []
 
-[16]) [17] (./外三角范畴.aux)
+[19]) [20] (./Extri.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
-Package rerunfilecheck Info: File `外三角范畴.out' has not changed.
+Package rerunfilecheck Info: File `Extri.out' has not changed.
 (rerunfilecheck)             Checksum: 31D4323314279072D30196A290879F2A;1461.
  ) 
 Here is how much of TeX's memory you used:
- 35074 strings out of 474773
- 800133 string characters out of 5761289
- 1997842 words of memory out of 5000000
- 56693 multiletter control sequences out of 15000+600000
+ 36267 strings out of 474773
+ 831191 string characters out of 5761289
+ 2003842 words of memory out of 5000000
+ 57886 multiletter control sequences out of 15000+600000
  568791 words of font info for 117 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  131i,17n,135p,3225b,1449s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 外三角范畴.xdv (17 pages, 852056 bytes).
+Output written on Extri.xdv (20 pages, 1042688 bytes).

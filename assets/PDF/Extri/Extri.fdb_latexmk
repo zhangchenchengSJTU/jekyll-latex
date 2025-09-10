@@ -1,18 +1,23 @@
 # Fdb version 4
-["bibtex 外三角范畴"] 1757445854.64426 "外三角范畴.aux" "外三角范畴.bbl" "外三角范畴" 1757445905.69622 0
+["bibtex Extri"] 1757484565.81082 "Extri.aux" "Extri.bbl" "Extri" 1757484595.50297 0
   "./ref.bib" 1757425695 6169 27456d52bae312de0cc27ca7bbdfd8d3 ""
+  "Extri.aux" 1757484593 3654 d4de2ebbcc631e307c7dbfb8ea858c21 "xelatex"
   "c:/texlive/2024/texmf-dist/bibtex/bst/base/alpha.bst" 1740726061 23907 a5f93555796fb564b924339521f10a7c ""
-  "外三角范畴.aux" 1757445902 3350 f11e3c4aedb5cd65dca723d4bd935d59 "xelatex"
   (generated)
-  "外三角范畴.bbl"
-  "外三角范畴.blg"
+  "Extri.bbl"
+  "Extri.blg"
   (rewritten before read)
-["xdvipdfmx"] 1757445904.24369 "外三角范畴.xdv" "外三角范畴.pdf" "外三角范畴" 1757445905.71195 0
-  "外三角范畴.xdv" 1757445902 852056 26321c9ddb7d0c83c052b582ee197126 "xelatex"
+["xdvipdfmx"] 1757484594.69102 "Extri.xdv" "Extri.pdf" "Extri" 1757484595.51225 0
+  "Extri.xdv" 1757484593 1042688 6bc5372e0673373ab06bc0612172e88e "xelatex"
   (generated)
-  "外三角范畴.pdf"
+  "Extri.pdf"
   (rewritten before read)
-["xelatex"] 1757445893.24213 "d:/GitHub/jekyll-latex/assets/PDF/Extri/外三角范畴.tex" "外三角范畴.xdv" "外三角范畴" 1757445905.69669 0
+["xelatex"] 1757484587.85315 "d:/GitHub/jekyll-latex/assets/PDF/Extri/Extri.tex" "Extri.xdv" "Extri" 1757484595.50328 0
+  "Extri.aux" 1757484593 3654 d4de2ebbcc631e307c7dbfb8ea858c21 "xelatex"
+  "Extri.bbl" 1757484566 2249 9f6146acc8d6633e28f3562fb258793d "bibtex Extri"
+  "Extri.out" 1757484593 1461 31d4323314279072d30196a290879f2a "xelatex"
+  "Extri.tex" 1757484587 255674 13e54997101494c2ebee9c70c07636c6 ""
+  "Extri.toc" 1757484593 997 63b9ee25499adf2a79743b9e7645ab07 "xelatex"
   "c:/Windows/Fonts/msyh.ttc" 1756300068 19704352 1e10e74402e59d54499af795caf0b135 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1740726853 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1740729019 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -205,16 +210,11 @@
   "c:/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1740729240 10849681 69d56c4b4a15f85f81031ce1ef8c005b ""
   "c:/texlive/2024/texmf.cnf" 1740729061 713 e69b156964470283e0530f5060668171 ""
   "c:/texlive/texmf-local/tex/latex/quiver/quiver.sty" 1751804110 1999 415524e3e500d158be48459b7e09ec69 ""
-  "d:/GitHub/jekyll-latex/assets/PDF/Extri/外三角范畴.tex" 1757445892 209380 68792cf2ae857ad97ac719651a2b2a1f ""
-  "外三角范畴.aux" 1757445902 3350 f11e3c4aedb5cd65dca723d4bd935d59 "xelatex"
-  "外三角范畴.bbl" 1757445855 2249 9f6146acc8d6633e28f3562fb258793d "bibtex 外三角范畴"
-  "外三角范畴.out" 1757445902 1461 31d4323314279072d30196a290879f2a "xelatex"
-  "外三角范畴.tex" 1757445892 209380 68792cf2ae857ad97ac719651a2b2a1f ""
-  "外三角范畴.toc" 1757445902 997 fc2006882c65b5a0a4e8b11f4787a704 "xelatex"
+  "d:/GitHub/jekyll-latex/assets/PDF/Extri/Extri.tex" 1757484587 255674 13e54997101494c2ebee9c70c07636c6 ""
   (generated)
-  "外三角范畴.aux"
-  "外三角范畴.log"
-  "外三角范畴.out"
-  "外三角范畴.toc"
-  "外三角范畴.xdv"
+  "Extri.aux"
+  "Extri.log"
+  "Extri.out"
+  "Extri.toc"
+  "Extri.xdv"
   (rewritten before read)
