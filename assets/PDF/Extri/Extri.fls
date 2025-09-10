@@ -374,3 +374,9 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm7.tfm
+INPUT ./Extri.bbl
+INPUT ./Extri.bbl
+INPUT Extri.bbl
+INPUT Extri.aux
+INPUT ./Extri.out
+INPUT ./Extri.out
