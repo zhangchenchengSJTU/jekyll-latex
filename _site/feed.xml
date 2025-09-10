@@ -622,7 +622,33 @@ In particular,
 &lt;h4 id=&quot;semi-local-rings-1&quot;&gt;Semi-local Rings&lt;/h4&gt;
 
 &lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;(Semi-local rings). $R$ is semi-local if $R / J(R)$ is semisimple (= Artinian in this case).&lt;/p&gt;
+  &lt;p&gt;(Generated and cogenerated). Say $M$ is finitely generated iff the following equivalent definitions hold:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;for any sum of submodules $M = ∑ M_∙$, there a finite sub-sum $M = ∑ _{i=1}^n M_i$;&lt;/li&gt;
+    &lt;li&gt;any surjection $∐ M_∙ ↠ M$, factors through a finite sub-coproduct $∐ _{i=1}^n M_i ↠ M$;&lt;/li&gt;
+    &lt;li&gt;any transfinite limit of inclusion of proper submodules is proper;&lt;/li&gt;
+    &lt;li&gt;for any cogenerator $E$ (e.g. $(_RR)^+$), there is an injection $M ↪ E^n$ for some $n$.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;Dually, $M$ is finitely cogenerated iff the following equivalent definitions hold:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;for any intersection of submodules $0 = ⋂ M_∙$, there a finite sub-intersection $0 = ⋂ _{i=1}^n M_i$;&lt;/li&gt;
+    &lt;li&gt;any injection $M ↪ ∏ M_∙$, factors through a finite subproduct $M ↪ ∏ _{i=1}^n M_i$;&lt;/li&gt;
+    &lt;li&gt;any transfinite colimit of inclusion of proper submodules is non-zero;&lt;/li&gt;
+    &lt;li&gt;for any generator $Q$ (e.g. $R_R$), there is a surjection $Q^n ↠ M$ for some $n$.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(Semi-local rings). The following are equivalent for $R$ to be semi-local:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$\frac{R}{J(R)}$ is semisimple;&lt;/li&gt;
+    &lt;li&gt;$\frac{R}{J(R)}$ is right Artinian;&lt;/li&gt;
+    &lt;li&gt;$\frac{R}{J(R)}$ is finitely cogenerated;&lt;/li&gt;
+    &lt;li&gt;right semi-simple modules over $R$ are closed under $∏$.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1 → 2). By Wedderburn-Artin theorem. &lt;br /&gt; (2 → 3). For $M ↪ ∏ M_∙$, we identify $M$ as a submodule of $∏ M_∙$. If this product never factors through a finite subproduct, then we obtain an infinite descending chain of submodules of $M$ by projection to finite subproducts. A contradiction! &lt;br /&gt; (3 → 2). Since $J(\frac{R}{J(R)}) = 0$, for any $\frac{R}{J(R)}$-module $M$, $⋂ _{f : M → \text{simple}} \ker f = 0$. Hence the product of simple modules is a cogenerator. By assumption, $\frac{R}{J(R)}$ is a submodule of finite product of simple modules, it is right Artinian. &lt;br /&gt; (1 → 4). The product of semi-simple modules is a module over $\frac{R}{J(R)}$, hence it is semi-simple as both an $\frac{R}{J(R)}$ module and an $R$ module. &lt;br /&gt; (4 → 1). By analysis of (3 → 2), we see $\frac{R}{J(R)}$ is a submodule of a product of simple modules, hence it is semi-simple.&lt;/p&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;example&quot;&gt;
@@ -848,6 +874,8 @@ J(\mathrm{End}(M)) = \{f : \operatorname{im}(f) ↪ M \ \text{is superfluous}.\}
 J(\mathrm{End}(M)) ≃ (M, J(M)) ≃ (J(M), M).
 \end{equation}$$&lt;/p&gt;
 &lt;/div&gt;
+
+&lt;p&gt;Corollary, the statements holds for any finite length module $M$.&lt;/p&gt;
 
 &lt;h4 id=&quot;endolocal-modules&quot;&gt;Endolocal Modules&lt;/h4&gt;
 
@@ -1090,7 +1118,7 @@ M_t ⊆ ∐ _{H_t ∪ J_t} N_∙ ⊆ ∐ _{G ∪ I_t} M_∙.
 &lt;div class=&quot;theorem&quot;&gt;
   &lt;p&gt;(Nil lifting). Let $I$ be a nil ideal. Then idempotent element $[x] ∈ R/I$ has an idempotent preimage in $R$. In particular, the lifting is unique for commutative rings.&lt;/p&gt;
   &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;Let $e$ be arbitrary preimage of $[x]$. There is $k$ s.t. $(e(1-e))^k = 0$. There is a polynomial $p = p(e)$ s.t. $e^k + (1-e)^k + p = 1$. Clearly $p ∈ I$, we take $q := (1-p)^{-1}$. Now&lt;/p&gt;
+    &lt;p&gt;Let $e$ be arbitrary preimage of $[x]$. There is $k$ s.t. $(e(1-e))^k = 0$. There is a polynomial $p = p(e)$ s.t. $e^k + (1-e)^k + p = 1$. Clearly $p ∈ I$, we take $q := (1-p)^{-1}$ (also a polynomial in $e$). Now&lt;/p&gt;
     &lt;ul&gt;
       &lt;li&gt;$e^kq$ is a preimage of $[x]$;&lt;/li&gt;
       &lt;li&gt;$e^kq + (1-e)^kq = (1-p)^{-1}q = 1$;&lt;/li&gt;
@@ -1116,6 +1144,37 @@ M_t ⊆ ∐ _{H_t ∪ J_t} N_∙ ⊆ ∐ _{G ∪ I_t} M_∙.
 \boxed{\text{For CommRings, Nil lifting is always unique!}}
 \end{equation}$$&lt;/p&gt;
 
+&lt;p&gt;There is a concern whether nillifting preserves orthogonality.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;Let $I ⊆ J(R)$ be a right ideal which admits idempotent lifting property. For any orthogonal idempotents $[e], [f] ∈ \frac{R}{J(R)}$ and any idempotent lifting $e$ of $[e]$, there exists an idempotent lifting $f'$ of $[f]$ s.t. $e,f'$ are orthogonal in $R$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Let $f$ be any idempotent lifting of $f$. Then $fe ∈ I ⊆ J(R)$. We take $$\begin{equation}
+f' := (1-e)(1-fe)^{-1}f(1-fe)
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;We see that&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;$(f - f') ≡ (1-e)(f - (1-fe)^{-1}f(1-fe)) ≡ 0 \mod I$;&lt;/li&gt;
+      &lt;li&gt;$ef' = (e-e^2)(1-fe)^{-1}f(1-fe) = 0$;&lt;/li&gt;
+      &lt;li&gt;$f' e = (1-e)(1-fe)^{-1}(fe - ffee) = 0$;&lt;/li&gt;
+      &lt;li&gt;$f' ^2 = (1-e)(1-fe)^{-1}\underset{= f}{\underbrace{f(1-fe)(1-e)(1-fe)^{-1}f}}(1-fe) =f'$.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;For any countable set of orthogonal idempotents $\{[e_i]\}_{i ∈ ℕ} ⊆ R / I$, where $I ⊆ J(R)$ admits the idempotent lifting property. Then there is a way to find orthogonal idempotent liftings $\{e_i\}_{i ∈ ℕ} ⊆ R$. Moreover one can begin with any choice of lifting $e_{n_0} ↦ [e_{n_0}]$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;By induction. Since being an othogonal idempotent set is verified by collection of finite sums, the induction extends to countable sets.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Hence, for nil ideals, idempotent lifting can be chosen to preserve orthogonality.&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+\boxed{\text{Nil idempotent lifting preserves orthogonality!}}
+\end{equation}$$&lt;/p&gt;
+
 &lt;div class=&quot;theorem&quot;&gt;
   &lt;p&gt;(Levitzki). Let $R$ be a right Noetherian ring. Then every nil right ideal is nilpotent.&lt;/p&gt;
   &lt;div class=&quot;proof&quot;&gt;
@@ -1129,10 +1188,28 @@ M_t ⊆ ∐ _{H_t ∪ J_t} N_∙ ⊆ ∐ _{G ∪ I_t} M_∙.
 &lt;/div&gt;
 
 &lt;p&gt;$$\begin{equation}
-\boxed{\text{For Noetherian rings, Nil = Nilpotent!}}
+\boxed{\text{For Noetherian rings, nil = nilpotent!}}
 \end{equation}$$&lt;/p&gt;
 
 &lt;p&gt;The commutative case is easy, which reveals $\mathrm{Spec}(R/I) ≃ \mathrm{Spec}(R)$ induced by $R ↠ R/I$ for any nil ideal $I$.&lt;/p&gt;
+
+&lt;h4 id=&quot;nil-lifting-fg-projectives&quot;&gt;Nil Lifting f.g. Projectives&lt;/h4&gt;
+
+&lt;p&gt;We show nil lifting for idempotents, which suggests a bijection between f.g. projective modules.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;Let $I$ be a nil right ideal, then $φ : R ↠ R / I$ induces a bijection between the isomorphism classes of f.g. projective modules via $φ^∗ : 𝐩𝐫𝐨𝐣(R/I) → 𝐩𝐫𝐨𝐣 (R)$ and $P ↦ P/PI$.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;This shows isomorphism between the Grothendieck groups $K_0(R) ≃ K_0(R/I)$.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;If $P ∈ 𝐌𝐨𝐝 _R$ is projective, then $P/PI ∈ 𝐌𝐨𝐝 _{R/I}$ is projective.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;(Surjective). Any projective module $Q$ over $R/I$ takes the form $[e] (R/I)^n$. By idempotent lifting, $Q = (eR^n)/I$.&lt;/li&gt;
+      &lt;li&gt;(Injective). For projective $R$ modules $P$ and $P'$ s.t. $P/PI ≃ P'/P'I$. We take $P ↠ P/PI$ and $P' ↠ P'/P'I$. The lifting property yields $P → P'$. Note that $\operatorname{im}(P → P') + P'I = P'$, and $P' I ⊆ P' J(R)$ is superfluous (by Nakayama lemma). Hence $P → P'$ is surjective. By symmetric analysis, $P ≃ P'$.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;semiperfect-rings&quot;&gt;Semiperfect Rings&lt;/h4&gt;
 
@@ -1265,7 +1342,7 @@ M = L = ∐ _{n ∈ ℕ} R,\quad N = (\{1_{n+1} r_n - 1_n\}_{n ∈ ℕ}).
 &lt;div class=&quot;example&quot;&gt;
   &lt;p&gt;A transfinite nilpotent ideal must be nil, thus&lt;/p&gt;
   &lt;ul&gt;
-    &lt;li&gt;it lifts idempotents from quotient rings;&lt;/li&gt;
+    &lt;li&gt;it lifts idempotents from quotient rings (and preserves orthogonality);&lt;/li&gt;
     &lt;li&gt;it is contained in the Jacobson radical.&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
@@ -1282,6 +1359,51 @@ M = L = ∐ _{n ∈ ℕ} R,\quad N = (\{1_{n+1} r_n - 1_n\}_{n ∈ ℕ}).
   &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;Over finite field, a f.g. sub-ideal of transfinite nilpotent ideal is nilpotent.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;transfinite-nilpotent-ideal-ii&quot;&gt;Transfinite Nilpotent Ideal (II)&lt;/h4&gt;
+
+&lt;p&gt;We conclude a sufficient condition for $J(R)$ to be transfinite nilpotent.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;$J(R)$ is right transfinite nilpotent&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;if every non-zero right module has a maximal submodule;&lt;/li&gt;
+    &lt;li&gt;if every non-zero left module has a minimal submodule.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;If any right module $M (≠ 0)$ has a maximal submodule, then $MJ ⊆ J(M) ⊊ M$. Hence $J$ is transfinite nilpotent. The converse is not true (see following example). &lt;br /&gt; If left module $X (≠ 0)$ has a minimal submodule $X_0$, then $X_0$ is simple. Note that $J$ contains the annihilator of any simple module. Hence $J X_0 = 0$. Hence, $J$ is transfinite nilpotent. Conversely, $ℤ$ over $ℤ$ is a non-example.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We show some theorems (due to Hamsher) over commutative rings.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;Let $R$ be commutative. Then the following are equivalent&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Every $M ≠ 0$ has maximal submodule;&lt;/li&gt;
+    &lt;li&gt;$J(R)$ is transfinite nilpotent and every $R / J(R)$-module has a maximal submodule;&lt;/li&gt;
+    &lt;li&gt;$J(R)$ is transfinite nilpotent and $R / J(R)$ is vNR.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1 → 2). $J(R)$ is transfinite nilpotent by previous proposition. $J(R/J(R)) = 0$ is again transfinite nilpotent. &lt;br /&gt; (2 → 3). We take arbitrary non-zero $[x] ∈ R / J(R)$ and show that $([x]) ⊕ \mathrm{ann}([x]) = R / J(R)$. WLOG We assume $J(R) = 0$. We consider the flat module $F:= \operatorname{cok}(R^{(ω )}\xrightarrow {1- x} R^{(ω)})$.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;If $F = 0$, then $\varinjlim (x^k) = 0$. By non-existence of nilpotent, $x = 0$.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;If $F ≠ 0$, we take a maximal submodule $M ⊊ F$.&lt;/p&gt;
+    &lt;p&gt;Let $[e_n]$ (we assume $R^{(ω )} = ∐_{n ≥ 1} R e_n$) be the least coordinal idempotent $∉ M$. We take the combination&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+([e_n]) + M = F,\quad r[e_n] + m = [e_{2n}],
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;and obtain&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+[e_{2n}] = x^n [e_n] = r[e_n] + m
+\end{equation}$$&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;h3 id=&quot;right-perfect-rings&quot;&gt;Right Perfect Rings&lt;/h3&gt;
 
 &lt;h4 id=&quot;def-via-idempotents&quot;&gt;Def via Idempotents&lt;/h4&gt;
@@ -1291,6 +1413,13 @@ M = L = ∐ _{n ∈ ℕ} R,\quad N = (\{1_{n+1} r_n - 1_n\}_{n ∈ ℕ}).
 &lt;/div&gt;
 
 &lt;p&gt;Right perfect rings generalise semi-perfect rings by requiring radical to be transfinite nilpotent.&lt;/p&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;A right perfect ring with $\frac{R}{J(R)}$ simple is exactly the matrix ring $M_n (S)$, where $S$ is local with transfinite nilpotent maximal ideal.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1 → 2). When $R$ is right perfect, it is semi-perfect, i.e., the endomorphism ring of a finite direct sum of endolocal modules. Since $\frac{R}{J(R)}$ is simple, $R$ takes the form $\mathrm{End}(M^n)$. Now $R ≃ M_n (\mathrm{End}(M))$. We take $S:= \mathrm{End}(M)$. Hence $J(R) = M_n (J(\mathrm{End}(M)))$. By checking the $(1,1)$-th entry, $J(S)$ is transfinite nilpotent. &lt;br /&gt; (2 → 1). By Morita equivalence, $R = M_n (S) ≃ \mathrm{End}(S^n)$ is semi-perfect. Note that $J(R) = M_n (J(S))$ is right transfinite nilpotent when $J(S)$ is .&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
 &lt;div class=&quot;example&quot;&gt;
   &lt;p&gt;The local ring $l⟨ \{x_i\}_{i ≥ 0} ∣ \{x_j x_i ∣ j ≥ 1\}⟩$ is right perfect but not left-perfect, as the maximal ideal is right transfinite nilpotent but not left-transfinite nilpotent.&lt;/p&gt;
@@ -1468,10 +1597,10 @@ M = L = ∐ _{n ∈ ℕ} R,\quad N = (\{1_{n+1} r_n - 1_n\}_{n ∈ ℕ}).
   &lt;p&gt;The following are equivalent for a ring $R$:&lt;/p&gt;
   &lt;ol&gt;
     &lt;li&gt;$J(R)$ is right transfinite nilpotent and $\frac{R}{J(R)}$ is semi-simple.&lt;/li&gt;
-    &lt;li&gt;$R$ satisfies the following:       &lt;ol&gt;
+    &lt;li&gt;$R$ satisfies the following:       &lt;ul&gt;
         &lt;li&gt;there are no infinite sets of orthogonal idempotents;&lt;/li&gt;
         &lt;li&gt;any non-zero left module $X$ has a simple submodule.&lt;/li&gt;
-      &lt;/ol&gt;
+      &lt;/ul&gt;
     &lt;/li&gt;
     &lt;li&gt;All right modules have a projective cover.&lt;/li&gt;
   &lt;/ol&gt;
@@ -1506,6 +1635,40 @@ M = L = ∐ _{n ∈ ℕ} R,\quad N = (\{1_{n+1} r_n - 1_n\}_{n ∈ ℕ}).
   &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;h4 id=&quot;def-via-hereditary-radical&quot;&gt;Def via Hereditary Radical&lt;/h4&gt;
+
+&lt;p&gt;Recall that for ses $0 → L → M → N → 0$, there is an induced chain complex $0 → J(L) → J(M) → J(N) → 0$. Note that $J(-)$ preserves only monomorphisms, but neither epimorphisms nor left/right exactness.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;$J(-)$ is hereditary iff for any inclusion $L ⊆ M$, one has $J(L) = L ∩ J(M)$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;$J(-)$ is not hereditary over $ℤ$, e.g., consider $ℤ ⊆ ℚ$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;$J(-)$ is left exact iff it is hereditary.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Since $J(-)$ preserves inclusions, left exactness means $J(L) = \ker [J(M) → J(M / L)]$. Note that&lt;/p&gt;
+    &lt;p&gt;$$\begin{aligned}
+\ker [J(M) → J(M/L)] &amp; = \ker [J(M) → J(M / L) ↪ L] \\
+&amp;= \ker [J(M) ↪ M ↠ L] \quad = L ∩ J(M).
+\end{aligned}$$&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;$J$ is hereditary iff $R$ is right perfect.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(←). When $R$ is right perfect, we show $J(M) = MJ$.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;$M/MJ$ is semi-simple as $R / J(R)$ is. Now $J(M / MJ) = 0$. Hence, $J(M) ⊆ MJ$. The other inclusion is clear.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;checkcheck&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;h4 id=&quot;def-via-flat-modules&quot;&gt;Def via Flat Modules&lt;/h4&gt;
 
 &lt;div class=&quot;theorem&quot;&gt;
@@ -1528,23 +1691,11 @@ M = L = ∐ _{n ∈ ℕ} R,\quad N = (\{1_{n+1} r_n - 1_n\}_{n ∈ ℕ}).
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&quot;def-via-bass-chain-condition&quot;&gt;Def via Bass’ Chain Condition&lt;/h4&gt;
+&lt;p&gt;$$\begin{equation}
+\boxed{\text{Flat module with a projective cover is projective!}}
+\end{equation}$$&lt;/p&gt;
 
-&lt;p&gt;Recall that once $J(R) = 0$ (= $R$ is semi-primitive), $R$ is semisimple iff it is Artinian.&lt;/p&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-  &lt;p&gt;The following are equivalent for a semi-primitive ring:&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;$R$ is semi-simple;&lt;/li&gt;
-    &lt;li&gt;$R$ if right (or left) Artinian;&lt;/li&gt;
-    &lt;li&gt;all right (or left) principal ideals satisfies descending chain condition.&lt;/li&gt;
-  &lt;/ol&gt;
-  &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;We show for right modules. Note that (1 ↔ 2 → 3). We show (3 → 1). Note that any right ideal has a simple submodule. Now $R$ has enough simple summands. We claim that that the procedure of taking simple summands of $R$ terminates within finite steps. If not, then there is an infinite descending sequence of summands ($⊆$ principal ideals), a contradiction!&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Here is a criterion on descending chain condition of principal left ideals.&lt;/p&gt;
+&lt;p&gt;We recall a special countably presented flat module (it has projective dimension $≤ 1$) when characterising transfinite nilpotent ideals.&lt;/p&gt;
 
 &lt;div class=&quot;theorem&quot;&gt;
   &lt;p&gt;For any sequence $\{r_∙\} ⊆ R$, then there is a descending chain of principal left ideals $R r_n \cdots r_0$. We denote&lt;/p&gt;
@@ -1557,7 +1708,7 @@ F:= R^{(ω )} / (\{(1_n - 1_{n+1} r_n )_{n ∈ ℕ}\}).
     &lt;li&gt;it is zero iff the chain is eventually zero.&lt;/li&gt;
   &lt;/ul&gt;
   &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;Note that $F$ is countably presented by $F = \ker [∐ R^{ω } \overset {φ }↪ ∐ R^{ω}]$, thus is a filtered colimit of a cotower. By Lazard’s theorem, $F$ is flat. &lt;br /&gt; Consider $φ =(1-r) : (x_0,x_1,\ldots) ↦ (x_0, x_1 - x_0 a_0, x_2 - x_1a_1, \ldots)$. When it is split monic, we denote the right inverse by&lt;/p&gt;
+    &lt;p&gt;Note that $F$ is countably presented by $F = \ker [∐ R^{ω } \overset {φ }↪ ∐ R^{ω}]$, thus is a filtered colimit of a cotower. By Lazard’s theorem, $F$ is flat. &lt;br /&gt; Consider $φ =(1-r) : (x_0,x_1,\ldots) ↦ (x_0 - x_1r_0, x_1 - x_2 r_1, x_2 - x_3r_2, \ldots)$. When it is split monic, we denote the right inverse by&lt;/p&gt;
     &lt;p&gt;$$\begin{equation}
 ψ : (y_0,y_1,\ldots) ↦ (∑ y_∙ c_{∙, 0}, ∑ y_∙ c_{∙, 1}, \ldots).
 \end{equation}$$&lt;/p&gt;
@@ -1569,34 +1720,93 @@ c_{k,n} - c_{k+ 1,n}r_k = δ _{k, n}.
     &lt;p&gt;$$\begin{equation}
 c_{n+1, n} r_n \cdots r_0 = - r_{n-1} \cdots r_0.
 \end{equation}$$&lt;/p&gt;
-    &lt;p&gt;We see the ideal stablise. The rest is clear.&lt;/p&gt;
+    &lt;p&gt;We see the ideal stablise when multiplying $r_{≥ n}$. The converse is clear. Once such limit exists, it corresponds to the following countable composition stabilises:&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+R \xrightarrow {r_0} (r_0) \xrightarrow {r_1} (r_1 r_0) \xrightarrow {r_2} (r_2 r_1 r_0) \xrightarrow {r_3} \cdots.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;Hence the PID vanishes iff the above colimit stables at $0$.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;p&gt;Now we show a criterion of Bass.&lt;/p&gt;
 
 &lt;div class=&quot;theorem&quot;&gt;
   &lt;p&gt;The following are equivalent for $R$:&lt;/p&gt;
   &lt;ol&gt;
-    &lt;li&gt;$R$ is a right perfect ring;&lt;/li&gt;
-    &lt;li&gt;any descending chain of principal left ideals stabilises.&lt;/li&gt;
+    &lt;li&gt;$J(R)$ is right transfinite nilpotent and $\frac{R}{J(R)}$ is semi-simple.&lt;/li&gt;
+    &lt;li&gt;$R$ satisfies the following:       &lt;ul&gt;
+        &lt;li&gt;there are no infinite sets of orthogonal idempotents;&lt;/li&gt;
+        &lt;li&gt;any non-zero left module $X$ has a simple submodule.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;All right modules have a projective cover.&lt;/li&gt;
+    &lt;li&gt;All flat modules are projective.&lt;/li&gt;
+    &lt;li&gt;All countably presented flat modules are projective.&lt;/li&gt;
+    &lt;li&gt;The collection of principal left ideals satisfies descending chain condition.&lt;/li&gt;
   &lt;/ol&gt;
+  &lt;p&gt;We show (1 ↔ 2 ↔ 3) previously.&lt;/p&gt;
   &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;(2 → 1). $\frac{R}{J(R)}$ satisfies descending chain condition of principal left ideals, hence semi-simple. We show $J(R)$ is transfinite nilpotent&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;for any decsending principal left ideal $\{(r_n \cdots r_0)\}_{n ∈ ℕ}$ with each $r_∙ ∈ J$, there is $r_{n+1}$ s.t. $(r_n \cdots r_0) = (r_{n+1} \cdots r_0)$. We take $a$ s.t. $r_n \cdots r_0 = ar_{n+1} r_n \cdots r_0$. Note that $(1- ar_{n+1})$ is a unit, we see $r_n \cdots r_0 = 0$.&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;p&gt;(¬ 2 → ¬ 1). Assume there is an infinite descending chain of principal left ideals $\{Rx_n\}_{n ∈ ℕ}$ which never stabilises. We show the image in $R ↠ \frac{R}{J(R)}$ stabilises.&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;If not, then $\frac{R}{J(R)}$ never Artinian, hence not semi-simple. This contradicts the definition of right perfect rings.&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;p&gt;WLOG we assume $x_n$ has the same image in $\frac{R}{J(R)}$. We also assume $⋂ Rx_∙ = 0$ by the substitution $R ↦ \frac{R}{⋂ Rx_∙}$. Note that $Rx_{n+1} + J(R) = Rx_n + J(R)$, we take&lt;/p&gt;
-    &lt;p&gt;$$\begin{equation}
-t_n x_{n+1} = x_n + j_n ,\quad (∀ j_n ∈ J). 
-\end{equation}$$&lt;/p&gt;
-    &lt;p&gt;Here $0 ≠ j_n ∈ Rx_n ∩ J(R)$.&lt;/p&gt;
+    &lt;p&gt;(3 → 4). Note that flat module with a projective cover is projective. &lt;br /&gt; (4 → 5). Clear. &lt;br /&gt; (5 → 6). We construct countably preserted flat module $F$ for any descending chain of principal left ideals. Such chain stabilises as $F$ is projective. &lt;br /&gt; (6 → 1). $\frac{R}{J(R)}$ satisfies descending chain condition of principal left ideals, hence semi-simple. We show $J(R)$ is transfinite nilpotent. &lt;br /&gt; For any decsending principal left ideal $\{(r_n \cdots r_0)\}_{n ∈ ℕ}$ with each $r_∙ ∈ J$, there is $r_{n+1}$ s.t. $(r_n \cdots r_0) = (r_{n+1} \cdots r_0)$. We take $a$ s.t. $r_n \cdots r_0 = ar_{n+1} r_n \cdots r_0$. Note that $(1- ar_{n+1})$ is a unit, we see $r_n \cdots r_0 = 0$.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
+
+&lt;h4 id=&quot;coherency-and-chase-theorem&quot;&gt;Coherency and Chase Theorem&lt;/h4&gt;
+
+&lt;p&gt;The theorem shows when projective modules are closed under $∏$.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;The following are equivalent for a ring $R$:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$R$ is right perfect and left coherent;&lt;/li&gt;
+    &lt;li&gt;any product of projective left modules is projective;&lt;/li&gt;
+    &lt;li&gt;$∏ _I R$ is projective for any set $I$.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1 → 2). Over a right perfect ring, any flat right modules are projective. Over a left coherent ring, any product of flat right modules is flat. Hence, any product of projective left modules is projective. &lt;br /&gt; (2 → 3). Clear. &lt;br /&gt; (3 → 1). The product of free right modules is flat iff the ring is left coherent.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;def-via-bass-chain-condition&quot;&gt;Def via Bass’ Chain Condition&lt;/h4&gt;
+&lt;!-- 
+Recall that once $J(R) = 0$ (= $R$ is semi-primitive), $R$ is semisimple iff it is Artinian.
+
+&lt;div class='theorem'&gt;&lt;p&gt;The following are equivalent for a semi-primitive ring:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$R$ is semi-simple;&lt;/li&gt;
+  &lt;li&gt;$R$ if right (or left) Artinian;&lt;/li&gt;
+  &lt;li&gt;all right (or left) principal ideals satisfies descending chain condition.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;We show for right modules. Note that (1 ↔ 2 → 3). We show (3 → 1). Note that any right ideal has a simple submodule. Now $R$ has enough simple summands. We claim that that the procedure of taking simple summands of $R$ terminates within finite steps. If not, then there is an infinite descending sequence of summands ($⊆$ principal ideals), a contradiction!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+Here is a criterion on descending chain condition of principal left ideals.
+
+
+
+Now we show a criterion of Bass.
+
+&lt;div class='theorem'&gt;&lt;p&gt;The following are equivalent for $R$:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$R$ is a right perfect ring;&lt;/li&gt;
+  &lt;li&gt;any descending chain of principal left ideals stabilises.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;(2 → 1).&lt;/p&gt;
+  &lt;p&gt;(¬ 2 → ¬ 1). Assume there is an infinite descending chain of principal left ideals $\{Rx_n\}_{n ∈ ℕ}$ which never stabilises. We show the image in $R ↠ \frac{R}{J(R)}$ stabilises.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;If not, then $\frac{R}{J(R)}$ never Artinian, hence not semi-simple. This contradicts the definition of right perfect rings.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;WLOG we assume $x_n$ has the same image in $\frac{R}{J(R)}$. We also assume $⋂ Rx_∙ = 0$ by the substitution $R ↦ \frac{R}{⋂ Rx_∙}$. Note that $Rx_{n+1} + J(R) = Rx_n + J(R)$, we take&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
+t_n x_{n+1} = x_n + j_n ,\quad (∀ j_n ∈ J). 
+\end{equation}$$&lt;/p&gt;
+  &lt;p&gt;Here $0 ≠ j_n ∈ Rx_n ∩ J(R)$.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt; --&gt;
 </description>
           <pubDate>2025-08-25T00:00:00+08:00</pubDate>
           <link>http://localhost:4000/website/posts/Radicals</link>
@@ -9940,12 +10150,6 @@ F(-) ≃ \mathrm{im}(ι ∘ π) = \mathrm{im}((-,α)) ≃  (-, M)
       &lt;li&gt;&lt;a href=&quot;#the-triangulated-structure&quot; id=&quot;markdown-toc-the-triangulated-structure&quot;&gt;The Triangulated Structure&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#the-localisation&quot; id=&quot;markdown-toc-the-localisation&quot;&gt;The Localisation&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#exact-functors&quot; id=&quot;markdown-toc-exact-functors&quot;&gt;Exact Functors&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#two-step-localisation&quot; id=&quot;markdown-toc-two-step-localisation&quot;&gt;Two-step Localisation&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#the-bifunctor-mathjax_protectedjpcdllwg4oasifvwnzs8xsdihpig8j2vgyqmathjax_protected&quot; id=&quot;markdown-toc-the-bifunctor-mathjax_protectedjpcdllwg4oasifvwnzs8xsdihpig8j2vgyqmathjax_protected&quot;&gt;The Bifunctor $𝔼 → [𝔼] → 𝕃$&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;on-diagrams-lemmas-of-ex-mathjax_protectedjfx0cmlhbmdszsqmathjax_protected-cats&quot;&gt;On Diagrams Lemmas of Ex-$\triangle$ Cats&lt;/h2&gt;
@@ -10484,6 +10688,10 @@ A_1 \xrightarrow {l} A_2 \xrightarrow {m_2} M \quad = \quad A_1 \xrightarrow {s-
 
 &lt;h3 id=&quot;the-weak-pbpo-squares&quot;&gt;The Weak PBPO Squares&lt;/h3&gt;
 
+&lt;div class=&quot;slogan&quot;&gt;
+  &lt;p&gt;This section is obsoleted since all squares are proved to be homotopic!&lt;/p&gt;
+&lt;/div&gt;
+
 &lt;div class=&quot;definition&quot;&gt;
   &lt;p&gt;(Weak PO Square). A &lt;strong&gt;weak PO square&lt;/strong&gt; (or &lt;strong&gt;weak coCatersian square&lt;/strong&gt;) is an 2×2 diagram ($wf = hg$), such that for any $α f = β g$, there exists some $φ$ making the entire diagram commutative.&lt;/p&gt;
   &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
@@ -10554,45 +10762,94 @@ A_1 \xrightarrow {l} A_2 \xrightarrow {m_2} M \quad = \quad A_1 \xrightarrow {s-
 
 &lt;p&gt;Recall that in ET2, we made no more assumption on the middle dashed arrow between conflations. However, there is a way to take a good morphism.&lt;/p&gt;
 
-&lt;div class=&quot;theorem&quot;&gt;
-  &lt;p&gt;(The homotopic square theorem). For any realisations of the morphism of extensions $(λ, 1): δ → λ_∗ δ$, there exists a suitable morphism $w$ rendering both diagrams commutative, and $y^∗ δ$ admits a realisation as depicted in the diagram below:&lt;/p&gt;
-  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_95c0561423857.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-  &lt;p&gt;Remind the sign here.&lt;/p&gt;
-  &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;We construct the Verdier diagram from $b$ and $y$:&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_d8d27155daf7d.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;Since $b^∗ δ =0$, we write $b^∗ λ _∗ δ$ in the standard split form which does not affect the solid arrows. By the anticommutative square in 4×4 diagram, we have&lt;/p&gt;
-    &lt;p&gt;$$\begin{equation}
-0 = \binom {λ '}{a} {}_∗ δ + \binom {1}{0} {}_∗  λ _∗ δ = \binom {λ ' + λ} a {}_∗ δ.
+&lt;p&gt;We prove several kind of homotopic squares in this section. Recall that&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(Homotopic square). A commutative square &lt;span class=&quot;tikzinline-diagram&quot;&gt;       &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_2813ac07217b4.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt; is said to be homotopic, when there is a conflation&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
+0 → A \xrightarrow {\binom {f}{x}} B ⊕ C \xrightarrow {(g \ -y)} D → 0.
 \end{equation}$$&lt;/p&gt;
-    &lt;p&gt;Hence, $(λ ' + λ) ∈ \ker δ^!$. By long exact sequence, there exists $l$ such that $(λ + λ ' ) = l ∘ a$. To be explicit, $$\begin{equation}
-X \xrightarrow a Y \xrightarrow l A\quad  = \quad  X \xrightarrow {λ + λ '} A.
-\end{equation}$$&lt;/p&gt;
-    &lt;p&gt;It remains to show the existence of $w$ such that the following diagram commutes:&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_fcdff033456ce.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;The left square commutes due to the choice of $l$. Taking $w = xl - w'$, we see that&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;$wa - x λ = xla - w'a - xλ = xla - x λ ' - xλ = x(la - λ - λ ' ) = 0$;&lt;/li&gt;
-      &lt;li&gt;$yw - b = yxl - yw' - b = 0 l + b - b = 0$.&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;p&gt;Hence, the right square also commutes.&lt;/p&gt;
-  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;corollary&quot;&gt;
   &lt;p&gt;The homotopic square is also a weak PBPO square.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;The following proposition shows that the square in Noether diagram is automatically a homotopic square.&lt;/p&gt;
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(Existence of homotopic square I). For morphism of extension $(λ , 1) : δ → λ _∗ δ$, there is $w$ making the left square homotopic while the entire diagram is commutative.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_f253969ac2411.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We construct Verdier’s diagram from deflations $B \xrightarrow y Z \xleftarrow b Y$. We take $b^∗ (λ δ _∗) = 0$ as the canonical split sequence, and obtain&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_7f9df4a409e77.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;Moreover, there is an identity at the anticommute square&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+0 = \binom 10 _∗ (λ _∗ δ ) + \binom {λ '}{a}_∗ δ = \binom{λ + λ '}{a}_∗ δ .
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;By long exact sequence, we take $l a = (λ + λ ')$ where $X \overset a → Y \overset l→ A$. Now&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_a3a27421a4f28.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;Note that our desired mapping sequence is isomorphic to a conflation.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;div class=&quot;proposition&quot;&gt;
-  &lt;p&gt;In the following ET4 diagram, $\square$ is a homotopic square.&lt;/p&gt;
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(Existence of homotopic square I’). For morphism of extensions $(1, μ) : μ ^∗ δ → δ$, there is $u$ making the right square homotopic while the entire diagraom is commutative.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_cf59f22dc419d.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Dual. But mind the sign!&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(Existence of homotopic square II). When completing with ET3’, one can take $λ$ making the left square homotopic.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_d0dcb7811c73c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We take any $λ' : X → A$ by ET3’, and choose $w' : Y → B$ by theorem &lt;strong&gt;existence of homotopic square I&lt;/strong&gt;. Since $y(w - w') = 0$, we take $l : Y → A$ s.t. $xl = w-w'$.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_aa401ce71994a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;Here $λ$ is chosen by composition.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(Existence of homotopic square II’). When completing with ET3, one can take $λ$ making the left square homotopic.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_97e5d2ac0a42f.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Dual. But mind the sign!&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(Existence of homotopic square III). For either of the situation&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;there is a morphism of extension $(λ , μ): δ → ε$,&lt;/li&gt;
+    &lt;li&gt;there is a right commuting square $(α , μ)$ from $δ$ to $ε$,&lt;/li&gt;
+    &lt;li&gt;there is a left commuting square $(λ , α)$ from $δ$ to $ε$.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;Then we can find a morphism of extension $δ → ε$ passing through a conflation $η$, so that $\square$’s are homotopic.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_6ba7a1aa6afef.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;For case 1, we take $η = λ_∗  δ = μ ^∗ ε$, and choose $α _1$ ($α _2$) by theorem &lt;strong&gt;existence of homotopic square I(I’)&lt;/strong&gt;. &lt;br /&gt; For case 2, we take $η = μ ^∗ ε$ and choose $α _2$ by theorem &lt;strong&gt;existence of homotopic square I’&lt;/strong&gt;. We take $α$ by weak pullback, and choose $λ$ by theorem &lt;strong&gt;existence of homotopic square II&lt;/strong&gt;. &lt;br /&gt; Case 3 is dual to Case 2.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(Existence of homotopic square IV). In the following ET4 diagram, $\square$ is a homotopic square.&lt;/p&gt;
   &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
       &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_16121f7f8f9ca.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
     &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
@@ -10603,16 +10860,33 @@ X \xrightarrow a Y \xrightarrow l A\quad  = \quad  X \xrightarrow {λ + λ '} A.
       &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
     &lt;p&gt;Recall the two out of three principle for isomorphisms. We see that&lt;/p&gt;
     &lt;ul&gt;
-      &lt;li&gt;$n ∘ m$ is an isomorphism by considering $δ _{c1}$;&lt;/li&gt;
-      &lt;li&gt;$m ∘ n$ is an isomorphism by considering the conflation obtained by the homotopic square $\square$.&lt;/li&gt;
+      &lt;li&gt;$n ∘ m$ is an isomorphism by 2-out-of-3 of isomorphisms for $δ _{c1}$;&lt;/li&gt;
+      &lt;li&gt;$m ∘ n$ is an isomorphism by 2-out-of-3 of isomorphisms for conflation obtained by the homotopic square $\binom {YZ}{WM}$.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;proposition&quot;&gt;
-  &lt;p&gt;Verdier squares are also homotopic!&lt;/p&gt;
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(Existence of homotopic square V). The following Verdier square is homotopic:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_5f7476e8bcbcb.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
   &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;We show this by a straightforward construction.&lt;/p&gt;
+    &lt;p&gt;We erase $x_2$, $y_2$ and $δ _2$ firstly. By theorem of &lt;strong&gt;existence of homotopic square II’&lt;/strong&gt;, we take $y_2' : B_2 → C$ making the two rows commutative, while the square is homotopic. Now there is a commutative diagram of conflations by S4×4 lemma:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_fc0143d5dcf40.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;The first row is a conflation whose morphisms are uniquely determined by compositions ($-λ _2m_2 = -x_2$ and $y_2'$). By uniqueness of embedding an inflation to a conflation, we may assume $ε = - δ _1$ and $y_2' = y_2$. &lt;br /&gt; We recover the original diagram by letting the square to be homotopic. Hence, the square in the original diagram is homotopic.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(Existence of homotopic square V’). The following Verdier square is homotopic:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_a095e590ee674.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Dual. But mind the sign!&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -11246,7 +11520,7 @@ F ∈ 𝐅𝐮𝐧𝐜𝐭(\mathcal{C}_1 × \mathcal{C}_2, \mathcal{D}) \\
 &lt;p&gt;We finish this section with a non-example.&lt;/p&gt;
 
 &lt;div class=&quot;example&quot;&gt;
-  &lt;p&gt;Let $\mathcal{C}$ be the category of locally&lt;/p&gt;
+  &lt;p&gt;Let $\mathcal{C}$ be the category of finite dimensional vector spaces over $k$, and $S = \{0 → k\}$. The localisation $\mathcal{C} → \mathcal{C}[S^{-1}]$ is never additive, as $k ≃ 0$ in the localised category while $k^2 \not≃ 0$.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h3 id=&quot;extri-cats-neither-tri-nor-ex&quot;&gt;Extri Cats Neither Tri Nor Ex&lt;/h3&gt;
@@ -11511,42 +11785,44 @@ We now proceed to define Hovey twin cotorsion pairs. This definition is delibera
 &lt;/div&gt;
 
 &lt;div class=&quot;lemma&quot;&gt;
-  &lt;p&gt;(The verification of retraction closedness). For $𝖢𝗈𝖿𝗂𝖻$, $𝖥𝗂𝖻$, $𝖳𝖥𝗂𝖻$, and $𝖳𝖢𝗈𝖿𝗂𝖻$, we verify the property by means of the lifting property. We select $𝖥𝗂𝖻$ as a representative example. Suppose that $b$ is a retract of $f ∈ 𝖥𝗂𝖻$. We verify the lifting property of $b$ with respect to an arbitrarily chosen $c ∈ 𝖳𝖢𝗈𝖿𝗂𝖻$ and an arbitrarily chosen commutative square $c ⇒ b$.&lt;/p&gt;
+  &lt;p&gt;(The verification of retraction closedness). We show $𝖢𝗈𝖿𝗂𝖻$ is retraction clsoed. The proofs for $𝖳𝖢𝗈𝖿𝗂𝖻$, $𝖥𝗂𝖻$ and $𝖳𝖥𝗂𝖻$ are similar. Let $A \xrightarrow i B \xrightarrow p C \xrightarrow{δ }$ be a conflation with $i ∈ 𝖢𝗈𝖿𝗂𝖻$, and $i' : A → B$ is a retraction of $i$. Idempotent completeness shows $i'$ is an inflation. We take the corresponding conflation $δ '$, and complete $j_C$ and $q_C$ with ET3.&lt;/p&gt;
   &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_453a2e2bf180b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_757a5787d2c86.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
     &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-  &lt;p&gt;We show that $p ∘ s$ is our desired lifting morphism of the most left square:&lt;/p&gt;
+  &lt;p&gt;Note that $(q_A)_∗ (j_A)_∗ δ ' = (q_A)_∗ (j_C)^∗ δ =(j_C)^∗ (q_C)^∗ δ$. Hence $q_C i_C$ is an isomorphism by 2-out-of-3 property of isomorphisms. Since $\mathcal{U}$ is closed under retractions, we see $i' ∈ 𝖢𝗈𝖿𝗂𝖻$. &lt;br /&gt; We show retract closedness of $𝖶𝖾𝗊$. We take the diagram&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_e90c2f7ff526a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;where $p_Xi_X = 1_{X'}$, $p_Zi_Z = Z'$, $g ∈ 𝖶𝖾𝗊$ and $g' = c' a' ∈ 𝖳𝖥𝗂𝖻 ∘ 𝖢𝗈𝖿𝗂𝖻$. It suffices to show $a' ∈ 𝖳𝖢𝗈𝖿𝗂𝖻$. We take a weak pullback (with Verdier diagram) from $Z \xrightarrow {p_Z} Z' \xleftarrow {c'} Y'$, and introduce dashed arrows:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_a0f51dbef0ee8.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;Here $f ∈ 𝖳𝖥𝗂𝖻$ as $c' ∈ 𝖳𝖥𝗂𝖻$, $f w = g ∈ 𝖶𝖾𝗊$, and all square commutes except for $⊠$. However, one has&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
+(wi_X - j_Y a') ∈ \ker (f_∗ ) = \operatorname{im} (x_∗ ).
+\end{equation}$$&lt;/p&gt;
+  &lt;p&gt;Hence we take $\widetilde l$ s.t.&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
+X' \xrightarrow {\widetilde l} K \xrightarrow x F \quad =\quad  X' \xrightarrow{wi_X - j_Y a'} F.
+\end{equation}$$&lt;/p&gt;
+  &lt;p&gt;Set $l = X \xrightarrow {p_X} X' \xrightarrow {\widetilde l} K$. Then $q_Y x l = 0$. We obtain the retraction:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_da89a72c2c0e6.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;We show the diagram is commutative:&lt;/p&gt;
   &lt;ul&gt;
-    &lt;li&gt;$bps = qfs = qjd = d$;&lt;/li&gt;
-    &lt;li&gt;$psc = pia = a$.&lt;/li&gt;
+    &lt;li&gt;(Left). $\binom{\ w \ x}{-l \ 1} \binom {i_X}{l i_X} - \binom{j_Y}{0}a' = \binom{wi_X+xli_X}{-li_X+li_X} - \binom{j_Ya'}{0} = \binom {(wi_X-j_Ya')+x\widetilde l}{0} = 0$;&lt;/li&gt;
+    &lt;li&gt;(Right). $q_Y(1,-x)\binom{\ w \ x}{-l \ 1}-a'(p_X,0) = q_Y(w+xl,0) - a'(p_X,0) = 0$.&lt;/li&gt;
   &lt;/ul&gt;
-  &lt;p&gt;Now we show that the retraction of $g ∈ 𝖶𝖾𝗊$, denoted by $g'$, is also an weak equivalence. We first factorise $g'$ into $𝖳𝖥𝗂𝖻 ∘ 𝖢𝗈𝖿𝗂𝖻$&lt;/p&gt;
-  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_01dab893b84de.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-  &lt;p&gt;The object $Y$ along with the weak pullback square is constructed by 4×4 lemma, we re-draw the diagram as follows ($g' = b'∘ a'$):&lt;/p&gt;
-  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_08cff0371e222.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-  &lt;p&gt;Here the weak quivalence $a$ and the retraction $i_Y$ are taken from weak PB diagram:&lt;/p&gt;
-  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_3b3d39f36cbea.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-  &lt;p&gt;We focus on the upper portion of the diagram; that is, we demonstrate that if $a ∈ 𝖶𝖾𝗊$ and $a'$ is a retraction of $a$ with $a' ∈ 𝖢𝗈𝖿𝗂𝖻$, then $a'$ is a weak equivalence.&lt;/p&gt;
+  &lt;p&gt;Note that $K ∈ \mathcal{W}$, hence $\binom{\ w \ x}{-l \ 1}∈ 𝖶𝖾𝗊$. It remains to show&lt;/p&gt;
   &lt;ul&gt;
-    &lt;li&gt;The original problem was $x ∈ 𝖱𝖾𝗍𝗋𝖺𝖼(𝖶𝖾𝗊) ⟹ x ∈ 𝖶𝖾𝗊$;&lt;/li&gt;
-    &lt;li&gt;We deduce this to $x ∈ 𝖱𝖾𝗍𝗋𝖺𝖼(𝖶𝖾𝗊) ∩ 𝖢𝗈𝖿𝗂𝖻 ⟹ x ∈ 𝖳𝖢𝗈𝖿𝗂𝖻$.&lt;/li&gt;
+    &lt;li&gt;if $a' ∈ 𝖢𝗈𝖿𝗂𝖻$ is a retraction of $𝖶𝖾𝗊$, then $a' ∈ 𝖳𝖢𝗈𝖿𝗂𝖻$.&lt;/li&gt;
   &lt;/ul&gt;
+  &lt;p&gt;We factorise $\binom{\ w \ x}{-l \ 1}$ into $𝖳𝖥𝗂𝖻 ∘ 𝖳𝖢𝗈𝖿𝗂𝖻$. By lifting property, we obtain the dashed arrow.&lt;/p&gt;
   &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_645fb55ffe0bd.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_d3e3083300f3a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
     &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-  &lt;p&gt;The diagram is established with the procedure:&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;We factorise $a$ as $a_{tf} ∘ a_{tc} ∈ 𝖳𝖥𝗂𝖻 ∘ 𝖳𝖢𝗈𝖿𝗂𝖻$, and obtain all solid arrows.&lt;/li&gt;
-    &lt;li&gt;The homotopic $\square$ comes from ET4. We obtain the red part.&lt;/li&gt;
-    &lt;li&gt;By lifting property, we obtain all dashed blue arrows.&lt;/li&gt;
-  &lt;/ol&gt;
-  &lt;p&gt;We observe that $a'$ is a retraction of $a_{tc}$, hence $a' ∈ 𝖳𝖢𝗈𝖿𝗂𝖻$. We finally demonstrate that $g' = b' ∘ a' ∈ 𝖳𝖥𝗂𝖻 ∘ 𝖳𝖢𝗈𝖿𝗂𝖻$ is a weak equivalence.&lt;/p&gt;
+  &lt;p&gt;Hence $a'$ is a retraction of $𝖳𝖢𝗈𝖿𝗂𝖻$. We show $a' ∈ 𝖳𝖢𝗈𝖿𝗂𝖻$.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h3 id=&quot;remarks-on-mathjax_protectedjfxtyxroy2fse1d9jamathjax_protected-and-mathjax_protectedjpcdlrbwnza8j2xiiqmathjax_protected&quot;&gt;Remarks on $\mathcal{W}$ and $𝖶𝖾𝗊$&lt;/h3&gt;
@@ -11983,384 +12259,421 @@ QX \xrightarrow{Q(f)} QY \xrightarrow{Q(g)} QZ \xrightarrow{ℓ (η )}(QX) [1].
 
 &lt;p&gt;We remark that, these verifications are closely analogous to that employed in verifying that triangulated categories are extriangulated.&lt;/p&gt;
 
-&lt;h2 id=&quot;the-localisation&quot;&gt;The Localisation&lt;/h2&gt;
+&lt;!-- ## The Localisation
 
-&lt;h3 id=&quot;exact-functors&quot;&gt;Exact Functors&lt;/h3&gt;
+### Exact Functors
 
-&lt;p&gt;An extriangulated category resembles a triangulated category, yet one of the morphisms in the triangle is replaced by an extension element $δ$. The functor category admits a similar definition.&lt;/p&gt;
+An extriangulated category resembles a triangulated category, yet one of the morphisms in the triangle is replaced by an extension element $δ$. The functor category admits a similar definition.
 
-&lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;(Extriangulated Functor, or exact functor in short). An extriangulated functor from $(\mathcal{C} , 𝔼 , 𝔰 )$ to $(\mathcal{D} , 𝔽 , 𝔱)$ is described as a pair $(F, φ)$, wherein&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;(F0). $F : \mathcal{C} → \mathcal{D}$ is an additive functor, and $φ_{-,?} : 𝔼(-,?) → 𝔽(F(-), F(?))$ is a natural transformation;&lt;/li&gt;
-    &lt;li&gt;(F1). $φ_{Z,X} : 𝔼 (Z,X) → 𝔽 (FZ, FX)$ is compatible with composition, i.e., for any $f : Z' → Z$, $g : X → X'$ and $δ ∈ 𝔼 (X,Y)$, we have $φ_{Z', X'} (f^∗ g_∗ δ ) = (Ff)^∗ (Fg)_∗ φ _{Z,X}(δ)$.&lt;/li&gt;
-    &lt;li&gt;(F2). Let $X \xrightarrow f Y \xrightarrow g Z$ be a realisation of $δ$. Then $FX \xrightarrow {Ff} FY \xrightarrow {Fg} FZ$ is a realisation of $φ (δ )$.&lt;/li&gt;
-  &lt;/ol&gt;
-  &lt;p&gt;The definition F1 means that the tacit natural transformation $(A, B) → (FA, FB)$ is composable with $φ$ on both sides, which is a natural requirement.&lt;/p&gt;
+&lt;div class='definition'&gt;&lt;p&gt;(Extriangulated Functor, or exact functor in short). An extriangulated functor from $(\mathcal{C} , 𝔼 , 𝔰 )$ to $(\mathcal{D} , 𝔽 , 𝔱)$ is described as a pair $(F, φ)$, wherein&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;(F0). $F : \mathcal{C} → \mathcal{D}$ is an additive functor, and $φ_{-,?} : 𝔼(-,?) → 𝔽(F(-), F(?))$ is a natural transformation;&lt;/li&gt;
+  &lt;li&gt;(F1). $φ_{Z,X} : 𝔼 (Z,X) → 𝔽 (FZ, FX)$ is compatible with composition, i.e., for any $f : Z' → Z$, $g : X → X'$ and $δ ∈ 𝔼 (X,Y)$, we have $φ_{Z', X'} (f^∗ g_∗ δ ) = (Ff)^∗ (Fg)_∗ φ _{Z,X}(δ)$.&lt;/li&gt;
+  &lt;li&gt;(F2). Let $X \xrightarrow f Y \xrightarrow g Z$ be a realisation of $δ$. Then $FX \xrightarrow {Ff} FY \xrightarrow {Fg} FZ$ is a realisation of $φ (δ )$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The definition F1 means that the tacit natural transformation $(A, B) → (FA, FB)$ is composable with $φ$ on both sides, which is a natural requirement.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;We remark that F1 is obtained by F0 and F2. Say $(\triangle , δ)$ is compatible, provided $\triangle$ is the realisation of $δ$. Now ther following are compatible pairs&lt;/p&gt;
+We remark that F1 is obtained by F0 and F2. Say $(\triangle , δ)$ is compatible, provided $\triangle$ is the realisation of $δ$. Now ther following are compatible pairs
 
-&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-    &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_7a33ce1fa0e56.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;center&gt;
+        &lt;br&gt;
+        &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_7a33ce1fa0e56.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot;/&gt;
+        &lt;/div&gt;
+        &lt;br&gt;
+        &lt;/center&gt;
 
-&lt;p&gt;Since an conflation realises a unique conflation, $\varphi (f^\ast g_\ast \delta) = (Ff)^\ast (Fg)_\ast\varphi (\delta )$.&lt;/p&gt;
+Since an conflation realises a unique conflation, $\varphi (f^\ast g_\ast \delta) = (Ff)^\ast (Fg)_\ast\varphi (\delta )$.
 
-&lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;(Natural transformation). Say $α : (F, φ ) → (G, ψ)$ is a natural triansformation of triangulated functors from $(\mathcal{C} , 𝔼 , 𝔰 )$ to $(\mathcal{D} , 𝔽 , 𝔱)$, provided&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;$α : F → G$ is a natural transformation of additive functors;&lt;/li&gt;
-    &lt;li&gt;$(α_?, α _-) : 𝔽 (F-, F?) → 𝔽 (G-, G?)$ is gives functorial morphism of extension elements.&lt;/li&gt;
-  &lt;/ol&gt;
+&lt;div class='definition'&gt;&lt;p&gt;(Natural transformation). Say $α : (F, φ ) → (G, ψ)$ is a natural triansformation of triangulated functors from $(\mathcal{C} , 𝔼 , 𝔰 )$ to $(\mathcal{D} , 𝔽 , 𝔱)$, provided&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$α : F → G$ is a natural transformation of additive functors;&lt;/li&gt;
+  &lt;li&gt;$(α_?, α _-) : 𝔽 (F-, F?) → 𝔽 (G-, G?)$ is gives functorial morphism of extension elements.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;p&gt;For instance, we show that the functor $(L, l)$ is an equivalence, if and only if $L$ is an equivalence of additive categories, and $l$ is a natural isomorphism.&lt;/p&gt;
+For instance, we show that the functor $(L, l)$ is an equivalence, if and only if $L$ is an equivalence of additive categories, and $l$ is a natural isomorphism.
 
-&lt;div class=&quot;example&quot;&gt;
-  &lt;p&gt;Let $(L, l) : (\mathcal{C} ,𝔼 , 𝔰) → (\mathcal{D} , 𝔽 , 𝔱 )$ be exact functor, such that $L$ is an equivalence and $l$ is a natural isomorphism. We use the notation of adjoint pair $(L, R, η , ε)$ to denote the equivalence of additive categories $\mathcal{C}$ and $\mathcal{D}$. Now we define the natural isomorphism $r$ by the following zigzag diagram of natural isomorphisms:&lt;/p&gt;
-  &lt;p&gt;$$\begin{equation}
-𝔽 (C,A) \xleftarrow[∼ ]{(ε _A)_∗ }𝔽 (C,LRA) \xrightarrow[∼ ]{(ε _C)^∗ }𝔽 (LRC,LRA) \xleftarrow[∼ ]{l_{RC,RA}}𝔼 (RC, RA).
-\end{equation}$$&lt;/p&gt;
-  &lt;p&gt;It remains to show the naturality. By definition, we have that $$\begin{equation}
-l_{RC, RA} ∘ r_{C,A} : 𝔽 (C,A) → 𝔽 (LRC, LRA),\quad δ ↦ (ε _A)_∗ ^{-1} (ε _C)^∗ δ .
-\end{equation}$$&lt;/p&gt;
-  &lt;p&gt;Now we claim that $r_{LZ, LX} ∘ l_{Z,X} (δ ) = (η _X)_∗ (η _Z^∗ )^{-1} (δ)$, that is, the following diagram commutes:&lt;/p&gt;
-  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_61778a82294cf.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-  &lt;p&gt;By triangle identities of adjoint pair, $ε _{L?} = (Lη _?)^{-1}$. This completes the proof.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;two-step-localisation&quot;&gt;Two-step Localisation&lt;/h3&gt;
-
-&lt;p&gt;We localise an extriangulated category by fractional expressions. We firstly review the admissible multiplicative system for triangulated cases. Throughtout, we use $⇒$ to denote the morphisms in $S$.&lt;/p&gt;
-
-&lt;div class=&quot;example&quot;&gt;
-  &lt;p&gt;(Admissible multiplicative system). Let $S$ be a class of morphisms for a triangulated category. Say $S$ is a (right) admissible multiplicative system with respect to the triangulated category, provided&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;(FR1). $S$ cantains all isomorphisms and closed under compositions.&lt;/li&gt;
-    &lt;li&gt;(FR2). Any $A → E ⇐ B$ admits a cone of the form $A ← F ⇒ B$.&lt;/li&gt;
-    &lt;li&gt;(FR3). If $0 ∈ f ∘ S$, then $0 ∈ S ∘ f$.&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;p&gt;If $S$ satisfies FR1-3, then it is a right multiplicative system.&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;(FR4). $S[1] ⊆ S$.&lt;/li&gt;
-    &lt;li&gt;(FR5). Let $(X_i, Y_i, Z_i, f_i, g_i, h_i)$ be triangles for $i ∈ \{1,2\}$. Suppose that there is $α , β ∈ S$ such that $β ∘ f_1 = f_2 ∘ α$, then there is a $(γ : Z_1 →  Z_2) ∈ S$ making the entire diagram commutative. Roughly speaking, the 2-out-of-three principle for triangle morphisms in $S$.&lt;/li&gt;
-    &lt;li&gt;(Sat). Say $S$ is saturated, if $\{fg, gh\} ⊆ S$ implies $g ∈ S$.&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;p&gt;Some remarks on multiplicative system of triangles.&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;FR2 is a corollary of FR5 and FR1.&lt;/li&gt;
-    &lt;li&gt;An admissible multiplicative system yields the Verdier quotient $\mathcal{T} → S^{-1} \mathcal{T}$. Here $\mathcal{T}$ is not triangulated in general.&lt;/li&gt;
-    &lt;li&gt;An triangulated subcategory $\mathcal{C} ↣ \mathcal{T}$ yields a strong multiplicative system.&lt;/li&gt;
-    &lt;li&gt;Say $h ∈ S$, if there is an triangle of the form $(X,Y,Z,f,g,h)$ for $X ∈ \mathcal{C}$.&lt;/li&gt;
-    &lt;li&gt;Say the multiplicative system $S$ is strong, if any two morphisms in $\{f,g, gf\}$ belongs to $S$, then so is the third.&lt;/li&gt;
-    &lt;li&gt;There is a $1:1$ correspondence between saturated multiplicative system and trianglated subcategories.&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;example&quot;&gt;
-  &lt;p&gt;(&lt;strong&gt;Two-step localisation&lt;/strong&gt;). To begin with, we assume the class of morphisms $S$ to be&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;closed under biproduct $⊕$, so that the localisation is additive;&lt;/li&gt;
-    &lt;li&gt;a strong multiplicative system, that is, if any two morphisms in $\{f,g, gf\}$ belong to $S$, then so does the third. This serves as a reasonable closure for $S$, since isomorphisms in $\mathcal{C} [S^{-1}]$ satisfy the 2-out-of-3 principle with respect to composition.&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;p&gt;The basic setting and principal procedure is summarised as&lt;/p&gt;
-  &lt;p&gt;$$\begin{equation}
-Q_S: \  \mathcal{C} \xrightarrow[ \begin{bmatrix} - \end{bmatrix} ]{\text{fewer morphisms}} \mathcal{C} / \mathcal{N} \xrightarrow[Q]{\text{more morphisms}} \mathcal{C} [S^{-1}].
-\end{equation}$$&lt;/p&gt;
-  &lt;p&gt;Here $\mathcal{N} = \{W ∣ (0 → W) ∈ S\}$ so that we may define the additive quotient functor $[-]$. The localisation $Q_S$ factors through such $[-]$, yielding $Q$.&lt;/p&gt;
-  &lt;p&gt;We remark upon the following points.&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;Observe that $(0 → W) ∈ S$ if and only if $(W → 0) ∈ S$ by virtue of the strong multiplicative system.&lt;/li&gt;
-    &lt;li&gt;$\mathcal{N}$ is the subclass of zero objects in $\mathcal{C} [S^{-1}]$ which are directly detected.&lt;/li&gt;
-    &lt;li&gt;Once the zigzag morphisms are written in fractions, $\mathcal{N}$ is precisely the class of zero objects in $\mathcal{C} [S^{-1}]$.&lt;/li&gt;
-    &lt;li&gt;By uniqueness of localisation, $(\mathcal{C} / \mathcal{N}) ([S]^{-1})$ and $\mathcal{C} [S^{-1}]$ are isomorphic categories.&lt;/li&gt;
-    &lt;li&gt;Note that $\mathcal{C} / \mathcal{N} ≠ \mathcal{C} [S^{-1}]$ in general. For instance, if $Q(f)$ is zero, then it is impossible to determine whether $f$ factors through some $N ∈ \mathcal{N}$.&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;([-]). We denote $$\begin{equation}
-ϕ (S,x,y,z,\ldots) := \{ϕ (s, x,y,z,\ldots) ∣ \text{when it is defined}\}
-\end{equation}$$ for general operations. For instance,&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;$[S] = \{[s] ∣ s ∈ S\}$,&lt;/li&gt;
-    &lt;li&gt;$S ∘ f = \{s ∘ f ∣ s ∈ S, \ \text{and} \ s ∘ f \ \text{is defined}\}$,&lt;/li&gt;
-    &lt;li&gt;$S^∗ δ = \{s^∗ δ ∣ s ∈ S \ \text{and} \ s^∗ δ \ \text{is defined}\}$.&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The advantages of the two-step localisation include the following.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;When dealing with fractions, $[a] ∘ [s]^{-1} = [a'] ∘ [s]^{-1}$ if and only if $[a] = [a']$.&lt;/li&gt;
-  &lt;li&gt;The axioms on $S$ ([L]’s) are stronger than those of $[S]$ ([CL]’s). Explicitly, to show that the localisation $Q_S : \mathcal{C} → \mathcal{C}[S^{-1}]$ is extriangulated along with the fractional condition $(\mathcal{C} , S) ⊧$ [L], it suffices to prove $Q : \mathcal{C} / \mathcal{N} → (\mathcal{C} / \mathcal{N}) [[S]^{-1}]$ with $(\mathcal{C} / \mathcal{N} , [S]) ⊧$ [CL]. Here [L] ⇒ [CL].&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;(The [L] and [CL] axioms). The axioms [L]’s are defined for $(\mathcal{C}, S)$, while [CL]’s are defiend for $(\mathcal{C} / \mathcal{N} , [S])$.&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;(L1). $S$ contains all isomorphisms, closed under biproduct and it is strongly multiplicative. This is exactly out basic setting.&lt;/li&gt;
-    &lt;li&gt;(L2). $S$ is a multiplicative system in usual sense, i.e., it satisfies both FR and LFR.&lt;/li&gt;
-    &lt;li&gt;(L3). For morphism of extension $(f,h) : δ → δ '$ with $f,h ∈ S$, there exists some $g ∈ S$ making the diagram of realisations commutative.&lt;/li&gt;
-    &lt;li&gt;(L4). Let $\{i_∙ \}$, $\{d_∙ \}$, and $\{s_∙ \}$ denote the class of inflations, deflation, and $S$. Every $dsd'$ is equals to some $s'd''s''$, every $isi'$ equals to some $s'i''s''$.&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;p&gt;The [CL] axioms are similar to [L]’s.&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;(CL1). $[S]$ contains all isomorphisms, closed under biproduct and it is strongly multiplicative.&lt;/li&gt;
-    &lt;li&gt;(CL2). $[S]$ is a multiplicative system in usual sense, i.e., it satisfies both FR and LFR.&lt;/li&gt;
-    &lt;li&gt;(CL3). For morphism of extension $(f,h) : δ → δ '$ with $[f],[h] ∈ [S]$, there exists some $[g] ∈ [S]$ making the diagram of realisations commutative in $\mathcal{C} / \mathcal{N}$.&lt;/li&gt;
-    &lt;li&gt;(CL4). Let $\{i_∙ \}$, $\{d_∙ \}$, and $\{s_∙ \}$ denote the class of inflations, deflations, and $S$. Every $[dsd']$ is equals to some $[s'd''s'']$, every $[isi']$ equals to some $[s'i''s'']$.&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;p&gt;We show some connections between [L] and [CL]. The following reflection lemma is of great importance.&lt;/p&gt;
-
-&lt;div class=&quot;lemma&quot;&gt;
-  &lt;p&gt;(Reflection lemma). $[-]$ reflect the $S$-morphisms, i.e., for any $f ∈ S$ such that $[g] = [f]$, then $g ∈ S$.&lt;/p&gt;
-  &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;Denote $f,g : X → Y$. Suppose that $(g-f) = i ∘ j$ factors through some $W ∈ \mathcal{N}$. Now $g = (1,i) ∘ \binom f j$. We see that $\binom f j$ is the composition morphisms in $S$:&lt;/p&gt;
-    &lt;p&gt;$$\begin{equation}
-X ⊕ 0 \xrightarrow {\binom {1 \ 0}{0 \ 0}} X ⊕ N \xrightarrow{\binom {1 \ 0}{j \ 1}} X⊕ N \xrightarrow {\binom{f \ 0}{0 \ 1}} Y ⊕ N.
-\end{equation}$$&lt;/p&gt;
-    &lt;p&gt;One can show that $(1,i)$ is the composition of morphisms in $S$:&lt;/p&gt;
-    &lt;p&gt;$$\begin{equation}
-Y ⊕ N \xrightarrow{\binom {1 \ i}{0 \ 1}}Y ⊕ N \xrightarrow{\binom {1 \ 0}{0 \ 0}} Y ⊕ 0.
-\end{equation}$$&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;We may assume $S$ to include $\{ f ∣ [f] ∈ 𝐈𝐬𝐨 (\mathcal{C} / \mathcal{N})\}$, serving as a reasonable closure. By reflection lemma, it is equivalent to assume that $[S]$ contains all isomorphisms of $\mathcal{C} / \mathcal{N}$.&lt;/p&gt;
-
-&lt;div class=&quot;lemma&quot;&gt;
-  &lt;p&gt;Under the reasonable closure $[S] ⊆ 𝐈𝐬𝐨 (\mathcal{C} / \mathcal{N})$, [M]’s implies [CM]’s.&lt;/p&gt;
-  &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;(CM1). By reflection lemma, we see that $[S]$ is strongly multiplicative whenever $S$ is. The rest part of CM1 is trivial. &lt;br /&gt; &lt;br /&gt; (CM2). We only show R2 and R3. R2 is trivial. For R3, suppose that $[sf] = 0$, then $fs = ji$ factors through $W ∈ \mathcal{N}$. Since there is a way to complete $λ ∈ S$ such that $λsf = 0$, we obtain $ft = 0$ for some $t ∈ S$. Hence $[ft] =0$ for $[t] ∈ [S]$.&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_31e8cf58c520c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;The converse is obtain by reversing all arrows. &lt;br /&gt; &lt;br /&gt; (CM3 and CM4). Trivial.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;the-bifunctor-mathjax_protectedjpcdllwg4oasifvwnzs8xsdihpig8j2vgyqmathjax_protected&quot;&gt;The Bifunctor $𝔼 → [𝔼] → 𝕃$&lt;/h3&gt;
-
-&lt;p&gt;By means of two-step localisation, we proceed to define, in succession:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The functor $[𝔼] : (\mathcal{C} / \mathcal{N}) ^{\mathrm{op}} × (\mathcal{C} / \mathcal{N}) → 𝐀𝐛$, which is, in some sense, a quotient of $𝔼$;&lt;/li&gt;
-  &lt;li&gt;The functor $𝕃 : \mathcal{C}[S^{-1}]^{\mathrm{op}} × \mathcal{C}[S^{-1}] → 𝐁𝐢𝐠𝐀𝐛$, where $𝐁𝐢𝐠𝐀𝐛$ denotes the category of classes endowed with an Abelian group structure.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There is, at present, no necessity to address set-theoretic considerations.
-&lt;br /&gt;
-&lt;br /&gt;
-The axioms of $S$ includes CL1-5, as well as reasonable closure that $S$ contains the preimages of isomorphisms in $\mathcal{C} / \mathcal{N}$ along the functor $[-]$. There is no need to think of L1-5, as they are weaker axioms.&lt;/p&gt;
-
-&lt;div class=&quot;example&quot;&gt;
-  &lt;p&gt;(The two sided nullity). We learn by CL2 that, $[0] ∈ [S] ∘ [φ]$ iff $[0] ∈ [φ ] ∘ [S]$. We may with the analogous theorems for extension elements.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;lemma&quot;&gt;
-  &lt;p&gt;When there is $s ∈ S$ such that $s^∗ η = 0$, then there is $t ∈ S$ such that $t_∗ η =0$.&lt;/p&gt;
-  &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;By CL3, there exists $[q] ∈ [S]$ making the diagram commutative in $\mathcal{C} / \mathcal{N}$.&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_df92026aaf844.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;We denote $q = (f,t)$ without the loss of generality. By CL2, there is $u$ and $α$ making the red sqaure commutative in $\mathcal{C}/\mathcal{N}$.&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_89526dd9111e3.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;Since $[α ∘ f] = [u]$, we have that $(α ∘ f) ∈ S$ by reflection lemma. Now $(α ∘ f)_∗ η  =0$.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now we define $[𝔼]$ in $\mathcal{C} / \mathcal{N}$ as a quotient functor of $𝔼$.&lt;/p&gt;
-
-&lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;($[𝔼] (-,-)$). For each pair of objects $(Z,X)$, we define&lt;/p&gt;
-  &lt;p&gt;$$\begin{equation}
-0 → 𝕂 (Z, X) → 𝔼 (Z,X) → [𝔼] (Z,X) → 0.
-\end{equation}$$&lt;/p&gt;
-  &lt;p&gt;Here $η ∈ 𝕂$ iff $0 ∈ S^∗ η$, or equivalently $0 ∈ S_∗ η$ by previous lemma.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;theorem&quot;&gt;
-  &lt;p&gt;$[𝔼] : (\mathcal{C}/\mathcal{N})^{\mathrm{op}} × \mathcal{C}/\mathcal{N} → 𝐀𝐛$ is an additive bifunctor.&lt;/p&gt;
-  &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;We firstly show that $[𝔼] : \mathcal{C}^{\mathrm{op}} × \mathcal{C} → 𝐀𝐛$ is an additive bifunctor.&lt;/p&gt;
-    &lt;ol&gt;
-      &lt;li&gt;We show that $[𝔼]$ is functorial in the first entry, i.e., $g^∗ : [δ] ↦ [g^∗ δ]$ is well-defined. It suffices to show that $g^∗$ preserves extension elements in $𝕂$, which is clear.&lt;/li&gt;
-      &lt;li&gt;$[𝔼]$ is functorial in the second entry by dual analysis.&lt;/li&gt;
-      &lt;li&gt;$𝕂$ preserves biproducts. For instance, we take arbitrary $δ _i ∈ 𝕂 (Z, X_i)$ such that $(s_i)^∗ δ _i = 0$ for some $s_i ∈ S$. We apply CL2 to $⋅ ⇒ Z ⇐ ⋅$, and obtain $s ∈ S$ such that $[s^∗ δ _i] = [0]$. Hence, $δ _1 ⊕ δ _2 ∈ 𝕂$.&lt;/li&gt;
-    &lt;/ol&gt;
-    &lt;p&gt;Therefore, the functorial quotient $[𝔼]$ is well-defined.&lt;/p&gt;
-    &lt;p&gt;For any $N ∈ \mathcal{N}$, we see that both $(0 → N)$ and $(N → 0)$ belongs to $𝔼$. Hence $𝕂 (\mathcal{N},-)$ and $𝕂 (-,\mathcal{N})$ vanished. We see that $[𝔼]$ is well-defined on the stable category.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;By construction, $𝕂$ is somehow regarded as a closed subset: for any $s ∈ S$, $s_∗ η ∈ 𝕂$ iff $η ∈ 𝕂$. Informally, the preimage of $(s_∗)^{-1} 𝕂$ is contained in $𝕂$.&lt;/p&gt;
-
-&lt;div class=&quot;lemma&quot;&gt;
-  &lt;p&gt;We denote this lemma by the formula $(S^∗)^{-1} (S_∗ )^{-1} 𝕂 = 𝕂$. That is, when there are some $s,t ∈ S$ such that $s^∗ t_∗ η ∈ 𝕂$, then $η ∈ 𝕂$.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now we shall construct $𝕃$ from $[𝔼]$ by bifractions.&lt;/p&gt;
-
-&lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;(&lt;strong&gt;Bifraction&lt;/strong&gt;). A bifraction is a triple $([s],[η], [t])$ for $η ∈ 𝔼 (Z,X)$, $(s : Z → Z') ∈ S$, and $(t : X' → X) ∈ S$. We denote it by a zigzag diagram $Z' \overset{[s]}⇐ Z \overset {[η]}→ X \overset {[t]}⇐ X'$. &lt;br /&gt; \&lt;/p&gt;
-  &lt;p&gt;Say $([s],[η], [t])$ and $([s'],[η '],[t'])$ are equivalent, provided a diagram in $\mathcal{C} / \mathcal{N}$:&lt;/p&gt;
-  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_3d4a22ddb4cd0.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-  &lt;p&gt;All triangles commmute in the diagram, while $[p^∗ q_∗ η] =[η _0]$ and $[(p')^∗ (q')_∗ η'] = [η _0]$. &lt;br /&gt; &lt;br /&gt; We shall soon prove that such an equivalence class is an element in $𝕃 (Z', X')$.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Informally, $s_0$ is the left common denominator of $(s,s')$ and $t_0$ is the right common denominator of $(t,t')$, such that&lt;/p&gt;
+&lt;div class='example'&gt;&lt;p&gt;Let $(L, l) : (\mathcal{C} ,𝔼 , 𝔰) → (\mathcal{D} , 𝔽 , 𝔱 )$ be exact functor, such that $L$ is an equivalence and $l$ is a natural isomorphism. We use the notation of adjoint pair $(L, R, η , ε)$ to denote the equivalence of additive categories $\mathcal{C}$ and $\mathcal{D}$. Now we define the natural isomorphism $r$ by the following zigzag diagram of natural isomorphisms:&lt;/p&gt;
 
 &lt;p&gt;$$\begin{equation}
-([s],[η],[t]) ∼ ([sp],[p^∗ q_∗ η],[qt]) = ([s'p'],[(p')^∗ (q')_∗ η'],[q't']) ∼ ([s'],[η'],[t']).
+𝔽 (C,A) \xleftarrow[∼ ]{(ε _A)_∗ }𝔽 (C,LRA) \xrightarrow[∼ ]{(ε _C)^∗ }𝔽 (LRC,LRA) \xleftarrow[∼ ]{l_{RC,RA}}𝔼 (RC, RA).
 \end{equation}$$&lt;/p&gt;
 
-&lt;p&gt;The following lemma shows how $\mathcal{C} → \mathcal{C}/\mathcal{N}$ simplifies the fractional argument.&lt;/p&gt;
+&lt;p&gt;It remains to show the naturality. By definition, we have that
+$$\begin{equation}
+l_{RC, RA} ∘ r_{C,A} : 𝔽 (C,A) → 𝔽 (LRC, LRA),\quad δ ↦ (ε _A)_∗ ^{-1} (ε _C)^∗ δ .
+\end{equation}$$&lt;/p&gt;
 
-&lt;div class=&quot;lemma&quot;&gt;
-  &lt;p&gt;$([s],[η],[t]) ∼ ([s],[η'],[t])$ if and only if $[η] = [η']$. The only if part is due to $(S^∗)^{-1} (S_∗)^{-1} 𝕂 = 𝕂$.&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;In short, there are no zero divisors in $[𝔼]$.&lt;/li&gt;
-  &lt;/ul&gt;
+&lt;p&gt;Now we claim that $r_{LZ, LX} ∘ l_{Z,X} (δ ) = (η _X)_∗ (η _Z^∗ )^{-1} (δ)$, that is, the following diagram commutes:&lt;/p&gt;
+
+&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_61778a82294cf.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+
+&lt;p&gt;By triangle identities of adjoint pair, $ε _{L?} = (Lη _?)^{-1}$. This completes the proof.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;theorem&quot;&gt;
-  &lt;p&gt;$∼$ is an equivalence relation of bifractions.&lt;/p&gt;
-  &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;We only shows the transitivity. Suppose we have fractions $𝔉_i := ([s_i],[η_i],[t_i])$ for $i = 1,2,3$, such that $𝔉 _1 ∼ 𝔉 _2$ via $𝔉 _{1,2}$ and $𝔉 _2 ∼ 𝔉 _3$ via $𝔉 _{2,3}$. We present it as a commutative diagram in $\mathcal{C}/\mathcal{N}$:&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_15aec859a8991.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;Our goal is to create $𝔉 _{1,2} ↗ 𝔉_2 ↖ 𝔉_{2,3}$ from $𝔉 _{1,2} ↘ 𝔉_2 ↙ 𝔉_{2,3}$ in the diagram. We firstly consider the $[s]$-part.&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_4d2bc3e141df0.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;The square $(P,B,C,D)$ along with the blue arrows are given by CL2 (all arrows are in $S$ by CL1). Now we pullback $η_{1,2}$, $η_2$, and $η_{2,3}$ along $B ⇒ P$, $C ⇒ P$, and $D ⇒ P$, respectively. This yields three extensions in green arrows.&lt;/p&gt;
-    &lt;p&gt;By construction, we obtained $𝔉 _i ∼ 𝔉 _i'$:&lt;/p&gt;
-    &lt;p&gt;$$\begin{equation}
+### Two-step Localisation
+
+We localise an extriangulated category by fractional expressions. We firstly review the admissible multiplicative system for triangulated cases. Throughtout, we use $⇒$ to denote the morphisms in $S$.
+
+&lt;div class='example'&gt;&lt;p&gt;(Admissible multiplicative system). Let $S$ be a class of morphisms for a triangulated category. Say $S$ is a (right) admissible multiplicative system with respect to the triangulated category, provided&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(FR1). $S$ cantains all isomorphisms and closed under compositions.&lt;/li&gt;
+  &lt;li&gt;(FR2). Any $A → E ⇐ B$ admits a cone of the form $A ← F ⇒ B$.&lt;/li&gt;
+  &lt;li&gt;(FR3). If $0 ∈ f ∘ S$, then $0 ∈ S ∘ f$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If $S$ satisfies FR1-3, then it is a right multiplicative system.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(FR4). $S[1] ⊆ S$.&lt;/li&gt;
+  &lt;li&gt;(FR5). Let $(X_i, Y_i, Z_i, f_i, g_i, h_i)$ be triangles for $i ∈ \{1,2\}$. Suppose that there is $α , β ∈ S$ such that $β ∘ f_1 = f_2 ∘ α$, then there is a $(γ : Z_1 →  Z_2) ∈ S$ making the entire diagram commutative. Roughly speaking, the 2-out-of-three principle for triangle morphisms in $S$.&lt;/li&gt;
+  &lt;li&gt;(Sat). Say $S$ is saturated, if $\{fg, gh\} ⊆ S$ implies $g ∈ S$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Some remarks on multiplicative system of triangles.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;FR2 is a corollary of FR5 and FR1.&lt;/li&gt;
+  &lt;li&gt;An admissible multiplicative system yields the Verdier quotient $\mathcal{T} → S^{-1} \mathcal{T}$. Here $\mathcal{T}$ is not triangulated in general.&lt;/li&gt;
+  &lt;li&gt;An triangulated subcategory $\mathcal{C} ↣ \mathcal{T}$ yields a strong multiplicative system.&lt;/li&gt;
+  &lt;li&gt;Say $h ∈ S$, if there is an triangle of the form $(X,Y,Z,f,g,h)$ for $X ∈ \mathcal{C}$.&lt;/li&gt;
+  &lt;li&gt;Say the multiplicative system $S$ is strong, if any two morphisms in $\{f,g, gf\}$ belongs to $S$, then so is the third.&lt;/li&gt;
+  &lt;li&gt;There is a $1:1$ correspondence between saturated multiplicative system and trianglated subcategories.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class='example'&gt;&lt;p&gt;(&lt;strong&gt;Two-step localisation&lt;/strong&gt;). To begin with, we assume the class of morphisms $S$ to be&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;closed under biproduct $⊕$, so that the localisation is additive;&lt;/li&gt;
+  &lt;li&gt;a strong multiplicative system, that is, if any two morphisms in $\{f,g, gf\}$ belong to $S$, then so does the third. This serves as a reasonable closure for $S$, since isomorphisms in $\mathcal{C} [S^{-1}]$ satisfy the 2-out-of-3 principle with respect to composition.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The basic setting and principal procedure is summarised as&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+Q_S: \  \mathcal{C} \xrightarrow[ \begin{bmatrix} - \end{bmatrix} ]{\text{fewer morphisms}} \mathcal{C} / \mathcal{N} \xrightarrow[Q]{\text{more morphisms}} \mathcal{C} [S^{-1}].
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;Here $\mathcal{N} = \{W ∣ (0 → W) ∈ S\}$ so that we may define the additive quotient functor $[-]$. The localisation $Q_S$ factors through such $[-]$, yielding $Q$.&lt;/p&gt;
+
+&lt;p&gt;We remark upon the following points.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Observe that $(0 → W) ∈ S$ if and only if $(W → 0) ∈ S$ by virtue of the strong multiplicative system.&lt;/li&gt;
+  &lt;li&gt;$\mathcal{N}$ is the subclass of zero objects in $\mathcal{C} [S^{-1}]$ which are directly detected.&lt;/li&gt;
+  &lt;li&gt;Once the zigzag morphisms are written in fractions, $\mathcal{N}$ is precisely the class of zero objects in $\mathcal{C} [S^{-1}]$.&lt;/li&gt;
+  &lt;li&gt;By uniqueness of localisation, $(\mathcal{C} / \mathcal{N}) ([S]^{-1})$ and $\mathcal{C} [S^{-1}]$ are isomorphic categories.&lt;/li&gt;
+  &lt;li&gt;Note that $\mathcal{C} / \mathcal{N} ≠ \mathcal{C} [S^{-1}]$ in general. For instance, if $Q(f)$ is zero, then it is impossible to determine whether $f$ factors through some $N ∈ \mathcal{N}$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class='definition'&gt;&lt;p&gt;([-]). We denote
+$$\begin{equation}
+ϕ (S,x,y,z,\ldots) := \{ϕ (s, x,y,z,\ldots) ∣ \text{when it is defined}\}
+\end{equation}$$
+for general operations. For instance,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$[S] = \{[s] ∣ s ∈ S\}$,&lt;/li&gt;
+  &lt;li&gt;$S ∘ f = \{s ∘ f ∣ s ∈ S, \ \text{and} \ s ∘ f \ \text{is defined}\}$,&lt;/li&gt;
+  &lt;li&gt;$S^∗ δ = \{s^∗ δ ∣ s ∈ S \ \text{and} \ s^∗ δ \ \text{is defined}\}$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+The advantages of the two-step localisation include the following.
+
+- When dealing with fractions, $[a] ∘ [s]^{-1} = [a'] ∘ [s]^{-1}$ if and only if $[a] = [a']$.
+- The axioms on $S$ ([L]'s) are stronger than those of $[S]$ ([CL]'s). Explicitly, to show that the localisation $Q_S : \mathcal{C} → \mathcal{C}[S^{-1}]$ is extriangulated along with the fractional condition $(\mathcal{C} , S) ⊧$ [L], it suffices to prove $Q : \mathcal{C} / \mathcal{N} → (\mathcal{C} / \mathcal{N}) [[S]^{-1}]$ with $(\mathcal{C} / \mathcal{N} , [S]) ⊧$ [CL]. Here [L] ⇒ [CL].
+
+&lt;div class='definition'&gt;&lt;p&gt;(The [L] and [CL] axioms). The axioms [L]’s are defined for $(\mathcal{C}, S)$, while [CL]’s are defiend for $(\mathcal{C} / \mathcal{N} , [S])$.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(L1). $S$ contains all isomorphisms, closed under biproduct and it is strongly multiplicative. This is exactly out basic setting.&lt;/li&gt;
+  &lt;li&gt;(L2). $S$ is a multiplicative system in usual sense, i.e., it satisfies both FR and LFR.&lt;/li&gt;
+  &lt;li&gt;(L3). For morphism of extension $(f,h) : δ → δ '$ with $f,h ∈ S$, there exists some $g ∈ S$ making the diagram of realisations commutative.&lt;/li&gt;
+  &lt;li&gt;(L4). Let $\{i_∙ \}$, $\{d_∙ \}$, and $\{s_∙ \}$ denote the class of inflations, deflation, and $S$. Every $dsd'$ is equals to some $s'd''s''$, every $isi'$ equals to some $s'i''s''$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The [CL] axioms are similar to [L]’s.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(CL1). $[S]$ contains all isomorphisms, closed under biproduct and it is strongly multiplicative.&lt;/li&gt;
+  &lt;li&gt;(CL2). $[S]$ is a multiplicative system in usual sense, i.e., it satisfies both FR and LFR.&lt;/li&gt;
+  &lt;li&gt;(CL3). For morphism of extension $(f,h) : δ → δ '$ with $[f],[h] ∈ [S]$, there exists some $[g] ∈ [S]$ making the diagram of realisations commutative in $\mathcal{C} / \mathcal{N}$.&lt;/li&gt;
+  &lt;li&gt;(CL4). Let $\{i_∙ \}$, $\{d_∙ \}$, and $\{s_∙ \}$ denote the class of inflations, deflations, and $S$. Every $[dsd']$ is equals to some $[s'd''s'']$, every $[isi']$ equals to some $[s'i''s'']$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+We show some connections between [L] and [CL]. The following reflection lemma is of great importance.
+
+&lt;div class='lemma'&gt;&lt;p&gt;(Reflection lemma). $[-]$ reflect the $S$-morphisms, i.e., for any $f ∈ S$ such that $[g] = [f]$, then $g ∈ S$.&lt;/p&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;Denote $f,g : X → Y$. Suppose that $(g-f) = i ∘ j$ factors through some $W ∈ \mathcal{N}$. Now $g = (1,i) ∘ \binom f j$. We see that $\binom f j$ is the composition morphisms in $S$:&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
+X ⊕ 0 \xrightarrow {\binom {1 \ 0}{0 \ 0}} X ⊕ N \xrightarrow{\binom {1 \ 0}{j \ 1}} X⊕ N \xrightarrow {\binom{f \ 0}{0 \ 1}} Y ⊕ N.
+\end{equation}$$&lt;/p&gt;
+  &lt;p&gt;One can show that $(1,i)$ is the composition of morphisms in $S$:&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
+Y ⊕ N \xrightarrow{\binom {1 \ i}{0 \ 1}}Y ⊕ N \xrightarrow{\binom {1 \ 0}{0 \ 0}} Y ⊕ 0.
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+We may assume $S$ to include $\{ f ∣ [f] ∈ 𝐈𝐬𝐨 (\mathcal{C} / \mathcal{N})\}$, serving as a reasonable closure. By reflection lemma, it is equivalent to assume that $[S]$ contains all isomorphisms of $\mathcal{C} / \mathcal{N}$.
+
+&lt;div class='lemma'&gt;&lt;p&gt;Under the reasonable closure $[S] ⊆ 𝐈𝐬𝐨 (\mathcal{C} / \mathcal{N})$, [M]’s implies [CM]’s.&lt;/p&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;(CM1). By reflection lemma, we see that $[S]$ is strongly multiplicative whenever $S$ is. The rest part of CM1 is trivial. &lt;br /&gt; &lt;br /&gt; (CM2). We only show R2 and R3. R2 is trivial. For R3, suppose that $[sf] = 0$, then $fs = ji$ factors through $W ∈ \mathcal{N}$. Since there is a way to complete $λ ∈ S$ such that $λsf = 0$, we obtain $ft = 0$ for some $t ∈ S$. Hence $[ft] =0$ for $[t] ∈ [S]$.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_31e8cf58c520c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;The converse is obtain by reversing all arrows. &lt;br /&gt; &lt;br /&gt; (CM3 and CM4). Trivial.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+### The Bifunctor $𝔼 → [𝔼] → 𝕃$
+
+By means of two-step localisation, we proceed to define, in succession:
+
+- The functor $[𝔼] : (\mathcal{C} / \mathcal{N}) ^{\mathrm{op}} × (\mathcal{C} / \mathcal{N}) → 𝐀𝐛$, which is, in some sense, a quotient of $𝔼$;
+- The functor $𝕃 : \mathcal{C}[S^{-1}]^{\mathrm{op}} × \mathcal{C}[S^{-1}] → 𝐁𝐢𝐠𝐀𝐛$, where $𝐁𝐢𝐠𝐀𝐛$ denotes the category of classes endowed with an Abelian group structure.
+
+There is, at present, no necessity to address set-theoretic considerations.
+\\
+\\
+The axioms of $S$ includes CL1-5, as well as reasonable closure that $S$ contains the preimages of isomorphisms in $\mathcal{C} / \mathcal{N}$ along the functor $[-]$. There is no need to think of L1-5, as they are weaker axioms.
+
+&lt;div class='example'&gt;&lt;p&gt;(The two sided nullity). We learn by CL2 that, $[0] ∈ [S] ∘ [φ]$ iff $[0] ∈ [φ ] ∘ [S]$. We may with the analogous theorems for extension elements.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class='lemma'&gt;&lt;p&gt;When there is $s ∈ S$ such that $s^∗ η = 0$, then there is $t ∈ S$ such that $t_∗ η =0$.&lt;/p&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;By CL3, there exists $[q] ∈ [S]$ making the diagram commutative in $\mathcal{C} / \mathcal{N}$.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_df92026aaf844.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;We denote $q = (f,t)$ without the loss of generality. By CL2, there is $u$ and $α$ making the red sqaure commutative in $\mathcal{C}/\mathcal{N}$.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_89526dd9111e3.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;Since $[α ∘ f] = [u]$, we have that $(α ∘ f) ∈ S$ by reflection lemma. Now $(α ∘ f)_∗ η  =0$.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+Now we define $[𝔼]$ in $\mathcal{C} / \mathcal{N}$ as a quotient functor of $𝔼$.
+
+&lt;div class='definition'&gt;&lt;p&gt;($[𝔼] (-,-)$). For each pair of objects $(Z,X)$, we define&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+0 → 𝕂 (Z, X) → 𝔼 (Z,X) → [𝔼] (Z,X) → 0.
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;Here $η ∈ 𝕂$ iff $0 ∈ S^∗ η$, or equivalently $0 ∈ S_∗ η$ by previous lemma.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class='theorem'&gt;&lt;p&gt;$[𝔼] : (\mathcal{C}/\mathcal{N})^{\mathrm{op}} × \mathcal{C}/\mathcal{N} → 𝐀𝐛$ is an additive bifunctor.&lt;/p&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;We firstly show that $[𝔼] : \mathcal{C}^{\mathrm{op}} × \mathcal{C} → 𝐀𝐛$ is an additive bifunctor.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;We show that $[𝔼]$ is functorial in the first entry, i.e., $g^∗ : [δ] ↦ [g^∗ δ]$ is well-defined. It suffices to show that $g^∗$ preserves extension elements in $𝕂$, which is clear.&lt;/li&gt;
+    &lt;li&gt;$[𝔼]$ is functorial in the second entry by dual analysis.&lt;/li&gt;
+    &lt;li&gt;$𝕂$ preserves biproducts. For instance, we take arbitrary $δ _i ∈ 𝕂 (Z, X_i)$ such that $(s_i)^∗ δ _i = 0$ for some $s_i ∈ S$. We apply CL2 to $⋅ ⇒ Z ⇐ ⋅$, and obtain $s ∈ S$ such that $[s^∗ δ _i] = [0]$. Hence, $δ _1 ⊕ δ _2 ∈ 𝕂$.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;Therefore, the functorial quotient $[𝔼]$ is well-defined.&lt;/p&gt;
+  &lt;p&gt;For any $N ∈ \mathcal{N}$, we see that both $(0 → N)$ and $(N → 0)$ belongs to $𝔼$. Hence $𝕂 (\mathcal{N},-)$ and $𝕂 (-,\mathcal{N})$ vanished. We see that $[𝔼]$ is well-defined on the stable category.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+By construction, $𝕂$ is somehow regarded as a closed subset: for any $s ∈ S$, $s_∗ η ∈ 𝕂$ iff $η ∈ 𝕂$. Informally, the preimage of $(s_∗)^{-1} 𝕂$ is contained in $𝕂$.
+
+&lt;div class='lemma'&gt;&lt;p&gt;We denote this lemma by the formula $(S^∗)^{-1} (S_∗ )^{-1} 𝕂 = 𝕂$. That is, when there are some $s,t ∈ S$ such that $s^∗ t_∗ η ∈ 𝕂$, then $η ∈ 𝕂$.&lt;/p&gt;
+&lt;/div&gt;
+
+Now we shall construct $𝕃$ from $[𝔼]$ by bifractions.
+
+&lt;div class='definition'&gt;&lt;p&gt;(&lt;strong&gt;Bifraction&lt;/strong&gt;). A bifraction is a triple $([s],[η], [t])$ for $η ∈ 𝔼 (Z,X)$, $(s : Z → Z') ∈ S$, and $(t : X' → X) ∈ S$. We denote it by a zigzag diagram $Z' \overset{[s]}⇐ Z \overset {[η]}→ X \overset {[t]}⇐ X'$. 
+&lt;br /&gt;
+\&lt;/p&gt;
+
+&lt;p&gt;Say $([s],[η], [t])$ and $([s'],[η '],[t'])$ are equivalent, provided a diagram in $\mathcal{C} / \mathcal{N}$:&lt;/p&gt;
+
+&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_3d4a22ddb4cd0.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+
+&lt;p&gt;All triangles commmute in the diagram, while $[p^∗ q_∗ η] =[η _0]$ and $[(p')^∗ (q')_∗ η'] = [η _0]$.
+&lt;br /&gt;
+&lt;br /&gt;
+We shall soon prove that such an equivalence class is an element in $𝕃 (Z', X')$.&lt;/p&gt;
+&lt;/div&gt;
+
+Informally, $s_0$ is the left common denominator of $(s,s')$ and $t_0$ is the right common denominator of $(t,t')$, such that
+
+$$\begin{equation}
+([s],[η],[t]) ∼ ([sp],[p^∗ q_∗ η],[qt]) = ([s'p'],[(p')^∗ (q')_∗ η'],[q't']) ∼ ([s'],[η'],[t']).
+\end{equation}$$
+
+The following lemma shows how $\mathcal{C} → \mathcal{C}/\mathcal{N}$ simplifies the fractional argument.
+
+&lt;div class='lemma'&gt;&lt;p&gt;$([s],[η],[t]) ∼ ([s],[η'],[t])$ if and only if $[η] = [η']$. The only if part is due to $(S^∗)^{-1} (S_∗)^{-1} 𝕂 = 𝕂$.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In short, there are no zero divisors in $[𝔼]$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class='theorem'&gt;&lt;p&gt;$∼$ is an equivalence relation of bifractions.&lt;/p&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;We only shows the transitivity. Suppose we have fractions $𝔉_i := ([s_i],[η_i],[t_i])$ for $i = 1,2,3$, such that $𝔉 _1 ∼ 𝔉 _2$ via $𝔉 _{1,2}$ and $𝔉 _2 ∼ 𝔉 _3$ via $𝔉 _{2,3}$. We present it as a commutative diagram in $\mathcal{C}/\mathcal{N}$:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_15aec859a8991.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;Our goal is to create $𝔉 _{1,2} ↗ 𝔉_2 ↖ 𝔉_{2,3}$ from $𝔉 _{1,2} ↘ 𝔉_2 ↙ 𝔉_{2,3}$ in the diagram. We firstly consider the $[s]$-part.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_4d2bc3e141df0.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;The square $(P,B,C,D)$ along with the blue arrows are given by CL2 (all arrows are in $S$ by CL1). Now we pullback $η_{1,2}$, $η_2$, and $η_{2,3}$ along $B ⇒ P$, $C ⇒ P$, and $D ⇒ P$, respectively. This yields three extensions in green arrows.&lt;/p&gt;
+  &lt;p&gt;By construction, we obtained $𝔉 _i ∼ 𝔉 _i'$:&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
 ([s_i],[η_i],[t_i]) ∼ ([s_0],[η_i'],[t_i']) \quad (i = 1,2,3).
 \end{equation}$$&lt;/p&gt;
-    &lt;p&gt;By dual anlysis on $t_i$’s, we obtain $𝔉 _i ∼ 𝔉 _i''$:&lt;/p&gt;
-    &lt;p&gt;$$\begin{equation}
+  &lt;p&gt;By dual anlysis on $t_i$’s, we obtain $𝔉 _i ∼ 𝔉 _i''$:&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
 ([s_i],[η_i],[t_i]) ∼ ([s_0],[η_i''],[t_0]) \quad (i = 1,2,3).
 \end{equation}$$&lt;/p&gt;
-    &lt;p&gt;Here the equivalent relation is given by the composition&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_ccb124e2c1228.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;Now $[η _1 ''] = [η_2 '']$ since $𝔉_1 ∼ 𝔉 _2$; and similarly $[η _2 ''] = [η _3'']$. Hence, $𝔉_1 ∼ 𝔉_3$ via $([s_0],[η'' _1], [t_0])$.&lt;/p&gt;
-  &lt;/div&gt;
+  &lt;p&gt;Here the equivalent relation is given by the composition&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_ccb124e2c1228.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;Now $[η _1 ''] = [η_2 '']$ since $𝔉_1 ∼ 𝔉 _2$; and similarly $[η _2 ''] = [η _3'']$. Hence, $𝔉_1 ∼ 𝔉_3$ via $([s_0],[η'' _1], [t_0])$.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;We take $[s,η,t]$ as a the equivalence class of the fractions, represented by $([s],[η ],[t])$. Denote&lt;/p&gt;
-  &lt;p&gt;$$\begin{equation}
+&lt;div class='definition'&gt;&lt;p&gt;We take $[s,η,t]$ as a the equivalence class of the fractions, represented by $([s],[η ],[t])$. Denote&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
 𝕃 (Z,X) := \{[s,η ,t] ∣ ([s],[η ],[t]) \ \text{is a fraction}\}.
 \end{equation}$$&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;By general theory of localisation, the morphisms in $\mathcal{C}[S^{-1}] = S^{-1}\mathcal{C}$ is of the form of left fractions, or right fractions alternatively. Moreover. such fractions is additive by CL1. It remains to show that $𝕃(-,-)$ in functorial in $S^{-1}\mathcal{C}$. For instance,&lt;/p&gt;
+By general theory of localisation, the morphisms in $\mathcal{C}[S^{-1}] = S^{-1}\mathcal{C}$ is of the form of left fractions, or right fractions alternatively. Moreover. such fractions is additive by CL1. It remains to show that $𝕃(-,-)$ in functorial in $S^{-1}\mathcal{C}$. For instance,
 
-&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-    &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_bce25eee1a836.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;center&gt;
+        &lt;br&gt;
+        &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_bce25eee1a836.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot;/&gt;
+        &lt;/div&gt;
+        &lt;br&gt;
+        &lt;/center&gt;
 
-&lt;p&gt;it is supposed to gives the composition of fractions:&lt;/p&gt;
+it is supposed to gives the composition of fractions:
+
+$$\begin{equation}
+[s, η, t] ∘ Q([f]) ∘ Q([p])^{-1} = [ps', (f')^∗ η, t].
+\end{equation}$$
+
+&lt;div class='proposition'&gt;&lt;p&gt;The composition of bifractions and fractions are well-defined. It suffices to show that&lt;/p&gt;
 
 &lt;p&gt;$$\begin{equation}
-[s, η, t] ∘ Q([f]) ∘ Q([p])^{-1} = [ps', (f')^∗ η, t].
-\end{equation}$$&lt;/p&gt;
-
-&lt;div class=&quot;proposition&quot;&gt;
-  &lt;p&gt;The composition of bifractions and fractions are well-defined. It suffices to show that&lt;/p&gt;
-  &lt;p&gt;$$\begin{equation}
 [s, η, t] ∘ Q([f]) ∘ Q([p])^{-1} = [ps', (f')^∗ η, t]
 \end{equation}$$&lt;/p&gt;
-  &lt;p&gt;is well-defined. We shall show in steps that the result is independent of&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;the choice of the 2×2 square given by CL2,&lt;/li&gt;
-    &lt;li&gt;the choice of the fraction $Q([f]) ∘ Q([p])^{-1}$,&lt;/li&gt;
-    &lt;li&gt;the choice of the bifraction $[s, η, t]$.&lt;/li&gt;
-  &lt;/ol&gt;
-  &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;(Proof of 1.). If there is another pair $(s'', f'')$ with $s'' ∈ S$, such that $[sf''] = [fs'']$. We shall show that&lt;/p&gt;
-    &lt;p&gt;$$\begin{equation}
+
+&lt;p&gt;is well-defined. We shall show in steps that the result is independent of&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;the choice of the 2×2 square given by CL2,&lt;/li&gt;
+  &lt;li&gt;the choice of the fraction $Q([f]) ∘ Q([p])^{-1}$,&lt;/li&gt;
+  &lt;li&gt;the choice of the bifraction $[s, η, t]$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;(Proof of 1.). If there is another pair $(s'', f'')$ with $s'' ∈ S$, such that $[sf''] = [fs'']$. We shall show that&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
 [ps', (f')^∗ η, t] = [ps'', (f'')^∗ η, t].
 \end{equation}$$&lt;/p&gt;
-    &lt;p&gt;By CL2, there is a way to find $[a]$ and $[b]$ such that $\square$ commutes. We denote $[d] = [f''b - f'a]$, and find that $[s] ∘ [d] = 0$. By CL2, there is $w ∈ S$ such that $[d] ∘ [w] = 0$. Now&lt;/p&gt;
-    &lt;p&gt;$$\begin{equation}
+  &lt;p&gt;By CL2, there is a way to find $[a]$ and $[b]$ such that $\square$ commutes. We denote $[d] = [f''b - f'a]$, and find that $[s] ∘ [d] = 0$. By CL2, there is $w ∈ S$ such that $[d] ∘ [w] = 0$. Now&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
 [ps', (f')^∗ η, t] = [ps'a, (f'a)^∗ η, t];\quad  [ps'', (f'')^∗ η, t] =  [ps''b, (f''b)^∗ η, t],
 \end{equation}$$&lt;/p&gt;
-    &lt;p&gt;where $w^∗ (f'a - f''b)^∗ η ∈ 𝕂$. Hence, $(f'a - f''b)^∗ η ∈ 𝕂$ and thus&lt;/p&gt;
-    &lt;p&gt;$$\begin{equation}
+  &lt;p&gt;where $w^∗ (f'a - f''b)^∗ η ∈ 𝕂$. Hence, $(f'a - f''b)^∗ η ∈ 𝕂$ and thus&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
 [ps'a, (f'a)^∗ η, t] = [ps'', (f'')^∗ η, t].
 \end{equation}$$&lt;/p&gt;
-    &lt;p&gt;(Proof of 2.). Suppose that $Q[f] ∘ Q[p]^{-1} = Q[g] ∘ Q[q]^{-1}$. By induction, it suffice to prove the case when&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_38b1304e9a213.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;With out the loss of generality, we take&lt;/p&gt;
-    &lt;p&gt;$$\begin{equation}
+  &lt;p&gt;(Proof of 2.). Suppose that $Q[f] ∘ Q[p]^{-1} = Q[g] ∘ Q[q]^{-1}$. By induction, it suffice to prove the case when&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_38b1304e9a213.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;With out the loss of generality, we take&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
 [s,η ,t] ∘ Q[g] ∘ Q[q]^{-1} = [qs', (g')^∗ η ,t],
 \end{equation}$$&lt;/p&gt;
-    &lt;p&gt;where the 2×2 square is denoted by $\square$:&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_1096c8194ee9a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;This gives the 2×2 square $Q[s]^{-1} ∘ Q[f] = Q[g'] ∘ Q[rs']$. Hence,&lt;/p&gt;
-    &lt;p&gt;$$\begin{equation}
+  &lt;p&gt;where the 2×2 square is denoted by $\square$:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_1096c8194ee9a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;This gives the 2×2 square $Q[s]^{-1} ∘ Q[f] = Q[g'] ∘ Q[rs']$. Hence,&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
 [s,η ,t] ∘ Q[f] ∘ Q[p]^{-1} = [prs', (g'r)^∗ η ,t] = [qs', (g')^∗ η ,t].
 \end{equation}$$&lt;/p&gt;
-    &lt;p&gt;(Proof of 3.). Suppose that $[s,η ,t] = [s',η ',t']$, By induction, it suffice to prove the case when&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_e728a34c33afa.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;Here the middle rectangles stands for $[r^∗ s_∗ η] = [η ']$. Again we take the 2×2 square from $(f,s)$, for instance, $Q[f] ∘ Q[w]^{-1} = Q[s]^{-1} ∘ Q[g]$. This yields&lt;/p&gt;
-    &lt;p&gt;$$\begin{equation}
+  &lt;p&gt;(Proof of 3.). Suppose that $[s,η ,t] = [s',η ',t']$, By induction, it suffice to prove the case when&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_e728a34c33afa.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;Here the middle rectangles stands for $[r^∗ s_∗ η] = [η ']$. Again we take the 2×2 square from $(f,s)$, for instance, $Q[f] ∘ Q[w]^{-1} = Q[s]^{-1} ∘ Q[g]$. This yields&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
 [s,η ,t] ∘ Q[f] ∘ Q[p]^{-1} = [pw, g^∗ η , t].
 \end{equation}$$&lt;/p&gt;
-    &lt;p&gt;We complete the 2×2 square from $(f,s')$ by $(w,rg)$, as shown in the diagram&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_1f76845453936.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-    &lt;p&gt;This yields that&lt;/p&gt;
-    &lt;p&gt;$$\begin{equation}
+  &lt;p&gt;We complete the 2×2 square from $(f,s')$ by $(w,rg)$, as shown in the diagram&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_1f76845453936.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;This yields that&lt;/p&gt;
+  &lt;p&gt;$$\begin{equation}
 [s', η' ,t'] ∘ Q[f] ∘ Q[p]^{-1} = [pw, (rg)^∗ η' , t'].
 \end{equation}$$&lt;/p&gt;
-    &lt;p&gt;We observe that $[pw, g^∗ η , t] = [pw, r^∗ g^∗ η , t']$. This coincides $[s,η ,t] ∘ Q[f] ∘ Q[p]^{-1}$.&lt;/p&gt;
-  &lt;/div&gt;
+  &lt;p&gt;We observe that $[pw, g^∗ η , t] = [pw, r^∗ g^∗ η , t']$. This coincides $[s,η ,t] ∘ Q[f] ∘ Q[p]^{-1}$.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;We explain the bifunctoriality of $𝕃$, i.e,&lt;/p&gt;
+We explain the bifunctoriality of $𝕃$, i.e,
 
-&lt;p&gt;$$\begin{equation}
+$$\begin{equation}
 (Z\overset p ⇐ ∙ \overset f → Z') ^∗ (X\overset g → ∙ \overset q ⇐ X')_∗ : 𝕃 (Z, X) → 𝕃 (Z', X'),
-\end{equation}$$&lt;/p&gt;
+\end{equation}$$
 
-&lt;p&gt;with the diagram&lt;/p&gt;
+with the diagram
 
-&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-    &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_dfaa5a364e2c6.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;center&gt;
+        &lt;br&gt;
+        &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Diagram_Thm_Extri/diagram_dfaa5a364e2c6.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot;/&gt;
+        &lt;/div&gt;
+        &lt;br&gt;
+        &lt;/center&gt;
 
-&lt;div class=&quot;proposition&quot;&gt;
-  &lt;p&gt;$𝕃 (Z , X)$ admits an additive structure (it might be a big Abelian group), and $[𝔼] (Z,X)$ is a subgroup via $$\begin{equation}
+&lt;div class='proposition'&gt;&lt;p&gt;$𝕃 (Z , X)$ admits an additive structure (it might be a big Abelian group), and $[𝔼] (Z,X)$ is a subgroup via
+$$\begin{equation}
 [𝔼] (Z,X) → 𝕃 (Z , X),\quad [δ] ↦ [1_X, δ, 1_Z].
 \end{equation}$$&lt;/p&gt;
-  &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;The additive structure is given by Baer sum, that is,&lt;/p&gt;
-  &lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;The additive structure is given by Baer sum, that is,&lt;/p&gt;
 &lt;/div&gt;
+&lt;/div&gt;   --&gt;
 </description>
           <pubDate>2025-05-23T00:00:00+08:00</pubDate>
           <link>http://localhost:4000/website/posts/Diagram_Thm_Extri</link>
