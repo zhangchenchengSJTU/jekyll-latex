@@ -17,6 +17,11 @@ Theo B{\"u}hler.
 \newblock {\em Expositiones Mathematicae}, 28(1):1--69, January 2010.
 \newblock \href {https://doi.org/10.1016/j.exmath.2009.04.004} {\path{doi:10.1016/j.exmath.2009.04.004}}.
 
+\bibitem[Che]{chenExtensionliftingLemmaTwoterm}
+Xiao-Wu Chen.
+\newblock The {{Extension-lifting Lemma}} via {{Two-term Complexes}}.
+\newblock URL: \url{http://home.ustc.edu.cn/~xwchen/USTC%20Algebra%20Notes%20Archiv/The%20Extension-Lifting%20lemma%20via%20two-term%20complexes.pdf}.
+
 \bibitem[Kel82]{kellyBasicConceptsEnriched1982}
 G.~M. Kelly.
 \newblock {\em Basic Concepts of Enriched Category Theory}.
