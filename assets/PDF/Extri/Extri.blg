@@ -1,6 +1,11 @@
 This is BibTeX, Version 0.99d (TeX Live 2024)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Extri.aux
+A level-1 auxiliary file: Sections/Recollection.aux
+A level-1 auxiliary file: Sections/Intro.aux
+A level-1 auxiliary file: Sections/Diagram.aux
+A level-1 auxiliary file: Sections/SpecialExtri.aux
+A level-1 auxiliary file: Sections/Model.aux
 The style file: alphaurl.bst
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
@@ -9,44 +14,44 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ref.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 17 entries,
+You've used 19 entries,
             3368 wiz_defined-function locations,
-            823 strings with 8999 characters,
-and the built_in function-call counts, 8235 in all, are:
-= -- 897
-> -- 215
-< -- 17
-+ -- 57
-- -- 54
-* -- 449
-:= -- 1137
-add.period$ -- 68
-call.type$ -- 17
-change.case$ -- 86
-chr.to.int$ -- 17
-cite$ -- 17
-duplicate$ -- 269
-empty$ -- 805
-format.name$ -- 83
-if$ -- 2120
+            840 strings with 9624 characters,
+and the built_in function-call counts, 9075 in all, are:
+= -- 985
+> -- 233
+< -- 19
++ -- 61
+- -- 58
+* -- 490
+:= -- 1246
+add.period$ -- 75
+call.type$ -- 19
+change.case$ -- 96
+chr.to.int$ -- 19
+cite$ -- 19
+duplicate$ -- 300
+empty$ -- 896
+format.name$ -- 91
+if$ -- 2344
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 16
-newline$ -- 101
-num.names$ -- 51
-pop$ -- 194
+missing$ -- 18
+newline$ -- 112
+num.names$ -- 57
+pop$ -- 224
 preamble$ -- 1
-purify$ -- 107
+purify$ -- 119
 quote$ -- 0
-skip$ -- 603
+skip$ -- 668
 stack$ -- 0
-substring$ -- 332
-swap$ -- 42
-text.length$ -- 29
-text.prefix$ -- 12
+substring$ -- 348
+swap$ -- 46
+text.length$ -- 33
+text.prefix$ -- 14
 top$ -- 0
-type$ -- 120
+type$ -- 132
 warning$ -- 0
-while$ -- 56
-width$ -- 19
-write$ -- 243
+while$ -- 60
+width$ -- 21
+write$ -- 270

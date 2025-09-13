@@ -22,6 +22,12 @@ Xiao-Wu Chen.
 \newblock The {{Extension-lifting Lemma}} via {{Two-term Complexes}}.
 \newblock URL: \url{http://home.ustc.edu.cn/~xwchen/USTC%20Algebra%20Notes%20Archiv/The%20Extension-Lifting%20lemma%20via%20two-term%20complexes.pdf}.
 
+\bibitem[Hap88]{happelTriangulatedCategoriesRepresentation1988}
+Dieter Happel.
+\newblock {\em Triangulated {{Categories}} in the {{Representation}} of {{Finite Dimensional Algebras}}}.
+\newblock Cambridge University Press, 1 edition, February 1988.
+\newblock URL: \url{https://www.cambridge.org/core/services/aop-cambridge-core/content/view/AD4EA5E6215A0B586678B10B2D417F74/9780511629228c1_p1-56_CBO.pdf/triangulated_categories.pdf}, \href {https://doi.org/10.1017/CBO9780511629228} {\path{doi:10.1017/CBO9780511629228}}.
+
 \bibitem[Kel82]{kellyBasicConceptsEnriched1982}
 G.~M. Kelly.
 \newblock {\em Basic Concepts of Enriched Category Theory}.
@@ -74,6 +80,11 @@ Hiroyuki Nakaoka and Yann Palu.
 \newblock {\em {Cahiers de topologie et g{\'e}om{\'e}trie diff{\'e}rentielle cat{\'e}goriques}}, LX(2):117--193, 2019.
 \newblock arXiv title ''Mutation via Hovey twin cotorsion pairs and model structures in extriangulated categories''.
 \newblock URL: \url{https://hal.science/hal-02136919}.
+
+\bibitem[Pro]{Lemma12710DLPThe}
+Stacks Project.
+\newblock Lemma 12.7.1 ({{0DLP}})---{{The Stacks}} project.
+\newblock URL: \url{https://stacks.math.columbia.edu/tag/0DLP}.
 
 \bibitem[RZ21]{rongStrongVersionSnake2021}
 Shi Rong and Pu~Zhang.

@@ -1,0 +1,606 @@
+
+
+\section{特殊的外三角范畴}
+
+\subsection{正合范畴是外三角范畴}
+
+正合范畴定义见\Cref{def:exact-category}, 本节假定 $\mathrm{Ext}^1$ 的取值是集合 (\Cref{ex:ext-small}).
+
+\begin{example}\label{ex:exact-as-extri}
+	(正合范畴视作外三角范畴). 给定正合范畴 $(\mathcal{C}, \mathcal{E})$, 我们定义基本资料 (\Cref{def:extri-data}).
+	\begin{enumerate}
+		\item $\mathbb E := \mathrm{Ext}^1 : \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathbf{Ab}$;
+		\item 若 ses $0 \to A \overset i\to B \overset p\to C \to 0$ 对应同构类 $\delta \in \mathbb E(C,A)$, 则记 $A \overset i \rightarrowtail B \overset p \twoheadrightarrow C \in \mathfrak s(\delta)$.
+	\end{enumerate}
+\end{example}
+
+下证明 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 是外三角范畴.
+
+\begin{lemma}\label{lem:ext-tri-et2-b}
+	沿用\Cref{ex:exact-as-extri} 的表述. 实现之间的同态 $(\alpha, \beta, \gamma ) : \delta \to \varepsilon$ 满足 $\alpha_\ast \delta = \gamma ^\ast \varepsilon$.
+	\begin{proof}
+		这是 Baer 和的基本性质 (或 Yoneda 群的定义) 的定义. 细节见 \cite{mitchellTheoryCategories1965} 的章节 VII.
+	\end{proof}
+\end{lemma}
+
+\begin{proposition}
+	\Cref{ex:exact-as-extri} 定义的 $(\mathcal{C},\mathbb E, \mathfrak s)$ 满足 ET1.
+	\begin{proof}
+		由\Cref{thm:ext1-bifunctor}, $\mathbb E := \mathrm{Ext}^1$ 是加法双函子.
+	\end{proof}
+\end{proposition}
+
+\begin{proposition}
+	\Cref{ex:exact-as-extri} 定义的 $(\mathcal{C},\mathbb E, \mathfrak s)$ 满足 ET2.
+	\begin{proof}
+		我们说明 $\mathfrak s$ 是一个加法实现. 检验 ET2-1 如下.
+		\begin{enumerate}
+			\item 若 $\delta$ 对应 $X \rightarrowtail F \twoheadrightarrow Z$, 则一切\Cref{eq:ext-tri-equivalence} 中所示的同构的态射链也是 $\delta$ 的实现. 反之亦然.
+			\item 正合范畴的 ses 包含所有可裂 ses, 且可裂 ses 对应 $\mathrm{Ext}^1$ 的零元. 反之亦然.
+			\item 正合范畴的 ses 对直和封闭. $\mathfrak s$ 与直和交换.
+		\end{enumerate}
+		继而检验 ET2-2. 给定 $f_\ast \delta = g^\ast \varepsilon$. 下求解提升问题:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSJdLFsxLDAsIkIiXSxbMiwwLCJDIl0sWzMsMCwiXFwsIl0sWzAsMSwiWCJdLFsxLDEsIlkiXSxbMiwxLCJaIl0sWzMsMSwiXFwsIl0sWzQsMCwiQSJdLFs0LDEsIkIiXSxbNSwwLCJZIl0sWzUsMSwiWiJdLFswLDEsImkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwicCIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDMsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw1LCJqIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs1LDYsInEiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCw0LCJmIl0sWzIsNiwiZyJdLFs2LDcsIlxcdmFyZXBzaWxvbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw1LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCw5LCJpIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxMCwxMSwicSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs4LDEwLCJqZiJdLFs5LDExLCJncCIsMl0sWzksMTAsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& B \& C \& {\,} \& A \& Y \\
+	X \& Y \& Z \& {\,} \& B \& Z
+	\arrow["i", tail, from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["p", two heads, from=1-2, to=1-3]
+	\arrow[dashed, from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["g", from=1-3, to=2-3]
+	\arrow["jf", from=1-5, to=1-6]
+	\arrow["i"', tail, from=1-5, to=2-5]
+	\arrow["q", two heads, from=1-6, to=2-6]
+	\arrow["j", tail, from=2-1, to=2-2]
+	\arrow["q", two heads, from=2-2, to=2-3]
+	\arrow["{\varepsilon }", dashed, from=2-3, to=2-4]
+	\arrow[dashed, from=2-5, to=1-6]
+	\arrow["gp"', from=2-5, to=2-6]
+\end{tikzcd}.
+		\end{equation}
+		依照\Cref{thm:ext-lifting} 中构造, 得正合列的交换图
+		\begin{equation}
+% https://q.uiver.app/#q=WzAsMTUsWzEsMSwiKEIsWSkiLFsyMzksMTAwLDYwLDFdXSxbMiwxLCIoQSxZKSIsWzIzOSwxMDAsNjAsMV1dLFswLDEsIihDLFkpIl0sWzAsMiwiKEMsWikiXSxbMSwyLCIoQixaKSIsWzIzOSwxMDAsNjAsMV1dLFsyLDIsIihBLFopIixbMjM5LDEwMCw2MCwxXV0sWzAsMCwiKEMsWCkiXSxbMSwwLCIoQixYKSJdLFsyLDAsIihBLFgpIl0sWzMsMCwiXFxtYXRocm17RXh0fV4xKEMsWCkiXSxbMywxLCJcXG1hdGhybXtFeHR9XjEoQyxZKSJdLFszLDIsIlxcbWF0aHJte0V4dH1eMShDLFopIl0sWzAsMywiXFxtYXRocm17RXh0fV4xKEMsWCkiXSxbMSwzLCJcXG1hdGhybXtFeHR9XjEoQixYKSJdLFsyLDMsIlxcbWF0aHJte0V4dH1eMShBLFgpIl0sWzYsNywicF5cXGFzdCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNyw4LCJpXlxcYXN0Il0sWzgsOSwiXFxkZWx0YV5cXHNoYXJwIl0sWzYsMiwial9cXGFzdCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMiwzLCJxX1xcYXN0Il0sWzMsMTIsIlxcdmFyZXBzaWxvbl9cXHNoYXJwIl0sWzEyLDEzLCJwXlxcYXN0Il0sWzEzLDE0LCJpXlxcYXN0Il0sWzcsMCwial9cXGFzdCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMCw0LCJxX1xcYXN0IiwwLHsiY29sb3VyIjpbMjM5LDEwMCw2MF19LFsyMzksMTAwLDYwLDFdXSxbNCwxMywiXFx2YXJlcHNpbG9uX1xcc2hhcnAiXSxbMyw0LCJwXlxcYXN0IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs0LDUsImleXFxhc3QiLDAseyJjb2xvdXIiOlsyMzksMTAwLDYwXX0sWzIzOSwxMDAsNjAsMV1dLFs1LDExLCJcXGRlbHRhXlxcc2hhcnAiXSxbMiwwLCJwXlxcYXN0IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFswLDEsImleXFxhc3QiLDAseyJjb2xvdXIiOlsyMzksMTAwLDYwXX0sWzIzOSwxMDAsNjAsMV1dLFsxLDEwLCJcXGRlbHRhXlxcc2hhcnAiXSxbOCwxLCJqX1xcYXN0IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDUsInFfXFxhc3QiLDAseyJjb2xvdXIiOlsyMzksMTAwLDYwXX0sWzIzOSwxMDAsNjAsMV1dLFs1LDE0LCJcXHZhcmVwc2lsb25fXFxzaGFycCJdLFs5LDEwLCJqX1xcYXN0Il0sWzEwLDExLCJxX1xcYXN0Il1d
+\begin{tikzcd}[ampersand replacement=\&]
+	{(C,X)} \& {(B,X)} \& {(A,X)} \& {\mathrm{Ext}^1(C,X)} \\
+	{(C,Y)} \& \textcolor{rgb,255:red,51;green,54;blue,255}{{(B,Y)}} \& \textcolor{rgb,255:red,51;green,54;blue,255}{{(A,Y)}} \& {\mathrm{Ext}^1(C,Y)} \\
+	{(C,Z)} \& \textcolor{rgb,255:red,51;green,54;blue,255}{{(B,Z)}} \& \textcolor{rgb,255:red,51;green,54;blue,255}{{(A,Z)}} \& {\mathrm{Ext}^1(C,Z)} \\
+	{\mathrm{Ext}^1(C,X)} \& {\mathrm{Ext}^1(B,X)} \& {\mathrm{Ext}^1(A,X)}
+	\arrow["{p^\ast}", tail, from=1-1, to=1-2]
+	\arrow["{j_\ast}", tail, from=1-1, to=2-1]
+	\arrow["{i^\ast}", from=1-2, to=1-3]
+	\arrow["{j_\ast}", tail, from=1-2, to=2-2]
+	\arrow["{\delta^\sharp}", from=1-3, to=1-4]
+	\arrow["{j_\ast}", tail, from=1-3, to=2-3]
+	\arrow["{j_\ast}", from=1-4, to=2-4]
+	\arrow["{p^\ast}", tail, from=2-1, to=2-2]
+	\arrow["{q_\ast}", from=2-1, to=3-1]
+	\arrow["{i^\ast}", color={rgb,255:red,51;green,54;blue,255}, from=2-2, to=2-3]
+	\arrow["{q_\ast}", color={rgb,255:red,51;green,54;blue,255}, from=2-2, to=3-2]
+	\arrow["{\delta^\sharp}", from=2-3, to=2-4]
+	\arrow["{q_\ast}", color={rgb,255:red,51;green,54;blue,255}, from=2-3, to=3-3]
+	\arrow["{q_\ast}", from=2-4, to=3-4]
+	\arrow["{p^\ast}", tail, from=3-1, to=3-2]
+	\arrow["{\varepsilon_\sharp}", from=3-1, to=4-1]
+	\arrow["{i^\ast}", color={rgb,255:red,51;green,54;blue,255}, from=3-2, to=3-3]
+	\arrow["{\varepsilon_\sharp}", from=3-2, to=4-2]
+	\arrow["{\delta^\sharp}", from=3-3, to=3-4]
+	\arrow["{\varepsilon_\sharp}", from=3-3, to=4-3]
+	\arrow["{p^\ast}", from=4-1, to=4-2]
+	\arrow["{i^\ast}", from=4-2, to=4-3]
+\end{tikzcd}.
+		\end{equation}
+		容易计算 $(0;gp;jf;0)$ 的微分为 $0$, 从而存在原像 $(a;b;c)$. 注意到 $a \in \ker \varepsilon _\sharp = \operatorname{im} q_\ast$, 类似的计算表明 $b \in \operatorname{im} i^\ast$. 此时存在 $(s;t) \in (C, Y) \oplus (B,X)$ 使得
+		\begin{equation}
+			d (s;t) + (a;b;c) = (0; b'; 0).
+		\end{equation}
+		上式右侧的微分为 $d(a;b;c) = (0;gp;jf;0)$, $b' : B \to Y$ 即为所求.
+	\end{proof}
+\end{proposition}
+
+\begin{proposition}
+	\Cref{ex:exact-as-extri} 定义的 $(\mathcal{C},\mathbb E, \mathfrak s)$ 满足 ET3 (ET3').
+	\begin{proof}
+		\Cref{eq:ext-tri-axiom3-a} 虚线处态射由核 (余核) 的泛性质给出. 扩张元态射的等式由\Cref{lem:ext-tri-et2-b} 检验.
+	\end{proof}
+\end{proposition}
+
+\begin{proposition}
+	\Cref{ex:exact-as-extri} 定义的 $(\mathcal{C},\mathbb E, \mathfrak s)$ 满足 ET4 (ET4'). 
+	\begin{proof}
+		由\Cref{thm:noether-iso} (及其对偶表述) 得 conflation 的交换图.
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFsxLDAsIlkiXSxbMiwwLCJaIl0sWzAsMSwiWCJdLFsxLDEsIkEiXSxbMSwyLCJCIl0sWzIsMSwiVyJdLFsyLDIsIkIiXSxbMywwLCJcXCwiXSxbMiwzLCJcXCwiXSxbMSwzLCJcXCwiXSxbMywxLCJcXCwiXSxbMCwxLCJpIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDIsInAiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSw0LCJqIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs0LDUsInEiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw0LCJqXFxjaXJjIGkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDMsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw2LCJyIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs2LDcsInEnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDYsImonIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw4LCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMTEsIlxcZGVsdGEnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMTAsIlxcdmFyZXBzaWxvbiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDksIlxcdmFyZXBzaWxvbiciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	X & Y & Z & {\,} \\
+	X & A & W & {\,} \\
+	& B & B \\
+	& {\,} & {\,}
+	\arrow["i", tail, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["p", two heads, from=1-2, to=1-3]
+	\arrow["j", tail, from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["{j'}", dashed, tail, from=1-3, to=2-3]
+	\arrow["{j\circ i}", dashed, tail, from=2-1, to=2-2]
+	\arrow["r", dashed, two heads, from=2-2, to=2-3]
+	\arrow["q", two heads, from=2-2, to=3-2]
+	\arrow["{\delta'}", dashed, from=2-3, to=2-4]
+	\arrow["{q'}", dashed, two heads, from=2-3, to=3-3]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["\varepsilon", dashed, from=3-2, to=4-2]
+	\arrow["{\varepsilon'}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+		\end{equation}
+		特别地, 右上角同伦的推出拉回方块对应 $i_\ast \delta' = (q')^\ast \varepsilon$. 扩张元态射的等式由\Cref{lem:ext-tri-et2-b} 检验.
+	\end{proof}
+
+\end{proposition}
+
+\begin{theorem}
+	沿用\Cref{ex:exact-as-extri} 的表述. $(\mathcal{C}, \mathbb E, \mathfrak s)$ 是外三角范畴.
+	\begin{proof}
+		由上述命题.
+	\end{proof}
+\end{theorem}
+
+另一方面, 我们给出一则外三角范畴是正合范畴的充要条件.
+
+\begin{theorem}
+	外三角范畴 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 诱导的二元组 $(\mathcal{C},\ \{\text{conflation}\})$ 是正合范畴, 当且仅当所有 inflation 是单态射, 且所有 deflation 是满态射.
+	\begin{proof}
+		($\to$) 是显然的. 下证明 $(\gets)$, 即验证定义 EX's.
+		\begin{enumerate}
+			\item EX0 与 EX0' 显然成立, 可裂短正合列必然是 conflation.
+			\item EX1 与 EX1' 由 ET4 (ET4') 证得. 容易发现, ET4 (ET4') 的推论是 inflation (deflation) 关于合成闭.
+			\item EX2 与 EX2' 对偶, 下仅证明 EX2. 由\Cref{thm:homotopy-pullback-1}, 任意 inflation $A \to B$ 与任意态射 $A \to X$ 可补全作同伦的推出拉回方块, 且 inflation 的对边仍是 inflation. 由 inflation 是单态射, 所有弱拉回问题的解唯一; 由 deflation 是满态射, 所有弱推出问题的解唯一. 这说明上述同伦的推出拉回方块就是范畴意义下的推出拉回方块.
+		\end{enumerate}
+	\end{proof}
+\end{theorem}
+
+\subsection{三角范畴是外三角范畴}
+
+三角范畴的定义见\Cref{def:triangulated-category}.
+
+\begin{example}\label{ex:triangulated-as-extri}
+	(三角范畴视作外三角范畴). 给定三角范畴 $(\mathcal{C}, \Sigma, \mathcal{E})$, 我们定义基本资料 (\Cref{def:extri-data}).
+	\begin{enumerate}
+		\item $\mathbb E := (-, \Sigma (?))_{\mathcal{C}} : \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathbf{Ab}$;
+		\item 给定好三角 $\triangle : A \overset f\to B \overset g\to C \overset h\to \Sigma A$, 记 $\triangle \in \mathfrak s(h)$.
+	\end{enumerate}
+\end{example}
+
+\begin{theorem}
+	\Cref{ex:triangulated-as-extri} 中定义的 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 是外三角范畴.
+	\begin{proof}
+		(ET1). 显然 $\mathbb E$ 是双函子. (ET2-1). 依照 TR1-3, $\mathfrak s$ 是态射到同构类的对应. 试回顾两则三角范畴的基本事实:
+		\begin{enumerate}
+			\item $X \to Y \to Z \overset s\to \Sigma X$ 的前三项是可裂短正合列, 当且仅当 $s = 0$ (\Cref{cor:split-mono-epi}).
+			\item \Cref{prop:triangulated-facts} 第四条表明好三角对直和封闭, 且 $\mathfrak s$ 与直和交换.
+		\end{enumerate}
+		(ET2-2), (ET3) 与 (ET3') 是\Cref{prop:triangulated-facts} 第一条的直接推论.
+		\\
+		(ET4) 与 (ET4') 是 TR4 的直接推论.
+	\end{proof}
+\end{theorem}
+
+\subsection{自等价 + 外三角范畴 = 三角范畴}
+
+本小节给出外三角范畴是三角范畴的一个充分条件.
+
+\begin{example}\label{ex:extri-with-sigma}
+	(带自等价的外三角范畴). 假定外三角范畴 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 配有自等价 $\Sigma$, 使得 $\mathbb E (-, ?) := (-, \Sigma ?)$. 此时, conflation $A \overset i \rightarrowtail B \overset p \twoheadrightarrow C \overset \delta \dashrightarrow$ 的 $\delta$ 项是一个具体的态射, 形如 $\delta : C \to \Sigma A$.
+\end{example}
+
+\begin{example}
+	($1$ 的实现). 考虑以下特殊的扩张元:
+	\begin{equation}
+		1_{\Sigma X} \in (\Sigma X, \Sigma X) =: \mathbb E(\Sigma X, X) \ni \eta_X.
+	\end{equation}
+	取实现 $X \overset i \rightarrowtail E_X \overset p \twoheadrightarrow \Sigma X \overset {\eta_X} \dashrightarrow (\Sigma X)$, 则有长正合列
+	\begin{equation}
+		(-, X) \xrightarrow {i \circ -} (-, E_X) \xrightarrow {p \circ -} (-, \Sigma X) \xrightarrow {(\eta_X)_\sharp = \text{id}} (-, \Sigma X) \to \cdots.
+	\end{equation}
+	从而 $p = 0$. 对偶地, 反变函子的长正合列表明 $i = 0$. 因此 $E_X = 0$. 我们得到一类特殊的 conflation
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiMCJdLFsyLDAsIlxcU2lnbWEgWCJdLFszLDAsIihcXFNpZ21hIFgpIl0sWzIsMywiXFxldGFfWCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDEsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& 0 \& {\Sigma X} \& {(\Sigma X)}
+	\arrow[tail, from=1-1, to=1-2]
+	\arrow[two heads, from=1-2, to=1-3]
+	\arrow["{\eta_X}", dashed, from=1-3, to=1-4]
+\end{tikzcd}.
+	\end{equation}
+\end{example}
+
+\begin{theorem}\label{thm:extri-with-sigma-is-triangulated}
+	\Cref{ex:extri-with-sigma} 中的外三角范畴是三角范畴, 平移函子即自等价 $\Sigma$, 好三角即 conflation 所在的四项态射序列.
+	\begin{proof}
+		我们验证 TR1-1, TR1-2, TR1-3', TR2, TR3 与 TR4. 此处
+		\begin{enumerate}
+			\item[TR1-3'] 任意态射 $h$ 可嵌入某一好三角 $X \overset f\to Y \overset g\to Z \overset h\to \Sigma X$.
+		\end{enumerate}
+		除去 TR2, 剩余公理的检验都是显然的. 以下构造 $X \overset f\to Y \overset g\to Z \overset h\to \Sigma X$ 的顺时针旋转. 依照\Cref{thm:pushout-of-two-inflations} 构造双 inflation 的推出:
+		\begin{equation}
+% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFswLDEsIjAiXSxbMCwyLCJcXFNpZ21hIFgiXSxbMCwzLCIoXFxTaWdtYSBYKSJdLFsxLDAsIlkiXSxbMiwwLCJaIl0sWzMsMCwiKFxcU2lnbWEgWCkiXSxbMSwyLCJcXFNpZ21hIFgiXSxbMiwxLCJaIl0sWzMsMSwiKDApIl0sWzEsMywiKFxcU2lnbWEgWSkiXSxbMSwxLCJaIl0sWzIsMywiXFxldGFfWCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDEsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCw0LCJmIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs0LDUsImciLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNSw2LCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOCw5LCIwIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsMTAsIihcXFNpZ21hIGYpIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsMTAsImZfXFxhc3QgXFxldGFfWCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDgsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMTEsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzExLDgsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDExLCJnIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTEsNywidyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNiw5LCIoMCkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {(\Sigma X)} \\
+	0 \& Z \& Z \& {(0)} \\
+	{\Sigma X} \& {\Sigma X} \\
+	{(\Sigma X)} \& {(\Sigma Y)}
+	\arrow["f", tail, from=1-1, to=1-2]
+	\arrow[tail, from=1-1, to=2-1]
+	\arrow["g", two heads, from=1-2, to=1-3]
+	\arrow["g", dashed, tail, from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["{(0)}", dashed, from=1-4, to=2-4]
+	\arrow[dashed, tail, from=2-1, to=2-2]
+	\arrow[two heads, from=2-1, to=3-1]
+	\arrow[equals, dashed, from=2-2, to=2-3]
+	\arrow["w", dashed, two heads, from=2-2, to=3-2]
+	\arrow["0", dashed, from=2-3, to=2-4]
+	\arrow[equals, from=3-1, to=3-2]
+	\arrow["{\eta_X}", dashed, from=3-1, to=4-1]
+	\arrow["{f_\ast \eta_X}", dashed, from=3-2, to=4-2]
+	\arrow["{(\Sigma f)}", dashed, from=4-1, to=4-2]
+\end{tikzcd}.
+		\end{equation}
+		以上, 第二横行取作标准的可裂 conflation, 第二纵列受制于第二横行. 由\Cref{eq:bi-PBPO-anti-eq} 得
+		\begin{equation}
+			0 = (1_Z)^\ast \delta + w^\ast \eta_X = \delta \circ 1_Z + 1_{\Sigma X} \circ w = \delta + w.
+		\end{equation}
+		因此, 第二纵列所示的 conflation 是 $Y \overset g \rightarrowtail Z \overset {-\delta} \twoheadrightarrow \Sigma X \overset {\Sigma f} \dashrightarrow (\Sigma Y)$. 通过适当的同构调整符号, 我们得到顺时针旋转的构造. 
+	\end{proof}
+\end{theorem}
+
+\subsection{理想商}
+
+Happel 定理 (\cite{happelTriangulatedCategoriesRepresentation1988}, 章节 1.2) 指出 Frobenius 正合范畴的商范畴是三角范畴. 鉴于正合范畴与三角范畴都是外三角范畴, Happel 定理给出``由外三角范畴创造外三角范畴''的一般方式.
+
+我们定义外三角范畴的投射对象与 Frobenius 外三角范畴.
+
+\begin{definition}
+	(投射对象) 称 $P$ 是外三角范畴的投射对象, 若其满足以下等价定义.
+	\begin{enumerate}
+		\item 对任意 deflation $p$, $(P,p)$ 是满射.
+		\item 任意形如 $A \rightarrowtail B \twoheadrightarrow P \dashrightarrow$ 的 conflation 是可裂的.
+		\item $\mathbb E(P,-) = 0$.
+	\end{enumerate}
+	\begin{proof}
+		依照实现的定义, ($2 \leftrightarrow 3$) 是显然的. 长正合列\Cref{eq:ext-tri-6-term} 给出了 ($3 \to 1$). 考虑 $1_P$ 的分解, 得 ($1 \to 2$).
+	\end{proof}
+\end{definition}
+
+\begin{remark}
+	以上定义的``投射对象''理应严谨表述作``相对投射对象''. 基于类似\Cref{def:extri-terms} 第四条的考量, 使用``投射对象''一词通常不会引起歧义.
+\end{remark}
+
+\begin{definition}
+	(理想). 称全子加法范畴 $\mathcal{B} \subseteq \mathcal{C}$ 是外三角范畴的理想, 若 $\mathcal{B}$ 中任意对象既是投射对象, 又是内射对象. 显然 $0 \in \mathcal{B}$, 且投射(对象)关于直和封闭, 因此 $\mathcal{B}$ 是良定义的. 任意外三角范畴都有 $0$ 理想.
+\end{definition}
+
+\begin{theorem}\label{thm:extri-quotient}
+	(理想商). 取定理想 $B \subseteq \mathcal{C}$, 则加法商范畴 $\mathcal{C} / \mathcal{B}$ 具有由 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 诱导的外三角范畴结构.
+	\begin{enumerate}
+		\item 依照惯例, 假定 $\mathcal{C} / \mathcal{B}$ 与 $\mathcal{C}$ 有相同的对象类. 对态射 $f \in \mathcal{C}$, 记 $[f] \in \mathcal{C} / \mathcal{B}$ 为商范畴中相应的态射. $[f] = [f']$ 当且仅当 $(f-f')$ 通过 $\mathcal{B}$ 中某一对象分解.
+		\item (加法商的泛性质). 一般地, 若加法函子 $F: \mathcal{A} \to \mathcal{D}$ 映加法全子范畴 $\mathcal{A}' \subseteq \mathcal{A}$ 至零对象, 则 $F$ 通过 $\mathcal{A} \to (\mathcal{A} / \mathcal{A}')$ 唯一地分解. 具体地, 该函子与 $F$ 在对象层面取值相同; 对每个 $\mathrm{Hom}$-群, 泛性质唯一决定了 $[f] \mapsto Ff$. 此处不必疑虑范畴的``同构''与``等价''之别.
+	\end{enumerate}
+	\begin{proof}
+		以下检验外三角范畴的公理. 
+		\\
+		(ET1). 由 $\mathbb E : \mathcal{C}^{\mathrm{op}} \times \mathcal{B} \to 0$ 与 $\mathbb E : \mathcal{B}^{\mathrm{op}} \times \mathcal{C} \to 0$, 以下是良定义的双边加法函子
+		\begin{equation}
+			\mathbb E': (\mathcal{C}/\mathcal{B})^{\mathrm{op}} \times (\mathcal{C}/\mathcal{B}) \to \mathbf{Ab}, \quad (X,Y) \mapsto \mathbb E(X,Y).
+		\end{equation}
+		下验证这是双函子, 即 $[g]^\ast [f]_\ast \delta = [f]_\ast [d]^\ast \delta$. 依照加法商的泛性质, 所有 $[\cdot ]$ 括号可以去除; 换言之, $f$ 的``作用''就是 $[f]$ 的``作用''. 从而等式成立.
+		\\
+		(ET2-1). 若 $A \overset i \rightarrowtail B \overset p \twoheadrightarrow C \in \mathfrak s(\delta)$, 则记 $A \overset {[i]} \rightarrowtail B \overset {[p]} \twoheadrightarrow C \in \mathfrak s'(\delta)$. 尽管扩张元在商范畴中的实现``有更多选择余地'', $\mathcal{C}$ 中不同的扩张元在 $\mathcal{C} / \mathcal{B}$ 中仍旧不同. 加法商的泛性质仅涉及加法函子, 从而 ET2-1 得证. 
+		\\
+		(ET2-2). 给定 $f_\ast \delta = g^\ast \eta$ 与 $\
+		\mathcal{C} / \mathcal{B}$ 中的交换图, 得
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJBIl0sWzEsMSwiQiJdLFsyLDEsIkMiXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMCwxLCJbYV0iLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwiW2JdIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzMsNCwiW3hdIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs0LDUsIlt5XSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFswLDMsIltmXSJdLFsyLDUsIltnXSJdLFsyLDYsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw3LCJcXGV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	A \& B \& C \& {\,}
+	\arrow["{[a]}", tail, from=1-1, to=1-2]
+	\arrow["{[f]}", from=1-1, to=2-1]
+	\arrow["{[b]}", two heads, from=1-2, to=1-3]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["{[g]}", from=1-3, to=2-3]
+	\arrow["{[x]}", tail, from=2-1, to=2-2]
+	\arrow["{[y]}", two heads, from=2-2, to=2-3]
+	\arrow["\eta", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+		\end{equation}
+		不妨假定上下两行删去 $[\cdot]$ 后是 $\mathcal{C}$ 中的 conflation. 以上交换图在去除 $[\cdot]$ 后合成为 $0$, 故交换. 依照外三角范畴 $\mathcal{C}$ 的 ET2-2 公理, 构造 $\varphi : Y \to B$, $[\varphi]$ 即为所求.
+		\\
+		(ET3). 假定下图在 $\mathcal{C} / \mathcal{B}$ 中交换, 且两横行删去 $[\cdot]$ 后是 $\mathcal{C}$ 中的 conflation:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJBIl0sWzEsMSwiQiJdLFsyLDEsIkMiXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMCwxLCJbYV0iLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwiW2JdIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzMsNCwiW3hdIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs0LDUsIlt5XSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFswLDMsIltmXSJdLFsyLDYsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw3LCJcXGV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDQsIltoXSJdXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	A \& B \& C \& {\,}
+	\arrow["{[a]}", tail, from=1-1, to=1-2]
+	\arrow["{[f]}", from=1-1, to=2-1]
+	\arrow["{[b]}", two heads, from=1-2, to=1-3]
+	\arrow["{[h]}", from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["{[x]}", tail, from=2-1, to=2-2]
+	\arrow["{[y]}", two heads, from=2-2, to=2-3]
+	\arrow["\eta", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+		\end{equation}
+		记 $xf - ha$ 经 $P \in \mathcal{B}$ 分解. \Cref{cor:inf-def-ex} 表明 $\binom a i$ 是 inflation, 此时 $\mathcal{C}$ 中交换图:
+		\begin{equation}\label{eq:extri-frobenius-0}
+			% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWVxcb3BsdXMgUCJdLFsyLDAsIlonIl0sWzAsMSwiQSJdLFsxLDEsIkIiXSxbMiwxLCJDIl0sWzMsMCwiXFwsIl0sWzMsMSwiXFwsIl0sWzAsMSwiXFxiaW5vbSBhIGkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwiYiciLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw0LCJ4IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs0LDUsInkiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCwzLCJmIl0sWzIsNiwiXFxkZWx0YSciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw3LCJcXGV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDQsIihoIFxcIGopIl0sWzIsNSwiXFxsYW1iZGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& {Y\oplus P} \& {Z'} \& {\,} \\
+	A \& B \& C \& {\,}
+	\arrow["{\binom a i}", tail, from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["{b'}", two heads, from=1-2, to=1-3]
+	\arrow["{(h \ j)}", from=1-2, to=2-2]
+	\arrow["{\delta'}", dashed, from=1-3, to=1-4]
+	\arrow["\lambda", dashed, from=1-3, to=2-3]
+	\arrow["x", tail, from=2-1, to=2-2]
+	\arrow["y", two heads, from=2-2, to=2-3]
+	\arrow["\eta", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+		\end{equation}
+		对 $\delta$ 与 $\delta'$ 使用\Cref{thm:bi-PBPO-variant}, 得下图 (内射对象 $P$ 出发的 inflation 可裂):
+		\begin{equation}\label{eq:extri-frobenius-1}
+			% https://q.uiver.app/#q=WzAsMTAsWzAsMSwiWCJdLFsxLDEsIllcXG9wbHVzIFAiXSxbMiwxLCJaIFxcb3BsdXMgUCJdLFswLDIsIlgiXSxbMSwyLCJZIl0sWzIsMiwiWiJdLFszLDEsIlxcLCJdLFszLDIsIlxcLCJdLFsxLDAsIlAiXSxbMiwwLCJQIl0sWzAsMSwiXFxiaW5vbSBhIGkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwiXFxiaW5vbXtiIFxcIFxcIDB9e2sgXFwgXFwgbH0iLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw0LCJhIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs0LDUsImIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiw2LCJcXGRlbHRhJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDcsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw0LCIoMSBcXCAwKSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFswLDMsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsMSwiXFxiaW5vbSAwMSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbOCw5LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs5LDIsIlxcYmlub20gMDEiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDUsIigxIFxcIDApIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	\& P \& P \\
+	X \& {Y\oplus P} \& {Z \oplus P} \& {\,} \\
+	X \& Y \& Z \& {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["{\binom 01}", tail, from=1-2, to=2-2]
+	\arrow["{\binom 01}", dashed, tail, from=1-3, to=2-3]
+	\arrow["{\binom a i}", tail, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{\binom{b \ \ 0}{k \ \ l}}", two heads, from=2-2, to=2-3]
+	\arrow["{(1 \ 0)}", two heads, from=2-2, to=3-2]
+	\arrow["{\delta'}", dashed, from=2-3, to=2-4]
+	\arrow["{(1 \ 0)}", dashed, two heads, from=2-3, to=3-3]
+	\arrow["a", tail, from=3-1, to=3-2]
+	\arrow["b", two heads, from=3-2, to=3-3]
+	\arrow["\delta", dashed, from=3-3, to=3-4]
+\end{tikzcd}.
+		\end{equation}
+		特别地, $[\binom 1 0]^\ast\delta ' = \delta$. 结合\Cref{eq:extri-frobenius-0} 与\Cref{eq:extri-frobenius-1}, 取 $[\lambda \circ \binom 10] : Z \to C$ 即可.
+		\\
+		(ET4). ET4 的题设不涉及交换图. 因此可以将 $\mathcal{C}/\mathcal{B}$ 的题设视作 $\mathcal{C}$ 的题设, 再将 $\mathcal{C}$ 中结论取 $[\cdot]$ 即可.
+	\end{proof}
+\end{theorem}
+
+称 $\mathcal{C}$ 有足够投射(内射)对象, 若任意对象 $X$ 配有 deflation $P \twoheadrightarrow X$ (inflation $X \rightarrowtail I$), 其中 $P$ ($I$) 是投射(内射)对象.
+
+\begin{definition}
+	(Frobenius 外三角范畴). 称外三角范畴 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 是 Frobenius 的, 若 $\mathcal{C}$ 既有足够的投射对象, 又有足够的内射对象, 且投射对象与内射对象相同.
+\end{definition}
+
+\begin{theorem}\label{thm:extri-frobenius-happel}
+	(外三角范畴的 Happel 定理). 设 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 是 Frobenius 外三角范畴, 记 $\mathcal{B}$ 是所有投射对象构成的理想. 此时, \Cref{thm:extri-quotient} 给出商范畴 $\mathcal{C} / \mathcal{B}$ 是三角范畴.
+	\begin{proof}
+		依照\Cref{thm:extri-with-sigma-is-triangulated}, 只需构造自等价 $\Sigma$ 使得有自然同构 $\mathbb E(-, (?)) \simeq (-, \Sigma (?))$. 在范畴 $\mathcal{C}$ 中, 我们对所有对象 $X$ 取定 conflation $\delta_X$, 并对所有态射 $f : X \to Y$ 取定 conflation 间的态射:
+		\begin{equation}\label{eq:extri-frobenius-2}
+			% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiSV9YIl0sWzIsMCwiQ19YIl0sWzAsMSwiWSJdLFsxLDEsIklfWSJdLFsyLDEsIkNfWSJdLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFswLDEsImlfWCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCJwX1giLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw0LCJpX1kiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzQsNSwicF9ZIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsMywiZiJdLFsyLDYsIlxcZGVsdGFfWCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDcsIlxcZGVsdGFfWSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDQsIklfZiJdLFsyLDUsIkNfZiJdXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& {I_X} \& {C_X} \& {\,} \\
+	Y \& {I_Y} \& {C_Y} \& {\,}
+	\arrow["{i_X}", tail, from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["{p_X}", two heads, from=1-2, to=1-3]
+	\arrow["{I_f}", from=1-2, to=2-2]
+	\arrow["{\delta_X}", dashed, from=1-3, to=1-4]
+	\arrow["{C_f}", from=1-3, to=2-3]
+	\arrow["{i_Y}", tail, from=2-1, to=2-2]
+	\arrow["{p_Y}", two heads, from=2-2, to=2-3]
+	\arrow["{\delta_Y}", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+		\end{equation}
+		以上 $I_f$ 由内射对象的提升性取定, $C_f$ 由 ET3 取定. 显然, $? \mapsto C_?$ 通常不是 $\mathcal{C}$ 中的函子; 直觉上看, 这诱导了 $\mathcal{C} / \mathcal{B}$ 中的加法自函子. 我们将这一证明拆解作如下几步.
+		\begin{enumerate}
+			\item[步骤 0] (选定骨架 $\mathcal{C} / \mathcal{B} \to \mathcal{K}$). 考虑复合 $\mathcal{C} \xrightarrow{C_\bullet} \mathcal{C} \to \mathcal{C} / \mathcal{B}$. 为避免对象相差一个同构, 我们依照类的选择公理取定 $\mathcal{C} / \mathcal{B}$ 的骨架 $\mathcal{K}$ (同构类的代表元所在的全子范畴), 并记对应的全忠实函子 $[\cdot] : \mathcal{C} / \mathcal{B} \to \mathcal{K}$. 态射层面, 复合 $\mathcal{C} \to \mathcal{C} / \mathcal{B} \to \mathcal{K}$ 将 $f$ 对应至 $[[f]]$, 往后简略地记作 $[f]$.
+			\item[步骤 1] (检验函子 $\mathcal{C} \xrightarrow{C_\bullet} \mathcal{C} \xrightarrow{[\cdot]} \mathcal{K}$). 我们检验恒等律与复合律.
+			\begin{enumerate}
+				\item (恒等律). 不妨约定\Cref{eq:extri-frobenius-2} 中 $I_{1_X} := 1_{I_X}$, $C_{1_X} := 1_{C_X}$. 这不会引起矛盾.
+				\item (复合律). 考虑以下 $\mathcal{C}$ 中交换图
+				\begin{equation}
+					% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFsxLDAsIklfWCJdLFsyLDAsIkNfWCJdLFswLDEsIlkiXSxbMSwxLCJJX1kiXSxbMiwxLCJDX1kiXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMCwyLCJaIl0sWzEsMiwiSV9aIl0sWzIsMiwiQ19aIl0sWzMsMiwiXFwsIl0sWzAsMSwiaV9YIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDIsInBfWCIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFszLDQsImlfWSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNCw1LCJwX1kiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCwzLCJmIl0sWzIsNiwiXFxkZWx0YV9YIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNywiXFxkZWx0YV9ZIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNCwiSV9mIl0sWzIsNSwiQ19mIl0sWzMsOCwiZyJdLFs4LDksImlfWiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbOSwxMCwicF9aIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEwLDExLCJcXGRlbHRhX1oiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw5LCJJX2ciXSxbNSwxMCwiQ19nIl1d
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& {I_X} \& {C_X} \& {\,} \\
+	Y \& {I_Y} \& {C_Y} \& {\,} \\
+	Z \& {I_Z} \& {C_Z} \& {\,}
+	\arrow["{i_X}", tail, from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["{p_X}", two heads, from=1-2, to=1-3]
+	\arrow["{I_f}", from=1-2, to=2-2]
+	\arrow["{\delta_X}", dashed, from=1-3, to=1-4]
+	\arrow["{C_f}", from=1-3, to=2-3]
+	\arrow["{i_Y}", tail, from=2-1, to=2-2]
+	\arrow["g", from=2-1, to=3-1]
+	\arrow["{p_Y}", two heads, from=2-2, to=2-3]
+	\arrow["{I_g}", from=2-2, to=3-2]
+	\arrow["{\delta_Y}", dashed, from=2-3, to=2-4]
+	\arrow["{C_g}", from=2-3, to=3-3]
+	\arrow["{i_Z}", tail, from=3-1, to=3-2]
+	\arrow["{p_Z}", two heads, from=3-2, to=3-3]
+	\arrow["{\delta_Z}", dashed, from=3-3, to=3-4]
+\end{tikzcd}.
+				\end{equation}
+				往证 $[C_g] \circ [C_f] = [C_{g\circ f}]$. 实际上, 只需证明以下命题.
+				\begin{quoting}
+				\begin{lemma}\label{lem:extri-frobenius-1-2}
+					沿用以上 $\delta_X$ 与 $\delta_Z$ 的实现. 假定对 $k = 1,2$, 以下是 $\mathcal{C}$ 中 conflation 的态射:
+					\begin{equation}
+						% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiSV9YIl0sWzIsMCwiQ19YIl0sWzMsMCwiXFwsIl0sWzAsMSwiWiJdLFsxLDEsIklfWiJdLFsyLDEsIkNfWiJdLFszLDEsIlxcLCJdLFswLDEsImlfWCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCJwX1giLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiwzLCJcXGRlbHRhX1giLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw1LCJpX1oiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzUsNiwicF9aIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzYsNywiXFxkZWx0YV9aIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsNCwiaCJdLFsxLDUsImxfayIsMix7Im9mZnNldCI6MSwiY29sb3VyIjpbMjQyLDEwMCw2MF19LFsyNDIsMTAwLDYwLDFdXSxbMiw2LCJxX2siLDIseyJjb2xvdXIiOlsyNDIsMTAwLDYwXX0sWzI0MiwxMDAsNjAsMV1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& {I_X} \& {C_X} \& {\,} \\
+	Z \& {I_Z} \& {C_Z} \& {\,}
+	\arrow["{i_X}", tail, from=1-1, to=1-2]
+	\arrow["h", from=1-1, to=2-1]
+	\arrow["{p_X}", two heads, from=1-2, to=1-3]
+	\arrow["{l_k}"', shift right, color={rgb,255:red,58;green,51;blue,255}, from=1-2, to=2-2]
+	\arrow["{\delta_X}", dashed, from=1-3, to=1-4]
+	\arrow["{q_k}"', color={rgb,255:red,58;green,51;blue,255}, from=1-3, to=2-3]
+	\arrow["{i_Z}", tail, from=2-1, to=2-2]
+	\arrow["{p_Z}", two heads, from=2-2, to=2-3]
+	\arrow["{\delta_Z}", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+					\end{equation}
+					此时 $[q_1] = [q_2]$.
+					\begin{proof}
+						由 $(\delta_Z)_\sharp (q_1 - q_2) = (\delta_X)^\sharp (h - h) = 0$ 与长正合列 (\Cref{eq:ext-tri-6-term}), 得 $(q_1 - q_2)$ 通过投射对象 $I_Z$ 分解. 从而 $[q_1] = [q_2]$.
+					\end{proof}
+				\end{lemma}
+				\end{quoting}
+			\end{enumerate}
+			\item[步骤 2] (证明函子 $\mathcal{C} \xrightarrow {[C_\bullet]} \mathcal{K}$ 是加法函子). 对加法范畴间的函子而言, 加法函子就是保持直和的函子 (证明熟知, 如\cite{Lemma12710DLPThe}). 由于 $\mathcal{C} / \mathcal{B} \to \mathcal{K}$ 是加法函子, 故仅需证明 $[C_X \oplus C_Y] = [C_{X \oplus Y}]$. 任取 conflation 间的态射 $(1,n,q)$ 与 $(1,m,p)$, 如下所示:
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYXFxvcGx1cyBZIl0sWzEsMCwiSV9YXFxvcGx1cyBJX1kiXSxbMiwwLCJDX1hcXG9wbHVzIENfWSJdLFszLDAsIlxcLCJdLFswLDEsIlhcXG9wbHVzIFkiXSxbMSwxLCJJX3tYXFxvcGx1cyBZfSJdLFsyLDEsIkNfe1hcXG9wbHVzIFl9Il0sWzMsMSwiXFwsIl0sWzAsMSwiaV9YXFxvcGx1cyBpX1kiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwicF9YXFxvcGx1cyBwX1kiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiwzLCJcXGRlbHRhX1ggXFxvcGx1cyBcXGRlbHRhX1kiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw2LCJwX1oiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNiw3LCJcXGRlbHRhX3tYXFxvcGx1cyBZfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDQsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNSwiaV9aIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDUsIm0iLDAseyJvZmZzZXQiOi0yLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwxLCJuIiwwLHsib2Zmc2V0IjotMiwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNiwicCIsMCx7Im9mZnNldCI6LTIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDIsInEiLDAseyJvZmZzZXQiOi0yLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{X\oplus Y} \& {I_X\oplus I_Y} \& {C_X\oplus C_Y} \& {\,} \\
+	{X\oplus Y} \& {I_{X\oplus Y}} \& {C_{X\oplus Y}} \& {\,}
+	\arrow["{i_X\oplus i_Y}", tail, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["{p_X\oplus p_Y}", two heads, from=1-2, to=1-3]
+	\arrow["m", shift left=2, dashed, from=1-2, to=2-2]
+	\arrow["{\delta_X \oplus \delta_Y}", dashed, from=1-3, to=1-4]
+	\arrow["p", shift left=2, dashed, from=1-3, to=2-3]
+	\arrow["{i_Z}", tail, from=2-1, to=2-2]
+	\arrow["n", shift left=2, dashed, from=2-2, to=1-2]
+	\arrow["{p_Z}", two heads, from=2-2, to=2-3]
+	\arrow["q", shift left=2, dashed, from=2-3, to=1-3]
+	\arrow["{\delta_{X\oplus Y}}", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+			\end{equation}
+			依照\Cref{lem:extri-frobenius-1-2}, $[pq] = [1_{C_{X \oplus Y}}]$ 与 $[qp] = [1_{C_X \oplus C_Y}]$.
+			\item[步骤 3] (证明加法函子 $\mathcal{C} \xrightarrow{[C_\bullet]} \mathcal{K}$ 诱导了 $\mathcal{K}$ 的自函子). 不妨约定对一切投射对象 $P$, \Cref{eq:extri-frobenius-2} 中均有 $I_P = P$ 与 $C_P = 0$. 这不会引起任何矛盾. 我们得到诱导的函子 $\mathcal{C} / \mathcal{B} \xrightarrow {[C_\bullet]}\mathcal{K}$. 对任意范畴等价 $\mathcal{K} \to \mathcal{C} / \mathcal{B}$, 复合 $[C_\bullet]$ 所得的自函子是唯一的, 记作 $\Sigma$.
+			\item[步骤 4] (对外三角范畴 $\mathcal{K}$, 有函子的自然同构 $\mathbb E' (Z,X) \simeq (Z, \Sigma X)$). 我们将同构选取如下:
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWiJdLFsyLDAsIlgiXSxbMSwwLCJFIl0sWzMsMCwiXFwsIl0sWzIsMSwiQ19aIl0sWzAsMSwiWiJdLFsxLDEsIklfWiJdLFs0LDAsIltcXHZhcmVwc2lsb24gXSJdLFszLDEsIlxcLCJdLFs0LDEsIltcXHZhcnBoaSBdIl0sWzUsMSwiW1xcdmFycGhpXSJdLFs1LDAsIltcXHZhcnBoaV5cXGFzdCBcXGRlbHRhX1pdIl0sWzAsMiwiZiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMiwxLCJnIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsMywiXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsNCwiXFx2YXJwaGkgIl0sWzUsNiwiaV9aIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs2LDQsInBfWiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDYsIlxcbGFtYmRhIl0sWzQsOCwiXFxkZWx0YV9aIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsOSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFsxMCwxMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFsyMSwyMiwiMToxIiwxLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	Z \& E \& X \& {\,} \& {[\varepsilon ]} \& {[\varphi^\ast \delta_Z]} \\
+	Z \& {I_Z} \& {C_Z} \& {\,} \& {[\varphi ]} \& {[\varphi]}
+	\arrow["f", tail, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["g", two heads, from=1-2, to=1-3]
+	\arrow["\lambda", from=1-2, to=2-2]
+	\arrow["{\varepsilon }", dashed, from=1-3, to=1-4]
+	\arrow["{\varphi }", from=1-3, to=2-3]
+	\arrow[""{name=0, anchor=center, inner sep=0}, maps to, from=1-5, to=2-5]
+	\arrow["{i_Z}", tail, from=2-1, to=2-2]
+	\arrow["{p_Z}", two heads, from=2-2, to=2-3]
+	\arrow["{\delta_Z}", dashed, from=2-3, to=2-4]
+	\arrow[""{name=1, anchor=center, inner sep=0}, maps to, from=2-6, to=1-6]
+	\arrow["{1:1}"{description}, draw=none, from=0, to=1]
+\end{tikzcd}.
+			\end{equation}
+			对以上 $\delta \in \mathbb E(C,A)$, 记 $[\delta] \in \mathbb E([C], [A])$. 由\Cref{lem:extri-frobenius-1-2}, ET3 诱导的 $[\varepsilon] \mapsto [\varphi]$ 无关 $\lambda$ 与 $\varphi$ 的选取. 显然 $[\varepsilon] \mapsto [\varphi] \mapsto [\varphi^\ast \delta_Z]$ 与 $[\varphi] \mapsto [\varphi ^\ast \delta_Z] \mapsto [\varphi']$ 是恒等. 最后验证函子性.
+			\begin{enumerate}
+				\item (后项). 下图给出 $[\alpha_\ast \varepsilon] = [(C_\alpha)^\ast \varphi^\ast \delta_{Z'}] = [(C_\alpha)^\ast \alpha_\ast \delta_{Z}]$:
+							\begin{equation}
+				% https://q.uiver.app/#q=WzAsMTYsWzAsMSwiWiJdLFsyLDEsIlgiXSxbMSwxLCJFIl0sWzMsMSwiXFwsIl0sWzIsMiwiQ19aIl0sWzAsMiwiWiJdLFsxLDIsIklfWiJdLFszLDIsIlxcLCJdLFswLDAsIlonIl0sWzIsMCwiWCJdLFsxLDAsIkUnIl0sWzMsMCwiXFwsIl0sWzAsMywiWiciXSxbMSwzLCJJX3taJ30iXSxbMiwzLCJDX3taJ30iXSxbMywzLCJcXCwiXSxbMCwyLCJmIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsyLDEsImciLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSwzLCJcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSw0LCJcXHZhcnBoaSAiXSxbNSw2LCJpX1oiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzYsNCwicF9aIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsNiwiXFxsYW1iZGEiXSxbNCw3LCJcXGRlbHRhX1oiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw4LCJcXGFscGhhIl0sWzEsOSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOCwxMCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxMCw5LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiwxMF0sWzksMTEsIlxcYWxwaGFfXFxhc3QgXFx2YXJlcHNpbG9uIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMTIsIlxcYWxwaGEiXSxbMTIsMTMsImlfe1onfSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNiwxMywiSV9cXGFscGhhIl0sWzQsMTQsIkNfXFxhbHBoYSJdLFsxMywxNCwicF97Wid9IiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzE0LDE1LCJcXGRlbHRhX3taJ30iXV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{Z'} \& {E'} \& X \& {\,} \\
+	Z \& E \& X \& {\,} \\
+	Z \& {I_Z} \& {C_Z} \& {\,} \\
+	{Z'} \& {I_{Z'}} \& {C_{Z'}} \& {\,}
+	\arrow[tail, from=1-1, to=1-2]
+	\arrow[two heads, from=1-2, to=1-3]
+	\arrow["{\alpha_\ast \varepsilon}", dashed, from=1-3, to=1-4]
+	\arrow["\alpha", from=2-1, to=1-1]
+	\arrow["f", tail, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow[from=2-2, to=1-2]
+	\arrow["g", two heads, from=2-2, to=2-3]
+	\arrow["\lambda", from=2-2, to=3-2]
+	\arrow[equals, from=2-3, to=1-3]
+	\arrow["{\varepsilon }", dashed, from=2-3, to=2-4]
+	\arrow["{\varphi }", from=2-3, to=3-3]
+	\arrow["{i_Z}", tail, from=3-1, to=3-2]
+	\arrow["\alpha", from=3-1, to=4-1]
+	\arrow["{p_Z}", two heads, from=3-2, to=3-3]
+	\arrow["{I_\alpha}", from=3-2, to=4-2]
+	\arrow["{\delta_Z}", dashed, from=3-3, to=3-4]
+	\arrow["{C_\alpha}", from=3-3, to=4-3]
+	\arrow["{i_{Z'}}", tail, from=4-1, to=4-2]
+	\arrow["{p_{Z'}}", two heads, from=4-2, to=4-3]
+	\arrow["{\delta_{Z'}}", from=4-3, to=4-4]
+\end{tikzcd}.
+			\end{equation}
+因此, 扩张元 $[\alpha_\ast \varepsilon]$ 对应态射 $[C_\alpha] \circ [\varphi]$, 此处 $[C_\alpha]$ 即 $\Sigma [\alpha]$.
+\item (前项). 由下图, $[\gamma^\ast \varepsilon]$ 对应的态射是 $[\varphi] \circ [\gamma]$:
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiWiJdLFsyLDEsIlgiXSxbMSwxLCJFIl0sWzMsMSwiXFwsIl0sWzIsMiwiQ19aIl0sWzAsMiwiWiJdLFsxLDIsIklfWiJdLFszLDIsIlxcLCJdLFsyLDAsIlgnIl0sWzMsMCwiXFwsIl0sWzAsMCwiWiJdLFsxLDAsIkYiXSxbMCwyLCJmIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsyLDEsImciLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSwzLCJcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSw0LCJcXHZhcnBoaSAiXSxbNSw2LCJpX1oiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzYsNCwicF9aIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsNiwiXFxsYW1iZGEiXSxbNCw3LCJcXGRlbHRhX1oiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCwxLCJcXGdhbW1hIl0sWzgsOSwiXFxnYW1tYV5cXGFzdCBcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEwLDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEwLDExLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzExLDgsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxMSwyXV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	Z \& F \& {X'} \& {\,} \\
+	Z \& E \& X \& {\,} \\
+	Z \& {I_Z} \& {C_Z} \& {\,}
+	\arrow[tail, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow[two heads, from=1-2, to=1-3]
+	\arrow[from=1-2, to=2-2]
+	\arrow["{\gamma^\ast \varepsilon }", dashed, from=1-3, to=1-4]
+	\arrow["\gamma", from=1-3, to=2-3]
+	\arrow["f", tail, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["g", two heads, from=2-2, to=2-3]
+	\arrow["\lambda", from=2-2, to=3-2]
+	\arrow["{\varepsilon }", dashed, from=2-3, to=2-4]
+	\arrow["{\varphi }", from=2-3, to=3-3]
+	\arrow["{i_Z}", tail, from=3-1, to=3-2]
+	\arrow["{p_Z}", two heads, from=3-2, to=3-3]
+	\arrow["{\delta_Z}", dashed, from=3-3, to=3-4]
+\end{tikzcd}.
+\end{equation}
+			\end{enumerate}
+		\end{enumerate}
+		往证 $\Sigma$ 是范畴等价. 可以同理构造 $\mathcal{K}$ 的自函子 $\Omega ([X]) = [K_X]$, 其中 $K^X \overset{j^X} \rightarrowtail P^X \overset {q^X} \twoheadrightarrow X \overset{\kappa^X}\dashrightarrow$. 下证明 $\Sigma \Omega$ 与 $\Omega \Sigma$ 是恒同函子. 对前者, 考虑\Cref{thm:bi-pullback}:
+		\begin{equation}\label{eq:extri-frobenius-3}
+			% https://q.uiver.app/#q=WzAsMTEsWzIsMCwiWCJdLFsxLDAsIlBeWCJdLFswLDAsIkteWCJdLFszLDAsIlxcLCJdLFswLDEsIklfe0teWH0iXSxbMCwyLCJDX3tLXlh9Il0sWzAsMywiXFwsIl0sWzIsMSwiWCJdLFsxLDIsIkNfe0teWH0iXSxbMSwxLCJFWCJdLFszLDEsIlxcLCJdLFsyLDEsImpeWCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwwLCJxXlgiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCwzLCJcXGthcHBhXlgiXSxbMiw0LCJpX3tLXlh9IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs0LDUsInBfe0teWH0iLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNSw2LCJcXGRlbHRhX3tLXlh9Il0sWzUsOCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCw3LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDksIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbOSw3LCJzXlgiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSw5LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzksOCwidF9YIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV1d
+\begin{tikzcd}
+	{K^X} & {P^X} & X & {\,} \\
+	{I_{K^X}} & EX & X & {\,} \\
+	{C_{K^X}} & {C_{K^X}} \\
+	{\,}
+	\arrow["{j^X}", tail, from=1-1, to=1-2]
+	\arrow["{i_{K^X}}", tail, from=1-1, to=2-1]
+	\arrow["{q^X}", two heads, from=1-2, to=1-3]
+	\arrow[tail, from=1-2, to=2-2]
+	\arrow["{\kappa^X}", from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow[tail, from=2-1, to=2-2]
+	\arrow["{p_{K^X}}", two heads, from=2-1, to=3-1]
+	\arrow["{s^X}", two heads, from=2-2, to=2-3]
+	\arrow["{t_X}", two heads, from=2-2, to=3-2]
+	\arrow[equals, from=3-1, to=3-2]
+	\arrow["{\delta_{K^X}}", from=3-1, to=4-1]
+\end{tikzcd}.
+		\end{equation}
+		由于 $P^X$ 与 $I_{K^X}$ 是投射对象, $[s^X]$ 与 $[t_X]$ 是 $\mathcal{K}$ 中的恒同态射, 得同构 $\theta_X : [X] \simeq [C_{K^X}] = \Sigma \Omega [X]$.
+		\\
+		态射层面, 对任意 $f : X \to Y$, 对 $Y$ 作\Cref{eq:extri-frobenius-3}. 取定态射 $K^f$, $P^f$, 与 $I_{K^f}$, 由同伦推出拉回方块与 ET3 (ET3') 构造 $Ef$, 继而由 ET3 构造 $\overline {C_{K^{f}}} : C_{K^X} \to C_{K^Y}$ 与 $\overline f : X \to Y$. 由\Cref{lem:extri-frobenius-1-2}, 得 $[\overline f] = [f]$ 且 $[\overline{C_{K^{f}}}] = [C_{K^{f}}]$. 此时,
+		\begin{align}
+			\Sigma \Omega [f] \circ \theta_X & = [C_{K^f}] \circ [t_X] \circ [s^X]^{-1} \\
+			& = [t_Y] \circ [Ef] \circ [s^X]^{-1}\\
+			& = [t_Y] \circ [s^Y]^{-1} \circ [f] \quad = \theta_Y \circ [f].
+		\end{align}
+	\end{proof}
+\end{theorem}
+
+以下是 Happel 定理的一些推论.
+
+\begin{corollary}
+	外三角范畴 $\mathcal{C}$ 是三角范畴, 当且仅当所有态射都是 inflation, 且都是 deflation.
+	\begin{proof}
+		($\to$) 方向由 TR1-3 与 TR2 即得. 下证明 ($\gets$) 方向. 若所有态射都是 inflation, 则 $X \to 0$ 均是 inflation. 若 $\mathcal{C}$ 有内射对象, 则内射对象不为非零对象; 另一方面, 容易检验零对象确实是内射对象. 对偶地, $\mathcal{C}$ 的投射对象恰好是零对象. 这说明 $\mathcal{C}$ 是 Frobenius 范畴. 由\Cref{thm:extri-frobenius-happel}, $\mathcal{C} / 0 = \mathcal{C}$ 的骨架是三角范畴, 从而 $\mathcal{C}$ 是三角范畴.
+	\end{proof}
+\end{corollary}

@@ -1,0 +1,1183 @@
+
+
+\section{图表定理}
+
+\subsection{双 deflation (inflation) 的拉回 (推出)}
+
+ET4 刻画了 conflation 关于 deflation 的推出; ET4' 刻画了或关于 inflation 的拉回. 依照正合范畴中的经验 (\Cref{thm:homotopy-pullback}), conflation 关于 inflation 的拉回或 deflation 的推出也应诱导出四处 conflation. 本小节将分析这一事实.
+
+\begin{theorem}\label{thm:bi-pullback}
+	(双 deflation 的拉回). 对 $i\in \{1,2\}$, 取 $\delta _i \in \mathbb E(C, A_i)$. 此时有四处 conflation 作成的交换图
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTQsWzIsMSwiTSJdLFszLDEsIkJfMiJdLFszLDAsIkFfMiJdLFsyLDAsIkFfMiJdLFsxLDEsIkFfMSJdLFsxLDIsIkFfMSJdLFsyLDIsIkJfMSJdLFs0LDIsIlxcLCJdLFszLDIsIkMiXSxbMywzLCJcXCwiXSxbMiwzLCJcXCwiXSxbNCwxLCJcXCwiXSxbNSwyLCJcXCwiXSxbMCwyLCJcXCwiXSxbMCwxLCJcXGxhbWJkYV8yIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsMSwieF8yIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFszLDIsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMCwibV8yIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFswLDYsIlxcbGFtYmRhXzEiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDAsIm1fMSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSw4LCJ5XzIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNiw4LCJ5XzEiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNSw2LCJ4XzEiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMTEsIih5XzIpXlxcYXN0XFxkZWx0YSBfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDcsIlxcZGVsdGFfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDksIlxcZGVsdGFfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDEwLCIoeV8xKV5cXGFzdCBcXGRlbHRhXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	&& {A_2} & {A_2} \\
+	& {A_1} & M & {B_2} & {\,} \\
+	{\,} & {A_1} & {B_1} & C & {\,} & {\,} \\
+	&& {\,} & {\,}
+	\arrow[equals, from=1-3, to=1-4]
+	\arrow["{m_2}", tail, from=1-3, to=2-3]
+	\arrow["{x_2}", tail, from=1-4, to=2-4]
+	\arrow["{m_1}", tail, from=2-2, to=2-3]
+	\arrow[equals, from=2-2, to=3-2]
+	\arrow["{\lambda_2}", two heads, from=2-3, to=2-4]
+	\arrow["{\lambda_1}", two heads, from=2-3, to=3-3]
+	\arrow["{(y_2)^\ast\delta _1}", dashed, from=2-4, to=2-5]
+	\arrow["{y_2}", two heads, from=2-4, to=3-4]
+	\arrow["{x_1}", tail, from=3-2, to=3-3]
+	\arrow["{y_1}", two heads, from=3-3, to=3-4]
+	\arrow["{(y_1)^\ast \delta_2}", dashed, from=3-3, to=4-3]
+	\arrow["{\delta_1}", dashed, from=3-4, to=3-5]
+	\arrow["{\delta_2}", dashed, from=3-4, to=4-4]
+\end{tikzcd}.
+	\end{equation}
+	特别地, 有等式 $(m_1)_\ast \delta _1 + (m_2)_\ast \delta _2 = 0$.
+	\begin{proof}
+		引入以下 conflation $\binom 11 ^\ast (\delta _1 \oplus \delta _2) \in \mathbb E(C, A_1 \oplus A_2)$:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMCwxLCJBXzFcXG9wbHVzIEFfMiJdLFsyLDEsIkJfMVxcb3BsdXMgQl8yIl0sWzQsMSwiQ1xcb3BsdXMgQyJdLFs0LDAsIkMiXSxbMCwwLCJBXzFcXG9wbHVzIEFfMiJdLFsyLDAsIk0iXSxbNSwxLCJcXCwiXSxbNSwwLCJcXCwiXSxbMCwxLCJ4XzEgXFxvcGx1cyB4XzIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwieV8xIFxcb3BsdXMgeV8yIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzMsMiwiXFxiaW5vbSAxMSJdLFs0LDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsMywiayIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs0LDUsIm0iLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzUsMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsNywiXFxiaW5vbXsxfXsxfV5cXGFzdCAoXFxkZWx0YV97MX0gXFxvcGx1cyBcXGRlbHRhIF8yKSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDYsIlxcZGVsdGFfMSBcXG9wbHVzIFxcZGVsdGFfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+	{A_1\oplus A_2} && M && C & {\,} \\
+	{A_1\oplus A_2} && {B_1\oplus B_2} && {C\oplus C} & {\,}
+	\arrow["m", tail, from=1-1, to=1-3]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["k", two heads, from=1-3, to=1-5]
+	\arrow[dashed, from=1-3, to=2-3]
+	\arrow["{\binom{1}{1}^\ast (\delta_{1} \oplus \delta _2)}", dashed, from=1-5, to=1-6]
+	\arrow["{\binom 11}", from=1-5, to=2-5]
+	\arrow["{x_1 \oplus x_2}", tail, from=2-1, to=2-3]
+	\arrow["{y_1 \oplus y_2}", two heads, from=2-3, to=2-5]
+	\arrow["{\delta_1 \oplus \delta_2}", dashed, from=2-5, to=2-6]
+\end{tikzcd}.
+		\end{equation}
+		记 $(e_1, e_2, p_1, p_2)$ 是直和 $A_1 \oplus A_2$ 中的结构态射. 由 ET4 (ET4'), 得以下交换图
+		\begin{equation}
+% https://q.uiver.app/#q=WzAsMjAsWzEsMiwiQyIsWzIyMSwxMDAsNDQsMV1dLFsxLDAsIkFfMVxcb3BsdXMgQV8yIixbMjIxLDEwMCw0NCwxXV0sWzEsMSwiTSIsWzIyMSwxMDAsNDQsMV1dLFsyLDAsIkFfMiJdLFswLDAsIkFfMSJdLFswLDEsIkFfMSJdLFsyLDEsIkJfMiJdLFsyLDIsIkMiXSxbMywwLCJBXzIiXSxbNCwwLCJBXzIiXSxbMywxLCJBXzFcXG9wbHVzIEFfMiIsWzIyMSwxMDAsNDQsMV1dLFszLDIsIkFfMSJdLFs0LDIsIkJfMSJdLFs1LDIsIkMiXSxbNSwxLCJDIixbMjIxLDEwMCw0NCwxXV0sWzQsMSwiTSIsWzIyMSwxMDAsNDQsMV1dLFs2LDEsIlxcLCJdLFsxLDMsIlxcLCJdLFsyLDMsIlxcLCJdLFs2LDIsIlxcLCJdLFsyLDAsImsiLDAseyJjb2xvdXIiOlsyMjEsMTAwLDQ0XSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fSxbMjIxLDEwMCw0NCwxXV0sWzEsMiwibSIsMCx7ImNvbG91ciI6WzIyMSwxMDAsNDRdLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fSxbMjIxLDEwMCw0NCwxXV0sWzEsMywicF8yIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzMsNiwieF8yIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw3LCJ5XzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzUsMiwibV8xIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs3LDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsNiwiXFxsYW1iZGFfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbOCw5LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs4LDEwLCJlXzIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzQsMSwiZV8xIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxMCwxMSwicF8xIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEwLDE1LCJtIiwyLHsiY29sb3VyIjpbMjIxLDEwMCw0NF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19LFsyMjEsMTAwLDQ0LDFdXSxbMTUsMTQsImsiLDIseyJjb2xvdXIiOlsyMjEsMTAwLDQ0XSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fSxbMjIxLDEwMCw0NCwxXV0sWzksMTUsIm1fMiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzExLDEyLCJ4XzEiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMiwxMywieV8xIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxNSwxMiwiXFxsYW1iZGFfMSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMTQsMTMsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE0LDE2LCJcXGJpbm9tIDExIHt9XiogKFxcZGVsdGEgXzEgXFxvcGx1cyBcXGRlbHRhIF8yKSIsMCx7ImNvbG91ciI6WzIyMSwxMDAsNDRdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFsyMjEsMTAwLDQ0LDFdXSxbMCwxNywiXFxiaW5vbSAxMSB7fV4qIChcXGRlbHRhIF8xIFxcb3BsdXMgXFxkZWx0YSBfMikiLDIseyJjb2xvdXIiOlsyMjEsMTAwLDQ0XSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjIxLDEwMCw0NCwxXV0sWzcsMTgsIlxcZGVsdGFfMiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMywxOSwiXFxkZWx0YV8xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}
+	{A_1} & \textcolor{rgb,255:red,0;green,71;blue,224}{{A_1\oplus A_2}} & {A_2} & {A_2} & {A_2} \\
+	{A_1} & \textcolor{rgb,255:red,0;green,71;blue,224}{M} & {B_2} & \textcolor{rgb,255:red,0;green,71;blue,224}{{A_1\oplus A_2}} & \textcolor{rgb,255:red,0;green,71;blue,224}{M} & \textcolor{rgb,255:red,0;green,71;blue,224}{C} & {\,} \\
+	& \textcolor{rgb,255:red,0;green,71;blue,224}{C} & C & {A_1} & {B_1} & C & {\,} \\
+	& {\,} & {\,}
+	\arrow["{e_1}", tail, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["{p_2}", two heads, from=1-2, to=1-3]
+	\arrow["m", color={rgb,255:red,0;green,71;blue,224}, tail, from=1-2, to=2-2]
+	\arrow["{x_2}", dashed, tail, from=1-3, to=2-3]
+	\arrow[equals, from=1-4, to=1-5]
+	\arrow["{e_2}"', tail, from=1-4, to=2-4]
+	\arrow["{m_2}"', dashed, tail, from=1-5, to=2-5]
+	\arrow["{m_1}", dashed, tail, from=2-1, to=2-2]
+	\arrow["{\lambda_2}", dashed, two heads, from=2-2, to=2-3]
+	\arrow["k", color={rgb,255:red,0;green,71;blue,224}, two heads, from=2-2, to=3-2]
+	\arrow["{y_2}", dashed, two heads, from=2-3, to=3-3]
+	\arrow["m"', color={rgb,255:red,0;green,71;blue,224}, tail, from=2-4, to=2-5]
+	\arrow["{p_1}"', two heads, from=2-4, to=3-4]
+	\arrow["k"', color={rgb,255:red,0;green,71;blue,224}, two heads, from=2-5, to=2-6]
+	\arrow["{\lambda_1}"', dashed, two heads, from=2-5, to=3-5]
+	\arrow["{\binom 11 {}^* (\delta _1 \oplus \delta _2)}", color={rgb,255:red,0;green,71;blue,224}, dashed, from=2-6, to=2-7]
+	\arrow[equals, from=2-6, to=3-6]
+	\arrow["{\binom 11 {}^* (\delta _1 \oplus \delta _2)}"', color={rgb,255:red,0;green,71;blue,224}, dashed, from=3-2, to=4-2]
+	\arrow[equals, from=3-3, to=3-2]
+	\arrow["{\delta_2}"', dashed, from=3-3, to=4-3]
+	\arrow["{x_1}"', dashed, tail, from=3-4, to=3-5]
+	\arrow["{y_1}"', dashed, two heads, from=3-5, to=3-6]
+	\arrow["{\delta_1}", dashed, from=3-6, to=3-7]
+\end{tikzcd}.
+		\end{equation}
+		删减部分态射, 拼接以下两图即可:
+		\begin{equation}
+% https://q.uiver.app/#q=WzAsMTQsWzEsMCwiQV8yIixbMjIxLDEwMCw0NCwxXV0sWzEsMSwiTSIsWzIyMSwxMDAsNDQsMV1dLFsyLDAsIkFfMiJdLFswLDEsIkFfMSJdLFsyLDEsIkJfMiJdLFsyLDIsIkMiXSxbNCwwLCJBXzIiXSxbMywxLCJBXzEiLFsyMjEsMTAwLDQ0LDFdXSxbMywyLCJBXzEiXSxbNCwyLCJCXzEiXSxbNSwyLCJDIl0sWzQsMSwiTSIsWzIyMSwxMDAsNDQsMV1dLFsyLDMsIlxcLCJdLFs2LDIsIlxcLCJdLFswLDEsIm1fMiIsMCx7ImNvbG91ciI6WzIyMSwxMDAsNDRdLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fSxbMjIxLDEwMCw0NCwxXV0sWzAsMiwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw0LCJ4XzIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDUsInlfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMywxLCJtXzEiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDQsIlxcbGFtYmRhXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzcsMTEsIm1fMSIsMix7ImNvbG91ciI6WzIyMSwxMDAsNDRdLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fSxbMjIxLDEwMCw0NCwxXV0sWzYsMTEsIm1fMiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsOSwieF8xIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOSwxMCwieV8xIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxMSw5LCJcXGxhbWJkYV8xIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs1LDEyLCJcXGRlbHRhXzIiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsMTMsIlxcZGVsdGFfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDUsImsiLDAseyJjb2xvdXIiOlsyMjEsMTAwLDQ0XSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fSxbMjIxLDEwMCw0NCwxXV0sWzExLDEwLCJrIiwyLHsiY29sb3VyIjpbMjIxLDEwMCw0NF0sInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX0sWzIyMSwxMDAsNDQsMV1dLFs3LDgsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}
+	& \textcolor{rgb,255:red,0;green,71;blue,224}{{A_2}} & {A_2} && {A_2} \\
+	{A_1} & \textcolor{rgb,255:red,0;green,71;blue,224}{M} & {B_2} & \textcolor{rgb,255:red,0;green,71;blue,224}{{A_1}} & \textcolor{rgb,255:red,0;green,71;blue,224}{M} \\
+	&& C & {A_1} & {B_1} & C & {\,} \\
+	&& {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["{m_2}", color={rgb,255:red,0;green,71;blue,224}, tail, from=1-2, to=2-2]
+	\arrow["{x_2}", dashed, tail, from=1-3, to=2-3]
+	\arrow["{m_2}"', dashed, tail, from=1-5, to=2-5]
+	\arrow["{m_1}", dashed, tail, from=2-1, to=2-2]
+	\arrow["{\lambda_2}", dashed, two heads, from=2-2, to=2-3]
+	\arrow["k", color={rgb,255:red,0;green,71;blue,224}, two heads, from=2-2, to=3-3]
+	\arrow["{y_2}", dashed, two heads, from=2-3, to=3-3]
+	\arrow["{m_1}"', color={rgb,255:red,0;green,71;blue,224}, tail, from=2-4, to=2-5]
+	\arrow[equals, from=2-4, to=3-4]
+	\arrow["{\lambda_1}"', dashed, two heads, from=2-5, to=3-5]
+	\arrow["k"', color={rgb,255:red,0;green,71;blue,224}, two heads, from=2-5, to=3-6]
+	\arrow["{\delta_2}"', dashed, from=3-3, to=4-3]
+	\arrow["{x_1}"', dashed, tail, from=3-4, to=3-5]
+	\arrow["{y_1}"', dashed, two heads, from=3-5, to=3-6]
+	\arrow["{\delta_1}", dashed, from=3-6, to=3-7]
+\end{tikzcd}.
+		\end{equation}
+		最后一处等式解释如下:
+		\begin{align}
+(m_1)_\ast \delta _1 + (m_2)_\ast \delta _2 &= (m_1p_1 + m_2p_2)_\ast \binom 11^\ast(\delta_1 \oplus \delta_2)\\
+&= \binom 11^\ast m_\ast (\delta_1 \oplus \delta_2) = m_\ast \binom 11^\ast (\delta_1 \oplus \delta_2) \quad = 0.
+\end{align}
+	\end{proof}
+\end{theorem}
+
+\begin{theorem}\label{thm:pushout-of-two-inflations}
+	(双 inflation 的拉回). 表述与证明略.
+\end{theorem}
+
+\begin{remark}
+	将双 deflation 的拉回与双 inflation 的推出写作下图:
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMjAsWzMsMSwiXFxidWxsZXQiXSxbMywyLCJcXGJ1bGxldCJdLFs0LDAsIlxcYnVsbGV0Il0sWzUsMCwiXFxidWxsZXQiXSxbNCwxLCJcXGJ1bGxldCJdLFs0LDIsIlxcYnVsbGV0Il0sWzUsMiwiXFxidWxsZXQiXSxbNSwxLCJcXGJ1bGxldCJdLFswLDIsIlxcYnVsbGV0Il0sWzAsMCwiXFxidWxsZXQiXSxbMSwwLCJcXGJ1bGxldCJdLFsxLDEsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbMiwwLCJcXGJ1bGxldCJdLFsyLDEsIlxcYnVsbGV0Il0sWzEsMiwiXFxidWxsZXQiXSxbNiwyLCJcXCwiXSxbNSwzLCJcXCwiXSxbMywwLCJcXCwiXSxbMCwzLCJcXCwiXSxbMCwxLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDMsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsNCwicl8xIiwwLHsiY29sb3VyIjpbMjI2LDEwMCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjI2LDEwMCw2MCwxXV0sWzQsNSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxLDUsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNSw2LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCw0LCJyXzIiLDAseyJjb2xvdXIiOlszNTcsMTAwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszNTcsMTAwLDYwLDFdXSxbNCw3LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzMsNywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs3LDYsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxMCwxMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOSwxMiwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxMiw4LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMTIsMTEsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEzLDE0LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs4LDE1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMSwxNSwibF8yIiwwLHsiY29sb3VyIjpbMzU3LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFszNTcsMTAwLDYwLDFdXSxbNiwxNiwiXFx2YXJlcHNpbG9uIF8yIiwwLHsiY29sb3VyIjpbMzU3LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzM1NywxMDAsNjAsMV1dLFs2LDE3LCJcXHZhcmVwc2lsb24gXzEiLDAseyJjb2xvdXIiOlsyMjYsMTAwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjI2LDEwMCw2MCwxXV0sWzksMTAsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMTAsMTMsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxMSwxNCwibF8xIiwwLHsiY29sb3VyIjpbMjI2LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFsyMjYsMTAwLDYwLDFdXSxbMTMsMTgsIlxcZGVsdGFfMSIsMCx7ImNvbG91ciI6WzIyNiwxMDAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFsyMjYsMTAwLDYwLDFdXSxbOCwxOSwiXFxkZWx0YV8yIiwwLHsiY29sb3VyIjpbMzU3LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzM1NywxMDAsNjAsMV1dLFs5LDExLCJcXHRleHR7UE99IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNiwiXFx0ZXh0e1BCfSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}
+	\bullet & \bullet & \bullet & {\,} & \bullet & \bullet \\
+	\bullet & \bullet & \bullet & \bullet & \bullet & \bullet \\
+	\bullet & \bullet && \bullet & \bullet & \bullet & {\,} \\
+	{\,} &&&&& {\,}
+	\arrow[tail, from=1-1, to=1-2]
+	\arrow[tail, from=1-1, to=2-1]
+	\arrow["{\text{PO}}"{description}, draw=none, from=1-1, to=2-2]
+	\arrow[two heads, from=1-2, to=1-3]
+	\arrow[dashed, tail, from=1-2, to=2-2]
+	\arrow["{\delta_1}", color={rgb,255:red,51;green,99;blue,255}, dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow[equals, from=1-5, to=1-6]
+	\arrow["{r_1}", color={rgb,255:red,51;green,99;blue,255}, dashed, tail, from=1-5, to=2-5]
+	\arrow[tail, from=1-6, to=2-6]
+	\arrow[dashed, tail, from=2-1, to=2-2]
+	\arrow[two heads, from=2-1, to=3-1]
+	\arrow["{l_1}", color={rgb,255:red,51;green,99;blue,255}, dashed, two heads, from=2-2, to=2-3]
+	\arrow["{l_2}", color={rgb,255:red,255;green,51;blue,61}, dashed, two heads, from=2-2, to=3-2]
+	\arrow["{r_2}", color={rgb,255:red,255;green,51;blue,61}, dashed, tail, from=2-4, to=2-5]
+	\arrow[equals, from=2-4, to=3-4]
+	\arrow[dashed, two heads, from=2-5, to=2-6]
+	\arrow[dashed, two heads, from=2-5, to=3-5]
+	\arrow["{\text{PB}}"{description}, draw=none, from=2-5, to=3-6]
+	\arrow[two heads, from=2-6, to=3-6]
+	\arrow[equals, from=3-1, to=3-2]
+	\arrow["{\delta_2}", color={rgb,255:red,255;green,51;blue,61}, dashed, from=3-1, to=4-1]
+	\arrow[tail, from=3-4, to=3-5]
+	\arrow[two heads, from=3-5, to=3-6]
+	\arrow["{\varepsilon _2}", color={rgb,255:red,255;green,51;blue,61}, dashed, from=3-6, to=3-7]
+	\arrow["{\varepsilon _1}", color={rgb,255:red,51;green,99;blue,255}, dashed, from=3-6, to=4-6]
+\end{tikzcd}.
+	\end{equation}
+	此时, 左图与右图分别蕴含等式
+	\begin{equation}\label{eq:bi-PBPO-anti-eq}
+		l_1^\ast \delta _1 + l_2^\ast \delta _2 = 0,\quad (r_1)_\ast \varepsilon _1 + (r_2)_\ast \varepsilon _2 = 0.
+	\end{equation}
+\end{remark}
+
+以上定理存在一则实用的变体.
+
+\begin{theorem}\label{thm:bi-PBPO-variant}
+	(双 deflation 拉回的变体). 给定 conflation $\delta_1$, $\varepsilon$ 与 $\eta$ 使得下图实线方块交换:
+	\begin{equation}\label{eq:bi-PBPO-variant}
+		% https://q.uiver.app/#q=WzAsMTIsWzEsMSwiTSJdLFsyLDEsIkJfMiJdLFsyLDAsIkFfMiJdLFsxLDAsIkFfMiJdLFswLDEsIkFfMSJdLFswLDIsIkFfMSJdLFsxLDIsIkJfMSJdLFszLDIsIlxcLCJdLFsyLDIsIkMiXSxbMiwzLCJcXCwiXSxbMSwzLCJcXCwiXSxbMywxLCJcXCwiXSxbMCwxLCJcXGxhbWJkYV8yIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsMSwieF8yIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywyLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDAsIm1fMiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMCw2LCJcXGxhbWJkYV8xIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzQsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCwwLCJtXzEiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsOCwieV8yIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs2LDgsInlfMSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs1LDYsInhfMSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwxMSwiXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDcsIlxcZGVsdGFfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDksIlxcZGVsdGFfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDEwLCJcXGV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+	& {A_2} & {A_2} \\
+	{A_1} & M & {B_2} & {\,} \\
+	{A_1} & {B_1} & C & {\,} \\
+	& {\,} & {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["{m_2}", tail, from=1-2, to=2-2]
+	\arrow["{x_2}", dashed, tail, from=1-3, to=2-3]
+	\arrow["{m_1}", tail, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{\lambda_2}", two heads, from=2-2, to=2-3]
+	\arrow["{\lambda_1}", two heads, from=2-2, to=3-2]
+	\arrow["{\varepsilon }", dashed, from=2-3, to=2-4]
+	\arrow["{y_2}", dashed, two heads, from=2-3, to=3-3]
+	\arrow["{x_1}", tail, from=3-1, to=3-2]
+	\arrow["{y_1}", two heads, from=3-2, to=3-3]
+	\arrow["\eta", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_1}", dashed, from=3-3, to=3-4]
+	\arrow["{\delta_2}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+	\end{equation}
+	此时存在虚线所示 $\delta_2$ 使得上图交换, 同时 $(y_1)^\ast \delta _2 = \eta$, $(y_2)^\ast \delta _1 = \varepsilon$, 以及 $(m_1)_\ast \delta _1 + (m_2)_\ast \delta_2 = 0$.
+	\begin{proof}
+		对 deflation 的复合 $y_1 \circ \lambda _1$ 使用 ET4', 得下图:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMywiXFwsIl0sWzEsMSwiTSJdLFsxLDIsIkJfMSJdLFszLDEsIlxcLCJdLFsxLDAsIkFfMiJdLFsyLDIsIkMiXSxbMCwyLCJBXzEiXSxbMywyLCJcXCwiXSxbMSwzLCJcXCwiXSxbMiwxLCJDIl0sWzAsMSwiQV8xXFxvcGx1cyBBXzIiXSxbMCwwLCJBXzIiXSxbMSwyLCJcXGxhbWJkYV8xIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzQsMSwibV8yIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs2LDIsInhfMSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMiw1LCJ5XzEiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNSw3LCJcXGRlbHRhXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw4LCJcXGV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsOSwieV8xIFxcbGFtYmRhXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzExLDQsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMCwiMCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSwxMCwiZV8yIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsNiwicF8xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxMCwxLCIocyxtXzIpIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOSwzLCJcXGthcHBhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}
+	{A_2} & {A_2} \\
+	{A_1\oplus A_2} & M & C & {\,} \\
+	{A_1} & {B_1} & C & {\,} \\
+	{\,} & {\,}
+	\arrow[equals, from=1-1, to=1-2]
+	\arrow["{e_2}", dashed, tail, from=1-1, to=2-1]
+	\arrow["{m_2}", tail, from=1-2, to=2-2]
+	\arrow["{(s,m_2)}", dashed, tail, from=2-1, to=2-2]
+	\arrow["{p_1}", dashed, two heads, from=2-1, to=3-1]
+	\arrow["{y_1 \lambda_1}", dashed, two heads, from=2-2, to=2-3]
+	\arrow["{\lambda_1}", two heads, from=2-2, to=3-2]
+	\arrow["\kappa", dashed, from=2-3, to=2-4]
+	\arrow[equals, from=2-3, to=3-3]
+	\arrow["{x_1}", tail, from=3-1, to=3-2]
+	\arrow["0", dashed, from=3-1, to=4-1]
+	\arrow["{y_1}", two heads, from=3-2, to=3-3]
+	\arrow["\eta", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_1}", dashed, from=3-3, to=3-4]
+\end{tikzcd}.
+		\end{equation}
+		此处 $(x_1)^\ast \eta = (m_1)^\ast (\lambda_1)^\ast \eta = 0$. 由 $\lambda _ 1 (s - m_1) = 0$, 故存在 $l : A_1 \to A_2$ 使得 $(s - m_1) = m_2 \circ l$. 下通过严格 ET4 (\Cref{prop:ext-tri-et4-unique}) 定义 $\delta _2$:
+		\begin{equation}
+% https://q.uiver.app/#q=WzAsMTIsWzEsMSwiTSJdLFsxLDIsIkJfMiJdLFszLDEsIlxcLCJdLFsyLDIsIkMiXSxbMCwyLCJBXzIiXSxbMywyLCJcXCwiXSxbMiwxLCJDIl0sWzAsMSwiQV8xXFxvcGx1cyBBXzIiXSxbMSwwLCJBXzEiXSxbMSwzLCJcXCwiXSxbMCwwLCJBXzEiXSxbMCwzLCJcXCwiXSxbMCwxLCJcXGxhbWJkYV8yIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzQsMSwieF8yIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwzLCJ5XzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzMsNSwiXFxkZWx0YV8yIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCw2LCJ5XzEgXFxsYW1iZGFfMSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs3LDAsIihzLG1fMikiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzYsMiwiXFxrYXBwYSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDQsIihsLDEpIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzgsMCwibV8xIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDksIlxcdmFyZXBzaWxvbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsOCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTAsNywiXFxiaW5vbSB7MX17LWx9IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs0LDExLCIwIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}
+	{A_1} & {A_1} \\
+	{A_1\oplus A_2} & M & C & {\,} \\
+	{A_2} & {B_2} & C & {\,} \\
+	{\,} & {\,}
+	\arrow[equals, from=1-1, to=1-2]
+	\arrow["{\binom {1}{-l}}", tail, from=1-1, to=2-1]
+	\arrow["{m_1}", tail, from=1-2, to=2-2]
+	\arrow["{(s,m_2)}", tail, from=2-1, to=2-2]
+	\arrow["{(l \ 1)}", two heads, from=2-1, to=3-1]
+	\arrow["{y_1 \lambda_1}", two heads, from=2-2, to=2-3]
+	\arrow["{\lambda_2}", two heads, from=2-2, to=3-2]
+	\arrow["\kappa", dashed, from=2-3, to=2-4]
+	\arrow[equals, from=2-3, to=3-3]
+	\arrow["{x_2}", dashed, tail, from=3-1, to=3-2]
+	\arrow["0", dashed, from=3-1, to=4-1]
+	\arrow["{y_2}", dashed, two heads, from=3-2, to=3-3]
+	\arrow["{\varepsilon }", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_2}", dashed, from=3-3, to=3-4]
+\end{tikzcd}.
+		\end{equation}
+		使得左下方块交换的唯一态射是 $\lambda_2 \circ m _2 = x_2$. 由以上交换图, \Cref{eq:bi-PBPO-variant} 中的所有方块交换. 下检验扩张元的等式:
+		\begin{enumerate}
+			\item $(y_1)^\ast \delta _2 = (y_1)^\ast (l \ 1)_\ast \kappa = (l \ 1)_\ast (y_1)^\ast \kappa = (l \ 1)_\ast (e_2)_\ast \eta = \eta$;
+			\item $(y_2)^\ast \delta _1 = (y_2)^\ast (p_1)_\ast \kappa = (p_1)_\ast (y_2)^\ast \kappa = (p_1)_\ast \binom {1}{-l}_\ast \varepsilon = \varepsilon$;
+			\item $(m_1)_\ast \delta _1 + (m_2)_\ast \delta _2 = (m_1)_\ast (p_1)_\ast \kappa + (m_2)_\ast (l \ 1)_\ast \kappa = (s,m_2)_\ast \kappa = 0$.
+		\end{enumerate}
+		综上, $\delta _2$ 即为所求.
+	\end{proof}
+\end{theorem}
+
+在 Abel 范畴中, \Cref{thm:bi-pullback} 与\Cref{prop:ext-tri-et4-unique} 是蛇引理的退化形式.
+
+\begin{theorem}
+	给定 Abel 范畴中可复合的态射 $f \circ g$, 则有六项正合序列
+	\begin{equation}
+		0 \to \ker g \to \ker (f \circ g) \to \ker f \xrightarrow{\delta} \operatorname{cok} g \to \operatorname{cok} (f \circ g) \to \operatorname{cok} f \to 0.
+	\end{equation}
+	记 $\cap$ ($+$) 为两个子对象的拉回 (拉回的一次导出极限). $\delta$ 的满-单分解是
+	\begin{equation}
+		\frac{\ker f}{\ker (f \circ g)} \twoheadrightarrow \frac{\ker f}{\operatorname{im} g \cap \ker f} \simeq \frac{\operatorname{im} g + \ker f}{\operatorname{im} g} \rightarrowtail \operatorname{cok} g.
+	\end{equation}
+	\begin{proof}
+		见一般的同调代数教材. 基于蝾螈定理的证明见 \cite{wiseNONELEMENTARYPROOFSNAKE}. 在正合范畴中的推广见 \cite{rongStrongVersionSnake2021}.
+	\end{proof}
+\end{theorem}
+
+\begin{example}
+	\Cref{prop:ext-tri-et4-unique} 对应如下 Abel 范畴中 ses 的交换图:
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTQsWzEsMSwiXFxidWxsZXQiXSxbMiwwLCJcXGJ1bGxldCJdLFsyLDEsIlxcYnVsbGV0Il0sWzMsMCwiXFx0ZXh0e2BgfVxcb3BlcmF0b3JuYW1le2Nva30gZlxcdGV4dHsnJ30iLFsyMzcsMTAwLDYwLDFdXSxbMiwyLCJcXHRleHR7YGB9XFxvcGVyYXRvcm5hbWV7Y29rfSBnXFx0ZXh0eycnfSJdLFszLDEsIlxcdGV4dHtgYH1cXG9wZXJhdG9ybmFtZXtjb2t9IGdcXGNpcmMgZlxcdGV4dHsnJ30iLFsyMzcsMTAwLDYwLDFdXSxbNCwwLCJcXCwiXSxbNCwxLCJcXCwiXSxbMiwzLCJcXCwiXSxbMywzLCJcXCwiXSxbMSwwLCJcXGJ1bGxldCJdLFszLDIsIlxcdGV4dHtgYH1cXG9wZXJhdG9ybmFtZXtjb2t9IGdcXHRleHR7Jyd9IixbMjM3LDEwMCw2MCwxXV0sWzAsMSwiXFwsIl0sWzUsMSwiXFwsIl0sWzEsMiwiZyIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMCwyLCJnXFxjaXJjIGYiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiw0LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDUsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzMsNSwiIiwwLHsiY29sb3VyIjpbMjM3LDEwMCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsNiwiXFxkZWx0YV9mIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNywiXFxkZWx0YV97Z1xcY2lyYyBmfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMCwxLCJmIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxMCwwLCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDExLCIiLDAseyJjb2xvdXIiOlsyMzcsMTAwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs0LDExLCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMSw5LCJcXGRlbHRhX2MiLDAseyJjb2xvdXIiOlsyMzcsMTAwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjM3LDEwMCw2MCwxXV0sWzQsOCwiXFxkZWx0YV9nIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}
+	& \bullet & \bullet & \textcolor{rgb,255:red,51;green,61;blue,255}{{\text{``}\operatorname{cok} f\text{''}}} & {\,} \\
+	{\,} & \bullet & \bullet & \textcolor{rgb,255:red,51;green,61;blue,255}{{\text{``}\operatorname{cok} g\circ f\text{''}}} & {\,} & {\,} \\
+	&& {\text{``}\operatorname{cok} g\text{''}} & \textcolor{rgb,255:red,51;green,61;blue,255}{{\text{``}\operatorname{cok} g\text{''}}} \\
+	&& {\,} & {\,}
+	\arrow["f", tail, from=1-2, to=1-3]
+	\arrow[equals, from=1-2, to=2-2]
+	\arrow[tail, two heads, from=1-3, to=1-4]
+	\arrow["g", tail, from=1-3, to=2-3]
+	\arrow["{\delta_f}", dashed, from=1-4, to=1-5]
+	\arrow[draw={rgb,255:red,51;green,61;blue,255}, dashed, tail, from=1-4, to=2-4]
+	\arrow["{g\circ f}", tail, from=2-2, to=2-3]
+	\arrow[tail, two heads, from=2-3, to=2-4]
+	\arrow[tail, two heads, from=2-3, to=3-3]
+	\arrow["{\delta_{g\circ f}}", dashed, from=2-4, to=2-5]
+	\arrow[draw={rgb,255:red,51;green,61;blue,255}, dashed, two heads, from=2-4, to=3-4]
+	\arrow[equals, from=3-3, to=3-4]
+	\arrow["{\delta_g}", dashed, from=3-3, to=4-3]
+	\arrow["{\delta_c}", color={rgb,255:red,51;green,61;blue,255}, dashed, from=3-4, to=4-4]
+\end{tikzcd}.
+	\end{equation}
+\end{example}
+
+\begin{example}
+	\Cref{thm:bi-pullback} 对应如下 Abel 范畴中 ses 的交换图:
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTQsWzEsMiwiXFxidWxsZXQiXSxbMiwxLCJcXGJ1bGxldCJdLFsyLDIsIlxcYnVsbGV0Il0sWzMsMSwiXFx0ZXh0e2BgfVxcb3BlcmF0b3JuYW1le2Nva30gZlxcdGV4dHsnJ30iLFsyMzcsMTAwLDYwLDFdXSxbMywyLCJcXHRleHR7YGB9XFxvcGVyYXRvcm5hbWV7Y29rfSBnXFxjaXJjIGZcXHRleHR7Jyd9IixbMjM3LDEwMCw2MCwxXV0sWzIsMCwiXFx0ZXh0e2BgfVxca2VyIGdcXHRleHR7Jyd9Il0sWzQsMiwiXFwsIl0sWzMsMywiXFwsIl0sWzQsMSwiXFwsIl0sWzIsMywiXFwsIl0sWzEsMSwiXFxidWxsZXQiXSxbMywwLCJcXHRleHR7YGB9XFxrZXIgZ1xcdGV4dHsnJ30iLFszNTksMTAwLDYwLDFdXSxbMCwyLCJcXCwiXSxbNSwyLCJcXCwiXSxbMSwyLCJnIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsMiwiZ1xcY2lyYyBmIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDMsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDQsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFszLDQsIiIsMCx7ImNvbG91ciI6WzIzNywxMDAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNSwxLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzQsNywiXFxkZWx0YV9jIiwwLHsiY29sb3VyIjpbMjM3LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzIzNywxMDAsNjAsMV1dLFs0LDYsIlxcZGVsdGFfe2dcXGNpcmMgZn0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMyw4LCJcXGRlbHRhX2YiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw5LCJcXGRlbHRhX2ciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsMSwiZiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMTAsMCwiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTEsMywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxMSw1LCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}
+	&& {\text{``}\ker g\text{''}} & \textcolor{rgb,255:red,255;green,51;blue,54}{{\text{``}\ker g\text{''}}} \\
+	& \bullet & \bullet & \textcolor{rgb,255:red,51;green,61;blue,255}{{\text{``}\operatorname{cok} f\text{''}}} & {\,} \\
+	{\,} & \bullet & \bullet & \textcolor{rgb,255:red,51;green,61;blue,255}{{\text{``}\operatorname{cok} g\circ f\text{''}}} & {\,} & {\,} \\
+	&& {\,} & {\,}
+	\arrow[tail, from=1-3, to=2-3]
+	\arrow[equals, from=1-4, to=1-3]
+	\arrow[tail, from=1-4, to=2-4]
+	\arrow["f", tail, from=2-2, to=2-3]
+	\arrow[equals, from=2-2, to=3-2]
+	\arrow[two heads, from=2-3, to=2-4]
+	\arrow["g", two heads, from=2-3, to=3-3]
+	\arrow["{\delta_f}", dashed, from=2-4, to=2-5]
+	\arrow[draw={rgb,255:red,51;green,61;blue,255}, two heads, from=2-4, to=3-4]
+	\arrow["{g\circ f}", tail, from=3-2, to=3-3]
+	\arrow[two heads, from=3-3, to=3-4]
+	\arrow["{\delta_g}", dashed, from=3-3, to=4-3]
+	\arrow["{\delta_{g\circ f}}", dashed, from=3-4, to=3-5]
+	\arrow["{\delta_c}", color={rgb,255:red,51;green,61;blue,255}, dashed, from=3-4, to=4-4]
+\end{tikzcd}.
+	\end{equation}
+\end{example}
+
+
+为了在外三角范畴中推广\Cref{thm:homotopy-pullback}, 我们先熟悉几类同伦的推出拉回方块.
+
+\subsection{同伦的推出拉回方块}
+
+本节是\Cref{thm:homotopy-pullback} 在外三角范畴中的推广.
+
+\begin{theorem}\label{thm:homotopy-pullback-1}
+	(同伦的推出拉回方块 I). 任给定扩张元的态射 $(\lambda, 1) : \delta \to \lambda_\ast \delta$, 存在 $w$ 使得下图交换, 同时左侧是同伦的推出拉回方块:
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzIsMCwiWSJdLFs0LDAsIloiXSxbNSwwLCJcXCwiXSxbNCwxLCJaIl0sWzAsMSwiQSJdLFsyLDEsIkIiXSxbNSwxLCJcXCwiXSxbMCwxLCJhIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDIsImIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiwzLCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNiwieCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNiw0LCJ5IiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzQsMiwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCw1LCJcXGxhbWJkYSAiXSxbMSw2LCJ3IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsNywiXFxsYW1iZGEgX1xcYXN0IFxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	X && Y && Z & {\,} \\
+	A && B && Z & {\,}
+	\arrow["a", tail, from=1-1, to=1-3]
+	\arrow["{\lambda }", from=1-1, to=2-1]
+	\arrow["b", two heads, from=1-3, to=1-5]
+	\arrow["w", dashed, from=1-3, to=2-3]
+	\arrow["\delta", dashed, from=1-5, to=1-6]
+	\arrow["x", tail, from=2-1, to=2-3]
+	\arrow["y", two heads, from=2-3, to=2-5]
+	\arrow[equals, from=2-5, to=1-5]
+	\arrow["{\lambda _\ast \delta}", dashed, from=2-5, to=2-6]
+\end{tikzcd}.
+\end{equation}
+特别地, 左侧同伦的推出拉回方块对应如下 conflation:
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsNCxbNSwwLCJcXCwiXSxbNCwwLCJCIl0sWzIsMCwiQVxcb3BsdXMgWSJdLFswLDAsIlgiXSxbMSwwLCJ5XlxcYXN0IFxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiwxLCIoLXgsIHcpIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzMsMiwiXFxiaW5vbSB7XFxsYW1iZGF9e2F9IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dXQ==
+\begin{tikzcd}
+	X && {A\oplus Y} && B & {\,}
+	\arrow["{\binom {\lambda}{a}}", tail, from=1-1, to=1-3]
+	\arrow["{(-x, w)}", two heads, from=1-3, to=1-5]
+	\arrow["{y^\ast \delta}", dashed, from=1-5, to=1-6]
+\end{tikzcd}.
+\end{equation}
+
+\begin{proof}
+	考虑 $b$ 与 $y$ 给出的双 deflation 的拉回 (\Cref{thm:bi-pullback}), 得下图:
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTIsWzAsMiwiQSJdLFsyLDIsIkIiXSxbNCwyLCJaIl0sWzUsMiwiXFwsIl0sWzAsMSwiQSJdLFs0LDEsIlkiXSxbNCwwLCJYIl0sWzIsMCwiWCJdLFsyLDEsIkEgXFxvcGx1cyBZIl0sWzUsMSwiXFwsIl0sWzQsMywiXFwsIl0sWzIsMywiXFwsIl0sWzYsNSwiYSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNSwyLCJiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsMSwieCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCJ5IiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzcsNiwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCwwLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDgsIlxcYmlub20gMTAiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzgsNSwiKDAgXFwgMSkiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNyw4LCJcXGJpbm9tIHtcXGxhbWJkYSd9e2F9IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs4LDEsIih4LC13JykiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiwzLCJcXGxhbWJkYV9cXGFzdCBcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsMTAsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwxMSwieV5cXGFzdCBcXGRlbHRhICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDksIjAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	&& X && X \\
+	A && {A \oplus Y} && Y & {\,} \\
+	A && B && Z & {\,} \\
+	&& {\,} && {\,}
+	\arrow[equals, from=1-3, to=1-5]
+	\arrow["{\binom {\lambda'}{a}}", tail, from=1-3, to=2-3]
+	\arrow["a", tail, from=1-5, to=2-5]
+	\arrow["{\binom 10}", tail, from=2-1, to=2-3]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{(0 \ 1)}", two heads, from=2-3, to=2-5]
+	\arrow["{(x,-w')}", two heads, from=2-3, to=3-3]
+	\arrow["0", dashed, from=2-5, to=2-6]
+	\arrow["b", two heads, from=2-5, to=3-5]
+	\arrow["x", tail, from=3-1, to=3-3]
+	\arrow["y", two heads, from=3-3, to=3-5]
+	\arrow["{y^\ast \delta }", dashed, from=3-3, to=4-3]
+	\arrow["{\lambda_\ast \delta}", dashed, from=3-5, to=3-6]
+	\arrow["\delta", dashed, from=3-5, to=4-5]
+\end{tikzcd}.
+	\end{equation}
+	依照\Cref{eq:bi-PBPO-anti-eq}, 得
+	\begin{equation}
+		0 = \binom 10 _\ast (\lambda _\ast \delta ) + \binom {\lambda '}{a}_\ast \delta = \binom{\lambda + \lambda '}{a}_\ast \delta.
+	\end{equation}
+	由长正合列 (\Cref{eq:ext-tri-6-term}), $(\lambda + \lambda')$ 通过 $a$ 分解得到 $l$. 具体地,
+	\begin{equation}
+		(\lambda + \lambda') = \quad X \xrightarrow a Y \xrightarrow l A.
+	\end{equation}
+	遂有同构的态射序列:
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsNyxbNCwwLCJCIl0sWzAsMSwiWCJdLFswLDAsIlgiXSxbMiwwLCJBIFxcb3BsdXMgWSJdLFs1LDAsIlxcLCJdLFs0LDEsIkIiXSxbMiwxLCJBIFxcb3BsdXMgWSJdLFsyLDEsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsMywiXFxiaW5vbSB7XFxsYW1iZGEnfXthfSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMywwLCIoeCwtdycpIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsNCwieV5cXGFzdCBcXGRlbHRhICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDYsIlxcYmlub20ge1xcbGFtYmRhJ317YX0iXSxbMCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDUsIigteCx3KSJdLFszLDYsIlxcYmlub20gey0xIFxcIGx9e1xcIDAgXFwgXFwgMX0iXV0=
+\begin{tikzcd}
+	X && {A \oplus Y} && B & {\,} \\
+	X && {A \oplus Y} && B
+	\arrow["{\binom {\lambda'}{a}}", tail, from=1-1, to=1-3]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["{(x,-w')}", two heads, from=1-3, to=1-5]
+	\arrow["{\binom {-1 \ l}{\ 0 \ \ 1}}", from=1-3, to=2-3]
+	\arrow["{y^\ast \delta }", dashed, from=1-5, to=1-6]
+	\arrow[equals, from=1-5, to=2-5]
+	\arrow["{\binom {\lambda'}{a}}", from=2-1, to=2-3]
+	\arrow["{(-x,w)}", from=2-3, to=2-5]
+\end{tikzcd}.
+	\end{equation}
+	因此, 上图下方的态射列也是 $y^\ast 
+	\delta$ 的实现. 这完成了证明.
+\end{proof}
+
+\end{theorem}
+
+\begin{theorem}\label{thm:homotopy-pullback-1-dual}
+	(同伦的推出拉回方块 I'). 上一定理的对偶表述. 此处仅给出关键的交换图:
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFsyLDAsIlkiXSxbNCwwLCJaIl0sWzUsMCwiXFwsIl0sWzQsMSwiQyJdLFswLDEsIlgiXSxbMiwxLCJCIl0sWzUsMSwiXFwsIl0sWzAsMiwiWSJdLFsyLDIsIkIgXFxvcGx1cyBaIl0sWzQsMiwiQyJdLFs1LDIsIlxcLCJdLFswLDEsImEiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwiYiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDMsIlxcbXVeXFxhc3QgXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDYsIngiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzYsNCwieSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxLDYsInUiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw3LCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzksMTAsIih5IFxcIFxcbXUpIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEwLDExLCJhX1xcYXN0IFxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDQsIlxcbXUiXSxbOCw5LCJcXGJpbm9tIHUgey1ifSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XV0=
+\begin{tikzcd}
+	X && Y && Z & {\,} \\
+	X && B && C & {\,} \\
+	Y && {B \oplus Z} && C & {\,}
+	\arrow["a", tail, from=1-1, to=1-3]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["b", two heads, from=1-3, to=1-5]
+	\arrow["u", dashed, from=1-3, to=2-3]
+	\arrow["{\mu^\ast \delta}", dashed, from=1-5, to=1-6]
+	\arrow["\mu", from=1-5, to=2-5]
+	\arrow["x", tail, from=2-1, to=2-3]
+	\arrow["y", two heads, from=2-3, to=2-5]
+	\arrow["\delta", dashed, from=2-5, to=2-6]
+	\arrow["{\binom u {-b}}", tail, from=3-1, to=3-3]
+	\arrow["{(y \ \mu)}", two heads, from=3-3, to=3-5]
+	\arrow["{a_\ast \delta}", dashed, from=3-5, to=3-6]
+\end{tikzcd}.
+	\end{equation} 
+\end{theorem}
+
+\begin{theorem}
+	(同伦的推出拉回方块 II). 任给定任意态射 $w$ 使得下图右侧方块交换.
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzIsMCwiWSJdLFs0LDAsIloiXSxbNSwwLCJcXCwiXSxbNCwxLCJaIl0sWzAsMSwiQSJdLFsyLDEsIkIiXSxbNSwxLCJcXCwiXSxbMCwxLCJhIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDIsImIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiwzLCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNiwieCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNiw0LCJ5IiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzQsMiwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCw1LCJcXGxhbWJkYSAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw2LCJ3Il0sWzQsNywiXFx2YXJlcHNpbG9uIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}
+	X && Y && Z & {\,} \\
+	A && B && Z & {\,}
+	\arrow["a", tail, from=1-1, to=1-3]
+	\arrow["{\lambda }", dashed, from=1-1, to=2-1]
+	\arrow["b", two heads, from=1-3, to=1-5]
+	\arrow["w", from=1-3, to=2-3]
+	\arrow["\delta", dashed, from=1-5, to=1-6]
+	\arrow["x", tail, from=2-1, to=2-3]
+	\arrow["y", two heads, from=2-3, to=2-5]
+	\arrow[equals, from=2-5, to=1-5]
+	\arrow["\varepsilon", dashed, from=2-5, to=2-6]
+\end{tikzcd}.
+	\end{equation}
+	则存在态射 $\lambda$ 使得上图交换, $\varepsilon = \lambda_\ast \delta$. 同时, 左侧是同伦的推出拉回方块, 对应以下 conflation:
+	\begin{equation}
+	% https://q.uiver.app/#q=WzAsNCxbNSwwLCJcXCwiXSxbNCwwLCJCIl0sWzIsMCwiQVxcb3BsdXMgWSJdLFswLDAsIlgiXSxbMSwwLCJ5XlxcYXN0IFxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiwxLCIoLXgsIHcpIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzMsMiwiXFxiaW5vbSB7XFxsYW1iZGF9e2F9IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dXQ==
+\begin{tikzcd}
+	X && {A\oplus Y} && B & {\,}
+	\arrow["{\binom {\lambda}{a}}", tail, from=1-1, to=1-3]
+	\arrow["{(-x, w)}", two heads, from=1-3, to=1-5]
+	\arrow["{y^\ast \delta}", dashed, from=1-5, to=1-6]
+\end{tikzcd}.
+\end{equation}
+
+\begin{proof}
+	依照 ET3' 任意取定 $\lambda' : X \to A$. 对扩张元的态射 $(\lambda', 1_Z)$, 依照\Cref{thm:homotopy-pullback-1} 取 $w' : Y \to B$ 使得下图交换 (共计四个 $2 \times 2$ 方块):
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzIsMCwiWSJdLFs0LDAsIloiXSxbNSwwLCJcXCwiXSxbNCwxLCJaIl0sWzAsMSwiQSJdLFsyLDEsIkIiXSxbNSwxLCJcXCwiXSxbMCwxLCJhIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDIsImIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiwzLCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNiwieCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNiw0LCJ5IiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzQsMiwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSw2LCJ3JyIsMCx7Im9mZnNldCI6LTJ9XSxbNCw3LCJcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsNSwiXFxsYW1iZGEgJyJdLFsxLDYsInciLDIseyJvZmZzZXQiOjJ9XV0=
+\begin{tikzcd}
+	X && Y && Z & {\,} \\
+	A && B && Z & {\,}
+	\arrow["a", tail, from=1-1, to=1-3]
+	\arrow["{\lambda '}", from=1-1, to=2-1]
+	\arrow["b", two heads, from=1-3, to=1-5]
+	\arrow["{w'}", shift left=2, from=1-3, to=2-3]
+	\arrow["w"', shift right=2, from=1-3, to=2-3]
+	\arrow["\delta", dashed, from=1-5, to=1-6]
+	\arrow["x", tail, from=2-1, to=2-3]
+	\arrow["y", two heads, from=2-3, to=2-5]
+	\arrow[equals, from=2-5, to=1-5]
+	\arrow["{\varepsilon }", dashed, from=2-5, to=2-6]
+\end{tikzcd}.
+\end{equation}
+同时, 如下是同伦的推出拉回方块诱导的 conflation:
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsNCxbNSwwLCJcXCwiXSxbNCwwLCJCIl0sWzIsMCwiQVxcb3BsdXMgWSJdLFswLDAsIlgiXSxbMSwwLCJ5XlxcYXN0IFxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiwxLCIoLXggXFwgdycpIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzMsMiwiXFxiaW5vbSB7XFxsYW1iZGEnIH17YX0iLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV1d
+\begin{tikzcd}
+	X && {A\oplus Y} && B & {\,}
+	\arrow["{\binom {\lambda' }{a}}", tail, from=1-1, to=1-3]
+	\arrow["{(-x \ w')}", two heads, from=1-3, to=1-5]
+	\arrow["{y^\ast \delta}", dashed, from=1-5, to=1-6]
+\end{tikzcd}.
+\end{equation}
+由 $y \circ (w-w') = 0$, 依照长正合列 (\Cref{eq:ext-tri-6-term-dual}) 取 $(w-w') = x \circ l$. 考虑同构
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsNyxbNSwwLCJcXCwiXSxbNCwwLCJCIl0sWzIsMCwiQVxcb3BsdXMgWSJdLFswLDAsIlgiXSxbNCwxLCJCIl0sWzIsMSwiQSBcXG9wbHVzIFkiXSxbMCwxLCJYIl0sWzEsMCwieV5cXGFzdCBcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsMSwiKC14IFxcIHcnKSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFszLDIsIlxcYmlub20ge1xcbGFtYmRhJyB9e2F9IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDQsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsNSwiXFxiaW5vbSB7MSBcXCBsfXsgMCBcXCAxfSJdLFs1LDQsIigteCBcXCB3KSJdLFszLDYsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsNSwiXFxiaW5vbSB7XFxsYW1iZGEgfXthfSJdXQ==
+\begin{tikzcd}
+	X && {A\oplus Y} && B & {\,} \\
+	X && {A \oplus Y} && B
+	\arrow["{\binom {\lambda' }{a}}", tail, from=1-1, to=1-3]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["{(-x \ w')}", two heads, from=1-3, to=1-5]
+	\arrow["{\binom {1 \ l}{ 0 \ 1}}", from=1-3, to=2-3]
+	\arrow["{y^\ast \delta}", dashed, from=1-5, to=1-6]
+	\arrow[equals, from=1-5, to=2-5]
+	\arrow["{\binom {\lambda }{a}}", from=2-1, to=2-3]
+	\arrow["{(-x \ w)}", from=2-3, to=2-5]
+\end{tikzcd},
+\end{equation}
+其下行也是 $y^\ast \delta$ 的实现. 这完成了证明.
+\end{proof}
+
+\end{theorem}
+
+\begin{theorem}\label{thm:homotopy-pullback-2-dual}
+	(同伦的推出拉回方块 II'). 上一定理的对偶表述. 此处仅给出关键的交换图:
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFsyLDAsIlkiXSxbNCwwLCJaIl0sWzUsMCwiXFwsIl0sWzQsMSwiQyJdLFswLDEsIlgiXSxbMiwxLCJCIl0sWzUsMSwiXFwsIl0sWzAsMiwiWSJdLFsyLDIsIkIgXFxvcGx1cyBaIl0sWzQsMiwiQyJdLFs1LDIsIlxcLCJdLFswLDEsImEiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwiYiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDMsIlxcbXVeXFxhc3QgXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDYsIngiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzYsNCwieSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxLDYsInUiXSxbNCw3LCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzksMTAsIih5IFxcIFxcbXUpIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEwLDExLCJhX1xcYXN0IFxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDQsIlxcbXUiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCw5LCJcXGJpbm9tIHUgey1ifSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XV0=
+\begin{tikzcd}
+	X && Y && Z & {\,} \\
+	X && B && C & {\,} \\
+	Y && {B \oplus Z} && C & {\,}
+	\arrow["a", tail, from=1-1, to=1-3]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["b", two heads, from=1-3, to=1-5]
+	\arrow["u", from=1-3, to=2-3]
+	\arrow["{\mu^\ast \delta}", dashed, from=1-5, to=1-6]
+	\arrow["\mu", dashed, from=1-5, to=2-5]
+	\arrow["x", tail, from=2-1, to=2-3]
+	\arrow["y", two heads, from=2-3, to=2-5]
+	\arrow["\delta", dashed, from=2-5, to=2-6]
+	\arrow["{\binom u {-b}}", tail, from=3-1, to=3-3]
+	\arrow["{(y \ \mu)}", two heads, from=3-3, to=3-5]
+	\arrow["{a_\ast \delta}", dashed, from=3-5, to=3-6]
+\end{tikzcd}.
+	\end{equation}
+\end{theorem}
+
+\begin{theorem}\label{thm:homotopy-pullback-3}
+	(同伦的推出拉回方块 III). ET4 (ET4') 公理中的方块 $\star$ 是同伦的推出拉回方块:
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFsxLDAsIlkiXSxbMiwwLCJaIl0sWzEsMSwiVyJdLFsxLDIsIksiXSxbMiwyLCJLIl0sWzAsMSwiWCJdLFsyLDEsIk0iXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbMCwxLCJmIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDIsImciLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSwzLCJcXGFscGhhIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFszLDQsIlxcYmV0YSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs0LDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiwzLCJwIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsyLDcsInIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzcsNSwicyIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFszLDcsInEiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiw4LCJcXGRlbHRhX3tyMX0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNyw5LCJcXGRlbHRhX3tyMn0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwxMSwiXFxkZWx0YV97YzJ9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMTAsIlxcZGVsdGFfe2MxfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDcsIlxcc3RhciIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}
+	X & Y & Z & {\,} \\
+	X & W & M & {\,} \\
+	& K & K \\
+	& {\,} & {\,}
+	\arrow["f", tail, from=1-1, to=1-2]
+	\arrow["g", two heads, from=1-2, to=1-3]
+	\arrow["\alpha", tail, from=1-2, to=2-2]
+	\arrow["\star"{description}, draw=none, from=1-2, to=2-3]
+	\arrow["{\delta_{r1}}", dashed, from=1-3, to=1-4]
+	\arrow["r", tail, from=1-3, to=2-3]
+	\arrow[equals, from=2-1, to=1-1]
+	\arrow["p", tail, from=2-1, to=2-2]
+	\arrow["q", two heads, from=2-2, to=2-3]
+	\arrow["\beta", two heads, from=2-2, to=3-2]
+	\arrow["{\delta_{r2}}", dashed, from=2-3, to=2-4]
+	\arrow["s", two heads, from=2-3, to=3-3]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["{\delta_{c1}}", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_{c2}}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+	\end{equation}
+	$\star$ 诱导的 conflation 如\Cref{thm:homotopy-pullback-1-dual} 所示.
+	\begin{proof}
+		将证明分作两步. 
+		\begin{quoting}
+			\begin{lemma}
+				$\star$ 是弱推出方块.
+			\end{lemma}
+			
+			\begin{proof}
+				任意取定等式 $n \circ g = m \circ \alpha$, 如下图所示:
+				\begin{equation}
+					% https://q.uiver.app/#q=WzAsMTMsWzAsMCwiWCJdLFsxLDAsIlkiXSxbMiwwLCJaIl0sWzEsMSwiVyJdLFsxLDIsIksiXSxbMiwyLCJLIl0sWzAsMSwiWCJdLFsyLDEsIk0iXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbNCwyLCJUIl0sWzAsMSwiZiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCJnIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsMywiXFxhbHBoYSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMyw0LCJcXGJldGEiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMywicCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMiw3LCJyIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs3LDUsInMiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw3LCJxIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsOCwiXFxkZWx0YV97cjF9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsOSwiXFxkZWx0YV97cjJ9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMTEsIlxcZGVsdGFfe2MyfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDEwLCJcXGRlbHRhX3tjMX0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiwxMiwibiIsMCx7ImxhYmVsX3Bvc2l0aW9uIjo2MCwiY3VydmUiOi0yLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywxMiwibSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjo2MCwiY3VydmUiOjIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+	X & Y & Z & {\,} \\
+	X & W & M & {\,} \\
+	& K & K && T \\
+	& {\,} & {\,}
+	\arrow["f", tail, from=1-1, to=1-2]
+	\arrow["g", two heads, from=1-2, to=1-3]
+	\arrow["\alpha", tail, from=1-2, to=2-2]
+	\arrow["{\delta_{r1}}", dashed, from=1-3, to=1-4]
+	\arrow["r", tail, from=1-3, to=2-3]
+	\arrow["n"{pos=0.6}, curve={height=-12pt}, dashed, from=1-3, to=3-5]
+	\arrow[equals, from=2-1, to=1-1]
+	\arrow["p", tail, from=2-1, to=2-2]
+	\arrow["q", two heads, from=2-2, to=2-3]
+	\arrow["\beta", two heads, from=2-2, to=3-2]
+	\arrow["m"{pos=0.6}, curve={height=12pt}, dashed, from=2-2, to=3-5]
+	\arrow["{\delta_{r2}}", dashed, from=2-3, to=2-4]
+	\arrow["s", two heads, from=2-3, to=3-3]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["{\delta_{c1}}", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_{c2}}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+				\end{equation}
+				注意到 $0 = (m\alpha)_\ast \delta_{c1} = n_\ast g_\ast \delta_{c1} = n_\ast \delta_{c2}$, 故 $n$ 通过 $r$ 分解. 记 $l \circ r = n$. 由于
+				\begin{equation}
+					(m - l \circ q) \circ \alpha = m \circ \alpha - l \circ q \circ \alpha = n \circ g - l \circ r \circ g = 0,
+				\end{equation}
+				从而 $(m - l \circ q)$ 经 $\beta$ 分解, 记 $(m - l \circ q) = \lambda \circ \beta$. 上述态射的来源与去向如下:
+				\begin{equation}
+					% https://q.uiver.app/#q=WzAsMTMsWzAsMCwiWCJdLFsxLDAsIlkiXSxbMiwwLCJaIl0sWzEsMSwiVyJdLFsxLDIsIksiXSxbMiwyLCJLIl0sWzAsMSwiWCJdLFsyLDEsIk0iXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbNCwyLCJUIl0sWzAsMSwiZiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCJnIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsMywiXFxhbHBoYSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMyw0LCJcXGJldGEiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMywicCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMiw3LCJyIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs3LDUsInMiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw3LCJxIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsOCwiXFxkZWx0YV97cjF9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsOSwiXFxkZWx0YV97cjJ9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMTEsIlxcZGVsdGFfe2MyfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDEwLCJcXGRlbHRhX3tjMX0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiwxMiwibiIsMCx7ImxhYmVsX3Bvc2l0aW9uIjo2MCwiY3VydmUiOi0yLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywxMiwibSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjo2MCwiY3VydmUiOjIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDEyLCJsIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMTIsIlxcbGFtYmRhIiwwLHsiY3VydmUiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+	X & Y & Z & {\,} \\
+	X & W & M & {\,} \\
+	& K & K && T \\
+	& {\,} & {\,}
+	\arrow["f", tail, from=1-1, to=1-2]
+	\arrow["g", two heads, from=1-2, to=1-3]
+	\arrow["\alpha", tail, from=1-2, to=2-2]
+	\arrow["{\delta_{r1}}", dashed, from=1-3, to=1-4]
+	\arrow["r", tail, from=1-3, to=2-3]
+	\arrow["n"{pos=0.6}, curve={height=-12pt}, dashed, from=1-3, to=3-5]
+	\arrow[equals, from=2-1, to=1-1]
+	\arrow["p", tail, from=2-1, to=2-2]
+	\arrow["q", two heads, from=2-2, to=2-3]
+	\arrow["\beta", two heads, from=2-2, to=3-2]
+	\arrow["m"{pos=0.6}, curve={height=12pt}, dashed, from=2-2, to=3-5]
+	\arrow["{\delta_{r2}}", dashed, from=2-3, to=2-4]
+	\arrow["s", two heads, from=2-3, to=3-3]
+	\arrow["l", dashed, from=2-3, to=3-5]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["{\delta_{c1}}", dashed, from=3-2, to=4-2]
+	\arrow["\lambda", curve={height=18pt}, dashed, from=3-3, to=3-5]
+	\arrow["{\delta_{c2}}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+				\end{equation}
+				今断言弱推出问题的解是 $l - \lambda \circ s$. 验证得
+				\begin{enumerate}
+					\item $(l - \lambda \circ s) \circ r = l \circ r = n$;
+					\item $(l - \lambda \circ s) \circ q = l \circ q - \lambda \circ \beta = m$.
+				\end{enumerate}
+			\end{proof}
+		\end{quoting}
+		依照\Cref{thm:homotopy-pullback-2-dual}, 存在 $r' : Z \to M$ 使得 $(r', g, \alpha, q)$ 构成同伦推出拉回方块. 记态射 $l$ 与 $m$ 为两个弱推出方块相互分解所得, 如下图所示:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTMsWzAsMCwiWCJdLFsxLDAsIlkiXSxbMiwwLCJaIl0sWzEsMSwiVyJdLFsxLDIsIksiXSxbMiwyLCJLIl0sWzAsMSwiWCJdLFsyLDEsIk0iXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbNCwyLCJNIl0sWzAsMSwiZiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCJnIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsMywiXFxhbHBoYSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMyw0LCJcXGJldGEiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMywicCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMiw3LCJyIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs3LDUsInMiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw3LCJxIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsOCwiXFxkZWx0YV97cjF9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsOSwiXFxkZWx0YV97cjJ9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMTEsIlxcZGVsdGFfe2MyfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDEwLCJcXGRlbHRhX3tjMX0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiwxMiwiciciLDAseyJsYWJlbF9wb3NpdGlvbiI6NjAsImN1cnZlIjotMiwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsMTIsImwiLDAseyJvZmZzZXQiOi0xLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTIsNywibSIsMCx7Im9mZnNldCI6LTEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDEyLCJxIiwwLHsiY3VydmUiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XV0=
+\begin{tikzcd}
+	X & Y & Z & {\,} \\
+	X & W & M & {\,} \\
+	& K & K && M \\
+	& {\,} & {\,}
+	\arrow["f", tail, from=1-1, to=1-2]
+	\arrow["g", two heads, from=1-2, to=1-3]
+	\arrow["\alpha", tail, from=1-2, to=2-2]
+	\arrow["{\delta_{r1}}", dashed, from=1-3, to=1-4]
+	\arrow["r", tail, from=1-3, to=2-3]
+	\arrow["{r'}"{pos=0.6}, curve={height=-12pt}, dashed, from=1-3, to=3-5]
+	\arrow[equals, from=2-1, to=1-1]
+	\arrow["p", tail, from=2-1, to=2-2]
+	\arrow["q", two heads, from=2-2, to=2-3]
+	\arrow["\beta", two heads, from=2-2, to=3-2]
+	\arrow["q", curve={height=18pt}, dashed, two heads, from=2-2, to=3-5]
+	\arrow["{\delta_{r2}}", dashed, from=2-3, to=2-4]
+	\arrow["s", two heads, from=2-3, to=3-3]
+	\arrow["l", shift left, dashed, from=2-3, to=3-5]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["{\delta_{c1}}", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_{c2}}", dashed, from=3-3, to=4-3]
+	\arrow["m", shift left, dashed, from=3-5, to=2-3]
+\end{tikzcd}.
+		\end{equation}
+		显然 $(1_Z, m\circ l, 1_K)$ 与 $(1_W, 1_{Z\oplus W}, l \circ m)$ 是都是 conflation 的自同态. 依照\Cref{thm:ext-tri-2-out-of-3}, $l$ 与 $m$ 都是同构. 由 conflation 对同构封闭 (\Cref{prop:ext-tri-isomorphism-closed}), $\star$ 也是同伦的推出拉回方块.
+	\end{proof}
+\end{theorem}
+
+\begin{theorem}\label{thm:homotopy-pullback-4}
+	(同伦的推出拉回方块 IV). 双 deflation 拉回所得的方块 $\star$ 是同伦的推出拉回方块
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTIsWzEsMSwiTSJdLFsyLDEsIkJfMiJdLFsyLDAsIkFfMiJdLFsxLDAsIkFfMiJdLFswLDEsIkFfMSJdLFswLDIsIkFfMSJdLFsxLDIsIkJfMSJdLFszLDIsIlxcLCJdLFsyLDIsIkMiXSxbMiwzLCJcXCwiXSxbMSwzLCJcXCwiXSxbMywxLCJcXCwiXSxbMCwxLCJcXGxhbWJkYV8yIiwwLHsiY29sb3VyIjpbMzU4LDEwMCw2MF0sInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX0sWzM1OCwxMDAsNjAsMV1dLFsyLDEsInhfMiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMywyLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDAsIm1fMiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMCw2LCJcXGxhbWJkYV8xIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzQsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCwwLCJtXzEiLDAseyJjb2xvdXIiOlsyMzMsMTAwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX0sWzIzMywxMDAsNjAsMV1dLFsxLDgsInlfMiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs2LDgsInlfMSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs1LDYsInhfMSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwxMSwiKHlfMileXFxhc3RcXGRlbHRhIF8xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsNywiXFxkZWx0YV8xIiwwLHsiY29sb3VyIjpbMjMzLDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzIzMywxMDAsNjAsMV1dLFs4LDksIlxcZGVsdGFfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDEwLCIoeV8xKV5cXGFzdCBcXGRlbHRhXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw4LCJcXHN0YXIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}
+	& {A_2} & {A_2} \\
+	{A_1} & M & {B_2} & {\,} \\
+	{A_1} & {B_1} & C & {\,} \\
+	& {\,} & {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["{m_2}", tail, from=1-2, to=2-2]
+	\arrow["{x_2}", tail, from=1-3, to=2-3]
+	\arrow["{m_1}", color={rgb,255:red,51;green,75;blue,255}, tail, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{\lambda_2}", color={rgb,255:red,255;green,51;blue,58}, two heads, from=2-2, to=2-3]
+	\arrow["{\lambda_1}", two heads, from=2-2, to=3-2]
+	\arrow["\star"{description}, draw=none, from=2-2, to=3-3]
+	\arrow["{(y_2)^\ast\delta _1}", dashed, from=2-3, to=2-4]
+	\arrow["{y_2}", two heads, from=2-3, to=3-3]
+	\arrow["{x_1}", tail, from=3-1, to=3-2]
+	\arrow["{y_1}", two heads, from=3-2, to=3-3]
+	\arrow["{(y_1)^\ast \delta_2}", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_1}", color={rgb,255:red,51;green,75;blue,255}, dashed, from=3-3, to=3-4]
+	\arrow["{\delta_2}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+	\end{equation}
+	如\Cref{thm:homotopy-pullback-1-dual} 所示, 方块 $\star$ 诱导了 conflation
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsNCxbMCwwLCJNIl0sWzIsMCwiQl8xIFxcb3BsdXMgQl8yIl0sWzQsMCwiQyJdLFs1LDAsIlxcLCJdLFswLDEsIlxcYmlub217XFxsYW1iZGFfMX17XFxjb2xvcntyZWR9ey1cXGxhbWJkYSBfMn19IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDIsIih5XzEsIHlfMicpIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsMywibV8xXlxcYXN0IChcXGRlbHRhXzEpIiwwLHsiY29sb3VyIjpbMjMzLDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzIzMywxMDAsNjAsMV1dXQ==
+\begin{tikzcd}
+	M && {B_1 \oplus B_2} && C & {\,}
+	\arrow["{\binom{\lambda_1}{\color{red}{-\lambda _2}}}", tail, from=1-1, to=1-3]
+	\arrow["{(y_1, y_2')}", two heads, from=1-3, to=1-5]
+	\arrow["{m_1^\ast (\delta_1)}", color={rgb,255:red,51;green,75;blue,255}, dashed, from=1-5, to=1-6]
+\end{tikzcd}.
+	\end{equation}
+\begin{proof}
+	类似\Cref{thm:homotopy-pullback-3} 的证明, $\star$ 是弱拉回方块. 同时存在 $\lambda_1' : M \to B_1$ 使得 $(y_2)^\ast \delta_1$ 与 $\delta_1$ 满足\Cref{thm:homotopy-pullback-1-dual} 的条件. 由于弱拉回方块与同伦的推出拉回方块相互分解, 以及\Cref{thm:ext-tri-2-out-of-3},  $\star$ 同构于同伦的推出拉回方块. 由 conflation 对同构封闭 (\Cref{prop:ext-tri-isomorphism-closed}), $\star$ 也是同伦的推出拉回方块.
+\end{proof}
+
+\end{theorem}
+
+\begin{theorem}
+	(同伦推出拉回方块 IV'). 双 inflation 推出所得的方块 $\star$ 是同伦的推出拉回方块, 具体表述略. 此处仅给出关键的交换图:
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTYsWzEsMSwiTSJdLFsxLDAsIkJfMSJdLFszLDAsIlxcLCJdLFsyLDAsIkNfMSJdLFszLDEsIlxcLCJdLFswLDQsIkEiXSxbMSw0LCJCXzEgXFxvcGx1cyBCXzIiXSxbMiw0LCJNIl0sWzMsNCwiXFwsIl0sWzAsMCwiQSJdLFswLDEsIkJfMiJdLFswLDIsIkNfMiJdLFswLDMsIlxcLCJdLFsxLDIsIkNfMiJdLFsyLDEsIkNfMSJdLFsxLDMsIlxcLCJdLFsxLDAsIm1fMiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwzLCJ5XzEiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMywyLCJcXGRlbHRhXzEiLDAseyJjb2xvdXIiOlsyMzMsMTAwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjMzLDEwMCw2MCwxXV0sWzUsNiwiXFxiaW5vbSB7eF8xfXt4XzJ9IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs2LDcsIihtXzIgXFwge1xcY29sb3J7cmVkfS1tXzF9KSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs3LDgsIihcXG11XzEpXlxcYXN0IFxcZGVsdGEgXzEiLDAseyJjb2xvdXIiOlsyMzMsMTAwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjMzLDEwMCw2MCwxXV0sWzksMSwieF8xIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs5LDEwLCJ4XzIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEwLDExLCJ5XzIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMTEsMTIsIlxcZGVsdGFfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMCwwLCJtXzEiLDAseyJjb2xvdXIiOlszNTgsMTAwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX0sWzM1OCwxMDAsNjAsMV1dLFsxMSwxMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMywxNCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwxMywiXFxtdV8yIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsMTQsIlxcbXVfMSIsMCx7ImNvbG91ciI6WzIzMywxMDAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFsyMzMsMTAwLDYwLDFdXSxbMTQsNCwiKHhfMilfXFxhc3QgXFxkZWx0YV8xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEzLDE1LCIoeF8xKV9cXGFzdCBcXGRlbHRhXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	A & {B_1} & {C_1} & {\,} \\
+	{B_2} & M & {C_1} & {\,} \\
+	{C_2} & {C_2} \\
+	{\,} & {\,} \\
+	A & {B_1 \oplus B_2} & M & {\,}
+	\arrow["{x_1}", tail, from=1-1, to=1-2]
+	\arrow["{x_2}", tail, from=1-1, to=2-1]
+	\arrow["{y_1}", two heads, from=1-2, to=1-3]
+	\arrow["{m_2}", tail, from=1-2, to=2-2]
+	\arrow["{\delta_1}", color={rgb,255:red,51;green,75;blue,255}, dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["{m_1}", color={rgb,255:red,255;green,51;blue,58}, tail, from=2-1, to=2-2]
+	\arrow["{y_2}", two heads, from=2-1, to=3-1]
+	\arrow["{\mu_1}", color={rgb,255:red,51;green,75;blue,255}, two heads, from=2-2, to=2-3]
+	\arrow["{\mu_2}", two heads, from=2-2, to=3-2]
+	\arrow["{(x_2)_\ast \delta_1}", dashed, from=2-3, to=2-4]
+	\arrow[equals, from=3-1, to=3-2]
+	\arrow["{\delta_2}", dashed, from=3-1, to=4-1]
+	\arrow["{(x_1)_\ast \delta_2}", dashed, from=3-2, to=4-2]
+	\arrow["{\binom {x_1}{x_2}}", tail, from=5-1, to=5-2]
+	\arrow["{(m_2 \ {\color{red}-m_1})}", two heads, from=5-2, to=5-3]
+	\arrow["{(\mu_1)^\ast \delta _1}", color={rgb,255:red,51;green,75;blue,255}, dashed, from=5-3, to=5-4]
+\end{tikzcd}.
+	\end{equation}
+\end{theorem}
+
+以下强化部分外三角范畴的公理.
+
+\begin{proposition}
+	(ET2-2 的强化表述). 假定 $(\alpha, \gamma) : \delta \to \eta$ 是扩张元的态射, 则存在分解 $\delta \xrightarrow {(\alpha, 1)}\varepsilon \xrightarrow{(1, \gamma)} \eta$, 且 $\star$ 是同伦的推出拉回方块:
+	\begin{equation}\label{eq:ext-tri-2-2-strong}
+		% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiXFxidWxsZXQiXSxbMSwwLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzAsMiwiXFxidWxsZXQiXSxbMSwyLCJcXGJ1bGxldCJdLFsyLDIsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbMiwxLCJcXGJ1bGxldCJdLFsxLDEsIlxcYnVsbGV0Il0sWzMsMCwiXFwsIl0sWzMsMiwiXFwsIl0sWzMsMSwiXFwsIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDIsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFszLDQsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNCw1LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCw2LCJcXGFscGhhIl0sWzcsNSwiXFxnYW1tYSJdLFs2LDMsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsNywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiw4LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzgsNywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsOCwiXFxiZXRhXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCw0LCJcXGJldGFfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDksIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwxMCwiXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDExLCJcXGV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDgsIlxcc3RhciIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs4LDUsIlxcc3RhciIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}
+	\bullet & \bullet & \bullet & {\,} \\
+	\bullet & \bullet & \bullet & {\,} \\
+	\bullet & \bullet & \bullet & {\,}
+	\arrow[tail, from=1-1, to=1-2]
+	\arrow["\alpha", from=1-1, to=2-1]
+	\arrow["\star"{description}, draw=none, from=1-1, to=2-2]
+	\arrow[two heads, from=1-2, to=1-3]
+	\arrow["{\beta_1}", dashed, from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow[tail, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow[two heads, from=2-2, to=2-3]
+	\arrow["{\beta_2}", dashed, from=2-2, to=3-2]
+	\arrow["\star"{description}, draw=none, from=2-2, to=3-3]
+	\arrow["\eta", dashed, from=2-3, to=2-4]
+	\arrow["\gamma", from=2-3, to=3-3]
+	\arrow[tail, from=3-1, to=3-2]
+	\arrow[two heads, from=3-2, to=3-3]
+	\arrow["{\varepsilon }", dashed, from=3-3, to=3-4]
+\end{tikzcd}.
+	\end{equation}
+	\begin{proof}
+		取中间行为 $\eta = \alpha_\ast \delta = \gamma^\ast \varepsilon$ 的实现. 依\Cref{thm:homotopy-pullback-1} 与\Cref{thm:homotopy-pullback-1-dual} 构造两处 $\beta_1$ 与 $\beta_2$ 即可.
+	\end{proof}
+\end{proposition}
+
+\begin{proposition}
+	(ET3 的强化表述). 假定态射 $\alpha$, $\beta$ 与两处 inflation 作成交换方块. 存在分解 $\beta = \beta_2 \circ \beta_1$ 与态射 $\gamma$, 使得\Cref{eq:ext-tri-2-2-strong} 是扩张元的态射, 且 $\star$ 是同伦的推出拉回方块.
+	\begin{proof}
+		取 $\eta = \alpha_\ast \delta$, 依照\Cref{thm:homotopy-pullback-1} 构造 $\beta_1$ 与 $\beta_2$. 由于同伦的推出拉回方块是弱推出, 故 $\beta$ 经 $\beta_1$ 分解得 $\beta_2$. 最后使用\Cref{thm:homotopy-pullback-2-dual} 构造 $\gamma$ 即可.
+	\end{proof}
+\end{proposition}
+
+\begin{proposition}
+	(ET3' 的强化表述). 这是上一定理的对偶表述, 最终效果如\Cref{eq:ext-tri-2-2-strong} 所示.
+\end{proposition}
+
+\subsection{弱幂等完备}
+
+依照 \cite{buhlerExactCategories2010a} 的第七章, 正合范畴中许多``理应成立的简单结论''依赖弱幂等完备性. 例如, 若所有可裂单 (可裂满) 都是容许单态射 (容许满态射), 则正合范畴是弱幂等完备的. 以下给出弱幂等完备在一般加法范畴中的定义.
+
+\begin{definition}\label{def:weakly-idempotent-complete}
+	(弱幂等完备). 称加法范畴 $\mathcal{A}$ 是\textbf{弱幂等完备}的, 若其满足以下等价条件:
+	\begin{enumerate}
+		\item 任意可裂满态射 $p : X \to C$ 存在核;
+		\item 任意可裂单态射 $i : K \to X$ 存在余核.
+	\end{enumerate}
+	\begin{proof}
+		以下仅证明 $(1 \to 2)$, 另一方向在反范畴中得证. 对任意可裂单态射 $i : K \to X$, 取可裂满态射 $q : X \to K$ 使得 $q\circ i = 1_K$. 记 $q$ 的核是 $j : C \to X$, 则 $(1_X - i\circ q)$ 通过 $j$ 分解:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsNCxbMCwxLCJDIl0sWzEsMSwiWCJdLFsyLDEsIksiXSxbMSwwLCJYIl0sWzIsMSwiaSIsMCx7Im9mZnNldCI6LTIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDEsImoiXSxbMSwyLCJxIl0sWzMsMSwiKDFfWCAtIGlcXGNpcmMgcSkiXSxbMywwLCJwIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	\& X \\
+	C \& X \& K
+	\arrow["p"', dashed, from=1-2, to=2-1]
+	\arrow["{(1_X - i\circ q)}", from=1-2, to=2-2]
+	\arrow["j", from=2-1, to=2-2]
+	\arrow["q", from=2-2, to=2-3]
+	\arrow["i", shift left=2, dashed, from=2-3, to=2-2]
+\end{tikzcd}.
+		\end{equation}
+		容易验证 $j = j \circ p \circ j$ 与 $j \circ p \circ i = 0$. 消除单态射 $j$ 得 $p \circ j = 1_C$ 与 $p \circ i = 0$. 结合 $q \circ i = 1_K$ 与 $q \circ j = 0$, 得同构 $\binom{p}{q} : X \leftrightarrows C \oplus K: (j \ i)$.
+	\end{proof}
+\end{definition}
+
+弱幂等完备的又一等价定义基于形变收缩.
+
+\begin{definition}\label{def:deformation-retract}
+	(形变收缩). 称对象 $X$ 是 $Y$ 的形变收缩, 若存在可裂单态射 $X \to Y$.
+\end{definition}
+
+\begin{proposition}
+	加法范畴 $\mathcal{A}$ 是弱幂等完备的, 当且仅当任意形变收缩是直和项.
+	\begin{proof}
+		容易.
+	\end{proof}
+\end{proposition}
+
+\begin{remark}
+	预三角范畴自动是弱幂等完备的 (\Cref{cor:split-mono-epi}).
+\end{remark}
+
+\begin{example}
+	(幂等完备, 也称 Karoubi 性质). 称加法范畴是\textbf{幂等完备}的, 若所有幂等态射有核与余核. 这一定义比弱幂等完备强, 例如以下两则例子.
+	\begin{itemize}
+		\item 记 $\mathcal{A}$ 是有限维实线性空间范畴, 加法全子范畴 $\mathcal{B}$ 包含一切维数为偶数 (含 $0$) 的线性空间. 显然 $\mathcal{B}$ 是弱幂等完备的, 但不幂等完备.
+		\item 记 $\mathbf{Free}_R$ 是自由右 $R$-模构成的范畴. 今视之 $\mathrm{Mod}_R$ 的全子范畴, 则容易验证
+		\begin{itemize}
+			\item 包含 $\mathbf{Free}_R$ 的最小 (范畴等价意义下) 的弱幂等完备范畴是所有稳定投射模构成的范畴;
+			\item 包含 $\mathbf{Free}_R$ 的最小 (范畴等价意义下) 的幂等完备范畴是所有投射模构成的范畴.
+		\end{itemize}
+	\end{itemize}
+	三角范畴一般不是幂等完备的, 除非承认某些在特殊条件 (例如三角范畴有可数积或可数余积, 再如 \cite{leKaroubiannessTriangulatedCategory2007}). 三角范畴的幂等完备化的一般理论见 \cite{balmerIdempotentCompletionTriangulated2001}, 正合范畴的幂等完备化见 \cite{buhlerExactCategories2010a} 的第六章.
+\end{example}
+
+此小节中, 我们仅讨论外三角范畴的弱幂等完备性, 暂不理会幂等完备性. 以下\Cref{lem:inf-def-ex-1}, \Cref{lem:def-inf-ex-dual}, \Cref{cor:inf-def-ex} 与\Cref{cor:inf-def-ex-another} 无需弱幂等完备性, \Cref{cor:inf-def-ex-another} 指出弱幂等完备的关键作用是``消除赘余的零态射''.
+
+\begin{lemma}\label{lem:inf-def-ex-1}
+	外三角范畴中, 若 $q \circ p$ 是 inflation, $q$ 是 deflation, 则 $p$ 是 inflation.
+	\begin{proof}
+		证明同\Cref{lem:inf-def}, 将``Noether 同构''替换作``ET4' 公理'' 即可. \Cref{thm:homotopy-pullback-3} 表明 $\square$ 是同伦的推出拉回方块, 故 $s$ 存在.
+	\end{proof}
+\end{lemma}
+
+\begin{lemma}\label{lem:def-inf-ex-dual}
+	外三角范畴中, 若 $j \circ i$ 是 deflation, $i$ 是 inflation, 则 $j$ 是 deflation.
+	\begin{proof}
+		上一引理的对偶.
+	\end{proof}
+\end{lemma}
+
+以下是两则常用的推论.
+
+\begin{corollary}\label{cor:inf-def-ex}
+	若 $i$ 是 inflation, 则 $\binom{i}{f}$ 也是 inflation. 若 $p$ 是 deflation, 则 $(p \ f)$ 也是 deflation.
+	\begin{proof}
+		由 $(1 \ 0) \circ \binom{i}{f} = i$ 是 inflation, $(1 \ 0)$ 是 deflation, \Cref{lem:inf-def-ex-1} 表明 $\binom{i}{f}$ 是 inflation. 后一论断对偶.
+	\end{proof}
+\end{corollary}
+
+\begin{corollary}\label{cor:inf-def-ex-another}
+	若 $X \xrightarrow p Y \xrightarrow q Z$ 是 inflation, 则 $\binom{p}{0} : Y \oplus Z$ 亦然.
+	\begin{proof}
+		\Cref{cor:inf-def-ex} 表明 $\binom{p}{- q\circ p}$ 是 inflation. 左复合同构 $\binom{1 \ \ 0}{q \ \ 1}$, 得 $\binom{p}{0}$. \Cref{prop:ext-tri-isomorphism-closed} 表明 $\binom{p}{0}$ 是 inflation.
+	\end{proof}
+\end{corollary}
+
+以下给出外三角范畴弱幂等完备的若干等价定义.
+
+\begin{theorem}\label{thm:ext-tri-weakly-idempotent-complete}
+	称外三角范畴弱幂等完备, 若满足如下等价定义.
+	\begin{enumerate}
+		\item 若 $i : A \to C$ 可裂单, 则 $i$ 有余核 $B$, 且 $i$ 分解作 $A \xrightarrow{\binom 10} A \oplus B \simeq C$;
+		\item 若 $\binom i 0$ 是 inflation, 则 $i$ 也是 inflation;
+		\item 若 $\binom{i \ \ 0}{0 \ \ j}$ 是 inflation, 则 $i$ 与 $j$ 也都是 inflation;
+		\item 若 $f \circ i$ 是 inflation, 则 $i$ 也是 inflation;
+		\item inflation 的形变收缩仍是 inflation (态射的形变收缩即作为态射范畴中对象的形变收缩).
+	\end{enumerate}
+	我们略去五个对偶的定义. 定义 1 与 1' 的等价性见\Cref{def:weakly-idempotent-complete}.
+	\begin{proof}
+		我们先证明 ($2 \leftrightarrow 4$).
+		\begin{enumerate}
+			\item ($2 \gets 4$). 若 $\binom{i}{0}$ 是 inflation, 则 $i = (1 \ 0) \circ \binom{i}{0}$ 是 inflation.
+			\item ($2 \to 4$). 若 $f \circ i$ 是 inflation, \Cref{cor:inf-def-ex-another} 表明 $\binom{i}{0}$ 也是 inflation. 由假设, $i$ 是 inflation.
+		\end{enumerate}
+		继而证明 ($1 \leftrightarrow 4$).
+		\begin{enumerate}
+			\item ($1 \to 4$). 只需证明 ($1 \to 2$). 若 $\binom i 0$ 是 inflation, 取相应的 conflation $\delta$. 依照长正合列 (\Cref{eq:ext-tri-6-term}) 取分解所得的态射 $\binom{a}{b}$ 如下:
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsNSxbMCwwLCJYIl0sWzIsMCwiWSBcXG9wbHVzIFoiXSxbNCwwLCJXIl0sWzUsMCwiXFwsIl0sWzIsMSwiVyBcXG9wbHVzIFoiXSxbMCwxLCJcXGJpbm9tIGkwIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDIsIihzIFxcIHQpIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsMywiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDQsIlxcYmlub20ge3MgXFwgXFwgMH17MCBcXCBcXCAxfSIsMl0sWzAsNCwiMCIsMix7ImxhYmVsX3Bvc2l0aW9uIjozMCwiY3VydmUiOjJ9XSxbMiw0LCJcXGJpbm9tIGEgYiIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMCwiY3VydmUiOi0yLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	X && {Y \oplus Z} && W & {\,} \\
+	&& {W \oplus Z}
+	\arrow["{\binom i0}", tail, from=1-1, to=1-3]
+	\arrow["0"'{pos=0.3}, curve={height=12pt}, from=1-1, to=2-3]
+	\arrow["{(s \ t)}", two heads, from=1-3, to=1-5]
+	\arrow["{\binom {s \ \ 0}{0 \ \ 1}}"', from=1-3, to=2-3]
+	\arrow["\delta", dashed, from=1-5, to=1-6]
+	\arrow["{\binom a b}"{pos=0.3}, curve={height=-12pt}, dashed, from=1-5, to=2-3]
+\end{tikzcd}.
+			\end{equation}
+			注意到 $b \circ t = 1_Z$. 由题设, $b$ 是以 $Z$ 为像的可裂满, 不妨将 deflation 写作 $\binom{s_1 \ \ 0}{s_2 \ \ 1} : Y \oplus Z \twoheadrightarrow Y \oplus Q$. 依照\Cref{thm:bi-PBPO-variant} 构造交换图
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsOCxbMCwxLCJYIl0sWzEsMSwiWSBcXG9wbHVzIFoiXSxbMiwxLCJRIFxcb3BsdXMgWiJdLFsxLDIsIloiXSxbMSwwLCJaIl0sWzIsMCwiWiJdLFsyLDIsIlEiXSxbMCwyLCJYIl0sWzAsMSwiXFxiaW5vbSBpIDAiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwiXFxiaW5vbXtzXzEgXFwgXFwgMH17c18yIFxcIFxcIDF9IiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzQsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCwxLCJcXGJpbm9tIDAgMSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNSwyLCJcXGJpbm9tIDAgMSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwzLCIoMSwwKSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDYsIigxLDApIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsNywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNywzLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDYsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XV0=
+\begin{tikzcd}
+	& Z & Z \\
+	X & {Y \oplus Z} & {Q \oplus Z} \\
+	X & Z & Q
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["{\binom 0 1}", tail, from=1-2, to=2-2]
+	\arrow["{\binom 0 1}", tail, from=1-3, to=2-3]
+	\arrow["{\binom i 0}", tail, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{\binom{s_1 \ \ 0}{s_2 \ \ 1}}", two heads, from=2-2, to=2-3]
+	\arrow["{(1,0)}", two heads, from=2-2, to=3-2]
+	\arrow["{(1,0)}", two heads, from=2-3, to=3-3]
+	\arrow[dashed, tail, from=3-1, to=3-2]
+	\arrow[dashed, two heads, from=3-2, to=3-3]
+\end{tikzcd}.
+			\end{equation}
+			左下方的 inflation 是 $i = (1 \ 0) \circ \binom i 0$.
+			\item ($4 \to 1$). 若 $f \circ i$ 恒等, 则 $i$ 是 inflation. 因此所有可裂单 都是 inflation.
+		\end{enumerate}
+		再证明 ($2 \leftrightarrow 3$). ($3 \to 2$). 令 $j$ 是零态射即可. ($2 \to 3$). 若 $\binom{i \ \ 0}{0 \ \ j}$ 是 inflation, 则 inflation 的复合 $\binom{i}{0} = \binom{i \ \ 0}{0 \ \ j} \circ \binom 1 0$ 也是 inflation.
+		\\
+		最后证明 ($3 \leftrightarrow 5$). ($5 \to 3$). 显然. ($3 \to 5$). 以上证明了 $1$, $2$, $3$ 与 $4$ 彼此等价. 往证 $1$ 与 $4$ 共同推导出 $5$. 若 $f'$ 是 inflation $f$ 的形变收缩, 则存在可裂单 $i$ 与 $j$ 使得 $fi = jf'$. 由 $1$, $i$ 是 inflation, 从而 $fi = jf'$ 是 inflation. 由 $4$, 以及 $j$ 是 inflation, 得 $f'$ 是 inflation.
+	\end{proof}
+\end{theorem}
+
+\subsection{九引理}
+
+假定外三角范畴弱幂等完备, 本小节将证明九引理 ($3\times 3$ 引理) 在外三角范畴中类似物.
+
+\begin{theorem}\label{thm:ext-tri-3x3-lemma}
+	(九引理). 假定外三角范畴弱幂等完备. 给定以下四条 conflation 的交换图
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTMsWzAsMCwiQV8xIl0sWzEsMCwiQV8yIixbMjMzLDEwMCw2MCwxXV0sWzMsMCwiXFwsIl0sWzMsMSwiXFwsIl0sWzMsMiwiXFwsIl0sWzEsMywiXFwsIl0sWzIsMywiXFwsIl0sWzIsMCwiQV8zIixbMjMzLDEwMCw2MCwxXV0sWzAsMSwiQl8xIl0sWzEsMSwiQl8yIixbMjMzLDEwMCw2MCwxXV0sWzIsMSwiQl8zIixbMjMzLDEwMCw2MCwxXV0sWzEsMiwiQ18yIl0sWzIsMiwiQ18zIl0sWzAsMSwiZl9BIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDcsImdfQSIsMCx7ImNvbG91ciI6WzIzMywxMDAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFsyMzMsMTAwLDYwLDFdXSxbOCw5LCJmX0IiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzksMTAsImdfQiIsMCx7ImNvbG91ciI6WzIzMywxMDAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFsyMzMsMTAwLDYwLDFdXSxbMSw5LCJpXzIiLDAseyJjb2xvdXIiOlsyMzMsMTAwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX0sWzIzMywxMDAsNjAsMV1dLFs5LDExLCJwXzIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNywxMCwiaV8zIiwwLHsiY29sb3VyIjpbMjMzLDEwMCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19LFsyMzMsMTAwLDYwLDFdXSxbMTAsMTIsInBfMyIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs3LDIsIlxcZGVsdGEgX0EiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsMywiXFxkZWx0YSBfQiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSw1LCJcXHZhcmVwc2lsb24gXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTIsNiwiXFx2YXJlcHNpbG9uIF8zIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}
+	{A_1} & \textcolor{rgb,255:red,51;green,75;blue,255}{{A_2}} & \textcolor{rgb,255:red,51;green,75;blue,255}{{A_3}} & {\,} \\
+	{B_1} & \textcolor{rgb,255:red,51;green,75;blue,255}{{B_2}} & \textcolor{rgb,255:red,51;green,75;blue,255}{{B_3}} & {\,} \\
+	& {C_2} & {C_3} & {\,} \\
+	& {\,} & {\,}
+	\arrow["{f_A}", tail, from=1-1, to=1-2]
+	\arrow["{g_A}", color={rgb,255:red,51;green,75;blue,255}, two heads, from=1-2, to=1-3]
+	\arrow["{i_2}", color={rgb,255:red,51;green,75;blue,255}, tail, from=1-2, to=2-2]
+	\arrow["{\delta _A}", dashed, from=1-3, to=1-4]
+	\arrow["{i_3}", color={rgb,255:red,51;green,75;blue,255}, tail, from=1-3, to=2-3]
+	\arrow["{f_B}", tail, from=2-1, to=2-2]
+	\arrow["{g_B}", color={rgb,255:red,51;green,75;blue,255}, two heads, from=2-2, to=2-3]
+	\arrow["{p_2}", two heads, from=2-2, to=3-2]
+	\arrow["{\delta _B}", dashed, from=2-3, to=2-4]
+	\arrow["{p_3}", two heads, from=2-3, to=3-3]
+	\arrow["{\varepsilon _2}", dashed, from=3-2, to=4-2]
+	\arrow["{\varepsilon _3}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+	\end{equation}
+	存在 $\delta_C$ 与 $\varepsilon_1$ 使得下图交换, 且所有相邻行与列都是实现间的态射:
+	\begin{equation}\label{eq:ext-tri-3x3}
+		% https://q.uiver.app/#q=WzAsMTUsWzAsMCwiQV8xIixbMTE5LDEwMCwyOCwxXV0sWzEsMCwiQV8yIixbMjMzLDEwMCw2MCwxXV0sWzMsMCwiXFwsIl0sWzMsMSwiXFwsIl0sWzMsMiwiXFwsIl0sWzEsMywiXFwsIl0sWzIsMywiXFwsIl0sWzIsMCwiQV8zIixbMjMzLDEwMCw2MCwxXV0sWzAsMSwiQl8xIixbMTE5LDEwMCwyOCwxXV0sWzEsMSwiQl8yIixbMjMzLDEwMCw2MCwxXV0sWzIsMSwiQl8zIixbMjMzLDEwMCw2MCwxXV0sWzEsMiwiQ18yIixbMTE5LDEwMCwyOCwxXV0sWzIsMiwiQ18zIixbMTE5LDEwMCwyOCwxXV0sWzAsMiwiQ18xIixbMTE5LDEwMCwyOCwxXV0sWzAsMywiXFwsIl0sWzAsMSwiZl9BIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDcsImdfQSIsMCx7ImNvbG91ciI6WzIzMywxMDAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFsyMzMsMTAwLDYwLDFdXSxbOCw5LCJmX0IiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzksMTAsImdfQiIsMCx7ImNvbG91ciI6WzIzMywxMDAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFsyMzMsMTAwLDYwLDFdXSxbMSw5LCJpXzIiLDAseyJjb2xvdXIiOlsyMzMsMTAwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX0sWzIzMywxMDAsNjAsMV1dLFs5LDExLCJwXzIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNywxMCwiaV8zIiwwLHsiY29sb3VyIjpbMjMzLDEwMCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19LFsyMzMsMTAwLDYwLDFdXSxbMTAsMTIsInBfMyIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs3LDIsIlxcZGVsdGEgX0EiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsMywiXFxkZWx0YSBfQiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSw1LCJcXHZhcmVwc2lsb24gXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTIsNiwiXFx2YXJlcHNpbG9uIF8zIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEyLDQsIlxcZGVsdGFfQyIsMCx7ImNvbG91ciI6WzExOSwxMDAsMjhdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFsxMTksMTAwLDI4LDFdXSxbMCw4LCJpXzEiLDAseyJjb2xvdXIiOlsxMTksMTAwLDI4XSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX0sWzExOSwxMDAsMjgsMV1dLFs4LDEzLCJwXzEiLDAseyJjb2xvdXIiOlsxMTksMTAwLDI4XSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fSxbMTE5LDEwMCwyOCwxXV0sWzEzLDE0LCJcXHZhcmVwc2lsb24gXzEiLDAseyJjb2xvdXIiOlsxMTksMTAwLDI4XSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMTE5LDEwMCwyOCwxXV0sWzEzLDExLCJmX0MiLDAseyJjb2xvdXIiOlsxMTksMTAwLDI4XSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX0sWzExOSwxMDAsMjgsMV1dLFsxMSwxMiwiZ19DIiwwLHsiY29sb3VyIjpbMTE5LDEwMCwyOF0sInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX0sWzExOSwxMDAsMjgsMV1dXQ==
+\begin{tikzcd}
+	\textcolor{rgb,255:red,2;green,143;blue,0}{{A_1}} & \textcolor{rgb,255:red,51;green,75;blue,255}{{A_2}} & \textcolor{rgb,255:red,51;green,75;blue,255}{{A_3}} & {\,} \\
+	\textcolor{rgb,255:red,2;green,143;blue,0}{{B_1}} & \textcolor{rgb,255:red,51;green,75;blue,255}{{B_2}} & \textcolor{rgb,255:red,51;green,75;blue,255}{{B_3}} & {\,} \\
+	\textcolor{rgb,255:red,2;green,143;blue,0}{{C_1}} & \textcolor{rgb,255:red,2;green,143;blue,0}{{C_2}} & \textcolor{rgb,255:red,2;green,143;blue,0}{{C_3}} & {\,} \\
+	{\,} & {\,} & {\,}
+	\arrow["{f_A}", tail, from=1-1, to=1-2]
+	\arrow["{i_1}", color={rgb,255:red,2;green,143;blue,0}, tail, from=1-1, to=2-1]
+	\arrow["{g_A}", color={rgb,255:red,51;green,75;blue,255}, two heads, from=1-2, to=1-3]
+	\arrow["{i_2}", color={rgb,255:red,51;green,75;blue,255}, tail, from=1-2, to=2-2]
+	\arrow["{\delta _A}", dashed, from=1-3, to=1-4]
+	\arrow["{i_3}", color={rgb,255:red,51;green,75;blue,255}, tail, from=1-3, to=2-3]
+	\arrow["{f_B}", tail, from=2-1, to=2-2]
+	\arrow["{p_1}", color={rgb,255:red,2;green,143;blue,0}, two heads, from=2-1, to=3-1]
+	\arrow["{g_B}", color={rgb,255:red,51;green,75;blue,255}, two heads, from=2-2, to=2-3]
+	\arrow["{p_2}", two heads, from=2-2, to=3-2]
+	\arrow["{\delta _B}", dashed, from=2-3, to=2-4]
+	\arrow["{p_3}", two heads, from=2-3, to=3-3]
+	\arrow["{f_C}", color={rgb,255:red,2;green,143;blue,0}, tail, from=3-1, to=3-2]
+	\arrow["{\varepsilon _1}", color={rgb,255:red,2;green,143;blue,0}, dashed, from=3-1, to=4-1]
+	\arrow["{g_C}", color={rgb,255:red,2;green,143;blue,0}, two heads, from=3-2, to=3-3]
+	\arrow["{\varepsilon _2}", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_C}", color={rgb,255:red,2;green,143;blue,0}, dashed, from=3-3, to=3-4]
+	\arrow["{\varepsilon _3}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+	\end{equation}
+	\begin{proof}
+		由 ET4, 取 $E$, $x$ 与 $y$ 如下:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTMsWzEsMCwiQV8yIixbMjMyLDEwMCw2MCwxXV0sWzMsMCwiXFwsIl0sWzMsMSwiXFwsIl0sWzMsMiwiXFwsIl0sWzEsMywiXFwsIl0sWzIsMCwiQV8zIixbMjMyLDEwMCw2MCwxXV0sWzEsMSwiQl8yIixbMjMyLDEwMCw2MCwxXV0sWzEsMiwiQ18yIl0sWzAsMSwiQV8xIl0sWzIsMiwiQ18yIl0sWzIsMywiXFwsIl0sWzIsMSwiRSIsWzM1OSwxMDAsNjAsMV1dLFswLDAsIkFfMSJdLFswLDUsImdfQSIsMCx7ImNvbG91ciI6WzIzMiwxMDAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFsyMzIsMTAwLDYwLDFdXSxbMCw2LCJpXzIiLDAseyJjb2xvdXIiOlsyMzIsMTAwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX0sWzIzMiwxMDAsNjAsMV1dLFs2LDcsInBfMiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs1LDEsIlxcZGVsdGEgX0EiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNyw0LCJcXHZhcmVwc2lsb24gXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCw2LCJpXzJmX0EiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzksMTAsIihnX0EpX1xcYXN0IFxcdmFyZXBzaWxvbiBfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDExLCJ5IiwwLHsiY29sb3VyIjpbMzU5LDEwMCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzU5LDEwMCw2MCwxXV0sWzYsMTEsIngiLDAseyJjb2xvdXIiOlszNTksMTAwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX0sWzM1OSwxMDAsNjAsMV1dLFsxMSwyLCJcXGV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSw5LCJ6IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs5LDcsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEyLDAsImZfQSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMTIsOCwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}
+	{A_1} & \textcolor{rgb,255:red,51;green,78;blue,255}{{A_2}} & \textcolor{rgb,255:red,51;green,78;blue,255}{{A_3}} & {\,} \\
+	{A_1} & \textcolor{rgb,255:red,51;green,78;blue,255}{{B_2}} & \textcolor{rgb,255:red,255;green,51;blue,54}{E} & {\,} \\
+	& {C_2} & {C_2} & {\,} \\
+	& {\,} & {\,}
+	\arrow["{f_A}", tail, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["{g_A}", color={rgb,255:red,51;green,78;blue,255}, two heads, from=1-2, to=1-3]
+	\arrow["{i_2}", color={rgb,255:red,51;green,78;blue,255}, tail, from=1-2, to=2-2]
+	\arrow["{\delta _A}", dashed, from=1-3, to=1-4]
+	\arrow["y", color={rgb,255:red,255;green,51;blue,54}, dashed, tail, from=1-3, to=2-3]
+	\arrow["{i_2f_A}"', tail, from=2-1, to=2-2]
+	\arrow["x", color={rgb,255:red,255;green,51;blue,54}, dashed, two heads, from=2-2, to=2-3]
+	\arrow["{p_2}", two heads, from=2-2, to=3-2]
+	\arrow["\eta", dashed, from=2-3, to=2-4]
+	\arrow["z", dashed, two heads, from=2-3, to=3-3]
+	\arrow["{\varepsilon _2}", dashed, from=3-2, to=4-2]
+	\arrow[equals, from=3-3, to=3-2]
+	\arrow["{(g_A)_\ast \varepsilon _2}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+		\end{equation}
+		方块 $(g_A,y,i_2,x)$ 是同伦的推出拉回方块, 特别地, 这是弱推出. 此时存在 $\varphi$ 使得下图交换:
+		\begin{equation}
+		% https://q.uiver.app/#q=WzAsNyxbMCwwLCJBXzIiLFsyMzksMTAwLDYwLDFdXSxbMiwyLCJCXzMiLFsyMzksMTAwLDYwLDFdXSxbMSwwLCJBXzMiLFsyMzksMTAwLDYwLDFdXSxbMCwxLCJCXzIiLFsyMzksMTAwLDYwLDFdXSxbMSwxLCJFIixbMSwxMDAsNjAsMV1dLFsxLDIsIlxcLCJdLFsyLDEsIlxcLCJdLFswLDIsImdfQSIsMCx7ImNvbG91ciI6WzIzOSwxMDAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFsyMzksMTAwLDYwLDFdXSxbMCwzLCJpXzIiLDAseyJjb2xvdXIiOlsyMzksMTAwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX0sWzIzOSwxMDAsNjAsMV1dLFsyLDQsInkiLDAseyJjb2xvdXIiOlsxLDEwMCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMSwxMDAsNjAsMV1dLFszLDQsIngiLDAseyJjb2xvdXIiOlsxLDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFsxLDEwMCw2MCwxXV0sWzIsMSwiaV8zIiwwLHsiY3VydmUiOi0zLCJjb2xvdXIiOlsyMzksMTAwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX0sWzIzOSwxMDAsNjAsMV1dLFszLDEsImdfQiIsMix7ImN1cnZlIjozLCJjb2xvdXIiOlsyMzksMTAwLDYwXSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fSxbMjM5LDEwMCw2MCwxXV0sWzQsMSwiXFx2YXJwaGkgIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs0LDUsIlxcdHJpYW5nbGUiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw2LCJcXHNxdWFyZSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}
+	\textcolor{rgb,255:red,51;green,54;blue,255}{{A_2}} & \textcolor{rgb,255:red,51;green,54;blue,255}{{A_3}} \\
+	\textcolor{rgb,255:red,51;green,54;blue,255}{{B_2}} & \textcolor{rgb,255:red,255;green,54;blue,51}{E} & {\,} \\
+	& {\,} & \textcolor{rgb,255:red,51;green,54;blue,255}{{B_3}}
+	\arrow["{g_A}", color={rgb,255:red,51;green,54;blue,255}, two heads, from=1-1, to=1-2]
+	\arrow["{i_2}", color={rgb,255:red,51;green,54;blue,255}, tail, from=1-1, to=2-1]
+	\arrow["y", color={rgb,255:red,255;green,54;blue,51}, dashed, tail, from=1-2, to=2-2]
+	\arrow["{i_3}", color={rgb,255:red,51;green,54;blue,255}, curve={height=-18pt}, tail, from=1-2, to=3-3]
+	\arrow["x", color={rgb,255:red,255;green,54;blue,51}, dashed, two heads, from=2-1, to=2-2]
+	\arrow["{g_B}"', color={rgb,255:red,51;green,54;blue,255}, curve={height=18pt}, two heads, from=2-1, to=3-3]
+	\arrow["\square", draw=none, from=2-2, to=2-3]
+	\arrow["\triangle"{description}, draw=none, from=2-2, to=3-2]
+	\arrow["{\varphi }", dashed, two heads, from=2-2, to=3-3]
+\end{tikzcd}.
+\end{equation}
+		由\Cref{thm:ext-tri-weakly-idempotent-complete} 第四条的对偶, $\varphi$ 是 deflation. 对 $\triangle$ 与 $\square$ 分别使用 ET4' 与\Cref{thm:bi-PBPO-variant}, 得下图:
+		\begin{equation}\label{diag:extri-4-2}
+		% https://q.uiver.app/#q=WzAsMjQsWzYsMSwiQl8zIl0sWzUsMCwiQV8zIl0sWzUsMSwiRSJdLFswLDAsIkFfMSJdLFsxLDAsIkFfMSJdLFswLDEsIkJfMSJdLFswLDIsIkNfMSJdLFsxLDIsIkUiXSxbMSwxLCJCXzIiXSxbMiwxLCJCXzMiXSxbMiwyLCJCXzMiXSxbMywxLCJcXCwiXSxbMywyLCJcXCwiXSxbMSwzLCJcXCwiXSxbMCwzLCJcXCwiXSxbNiwwLCJBXzMiXSxbNCwxLCJDXzEiXSxbNCwyLCJDXzEiXSxbNSwyLCJDXzIiXSxbNiwyLCJDXzMiXSxbNywxLCJcXCwiXSxbNywyLCJcXCwiXSxbNiwzLCJcXCwiXSxbNSwzLCJcXCwiXSxbMSwyLCJ5IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsyLDAsIlxcdmFycGhpICIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs0LDMsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsNSwiaV8xIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw2LCJwXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzYsNywiXFxwc2kgIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs1LDgsImZfQiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbOCw5LCJnX0IiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNCw4LCJpXzIgZl9BIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs4LDcsIngiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbOSwxMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOSwxMSwiXFxkZWx0YSBfQiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMCwxMiwiKHBfMSlfXFxhc3QgXFxkZWx0YSBfQiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDE0LCJcXHZhcmVwc2lsb24gXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNywxMywiXFxldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCwxMCwiXFx0cmlhbmdsZSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxNSwwLCJpXzMiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMTUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE3LDE2LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDE5LCJwXzMiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMTYsMiwiXFxwc2kgIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsyLDE4LCJ6IiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzE3LDE4LCJmX0MiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxOCwxOSwiZ19DIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFswLDIwLCIocF8xKV9cXGFzdCBcXGRlbHRhIF9CIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzE5LDIxLCJcXGRlbHRhIF9DIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzE5LDIyLCJcXHZhcmVwc2lsb24gXzMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTgsMjMsIihnX0EpX1xcYXN0IFxcdmFyZXBzaWxvbiBfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDAsIlxcc3F1YXJlIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsMTAsIlxcdmFycGhpIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV1d
+\begin{tikzcd}
+	{A_1} & {A_1} &&&& {A_3} & {A_3} \\
+	{B_1} & {B_2} & {B_3} & {\,} & {C_1} & E & {B_3} & {\,} \\
+	{C_1} & E & {B_3} & {\,} & {C_1} & {C_2} & {C_3} & {\,} \\
+	{\,} & {\,} &&&& {\,} & {\,}
+	\arrow["{i_1}", dashed, tail, from=1-1, to=2-1]
+	\arrow[equals, from=1-2, to=1-1]
+	\arrow["{i_2 f_A}", tail, from=1-2, to=2-2]
+	\arrow[equals, from=1-6, to=1-7]
+	\arrow["y", tail, from=1-6, to=2-6]
+	\arrow["\square"{description}, draw=none, from=1-6, to=2-7]
+	\arrow["{i_3}", tail, from=1-7, to=2-7]
+	\arrow["{f_B}", tail, from=2-1, to=2-2]
+	\arrow["{p_1}", dashed, two heads, from=2-1, to=3-1]
+	\arrow["{g_B}", two heads, from=2-2, to=2-3]
+	\arrow["x", two heads, from=2-2, to=3-2]
+	\arrow["\triangle"{description}, draw=none, from=2-2, to=3-3]
+	\arrow["{\delta _B}", dashed, from=2-3, to=2-4]
+	\arrow[equals, from=2-3, to=3-3]
+	\arrow["{\psi }", tail, from=2-5, to=2-6]
+	\arrow["{\varphi }", two heads, from=2-6, to=2-7]
+	\arrow["z", two heads, from=2-6, to=3-6]
+	\arrow["{(p_1)_\ast \delta _B}", dashed, from=2-7, to=2-8]
+	\arrow["{p_3}", two heads, from=2-7, to=3-7]
+	\arrow["{\psi }", tail, from=3-1, to=3-2]
+	\arrow["{\varepsilon _1}", dashed, from=3-1, to=4-1]
+	\arrow["\varphi", two heads, from=3-2, to=3-3]
+	\arrow["\eta", dashed, from=3-2, to=4-2]
+	\arrow["{(p_1)_\ast \delta _B}", dashed, from=3-3, to=3-4]
+	\arrow[equals, from=3-5, to=2-5]
+	\arrow["{f_C}", dashed, tail, from=3-5, to=3-6]
+	\arrow["{g_C}", dashed, two heads, from=3-6, to=3-7]
+	\arrow["{(g_A)_\ast \varepsilon _2}", dashed, from=3-6, to=4-6]
+	\arrow["{\delta _C}", dashed, from=3-7, to=3-8]
+	\arrow["{\varepsilon _3}", dashed, from=3-7, to=4-7]
+\end{tikzcd}.
+		\end{equation}
+		今断言\Cref{diag:extri-4-2} 即为所求. 显然\Cref{eq:ext-tri-3x3} 中四个方块交换, 下检验扩张元的等式:
+		\begin{enumerate}
+			\item $(f_A)_\ast \varepsilon _1 = (f_A)_\ast \psi^\ast \eta = \psi^\ast (f_A)_\ast \eta = \psi^\ast z^\ast \varepsilon_2 = (z\circ \psi)^\ast \varepsilon_2 = (f_C)^\ast \varepsilon _2$;
+			\item \Cref{diag:extri-4-2} 直接给出 $(g_A)_\ast \varepsilon_2 = (g_C)^\ast \varepsilon _3$;
+			\item $(i_1)_\ast \delta_A = (i_1)_\ast y^\ast \eta = y^\ast (i_1)_\ast \eta = y^\ast \varphi^\ast \delta_B = (\varphi \circ y)^\ast \delta_B = (i_3)^\ast \delta_B$;
+			\item \Cref{diag:extri-4-2} 直接给出 $(p_1)_\ast \delta_B = (p_3)^\ast \delta_C$.
+		\end{enumerate}
+	\end{proof}
+\end{theorem}
+
+九引理即 conflation 的``四推六'', 以下``五推六''变体无需弱幂等完备性.
+
+\begin{theorem}
+	给定以下五条 conflation 的交换图, 使得 $(g_A)_\ast \varepsilon_2 = (g_C)^\ast \varepsilon _3$:
+	\begin{equation}
+% https://q.uiver.app/#q=WzAsMTQsWzAsMCwiQV8xIl0sWzEsMCwiQV8yIixbMjMzLDEwMCw2MCwxXV0sWzMsMCwiXFwsIl0sWzMsMSwiXFwsIl0sWzMsMiwiXFwsIl0sWzEsMywiXFwsIl0sWzIsMywiXFwsIl0sWzIsMCwiQV8zIixbMjMzLDEwMCw2MCwxXV0sWzAsMSwiQl8xIl0sWzEsMSwiQl8yIixbMjMzLDEwMCw2MCwxXV0sWzIsMSwiQl8zIixbMjMzLDEwMCw2MCwxXV0sWzEsMiwiQ18yIl0sWzIsMiwiQ18zIl0sWzAsMiwiQ18xIl0sWzAsMSwiZl9BIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDcsImdfQSIsMCx7ImNvbG91ciI6WzIzMywxMDAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFsyMzMsMTAwLDYwLDFdXSxbOCw5LCJmX0IiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzksMTAsImdfQiIsMCx7ImNvbG91ciI6WzIzMywxMDAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFsyMzMsMTAwLDYwLDFdXSxbMSw5LCJpXzIiLDAseyJjb2xvdXIiOlsyMzMsMTAwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX0sWzIzMywxMDAsNjAsMV1dLFs5LDExLCJwXzIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNywxMCwiaV8zIiwwLHsiY29sb3VyIjpbMjMzLDEwMCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19LFsyMzMsMTAwLDYwLDFdXSxbMTAsMTIsInBfMyIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs3LDIsIlxcZGVsdGEgX0EiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsMywiXFxkZWx0YSBfQiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSw1LCJcXHZhcmVwc2lsb24gXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTIsNiwiXFx2YXJlcHNpbG9uIF8zIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEyLDQsIlxcZGVsdGFfQyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSwxMiwiZ19DIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEzLDExLCJmX0MiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV1d
+\begin{tikzcd}
+	{A_1} & \textcolor{rgb,255:red,51;green,75;blue,255}{{A_2}} & \textcolor{rgb,255:red,51;green,75;blue,255}{{A_3}} & {\,} \\
+	{B_1} & \textcolor{rgb,255:red,51;green,75;blue,255}{{B_2}} & \textcolor{rgb,255:red,51;green,75;blue,255}{{B_3}} & {\,} \\
+	{C_1} & {C_2} & {C_3} & {\,} \\
+	& {\,} & {\,}
+	\arrow["{f_A}", tail, from=1-1, to=1-2]
+	\arrow["{g_A}", color={rgb,255:red,51;green,75;blue,255}, two heads, from=1-2, to=1-3]
+	\arrow["{i_2}", color={rgb,255:red,51;green,75;blue,255}, tail, from=1-2, to=2-2]
+	\arrow["{\delta _A}", dashed, from=1-3, to=1-4]
+	\arrow["{i_3}", color={rgb,255:red,51;green,75;blue,255}, tail, from=1-3, to=2-3]
+	\arrow["{f_B}", tail, from=2-1, to=2-2]
+	\arrow["{g_B}", color={rgb,255:red,51;green,75;blue,255}, two heads, from=2-2, to=2-3]
+	\arrow["{p_2}", two heads, from=2-2, to=3-2]
+	\arrow["{\delta _B}", dashed, from=2-3, to=2-4]
+	\arrow["{p_3}", two heads, from=2-3, to=3-3]
+	\arrow["{f_C}", tail, from=3-1, to=3-2]
+	\arrow["{g_C}", two heads, from=3-2, to=3-3]
+	\arrow["{\varepsilon _2}", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_C}", dashed, from=3-3, to=3-4]
+	\arrow["{\varepsilon _3}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+	\end{equation}
+	存在 $\varepsilon_1$ 使得下图交换, 且所有相邻行与列都是实现间的态射:
+	\begin{equation}
+% https://q.uiver.app/#q=WzAsMTUsWzAsMCwiQV8xIixbMTMwLDEwMCwzMiwxXV0sWzEsMCwiQV8yIixbMjMzLDEwMCw2MCwxXV0sWzMsMCwiXFwsIl0sWzMsMSwiXFwsIl0sWzMsMiwiXFwsIl0sWzEsMywiXFwsIl0sWzIsMywiXFwsIl0sWzIsMCwiQV8zIixbMjMzLDEwMCw2MCwxXV0sWzAsMSwiQl8xIixbMTMwLDEwMCwzMiwxXV0sWzEsMSwiQl8yIixbMjMzLDEwMCw2MCwxXV0sWzIsMSwiQl8zIixbMjMzLDEwMCw2MCwxXV0sWzEsMiwiQ18yIl0sWzIsMiwiQ18zIl0sWzAsMiwiQ18xIixbMTMwLDEwMCwzMiwxXV0sWzAsMywiXFwsIl0sWzAsMSwiZl9BIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDcsImdfQSIsMCx7ImNvbG91ciI6WzIzMywxMDAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFsyMzMsMTAwLDYwLDFdXSxbOCw5LCJmX0IiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzksMTAsImdfQiIsMCx7ImNvbG91ciI6WzIzMywxMDAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFsyMzMsMTAwLDYwLDFdXSxbMSw5LCJpXzIiLDAseyJjb2xvdXIiOlsyMzMsMTAwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX0sWzIzMywxMDAsNjAsMV1dLFs5LDExLCJwXzIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNywxMCwiaV8zIiwwLHsiY29sb3VyIjpbMjMzLDEwMCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19LFsyMzMsMTAwLDYwLDFdXSxbMTAsMTIsInBfMyIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs3LDIsIlxcZGVsdGEgX0EiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsMywiXFxkZWx0YSBfQiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSw1LCJcXHZhcmVwc2lsb24gXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTIsNiwiXFx2YXJlcHNpbG9uIF8zIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEyLDQsIlxcZGVsdGFfQyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSwxMiwiZ19DIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEzLDExLCJmX0MiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzAsOCwiaV8xIiwwLHsiY29sb3VyIjpbMTMwLDEwMCwzMl0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19LFsxMzAsMTAwLDMyLDFdXSxbOCwxMywicF8xIiwwLHsiY29sb3VyIjpbMTMwLDEwMCwzMl0sInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX0sWzEzMCwxMDAsMzIsMV1dLFsxMywxNCwiXFx2YXJlcHNpbG9uIF8xIiwwLHsiY29sb3VyIjpbMTMwLDEwMCwzMl0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzEzMCwxMDAsMzIsMV1dXQ==
+\begin{tikzcd}
+	\textcolor{rgb,255:red,0;green,163;blue,27}{{A_1}} & \textcolor{rgb,255:red,51;green,75;blue,255}{{A_2}} & \textcolor{rgb,255:red,51;green,75;blue,255}{{A_3}} & {\,} \\
+	\textcolor{rgb,255:red,0;green,163;blue,27}{{B_1}} & \textcolor{rgb,255:red,51;green,75;blue,255}{{B_2}} & \textcolor{rgb,255:red,51;green,75;blue,255}{{B_3}} & {\,} \\
+	\textcolor{rgb,255:red,0;green,163;blue,27}{{C_1}} & {C_2} & {C_3} & {\,} \\
+	{\,} & {\,} & {\,}
+	\arrow["{f_A}", tail, from=1-1, to=1-2]
+	\arrow["{i_1}", color={rgb,255:red,0;green,163;blue,27}, tail, from=1-1, to=2-1]
+	\arrow["{g_A}", color={rgb,255:red,51;green,75;blue,255}, two heads, from=1-2, to=1-3]
+	\arrow["{i_2}", color={rgb,255:red,51;green,75;blue,255}, tail, from=1-2, to=2-2]
+	\arrow["{\delta _A}", dashed, from=1-3, to=1-4]
+	\arrow["{i_3}", color={rgb,255:red,51;green,75;blue,255}, tail, from=1-3, to=2-3]
+	\arrow["{f_B}", tail, from=2-1, to=2-2]
+	\arrow["{p_1}", color={rgb,255:red,0;green,163;blue,27}, two heads, from=2-1, to=3-1]
+	\arrow["{g_B}", color={rgb,255:red,51;green,75;blue,255}, two heads, from=2-2, to=2-3]
+	\arrow["{p_2}", two heads, from=2-2, to=3-2]
+	\arrow["{\delta _B}", dashed, from=2-3, to=2-4]
+	\arrow["{p_3}", two heads, from=2-3, to=3-3]
+	\arrow["{f_C}", tail, from=3-1, to=3-2]
+	\arrow["{\varepsilon _1}", color={rgb,255:red,0;green,163;blue,27}, dashed, from=3-1, to=4-1]
+	\arrow["{g_C}", two heads, from=3-2, to=3-3]
+	\arrow["{\varepsilon _2}", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_C}", dashed, from=3-3, to=3-4]
+	\arrow["{\varepsilon _3}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+	\end{equation}
+	\begin{proof}
+		将 $(g_A, g_C) : \varepsilon _2 \to \varepsilon_3$ 拆解如下:
+		\begin{equation}\label{eq:ext-tri-3x3-45}
+			% https://q.uiver.app/#q=WzAsMTUsWzAsMCwiQV8yIixbMjMzLDEwMCw2MCwxXV0sWzMsMCwiXFwsIl0sWzMsMSwiXFwsIl0sWzMsMiwiXFwsIl0sWzAsMywiXFwsIl0sWzIsMywiXFwsIl0sWzIsMCwiQV8zIixbMjMzLDEwMCw2MCwxXV0sWzAsMSwiQl8yIixbMjMzLDEwMCw2MCwxXV0sWzIsMSwiQl8zIixbMjMzLDEwMCw2MCwxXV0sWzAsMiwiQ18yIl0sWzIsMiwiQ18zIl0sWzEsMCwiQV8zIixbMjMzLDEwMCw2MCwxXV0sWzEsMSwiRSIsWzM1MiwxMDAsNjAsMV1dLFsxLDIsIkNfMiJdLFsxLDMsIlxcLCJdLFswLDcsImlfMiIsMCx7ImNvbG91ciI6WzIzMywxMDAsNjBdLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fSxbMjMzLDEwMCw2MCwxXV0sWzcsOSwicF8yIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzYsOCwiaV8zIiwwLHsiY29sb3VyIjpbMjMzLDEwMCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19LFsyMzMsMTAwLDYwLDFdXSxbOCwxMCwicF8zIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzYsMSwiXFxkZWx0YSBfQSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDIsIlxcZGVsdGEgX0IiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOSw0LCJcXHZhcmVwc2lsb24gXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsNSwiXFx2YXJlcHNpbG9uIF8zIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEwLDMsIlxcZGVsdGFfQyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDExLCJnX0EiLDAseyJjb2xvdXIiOlsyMzMsMTAwLDYwXSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fSxbMjMzLDEwMCw2MCwxXV0sWzExLDYsIiIsMCx7ImxldmVsIjoyLCJjb2xvdXIiOlsyMzMsMTAwLDYwXSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs3LDgsImdfQiIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMCwiY3VydmUiOi0yLCJjb2xvdXIiOlsyMzMsMTAwLDYwXSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fSxbMjMzLDEwMCw2MCwxXV0sWzExLDEyLCJ5IiwwLHsiY29sb3VyIjpbMzUyLDEwMCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19LFszNTIsMTAwLDYwLDFdXSxbNywxMiwieCIsMCx7ImNvbG91ciI6WzM1MiwxMDAsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFszNTIsMTAwLDYwLDFdXSxbMTIsOCwiXFx2YXJwaGkgIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEzLDEwLCJnX0MiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbOSwxMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTIsMTMsInoiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMTMsMTQsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+	\textcolor{rgb,255:red,51;green,75;blue,255}{{A_2}} & \textcolor{rgb,255:red,51;green,75;blue,255}{{A_3}} & \textcolor{rgb,255:red,51;green,75;blue,255}{{A_3}} & {\,} \\
+	\textcolor{rgb,255:red,51;green,75;blue,255}{{B_2}} & \textcolor{rgb,255:red,255;green,51;blue,78}{E} & \textcolor{rgb,255:red,51;green,75;blue,255}{{B_3}} & {\,} \\
+	{C_2} & {C_2} & {C_3} & {\,} \\
+	{\,} & {\,} & {\,}
+	\arrow["{g_A}", color={rgb,255:red,51;green,75;blue,255}, two heads, from=1-1, to=1-2]
+	\arrow["{i_2}", color={rgb,255:red,51;green,75;blue,255}, tail, from=1-1, to=2-1]
+	\arrow[color={rgb,255:red,51;green,75;blue,255}, equals, from=1-2, to=1-3]
+	\arrow["y", color={rgb,255:red,255;green,51;blue,78}, tail, from=1-2, to=2-2]
+	\arrow["{\delta _A}", dashed, from=1-3, to=1-4]
+	\arrow["{i_3}", color={rgb,255:red,51;green,75;blue,255}, tail, from=1-3, to=2-3]
+	\arrow["x", color={rgb,255:red,255;green,51;blue,78}, two heads, from=2-1, to=2-2]
+	\arrow["{g_B}"{pos=0.3}, color={rgb,255:red,51;green,75;blue,255}, curve={height=-18pt}, two heads, from=2-1, to=2-3]
+	\arrow["{p_2}", two heads, from=2-1, to=3-1]
+	\arrow["{\varphi }", two heads, from=2-2, to=2-3]
+	\arrow["z", two heads, from=2-2, to=3-2]
+	\arrow["{\delta _B}", dashed, from=2-3, to=2-4]
+	\arrow["{p_3}", two heads, from=2-3, to=3-3]
+	\arrow[equals, from=3-1, to=3-2]
+	\arrow["{\varepsilon _2}", dashed, from=3-1, to=4-1]
+	\arrow["{g_C}", two heads, from=3-2, to=3-3]
+	\arrow[dashed, from=3-2, to=4-2]
+	\arrow["{\delta_C}", dashed, from=3-3, to=3-4]
+	\arrow["{\varepsilon _3}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+		\end{equation}
+		由 ET4 与\Cref{thm:homotopy-pullback-3}, 左上方块是同伦的推出拉回. 由\Cref{thm:bi-pullback} 与\Cref{thm:homotopy-pullback-4}, 右下方块是同伦的推出拉回. 由 $(g_A)_\ast \varepsilon_2 = (g_C)^\ast \varepsilon _3$, 不妨假定两处方块交于 $E$. 特别地, $\varphi$ 是 deflation.
+		\\
+		往后证明同\Cref{thm:ext-tri-3x3-lemma}. 需要注意, \Cref{eq:ext-tri-3x3-45} 蕴含了\Cref{diag:extri-4-2} 的右图 此处仅需通过\Cref{prop:ext-tri-et4-unique} 构造\Cref{diag:extri-4-2} 的左图. 最后验证扩张元的等式即可.
+	\end{proof}
+\end{theorem}

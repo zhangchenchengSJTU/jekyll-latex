@@ -1,0 +1,611 @@
+
+\section{Hovey 对应}
+
+\subsection{余挠对}
+
+余挠对是一门庞大的理论, 本章节仅罗列一些基本定义与结论. 以下选定外三角范畴 $(\mathcal{C}, \mathbb E, \mathfrak s)$.
+
+\begin{definition}
+	($\mathbb E$-垂直). 称两个对象类 $\mathcal{X}$ 与 $\mathcal{Y}$ 是 $\mathbb E$-垂直的 (下简称\textbf{垂直}), 若对任意 $X \in \mathcal{X}$ 与 $Y \in \mathcal{Y}$, 总有 $\mathbb E(X,Y) = 0$. 我们引入以下记号:
+	\begin{enumerate}
+		\item 若 $\mathcal{X}$ 与 $\mathcal{Y}$ 垂直, 则记作 $\mathcal{X}\perp \mathcal{Y}$;
+		\item 记右垂直类 $\mathcal{X}^\perp := \{Y \mid \mathbb E(X,Y) = 0\}$;
+		\item 记左垂直类 ${}^\perp \mathcal{Y} := \{X \mid \mathbb E(X,Y) = 0\}$.
+	\end{enumerate}
+	简便起见, 约定 $\{M\}^\perp = M^\perp$.
+\end{definition}
+
+再引入几则 conflation 决定的类的运算.
+
+\begin{definition}
+	假定 $\mathcal{X}$ 与 $\mathcal{Y}$ 是任意 (非空的) 对象类. 定义如下运算.
+	\begin{enumerate}
+		\item $\mathrm{Cone}(\mathcal{X}, \mathcal{Y}) := \{Z \mid \text{存在 $X \in \mathcal{X}$ 与 $Y \in \mathcal{Y}$, 使得有 conflation} \  X \rightarrowtail Y \twoheadrightarrow Z\}$;
+		\item $\mathrm{coCone}(\mathcal{X}, \mathcal{Y}) := \{W \mid \text{存在 $X \in \mathcal{X}$ 与 $Y \in \mathcal{Y}$, 使得有 conflation} \  W \rightarrowtail X \twoheadrightarrow W\}$;
+		\item $\mathcal{X} \ast \mathcal{Y} := \{E \mid \text{存在 $X \in \mathcal{X}$ 与 $Y \in \mathcal{Y}$, 使得有 conflation} \  X \rightarrowtail E \twoheadrightarrow Y\}$.
+	\end{enumerate}
+\end{definition}
+
+\begin{example}
+	若 $\mathcal{X} \perp \mathcal{Y}$, 则 $\mathcal{X} \ast \mathcal{Y} = \mathcal{X} \oplus \mathcal{Y}$.
+\end{example}
+
+我们将 ET4 系列公理转化作如下引理.
+
+\begin{lemma}
+	对任意对象类 $\mathcal{X}$, $\mathcal{Y}$, 与 $\mathcal{Z}$, 有如下等式.
+	\begin{enumerate}
+		\item $\mathrm{Cone}(\mathcal{X} , \mathrm{Cone}(\mathcal{Y} , \mathcal{Z} )) = \mathrm{Cone}(\mathcal{Y} \ast \mathcal{X} , \mathcal{Z} )$;
+		\item $\mathrm{coCone}(\mathrm{coCone}(\mathcal{X} ,\mathcal{Y} ), \mathcal{Z} ) = \mathrm{coCone}(\mathcal{X} , \mathcal{Z} \ast \mathcal{Y} )$;
+		\item $\mathrm{Cone}(\mathcal{X} , \mathrm{coCone}(\mathcal{Y}, \mathcal{Z} )) = \mathrm{coCone}(\mathrm{Cone}(\mathcal{X} , \mathcal{Y} ), \mathcal{Z} )$;
+		\item $\mathcal{X} \ast (\mathcal{Y} \ast \mathcal{Z} ) = (\mathcal{X} \ast \mathcal{Y} )\ast \mathcal{Z}$.
+	\end{enumerate}
+	\begin{proof}
+		先证明 (1). 观察下图. 若 $M \in \mathrm{Cone}(\mathcal{X} , \mathrm{Cone}(\mathcal{Y} , \mathcal{Z} ))$, 则 $M$ 由实线所示的 $\delta_i$ 决定. 依照 ET4', $M$ 由虚线所示的 $\varepsilon_j$ 决定. 因此 $M \in \mathrm{Cone}(\mathcal{Y} \ast \mathcal{X} , \mathcal{Z} )$. 对偶地, 依照 ET4, 虚线所示的 conflation 决定实所示者.
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWSJdLFsxLDAsIkYiXSxbMiwwLCJYIl0sWzEsMSwiWiJdLFsxLDIsIk0iXSxbMiwxLCJFIl0sWzIsMiwiTSJdLFswLDEsIlkiXSxbMywxLCJcXCwiXSxbMiwzLCJcXCwiXSxbMSwzLCJcXCwiXSxbMywwLCJcXCwiXSxbMCwxLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSwzLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDQsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNCw2LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDUsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDUsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNSw2LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNywzLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzAsNywiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw4LCJcXGRlbHRhXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw5LCJcXGRlbHRhXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiwxMSwiXFx2YXJlcHNpbG9uIF8xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMTAsIlxcdmFyZXBzaWxvbiBfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+	Y & F & X & {\,} \\
+	Y & Z & E & {\,} \\
+	& M & M \\
+	& {\,} & {\,}
+	\arrow[dashed, tail, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow[dashed, two heads, from=1-2, to=1-3]
+	\arrow[dashed, tail, from=1-2, to=2-2]
+	\arrow["{\varepsilon _1}", dashed, from=1-3, to=1-4]
+	\arrow[tail, from=1-3, to=2-3]
+	\arrow[tail, from=2-1, to=2-2]
+	\arrow[two heads, from=2-2, to=2-3]
+	\arrow[dashed, two heads, from=2-2, to=3-2]
+	\arrow["{\delta_1}", dashed, from=2-3, to=2-4]
+	\arrow[two heads, from=2-3, to=3-3]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["{\varepsilon _2}", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_2}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+			\end{equation}
+			(2) 是 (1) 在反范畴中的对偶. 证明 (3) ((4)) 所需的交换图分别是下图左 (右).
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsMjQsWzAsMCwiWCJdLFsxLDAsIkUiXSxbMiwwLCJNIl0sWzEsMSwiWSJdLFsxLDIsIloiXSxbMiwxLCJGIl0sWzIsMiwiWiJdLFswLDEsIlgiXSxbMywxLCJcXCwiXSxbMiwzLCJcXCwiXSxbMSwzLCJcXCwiXSxbMywwLCJcXCwiXSxbNCwwLCJYIl0sWzQsMSwiWCJdLFs2LDAsIlkiXSxbNSwxLCJNIl0sWzUsMiwiWiJdLFs2LDIsIloiXSxbNSwwLCJFIl0sWzYsMSwiRiJdLFs3LDAsIlxcLCJdLFs3LDEsIlxcLCJdLFs2LDMsIlxcLCJdLFs1LDMsIlxcLCJdLFswLDEsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSwzLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzMsNCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzQsNiwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMyw1LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsNSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw2LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzcsMywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw3LCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDgsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDksIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDExLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCwxMCwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEyLDEzLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxNiwxNywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTIsMTgsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEzLDE1LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzE4LDE1LCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxOCwxNCwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxNSwxOSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzE5LDE3LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMTUsMTYsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMTYsMjMsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxNywyMiwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzE0LDE5LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzE5LDIxLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTQsMjAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+	X & E & M & {\,} & X & E & Y & {\,} \\
+	X & Y & F & {\,} & X & M & F & {\,} \\
+	& Z & Z &&& Z & Z \\
+	& {\,} & {\,} &&& {\,} & {\,}
+	\arrow[tail, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow[two heads, from=1-2, to=1-3]
+	\arrow[tail, from=1-2, to=2-2]
+	\arrow[dashed, from=1-3, to=1-4]
+	\arrow[dashed, tail, from=1-3, to=2-3]
+	\arrow[dashed, tail, from=1-5, to=1-6]
+	\arrow[equals, from=1-5, to=2-5]
+	\arrow[dashed, two heads, from=1-6, to=1-7]
+	\arrow[dashed, tail, from=1-6, to=2-6]
+	\arrow[dashed, from=1-7, to=1-8]
+	\arrow[tail, from=1-7, to=2-7]
+	\arrow[dashed, tail, from=2-1, to=2-2]
+	\arrow[dashed, two heads, from=2-2, to=2-3]
+	\arrow[two heads, from=2-2, to=3-2]
+	\arrow[dashed, from=2-3, to=2-4]
+	\arrow[dashed, two heads, from=2-3, to=3-3]
+	\arrow[tail, from=2-5, to=2-6]
+	\arrow[two heads, from=2-6, to=2-7]
+	\arrow[dashed, two heads, from=2-6, to=3-6]
+	\arrow[dashed, from=2-7, to=2-8]
+	\arrow[two heads, from=2-7, to=3-7]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow[dashed, from=3-2, to=4-2]
+	\arrow[dashed, from=3-3, to=4-3]
+	\arrow[equals, from=3-6, to=3-7]
+	\arrow[dashed, from=3-6, to=4-6]
+	\arrow[dashed, from=3-7, to=4-7]
+\end{tikzcd}.
+			\end{equation}
+		实线决出的 $M$ 位于左式, 虚线决出的 $M$ 位于右式. 由 ET4 与 ET4' 可证两者互相推导.
+	\end{proof}
+\end{lemma}
+
+结合 \Cref{thm:bi-pullback}, 得如下引理.
+
+\begin{lemma}
+	给定任意对象类 $\mathcal{X}$, $\mathcal{Y}$ 与 $\mathcal{Z}$, 有以下包含关系.
+	\begin{enumerate}
+		\item $\mathrm{coCone}(\mathcal{X} ,\mathcal{Z} )\ast \mathcal{Y} \subseteq \mathrm{coCone}(\mathcal{X} \ast \mathcal{Y} , \mathcal{Z} )\supseteq \mathrm{coCone}(\mathcal{Y} ,\mathrm{Cone}(\mathcal{X} ,\mathcal{Z} ))$;
+		\item $\mathcal{Y} \ast \mathrm{Cone}(\mathcal{X} , \mathcal{Z} ) \subseteq \mathrm{Cone}(\mathcal{X} , \mathcal{Y} \ast \mathcal{Z} ) \supseteq \mathrm{Cone}(\mathrm{coCone}(\mathcal{X} ,\mathcal{Z} ),\mathcal{Y} )$.
+	\end{enumerate}
+	\begin{proof}
+		下证明 (1). 左式对应下图(左)蓝实线, 右式对应下图(右)红实线, 中式对应虚线:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTYsWzAsMSwiWCJdLFsxLDEsIkYiXSxbMiwxLCJNIl0sWzIsMiwiRSJdLFswLDIsIlgiXSxbMSwyLCJaIl0sWzIsMCwiWSJdLFsxLDAsIlkiXSxbMywxLCJYIl0sWzMsMiwiWiJdLFszLDAsIkEiXSxbNCwwLCJZIl0sWzUsMCwiTSJdLFs1LDEsIk0iXSxbNCwyLCJaIl0sWzQsMSwiQiJdLFswLDEsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDMsIiIsMCx7ImNvbG91ciI6WzI0MSwxMDAsNjBdfV0sWzAsNCwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw1LCIiLDIseyJjb2xvdXIiOlsyNDEsMTAwLDYwXX1dLFs1LDMsIiIsMix7ImNvbG91ciI6WzI0MSwxMDAsNjBdfV0sWzEsNSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsNiwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNywxLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwyLCIiLDAseyJjb2xvdXIiOlsyNDEsMTAwLDYwXX1dLFs4LDksIiIsMCx7ImNvbG91ciI6WzM1NSwxMDAsNjBdfV0sWzEwLDgsIiIsMCx7ImNvbG91ciI6WzM1NSwxMDAsNjBdfV0sWzEwLDExLCIiLDIseyJjb2xvdXIiOlszNTUsMTAwLDYwXX1dLFsxMSwxMiwiIiwyLHsiY29sb3VyIjpbMzU1LDEwMCw2MF19XSxbMTIsMTMsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMTQsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsMTUsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxNSwxMywiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzExLDE1LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTUsMTQsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+	& Y & Y & A & Y & M \\
+	X & F & M & X & B & M \\
+	X & Z & E & Z & Z
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow[dashed, from=1-2, to=2-2]
+	\arrow[color={rgb,255:red,54;green,51;blue,255}, from=1-3, to=2-3]
+	\arrow[color={rgb,255:red,255;green,51;blue,68}, from=1-4, to=1-5]
+	\arrow[color={rgb,255:red,255;green,51;blue,68}, from=1-4, to=2-4]
+	\arrow[color={rgb,255:red,255;green,51;blue,68}, from=1-5, to=1-6]
+	\arrow[dashed, from=1-5, to=2-5]
+	\arrow[equals, from=1-6, to=2-6]
+	\arrow[dashed, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow[dashed, from=2-2, to=2-3]
+	\arrow[dashed, from=2-2, to=3-2]
+	\arrow[color={rgb,255:red,54;green,51;blue,255}, from=2-3, to=3-3]
+	\arrow[dashed, from=2-4, to=2-5]
+	\arrow[color={rgb,255:red,255;green,51;blue,68}, from=2-4, to=3-4]
+	\arrow[dashed, from=2-5, to=2-6]
+	\arrow[dashed, from=2-5, to=3-5]
+	\arrow[color={rgb,255:red,54;green,51;blue,255}, from=3-1, to=3-2]
+	\arrow[color={rgb,255:red,54;green,51;blue,255}, from=3-2, to=3-3]
+	\arrow[equals, from=3-4, to=3-5]
+\end{tikzcd}.
+		\end{equation}
+		由\Cref{thm:bi-pullback}, 实线决定虚线; 反之, 虚线未必能决定实线. 上述包含通常无法改作等号. (2) 是 (1) 在反范畴中的对偶结论, 证明从略.
+	\end{proof}
+\end{lemma}
+
+\begin{definition}
+	(余挠对). 称两个对象类 $(\mathcal{U}, \mathcal{V})$ 构成\textbf{余挠对}, 若 $\mathcal{U}^\perp = \mathcal{V}$, 且 $\mathcal{U} = {}^\perp \mathcal{V}$.
+\end{definition}
+
+\begin{remark}
+	通常将 $(\mathcal{U}, \mathcal{V})$ 作为余挠对的固定顺序. 注意到 $\mathbb E(\mathcal{U}, \mathcal{V}) = 0$.
+\end{remark}
+
+\begin{lemma}
+	对任意对象类 $\mathcal{X}$.
+	\begin{enumerate}
+		\item $(^\perp \mathcal{X}, (^\perp \mathcal{X})^\perp)$ 是余挠对, 称作 $\mathcal{X}$ \textbf{生成}的余挠对;
+		\item $(^\perp(\mathcal{X}^\perp), \mathcal{X}^\perp)$ 是余挠对, 称作 $\mathcal{X}$ \textbf{余生成}的余挠对.
+	\end{enumerate}
+	\begin{proof}
+		依照 Galois 连接, 得 $(^\perp(\mathcal{X}^\perp))^\perp = \mathcal{X}^\perp$, 以及 $^\perp((^\perp \mathcal{X})^\perp) = {}^\perp \mathcal{X}$. 证明细节从略.
+	\end{proof}
+\end{lemma}
+
+\begin{lemma}
+	假定 $(\mathcal{U}, \mathcal{V})$ 是余挠对, 则有如下结论:
+	\begin{enumerate}
+		\item $\mathcal{U}$ 与 $\mathcal{V}$ 关于形变收缩 (\Cref{def:deformation-retract}) 封闭 (特别地, 关于直和项封闭);
+		\item $\mathcal{U}$ 与 $\mathcal{V}$ 关于扩张封闭 (特别地, 关于直和封闭).
+	\end{enumerate}
+	\begin{proof}
+		仅看 $\mathcal{U}$. (1). 记 $U_0 \xrightarrow i U \xrightarrow p U_0$ 复合为恒等, $U \in \mathcal{U}$, 则有恒等自然变换
+		\begin{equation}
+			\mathbb E(U_0, (-)_\mathcal{V}) \xrightarrow{p^\ast} \mathbb E(U, (-)_\mathcal{V}) \xrightarrow{i^\ast} \mathbb E(U_0, (-)_\mathcal{V}).
+		\end{equation}
+		这一恒等自然变换通过零函子 $\mathbb E(U, (-)_\mathcal{V})$ 分解, 从而 $U_0 \in{}^\perp \mathcal{V} = \mathcal{U}$.
+		\\
+		(2). 任取 conflation $U \rightarrowtail W \twoheadrightarrow U' \dashrightarrow$ ($U, U' \in \mathcal{U}$). 将长正合列 (\Cref{eq:ext-tri-6-term-dual}) 限制在 $\mathcal{V}$ 上, 得
+		\begin{equation}
+			0 = \mathbb E(U', (-)|_\mathcal{V}) \to \mathbb E(W, (-)|_\mathcal{V}) \to \mathbb E(U, (-)|_\mathcal{V})= 0 .
+		\end{equation}
+		因此, $\mathbb E(W, (-)|_\mathcal{V}) = 0$, 即 $W \in {}^\perp \mathcal{V} = \mathcal{U}$.
+	\end{proof}
+\end{lemma}
+
+为较自然地引入完备余挠对, 我们介绍以下定义.
+
+\begin{definition}\label{def:precover}
+	(预盖, 右逼近). 给定范畴中的对象类 $\mathcal{X}$. 对象 $M$ 的一个 $\mathcal{X}$-预盖 (或称 右 $\mathcal{X}$-逼近) 是指一个态射 $p : M^X \to M$ ($M^X \in \mathcal{X}$), 使得以下等价表述成立:
+	\begin{itemize}
+		\item (态射语言). 对任意 $q : X \to M$ ($X \in \mathcal{X}$) , 存在 $q' : X \to M^X$, 使得 $p \circ q' = q$.
+		\item (函子语言). $\mathrm{Hom}_\mathcal{X}(-, M^X) \xrightarrow{p \circ - } \mathrm{Hom}_\mathcal{C}((-)|_\mathcal{X}, M)$ 是函子范畴 $\mathrm{Funct}(\mathcal{X}^{\mathrm{op}}, \mathbf{Ab})$ 的满态射.
+	\end{itemize}
+\end{definition}
+
+余挠对给出一类特殊的预盖.
+
+\begin{lemma}
+	假定 $\mathcal{U} \perp \mathcal{V}$. 若存在 $U \in \mathcal{U}$ 与 $V \in \mathcal{V}$ 使得有 conflation $V \overset i \rightarrowtail U \overset p \twoheadrightarrow C \overset{\delta}\dashrightarrow$, 则 $p$ 是 $\mathcal{U}$-预盖. 以此类方法构造的预盖称作\textbf{特殊预盖}.
+	\begin{proof}
+		将长正合列 (\Cref{eq:ext-tri-6-term-dual}) 限制在 $\mathcal{U}$ 上, 得
+		\begin{equation}
+		((-)|_\mathcal{U}, V) \xrightarrow{i \circ -} ((-)|_\mathcal{U}, U) \xrightarrow{p \circ -} ((-)|_\mathcal{U}, C) \xrightarrow{\delta_\sharp} \mathbb E((-), V) = 0.
+		\end{equation}
+		因此, 以上 $p \circ -$ 是满态射, $p$ 满足\Cref{def:precover} 的函子定义式.
+	\end{proof}
+\end{lemma}
+
+对偶地, 可以定义预包 (左逼近) 与特殊预包 (特殊右逼近). 给定余挠对 $(\mathcal{U}, \mathcal{V})$. 任取 $M$ 的特殊预盖 (若存在), 记相应的 conflation 为
+
+\begin{equation}
+	M^V \rightarrowtail M^U \twoheadrightarrow M \dashrightarrow;	
+\end{equation}
+
+任取 $M$ 的特殊预包 (若存在), 记相应的 conflation 为
+\begin{equation}
+	M \rightarrowtail M_V \twoheadrightarrow M_U \dashrightarrow.
+\end{equation}
+
+\begin{definition}
+	(完备余挠对). 称余挠对 $(\mathcal{U}, \mathcal{V})$ 是\textbf{完备}的, 若所有对象均有特殊预盖和特殊预包, 即
+	\begin{equation}
+		\mathrm{Cone}(\mathcal{V},\mathcal{U}) = \mathcal{C} = \mathrm{coCone}(\mathcal{V},\mathcal{U}).
+	\end{equation}
+\end{definition}
+
+\begin{theorem}\label{thm:Wakamatsu}
+	(若松技巧). 余挠对 $(\mathcal{U}, \mathcal{V})$ 是完备的, 当且仅当以下两点成立:
+	\begin{enumerate}
+		\item 所有对象有特殊预盖;
+		\item 对任意对象 $X$, 存在 inflation $X \rightarrowtail V$, 其中 $V \in \mathcal{V}$.
+	\end{enumerate}
+	\begin{proof}
+		先说明任意对象 $X$ 存在特殊预包. 先由 (2) 构造 $\delta$, 再由 (1) 构造 $\varepsilon$. 依照\Cref{thm:bi-pullback} 作交换图:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMiwiWCJdLFsxLDIsIlYiXSxbMiwyLCJNIl0sWzMsMiwiXFwsIl0sWzEsMSwiRSJdLFsxLDMsIlxcLCJdLFsyLDEsIk1eVSJdLFszLDEsIlxcLCJdLFsyLDAsIk1eViJdLFsxLDAsIk1eViJdLFswLDEsIlgiXSxbMiwzLCJcXCwiXSxbMCwxLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsMywiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDEsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxLDUsIlxcdmFyZXBzaWxvbiAnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsNiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzYsNywiXFxkZWx0YSciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOSw4LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMCwwLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMCw0LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzksNCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs4LDYsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNiwyLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiwxMSwiXFx2YXJlcHNpbG9uIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	\& {M^V} \& {M^V} \\
+	X \& E \& {M^U} \& {\,} \\
+	X \& V \& M \& {\,} \\
+	\& {\,} \& {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow[tail, from=1-2, to=2-2]
+	\arrow[tail, from=1-3, to=2-3]
+	\arrow[tail, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow[two heads, from=2-2, to=2-3]
+	\arrow[two heads, from=2-2, to=3-2]
+	\arrow["{\delta'}", dashed, from=2-3, to=2-4]
+	\arrow[two heads, from=2-3, to=3-3]
+	\arrow[tail, from=3-1, to=3-2]
+	\arrow[two heads, from=3-2, to=3-3]
+	\arrow["{\varepsilon '}", dashed, from=3-2, to=4-2]
+	\arrow["\delta", dashed, from=3-3, to=3-4]
+	\arrow["\varepsilon", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+		\end{equation}
+		由 $\mathcal{V}$ 关于扩张封闭, 得 $E \in \mathcal{V}$.
+	\end{proof}
+\end{theorem}
+
+记 $\omega : = \mathcal{U} \cap \mathcal{V}$ 为一类特殊的自垂直对象.
+
+\begin{lemma}\label{lem:factor-through-w}
+	对任意 $U \in \mathcal{U}$ 与 $V \in \mathcal{V}$, 任意态射 $f: U \to V$ 通过 $\omega$ 中对象分解.
+	\begin{proof}
+		取 inflation $i : U \rightarrowtail U_V$. 长正合列表明 $(i, V)$ 满, 故 $f$ 通过 $U_V$ 分解. 显然 $U_V \in \mathcal{U} \cap \mathcal{V} = \omega$.
+	\end{proof}
+\end{lemma}
+
+预盖和预包通常不唯一, $(-)_V$ 与 $(-)^U$ 更无法称作函子; 但 $\mathcal{C} / \omega$ 是函子. 实际上, 有以下是更精细的结论.
+
+\begin{theorem}
+	全子加法范畴的嵌入 $(\mathcal{U} / \omega) \to (\mathcal{C} / \omega)$ 具有有伴随 $(-)^U$.
+	\begin{proof}
+		对所有对象取定 conflation $M^V \overset i \rightarrowtail M^U \overset p \twoheadrightarrow M \dashrightarrow$. 下证明自然同构
+		\begin{equation}
+			(- \circ p) : \mathrm{Hom}_{\mathcal{U} / \omega}(U, M^U) \simeq \mathrm{Hom}_{\mathcal{C} / \omega}(U, M).
+		\end{equation}
+		由正合列 $(U, M^U) \to (U, M) \to \mathbb E(U, M^V) = 0$, 得 $(U, M^U) \to (U, M)$ 满, 这在加法商范畴中也是满射. 下只需证明对任意 $f : U \to M^U$, $[pf] = 0$ 蕴含 $[f] = 0$. 记 $pf$ 通过 $W \in \omega$ 分解. 由 $\mathbb E(W, M^V) = 0$, 存在 $s$ 使得 $\circlearrowleft$ 所在的三角交换:
+		\begin{equation}
+% https://q.uiver.app/#q=WzAsNixbMCwxLCJNXlYiXSxbMiwxLCJNXlUiXSxbNCwxLCJNIl0sWzUsMSwiXFwsIl0sWzIsMCwiVSJdLFs0LDAsIlciXSxbMSwyLCJwIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsMSwiaSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMiwzLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCwxLCJmIl0sWzQsNSwiYSJdLFs1LDIsImIiXSxbNSwxLCJzIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEyLDIsIlxcY2lyY2xlYXJyb3dsZWZ0IiwxLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	\&\& U \&\& W \\
+	{M^V} \&\& {M^U} \&\& M \& {\,}
+	\arrow["a", from=1-3, to=1-5]
+	\arrow["f", from=1-3, to=2-3]
+	\arrow[""{name=0, anchor=center, inner sep=0}, "s"{description}, dashed, from=1-5, to=2-3]
+	\arrow["b", from=1-5, to=2-5]
+	\arrow["i", tail, from=2-1, to=2-3]
+	\arrow["p", two heads, from=2-3, to=2-5]
+	\arrow[dashed, from=2-5, to=2-6]
+	\arrow["\circlearrowleft"{description}, draw=none, from=0, to=2-5]
+\end{tikzcd}.
+		\end{equation}
+		此时 $p (sa - f) = 0$. 由长正合列, $(sa - f)$ 通过 $i$ 分解. 再由\Cref{lem:factor-through-w}, $(sa - f)$ 通过 $\omega$ 中对象分解. 由于 $sa$ 已通过 $W \in \omega$ 分解, 故 $f$ 通过 $\omega$ 中对象分解. 因此 $[f] = 0$.
+	\end{proof}
+\end{theorem}
+
+\begin{remark}
+	对偶可证, 全子加法范畴的嵌入 $\mathcal{V}/\omega \to \mathcal{C} / \omega$ 存在左伴随. 综合以上结果得
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXG1hdGhjYWwgVSAvIFxcb21lZ2EiXSxbMiwwLCJcXG1hdGhjYWwgQyAvIFxcb21lZ2EiXSxbNCwwLCJcXG1hdGhjYWwgViAvIFxcb21lZ2EiXSxbMCwxLCJcXHRleHR75YWo5a2Q6IyD55W0fSIsMCx7Im9mZnNldCI6LTEsInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsMCwiKC0pXlUiLDAseyJvZmZzZXQiOi00fV0sWzIsMSwiXFx0ZXh0e+WFqOWtkOiMg+eVtH0iLDAseyJvZmZzZXQiOi0xLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFsxLDIsIigtKV9WIiwwLHsib2Zmc2V0IjotNH1dLFs2LDUsIlxcYm90IiwxLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsNCwiXFxib3QiLDEseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9LCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{\mathcal U / \omega} \&\& {\mathcal C / \omega} \&\& {\mathcal V / \omega}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "{\text{全子范畴}}", shift left, hook, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{(-)^U}", shift left=4, from=1-3, to=1-1]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "{(-)_V}", shift left=4, from=1-3, to=1-5]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "{\text{全子范畴}}", shift left, hook, from=1-5, to=1-3]
+	\arrow["\bot"{description}, draw=none, from=0, to=1]
+	\arrow["\bot"{description}, draw=none, from=2, to=3]
+\end{tikzcd}.
+	\end{equation}
+\end{remark}
+
+\subsection{遗传余挠对}
+
+$(\text{投射对象}, \mathcal{C})$ 与 $(\mathcal{C}, \text{内射对象})$ 是特殊的余挠对, 这类余挠对满足一些额外性质.
+
+\begin{definition}
+	(完备余挠对). 称余挠对 $(\mathcal{U}, \mathcal{V})$ 是\textbf{遗传}的, 若 $\mathcal{U}$ 是消解的, 且 $\mathcal{V}$ 是余消解的. 
+	\begin{enumerate}
+		\item 称全子范畴 $\mathcal{U} \subseteq \mathcal{C}$ 是\textbf{消解}的, 若 $\mathcal{U}$ 包含一切投射对象且 $\mathrm{coCone}(\mathcal{U}, \mathcal{U}) = \mathcal{U}$;
+		\item 称全子范畴 $\mathcal{V} \subseteq \mathcal{C}$ 是\textbf{余消解}的, 若 $\mathcal{V}$ 包含一切内射对象 且 $\mathrm{Cone}(\mathcal{V}, \mathcal{V}) = \mathcal{V}$.
+	\end{enumerate}
+	对余挠对而言, $\mathcal{U}$ ($\mathcal{V}$) 自动包含所有投射对象 (内射对象).
+\end{definition}
+
+\begin{remark}
+    若 $0 \in \mathcal{X}$, 则不必区分 $\mathrm{Cone}(\mathcal{X},\mathcal{X}) \subseteq \mathcal{X}$ 与 $\mathrm{Cone}(\mathcal{X},\mathcal{X}) = \mathcal{X}$. 关于 $\mathrm{coCone}$ 与 $\ast$ 的等式同理.
+\end{remark}
+
+\begin{remark}
+	依照经验, 通常讨论的遗传余挠对往往也是完备的. 当然, 这并非推论. 若 $\mathcal{C}$ 不具有足够投射对象, 则 $(\text{投射对象}, \mathcal{C})$ 是遗传但非完备的.
+\end{remark}
+
+给定完备余挠对 $(\mathcal{U}, \mathcal{V})$. \Cref{lem:factor-through-w} 说明 $\mathrm{Hom}_{\mathcal{C}/\omega} (\mathcal{U}/\omega, \mathcal{V}/\omega) = 0$.
+
+\begin{proposition}\label{prop:U-V-orthogonal}
+	类似\Cref{thm:Wakamatsu}, 我们给出遗传的单边判准. 假定 $(\mathcal{U}, \mathcal{V})$ 是完备余挠对, 则以下六点等价:
+	\begin{enumerate}
+		\item[1.] $\mathcal{V}$ 是余消解的; \qquad \qquad \qquad \qquad \ \ \ 2. $\mathcal{U}$ 是消解的;
+		\item[3.] $\ker \mathrm{Hom}_{\mathcal{C}/\omega} (\mathcal{U}/\omega, - ) = \mathcal{V}/\omega$; \qquad \ \ 4. $\ker \mathrm{Hom}_{\mathcal{C}/\omega} (-, \mathcal{V}/\omega) = \mathcal{U}/\omega$.
+		\item[5.] 对 $V\rightarrowtail \cdot \overset p\twoheadrightarrow \cdot$, $\mathbb E(\mathcal{U}, p)$ 是同构; \qquad 6. 对 $\cdot \overset i\rightarrowtail \cdot \twoheadrightarrow U$, $\mathbb E(i, \mathcal{V})$ 是同构.
+	\end{enumerate}
+	\begin{proof}
+		($2 \to 1$). 对任意 conflation $V_1 \rightarrowtail V_2 \twoheadrightarrow X$, 往证 $X \in \mathcal{V}$, 也就是任意 conflation $X \rightarrowtail A \twoheadrightarrow U$ 可裂. 依照 TR4' 构造下图
+		\begin{equation}
+% https://q.uiver.app/#q=WzAsMTEsWzEsMiwiWCJdLFsyLDIsIkEiXSxbMywyLCJVIl0sWzIsMSwiQV5VIl0sWzIsMCwiQV5WIl0sWzMsMSwiVSJdLFsxLDAsIkFeViJdLFsxLDEsIlciXSxbNCwxLCJcXCwgIl0sWzQsMiwiXFwsICJdLFswLDIsIlZfMiJdLFswLDEsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCIiLDEseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNCwzLCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzMsMSwiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzUsMiwiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiw0LCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDcsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsMCwicSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw1LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzcsMywiIiwxLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw4LCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsOSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEwLDAsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs3LDEwLCIiLDAseyJjdXJ2ZSI6Miwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	\& {A^V} \& {A^V} \\
+	\& W \& {A^U} \& U \& {\, } \\
+	{V_2} \& X \& A \& U \& {\, }
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow[dashed, tail, from=1-2, to=2-2]
+	\arrow[tail, from=1-3, to=2-3]
+	\arrow[dashed, tail, from=2-2, to=2-3]
+	\arrow[curve={height=12pt}, dashed, from=2-2, to=3-1]
+	\arrow["q"', dashed, two heads, from=2-2, to=3-2]
+	\arrow[dashed, two heads, from=2-3, to=2-4]
+	\arrow[two heads, from=2-3, to=3-3]
+	\arrow["\delta", dashed, from=2-4, to=2-5]
+	\arrow[equals, from=2-4, to=3-4]
+	\arrow[two heads, from=3-1, to=3-2]
+	\arrow[tail, from=3-2, to=3-3]
+	\arrow[two heads, from=3-3, to=3-4]
+	\arrow[dashed, from=3-4, to=3-5]
+\end{tikzcd}.
+		\end{equation}
+		由 $\mathcal{U}$ 是消解的, 得 $W \in \mathcal{U}$. 由 $\mathbb E(W, V_1) = 0$, 得 $q$ 关于 $V_2 \twoheadrightarrow X$ 分解. 从而 $q_\ast \delta = 0$. 这说明 conflation $X \rightarrowtail A \twoheadrightarrow U$ 可裂. $(1 \to 2)$ 是对偶的.
+		\\
+		($3 \to 1$). 任取 conflation $V_1 \rightarrowtail V_2 \twoheadrightarrow X$, $U \in \mathcal{U}$ 以及任意态射 $f : U \to X$. 由 $\mathbb E(U, V_1) =0$, 故 $f$ 通过 $V_2$ 分解, 从而通过某一 $\omega$ 中对象分解 (\Cref{lem:factor-through-w}).
+		\\
+		($1 \to 3$). 给定 $X$ 使得任意 $U \to X$ 通过 $\omega$ 分解, 下证明 $X \in \mathcal{V}$. 依照 ET4 作下图
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTEsWzEsMiwiWCJdLFsxLDEsIlheVSJdLFsxLDAsIlheViJdLFsyLDEsIihYXlUpX1YiXSxbMywxLCIoWF5VKV9VIl0sWzIsMCwiWF5WIl0sWzMsMiwiKFheVSlfVSJdLFsyLDIsIkUiXSxbNCwyLCJcXCwiXSxbNCwxLCJcXCwiXSxbMCwyLCJXIl0sWzIsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw2LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDEsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwzLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzUsMywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw3LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDAsInEiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw3LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzcsNiwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFszLDQsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs2LDgsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDksIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwxMCwiIiwwLHsiY3VydmUiOjIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMCwwLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	\& {X^V} \& {X^V} \\
+	\& {X^U} \& {(X^U)_V} \& {(X^U)_U} \& {\,} \\
+	W \& X \& E \& {(X^U)_U} \& {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow[tail, from=1-2, to=2-2]
+	\arrow[dashed, tail, from=1-3, to=2-3]
+	\arrow[tail, from=2-2, to=2-3]
+	\arrow[curve={height=12pt}, dashed, from=2-2, to=3-1]
+	\arrow["q", two heads, from=2-2, to=3-2]
+	\arrow[two heads, from=2-3, to=2-4]
+	\arrow[dashed, two heads, from=2-3, to=3-3]
+	\arrow["\delta", dashed, from=2-4, to=2-5]
+	\arrow[equals, from=2-4, to=3-4]
+	\arrow[dashed, from=3-1, to=3-2]
+	\arrow[dashed, tail, from=3-2, to=3-3]
+	\arrow[dashed, two heads, from=3-3, to=3-4]
+	\arrow[dashed, from=3-4, to=3-5]
+\end{tikzcd}.
+		\end{equation}
+		由构造, $(X^U)_V \in \omega$. 由 $\mathcal{V}$ 余消解, 得 $E \in \mathcal{V}$. 由假定, $q$ 通过某一 $W \in \omega$ 分解, 从而 $q_\ast \delta = 0$. 这说明 $X$ 是 $E$ 的直和项, 从而 $X \in \mathcal{V}$.
+		\\
+		($2 \leftrightarrow 4$) 的证明是对偶的.
+		\\
+		($5 \to 1$). 对任意 conflation $V_1 \rightarrowtail V_2 \twoheadrightarrow X$, $\mathbb E((-)|_\mathcal{U}, V_2)$ 是零函子, 当且仅当 $\mathbb E((-)|_\mathcal{U}, X) = 0$.
+		\\
+		($1 \to 5$). 给定 conflation $V \rightarrowtail A \overset p\twoheadrightarrow B$. 对任意 $U \in\mathcal{U}$, 长正合列给出
+		\begin{equation}
+			0 = \mathbb E(U, V) \to \mathbb E(U, A) \overset{\mathbb E(U, p)}\longrightarrow \mathbb E(U, B).
+		\end{equation}
+		从而 $\mathbb E(U,p)$ 单. 下证明任意 $\delta \in \mathbb E(U, B)$ 都有 $\mathbb E(U, A)$ 中的原像. 由 ET4 作下图前三行:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTQsWzAsMCwiViJdLFswLDEsIkEiXSxbMCwyLCJCIl0sWzIsMywiVSJdLFsxLDMsIkUiXSxbMywzLCJcXCwiXSxbMSwxLCJBX1YiXSxbMiwxLCJBX1UiXSxbMSwwLCJWIl0sWzEsMiwiRiJdLFsyLDIsIkFfVSJdLFswLDMsIkIiXSxbMywyLCJcXCwiXSxbMywxLCJcXCwiXSxbMCwxLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwicCIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs0LDMsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFszLDUsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw2LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzYsNywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzgsMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOCw2LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMCw3LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDksIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzksMTAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDksIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNCw5LCJcXGJldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTEsNCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsyLDExLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDEwLCJcXGdhbW1hIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEwLDEyLCJcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsMTMsIlxcZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	V \& V \\
+	A \& {A_V} \& {A_U} \& {\,} \\
+	B \& F \& {A_U} \& {\,} \\
+	B \& E \& U \& {\,}
+	\arrow[tail, from=1-1, to=2-1]
+	\arrow[equals, from=1-2, to=1-1]
+	\arrow[dashed, tail, from=1-2, to=2-2]
+	\arrow[tail, from=2-1, to=2-2]
+	\arrow["p", two heads, from=2-1, to=3-1]
+	\arrow[two heads, from=2-2, to=2-3]
+	\arrow[dashed, two heads, from=2-2, to=3-2]
+	\arrow["\eta", dashed, from=2-3, to=2-4]
+	\arrow[dashed, tail, from=3-1, to=3-2]
+	\arrow[equals, from=3-1, to=4-1]
+	\arrow[dashed, from=3-2, to=3-3]
+	\arrow[equals, from=3-3, to=2-3]
+	\arrow["{\varepsilon }", dashed, from=3-3, to=3-4]
+	\arrow[tail, from=4-1, to=4-2]
+	\arrow["\beta", dashed, from=4-2, to=3-2]
+	\arrow[two heads, from=4-2, to=4-3]
+	\arrow["\gamma", dashed, from=4-3, to=3-3]
+	\arrow["\delta", dashed, from=4-3, to=4-4]
+\end{tikzcd}.
+		\end{equation}
+		由 $\mathcal{V}$ 余消解, 故 $F \in \mathcal{V}$, 从而存在 $\beta$ 使得下两行交换. 由 ET3 构造 $\gamma$, 则
+		\begin{equation}
+			\delta = \gamma^\ast \varepsilon = \gamma^\ast p_\ast \eta = p_\ast (\gamma^\ast \eta) \in \operatorname{im} p_\ast.
+		\end{equation}
+	\end{proof}
+\end{proposition}
+
+\begin{definition}
+    (余挠三元组). 称 $(\mathcal{T},\mathcal{U},\mathcal{V})$ 是余挠三元组, 若 $(\mathcal{T},\mathcal{U})$ 与 $(\mathcal{U},\mathcal{V})$ 均为余挠对. 称余挠三元组是完备的(遗传的), 若其对应的两个余挠对均是完备的(遗传的).
+\end{definition}
+
+\begin{lemma}
+    给定完备的余挠三元组 $(\mathcal{T},\mathcal{U},\mathcal{V})$. 这一三元组是遗传的, 当且仅当 $\mathcal{U}$ 是 $\mathcal{C}$ 的厚子范畴.
+    \begin{proof}
+        若 $\mathcal{U}$ 是厚子范畴, 则 $\mathrm{Cone}(\mathcal{U}, \mathcal{U}) = \mathcal{U}$. 依照单边定义\Cref{prop:U-V-orthogonal}, 得 $(\mathcal{T}, \mathcal{U})$ 是遗传完备的余挠对. 对偶地, 由 $\mathrm{coCone}(\mathcal{U},\mathcal{U}) = \mathcal{U}$ 知 $(\mathcal{U}, \mathcal{V})$ 也是遗传完备的余挠对.
+        \\
+        反之, 若以上是遗传完备的余挠三元组, 则 $\mathcal{U}$ 是消解且余消解的. 由
+        \begin{equation}
+            \mathcal{U} \ast \mathcal{U} = \mathcal{U},\quad \mathrm{Cone}(\mathcal{U},\mathcal{U}) = \mathcal{U}, \quad \mathrm{coCone}(\mathcal{U},\mathcal{U}) = \mathcal{U}, \quad \mathcal{U}\ \text{对直和项封闭},
+        \end{equation}
+        知 $\mathcal{U}$ 是 $\mathcal{C}$ 的厚子范畴.
+    \end{proof}
+\end{lemma}
+
+遗传完备的余挠三元组有一些精彩的性质.
+
+\begin{theorem}\label{thm:TUV-proj-inj}
+    给定遗传完备的余挠三元组 $(\mathcal{T},\mathcal{U},\mathcal{V})$, 恰好有
+    \begin{equation}
+        \mathcal{T} \cap \mathcal{U} = \text{投射对象},\quad \mathcal{U} \cap \mathcal{V} = \text{内射对象}.
+    \end{equation}
+    \begin{proof}
+        下证明任意 $P \in \mathcal{T} \cap \mathcal{U}$ 是投射对象, 即任意 conflation $A \rightarrowtail B \twoheadrightarrow P$ 可裂. 由 ET4' 构造下图
+        \begin{equation}
+            % https://q.uiver.app/#q=WzAsOCxbMiwyLCJQIl0sWzAsMiwiQSJdLFsxLDIsIkIiXSxbMiwxLCJQIl0sWzAsMSwiRSJdLFsxLDEsIkJeVSJdLFsxLDAsIkJeViJdLFswLDAsIkJeViJdLFsxLDIsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMiwwLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCwzLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs3LDYsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwzLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzYsNSwiIiwxLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs1LDIsIiIsMSx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs3LDQsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	{B^V} \& {B^V} \\
+	E \& {B^U} \& P \\
+	A \& B \& P
+	\arrow[equals, from=1-1, to=1-2]
+	\arrow[dashed, tail, from=1-1, to=2-1]
+	\arrow[tail, from=1-2, to=2-2]
+	\arrow[dashed, tail, from=2-1, to=2-2]
+	\arrow[dashed, two heads, from=2-1, to=3-1]
+	\arrow[dashed, two heads, from=2-2, to=2-3]
+	\arrow[two heads, from=2-2, to=3-2]
+	\arrow[tail, from=3-1, to=3-2]
+	\arrow[two heads, from=3-2, to=3-3]
+	\arrow[equals, from=3-3, to=2-3]
+\end{tikzcd}.
+        \end{equation}
+        由 $P \in \mathcal{U}$, 以及 $\mathcal{U}$ 是厚子范畴, 得 $E \in \mathcal{U}$. 由 $\mathbb E(P, E) = 0$, 底行 conflation 可裂. 对偶地可证 $\mathcal{U} \cap \mathcal{V}$ 恰是内射对象.
+    \end{proof}
+
+\end{theorem}
+
+\begin{corollary}\label{cor:enough-proj-inj}
+    若范畴存在遗传完备的余挠三元组, 则该范畴有足够的投射对象与内射对象.
+    \begin{proof}
+    对一切 $T \in \mathcal{T}$, 总有特殊的投射预盖 $T^U \twoheadrightarrow T$. 对一切 $V \in \mathcal{V}$, 总有特殊的内射预包 $V \rightarrowtail V_U$. 对 $U \in \mathcal{U}$, 总有特殊的投射预包 $U \rightarrowtail U_T$ 和特殊的内射预盖 $U^V \twoheadrightarrow U$. 特别地, 对任意对象 $X$ 存在投射预盖 (下图左) 与内射预包 (下图右):
+        \begin{equation}
+            % https://q.uiver.app/#q=WzAsMTYsWzIsMiwiWCJdLFsyLDEsIlheVCJdLFsyLDAsIlheVSJdLFsxLDEsIihYXlQpXlUiXSxbMCwxLCIoWF5UKV5WIl0sWzAsMCwiKFheVCleViJdLFsxLDIsIlgiXSxbMSwwLCIoWF5UKV5WIFxcb3BsdXMgWF5VIl0sWzMsMCwiWCJdLFs0LDAsIlgiXSxbMywxLCJYX1YiXSxbMywyLCJYX1UiXSxbNCwxLCIoWF9WKV9VIl0sWzUsMSwiKFhfVilfVCJdLFs1LDIsIihYX1YpX1QiXSxbNCwyLCJYX1UgXFxvcGx1cyAoWF9WKV9UIl0sWzIsMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDAsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs0LDMsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMywxLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNSw0LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDAsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNywiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNywyLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzcsMywiIiwxLHsiY29sb3VyIjpbMjM4LDEwMCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsNiwiIiwxLHsiY29sb3VyIjpbMjM4LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbOCw5LCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs5LDEyLCIiLDEseyJjb2xvdXIiOlszNjAsMTAwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTIsMTUsIiIsMSx7ImNvbG91ciI6WzM2MCwxMDAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzExLDE1LCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzE1LDE0LCIiLDEseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMTQsMTMsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsMTAsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMTAsMTIsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEwLDExLCIiLDEseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMTIsMTMsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&, column sep = small]
+	{(X^T)^V} \& {(X^T)^V \oplus X^U} \& {X^U} \& X \& X \\
+	{(X^T)^V} \& {(X^T)^U} \& {X^T} \& {X_V} \& {(X_V)_U} \& {(X_V)_T} \\
+	\& X \& X \& {X_U} \& {X_U \oplus (X_V)_T} \& {(X_V)_T}
+	\arrow[dashed, tail, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow[dashed, two heads, from=1-2, to=1-3]
+	\arrow[color={rgb,255:red,51;green,58;blue,255}, dashed, tail, from=1-2, to=2-2]
+	\arrow[tail, from=1-3, to=2-3]
+	\arrow[equals, from=1-4, to=1-5]
+	\arrow[tail, from=1-4, to=2-4]
+	\arrow[color={rgb,255:red,255;green,51;blue,51}, dashed, tail, from=1-5, to=2-5]
+	\arrow[tail, from=2-1, to=2-2]
+	\arrow[two heads, from=2-2, to=2-3]
+	\arrow[color={rgb,255:red,51;green,58;blue,255}, dashed, two heads, from=2-2, to=3-2]
+	\arrow[two heads, from=2-3, to=3-3]
+	\arrow[dashed, tail, from=2-4, to=2-5]
+	\arrow[two heads, from=2-4, to=3-4]
+	\arrow[dashed, two heads, from=2-5, to=2-6]
+	\arrow[color={rgb,255:red,255;green,51;blue,51}, dashed, two heads, from=2-5, to=3-5]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow[tail, from=3-4, to=3-5]
+	\arrow[two heads, from=3-5, to=3-6]
+	\arrow[equals, from=3-6, to=2-6]
+\end{tikzcd}.
+        \end{equation}
+    \end{proof}
+\end{corollary}
+
+\begin{corollary}
+    $\mathcal{C}$ 是 Frobenius 外三角范畴, 当且仅当存在余挠四元组.
+    \begin{proof}
+        ($\to$). 取 $\mathcal{P}$ 为投射对象类, 则 $(\mathcal{C}, \mathcal{P}, \mathcal{C}, \mathcal{P})$ 是余挠四元组.
+        \\
+        ($\gets$). 若由余挠四元组 $(\mathcal{X},\mathcal{Y},\mathcal{Z},\mathcal{W})$, 则 $\mathcal{Y} \cap \mathcal{Z}$ 恰是投射对象, 也恰是内射对象 (\Cref{thm:TUV-proj-inj}). 依照\Cref{cor:enough-proj-inj}, 知 $\mathcal{C}$ 有足够的投射对象与内射对象, 从而是 Frobenius 外三角范畴.
+    \end{proof}
+\end{corollary}
+
+以下引理给出 $\mathcal{T}$ 与 $\mathcal{V}$ 的联系.
+
+\begin{lemma}
+    给定遗传完备的余挠三元组 $(\mathcal{T},\mathcal{U},\mathcal{V})$. $X \in T$ 当且仅当其满足以下性质.
+    \begin{itemize}
+        \item 对任意 $\mathcal{V}$-预包对应的 conflation $M \overset i \rightarrowtail V \overset p \twoheadrightarrow N$, 任意态射 $X \to N$ 经 $p$ 分解.
+    \end{itemize}
+    \begin{proof}
+        ($\to$ 方向). 作以下 conflation 的交换图, 其中 $\lambda$ 由预包的定义选取, 取 $\mu$ 使得 $\star$ 是同伦的推出拉回方块 (细节见\Cref{thm:homotopy-pullback-1}):
+        \begin{equation}
+            % https://q.uiver.app/#q=WzAsNixbMCwwLCJNIl0sWzEsMCwiViJdLFsyLDAsIk4iXSxbMCwxLCJNIl0sWzEsMSwiTV9WIl0sWzIsMSwiTV9VIl0sWzAsMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwxLCJpIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDIsInAiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiw1LCJcXG11Il0sWzMsNCwiaiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNCw1LCJxIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsNCwiXFxsYW1iZGEiXSxbMSw1LCJcXHN0YXIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	M \& V \& N \\
+	M \& {M_V} \& {M_U}
+	\arrow["i", tail, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["p", two heads, from=1-2, to=1-3]
+	\arrow["\lambda", from=1-2, to=2-2]
+	\arrow["\star"{description}, draw=none, from=1-2, to=2-3]
+	\arrow["\mu", from=1-3, to=2-3]
+	\arrow["j", tail, from=2-1, to=2-2]
+	\arrow["q", two heads, from=2-2, to=2-3]
+\end{tikzcd}.
+        \end{equation}
+        任取 $X \in \mathcal{T}$ 与态射 $f : X \to N$. 结合\Cref{lem:factor-through-w} 与\Cref{thm:TUV-proj-inj}, 复合态射 $X \xrightarrow f N \xrightarrow \mu M_U$ 通过某一投射对象 $P$ 分解, 记作 $X \xrightarrow a P \xrightarrow b M_U$. 由投射对象的提升性作态射 $c$, 再有弱拉回的性质作态射 $g$:
+        \begin{equation}
+            % https://q.uiver.app/#q=WzAsOCxbMCwxLCJNIl0sWzEsMSwiViJdLFsyLDEsIk4iXSxbMCwyLCJNIl0sWzEsMiwiTV9WIl0sWzIsMiwiTV9VIl0sWzMsMCwiWCJdLFszLDMsIlAiXSxbMCwzLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDEsImkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwicCIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDUsIlxcbXUiXSxbMyw0LCJqIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs0LDUsInEiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSw0LCJcXGxhbWJkYSJdLFs2LDIsImYiLDJdLFs2LDcsImEiXSxbNyw1LCJiIiwyXSxbNyw0LCJjIiwwLHsibGFiZWxfcG9zaXRpb24iOjYwLCJjdXJ2ZSI6LTJ9XSxbNiwxLCJnIiwyLHsibGFiZWxfcG9zaXRpb24iOjYwLCJjdXJ2ZSI6Mn1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	\&\&\& X \\
+	M \& V \& N \\
+	M \& {M_V} \& {M_U} \\
+	\&\&\& P
+	\arrow["g"'{pos=0.6}, curve={height=12pt}, from=1-4, to=2-2]
+	\arrow["f"', from=1-4, to=2-3]
+	\arrow["a", from=1-4, to=4-4]
+	\arrow["i", tail, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["p", two heads, from=2-2, to=2-3]
+	\arrow["\lambda", from=2-2, to=3-2]
+	\arrow["\mu", from=2-3, to=3-3]
+	\arrow["j", tail, from=3-1, to=3-2]
+	\arrow["q", two heads, from=3-2, to=3-3]
+	\arrow["c"{pos=0.6}, curve={height=-12pt}, from=4-4, to=3-2]
+	\arrow["b"', from=4-4, to=3-3]
+\end{tikzcd}.
+        \end{equation}
+        $g$ 即为所求.
+        \\
+        ($\gets$ 方向). 若 $X$ 满足上述性质, 下只需证明一切 $U \rightarrowtail E \twoheadrightarrow X$ 可裂. 先取 $U$ 的特殊预包 $\delta$, 其中 $U_V \in \mathcal{U} \cap \mathcal{V}$ 是内射对象. 任取分解 $\lambda$, 依照 ET3 取 $\mu$, 得以下 conflation 的拉回:
+        \begin{equation}
+            % https://q.uiver.app/#q=WzAsOCxbMCwwLCJVIl0sWzEsMCwiRSJdLFsyLDAsIlgiXSxbMCwxLCJVIl0sWzEsMSwiVV9WIl0sWzIsMSwiVV9VIl0sWzMsMCwiXFwsIl0sWzMsMSwiXFwsIl0sWzAsMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwxLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzMsNCwiaSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNCw1LCJwIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsNCwiXFxsYW1iZGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw1LCJcXG11IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNiwiXFxtdV5cXGFzdCBcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNywiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	U \& E \& X \& {\,} \\
+	U \& {U_V} \& {U_U} \& {\,}
+	\arrow[tail, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow[two heads, from=1-2, to=1-3]
+	\arrow["\lambda", dashed, from=1-2, to=2-2]
+	\arrow["{\mu^\ast \delta}", dashed, from=1-3, to=1-4]
+	\arrow["\mu", dashed, from=1-3, to=2-3]
+	\arrow["i", tail, from=2-1, to=2-2]
+	\arrow["p", two heads, from=2-2, to=2-3]
+	\arrow["\delta", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+        \end{equation}
+        由 $\delta$ 是特殊预包, 依照假定知 $\mu$ 通过 $p$ 分解. 因此 $\mu^\ast \delta = 0$.
+    \end{proof}
+\end{lemma}
+
+\subsection{闭模型结构}
+

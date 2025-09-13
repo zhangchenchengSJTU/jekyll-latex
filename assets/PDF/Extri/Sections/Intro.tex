@@ -1,0 +1,766 @@
+
+\section{初探外三角范畴}
+
+\subsection{基本定义}
+
+外三角范畴的第一手资料是 \cite{nakaoka:hal-02136919}.
+
+\begin{definition}\label{def:extri-data}
+	(外三角范畴的基本资料). 外三角范畴描述作三元组 $(\mathcal{C}, \mathbb E, \mathfrak s)$. 其中 $\mathcal{C}$ 是加法范畴, 配有双函子
+	\begin{equation}
+		\mathbb E : \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathbf{Ab}.
+	\end{equation}
+	Abel 群的 $\mathbb E(Z,X)$ 中元素称作扩张元, 记作 $(X, \delta, Z)$, 通常简写作 $\delta$.
+	\\
+	记函子范畴 $\mathcal{C}' := \mathcal{C}^{1 \to 2 \to 3}$, 定义 $\mathcal{C}'$ 上的等价关系 $\simeq$ 如\Cref{eq:ext-tri-equivalence}:
+	\begin{equation}\label{eq:ext-tri-equivalence}
+		% https://q.uiver.app/#q=WzAsNyxbMCwwLCJYIl0sWzEsMCwiRiJdLFsyLDAsIloiXSxbMCwxLCJYIl0sWzEsMSwiRSJdLFsyLDEsIloiXSxbMywxLCJcXHZhcnBoaSBcXCBcXHRleHR75piv5ZCM5p6EfS4iXSxbMCwxXSxbMSwyXSxbMiw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDMsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsNF0sWzQsNV0sWzEsNCwiXFx2YXJwaGkiXSxbMSw0LCJcXHNpbWVxIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}
+	X & F & Z \\
+	X & E & Z & {\varphi \ \text{是同构}.}
+	\arrow[from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow[from=1-2, to=1-3]
+	\arrow["\varphi", from=1-2, to=2-2]
+	\arrow["\simeq"', draw=none, from=1-2, to=2-2]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+\end{tikzcd}
+	\end{equation}
+	定义``类的映射'' $\mathfrak s$ 如下:
+	\begin{equation}
+		\mathfrak s : \mathbb E(Z,X) \to \mathcal{C}'/\simeq,\quad \delta \mapsto [X\xrightarrow{a} Y \xrightarrow{b} Z],
+	\end{equation}
+\end{definition}
+
+以上明确了 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 的类型. 方便起见, 引入以下记号.
+
+\begin{definition}
+	(推出与拉回). 记 $f_\ast : \mathbb E(X,f)$. 一个兴许更好的理解方式是, $f_\ast$ 是一族自然变换, $\mathbb E(X,f)$ 即 $(f_\ast)_X$. 对偶地记 $g^\ast := \mathbb E(g,Z)$.
+\end{definition}
+
+下面给出外三角范畴的公理.
+
+\begin{definition}
+	(外三角范畴的公理). 设 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 如上. 称其为外三角范畴, 若满足以下公理.
+	\begin{enumerate}
+		\item[ET1] $\mathbb E$ 是加法双函子. 双函子性即 $f_\ast g^\ast = g^\ast f_\ast$, 可比对\Cref{thm:ext1-bifunctor} 阅读.
+		\item[ET2-1] 显然商函子 $\mathcal{C}^{1 \to 2 \to 3} \to \mathcal{C}'$ 保持直和. 今约定 $\mathfrak s$ 满足如下两则性质:
+		\begin{enumerate}
+			\item 若 $\mathfrak s (\delta)$ 属于可裂 ses 所在的类, 则必有 $\delta = 0$;
+			\item $\mathfrak s (\delta \oplus \delta ') = \mathfrak s (\delta)  \oplus \mathfrak s (\delta ')$. 其中, $\delta \in \mathbb E(Z,X)$, $\delta' \in \mathbb E(Z', X')$, 以及 
+			\begin{equation}
+				(\delta \oplus \delta ') \in \mathbb E (Z,X) \oplus \mathbb E(Z', X') \subseteq \mathbb E(Z\oplus Z', X\oplus X').
+			\end{equation}
+		\end{enumerate}
+		\item[ET2-2] 若有扩张元的等式 $f_\ast \delta = g^\ast \delta'$, 则存在虚线处态射使得右图交换:
+		\begin{equation}\label{eq:ext-tri-axiom2}
+% https://q.uiver.app/#q=WzAsMTQsWzMsMCwiWCJdLFs0LDAsIkYiXSxbNSwwLCJaIl0sWzMsMiwiWCciXSxbNCwyLCJFIl0sWzUsMiwiWiciXSxbMCwyLCJcXG1hdGhiYiBFKFonLCBYJykiXSxbMCwwLCJcXG1hdGhiYiBFKFosIFgpIl0sWzEsMSwiZl9cXGFzdCBcXGRlbHRhID0gZ15cXGFzdCBcXGRlbHRhJyJdLFswLDEsIlxcbWF0aGJiIEUoWiwgWCcpIl0sWzEsMiwiXFxkZWx0YSciXSxbMSwwLCJcXGRlbHRhIl0sWzIsMCwiXFxtYXRoZnJhayBzKFxcZGVsdGEpIl0sWzIsMiwiXFxtYXRoZnJhayBzKFxcZGVsdGEnKSJdLFswLDFdLFsxLDJdLFszLDRdLFs0LDVdLFs3LDksImZfXFxhc3QiXSxbNiw5LCJnXlxcYXN0ICIsMl0sWzExLDgsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbMTAsOCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFswLDMsImYiLDJdLFsyLDUsImciXSxbMSw0LCJoIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMTIsIjoiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMywxMywiOiIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}
+	{\mathbb E(Z, X)} & \delta & {\mathfrak s(\delta)} & X & F & Z \\
+	{\mathbb E(Z, X')} & {f_\ast \delta = g^\ast \delta'} \\
+	{\mathbb E(Z', X')} & {\delta'} & {\mathfrak s(\delta')} & {X'} & E & {Z'}
+	\arrow["{f_\ast}", from=1-1, to=2-1]
+	\arrow[maps to, from=1-2, to=2-2]
+	\arrow["{:}"{marking, allow upside down}, draw=none, from=1-4, to=1-3]
+	\arrow[from=1-4, to=1-5]
+	\arrow["f"', from=1-4, to=3-4]
+	\arrow[from=1-5, to=1-6]
+	\arrow["h"', dashed, from=1-5, to=3-5]
+	\arrow["g", from=1-6, to=3-6]
+	\arrow["{g^\ast }"', from=3-1, to=2-1]
+	\arrow[maps to, from=3-2, to=2-2]
+	\arrow["{:}"{marking, allow upside down}, draw=none, from=3-4, to=3-3]
+	\arrow[from=3-4, to=3-5]
+	\arrow[from=3-5, to=3-6]
+\end{tikzcd}.
+		\end{equation}
+		\item[ET3] 若存在 $a$ 与 $b$ 使得下图左侧方块交换, 则存在 $c$ 使得 $c^\ast \eta = a_\ast \delta$, 同时下图交换
+		\begin{equation}\label{eq:ext-tri-axiom3-a}
+			% https://q.uiver.app/#q=WzAsOCxbMSwwLCJYIl0sWzIsMCwiRiJdLFszLDAsIloiXSxbMSwxLCJYJyJdLFsyLDEsIkUiXSxbMywxLCJaJyJdLFswLDAsIlxcbWF0aGZyYWsgcyhcXGRlbHRhKSJdLFswLDEsIlxcbWF0aGZyYWsgcyhcXGV0YSkiXSxbMCwxXSxbMSwyXSxbMyw0XSxbNCw1XSxbMCwzLCJhIl0sWzIsNSwiYyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDQsImIiXSxbNiwwLCI6IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsMywiOiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}
+	{\mathfrak s(\delta)} & X & F & Z \\
+	{\mathfrak s(\eta)} & {X'} & E & {Z'}
+	\arrow["{:}"{description}, draw=none, from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow["a", from=1-2, to=2-2]
+	\arrow[from=1-3, to=1-4]
+	\arrow["b", from=1-3, to=2-3]
+	\arrow["c", dashed, from=1-4, to=2-4]
+	\arrow["{:}"{description}, draw=none, from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-3, to=2-4]
+\end{tikzcd}.
+		\end{equation}
+		\item[ET3'] 对偶地, 若存在 $b$ 与 $c$ 使得下图右侧方块交换, 则存在 $a$ 使得 $c^\ast \eta = a_\ast \delta$, 同时下图交换
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMSwwLCJYIl0sWzIsMCwiRiJdLFszLDAsIloiXSxbMSwxLCJYJyJdLFsyLDEsIkUiXSxbMywxLCJaJyJdLFswLDAsIlxcbWF0aGZyYWsgcyhcXGRlbHRhKSJdLFswLDEsIlxcbWF0aGZyYWsgcyhcXGV0YSkiXSxbMCwxXSxbMSwyXSxbMyw0XSxbNCw1XSxbMCwzLCJhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNSwiYyJdLFsxLDQsImIiXSxbNiwwLCI6IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsMywiOiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}
+	{\mathfrak s(\delta)} & X & F & Z \\
+	{\mathfrak s(\eta)} & {X'} & E & {Z'}
+	\arrow["{:}"{description}, draw=none, from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow["a", dashed, from=1-2, to=2-2]
+	\arrow[from=1-3, to=1-4]
+	\arrow["b", from=1-3, to=2-3]
+	\arrow["c", from=1-4, to=2-4]
+	\arrow["{:}"{description}, draw=none, from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-3, to=2-4]
+\end{tikzcd}.
+		\end{equation}
+		\item[ET4] 任给定以下 $T$ 形图, 则可以补全虚线所示的 $\dashv$ 形图使得下图交换, 
+		\begin{equation}\label{eq:ext-tri-axiom-ET4}
+			% https://q.uiver.app/#q=WzAsMTIsWzEsMSwiQSJdLFsyLDEsIkIiXSxbMywxLCJDIl0sWzIsMiwiRCJdLFsyLDMsIkUiXSxbMywyLCJGIl0sWzMsMywiRSJdLFsxLDIsIkEiXSxbMCwxLCJcXG1hdGhmcmFrIHMoXFxkZWx0YSkiXSxbMCwyLCJcXG1hdGhmcmFrIHMoXFxkZWx0YScpIl0sWzIsMCwiXFxtYXRoZnJhayBzKFxcZXRhKSJdLFszLDAsIlxcbWF0aGZyYWsgcyhcXGV0YScpIl0sWzAsMSwieCJdLFsxLDIsInkiXSxbMSwzLCJ6Il0sWzMsNCwid3YiXSxbMCw3LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDYsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsMywiengiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMyw1LCJ2IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNSwidSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDYsInciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCwwLCI6IiwzLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksNywiOiIsMyx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMCwxLCI6IiwzLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzExLDIsIjoiLDMseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}
+	&& {\mathfrak s(\eta)} & {\mathfrak s(\eta')} \\
+	{\mathfrak s(\delta)} & A & B & C \\
+	{\mathfrak s(\delta')} & A & D & F \\
+	&& E & E
+	\arrow["{:}"{marking, allow upside down}, draw=none, from=1-3, to=2-3]
+	\arrow["{:}"{marking, allow upside down}, draw=none, from=1-4, to=2-4]
+	\arrow["{:}"{marking, allow upside down}, draw=none, from=2-1, to=2-2]
+	\arrow["x", from=2-2, to=2-3]
+	\arrow[equals, from=2-2, to=3-2]
+	\arrow["y", from=2-3, to=2-4]
+	\arrow["z", from=2-3, to=3-3]
+	\arrow["u", dashed, from=2-4, to=3-4]
+	\arrow["{:}"{marking, allow upside down}, draw=none, from=3-1, to=3-2]
+	\arrow["zx", dashed, from=3-2, to=3-3]
+	\arrow["v", dashed, from=3-3, to=3-4]
+	\arrow["wv", from=3-3, to=4-3]
+	\arrow["w", dashed, from=3-4, to=4-4]
+	\arrow[equals, from=4-3, to=4-4]
+\end{tikzcd},
+		\end{equation}
+		同时 $u^\ast \delta' = \delta$, $y_\ast \eta = \eta '$, 以及 $x_\ast \delta' = w^\ast \eta$.
+		\item[ET4'] 对调\Cref{eq:ext-tri-axiom-ET4} 中虚线箭头与实线箭头, 其表述与 ET4 对偶.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}\label{def:extri-terms}
+	(外三角范畴的术语). 以下是外三角范畴的通用术语.
+	\begin{enumerate}
+		\item 称 $\mathfrak s(\delta)$ 为扩张元 $\delta$ 的\textbf{加法实现} (简称\textbf{实现}). ``加法''的含义见 ET2-1, ``实现''的含义见 ET2-2. 即便扩张元的实现是一个等价类, 本文也使用``实现''指代该等价类中的任意代表元, 这通常不会引起矛盾.
+		\item 若 $X \xrightarrow x Y \xrightarrow y Z$ 是扩张元 $\delta$ 的加法实现, 则记作
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFsyLDAsIkMiXSxbMywwLCJcXCwgIl0sWzAsMSwieCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCJ5IiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsMywiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+	A & B & C & {\, }
+	\arrow["x", tail, from=1-1, to=1-2]
+	\arrow["y", two heads, from=1-2, to=1-3]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+\end{tikzcd}.
+		\end{equation}
+		图中虚箭头 $\overset \delta \dashrightarrow$ 用于标记加法实现对应的扩张元, 并非确指的态射. 称 $x$ 是 \textbf{$\mathbb E$-inflation} (简称 \textbf{inflation}), $y$ 是 \textbf{$\mathbb E$-deflation} (简称 \textbf{deflation}). 以上序列是 \textbf{$\mathbb E$-三角} 或 \textbf{$\mathbb E$-conflation} (简称 \textbf{conflation}). 若同时涉及正合范畴与外三角范畴, 本文使用``正合范畴的 inflation/deflation/conflation''这一全称指代正合范畴中的相应概念.
+		\item 回顾\Cref{eq:ext-tri-axiom2}. 称 $(f,g) : \delta \to \delta'$ 是\textbf{扩张元的态射}, 若 $f_\ast \delta = g^\ast \delta'$. 称 $(f,h,g)$ 是实现之间的态射, 若 $(f,g)$ 是扩张元的态射且\Cref{eq:ext-tri-axiom2} 交换.
+		\item 扩张元的推出与拉回诱导了实现的``推出''与``拉回''. 类似三角范畴的余积变换与积变换, 实现的``推出''与``拉回''未必是范畴中的推出与拉回. 方便起见, 我们仍称之为\textbf{推出}与\textbf{拉回}. 外三角范畴的图表定理通常不涉及范畴意义下的推出与拉回.
+	\end{enumerate}
+\end{definition}
+
+我们类比三角范畴与正合范畴, 解释上述公理的动机如下.
+
+\begin{example}\label{eg: ext-tri-axioms-explanation}
+	ET2-2, ET3 与 ET3' 涉及两处交换方块和一处扩张元的态射, 姑且``视作''三个交换方块. 这三条公理类似三角范畴中三角射的``二推三''准则. ET4 (ET4') 类似正合范畴中的 Noether 同构, 其包含三个交换方块与三个恒等式, ``对应'' (见\Cref{eg: 好三角的态射与 ses 的推出拉回}) 三角范畴 TR4 中的六个交换方块.
+\end{example}
+
+\begin{proposition}\label{prop:ext-tri-isomorphism-closed}
+	Conflation 关于同构封闭.
+	\begin{proof}
+		假定以下交换图的首行是 $\delta$ 的实现, $\alpha$, $\beta$ 与 $\gamma$ 是同构:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsNyxbMSwwLCJCIl0sWzAsMCwiQSJdLFsyLDAsIkMiXSxbMywwLCJcXCwiXSxbMCwxLCJBJyJdLFsxLDEsIkInIl0sWzIsMSwiQyciXSxbMSwwLCJmIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFswLDIsImciLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiwzLCJcXGRlbHRhIl0sWzQsNSwiZiciLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzUsNiwiZyciLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSw0LCJcXGFscGhhIl0sWzAsNSwiXFxiZXRhIl0sWzIsNiwiXFxnYW1tYSJdXQ==
+\begin{tikzcd}
+	A & B & C & {\,} \\
+	{A'} & {B'} & {C'}
+	\arrow["f", tail, from=1-1, to=1-2]
+	\arrow["\alpha", from=1-1, to=2-1]
+	\arrow["g", two heads, from=1-2, to=1-3]
+	\arrow["\beta", from=1-2, to=2-2]
+	\arrow["\delta", from=1-3, to=1-4]
+	\arrow["\gamma", from=1-3, to=2-3]
+	\arrow["{f'}", tail, from=2-1, to=2-2]
+	\arrow["{g'}", two heads, from=2-2, to=2-3]
+\end{tikzcd}.
+		\end{equation}
+		任取 $\delta' := (\gamma^{-1})^\ast \alpha_\ast \delta$ 的实现. 考虑扩张元的态射 $(\alpha, \gamma) : \delta \to \delta '$, 依照 ET2-1 补全实现之间的态射 $(\alpha, \beta', \gamma)$. 由于 $\beta '\circ \beta ^{-1}$ 是同构, 依照 $\mathcal{C}'$ 的构造可知上图下行也是 $\delta'$ 的实现.
+	\end{proof}
+\end{proposition}
+
+\begin{theorem}
+	外三角范畴的反范畴也是外三角范畴.
+	\begin{proof}
+		容易验证.
+	\end{proof}
+\end{theorem}
+
+\subsection{六项正合列}
+
+本节解释 conflation 诱导的六项正合列.
+
+\begin{theorem}
+	(加法充实的米田引理). 假定 $\mathcal{C}$ 是加法范畴, $F : \mathcal{C} \to \mathbf{Ab}$ 是加法函子. 对任意 $X \in \mathcal{C}$, 存在以下 Abel 群的自然同构:
+	\begin{equation}
+		F(X) \simeq ((X,-), F(-))_{\mathrm{Funct}(\mathcal{C},\mathbf{Ab})},\quad a \mapsto [f \mapsto F(f)(a)], \quad \theta_X(1_X) \mapsfrom \theta.
+	\end{equation}
+	假定 $G : \mathcal{C}^{\mathrm{op}} \to \mathbf{Ab}$ 是反变加法函子. 对任意 $X \in \mathcal{C}$, 存在以下 Abel 群的自然同构:
+	\begin{equation}
+		G(X) \simeq ((-,X), G(-))_{\mathrm{Funct}(\mathcal{C}^{\mathrm{op}},\mathbf{Ab})},\quad b \mapsto [f \mapsto G(f)(b)],\quad \psi_X(1_X) \mapsfrom \psi.
+	\end{equation}
+	\begin{proof}
+		熟知. 例如可查阅 \cite{kellyBasicConceptsEnriched1982} 的 2.1 章节.
+	\end{proof}
+\end{theorem}
+
+依照\cite{MR225854}中隐约显现的动机, 米田引理的初衷或许是为了解释短正合列诱导长正合列时的连接态射. 我们将这一观点提炼作以下定义.
+
+\begin{definition}
+	($\delta_\sharp$ 与 $\delta^\sharp$). 给定 conflation 
+			\begin{equation}
+			% https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFsyLDAsIkMiXSxbMywwLCJcXCwgIl0sWzAsMSwieCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCJ5IiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsMywiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+	A & B & C & {\, }
+	\arrow["f", tail, from=1-1, to=1-2]
+	\arrow["g", two heads, from=1-2, to=1-3]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+\end{tikzcd}.
+		\end{equation}
+		定义自然变换 $\delta _\sharp : (-, C) \to \mathbb E(-, A), \quad g \mapsto \delta_\sharp (g) := g^\ast \delta$. 依照米田引理, 这对应 $\delta \in \mathbb E(A,C)$.
+		\\
+		定义自然变换 $\delta ^\sharp : (A,-) \to \mathbb E(C,-), \quad f \mapsto \delta^\sharp (f) := f_\ast \delta$. 依照米田引理, 这对应 $\delta \in \mathbb E(A,C)$.
+\end{definition}
+
+\begin{remark}
+	下标 $\delta_\sharp$ 表示扩张元``被拉回'', 上标 $\delta^\sharp$ 表示扩张元``被推出''. 在书写长正合列时, 我们会发现这一角标朝向的合理性.
+\end{remark}
+
+\begin{theorem}
+	(五项正合列). 由公理 ET1-ET3, 以下是函子的正合列:
+	\begin{equation}
+		(C, - ) \xrightarrow{- \circ g} (B,-) \xrightarrow{- \circ f} (A,-) \xrightarrow{\delta^\sharp} \mathbb E(C,-) \xrightarrow{g^\ast} \mathbb E(B,-)
+	\end{equation}
+	换言之, 以上序列在中间三点正合.
+	\begin{proof}
+		($(B,-)$ 处的正合性). 任意选定 $X$, 试观察下图:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMCwwLCJBIl0sWzEsMCwiQiJdLFsyLDAsIkMiXSxbMywwLCJcXCwgIl0sWzEsMSwiWCJdLFsyLDEsIlgiXSxbMCwxLCIwIl0sWzMsMSwiXFwsIl0sWzAsMSwiZiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCJnIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsMywiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsNF0sWzUsNywiMCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDYsIlxcYWxwaGEiXSxbMSw0LCJcXGJldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw1LCJcXGdhbW1hIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}
+	A & B & C & {\, } \\
+	0 & X & X & {\,}
+	\arrow["f", tail, from=1-1, to=1-2]
+	\arrow["\alpha", from=1-1, to=2-1]
+	\arrow["g", two heads, from=1-2, to=1-3]
+	\arrow["\beta", dashed, from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["\gamma", dashed, from=1-3, to=2-3]
+	\arrow[from=2-1, to=2-2]
+	\arrow[equals, from=2-2, to=2-3]
+	\arrow["0", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+		\end{equation}
+		假定 $\beta \in \ker (f,X)$. 由 ET3, 存在 $\gamma$ 使得上图交换, 因此 $\beta \in \operatorname{im}(g,X)$. 反之, 若 $\beta = \gamma \circ g$, 则依照 ET3', $\beta \circ f = 0$, 故 $\beta \in \ker (f,X)$. 因此 $\ker (f,X) = \operatorname{im}(g,X)$.
+		\\
+		($(A,-)$ 处的正合性). 下证明 $\delta^\sharp \circ (- \circ f) = 0$. 以下交换图表明 $f_\ast \delta = (1_C)^\ast 0 = 0$:
+		\begin{equation}\label{eq:ext-tri-delta-sharp-kill-f}
+			% https://q.uiver.app/#q=WzAsOCxbMCwwLCJBIl0sWzEsMCwiQiJdLFsyLDAsIkMiXSxbMywwLCJcXCwgIl0sWzEsMSwiQiBcXG9wbHVzIEMiXSxbMiwxLCJDIl0sWzAsMSwiQiJdLFszLDEsIlxcLCJdLFswLDEsImYiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwiZyIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDMsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw0LCJcXGJpbm9tIDEwIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs1LDcsIjAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw2LCJmIl0sWzQsNSwiKDAgXFwgMSkiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSw0LCJcXGJpbm9tIDFnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNSwiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}
+	A & B & C & {\, } \\
+	B & {B \oplus C} & C & {\,}
+	\arrow["f", tail, from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["g", two heads, from=1-2, to=1-3]
+	\arrow["{\binom 1g}", dashed, from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["{\binom 10}", tail, from=2-1, to=2-2]
+	\arrow["{(0 \ 1)}", two heads, from=2-2, to=2-3]
+	\arrow["0", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+		\end{equation}
+		任取 $h : A \to X$, 得 
+		\begin{equation}
+			\delta^\sharp \circ (h \circ f) = (hf)_\ast \delta = h_\ast (f_\ast \delta) = 0.
+		\end{equation}
+		反之, 若 $\delta ^\sharp (h) = h_\ast \delta = 0$, 则有如下实现的态射
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMCwwLCJBIl0sWzEsMCwiQiJdLFsyLDAsIkMiXSxbMywwLCJcXCwgIl0sWzEsMSwiWCBcXG9wbHVzIEMiXSxbMiwxLCJDIl0sWzAsMSwiWCJdLFszLDEsIlxcLCJdLFswLDEsImYiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwiZyIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDMsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw0LCJcXGJpbm9tIDEwIl0sWzUsNywiMCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDYsImgiXSxbNCw1LCIoMCBcXCAxKSJdLFsyLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsNCwiXFxiaW5vbSBhIGIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	A & B & C & {\, } \\
+	X & {X \oplus C} & C & {\,}
+	\arrow["f", tail, from=1-1, to=1-2]
+	\arrow["h", from=1-1, to=2-1]
+	\arrow["g", two heads, from=1-2, to=1-3]
+	\arrow["{\binom a b}", dashed, from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["{\binom 10}", from=2-1, to=2-2]
+	\arrow["{(0 \ 1)}", from=2-2, to=2-3]
+	\arrow["0", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+		\end{equation}
+		解得 $h = a \circ f$, 从而 $h \in \operatorname{im}(- \circ f)$. 综上, $\ker \delta^\sharp = \operatorname{im}(- \circ f)$.
+		\\
+		($\mathbb E(C,-)$ 处的正合性). 下证明 $g^\ast \circ \delta^\sharp = 0$. 类似\Cref{eq:ext-tri-delta-sharp-kill-f} 的推导, 得 $g^\ast \delta = 0$. 反之, 若 $\eta \in \ker g^\ast \subseteq \mathbb E(C,X)$, 则存在 $q$ 使得下图中 $g = b \circ q$:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiWCJdLFsxLDEsIkYiXSxbMiwxLCJDIl0sWzMsMSwiXFwsICJdLFsxLDIsIlggXFxvcGx1cyBCIl0sWzIsMiwiQiJdLFswLDIsIlgiXSxbMywyLCJcXCwiXSxbMSwwLCJCIl0sWzIsMCwiQyJdLFswLDAsIkEiXSxbMywwLCJcXCwiXSxbMCwxLCJhIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsyLDMsIlxcZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsNCwiXFxiaW5vbSAxMCJdLFs1LDcsIjAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw2LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDUsIigwIFxcIDEpIl0sWzQsMSwiKHAgXFwgcSkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwyLCJnIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsMiwiYiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs5LDIsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsOSwiZyIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs4LDEsInEiXSxbMTAsOCwiZiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbOSwxMSwiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMCwwLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	A & B & C & {\,} \\
+	X & F & C & {\, } \\
+	X & {X \oplus B} & B & {\,}
+	\arrow["f", tail, from=1-1, to=1-2]
+	\arrow[dashed, from=1-1, to=2-1]
+	\arrow["g", two heads, from=1-2, to=1-3]
+	\arrow["q", from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["a", tail, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["b", two heads, from=2-2, to=2-3]
+	\arrow["\eta", dashed, from=2-3, to=2-4]
+	\arrow["{\binom 10}", from=3-1, to=3-2]
+	\arrow["{(p \ q)}", dashed, from=3-2, to=2-2]
+	\arrow["{(0 \ 1)}", from=3-2, to=3-3]
+	\arrow["g", two heads, from=3-3, to=2-3]
+	\arrow["0", dashed, from=3-3, to=3-4]
+\end{tikzcd}.
+		\end{equation}
+		依照 ET3', 得 $\eta$ 是 $\delta$ 的推出. 综上, $\ker g^\ast = \operatorname{im} \delta^\sharp$.
+	\end{proof}
+\end{theorem}
+
+依照外三角范畴的反范畴也是外三角范畴, 我们得到如下对偶的定理.
+
+\begin{theorem}
+	(五项正合列). 由公理 ET1-ET3, 以下是函子的正合列:
+	\begin{equation}
+		(-, A) \xrightarrow{f \circ -} (-, B) \xrightarrow{g \circ -} (-, C) \xrightarrow{\delta_\sharp} \mathbb E(-, A) \xrightarrow{f^\ast} \mathbb E(-, B)
+	\end{equation}
+	\begin{proof}
+		证明略.
+	\end{proof}
+\end{theorem}
+
+ET4 (ET4') 公理将以上五项正合列延长为六项.
+
+\begin{theorem}
+	(六项正合列). 由公理 ET1-ET4, 以下是函子的正合列:
+	\begin{equation}\label{eq:ext-tri-6-term}
+		(C, - ) \xrightarrow{- \circ g} (B,-) \xrightarrow{- \circ f} (A,-) \xrightarrow{\delta^\sharp} \mathbb E(C,-) \xrightarrow{g^\ast} \mathbb E(B,-) \xrightarrow{f^\ast} \mathbb E(A,-)
+	\end{equation}
+	换言之, 以上序列在中间四点正合.
+	\begin{proof}
+		我们仅证明 $\mathbb E(B,-)$ 处的正合性. 函子性表明 $f^\ast \circ g^\ast = (g \circ f)^\ast = 0$. 任取 $\eta \in \ker f^\ast \subseteq \mathbb E(B, X)$, 依照 ET4' 构造下图:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiWCJdLFsxLDEsIkUiXSxbMiwxLCJCIl0sWzMsMSwiXFwsIl0sWzIsMCwiQSJdLFswLDAsIlgiXSxbMSwwLCJBIFxcb3BsdXMgWCJdLFszLDAsIlxcLCJdLFsyLDIsIkMiXSxbMiwzLCJcXCwiXSxbMSwyLCJDIl0sWzEsMywiXFwsIl0sWzAsMSwiYSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCJiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsMywiXFxldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwwLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDYsIlxcYmlub20gMDEiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDEsIih4IFxcIHkpIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw3LCIwIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMiwiZiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMiw4LCJnIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzgsOSwiXFxkZWx0YSJdLFsxLDEwLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzYsNCwiKDEgXFwgMCkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEwLDgsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEwLDExLCJcXHZhcmVwc2lsb24gIl1d
+\begin{tikzcd}
+	X & {A \oplus X} & A & {\,} \\
+	X & E & B & {\,} \\
+	& C & C \\
+	& {\,} & {\,}
+	\arrow["{\binom 01}", dashed, tail, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["{(1 \ 0)}", dashed, two heads, from=1-2, to=1-3]
+	\arrow["{(x \ y)}", dashed, tail, from=1-2, to=2-2]
+	\arrow["0", dashed, from=1-3, to=1-4]
+	\arrow["f", tail, from=1-3, to=2-3]
+	\arrow["a", tail, from=2-1, to=2-2]
+	\arrow["b", two heads, from=2-2, to=2-3]
+	\arrow[dashed, two heads, from=2-2, to=3-2]
+	\arrow["\eta", dashed, from=2-3, to=2-4]
+	\arrow["g", two heads, from=2-3, to=3-3]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["{\varepsilon }", from=3-2, to=4-2]
+	\arrow["\delta", from=3-3, to=4-3]
+\end{tikzcd}.
+		\end{equation}
+		计算得
+		\begin{equation}
+			\eta = (0 \ 1)_\ast (\binom 01 _\ast \eta) = (0 \ 1)_\ast (g^\ast \varepsilon) = g^\ast ((0 \ 1)_\ast \varepsilon) \in \operatorname{im}g^\ast.
+		\end{equation}
+		综上, $\ker f^\ast = \operatorname{im} g^\ast$.
+	\end{proof}
+\end{theorem}
+
+依照外三角范畴的反范畴也是外三角范畴, 我们得到如下对偶的定理.
+
+\begin{theorem}
+	(六项正合列). 由公理 ET1-ET4, 以下是函子的正合列:
+	\begin{equation}\label{eq:ext-tri-6-term-dual}
+		(-, A) \xrightarrow{f \circ -} (-, B) \xrightarrow{g \circ -} (-, C) \xrightarrow{\delta_\sharp} \mathbb E(-, A) \xrightarrow{f^\ast} \mathbb E(-, B) \xrightarrow{g^\ast} \mathbb E(-, C)
+	\end{equation}
+	\begin{proof}
+		证明略.
+	\end{proof}
+\end{theorem}
+
+\subsection{五项正合列的推论}
+
+本小节中给出五项正合列若干推论, 所有命题无需 ET4 或 ET4'. 任取 conflation
+
+\begin{equation}
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFsyLDAsIkMiXSxbMywwLCJcXCwgIl0sWzAsMSwieCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCJ5IiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsMywiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+A & B & C & {\, }
+\arrow["f", tail, from=1-1, to=1-2]
+\arrow["g", two heads, from=1-2, to=1-3]
+\arrow["\delta", dashed, from=1-3, to=1-4]
+\end{tikzcd}.
+\end{equation}
+
+\begin{proposition}
+	Conflation 中, 态射复合为 $0$.
+\end{proposition}
+
+\begin{proposition}
+	$g$ 是 $f$ 的弱余核, 即, $\ker (- \circ f) = \operatorname{im}(- \circ g)$; 对偶地 $f$ 是 $g$ 的弱核, 即, $\ker (g \circ -) = \operatorname{im}(f \circ -)$.
+\end{proposition}
+
+\begin{proposition}\label{prop:ext-tri-mono-epi}
+	$g$ 是单态射, 当且仅当 $f$ 是零态射, 亦当且仅当 $g$ 是可裂单.
+	\begin{proof}
+		$g$ 单即 $(g \circ -)$ 单, 亦即 $(f \circ - ) = 0$, 亦即 $f$ 零, 亦即 $(- \circ f) = 0$, 亦即 $(- \circ g)$ 满, 亦即 $g$ 可裂单.
+		此处涉及一则简单的引理.
+		\begin{quoting}
+		\begin{lemma}
+			给定任意范畴中的态射 $g$. $(g \circ -) = \mathrm{Hom}(-, g)$ 是函子的满射, 当且仅当 $g$ 是可裂单态射.
+			\begin{proof}
+				若 $g : A \to B$ 是可裂满, 则 $(g \circ -)$ 有右逆元, 故满. 反之, 若 $(g \circ -)$ 满, 则 $(1_B) \in \mathrm{Hom}(g, B)$, 即存在 $h : A \to B$ 使得 $g \circ h = 1_B$, 故 $g$ 可裂满.
+			\end{proof}
+		\end{lemma}
+		\end{quoting}
+	\end{proof}
+\end{proposition}
+
+对偶地, 有如下命题.
+
+\begin{proposition}
+	$f$ 是满态射, 当且仅当 $g$ 是零态射, 亦当且仅当 $f$ 是可裂满.
+	\begin{proof}
+		略.
+	\end{proof}
+\end{proposition}
+
+\begin{remark}
+	由于 $\mathcal{C}$ 未必弱幂等完备, 单的 deflation 未必是 inflation. 三角范畴中, 单态射必然是可裂单. 正合范畴中, 单的容许满态射是同构. 对偶表述略.
+\end{remark}
+
+回顾\Cref{eg: ext-tri-axioms-explanation}, 公理 ET2-2, ET3 与 ET3' 可统一作``二推三''准则.
+
+\begin{theorem}\label{thm:ext-tri-2-out-of-3}
+	给定实现之间的态射
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMywwLCJcXCwiXSxbMCwxLCJYJyJdLFsxLDEsIlknIl0sWzIsMSwiWiciXSxbMywxLCJcXCwiXSxbMCwxLCJmIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDIsImciLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNCw1LCJmJyIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNSw2LCJnJyIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFswLDQsIlxcYWxwaGEgIl0sWzEsNSwiXFxiZXRhIl0sWzIsNiwiXFxnYW1tYSJdLFsyLDMsIlxcZGVsdGEiXSxbNiw3LCJcXGRlbHRhJyJdXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	{X'} \& {Y'} \& {Z'} \& {\,}
+	\arrow["f", tail, from=1-1, to=1-2]
+	\arrow["{\alpha }", from=1-1, to=2-1]
+	\arrow["g", two heads, from=1-2, to=1-3]
+	\arrow["\beta", from=1-2, to=2-2]
+	\arrow["\delta", from=1-3, to=1-4]
+	\arrow["\gamma", from=1-3, to=2-3]
+	\arrow["{f'}", tail, from=2-1, to=2-2]
+	\arrow["{g'}", two heads, from=2-2, to=2-3]
+	\arrow["{\delta'}", from=2-3, to=2-4]
+\end{tikzcd}.
+	\end{equation}
+	若 $\alpha$, $\beta$ 与 $\gamma$ 中两者为同构, 则第三者亦为同构.
+	\begin{proof}
+		若 $\alpha$ 与 $\beta$ 是同构, 则有五项正合列间的交换图
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTAsWzAsMCwiKC0sWCkiXSxbMSwwLCIoLSxZKSJdLFsyLDAsIigtLFopIl0sWzMsMCwiXFxtYXRoYmIgRSgtLFgpIl0sWzQsMCwiXFxtYXRoYmIgRSgtLFkpIl0sWzMsMSwiXFxtYXRoYmIgRSgtLFgnKSJdLFs0LDEsIlxcbWF0aGJiIEUoLSxZJykiXSxbMiwxLCIoLSxaJykiXSxbMSwxLCIoLSxZJykiXSxbMCwxLCIoLSxYJykiXSxbMCwxLCJmXFxjaXJjIC0iXSxbMSwyLCJnXFxjaXJjIC0iXSxbMiwzLCJcXGRlbHRhX1xcc2hhcnAiXSxbMyw0LCJmX1xcYXN0Il0sWzksOCwiZidcXGNpcmMgLSJdLFs4LDcsImcnXFxjaXJjIC0iXSxbNyw1LCJcXGRlbHRhX1xcc2hhcnAnIl0sWzUsNiwiZidfXFxhc3QiXSxbMCw5LCJcXGFscGhhIFxcY2lyYyAtIl0sWzEsOCwiXFxiZXRhIFxcY2lyYyAtIl0sWzIsNywiXFxnYW1tYSBcXGNpcmMgLSJdLFszLDUsIlxcYWxwaGEgX1xcYXN0ICJdLFs0LDYsIlxcYmV0YV9cXGFzdCJdXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	{(-,X)} \& {(-,Y)} \& {(-,Z)} \& {\mathbb E(-,X)} \& {\mathbb E(-,Y)} \\
+	{(-,X')} \& {(-,Y')} \& {(-,Z')} \& {\mathbb E(-,X')} \& {\mathbb E(-,Y')}
+	\arrow["{f\circ -}", from=1-1, to=1-2]
+	\arrow["{\alpha \circ -}", from=1-1, to=2-1]
+	\arrow["{g\circ -}", from=1-2, to=1-3]
+	\arrow["{\beta \circ -}", from=1-2, to=2-2]
+	\arrow["{\delta_\sharp}", from=1-3, to=1-4]
+	\arrow["{\gamma \circ -}", from=1-3, to=2-3]
+	\arrow["{f_\ast}", from=1-4, to=1-5]
+	\arrow["{\alpha _\ast }", from=1-4, to=2-4]
+	\arrow["{\beta_\ast}", from=1-5, to=2-5]
+	\arrow["{f'\circ -}", from=2-1, to=2-2]
+	\arrow["{g'\circ -}", from=2-2, to=2-3]
+	\arrow["{\delta_\sharp'}", from=2-3, to=2-4]
+	\arrow["{f'_\ast}", from=2-4, to=2-5]
+\end{tikzcd}.
+		\end{equation}
+		依照五引理, $\gamma \circ -$ 也是同构, 故 $\gamma$ 亦为同构.
+		\\
+		若 $\alpha$ 和 $\gamma$ 是同构, 则以上 $\beta \circ -$ 是函子的满态射, 因此 $\beta$ 可裂满. 另一方向的五项长正合列表明 $- \circ \beta$ 是函子的满态射, 因此 $\beta$ 可裂单. 综上, $\beta$ 是同构.
+	\end{proof}
+\end{theorem}
+
+\begin{theorem}
+	在同构意义下, inflation (deflation) 嵌入唯一的 conflation.
+	\begin{proof}
+		上一定理的推论.
+	\end{proof}
+\end{theorem}
+
+\begin{remark}
+	``对称''地看, 扩张元的实现在同构意义下也是唯一的.
+\end{remark}
+
+ET4 公理由两处 conflation 生成四处 conflation. 依照 inflation (deflation) 的唯一嵌入, 我们有如下结果.
+
+\begin{proposition}\label{prop:ext-tri-et4-unique}
+	(严格 ET4). 给定下图实线部分的三处 deflation
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSJdLFsxLDAsIkIiXSxbMiwwLCJDIl0sWzEsMSwiRCJdLFsxLDIsIkUiXSxbMiwxLCJGIl0sWzIsMiwiRSJdLFswLDEsIkEiXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMiwzLCJcXCwiXSxbMSwzLCJcXCwiXSxbMCwxLCJ4Il0sWzEsMiwieSJdLFsxLDMsInoiXSxbMyw0LCJxIl0sWzAsNywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw2LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs3LDMsInp4Il0sWzMsNSwidiJdLFsyLDUsInUiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw2LCJ3IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsOCwiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDksIlxcZGVsdGEnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMTEsIlxcZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMTAsIlxcZXRhJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+	A & B & C & {\,} \\
+	A & D & F & {\,} \\
+	& E & E \\
+	& {\,} & {\,}
+	\arrow["x", from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["y", from=1-2, to=1-3]
+	\arrow["z", from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["u", dashed, from=1-3, to=2-3]
+	\arrow["zx", from=2-1, to=2-2]
+	\arrow["v", from=2-2, to=2-3]
+	\arrow["q", from=2-2, to=3-2]
+	\arrow["{\delta'}", dashed, from=2-3, to=2-4]
+	\arrow["w", dashed, from=2-3, to=3-3]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["\eta", dashed, from=3-2, to=4-2]
+	\arrow["{\eta'}", dashed, from=3-3, to=4-3]
+\end{tikzcd},
+	\end{equation}
+	存在虚线所示的 conflation $\eta'$ 使得上图交换, 且 ET4 中的三个恒等式成立.
+	\begin{proof}
+		若依照 ET4 选取 $D \overset {v'} \twoheadrightarrow F'$, 则存在同构 $\varphi : F \simeq F'$ 使得 $v' = \varphi \circ v$. 往后从略.
+	\end{proof}
+\end{proposition}
+
+\begin{proposition}
+	对偶地, 有严格 ET4' 引理. 表述与证明略.
+\end{proposition}
+
+\subsection{扩张提升引理}
+
+以下是一则实用的引理.
+
+\begin{theorem}\label{thm:ext-lifting}
+	假定 $\mathbb E(C,K) = 0$, 以下是 conflation 间的交换图:
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsOCxbMSwwLCJYIl0sWzIsMCwiWSJdLFszLDAsIkMiXSxbMSwxLCJBIl0sWzAsMSwiSyJdLFsyLDEsIkIiXSxbNCwwLCJcXCwgIl0sWzMsMSwiXFwsIl0sWzAsMywiZiIsMl0sWzEsNSwiZyJdLFswLDEsImkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwicCIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs0LDMsImoiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzMsNSwicSIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDYsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw3LCJcXHZhcmVwc2lsb24gIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	\& X \& Y \& C \& {\, } \\
+	K \& A \& B \& {\,}
+	\arrow["i", tail, from=1-2, to=1-3]
+	\arrow["f"', from=1-2, to=2-2]
+	\arrow["p", two heads, from=1-3, to=1-4]
+	\arrow["g", from=1-3, to=2-3]
+	\arrow["\delta", dashed, from=1-4, to=1-5]
+	\arrow["j"', tail, from=2-1, to=2-2]
+	\arrow["q"', two heads, from=2-2, to=2-3]
+	\arrow["{\varepsilon }"', dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+	\end{equation}
+	则存在 $s : Y \to A$ 使得 $q \circ s = j$ 且 $s \circ i = f$.
+	\begin{proof}
+		转述命题如下: 若一组态射 $(f,g)$ 满足 $q \circ f=g \circ i$, 则存在``公共的原像'' $s$
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMSwxLCIoWSxBKSJdLFsxLDIsIihYLEEpIl0sWzIsMSwiKFksQikiXSxbMiwyLCIoWCxCKSJdLFszLDAsImciXSxbMCwzLCJmIl0sWzAsMCwicyJdLFszLDMsInEgXFxjaXJjIGY9ZyBcXGNpcmMgaSJdLFswLDEsIihpLEEpIiwyXSxbMiwzLCIoaSxCKSJdLFswLDIsIihZLHEpIl0sWzEsMywiKFgscSkiLDJdLFs0LDcsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbNSw3LCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzYsNCwiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw1LCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	s \&\&\& g \\[-12pt]
+	\& {(Y,A)} \& {(Y,B)} \\
+	\& {(X,A)} \& {(X,B)} \\[-12pt]
+	f \&\&\& {q \circ f=g \circ i}
+	\arrow[dashed, maps to, from=1-1, to=1-4]
+	\arrow[dashed, maps to, from=1-1, to=4-1]
+	\arrow[maps to, from=1-4, to=4-4]
+	\arrow["{(Y,q)}", from=2-2, to=2-3]
+	\arrow["{(i,A)}"', from=2-2, to=3-2]
+	\arrow["{(i,B)}", from=2-3, to=3-3]
+	\arrow["{(X,q)}"', from=3-2, to=3-3]
+	\arrow[maps to, from=4-1, to=4-4]
+\end{tikzcd}.
+		\end{equation}
+		依照长正合列\Cref{eq:ext-tri-6-term} 与\Cref{eq:ext-tri-6-term-dual}, 构造以下列正合的双复形 (未标注处均为 $0$):
+		\begin{equation}\label{eq:ext-tri-lift-diagram}
+			% https://q.uiver.app/#q=WzAsMjQsWzEsMiwiKFksQSkiLFsyMzUsMTAwLDYwLDFdXSxbMSwzLCIoWCxBKSIsWzIzNSwxMDAsNjAsMV1dLFsyLDIsIihZLEIpIixbMjM1LDEwMCw2MCwxXV0sWzIsMywiKFgsQikiLFsyMzUsMTAwLDYwLDFdXSxbMywyLCJcXG1hdGhiYiBFKFksSykiXSxbMywzLCJcXG1hdGhiYiBFKFgsSykiXSxbMSw0LCJcXG1hdGhiYiBFKEMsQSkiXSxbMiw0LCJcXG1hdGhiYiBFKEMsQikiXSxbMSwxLCIoQyxBKSJdLFsyLDEsIihDLEIpIl0sWzMsMSwiXFxtYXRoYmIgRShDLEspIl0sWzAsMywiKFgsSykiXSxbMCwyLCIoWSxLKSJdLFswLDEsIihDLEspIl0sWzAsNCwiXFxtYXRoYmIgRShDLEspIl0sWzAsMCwiXFxrZXJfMSJdLFsxLDAsIlxca2VyXzIiXSxbMiwwLCJcXGtlcl8zIl0sWzMsMCwiXFxrZXJfNCJdLFswLDUsIlxcbWF0aHJte2Nva2VyfV8xIl0sWzEsNSwiXFxtYXRocm17Y29rZXJ9XzIiXSxbMiw1LCJcXG1hdGhybXtjb2tlcn1fMyJdLFszLDQsIlQiXSxbMyw1LCJcXG1hdGhybXtjb2tlcn1fMyJdLFswLDEsIihpLEEpIiwwLHsiY29sb3VyIjpbMjM1LDEwMCw2MF19LFsyMzUsMTAwLDYwLDFdXSxbMCwyLCIoWSxxKSIsMCx7ImNvbG91ciI6WzIzNSwxMDAsNjBdfSxbMjM1LDEwMCw2MCwxXV0sWzEsMywiKFgscSkiLDAseyJjb2xvdXIiOlsyMzUsMTAwLDYwXX0sWzIzNSwxMDAsNjAsMV1dLFsyLDQsIlxcdmFyZXBzaWxvbiBfXFxzaGFycCJdLFszLDUsIlxcdmFyZXBzaWxvbiBfXFxzaGFycCJdLFs0LDUsImleXFxhc3QiXSxbMSw2LCJcXGRlbHRhXlxcc2hhcnAiXSxbMyw3LCJcXGRlbHRhXlxcc2hhcnAiXSxbNiw3LCJxX1xcYXN0Il0sWzgsMCwiKHAsQSkiXSxbOSwyLCIocCxCKSJdLFs4LDksIihDLHEpIl0sWzksMTAsIlxcdmFyZXBzaWxvbiBfXFxzaGFycCJdLFsxMCw0LCJwXlxcYXN0Il0sWzEzLDEyLCIocCxLKSJdLFsxMiwxMSwiKGksSykiXSxbMTEsMTQsIlxcZGVsdGFeXFxzaGFycCJdLFsxNCw2LCJqX1xcYXN0Il0sWzExLDEsIihYLGopIl0sWzEyLDAsIihZLGopIl0sWzEzLDgsIihDLGopIl0sWzIxLDIzLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxNSwxNl0sWzE2LDE3XSxbMTcsMThdLFsxNCwxOSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzYsMjAsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxOSwyMF0sWzE1LDEzLCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzE2LDgsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMTcsOSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxOCwxMCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsyMCwyMV0sWzcsMjEsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs1LDIyXSxbNywyMl0sWzMsMjIsIlxcdGV4dHtQT30iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMjIsMjMsIiIsMSx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDMsIihpLEIpIiwwLHsiY29sb3VyIjpbMjM1LDEwMCw2MF19LFsyMzUsMTAwLDYwLDFdXV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{\ker_1} \& {\ker_2} \& {\ker_3} \& {\ker_4} \\
+	{(C,K)} \& {(C,A)} \& {(C,B)} \& {\mathbb E(C,K)} \\
+	{(Y,K)} \& \textcolor{rgb,255:red,51;green,68;blue,255}{{(Y,A)}} \& \textcolor{rgb,255:red,51;green,68;blue,255}{{(Y,B)}} \& {\mathbb E(Y,K)} \\
+	{(X,K)} \& \textcolor{rgb,255:red,51;green,68;blue,255}{{(X,A)}} \& \textcolor{rgb,255:red,51;green,68;blue,255}{{(X,B)}} \& {\mathbb E(X,K)} \\
+	{\mathbb E(C,K)} \& {\mathbb E(C,A)} \& {\mathbb E(C,B)} \& T \\
+	{\mathrm{coker}_1} \& {\mathrm{coker}_2} \& {\mathrm{coker}_3} \& {\mathrm{coker}_3}
+	\arrow[from=1-1, to=1-2]
+	\arrow[tail, from=1-1, to=2-1]
+	\arrow[from=1-2, to=1-3]
+	\arrow[tail, from=1-2, to=2-2]
+	\arrow[from=1-3, to=1-4]
+	\arrow[tail, from=1-3, to=2-3]
+	\arrow[tail, from=1-4, to=2-4]
+	\arrow["{(C,j)}", from=2-1, to=2-2]
+	\arrow["{(p,K)}", from=2-1, to=3-1]
+	\arrow["{(C,q)}", from=2-2, to=2-3]
+	\arrow["{(p,A)}", from=2-2, to=3-2]
+	\arrow["{\varepsilon _\sharp}", from=2-3, to=2-4]
+	\arrow["{(p,B)}", from=2-3, to=3-3]
+	\arrow["{p^\ast}", from=2-4, to=3-4]
+	\arrow["{(Y,j)}", from=3-1, to=3-2]
+	\arrow["{(i,K)}", from=3-1, to=4-1]
+	\arrow["{(Y,q)}", color={rgb,255:red,51;green,68;blue,255}, from=3-2, to=3-3]
+	\arrow["{(i,A)}", color={rgb,255:red,51;green,68;blue,255}, from=3-2, to=4-2]
+	\arrow["{\varepsilon _\sharp}", from=3-3, to=3-4]
+	\arrow["{(i,B)}", color={rgb,255:red,51;green,68;blue,255}, from=3-3, to=4-3]
+	\arrow["{i^\ast}", from=3-4, to=4-4]
+	\arrow["{(X,j)}", from=4-1, to=4-2]
+	\arrow["{\delta^\sharp}", from=4-1, to=5-1]
+	\arrow["{(X,q)}", color={rgb,255:red,51;green,68;blue,255}, from=4-2, to=4-3]
+	\arrow["{\delta^\sharp}", from=4-2, to=5-2]
+	\arrow["{\varepsilon _\sharp}", from=4-3, to=4-4]
+	\arrow["{\delta^\sharp}", from=4-3, to=5-3]
+	\arrow["{\text{PO}}"{description}, draw=none, from=4-3, to=5-4]
+	\arrow[from=4-4, to=5-4]
+	\arrow["{j_\ast}", from=5-1, to=5-2]
+	\arrow[two heads, from=5-1, to=6-1]
+	\arrow["{q_\ast}", from=5-2, to=5-3]
+	\arrow[two heads, from=5-2, to=6-2]
+	\arrow[from=5-3, to=5-4]
+	\arrow[two heads, from=5-3, to=6-3]
+	\arrow[two heads, from=5-4, to=6-4]
+	\arrow[from=6-1, to=6-2]
+	\arrow[from=6-2, to=6-3]
+	\arrow[equals, from=6-3, to=6-4]
+\end{tikzcd}.
+		\end{equation}
+		其相应的全复形依然是正合的. 我们将添加负号的态射标红, 并带入 $\mathbb E(C,K)$, 得下图
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMjIsWzEsMiwiKFksQSkiLFsyMzUsMTAwLDYwLDFdXSxbMSwzLCIoWCxBKSIsWzIzNSwxMDAsNjAsMV1dLFsyLDIsIihZLEIpIixbMjM1LDEwMCw2MCwxXV0sWzIsMywiKFgsQikiLFsyMzUsMTAwLDYwLDFdXSxbMywyLCJcXG1hdGhiYiBFKFksSykiXSxbMywzLCJcXG1hdGhiYiBFKFgsSykiXSxbMSw0LCJcXG1hdGhiYiBFKEMsQSkiXSxbMiw0LCJcXG1hdGhiYiBFKEMsQikiXSxbMSwxLCIoQyxBKSJdLFsyLDEsIihDLEIpIl0sWzMsMSwiMCJdLFswLDMsIihYLEspIl0sWzAsMiwiKFksSykiXSxbMCwxLCIoQyxLKSJdLFswLDQsIjAiXSxbMCwwLCJcXGtlcl8xIl0sWzEsMCwiXFxrZXJfMiJdLFsyLDAsIlxca2VyXzMiXSxbMSw1LCJcXG1hdGhybXtjb2tlcn1fMiJdLFsyLDUsIlxcbWF0aHJte2Nva2VyfV8zIl0sWzMsNCwiVCJdLFszLDUsIlxcbWF0aHJte2Nva2VyfV8zIl0sWzAsMSwiKGksQSkiLDAseyJjb2xvdXIiOlsyMzUsMTAwLDYwXX0sWzIzNSwxMDAsNjAsMV1dLFswLDIsIihZLHEpIiwwLHsiY29sb3VyIjpbMjM1LDEwMCw2MF19LFsyMzUsMTAwLDYwLDFdXSxbMSwzLCIoWCxxKSIsMCx7ImNvbG91ciI6WzIzNSwxMDAsNjBdfSxbMjM1LDEwMCw2MCwxXV0sWzIsNCwiXFx2YXJlcHNpbG9uIF9cXHNoYXJwIl0sWzMsNSwiXFx2YXJlcHNpbG9uIF9cXHNoYXJwIl0sWzQsNSwiaV5cXGFzdCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSw2LCJcXGRlbHRhXlxcc2hhcnAiXSxbMyw3LCItXFxkZWx0YV5cXHNoYXJwIiwwLHsiY29sb3VyIjpbMzU2LDEwMCw2MF19LFszNTYsMTAwLDYwLDFdXSxbNiw3LCJxX1xcYXN0IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs4LDAsIihwLEEpIl0sWzksMiwiLShwLEIpIiwwLHsiY29sb3VyIjpbMzU2LDEwMCw2MF19LFszNTYsMTAwLDYwLDFdXSxbOCw5LCIoQyxxKSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs5LDEwXSxbMTAsNF0sWzEzLDEyLCItKHAsSykiLDAseyJjb2xvdXIiOlszNTYsMTAwLDYwXX0sWzM1NiwxMDAsNjAsMV1dLFsxMiwxMSwiLShpLEspIiwwLHsiY29sb3VyIjpbMzU2LDEwMCw2MF0sInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX0sWzM1NiwxMDAsNjAsMV1dLFsxMSwxNCwiIiwwLHsiY29sb3VyIjpbMzU2LDEwMCw2MF19XSxbMTQsNl0sWzExLDEsIihYLGopIl0sWzEyLDAsIihZLGopIl0sWzEzLDgsIihDLGopIl0sWzE5LDIxLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxNSwxNl0sWzE2LDE3XSxbNiwxOCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzE1LDEzLCIiLDEseyJjb2xvdXIiOlszNTYsMTAwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxNiw4LCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzE3LDksIiIsMCx7ImNvbG91ciI6WzM1NiwxMDAsNjBdLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzE4LDE5XSxbNywxOSwiIiwyLHsiY29sb3VyIjpbMzU2LDEwMCw2MF0sInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs1LDIwXSxbNywyMF0sWzIwLDIxLCIiLDEseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiwzLCItKGksQikiLDAseyJjb2xvdXIiOlszNTYsMTAwLDYwXX0sWzM1NiwxMDAsNjAsMV1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	{\ker_1} \& {\ker_2} \& {\ker_3} \\
+	{(C,K)} \& {(C,A)} \& {(C,B)} \& 0 \\
+	{(Y,K)} \& \textcolor{rgb,255:red,51;green,68;blue,255}{{(Y,A)}} \& \textcolor{rgb,255:red,51;green,68;blue,255}{{(Y,B)}} \& {\mathbb E(Y,K)} \\
+	{(X,K)} \& \textcolor{rgb,255:red,51;green,68;blue,255}{{(X,A)}} \& \textcolor{rgb,255:red,51;green,68;blue,255}{{(X,B)}} \& {\mathbb E(X,K)} \\
+	0 \& {\mathbb E(C,A)} \& {\mathbb E(C,B)} \& T \\
+	\& {\mathrm{coker}_2} \& {\mathrm{coker}_3} \& {\mathrm{coker}_3}
+	\arrow[from=1-1, to=1-2]
+	\arrow[color={rgb,255:red,255;green,51;blue,65}, tail, from=1-1, to=2-1]
+	\arrow[from=1-2, to=1-3]
+	\arrow[tail, from=1-2, to=2-2]
+	\arrow[color={rgb,255:red,255;green,51;blue,65}, tail, from=1-3, to=2-3]
+	\arrow["{(C,j)}", from=2-1, to=2-2]
+	\arrow["{-(p,K)}", color={rgb,255:red,255;green,51;blue,65}, from=2-1, to=3-1]
+	\arrow["{(C,q)}", two heads, from=2-2, to=2-3]
+	\arrow["{(p,A)}", from=2-2, to=3-2]
+	\arrow[from=2-3, to=2-4]
+	\arrow["{-(p,B)}", color={rgb,255:red,255;green,51;blue,65}, from=2-3, to=3-3]
+	\arrow[from=2-4, to=3-4]
+	\arrow["{(Y,j)}", from=3-1, to=3-2]
+	\arrow["{-(i,K)}", color={rgb,255:red,255;green,51;blue,65}, two heads, from=3-1, to=4-1]
+	\arrow["{(Y,q)}", color={rgb,255:red,51;green,68;blue,255}, from=3-2, to=3-3]
+	\arrow["{(i,A)}", color={rgb,255:red,51;green,68;blue,255}, from=3-2, to=4-2]
+	\arrow["{\varepsilon _\sharp}", from=3-3, to=3-4]
+	\arrow["{-(i,B)}", color={rgb,255:red,255;green,51;blue,65}, from=3-3, to=4-3]
+	\arrow["{i^\ast}", tail, from=3-4, to=4-4]
+	\arrow["{(X,j)}", from=4-1, to=4-2]
+	\arrow[color={rgb,255:red,255;green,51;blue,65}, from=4-1, to=5-1]
+	\arrow["{(X,q)}", color={rgb,255:red,51;green,68;blue,255}, from=4-2, to=4-3]
+	\arrow["{\delta^\sharp}", from=4-2, to=5-2]
+	\arrow["{\varepsilon _\sharp}", from=4-3, to=4-4]
+	\arrow["{-\delta^\sharp}", color={rgb,255:red,255;green,51;blue,65}, from=4-3, to=5-3]
+	\arrow[from=4-4, to=5-4]
+	\arrow[from=5-1, to=5-2]
+	\arrow["{q_\ast}", tail, from=5-2, to=5-3]
+	\arrow[two heads, from=5-2, to=6-2]
+	\arrow[from=5-3, to=5-4]
+	\arrow[color={rgb,255:red,255;green,51;blue,65}, two heads, from=5-3, to=6-3]
+	\arrow[two heads, from=5-4, to=6-4]
+	\arrow[from=6-2, to=6-3]
+	\arrow[equals, from=6-3, to=6-4]
+\end{tikzcd}.
+		\end{equation}
+		计算 $(f;g) \in (X,A)\oplus (Y,B)$ 的微分:
+		\begin{enumerate}
+			\item $(X,q) (f) - (i, B)(g) = q \circ f - g \circ i = 0$.
+			\item 由 $q_\ast (\delta^\sharp (f)) = \delta^\sharp (q \circ f) = \delta^\sharp (g \circ i) = 0$, 得 $\delta^\sharp (f) = 0$.
+			\item 由 $i^\ast (\varepsilon _\sharp (g)) = \varepsilon _\sharp (g \circ i) = \varepsilon _\sharp (q \circ f) = 0$, 得 $\varepsilon _\sharp (g) = 0$.
+		\end{enumerate}
+		由全复形正合, $(f;g)$ 存在原像 $(a;b;c) \in (X,K) \oplus (Y,A) \oplus (C,B)$. 由于 $(i,K)$ 与 $(C,q)$ 是满射, 易知 $(f;g)$ 存在形如 $(0; s; 0)$ 的原像. $s$ 即为所求.
+	\end{proof}
+\end{theorem}
+
+\begin{remark}
+	扩张提升引理依赖六项正合列, 因此对预三角范畴与正合范畴适用.
+\end{remark}
+
+\begin{remark}
+	短文\cite{chenExtensionliftingLemmaTwoterm}从导出范畴的视角给出\Cref{thm:ext-lifting} 的证明.
+\end{remark}
+
+% \begin{proposition}
+% 	给定带有自等价的加法范畴 $(\mathcal{C}, \Sigma)$, 假定其满足 TR1 与 TR2. 该范畴是预三角范畴, 当且仅当存在同调与上同调的长正合列.
+% 	\begin{proof}
+% 		($\to$) 方向是熟知的. 对 ($\gets$) 方向, 需证明存在虚线处态射使得以下是三角射:
+% 		\begin{equation}
+% 		% https://q.uiver.app/#q=WzAsMTQsWzAsMCwiXFxTaWdtYSBeey0xfUMiXSxbMSwwLCJYIl0sWzIsMCwiWSJdLFszLDAsIkMiXSxbMCwxLCJcXFNpZ21hXnstMX0gQiJdLFsxLDEsIksiXSxbMiwxLCJBIl0sWzMsMSwiQiJdLFs1LDAsIlgiXSxbNiwwLCJZIl0sWzUsMSwiQSJdLFs2LDEsIkIiXSxbNCwwLCJcXFNpZ21hIFgiXSxbNCwxLCJcXFNpZ21hIEsiXSxbMCw0LCJcXFNpZ21hXnstMX0gXFxnYW1tYSIsMl0sWzEsNSwiXFxhbHBoYSIsMl0sWzMsNywiXFxnYW1tYSIsMl0sWzAsMSwiXFxTaWdtYV57LTF9XFxkZWx0YSJdLFsxLDIsImkiXSxbMiwzLCJwIl0sWzQsNSwiXFxTaWdtYV57LTF9XFx2YXJlcHNpbG9uICIsMl0sWzUsNiwiaiIsMl0sWzYsNywicSIsMl0sWzIsNiwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsOSwiaSJdLFs5LDExLCJcXGdhbW1hXFxjaXJjIHAiXSxbMTAsMTEsInEiLDJdLFs4LDEwLCJqIFxcY2lyYyBcXGFscGhhIiwyXSxbOSwxMCwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsMTIsIlxcZGVsdGEiXSxbNywxMywiXFx2YXJlcHNpbG9uIiwyXSxbMTIsMTMsIlxcU2lnbWEgXFxhbHBoYSIsMl1d
+% \begin{tikzcd}[ampersand replacement=\&]
+% 	{\Sigma ^{-1}C} \& X \& Y \& C \& {\Sigma X} \& X \& Y \\
+% 	{\Sigma^{-1} B} \& K \& A \& B \& {\Sigma K} \& A \& B
+% 	\arrow["{\Sigma^{-1}\delta}", from=1-1, to=1-2]
+% 	\arrow["{\Sigma^{-1} \gamma}"', from=1-1, to=2-1]
+% 	\arrow["i", from=1-2, to=1-3]
+% 	\arrow["\alpha"', from=1-2, to=2-2]
+% 	\arrow["p", from=1-3, to=1-4]
+% 	\arrow[dashed, from=1-3, to=2-3]
+% 	\arrow["\delta", from=1-4, to=1-5]
+% 	\arrow["\gamma"', from=1-4, to=2-4]
+% 	\arrow["{\Sigma \alpha}"', from=1-5, to=2-5]
+% 	\arrow["i", from=1-6, to=1-7]
+% 	\arrow["{j \circ \alpha}"', from=1-6, to=2-6]
+% 	\arrow[dashed, from=1-7, to=2-6]
+% 	\arrow["{\gamma\circ p}", from=1-7, to=2-7]
+% 	\arrow["{\Sigma^{-1}\varepsilon }"', from=2-1, to=2-2]
+% 	\arrow["j"', from=2-2, to=2-3]
+% 	\arrow["q"', from=2-3, to=2-4]
+% 	\arrow["\varepsilon"', from=2-4, to=2-5]
+% 	\arrow["q"', from=2-6, to=2-7]
+% \end{tikzcd}.
+% 		\end{equation}
+% 		由同调与上同调的长正合列, 我们得到类似\Cref{eq:ext-tri-lift-diagram} 的交换图. 具体地, 将 $\delta^\sharp$ 与 $\varepsilon_\sharp$ 分别换作$\mathrm{Hom}(\delta, ?)$ 与 $\mathrm{Hom}(?, \varepsilon)$, 将 $\mathbb E(M,N)$ 换作 $\mathrm{Hom}(M, \Sigma N)$. 由 $\Sigma$ 是自等价, 我们得到 $\searrow\nwarrow$ 朝向周期为 $3$ 的双复形:
+% \begin{equation}
+% 	% https://q.uiver.app/#q=WzAsMTYsWzEsMSwiKFksQSkiLFsyMzUsMTAwLDYwLDFdXSxbMSwyLCIoWCxBKSIsWzIzNSwxMDAsNjAsMV1dLFsyLDEsIihZLEIpIixbMjM1LDEwMCw2MCwxXV0sWzIsMiwiKFgsQikiLFsyMzUsMTAwLDYwLDFdXSxbMywxLCIoWSxcXFNpZ21hIEspIl0sWzMsMiwiKFgsXFxTaWdtYSBLKSJdLFsxLDMsIihcXFNpZ21hIEMsQSkiXSxbMiwzLCIoXFxTaWdtYSBDLEIpIl0sWzEsMCwiKEMsQSkiXSxbMiwwLCIoQyxCKSJdLFszLDAsIihDLFxcU2lnbWEgSykiXSxbMCwyLCIoWCxLKSJdLFswLDEsIihZLEspIl0sWzAsMCwiKEMsSykiXSxbMCwzLCIoXFxTaWdtYSBDLEspIl0sWzMsMywiKFxcU2lnbWEgQyxcXFNpZ21hIEspIl0sWzAsMSwiaV5cXGFzdCIsMCx7ImNvbG91ciI6WzIzNSwxMDAsNjBdfSxbMjM1LDEwMCw2MCwxXV0sWzAsMiwicV9cXGFzdCIsMCx7ImNvbG91ciI6WzIzNSwxMDAsNjBdfSxbMjM1LDEwMCw2MCwxXV0sWzEsMywicV9cXGFzdCIsMCx7ImNvbG91ciI6WzIzNSwxMDAsNjBdfSxbMjM1LDEwMCw2MCwxXV0sWzIsNCwiXFx2YXJlcHNpbG9uIF9cXGFzdCJdLFszLDUsIlxcdmFyZXBzaWxvbiBfXFxhc3QiXSxbNCw1LCJpXlxcYXN0Il0sWzEsNiwiXFxkZWx0YV5cXGFzdCJdLFszLDcsIlxcZGVsdGFeXFxhc3QiXSxbNiw3LCJxX1xcYXN0Il0sWzgsMCwicF5cXGFzdCJdLFs5LDIsInBeXFxhc3QiXSxbOCw5LCJxX1xcYXN0Il0sWzksMTAsIlxcdmFyZXBzaWxvbiBfXFxhc3QiXSxbMTAsNCwicF5cXGFzdCJdLFsxMywxMiwicF5cXGFzdCJdLFsxMiwxMSwiaV5cXGFzdCJdLFsxMSwxNCwiXFxkZWx0YV5cXGFzdCJdLFsxNCw2LCJqX1xcYXN0Il0sWzExLDEsImpfXFxhc3QiXSxbMTIsMCwial9cXGFzdCJdLFsxMyw4LCJqX1xcYXN0Il0sWzUsMTUsIlxcZGVsdGFeXFxhc3QiXSxbNywxNSwiXFx2YXJlcHNpbG9uIF9cXGFzdCJdLFsyLDMsImleXFxhc3QiLDAseyJjb2xvdXIiOlsyMzUsMTAwLDYwXX0sWzIzNSwxMDAsNjAsMV1dXQ==
+% \begin{tikzcd}
+% 	{(C,K)} & {(C,A)} & {(C,B)} & {(C,\Sigma K)} \\
+% 	{(Y,K)} & \textcolor{rgb,255:red,51;green,68;blue,255}{{(Y,A)}} & \textcolor{rgb,255:red,51;green,68;blue,255}{{(Y,B)}} & {(Y,\Sigma K)} \\
+% 	{(X,K)} & \textcolor{rgb,255:red,51;green,68;blue,255}{{(X,A)}} & \textcolor{rgb,255:red,51;green,68;blue,255}{{(X,B)}} & {(X,\Sigma K)} \\
+% 	{(\Sigma C,K)} & {(\Sigma C,A)} & {(\Sigma C,B)} & {(\Sigma C,\Sigma K)}
+% 	\arrow["{j_\ast}", from=1-1, to=1-2]
+% 	\arrow["{p^\ast}", from=1-1, to=2-1]
+% 	\arrow["{q_\ast}", from=1-2, to=1-3]
+% 	\arrow["{p^\ast}", from=1-2, to=2-2]
+% 	\arrow["{\varepsilon _\ast}", from=1-3, to=1-4]
+% 	\arrow["{p^\ast}", from=1-3, to=2-3]
+% 	\arrow["{p^\ast}", from=1-4, to=2-4]
+% 	\arrow["{j_\ast}", from=2-1, to=2-2]
+% 	\arrow["{i^\ast}", from=2-1, to=3-1]
+% 	\arrow["{q_\ast}", color={rgb,255:red,51;green,68;blue,255}, from=2-2, to=2-3]
+% 	\arrow["{i^\ast}", color={rgb,255:red,51;green,68;blue,255}, from=2-2, to=3-2]
+% 	\arrow["{\varepsilon _\ast}", from=2-3, to=2-4]
+% 	\arrow["{i^\ast}", color={rgb,255:red,51;green,68;blue,255}, from=2-3, to=3-3]
+% 	\arrow["{i^\ast}", from=2-4, to=3-4]
+% 	\arrow["{j_\ast}", from=3-1, to=3-2]
+% 	\arrow["{\delta^\ast}", from=3-1, to=4-1]
+% 	\arrow["{q_\ast}", color={rgb,255:red,51;green,68;blue,255}, from=3-2, to=3-3]
+% 	\arrow["{\delta^\ast}", from=3-2, to=4-2]
+% 	\arrow["{\varepsilon _\ast}", from=3-3, to=3-4]
+% 	\arrow["{\delta^\ast}", from=3-3, to=4-3]
+% 	\arrow["{\delta^\ast}", from=3-4, to=4-4]
+% 	\arrow["{j_\ast}", from=4-1, to=4-2]
+% 	\arrow["{q_\ast}", from=4-2, to=4-3]
+% 	\arrow["{\varepsilon _\ast}", from=4-3, to=4-4]
+% \end{tikzcd}.
+% \end{equation}
+% 		类似的计算表明 $(j\circ \alpha; \gamma \circ p) \in (X,A)\oplus (Y,B)$ 的微分为 $0$, 从而存在原像 $(a;b;c) \in (X,K) \oplus (Y,A) \oplus (C,B)$.
+% 	\end{proof}
+% \end{proposition}
