@@ -407,8 +407,8 @@ Happel 定理 (\cite{happelTriangulatedCategoriesRepresentation1988}, 章节 1.2
 		\end{equation}
 		以上 $I_f$ 由内射对象的提升性取定, $C_f$ 由 ET3 取定. 显然, $? \mapsto C_?$ 通常不是 $\mathcal{C}$ 中的函子; 直觉上看, 这诱导了 $\mathcal{C} / \mathcal{B}$ 中的加法自函子. 我们将这一证明拆解作如下几步.
 		\begin{enumerate}
-			\item[步骤 0] (选定骨架 $\mathcal{C} / \mathcal{B} \to \mathcal{K}$). 考虑复合 $\mathcal{C} \xrightarrow{C_\bullet} \mathcal{C} \to \mathcal{C} / \mathcal{B}$. 为避免对象相差一个同构, 我们依照类的选择公理取定 $\mathcal{C} / \mathcal{B}$ 的骨架 $\mathcal{K}$ (同构类的代表元所在的全子范畴), 并记对应的全忠实函子 $[\cdot] : \mathcal{C} / \mathcal{B} \to \mathcal{K}$. 态射层面, 复合 $\mathcal{C} \to \mathcal{C} / \mathcal{B} \to \mathcal{K}$ 将 $f$ 对应至 $[[f]]$, 往后简略地记作 $[f]$.
-			\item[步骤 1] (检验函子 $\mathcal{C} \xrightarrow{C_\bullet} \mathcal{C} \xrightarrow{[\cdot]} \mathcal{K}$). 我们检验恒等律与复合律.
+			\item[步骤 0] (选定骨架 $\mathcal{C} / \mathcal{B} \to \mathcal{K}$). 考虑复合 $\mathcal{C} \xrightarrow{C_\cdot} \mathcal{C} \to \mathcal{C} / \mathcal{B}$. 为避免对象相差一个同构, 我们依照类的选择公理取定 $\mathcal{C} / \mathcal{B}$ 的骨架 $\mathcal{K}$ (同构类的代表元所在的全子范畴), 并记对应的全忠实函子 $[\cdot] : \mathcal{C} / \mathcal{B} \to \mathcal{K}$. 态射层面, 复合 $\mathcal{C} \to \mathcal{C} / \mathcal{B} \to \mathcal{K}$ 将 $f$ 对应至 $[[f]]$, 往后简略地记作 $[f]$.
+			\item[步骤 1] (检验函子 $\mathcal{C} \xrightarrow{C_\cdot} \mathcal{C} \xrightarrow{[\cdot]} \mathcal{K}$). 我们检验恒等律与复合律.
 			\begin{enumerate}
 				\item (恒等律). 不妨约定\Cref{eq:extri-frobenius-2} 中 $I_{1_X} := 1_{I_X}$, $C_{1_X} := 1_{C_X}$. 这不会引起矛盾.
 				\item (复合律). 考虑以下 $\mathcal{C}$ 中交换图
@@ -462,7 +462,7 @@ Happel 定理 (\cite{happelTriangulatedCategoriesRepresentation1988}, 章节 1.2
 				\end{lemma}
 				\end{quoting}
 			\end{enumerate}
-			\item[步骤 2] (证明函子 $\mathcal{C} \xrightarrow {[C_\bullet]} \mathcal{K}$ 是加法函子). 对加法范畴间的函子而言, 加法函子就是保持直和的函子 (证明熟知, 如\cite{Lemma12710DLPThe}). 由于 $\mathcal{C} / \mathcal{B} \to \mathcal{K}$ 是加法函子, 故仅需证明 $[C_X \oplus C_Y] = [C_{X \oplus Y}]$. 任取 conflation 间的态射 $(1,n,q)$ 与 $(1,m,p)$, 如下所示:
+			\item[步骤 2] (证明函子 $\mathcal{C} \xrightarrow {[C_\cdot]} \mathcal{K}$ 是加法函子). 对加法范畴间的函子而言, 加法函子就是保持直和的函子 (证明熟知, 如\cite{Lemma12710DLPThe}). 由于 $\mathcal{C} / \mathcal{B} \to \mathcal{K}$ 是加法函子, 故仅需证明 $[C_X \oplus C_Y] = [C_{X \oplus Y}]$. 任取 conflation 间的态射 $(1,n,q)$ 与 $(1,m,p)$, 如下所示:
 			\begin{equation}
 				% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYXFxvcGx1cyBZIl0sWzEsMCwiSV9YXFxvcGx1cyBJX1kiXSxbMiwwLCJDX1hcXG9wbHVzIENfWSJdLFszLDAsIlxcLCJdLFswLDEsIlhcXG9wbHVzIFkiXSxbMSwxLCJJX3tYXFxvcGx1cyBZfSJdLFsyLDEsIkNfe1hcXG9wbHVzIFl9Il0sWzMsMSwiXFwsIl0sWzAsMSwiaV9YXFxvcGx1cyBpX1kiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwicF9YXFxvcGx1cyBwX1kiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiwzLCJcXGRlbHRhX1ggXFxvcGx1cyBcXGRlbHRhX1kiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw2LCJwX1oiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNiw3LCJcXGRlbHRhX3tYXFxvcGx1cyBZfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDQsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNSwiaV9aIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDUsIm0iLDAseyJvZmZzZXQiOi0yLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwxLCJuIiwwLHsib2Zmc2V0IjotMiwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNiwicCIsMCx7Im9mZnNldCI6LTIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDIsInEiLDAseyJvZmZzZXQiOi0yLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
 \begin{tikzcd}[ampersand replacement=\&]
@@ -482,7 +482,7 @@ Happel 定理 (\cite{happelTriangulatedCategoriesRepresentation1988}, 章节 1.2
 \end{tikzcd}.
 			\end{equation}
 			依照\Cref{lem:extri-frobenius-1-2}, $[pq] = [1_{C_{X \oplus Y}}]$ 与 $[qp] = [1_{C_X \oplus C_Y}]$.
-			\item[步骤 3] (证明加法函子 $\mathcal{C} \xrightarrow{[C_\bullet]} \mathcal{K}$ 诱导了 $\mathcal{K}$ 的自函子). 不妨约定对一切投射对象 $P$, \Cref{eq:extri-frobenius-2} 中均有 $I_P = P$ 与 $C_P = 0$. 这不会引起任何矛盾. 我们得到诱导的函子 $\mathcal{C} / \mathcal{B} \xrightarrow {[C_\bullet]}\mathcal{K}$. 对任意范畴等价 $\mathcal{K} \to \mathcal{C} / \mathcal{B}$, 复合 $[C_\bullet]$ 所得的自函子是唯一的, 记作 $\Sigma$.
+			\item[步骤 3] (证明加法函子 $\mathcal{C} \xrightarrow{[C_\cdot]} \mathcal{K}$ 诱导了 $\mathcal{K}$ 的自函子). 不妨约定对一切投射对象 $P$, \Cref{eq:extri-frobenius-2} 中均有 $I_P = P$ 与 $C_P = 0$. 这不会引起任何矛盾. 我们得到诱导的函子 $\mathcal{C} / \mathcal{B} \xrightarrow {[C_\cdot]}\mathcal{K}$. 对任意范畴等价 $\mathcal{K} \to \mathcal{C} / \mathcal{B}$, 复合 $[C_\cdot]$ 所得的自函子是唯一的, 记作 $\Sigma$.
 			\item[步骤 4] (对外三角范畴 $\mathcal{K}$, 有函子的自然同构 $\mathbb E' (Z,X) \simeq (Z, \Sigma X)$). 我们将同构选取如下:
 			\begin{equation}
 				% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWiJdLFsyLDAsIlgiXSxbMSwwLCJFIl0sWzMsMCwiXFwsIl0sWzIsMSwiQ19aIl0sWzAsMSwiWiJdLFsxLDEsIklfWiJdLFs0LDAsIltcXHZhcmVwc2lsb24gXSJdLFszLDEsIlxcLCJdLFs0LDEsIltcXHZhcnBoaSBdIl0sWzUsMSwiW1xcdmFycGhpXSJdLFs1LDAsIltcXHZhcnBoaV5cXGFzdCBcXGRlbHRhX1pdIl0sWzAsMiwiZiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMiwxLCJnIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsMywiXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsNCwiXFx2YXJwaGkgIl0sWzUsNiwiaV9aIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs2LDQsInBfWiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDYsIlxcbGFtYmRhIl0sWzQsOCwiXFxkZWx0YV9aIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsOSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFsxMCwxMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFsyMSwyMiwiMToxIiwxLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d

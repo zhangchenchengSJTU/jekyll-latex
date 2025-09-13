@@ -1,4 +1,3 @@
-
 \section{Hovey 对应}
 
 \subsection{余挠对}
@@ -32,7 +31,7 @@
 
 我们将 ET4 系列公理转化作如下引理.
 
-\begin{lemma}
+\begin{lemma}\label{lem:star-asso}
 	对任意对象类 $\mathcal{X}$, $\mathcal{Y}$, 与 $\mathcal{Z}$, 有如下等式.
 	\begin{enumerate}
 		\item $\mathrm{Cone}(\mathcal{X} , \mathrm{Cone}(\mathcal{Y} , \mathcal{Z} )) = \mathrm{Cone}(\mathcal{Y} \ast \mathcal{X} , \mathcal{Z} )$;
@@ -109,7 +108,7 @@
 
 结合 \Cref{thm:bi-pullback}, 得如下引理.
 
-\begin{lemma}
+\begin{lemma}\label{lem:star-inclu}
 	给定任意对象类 $\mathcal{X}$, $\mathcal{Y}$ 与 $\mathcal{Z}$, 有以下包含关系.
 	\begin{enumerate}
 		\item $\mathrm{coCone}(\mathcal{X} ,\mathcal{Z} )\ast \mathcal{Y} \subseteq \mathrm{coCone}(\mathcal{X} \ast \mathcal{Y} , \mathcal{Z} )\supseteq \mathrm{coCone}(\mathcal{Y} ,\mathrm{Cone}(\mathcal{X} ,\mathcal{Z} ))$;
@@ -157,7 +156,7 @@
 	通常将 $(\mathcal{U}, \mathcal{V})$ 作为余挠对的固定顺序. 注意到 $\mathbb E(\mathcal{U}, \mathcal{V}) = 0$.
 \end{remark}
 
-\begin{lemma}
+\begin{lemma}\label{lem:cotorsion-pair-generated}
 	对任意对象类 $\mathcal{X}$.
 	\begin{enumerate}
 		\item $(^\perp \mathcal{X}, (^\perp \mathcal{X})^\perp)$ 是余挠对, 称作 $\mathcal{X}$ \textbf{生成}的余挠对;
@@ -303,7 +302,7 @@
 	\end{proof}
 \end{theorem}
 
-\begin{remark}
+\begin{remark}\label{rmk:adjoint}
 	对偶可证, 全子加法范畴的嵌入 $\mathcal{V}/\omega \to \mathcal{C} / \omega$ 存在左伴随. 综合以上结果得
 	\begin{equation}
 		% https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXG1hdGhjYWwgVSAvIFxcb21lZ2EiXSxbMiwwLCJcXG1hdGhjYWwgQyAvIFxcb21lZ2EiXSxbNCwwLCJcXG1hdGhjYWwgViAvIFxcb21lZ2EiXSxbMCwxLCJcXHRleHR75YWo5a2Q6IyD55W0fSIsMCx7Im9mZnNldCI6LTEsInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsMCwiKC0pXlUiLDAseyJvZmZzZXQiOi00fV0sWzIsMSwiXFx0ZXh0e+WFqOWtkOiMg+eVtH0iLDAseyJvZmZzZXQiOi0xLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFsxLDIsIigtKV9WIiwwLHsib2Zmc2V0IjotNH1dLFs2LDUsIlxcYm90IiwxLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsNCwiXFxib3QiLDEseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9LCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
@@ -494,6 +493,10 @@ $(\text{投射对象}, \mathcal{C})$ 与 $(\mathcal{C}, \text{内射对象})$ �
 
 \end{theorem}
 
+\begin{corollary}
+	若 Frobenius 范畴 $(\mathcal{C}, \mathcal{P})$ 存在遗传完备的余挠三元组 $(\mathcal{T},\mathcal{U},\mathcal{V})$, 则全子范畴的包含 $\mathcal{U} / \mathcal{P} \to \mathcal{C} / \mathcal{P}$ 存在左右伴随 (\Cref{rmk:adjoint}).
+\end{corollary}
+
 \begin{corollary}\label{cor:enough-proj-inj}
     若范畴存在遗传完备的余挠三元组, 则该范畴有足够的投射对象与内射对象.
     \begin{proof}
@@ -566,9 +569,9 @@ $(\text{投射对象}, \mathcal{C})$ 与 $(\mathcal{C}, \text{内射对象})$ �
         \begin{equation}
             % https://q.uiver.app/#q=WzAsOCxbMCwxLCJNIl0sWzEsMSwiViJdLFsyLDEsIk4iXSxbMCwyLCJNIl0sWzEsMiwiTV9WIl0sWzIsMiwiTV9VIl0sWzMsMCwiWCJdLFszLDMsIlAiXSxbMCwzLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDEsImkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwicCIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDUsIlxcbXUiXSxbMyw0LCJqIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs0LDUsInEiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSw0LCJcXGxhbWJkYSJdLFs2LDIsImYiLDJdLFs2LDcsImEiXSxbNyw1LCJiIiwyXSxbNyw0LCJjIiwwLHsibGFiZWxfcG9zaXRpb24iOjYwLCJjdXJ2ZSI6LTJ9XSxbNiwxLCJnIiwyLHsibGFiZWxfcG9zaXRpb24iOjYwLCJjdXJ2ZSI6Mn1dXQ==
 \begin{tikzcd}[ampersand replacement=\&]
-	\&\&\& X \\
+	\&\&\& X \\[-12pt]
 	M \& V \& N \\
-	M \& {M_V} \& {M_U} \\
+	M \& {M_V} \& {M_U} \\[-12pt]
 	\&\&\& P
 	\arrow["g"'{pos=0.6}, curve={height=12pt}, from=1-4, to=2-2]
 	\arrow["f"', from=1-4, to=2-3]
@@ -607,5 +610,498 @@ $(\text{投射对象}, \mathcal{C})$ 与 $(\mathcal{C}, \text{内射对象})$ �
     \end{proof}
 \end{lemma}
 
-\subsection{闭模型结构}
+\subsection{态射观点}
+
+一些经验表明, 研究态射比研究对象更为方便. 例如, \Cref{thm:ext-lifting} 是 $\mathbb E$-垂直关系在态射层面的推广. 若不涉及 conflation 或 $\mathbb E$-函子, 此处的范畴是一般的加法范畴.
+
+\begin{definition}
+	(态射的弱垂直关系). 称态射 $f$ 与 $g$ 是弱垂直的, 若对任意交换方块 (下图左), 总存在虚线态射使得下图右交换:
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsOCxbMCwwLCJcXGNkb3QiXSxbMSwwLCJcXGNkb3QiXSxbMCwxLCJcXGNkb3QiXSxbMSwxLCJcXGNkb3QiXSxbMywwLCJcXGNkb3QiXSxbNCwwLCJcXGNkb3QiXSxbNCwxLCJcXGNkb3QiXSxbMywxLCJcXGNkb3QiXSxbMCwxXSxbMCwyLCJmIiwyXSxbMiwzXSxbMSwzLCJnIl0sWzQsNV0sWzUsNiwiZyJdLFs0LDcsImYiLDJdLFs3LDZdLFs3LDUsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	\cdot \& \cdot \&\& \cdot \& \cdot \\
+	\cdot \& \cdot \&\& \cdot \& \cdot
+	\arrow[from=1-1, to=1-2]
+	\arrow["f"', from=1-1, to=2-1]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow[from=1-4, to=1-5]
+	\arrow["f"', from=1-4, to=2-4]
+	\arrow["g", from=1-5, to=2-5]
+	\arrow[from=2-1, to=2-2]
+	\arrow[dashed, from=2-4, to=1-5]
+	\arrow[from=2-4, to=2-5]
+\end{tikzcd}.
+	\end{equation}
+	常用的记号是 $f \pitchfork g$, 或 $f \boxslash g$.
+\end{definition}
+
+\begin{remark}
+	之所以称之弱垂直, 是因为虚线处态射不必唯一. 弱垂直理论详见 \cite{joyal} 的附录 D.
+\end{remark}
+
+\begin{definition}
+	(弱垂直对). 态射类 $(\mathcal{C}, \mathcal{F})$ 是弱垂直对, 若 $\mathcal{C}^\pitchfork = \mathcal{F}$, 且 $\mathcal{C} = {}^\pitchfork \mathcal{F}$. 类似\Cref{lem:cotorsion-pair-generated} 定义
+	\begin{enumerate}
+		\item $(^\pitchfork \mathcal{S}, (^\pitchfork \mathcal{S})^\pitchfork)$ 是由 $\mathcal{S}$ 生成的 (也称\textbf{纤维地生成的}) 弱垂直对;
+		\item $({}^\pitchfork (\mathcal{S}^\pitchfork), \mathcal{S}^\pitchfork)$ 是由 $\mathcal{S}$ 余生成的 (也称\textbf{余纤维地生成}的) 弱垂直对.
+	\end{enumerate}
+	良定义性由 Galois 连接保证.
+\end{definition}
+
+\begin{proposition}\label{prop:adjoint-lifting}
+	(伴随提升). 假定 $F \dashv G$ 是伴随函子, 则 $(Ff) \pitchfork g$ 当且仅当 $f \pitchfork (Gg)$.
+	\begin{proof}
+		从\Cref{eq:ext-tri-lift} 的视角转述命题即可. 自然同构不影响``公共的原像''之选取.
+	\end{proof}
+\end{proposition}
+
+\begin{lemma}\label{lem:basic-functorial-lifting}
+	给定态射类 $\mathcal{S}$, 以下是一些基本事实. 
+	\begin{enumerate}
+		\item ${}^\pitchfork\mathcal{S}$ 包含一切同构, 同时在复合同构的意义下封闭.
+		\item ${}^\pitchfork\mathcal{S}$ 对形变收缩 (态射的形变收缩见\Cref{thm:ext-tri-weakly-idempotent-complete}) 封闭.
+		\begin{proof}
+			假定 $f \pitchfork g$, $f'$ 是 $f$ 的形变收缩. 任取定交换方块 $\square : (\alpha, \beta) : f' \Rightarrow g$. 由 $f \pitchfork g$, 取 $s$ 使得 $gs = \beta q$ 且 $sf = \alpha p$:
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsOCxbMiwwLCJcXGNkb3QiXSxbMywwLCJcXGNkb3QiXSxbMywxLCJcXGNkb3QiXSxbMiwxLCJcXGNkb3QiXSxbMSwxLCJcXGNkb3QiXSxbMCwxLCJcXGNkb3QiXSxbMCwwLCJcXGNkb3QiXSxbMSwwLCJcXGNkb3QiXSxbMCwxLCJcXGFscGhhIl0sWzEsMiwiZyJdLFswLDMsImYnIl0sWzMsMiwiXFxiZXRhIl0sWzUsNCwiaiJdLFs2LDUsImYnIl0sWzcsNCwiZiJdLFs3LDAsInAiXSxbNCwzLCJxIl0sWzYsNywiaSJdLFs0LDEsInMiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsImNvbG91ciI6WzIzNCwxMDAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFsyMzQsMTAwLDYwLDFdXV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	\cdot \& \cdot \& \cdot \& \cdot \\
+	\cdot \& \cdot \& \cdot \& \cdot
+	\arrow["i", from=1-1, to=1-2]
+	\arrow["{f'}", from=1-1, to=2-1]
+	\arrow["p", from=1-2, to=1-3]
+	\arrow["f", from=1-2, to=2-2]
+	\arrow["\alpha", from=1-3, to=1-4]
+	\arrow["{f'}", from=1-3, to=2-3]
+	\arrow["g", from=1-4, to=2-4]
+	\arrow["j", from=2-1, to=2-2]
+	\arrow["s"{pos=0.3}, color={rgb,255:red,51;green,71;blue,255}, dashed, from=2-2, to=1-4]
+	\arrow["q", from=2-2, to=2-3]
+	\arrow["\beta", from=2-3, to=2-4]
+\end{tikzcd}
+			\end{equation}
+			今断言 $s j$ 给出交换方块 $\square$ 的提升. 检验得 $(sj) f' = s f i = \alpha p i = \alpha$, 且 $g (sj) = \beta q j = \beta$.
+		\end{proof}
+		\item ${}^\pitchfork\mathcal{S}$ 对范畴的推出 (若存在) 封闭.
+		\begin{proof}
+			假定 $f \pitchfork g$, 且 $f'$ 是 $f$ 关于 $m$ 的任意推出. 下证明交换方块 $\square : (\alpha, \beta) : f' \Rightarrow g$ 有提升 $t$:
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsNixbMSwwLCJcXGNkb3QiXSxbMiwwLCJcXGNkb3QiXSxbMiwxLCJcXGNkb3QiXSxbMSwxLCJcXGNkb3QiXSxbMCwxLCJcXGNkb3QiXSxbMCwwLCJcXGNkb3QiXSxbMCwxLCJcXGFscGhhIl0sWzEsMiwiZyJdLFswLDMsImYnIl0sWzMsMiwiXFxiZXRhIl0sWzUsNCwiZiJdLFs1LDAsIm0iXSxbNCwzLCJuIl0sWzQsMSwicyIsMCx7ImxhYmVsX3Bvc2l0aW9uIjo0MCwiY29sb3VyIjpbMjM0LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzIzNCwxMDAsNjAsMV1dLFszLDEsInQiLDEseyJjb2xvdXIiOlszNTcsMTAwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzU3LDEwMCw2MCwxXV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	\cdot \& \cdot \& \cdot \\
+	\cdot \& \cdot \& \cdot
+	\arrow["m", from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["\alpha", from=1-2, to=1-3]
+	\arrow["{f'}", from=1-2, to=2-2]
+	\arrow["g", from=1-3, to=2-3]
+	\arrow["s"{pos=0.4}, color={rgb,255:red,51;green,71;blue,255}, dashed, from=2-1, to=1-3]
+	\arrow["n", from=2-1, to=2-2]
+	\arrow["t"{description}, color={rgb,255:red,255;green,51;blue,61}, dashed, from=2-2, to=1-3]
+	\arrow["\beta", from=2-2, to=2-3]
+\end{tikzcd}.
+			\end{equation}
+			取 $s$ 为 $f \pitchfork g$ 对应的提升态射, 由推出的泛性质取 $t$ 使得 $t f' = \alpha$ 且 $tn = s$. 为说明 $gt = \beta$, 只需在右侧复合推出诱导的满态射 $(n \ f')$ 即可.
+		\end{proof}
+		\item ${}^\pitchfork\mathcal{S}$ 对任意余积 (若存在) 封闭.
+		\begin{proof}
+			给定一族 $f_i \pitchfork g$. 由\Cref{prop:adjoint-lifting}, 以下提升问题等价:
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsOCxbMCwwLCJcXGNvcHJvZCBfe2kgXFxpbiBJfVhfaSAiXSxbMiwwLCJBIl0sWzIsMSwiQiJdLFswLDEsIlxcY29wcm9kIF97aSBcXGluIEl9WV9pIl0sWzMsMCwiKFhfaSlfe2kgXFxpbiBJfSJdLFszLDEsIihZX2kpX3tpIFxcaW4gSX0iXSxbNSwwLCIoQSlfe2kgXFxpbiBJfSJdLFs1LDEsIihCKV97aSBcXGluIEl9Il0sWzAsMSwiXFxhbHBoYSJdLFsxLDIsImciXSxbMCwzLCJcXGNvcHJvZCBfe2kgXFxpbiBJfWZfaSIsMl0sWzMsMiwiXFxiZXRhIl0sWzQsNSwiKGZfaSlfe2kgXFxpbiBJfSIsMl0sWzQsNiwiKFxcYWxwaGEgXFxjaXJjIGVfaSlfe2kgXFxpbiBJfSJdLFs1LDcsIihcXGJldGEgXFxjaXJjIGVfaSlfe2kgXFxpbiBJfSIsMl0sWzYsNywiKGcpX3tpIFxcaW4gSX0iXSxbNSw2LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywxLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{\coprod _{i \in I}X_i } \&\& A \& {(X_i)_{i \in I}} \&\& {(A)_{i \in I}} \\
+	{\coprod _{i \in I}Y_i} \&\& B \& {(Y_i)_{i \in I}} \&\& {(B)_{i \in I}}
+	\arrow["\alpha", from=1-1, to=1-3]
+	\arrow["{\coprod _{i \in I}f_i}"', from=1-1, to=2-1]
+	\arrow["g", from=1-3, to=2-3]
+	\arrow["{(\alpha \circ e_i)_{i \in I}}", from=1-4, to=1-6]
+	\arrow["{(f_i)_{i \in I}}"', from=1-4, to=2-4]
+	\arrow["{(g)_{i \in I}}", from=1-6, to=2-6]
+	\arrow[dashed, from=2-1, to=1-3]
+	\arrow["\beta", from=2-1, to=2-3]
+	\arrow[dashed, from=2-4, to=1-6]
+	\arrow["{(\beta \circ e_i)_{i \in I}}"', from=2-4, to=2-6]
+\end{tikzcd}.
+			\end{equation}
+			右图所示的 $(X_i)_{i \in I}$ 与 $(Y_i)_{i \in I}$ 是离散范畴, 从而提升态射 $(s_i)_{i \in I}$ 可逐次构造.
+		\end{proof}
+		\item ${}^\pitchfork\mathcal{S}$ 对超限复合 (若存在) 封闭.
+		\begin{proof}
+			取定序数 $\alpha$ 与函子 $(X, f) : \alpha \to \mathcal{C}$. 此时 $(X,f)$ 对应图
+			\begin{equation}
+				X_0 \xrightarrow{f_{1,0}} X_1 \xrightarrow{f_{2,1}} X_2 \xrightarrow{f_{3,2}} \cdots \xrightarrow{f_{\beta+1,\beta}} X_{\beta+1} \to \cdots.
+			\end{equation}
+			称之超限复合, 若对极限序数 $\gamma \in \alpha$ (若存在) 总有 $\varinjlim_{\beta \in \gamma} X_\beta = X_\gamma$.
+			\\
+			不妨假定 $\alpha$ 是极限序数, 且恒有 $f_\bullet \pitchfork g$. 下证明 $f_{\alpha, 0} : X_0 \to \varinjlim _{\beta \in \alpha} X_\beta$ 也属于 ${}^\pitchfork g$. 显然恒等态射的超限复合是恒等, 不妨记 $X_0 = \varinjlim _{\beta \in \alpha} (X_0)_\beta$. 以下两个提升问题是等价的:
+			\begin{equation}
+% https://q.uiver.app/#q=WzAsOCxbMCwwLCJcXHZhcmluamxpbV97XFxiZXRhIFxcaW4gXFxhbHBoYX0oWF8wKV9cXGJldGEiXSxbMiwwLCJBIl0sWzIsMSwiQiJdLFswLDEsIlxcdmFyaW5qbGltX3tcXGJldGEgXFxpbiBcXGFscGhhfVhfXFxiZXRhIl0sWzMsMCwiKFhfMClfe1xcYmV0YSBcXGluIFxcYWxwaGF9Il0sWzMsMSwiKFlfXFxiZXRhKV97XFxiZXRhIFxcaW4gSX0iXSxbNSwwLCIoQSlfe2kgXFxpbiBJfSJdLFs1LDEsIihCKV97aSBcXGluIEl9Il0sWzAsMSwicCJdLFsxLDIsImciXSxbMCwzLCJcXHZhcmluamxpbSBfe197XFxiZXRhXFxpbiBcXGFscGhhfX0oZl97XFxiZXRhLCAwfSkiLDJdLFszLDIsInEiXSxbNCw1LCIoZl97XFxiZXRhLDB9KV97XFxiZXRhIFxcaW4gXFxhbHBoYX0iLDJdLFs0LDYsIihwIFxcY2lyYyBlX2kpX3tpIFxcaW4gSX0iXSxbNSw3LCIocVxcY2lyYyBlX2kpX3tpIFxcaW4gSX0iLDJdLFs2LDcsIihnKV97aSBcXGluIEl9Il0sWzUsNiwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsMSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}
+	{\varinjlim_{\beta \in \alpha}(X_0)_\beta} && A & {(X_0)_{\beta \in \alpha}} && {(A)_{i \in I}} \\
+	{\varinjlim_{\beta \in \alpha}X_\beta} && B & {(Y_\beta)_{\beta \in I}} && {(B)_{i \in I}}
+	\arrow["p", from=1-1, to=1-3]
+	\arrow["{\varinjlim _{_{\beta\in \alpha}}(f_{\beta, 0})}"', from=1-1, to=2-1]
+	\arrow["g", from=1-3, to=2-3]
+	\arrow["{(p \circ e_i)_{i \in I}}", from=1-4, to=1-6]
+	\arrow["{(f_{\beta,0})_{\beta \in \alpha}}"', from=1-4, to=2-4]
+	\arrow["{(g)_{i \in I}}", from=1-6, to=2-6]
+	\arrow[dashed, from=2-1, to=1-3]
+	\arrow["q", from=2-1, to=2-3]
+	\arrow[dashed, from=2-4, to=1-6]
+	\arrow["{(q\circ e_i)_{i \in I}}"', from=2-4, to=2-6]
+\end{tikzcd}.
+			\end{equation}
+			以下对右图归纳地构造 $s_\beta$.
+			\begin{enumerate}
+				\item 若 $\beta = 0$, 则 $f_{\beta, 0} = 1_{X_0}$. 取 $s_0 := \alpha \circ e_0$ 即可.
+				\item 若 $s_{\beta}$ 被构造, 下构造 $s_{\beta + 1} : t_\beta \circ f_{\beta + 1, \beta}$ 如下图所示:
+				\begin{equation}
+					% https://q.uiver.app/#q=WzAsNSxbMCwxLCJYX1xcYmV0YSJdLFs0LDAsIkEiXSxbNCwxLCJCIl0sWzIsMSwiWF97XFxiZXRhICsgMX0iXSxbMCwwLCJYXzAiXSxbMSwyLCJnIl0sWzAsMywiZl97XFxiZXRhICsgMSwgXFxiZXRhfSIsMl0sWzMsMl0sWzAsMSwic19cXGJldGEiXSxbNCwwLCJmX3tcXGJldGEsIDB9IiwyXSxbNCwxLCJzXzAiXSxbMywxLCJzX3tcXGJldGEgKyAxfSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	{X_0} \&\&\&\& A \\
+	{X_\beta} \&\& {X_{\beta + 1}} \&\& B
+	\arrow["{s_0}", from=1-1, to=1-5]
+	\arrow["{f_{\beta, 0}}"', from=1-1, to=2-1]
+	\arrow["g", from=1-5, to=2-5]
+	\arrow["{s_\beta}", from=2-1, to=1-5]
+	\arrow["{f_{\beta + 1, \beta}}"', from=2-1, to=2-3]
+	\arrow["{s_{\beta + 1}}"', dashed, from=2-3, to=1-5]
+	\arrow[from=2-3, to=2-5]
+\end{tikzcd}.
+				\end{equation}
+				\item 若 $\beta$ 是极限序数, 且 $(s_\bullet)_{< \beta}$ 均被构造, 则下图是交换图的滤过极限, 从而显然交换:
+				\begin{equation}
+					% https://q.uiver.app/#q=WzAsNCxbMCwxLCIoWClfezxcXGJldGF9Il0sWzIsMCwiKEEpX3s8XFxiZXRhfSJdLFsyLDEsIihCKV97PFxcYmV0YX0iXSxbMCwwLCIoWF8wKV97PFxcYmV0YX0iXSxbMSwyLCIoZylfezxcXGJldGF9Il0sWzAsMSwic197PFxcYmV0YX0iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywwLCIoZl97LSwgMH0pX3s8IFxcYmV0YX0iLDJdLFszLDEsIihzXzApX3s8XFxiZXRhfSJdLFswLDIsIihxXFxjaXJjIGUpX3s8XFxiZXRhfSIsMl1d
+\begin{tikzcd}[ampersand replacement=\&]
+	{(X_0)_{<\beta}} \&\& {(A)_{<\beta}} \\
+	{(X)_{<\beta}} \&\& {(B)_{<\beta}}
+	\arrow["{(s_0)_{<\beta}}", from=1-1, to=1-3]
+	\arrow["{(f_{-, 0})_{< \beta}}"', from=1-1, to=2-1]
+	\arrow["{(g)_{<\beta}}", from=1-3, to=2-3]
+	\arrow["{s_{<\beta}}"{description}, dashed, from=2-1, to=1-3]
+	\arrow["{(q\circ e)_{<\beta}}"', from=2-1, to=2-3]
+\end{tikzcd}.
+				\end{equation}
+			\end{enumerate}
+		\end{proof}
+	\end{enumerate}
+\end{lemma}
+
+\begin{example}\label{eg:cotorsion-to-lifting}
+	考虑范畴向态射范畴的两种嵌入 $X \mapsto (0 \to X)$ 与 $X \mapsto (X \to 0)$. 给定余挠对 $(\mathcal{U},\mathcal{V})$, 取 $(0 \to \mathcal{U})$ 余生成的弱垂直对 $(^\pitchfork((0 \to \mathcal{U})^\pitchfork), (0 \to \mathcal{U})^\pitchfork)$. 此时有如下结论.
+	\begin{enumerate}
+		\item 给定 conflation $V \overset i \rightarrowtail B \overset p \twoheadrightarrow C$, $V \in \mathcal{V}$, 则 $p \in (0 \to \mathcal{U})^\pitchfork$. 由长正合列\Cref{eq:ext-tri-6-term} 容易验证.
+		\item 若 $(X \to 0) \in {}^\pitchfork((0 \to \mathcal{U})^\pitchfork)$, 则 $X \in \mathcal{U}$.
+		\begin{proof}
+			对 $X$ 构造特殊预盖 $X^V \rightarrowtail X^U \twoheadrightarrow X$. 由上一条, 以下提升问题有解:
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsNSxbMCwxLCJYXlYiXSxbMSwxLCJYXlUiXSxbMiwxLCJYIl0sWzEsMCwiMCJdLFsyLDAsIlgiXSxbMCwxLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzQsMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMiwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMyw0XSxbMywxXV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	\& 0 \& X \\
+	{X^V} \& {X^U} \& X
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-2, to=2-2]
+	\arrow[dashed, from=1-3, to=2-2]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow[tail, from=2-1, to=2-2]
+	\arrow[two heads, from=2-2, to=2-3]
+\end{tikzcd}.
+			\end{equation}
+			这说明 conflation 可裂, 从而 $X \in \mathcal{U}$.
+		\end{proof}
+	\end{enumerate}
+	这说明, 余挠对理论可以``无损地''嵌入弱垂直对理论中.
+\end{example}
+
+\begin{remark}
+	容易发现, 所有形如 $(Y \to 0)$ 的态射属于 $(0 \to \mathcal{U})^\pitchfork$, 这一态射类的关键信息蕴含在 inflation 的 $\mathrm{coCone}$-项中. 将余生成关系改作生成关系, 则有对偶的结论.
+\end{remark}
+
+\begin{corollary}
+	由\Cref{eg:cotorsion-to-lifting} 与\Cref{lem:basic-functorial-lifting}, $\mathcal{U}$ 对任意余积 (若存在) 封闭.
+\end{corollary}
+
+\begin{remark}
+	弱垂直理论的更多``计算规则''见 \cite{joyalQuasicategoriesVsSegal2006}, 这在涉及幺半范畴或单纯集方法时尤为有用.
+\end{remark}
+
+\begin{definition}
+	(弱分解系统). 弱分解系统 (下简称 \textbf{WFS}) 是一个垂直对 $(\mathcal{C}, \mathcal{F})$, 使得范畴中所有态射可表示为 $p \circ i \in \mathcal{F} \circ \mathcal{C}$.
+\end{definition}
+
+依照经验, 直接计算 $\mathcal{C}^\pitchfork$ 往往是不切实际的. 以下是更常用的等价定义.
+
+\begin{proposition}\label{prop:wfs-equiv}
+	$(\mathcal{C},\mathcal{F})$ 是 WFS 当且仅当下列条件成立.
+	\begin{enumerate}
+		\item $\mathcal{C}$ 与 $\mathcal{F}$ 对形变收缩封闭.
+		\item $\mathcal{C} \pitchfork \mathcal{F}$ 是一对弱垂直的态射.
+		\item 范畴中所有态射可表示为 $p \circ i \in \mathcal{F} \circ \mathcal{C}$
+	\end{enumerate}
+	\begin{proof}
+		($\to$) 方向是显然的. 下证明 ($\gets$) 方向. 对 $f \pitchfork \mathcal{F}$, 任取分解 $f = p \circ i$. 弱垂直性给出分解 $s$ (下图左), 从而 $f$ 是 $i$ 的形变收缩 (下图右):
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTAsWzAsMCwiXFxjZG90Il0sWzAsMSwiXFxjZG90Il0sWzEsMCwiXFxjZG90Il0sWzEsMSwiXFxjZG90Il0sWzIsMCwiXFxjZG90Il0sWzIsMSwiXFxjZG90Il0sWzMsMSwiXFxjZG90Il0sWzMsMCwiXFxjZG90Il0sWzQsMCwiXFxjZG90Il0sWzQsMSwiXFxjZG90Il0sWzAsMSwiZiJdLFswLDIsImkiXSxbMiwzLCJwIl0sWzEsMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw1LCJmIl0sWzUsNiwicyJdLFsxLDIsInMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw3LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs3LDgsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsNiwiaSJdLFs2LDksInAiXSxbOCw5LCJmIl1d
+\begin{tikzcd}[ampersand replacement=\&]
+	\cdot \& \cdot \& \cdot \& \cdot \& \cdot \\
+	\cdot \& \cdot \& \cdot \& \cdot \& \cdot
+	\arrow["i", from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["p", from=1-2, to=2-2]
+	\arrow[equals, from=1-3, to=1-4]
+	\arrow["f", from=1-3, to=2-3]
+	\arrow[equals, from=1-4, to=1-5]
+	\arrow["i", from=1-4, to=2-4]
+	\arrow["f", from=1-5, to=2-5]
+	\arrow["s", dashed, from=2-1, to=1-2]
+	\arrow[equals, from=2-1, to=2-2]
+	\arrow["s", from=2-3, to=2-4]
+	\arrow["p", from=2-4, to=2-5]
+\end{tikzcd}.
+		\end{equation}
+	\end{proof}
+\end{proposition}
+
+\subsection{模型结构}
+
+模型结构理论的综述与多数经典文献可在 \cite{hoveyModelCategories2007} 中找到. 以下谈论的模型结构都是闭模型结构. 我们使用 $\mathcal{A}$ 表示全范畴. 若不涉及 conflation 或 $\mathbb E$-函子, 此处的范畴是含有零对象的范畴.
+
+\begin{definition}\label{def:model-structure}
+	范畴 $\mathcal{C}$ 上的\textbf{闭模型结构}是指三个态射类 $(\mathsf{Cofib},\mathsf{Weq},\mathsf{Fib})$, 满足如下定义:
+	\begin{enumerate}
+		\item $(\mathsf{Cofib}, \mathsf{Fib} \cap \mathsf{Weq})$ 与 $(\mathsf{Cofib} \cap \mathsf{Weq}, \mathsf{Fib})$ 是 WFS;
+		\item 对任意可复合的态射 $f$, $g$ 与 $g \circ f$. 若两者属于 $\mathsf{Weq}$, 则第三者也属于 $\mathsf{Weq}$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	我们规范一些术语. 以下是五类基本态射.
+	\begin{itemize}
+		\item $\mathsf{Cofib}$, $\mathsf{Weq}$ 与 $\mathsf{Fib}$ 三类态射分别称作\textbf{余纤维}, \textbf{弱等价}与\textbf{纤维}.
+		\item 记 $\mathsf{TCofib} := \mathsf{Cofib} \cap \mathsf{Weq}$ 为\textbf{平凡纤维}, $\mathsf{TFib} := \mathsf{Fib} \cap \mathsf{Weq}$ 为\textbf{平凡余纤维}.
+	\end{itemize}
+	以下是五类基本对象.
+	\begin{itemize}
+		\item $X$ 称作\textbf{余纤维对象}, 若 $0 \to X \in \mathsf{Cofib}$. 记作 $X \in \mathcal{C}$.
+		\item $X$ 称作\textbf{纤维对象}, 若 $X \to 0 \in \mathsf{Fib}$. 记作 $X \in \mathcal{F}$.
+		\item $X$ 称作\textbf{平凡余纤维对象}, 若 $0 \to X \in \mathsf{TCofib}$. 记作 $X \in \mathsf{T}\mathcal{C}$.
+		\item $X$ 称作\textbf{平凡纤维对象}, 若 $X \to 0 \in \mathsf{TFib}$. 记作 $X \in \mathsf{T}\mathcal{F}$.
+		\item $X$ 称作\textbf{平凡对象}, 若 $0 \to X \in \mathsf{Weq}$. 记作 $X \in \mathcal{W}$.
+	\end{itemize}
+	直接地, $\mathsf{T}\mathcal{C} = \mathcal{C} \cap \mathcal{W}$, $\mathsf{T}\mathcal{F} = \mathcal{F} \cap \mathcal{W}$.
+\end{definition}
+
+方便起见, 有时使用以下等价定义.
+
+\begin{proposition}\label{prop:model-structure-equiv}
+	态射类 $(\mathsf{Cofib},\mathsf{Weq},\mathsf{Fib})$ 构成闭模型结构, 当且仅当以下成立.
+	\begin{enumerate}
+		\item[CM1] 对任意可复合的态射 $f$, $g$ 与 $g \circ f$. 若两者属于 $\mathsf{Weq}$, 则第三者也属于 $\mathsf{Weq}$.
+		\item[CM2] 三类态射对形变收缩封闭.
+		\item[CM3] 存在两组提升关系 $\mathsf{Cofib} \pitchfork (\mathsf{Weq} \cap \mathsf{Fib})$ 与 $(\mathsf{TCofib} \cap \mathsf{Weq}) \pitchfork \mathsf{Fib}$.
+		\item[CM4] 范畴中所有态射可表示为 $p \circ i \in (\mathsf{Weq} \cap \mathsf{Fib}) \circ \mathsf{Cofib}$ 与 $p' \circ i' \in \mathsf{Fib} \circ (\mathsf{TCofib} \cap \mathsf{Weq})$.
+	\end{enumerate}
+	\begin{proof}
+		\Cref{def:model-structure} 的第二条即 CM1. \Cref{def:model-structure} 的第一条等价于 CM2-4 (\Cref{prop:wfs-equiv}).
+	\end{proof}
+\end{proposition}
+
+\begin{remark}
+	\Cref{def:model-structure} 以对偶为先, 性质为后; \Cref{prop:model-structure-equiv} 以性质为先, 对偶为后.
+\end{remark}
+
+\begin{lemma}
+	以下是一些直接的推论.
+	\begin{enumerate}
+		\item $\mathcal{W}$ 中对象之间的态射必是 $\mathsf{Weq}$.
+		\begin{proof}
+			对 $X,Y \in \mathcal{W}$, $0 \to X$ 与 $0 \to Y$ 属于 $\mathsf{Weq}$. 由 CM1 可知 $X \to Y$ 也属于 $\mathsf{Weq}$.
+		\end{proof}
+		\item $\mathsf{Weq} = \mathsf{TFib} \circ \mathsf{TCofib}$.
+		\begin{proof}
+			由 $\mathsf{Weq} = \mathsf{Fib} \circ \mathsf{TCofib}$ 与 CM1 得证.
+		\end{proof}
+		\item 模型结构的态射范畴也是模型结构, 态射范畴的 $\mathsf{Cofib}$ ($\mathsf{Weq}$, $\mathsf{Fib}$) 是 $\mathsf{Cofib}^\to$ ($\mathsf{Weq}^\to$, $\mathsf{Fib}^\to$). 更一般地, 部分模型的函子范畴也是模型范畴, 见\cite{reedyHOMOTOPYTHEORYMODEL}.
+		\begin{proof}
+			CM1 与 CM2 是直接的. 下验证 CM3 (的一侧), 取 $(i,i) \in \mathsf{Cofib}^\to$ 与 $(p,p) \in (\mathsf{Weq} \cap \mathsf{Fib})^\to$ 的交换方块, 存在以下虚线所示的态射使得所有胞腔交换:
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsOCxbMSwwLCJDXzEiXSxbMSwxLCJDXzIiXSxbMiwwLCJDXzEnIl0sWzIsMSwiQ18yJyJdLFswLDAsIkZfMSJdLFszLDAsIkZfMSciXSxbMCwxLCJGXzIiXSxbMywxLCJGXzInIl0sWzAsMSwiaSIsMCx7ImNvbG91ciI6WzM1OCwxMDAsNjBdfSxbMzU4LDEwMCw2MCwxXV0sWzIsMywiaSciLDAseyJjb2xvdXIiOlszNTgsMTAwLDYwXX0sWzM1OCwxMDAsNjAsMV1dLFswLDIsImYiXSxbMSwzLCJnIl0sWzQsNiwicCIsMCx7ImNvbG91ciI6WzIzOSwxMDAsNjBdfSxbMjM5LDEwMCw2MCwxXV0sWzUsNywicCciLDAseyJjb2xvdXIiOlsyMzksMTAwLDYwXX0sWzIzOSwxMDAsNjAsMV1dLFs0LDUsIm0iLDAseyJjdXJ2ZSI6LTN9XSxbNiw3LCJuIiwwLHsiY3VydmUiOjN9XSxbMCw0XSxbMiw1XSxbMSw2XSxbMyw3XSxbMyw1LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw0LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{F_1} \& {C_1} \& {C_1'} \& {F_1'} \\
+	{F_2} \& {C_2} \& {C_2'} \& {F_2'}
+	\arrow["m", curve={height=-18pt}, from=1-1, to=1-4]
+	\arrow["p", color={rgb,255:red,51;green,54;blue,255}, from=1-1, to=2-1]
+	\arrow[from=1-2, to=1-1]
+	\arrow["f", from=1-2, to=1-3]
+	\arrow["i", color={rgb,255:red,255;green,51;blue,58}, from=1-2, to=2-2]
+	\arrow[from=1-3, to=1-4]
+	\arrow["{i'}", color={rgb,255:red,255;green,51;blue,58}, from=1-3, to=2-3]
+	\arrow["{p'}", color={rgb,255:red,51;green,54;blue,255}, from=1-4, to=2-4]
+	\arrow["n", curve={height=18pt}, from=2-1, to=2-4]
+	\arrow[dashed, from=2-2, to=1-1]
+	\arrow[from=2-2, to=2-1]
+	\arrow["g", from=2-2, to=2-3]
+	\arrow[dashed, from=2-3, to=1-4]
+	\arrow[from=2-3, to=2-4]
+\end{tikzcd}.
+			\end{equation}
+			最后验证 CM4 (的一侧). 对任意态射范畴的态射 $(\alpha, \beta)$, 取分解 $i, i' \in \mathsf{Cofib}$ 与 $p, p' \in \mathsf{Weq} \cap \mathsf{Fib}$. 由原模型结构的 CM3, 存在虚线处态射使得下图交换:
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsNixbMCwwLCJcXGNkb3QiXSxbMiwwLCJcXGNkb3QiXSxbMiwxLCJcXGNkb3QiXSxbMCwxLCJcXGNkb3QiXSxbMSwwLCJcXGNkb3QiXSxbMSwxLCJcXGNkb3QiXSxbMSwyXSxbMCwzXSxbMCw0LCJpIiwyXSxbNCwxLCJwIiwyXSxbMyw1LCJpJyJdLFs1LDIsInAnIl0sWzAsMSwiXFxhbHBoYSIsMCx7Im9mZnNldCI6LTEsImN1cnZlIjotMn1dLFszLDIsIlxcYmV0YSIsMix7Im9mZnNldCI6MSwiY3VydmUiOjJ9XSxbNCw1LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	\cdot \& \cdot \& \cdot \\
+	\cdot \& \cdot \& \cdot
+	\arrow["i"', from=1-1, to=1-2]
+	\arrow["\alpha", shift left, curve={height=-12pt}, from=1-1, to=1-3]
+	\arrow[from=1-1, to=2-1]
+	\arrow["p"', from=1-2, to=1-3]
+	\arrow[dashed, from=1-2, to=2-2]
+	\arrow[from=1-3, to=2-3]
+	\arrow["{i'}", from=2-1, to=2-2]
+	\arrow["\beta"', shift right, curve={height=12pt}, from=2-1, to=2-3]
+	\arrow["{p'}", from=2-2, to=2-3]
+\end{tikzcd}.
+			\end{equation}
+		\end{proof}
+	\end{enumerate}
+\end{lemma}
+
+% \begin{example}
+% 	(代换). 引入模型结构的一大动机是构造局部化. 试回忆 (\cite{gabrielCalculusFractionsHomotopy1967} ) 分式给出的局部化范畴 $\mathcal{C} \to S^{-1}\mathcal{C}$, 局部化范畴中的态射 $X \to Y$ 本质上拆解作 $X \Leftrightarrow X' \to Y$. 换言之, 先使用``同构''代换 $X$ 为 $X'$, 使得 $X'$ 至 $Y$ 的态射能被直接描述.
+% 	\\
+% 	类似地, 模型范畴中的 $\mathcal{S}$-态射类是 $\mathsf{Weq}$. 对任意对象 $X$, 对 $0 \to X$ 与 $X \to 0$ 使用 CM4 得
+% 	\begin{equation}
+% 		0 \xrightarrow{\mathsf{Cofib}}F \xRightarrow{\mathsf{TCofib}} X, \quad X \xRightarrow{\mathsf{TFib}} C \xrightarrow{\mathsf{Fib}} 0.
+% 	\end{equation}
+% 	换言之, 任意对象 $X$ 可被代换为余纤维对象 $F$ 或纤维对象 $C$.
+% \end{example}
+
+\subsection{Hovey 孪生余挠对}
+
+本小节取定外三角范畴 $(\mathcal{A}, \mathbb E, \mathfrak s)$.
+
+\begin{definition}
+	(Hovey 孪生余挠对). 考虑两个余挠对 $(\mathcal{S}, \mathcal{S}^\perp)$ 与 $(^\perp \mathcal{V}, \mathcal{V})$. 称资料 $(\mathcal{S}, \mathcal{S}^\perp; {}^\perp \mathcal{V}, \mathcal{V})$ 为 \textbf{Hovey 孪生余挠对}, 若 $\mathcal{S} \perp \mathcal{V}$, 且 $\mathrm{Cone}(\mathcal{V}, \mathcal{S}) = \mathrm{coCone}(\mathcal{V}, \mathcal{S})$.
+\end{definition}
+
+\begin{remark}
+	将 Hovey 孪生余挠对记作 $(\mathcal{S},\mathcal{T};\mathcal{U},\mathcal{V})$, 则 $\mathcal{S} \subseteq \mathcal{U}$, 且 $\mathcal{V} \subseteq \mathcal{T}$.
+\end{remark}
+
+\begin{remark}
+	有时将 $\mathrm{Cone}(\mathcal{V}, \mathcal{S})$ 记作 $\mathcal{N}$, 称 $(\mathcal{S}^\perp, \mathcal{N}, {}^\perp\mathcal{V})$ 为 Hovey 三元组.
+\end{remark}
+
+以下引理给出一种由 Hovey 三元组复原 Hovey 孪生余挠对的直接方法.
+
+\begin{lemma}
+	给定 Hovey 孪生余挠对 $(\mathcal{S}, \mathcal{S}^\perp; {} ^\perp \mathcal{V}, \mathcal{V})$, 有以下等式
+	\begin{equation}
+		\mathcal{S} = {}^\perp \mathcal{V} \cap \mathrm{coCone}(\mathcal{V}, \mathcal{S}), \quad \mathcal{V} = \mathcal{S}^\perp \cap \mathrm{Cone}(\mathcal{V}, \mathcal{S})
+	\end{equation}
+	\begin{proof}
+		仅证明前一等式. ($\subseteq$ 方向). 由 $\mathcal{S} = {}^\perp \mathcal{V}$ 与 $\mathcal{S} = \mathrm{coCone}(\mathcal{V}, \mathcal{S})$, 得证.
+		\\
+		($\supseteq$ 方向). 任取 $X \in {}^\perp \mathcal{V}\cap \mathrm{coCone}(\mathcal{V}, \mathcal{S})$, 则有 conflation $V \rightarrowtail S \twoheadrightarrow X$. 由 $\mathbb E(X, V) = 0$, 这一 conflation 可裂. 从而 $X$ 是 $S$ 的直和项, 故 $X \in \mathcal{S}$.
+	\end{proof}
+\end{lemma}
+
+\begin{corollary}
+	作为推论, ${}^\perp \mathcal{V} \cap \mathcal{V} = {}^\perp \mathcal{V} \cap \mathcal{N} \cap \mathcal{S}^\perp = \mathcal{S} \cap \mathcal{S} ^\perp$. 
+\end{corollary}
+
+\begin{theorem}
+	$\mathcal{N}$ 是厚子范畴, 从而也是外三角范畴.
+	\begin{proof}
+		先说明 $\mathcal{N}$ 对直和项封闭. 实际上, $\mathcal{N}$ 对形变收缩封闭. 任取 conflation $V \rightarrowtail S \twoheadrightarrow N \overset \delta \dashrightarrow$ 与形变收缩 $N'$, 得以下交换图:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiViJdLFsxLDEsIlMiXSxbMiwxLCJOIl0sWzAsMCwiViJdLFsyLDAsIk4nIl0sWzIsMiwiTiciXSxbMCwyLCJWIl0sWzEsMCwiUyciXSxbMSwyLCJTJyJdLFszLDAsIlxcLCAiXSxbMywxLCJcXCwgIl0sWzMsMiwiXFwsICJdLFswLDEsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwyLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMywwLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDYsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsNywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs3LDQsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs0LDIsImkiXSxbMiw1LCJwIl0sWzYsOCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs4LDUsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs3LDFdLFsxLDhdLFs0LDksImleXFxhc3QgXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDEwLCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMTEsImleXFxhc3QgXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	V \& {S'} \& {N'} \& {\, } \\
+	V \& S \& N \& {\, } \\
+	V \& {S'} \& {N'} \& {\, }
+	\arrow[tail, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow[two heads, from=1-2, to=1-3]
+	\arrow[from=1-2, to=2-2]
+	\arrow["{i^\ast \delta}", dashed, from=1-3, to=1-4]
+	\arrow["i", from=1-3, to=2-3]
+	\arrow[tail, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow[two heads, from=2-2, to=2-3]
+	\arrow[from=2-2, to=3-2]
+	\arrow["\delta", dashed, from=2-3, to=2-4]
+	\arrow["p", from=2-3, to=3-3]
+	\arrow[tail, from=3-1, to=3-2]
+	\arrow[two heads, from=3-2, to=3-3]
+	\arrow["{i^\ast \delta}", dashed, from=3-3, to=3-4]
+\end{tikzcd}.
+		\end{equation} 
+		复合态射 $S' \to S \to S'$ 必是同构 (\Cref{thm:ext-tri-2-out-of-3}), 从而 $S'$ 是 $S$ 的形变收缩. 因此 $S' \in \mathcal{S}$, 故 $N' \in \mathcal{N}$.
+		\\
+		(证明 $\mathrm{Cone}(\mathcal{N}, \mathcal{N}) \subseteq \mathcal{N}$). 依照\Cref{lem:star-asso}, 总有
+		\begin{equation}\label{eq:star-asso}
+			\mathrm{Cone}(\mathcal{N}, \mathcal{N}) = \mathrm{Cone}(\mathcal{N}, \mathrm{Cone}(\mathcal{V}, \mathcal{S})) = \mathrm{Cone}(\mathcal{V}\ast \mathcal{N}, \mathcal{S}).
+		\end{equation}
+		依照\Cref{lem:star-inclu}, 得
+		\begin{equation}\label{eq:star-inclu}
+			\mathcal{V}\ast \mathcal{N} = \mathcal{V} \ast \mathrm{Cone}(\mathcal{V}, \mathcal{S}) \subseteq \mathrm{Cone}(\mathcal{V}, \mathcal{V} \ast \mathcal{S}) = \mathrm{Cone}(\mathcal{V}, \mathcal{V} \oplus \mathcal{S}) \subseteq \mathrm{Cone}(\mathcal{V}, \mathcal{N}).
+		\end{equation}
+		将\Cref{eq:star-inclu} 代入\Cref{eq:star-asso}, 得
+		\begin{align}
+			\mathrm{Cone}(\mathcal{N}, \mathcal{N}) & \subseteq \mathrm{Cone}(\mathrm{Cone}(\mathcal{V}, \mathcal{N}), \mathcal{S}) = \mathrm{Cone}(\mathrm{Cone}(\mathcal{V}, \mathrm{coCone}(\mathcal{V}, \mathcal{S})), \mathcal{S})\\
+			& = \mathrm{Cone}(\mathrm{Cone}(\mathcal{V} \ast \mathcal{V}, \mathcal{S}), \mathcal{S}) = \mathrm{Cone}(\mathrm{Cone}(\mathcal{V}, \mathcal{S}), \mathcal{S}) \\
+			& = \mathrm{Cone}(\mathrm{coCone}(\mathcal{V}, \mathcal{S}), \mathcal{S}) \subseteq \mathrm{Cone}(\mathcal{V},\mathcal{S} \ast \mathcal{S}) \qquad  = \mathcal{N}.
+		\end{align}
+		(证明 $\mathrm{coCone}(\mathcal{N}, \mathcal{N}) \subseteq \mathcal{N}$). 证明对偶, 从略.
+		\\
+		(证明 $\mathcal{N} \ast \mathcal{N} \subseteq \mathcal{N}$). 由\Cref{lem:star-asso} 与\Cref{lem:star-inclu}, 得
+		\begin{align}
+\mathcal{N} \ast \mathcal{N} &= \mathcal{N} \ast \mathrm{Cone}(\mathcal{V} , \mathcal{S}) \subseteq \mathrm{Cone}(\mathcal{V} , \mathcal{N} \ast \mathcal{S} )\\
+&= \mathrm{Cone}(\mathcal{V} , \mathcal{N} ) = \mathrm{Cone}(\mathcal{V} , \mathrm{Cone}(\mathcal{V}, \mathcal{S})) \\
+&= \mathrm{Cone}(\mathcal{V} \ast \mathcal{V}, \mathcal{S}) = \mathcal{N}.
+\end{align}
+不难发现, 上述 $\subseteq$ 均可取为等号. 直接地,
+\begin{equation}
+	\mathrm{Cone}(\mathcal{N}, \mathcal{N}) = \mathrm{coCone}(\mathcal{N}, \mathcal{N}) = \mathcal{N} \ast \mathcal{N} = \mathcal{N}.
+\end{equation}
+	\end{proof}
+\end{theorem}
+
+\begin{corollary}
+	以上证明步骤暗藏等式 $\mathrm{Cone}(\mathcal{N}, \mathcal{S}) = \mathcal{N} = \mathrm{coCone}(\mathcal{V}, \mathcal{N})$.
+\end{corollary}
+
+\subsection{Hovey <=> Model}
+
+... 定义相容闭模型结构.
+
+... Model => Hovey (简单).
+
+... Hovey => Model (复杂).
+
+以下定理说明, 可以由 Hovey 孪生余挠对得到闭模型结构.
+
+\begin{theorem}
+	给定外三角范畴的 Hovey 孪生余挠对 $(\mathcal{S}, \mathcal{T}; \mathcal{U}, \mathcal{V}) = (\mathcal{S}, \mathcal{S}^\perp; {} ^\perp \mathcal{V}, \mathcal{V})$. 定义四个态射类:
+	\begin{enumerate}
+		\item $f \in \mathsf{Cofib}$, 当且仅当 $f$ 是 inflation, 且有 conflation $\cdot \overset f \rightarrowtail \cdot \twoheadrightarrow U$, 其中 $U \in \mathcal{U}$;
+		\item $f \in \mathsf{TCofib}$, 当且仅当 $f$ 是 inflation, 且有 conflation $\cdot \overset f \rightarrowtail \cdot \twoheadrightarrow S$, 其中 $S \in \mathcal{S}$;
+		\item $g \in \mathsf{Fib}$, 当且仅当 $g$ 是 deflation, 且有 conflation $T \rightarrowtail \cdot \overset g \twoheadrightarrow \cdot$, 其中 $T \in \mathcal{T}$;
+		\item $g \in \mathsf{TFib}$, 当且仅当 $g$ 是 deflation, 且有 conflation $V \rightarrowtail \cdot \overset g \twoheadrightarrow \cdot$, 其中 $V \in \mathcal{V}$.
+	\end{enumerate}
+	定义 $\mathsf{Weq} = \mathsf{TFib} \circ \mathsf{TCofib}$, 则 $(\mathsf{Cofib},\mathsf{Weq},\mathsf{Fib})$ 是一个闭模型结构.
+	\begin{proof}
+		
+	\end{proof}
+\end{theorem}
+
+
+
+
+
+
+
+
+
 
