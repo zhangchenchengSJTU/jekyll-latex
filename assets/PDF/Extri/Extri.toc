@@ -15,12 +15,13 @@
 \contentsline {section}{\numberline {4}特殊的外三角范畴}{32}{section.4}%
 \contentsline {subsection}{\numberline {4.1}正合范畴是外三角范畴}{32}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}三角范畴是外三角范畴}{34}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}自等价 + 外三角范畴 = 三角范畴}{34}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}自等价 $+$ 外三角范畴 $=$ 三角范畴}{34}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}理想商}{35}{subsection.4.4}%
 \contentsline {section}{\numberline {5}Hovey 对应}{40}{section.5}%
 \contentsline {subsection}{\numberline {5.1}余挠对}{40}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}遗传余挠对}{43}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}态射观点}{46}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}模型结构}{49}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Hovey 孪生余挠对}{51}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Hovey <=> Model}{52}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.2}遗传余挠对}{44}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}态射观点}{47}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}模型结构}{50}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Hovey 孪生余挠对}{52}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}相容闭模型结构 $\to $ Hovey 孪生余挠对}{53}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Hovey 孪生余挠对 $\to $ 相容闭模型结构}{54}{subsection.5.7}%

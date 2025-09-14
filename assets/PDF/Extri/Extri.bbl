@@ -1,5 +1,11 @@
 \begin{thebibliography}{May01}
 
+\bibitem[Bas63]{bassBigProjectiveModules1963}
+Hyman Bass.
+\newblock Big projective modules are free.
+\newblock {\em Illinois Journal of Mathematics}, 7(1):24--31, March 1963.
+\newblock \href {https://doi.org/10.1215/ijm/1255637479} {\path{doi:10.1215/ijm/1255637479}}.
+
 \bibitem[BK14]{buhlerElementaryConsiderationsExact}
 Theo B{\"u}hler and Matthias Kunzer.
 \newblock Some elementary considerations in exact categories, July 2014.
@@ -21,6 +27,16 @@ Theo B{\"u}hler.
 Xiao-Wu Chen.
 \newblock The {{Extension-lifting Lemma}} via {{Two-term Complexes}}, November 2018.
 \newblock URL: \url{http://home.ustc.edu.cn/~xwchen/USTC%20Algebra%20Notes%20Archiv/The%20Extension-Lifting%20lemma%20via%20two-term%20complexes.pdf}.
+
+\bibitem[Cre21]{crewHomologicalAlgebraLecture2021}
+Richard Crew.
+\newblock Homological {{Algebra Lecture}} 6, 2021.
+
+\bibitem[GZ67]{gabrielCalculusFractionsHomotopy1967}
+Peter Gabriel and Michel Zisman.
+\newblock {\em Calculus of {{Fractions}} and {{Homotopy Theory}}}.
+\newblock Springer, Berlin, Heidelberg, 1967.
+\newblock \href {https://doi.org/10.1007/978-3-642-85844-4} {\path{doi:10.1007/978-3-642-85844-4}}.
 
 \bibitem[Hap88]{happelTriangulatedCategoriesRepresentation1988}
 Dieter Happel.
@@ -97,11 +113,6 @@ Hiroyuki Nakaoka and Yann Palu.
 \newblock {\em {Cahiers de topologie et g{\'e}om{\'e}trie diff{\'e}rentielle cat{\'e}goriques}}, LX(2):117--193, 2019.
 \newblock arXiv title ''Mutation via Hovey twin cotorsion pairs and model structures in extriangulated categories''.
 \newblock URL: \url{https://hal.science/hal-02136919}.
-
-\bibitem[Pro09]{Lemma12710DLPThe}
-Stacks Project.
-\newblock Lemma 12.7.1 ({{0DLP}})---{{The Stacks}} project, May 2009.
-\newblock URL: \url{https://stacks.math.columbia.edu/tag/0DLP}.
 
 \bibitem[Ree73]{reedyHOMOTOPYTHEORYMODEL}
 Christopher~L. Reedy.

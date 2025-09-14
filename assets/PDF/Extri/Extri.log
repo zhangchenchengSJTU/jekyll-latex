@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.28)  14 SEP 2025 03:12
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.28)  14 SEP 2025 22:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -900,13 +900,13 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 86.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 86.
- (c:/texlive/2024/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) (./Extri.toc)
+ (c:/texlive/2024/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) (./Extri.toc [1
+
+])
 \tf@toc=\write5
 \openout5 = `Extri.toc'.
 
- [1
-
-] [2]
+ [2]
 \openout2 = `Sections/Recollection.aux'.
 
  (./Sections/Recollection.tex [3
@@ -943,7 +943,7 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 
 
 
-] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51]) [52] (./Extri.bbl
+] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57]) [58] (./Extri.bbl
 
 Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
 (fontspec)             doesn't exist).
@@ -967,24 +967,24 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
- [53
+ [59
 
 
-]) [54] (./Extri.aux (./Sections/Recollection.aux) (./Sections/Intro.aux) (./Sections/Diagram.aux) (./Sections/SpecialExtri.aux) (./Sections/Model.aux))
+]) [60] (./Extri.aux (./Sections/Recollection.aux) (./Sections/Intro.aux) (./Sections/Diagram.aux) (./Sections/SpecialExtri.aux) (./Sections/Model.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `Extri.out' has not changed.
-(rerunfilecheck)             Checksum: 8C30D54A616DD829F41F5265CEA0F08E;2964.
+(rerunfilecheck)             Checksum: 5E959981A898DC9A9388AEF693100EDF;3221.
  ) 
 Here is how much of TeX's memory you used:
- 46697 strings out of 474773
- 1092286 string characters out of 5761289
+ 48099 strings out of 474773
+ 1129995 string characters out of 5761289
  2004842 words of memory out of 5000000
- 68232 multiletter control sequences out of 15000+600000
- 570120 words of font info for 133 fonts, out of 8000000 for 9000
+ 69632 multiletter control sequences out of 15000+600000
+ 570364 words of font info for 135 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  131i,28n,135p,3274b,1536s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Extri.pdf (54 pages).
+Output written on Extri.pdf (60 pages).
