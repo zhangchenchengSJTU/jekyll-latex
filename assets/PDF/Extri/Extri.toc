@@ -1,27 +1,27 @@
 \contentsline {section}{\numberline {1}正合范畴与三角范畴拾遗}{3}{section.1}%
 \contentsline {subsection}{\numberline {1.1}正合范畴}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}三角范畴}{5}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}同伦的推出拉回}{8}{subsection.1.3}%
-\contentsline {section}{\numberline {2}初探外三角范畴}{12}{section.2}%
-\contentsline {subsection}{\numberline {2.1}基本定义}{12}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}六项正合列}{14}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}五项正合列的推论}{16}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}扩张提升引理}{18}{subsection.2.4}%
-\contentsline {section}{\numberline {3}图表定理}{20}{section.3}%
-\contentsline {subsection}{\numberline {3.1}双 deflation (inflation) 的拉回 (推出)}{20}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}同伦的推出拉回方块}{23}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}弱幂等完备}{27}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}九引理}{29}{subsection.3.4}%
-\contentsline {section}{\numberline {4}特殊的外三角范畴}{32}{section.4}%
-\contentsline {subsection}{\numberline {4.1}正合范畴是外三角范畴}{32}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}三角范畴是外三角范畴}{34}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}自等价 $+$ 外三角范畴 $=$ 三角范畴}{34}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}理想商}{35}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Hovey 对应}{40}{section.5}%
-\contentsline {subsection}{\numberline {5.1}余挠对}{40}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}遗传余挠对}{44}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}态射观点}{47}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}模型结构}{50}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Hovey 孪生余挠对}{52}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}相容闭模型结构 $\to $ Hovey 孪生余挠对}{53}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Hovey 孪生余挠对 $\to $ 相容闭模型结构}{54}{subsection.5.7}%
+\contentsline {subsection}{\numberline {1.2}三角范畴}{7}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}同伦的推出拉回}{10}{subsection.1.3}%
+\contentsline {section}{\numberline {2}初探外三角范畴}{14}{section.2}%
+\contentsline {subsection}{\numberline {2.1}基本定义}{14}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}六项正合列}{16}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}五项正合列的推论}{18}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}扩张提升引理}{20}{subsection.2.4}%
+\contentsline {section}{\numberline {3}图表定理}{22}{section.3}%
+\contentsline {subsection}{\numberline {3.1}双 deflation (inflation) 的拉回 (推出)}{22}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}同伦的推出拉回方块}{25}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}弱幂等完备}{29}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}九引理}{31}{subsection.3.4}%
+\contentsline {section}{\numberline {4}特殊的外三角范畴}{34}{section.4}%
+\contentsline {subsection}{\numberline {4.1}正合范畴是外三角范畴}{34}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}三角范畴是外三角范畴}{36}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}自等价 $+$ 外三角范畴 $=$ 三角范畴}{36}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}理想商}{37}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Hovey 对应}{42}{section.5}%
+\contentsline {subsection}{\numberline {5.1}余挠对}{42}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}遗传余挠对}{46}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}态射观点}{49}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}模型结构}{52}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Hovey 孪生余挠对}{54}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}相容闭模型结构 $\to $ Hovey 孪生余挠对}{55}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Hovey 孪生余挠对 $\to $ 相容闭模型结构}{57}{subsection.5.7}%

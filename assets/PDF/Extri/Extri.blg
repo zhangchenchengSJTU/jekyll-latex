@@ -18,34 +18,34 @@ Warning--empty journal in joyal
 Warning--empty journal in reedyHOMOTOPYTHEORYMODEL
 You've used 25 entries,
             3368 wiz_defined-function locations,
-            885 strings with 10565 characters,
-and the built_in function-call counts, 11734 in all, are:
-= -- 1268
+            886 strings with 10623 characters,
+and the built_in function-call counts, 11774 in all, are:
+= -- 1275
 > -- 312
 < -- 23
 + -- 82
 - -- 78
-* -- 634
-:= -- 1619
-add.period$ -- 97
+* -- 637
+:= -- 1623
+add.period$ -- 98
 call.type$ -- 25
 change.case$ -- 126
 chr.to.int$ -- 25
 cite$ -- 27
-duplicate$ -- 386
-empty$ -- 1146
+duplicate$ -- 388
+empty$ -- 1151
 format.name$ -- 121
-if$ -- 3025
+if$ -- 3037
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 25
-newline$ -- 146
+newline$ -- 147
 num.names$ -- 75
 pop$ -- 292
 preamble$ -- 1
 purify$ -- 157
 quote$ -- 0
-skip$ -- 875
+skip$ -- 878
 stack$ -- 0
 substring$ -- 416
 swap$ -- 58
@@ -56,5 +56,5 @@ type$ -- 172
 warning$ -- 2
 while$ -- 76
 width$ -- 28
-write$ -- 355
+write$ -- 357
 (There were 2 warnings)

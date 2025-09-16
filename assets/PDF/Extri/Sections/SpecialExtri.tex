@@ -174,7 +174,7 @@
 \begin{theorem}
 	\Cref{ex:triangulated-as-extri} 中定义的 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 是外三角范畴.
 	\begin{proof}
-		(ET1). 显然 $\mathbb E$ 是双函子. (ET2-1). 依照 TR1-3, $\mathfrak s$ 是态射到同构类的对应. 试回顾两则三角范畴的基本事实:
+		(ET1). 显然 $\mathbb E$ 是双函子. (ET2-1). 由态射嵌入唯一的好三角 (\Cref{prop:triangulated-kernel-cokernel}), $\mathfrak s$ 是态射到同构类的对应. 试回顾两则三角范畴的基本事实:
 		\begin{enumerate}
 			\item $X \to Y \to Z \overset s\to \Sigma X$ 的前三项是可裂短正合列, 当且仅当 $s = 0$ (\Cref{cor:split-mono-epi}).
 			\item \Cref{prop:triangulated-facts} 第四条表明好三角对直和封闭, 且 $\mathfrak s$ 与直和交换.
@@ -599,6 +599,6 @@ Happel 定理 (\cite{happelTriangulatedCategoriesRepresentation1988}, 章节 1.2
 \begin{corollary}
 	外三角范畴 $\mathcal{C}$ 是三角范畴, 当且仅当所有态射都是 inflation, 且都是 deflation.
 	\begin{proof}
-		($\to$) 方向由 TR1-3 与 TR2 即得. 下证明 ($\gets$) 方向. 若所有态射都是 inflation, 则 $X \to 0$ 均是 inflation. 若 $\mathcal{C}$ 有内射对象, 则内射对象不为非零对象; 另一方面, 容易检验零对象确实是内射对象. 对偶地, $\mathcal{C}$ 的投射对象恰好是零对象. 这说明 $\mathcal{C}$ 是 Frobenius 范畴. 由\Cref{thm:extri-frobenius-happel}, $\mathcal{C} / 0 = \mathcal{C}$ 的骨架是三角范畴, 从而 $\mathcal{C}$ 是三角范畴.
+		($\to$) 方向由态射唯一嵌入好三角 (\Cref{prop:triangulated-kernel-cokernel}) 与 TR2 即得. 下证明 ($\gets$) 方向. 若所有态射都是 inflation, 则 $X \to 0$ 均是 inflation. 若 $\mathcal{C}$ 有内射对象, 则内射对象不为非零对象; 另一方面, 容易检验零对象确实是内射对象. 对偶地, $\mathcal{C}$ 的投射对象恰好是零对象. 这说明 $\mathcal{C}$ 是 Frobenius 范畴. 由\Cref{thm:extri-frobenius-happel}, $\mathcal{C} / 0 = \mathcal{C}$ 的骨架是三角范畴, 从而 $\mathcal{C}$ 是三角范畴.
 	\end{proof}
 \end{corollary}

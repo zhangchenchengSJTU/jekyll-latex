@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.28)  14 SEP 2025 22:25
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.28)  16 SEP 2025 17:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -911,39 +911,39 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 86
 
  (./Sections/Recollection.tex [3
 
-]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 171.
+] [4] [5]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 314.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [4] [5] [6] [7] [8] [9] [10]) [11]
+) [6] [7] [8] [9] [10] [11] [12]) [13]
 \openout2 = `Sections/Intro.aux'.
 
- (./Sections/Intro.tex [12
+ (./Sections/Intro.tex [14
 
 
 
-] [13] [14] [15] [16] [17] [18]) [19]
+] [15] [16] [17] [18] [19] [20]) [21]
 \openout2 = `Sections/Diagram.aux'.
 
- (./Sections/Diagram.tex [20
+ (./Sections/Diagram.tex [22
 
 
 
-] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30]) [31]
+] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32]) [33]
 \openout2 = `Sections/SpecialExtri.aux'.
 
- (./Sections/SpecialExtri.tex [32
+ (./Sections/SpecialExtri.tex [34
 
 
 
-] [33] [34] [35] [36] [37] [38]) [39]
+] [35] [36] [37] [38] [39] [40]) [41]
 \openout2 = `Sections/Model.aux'.
 
- (./Sections/Model.tex [40
+ (./Sections/Model.tex [42
 
 
 
-] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57]) [58] (./Extri.bbl
+] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59]) [60] (./Extri.bbl
 
 Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
 (fontspec)             doesn't exist).
@@ -967,10 +967,10 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
- [59
+ [61
 
 
-]) [60] (./Extri.aux (./Sections/Recollection.aux) (./Sections/Intro.aux) (./Sections/Diagram.aux) (./Sections/SpecialExtri.aux) (./Sections/Model.aux))
+]) [62] (./Extri.aux (./Sections/Recollection.aux) (./Sections/Intro.aux) (./Sections/Diagram.aux) (./Sections/SpecialExtri.aux) (./Sections/Model.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -979,12 +979,12 @@ Package rerunfilecheck Info: File `Extri.out' has not changed.
 (rerunfilecheck)             Checksum: 5E959981A898DC9A9388AEF693100EDF;3221.
  ) 
 Here is how much of TeX's memory you used:
- 48099 strings out of 474773
- 1129995 string characters out of 5761289
+ 48964 strings out of 474773
+ 1153568 string characters out of 5761289
  2004842 words of memory out of 5000000
- 69632 multiletter control sequences out of 15000+600000
+ 70497 multiletter control sequences out of 15000+600000
  570364 words of font info for 135 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 131i,28n,135p,3274b,1536s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 131i,28n,135p,3274b,1537s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Extri.pdf (60 pages).
+Output written on Extri.pdf (62 pages).

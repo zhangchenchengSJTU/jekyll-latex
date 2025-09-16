@@ -6,7 +6,7 @@
 短正合列 (下简称 ses) 是同调代数的基本研究对象, 正合范畴研究了一般加法范畴上的短正合列理论.
 
 \begin{definition}\label{def:exact-category}
-    (Quillen 的正合范畴). \textbf{正合范畴} $(\mathcal{C}, \mathcal{E})$ 的基本资料是加法范畴 $\mathcal{C}$ 与一族映射图 $\mathcal{E}$. $\mathcal{E}$ 中对象称为 $\mathcal{C}$ 中的\textbf{短正合列 (ses)}, 形如
+    (Quillen 的正合范畴). \textbf{正合范畴} $(\mathcal{C}, \mathcal{E})$ 的基本资料是加法范畴 $\mathcal{C}$ 与一族图 $\mathcal{E}$. $\mathcal{E}$ 中对象称为 \textbf{$\mathcal{C}$ 中的短正合列 (ses)}, 形如
     \begin{equation}
     0 \to X \xrightarrow i Y \xrightarrow p Z \to 0,
     \end{equation}
@@ -22,34 +22,49 @@
 \end{definition}
 
 \begin{remark}
+	推出 (拉回) 所得的态射在相差个一个同构的意义下是唯一的. 因此, EX2 与 EX2' 表明所有同构都是容许单态射与容许满态射. 我们通常直接约定 $\mathcal{E}$ 对同构封闭.
+\end{remark}
+
+以下说明所有可裂 ses 都是正合范畴的 ses.
+
+\begin{remark}
 	实际上, EX2 与 EX2' 构造的交换方块是推出拉回方块. 更精细的表述见\Cref{thm:homotopy-pullback}.
 \end{remark}
+
+\begin{lemma}\label{lem:split-in-exact}
+	$\binom {1}{0} : X \to Y$ 与 $(1 \ \ 0): X \oplus Y \to X$ 分别是容许单态射与容许满态射.
+	\begin{proof}
+		注意到以下两个方块均是推出拉回方块:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMCwwLCIwIl0sWzEsMCwiWCJdLFswLDEsIlkiXSxbMSwxLCJYIFxcb3BsdXMgWSJdLFszLDAsIlggXFxvcGx1cyBZIl0sWzQsMCwiWCJdLFszLDEsIlkiXSxbNCwxLCIwIl0sWzAsMV0sWzEsMywiXFxiaW5vbSAxMCJdLFsyLDMsIlxcYmlub20gMDEiXSxbMCwyXSxbNCw1LCIoMSBcXCBcXCAwKSJdLFs1LDddLFs0LDYsIigwIFxcIFxcIDEpIl0sWzYsN11d
+\begin{tikzcd}[ampersand replacement=\&]
+	0 \& X \&\& {X \oplus Y} \& X \\
+	Y \& {X \oplus Y} \&\& Y \& 0
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow["{\binom 10}", from=1-2, to=2-2]
+	\arrow["{(1 \ \ 0)}", from=1-4, to=1-5]
+	\arrow["{(0 \ \ 1)}", from=1-4, to=2-4]
+	\arrow[from=1-5, to=2-5]
+	\arrow["{\binom 01}", from=2-1, to=2-2]
+	\arrow[from=2-4, to=2-5]
+\end{tikzcd}.
+		\end{equation}
+	\end{proof}
+\end{lemma}
 
 \begin{lemma}
 	$\mathcal{E}$ 对直和封闭. 此处的直和指二元双积 $\oplus$, 后不重复解释.
 	\begin{proof}
-		由于 $\oplus$ 保持核与余核, 下只需说明容许单态射对直和封闭. 给定 ses $A \xrightarrow i B \xrightarrow p C$ 与 $D \xrightarrow{j} E \xrightarrow{q} F$. 容易检验以下是推出方块:
-		\begin{equation}
-			% https://q.uiver.app/#q=WzAsOCxbMCwwLCJCIl0sWzAsMSwiQyJdLFsxLDAsIkJcXG9wbHVzIEUiXSxbMSwxLCJDIFxcb3BsdXMgRSJdLFszLDAsIkUiXSxbNCwwLCJDIFxcb3BsdXMgRSJdLFs0LDEsIkMgXFxvcGx1cyBGIl0sWzMsMSwiRiJdLFswLDEsInAiLDJdLFswLDIsIlxcYmlub20gezF9ezB9Il0sWzEsMywiXFxiaW5vbSB7MX17MH0iLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiwzLCJcXGJpbm9tIHtwIFxcIFxcIDB9ezBcXCAgXFwgMX0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw3LCJxIiwyXSxbNSw2LCJcXGJpbm9tIHsxIFxcIFxcIDB9ezBcXCAgXFwgcX0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw1LCJcXGJpbm9tIDAxIl0sWzcsNiwiXFxiaW5vbSAwMSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
-\begin{tikzcd}[ampersand replacement=\&]
-	B \& {B\oplus E} \&\& E \& {C \oplus E} \\
-	C \& {C \oplus E} \&\& F \& {C \oplus F}
-	\arrow["{\binom {1}{0}}", from=1-1, to=1-2]
-	\arrow["p"', from=1-1, to=2-1]
-	\arrow["{\binom {p \ \ 0}{0\  \ 1}}", dashed, from=1-2, to=2-2]
-	\arrow["{\binom 01}", from=1-4, to=1-5]
-	\arrow["q"', from=1-4, to=2-4]
-	\arrow["{\binom {1 \ \ 0}{0\  \ q}}", dashed, from=1-5, to=2-5]
-	\arrow["{\binom {1}{0}}"', dashed, from=2-1, to=2-2]
-	\arrow["{\binom 01}"', dashed, from=2-4, to=2-5]
-\end{tikzcd}.
-		\end{equation}
-		由 EX2' 与 EX1', $\binom {1 \ \ 0}{0\  \ q}$ 是容许满态射, 其核是 $\binom {i \ \ 0}{0\  \ j}$. 证毕.
+		给定正合范畴的 ses $0 \to A \xrightarrow i B \xrightarrow p C \to 0$ 与 $0 \to D \xrightarrow{j} E \xrightarrow{q} F \to 0$, 下证明 $0 \to A \oplus D \xrightarrow {\binom{i \ \ 0}{0 \ \ j}} B \oplus E \xrightarrow {\binom{p \ \ 0}{0 \ \ 1}} C \oplus F \to 0$ 是正合范畴的 ses. 首先, 这一直和是范畴的正合列, 故只需证明其中的满态射是容许满态射. \Cref{lem:split-in-exact} 说明 $\binom 1 0$ 是容许单态射, EX1 说明 $\binom i 0 : A \to B \oplus E$ 与 $\binom 0 j : D \to C \oplus E$ 也是容许单态射. 相应地, $\binom {1 \ \ 0}{0\  \ q}$ 与 $\binom {p \ \ 0}{0\  \ 1}$ 是容许满态射. 由 EX1', $\binom {1 \ \ 0}{0\  \ q} \circ \binom {p \ \ 0}{0\  \ 1}$ 是容许满态射.
 	\end{proof}
 \end{lemma}
 
 \begin{corollary}
-	任意可裂 ses 含于 $\mathcal{E}$.
+	在承认剩余公理的情况下, 可以将 EX0 与 EX0' 等价替换为:
+	\begin{itemize}
+		\item[$\overline{\text{EX0}}$] 任意可裂 ses 都属于 $\mathcal{E}$.
+	\end{itemize}
 \end{corollary}
 
 \begin{example}\label{ex:ext-small}
@@ -77,7 +92,135 @@
     正合范畴的一般理论见\cite{buhlerExactCategories2010a}与\cite{kellerDerivedCategoriesTheir1996a}, 一些较有意义计算与反例参阅\cite{buhlerElementaryConsiderationsExact}.
 \end{remark}
 
-正合范畴是特殊的外三角范畴. 由于正合范畴的部分主要结论 (如``六项长正合列'') 可从外三角范畴者退化得到, 此节无需提及这类结论. 以下两则正合范畴的重要结论被推广作外三角范畴定义的一部分, 应当给出证明. 第一则结论是 $\mathrm{Ext}^1$ 具有双函子性.
+正合范畴是特殊的外三角范畴. 由于正合范畴的部分主要结论 (如``六项长正合列'') 可从外三角范畴者退化得到, 此节无需提及这类结论. 以下几则正合范畴的重要结论被推广作外三角范畴定义的一部分, 应当给出证明.
+
+第一则结论是, EX2 (EX2') 中的推出 (拉回) 方块给定了正合列的推出 (拉回).
+
+\begin{theorem}\label{thm:homotopy-pullback-ex}
+	EX2 中的推出方块定义了正合范畴中正合列的推出; 特别地, 这也是推出拉回方块.
+	\begin{proof}
+		取定正合范畴的 ses $0 \to A \xrightarrow i B \xrightarrow p C \to 0$, 作 $i$ 关于任意给定态射 $f : A \to A'$ 的推出. 依照泛性质取 $p'$ 使得下图交换:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMSwwLCJBIl0sWzIsMCwiQiJdLFswLDAsIjAiXSxbMSwxLCJBJyJdLFsyLDEsIkUiXSxbMywwLCJDIl0sWzQsMCwiMCJdLFszLDEsIkMiXSxbMiwwXSxbMCwxLCJpIl0sWzMsNCwiaSciXSxbMSw1LCJwIl0sWzUsNl0sWzAsMywiZiJdLFsxLDQsImYnIl0sWzUsNywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMyw3LCIwIiwyLHsib2Zmc2V0IjoyLCJjdXJ2ZSI6MX1dLFs0LDcsInAnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	0 \& A \& B \& C \& 0 \\
+	\& {A'} \& E \& C
+	\arrow[from=1-1, to=1-2]
+	\arrow["i", from=1-2, to=1-3]
+	\arrow["f", from=1-2, to=2-2]
+	\arrow["p", from=1-3, to=1-4]
+	\arrow["{f'}", from=1-3, to=2-3]
+	\arrow[from=1-4, to=1-5]
+	\arrow[equals, from=1-4, to=2-4]
+	\arrow["{i'}", from=2-2, to=2-3]
+	\arrow["0"', shift right=2, curve={height=6pt}, from=2-2, to=2-4]
+	\arrow["{p'}", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+		\end{equation}
+		下证明 $p' = \operatorname{cok} i'$. 依照泛性质定义, 任取定 $\varphi : A' \to E$ 使得 $\varphi \circ i' = 0$. 由 $p = \operatorname{cok} i$, 存在 $\psi$ 使得 $\psi \circ p = \varphi \circ f'$:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMSwwLCJBIl0sWzIsMCwiQiJdLFswLDAsIjAiXSxbMSwxLCJBJyJdLFsyLDEsIkUiXSxbMywwLCJDIl0sWzQsMCwiMCJdLFsyLDIsIkYiXSxbMiwwXSxbMCwxLCJpIl0sWzMsNCwiaSciLDAseyJjb2xvdXIiOlszNTksMTAwLDYwXX0sWzM1OSwxMDAsNjAsMV1dLFsxLDUsInAiXSxbNSw2XSxbMCwzLCJmIl0sWzEsNCwiZiciXSxbNCw3LCJcXHZhcnBoaSAiLDAseyJjb2xvdXIiOlszNTksMTAwLDYwXX0sWzM1OSwxMDAsNjAsMV1dLFs0LDUsInAnIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsNywiMCIsMix7ImNvbG91ciI6WzM1OSwxMDAsNjBdfSxbMzU5LDEwMCw2MCwxXV0sWzUsNywiXFxwc2kiLDAseyJjdXJ2ZSI6LTIsImNvbG91ciI6WzM1OSwxMDAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszNTksMTAwLDYwLDFdXV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	0 \& A \& B \& C \& 0 \\
+	\& {A'} \& E \\
+	\&\& F
+	\arrow[from=1-1, to=1-2]
+	\arrow["i", from=1-2, to=1-3]
+	\arrow["f", from=1-2, to=2-2]
+	\arrow["p", from=1-3, to=1-4]
+	\arrow["{f'}", from=1-3, to=2-3]
+	\arrow[from=1-4, to=1-5]
+	\arrow["\psi", color={rgb,255:red,255;green,51;blue,54}, curve={height=-12pt}, dashed, from=1-4, to=3-3]
+	\arrow["{i'}", color={rgb,255:red,255;green,51;blue,54}, from=2-2, to=2-3]
+	\arrow["0"', color={rgb,255:red,255;green,51;blue,54}, from=2-2, to=3-3]
+	\arrow["{p'}"', dashed, from=2-3, to=1-4]
+	\arrow["{\varphi }", color={rgb,255:red,255;green,51;blue,54}, from=2-3, to=3-3]
+\end{tikzcd}.
+		\end{equation}
+		依照推出的泛性质, $(i' \ \ f'): A' \oplus B \to E$ 是满态射. 由 $(\varphi) \circ (i' \ \ f') = (\psi \circ p') \circ (i' \ \ f')$, 得 $\varphi = \psi \circ p'$. 这说明``被 $i'$ 零化的 $\varphi$ 唯一决定了 $\psi$'', 换言之, $p'$ 是泛性质决定的 $i'$ 的余核.
+		\\
+		最后说明以上方块是拉回. 给定 $x$ 与 $y$ 使得 $f' \circ y = i' \circ x$, 如下如图所示:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTEsWzEsMSwiQSJdLFsyLDEsIkIiXSxbMCwxLCIwIl0sWzEsMiwiQSciXSxbMiwyLCJFIl0sWzMsMSwiQyJdLFs0LDEsIjAiXSxbMywyLCJDIl0sWzAsMiwiMCJdLFs0LDIsIjAiXSxbMCwwLCJNIl0sWzIsMF0sWzAsMSwiaSJdLFszLDQsImknIiwwLHsiY29sb3VyIjpbMzU5LDEwMCw2MF19LFszNTksMTAwLDYwLDFdXSxbMSw1LCJwIl0sWzUsNl0sWzAsMywiZiJdLFsxLDQsImYnIiwwLHsiY29sb3VyIjpbMzU5LDEwMCw2MF19LFszNTksMTAwLDYwLDFdXSxbNSw3LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDcsInAnIl0sWzgsM10sWzcsOV0sWzEwLDMsIngiLDIseyJjdXJ2ZSI6MiwiY29sb3VyIjpbMzU5LDEwMCw2MF19LFszNTksMTAwLDYwLDFdXSxbMTAsMSwieSIsMCx7ImN1cnZlIjotMiwiY29sb3VyIjpbMzU5LDEwMCw2MF19LFszNTksMTAwLDYwLDFdXSxbMTAsMCwicyIsMix7ImNvbG91ciI6WzM1OSwxMDAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszNTksMTAwLDYwLDFdXV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	M \\
+	0 \& A \& B \& C \& 0 \\
+	0 \& {A'} \& E \& C \& 0
+	\arrow["s"', color={rgb,255:red,255;green,51;blue,54}, dashed, from=1-1, to=2-2]
+	\arrow["y", color={rgb,255:red,255;green,51;blue,54}, curve={height=-12pt}, from=1-1, to=2-3]
+	\arrow["x"', color={rgb,255:red,255;green,51;blue,54}, curve={height=12pt}, from=1-1, to=3-2]
+	\arrow[from=2-1, to=2-2]
+	\arrow["i", from=2-2, to=2-3]
+	\arrow["f", from=2-2, to=3-2]
+	\arrow["p", from=2-3, to=2-4]
+	\arrow["{f'}", color={rgb,255:red,255;green,51;blue,54}, from=2-3, to=3-3]
+	\arrow[from=2-4, to=2-5]
+	\arrow[equals, from=2-4, to=3-4]
+	\arrow[from=3-1, to=3-2]
+	\arrow["{i'}", color={rgb,255:red,255;green,51;blue,54}, from=3-2, to=3-3]
+	\arrow["{p'}", from=3-3, to=3-4]
+	\arrow[from=3-4, to=3-5]
+\end{tikzcd}.
+		\end{equation}
+		由 $p \circ y = 0$, 则存在唯一的 $s$ 使得 $i \circ s = y$. 同时有等式 $f \circ s = x$, 两侧复合单态射 $i'$ 即可. $s$ 的取法也是唯一的; 若不然, 则有 $i \circ s' = y = i \circ s$, 消去单态射 $i$ 得到 $s=s'$ (矛盾).
+	\end{proof}
+\end{theorem}
+
+\begin{corollary}
+	$\mathrm{Ext}^1(Z,-)$ 与 $\mathrm{Ext}^1(-, X)$ 都是加法函子.
+\end{corollary}
+
+\begin{corollary}
+	EX2 给出给出了配对
+	\begin{equation}
+		\mathrm{Ext}^1(Z,X) \times (X,X') \to \mathrm{Ext}^1(Z,X'), \quad (\theta, f) \mapsto \theta^\sharp (f).
+	\end{equation}
+	具体地, 如下图所示:
+	\begin{equation}\label{eq:ext1-pairing}
+		% https://q.uiver.app/#q=WzAsMTIsWzEsMCwiMCJdLFsyLDAsIlgiXSxbMywwLCJFIl0sWzQsMCwiWiJdLFs1LDAsIjAiXSxbNCwxLCJaIl0sWzUsMSwiMCJdLFsxLDEsIjAiXSxbMiwxLCJYJyJdLFszLDEsIkYiXSxbMCwxLCJcXHRoZXRhXlxcc2hhcnAgKGYpIl0sWzAsMCwiXFx0aGV0YSJdLFswLDFdLFsxLDJdLFsyLDNdLFszLDRdLFszLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNl0sWzcsOF0sWzgsOSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzksNSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsOSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsOCwiZiIsMl0sWzEsOSwiXFx0ZXh0e1BPfSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMSwxMCwiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMjIsMTAsIiIsMCx7InNob3J0ZW4iOnsic291cmNlIjoyMH0sImxldmVsIjoxLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+	\theta & 0 & X & E & Z & 0 \\
+	{\theta^\sharp (f)} & 0 & {X'} & F & Z & 0
+	\arrow[dashed, maps to, from=1-1, to=2-1]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-3, to=1-4]
+	\arrow[""{name=0, anchor=center, inner sep=0}, "f"', from=1-3, to=2-3]
+	\arrow["{\text{PO}}"{description}, draw=none, from=1-3, to=2-4]
+	\arrow[from=1-4, to=1-5]
+	\arrow[dashed, from=1-4, to=2-4]
+	\arrow[from=1-5, to=1-6]
+	\arrow[equals, from=1-5, to=2-5]
+	\arrow[from=2-2, to=2-3]
+	\arrow[dashed, from=2-3, to=2-4]
+	\arrow[dashed, from=2-4, to=2-5]
+	\arrow[from=2-5, to=2-6]
+	\arrow[between={0.2}{1}, dashed, maps to, from=0, to=2-1]
+\end{tikzcd}.
+	\end{equation}
+	我们希望这一配对是自然的.
+\end{corollary}
+
+\begin{lemma}
+	\Cref{eq:ext1-pairing} 定义的配对关于 $(X,X')$ 项是自然的. 换言之, $\theta^\sharp$ 是自然变换.
+	\begin{proof}
+		假定 $\varphi : X' \to X''$. 依照定义, $\theta^\sharp (\varphi \circ f)$ 是正合列 $\theta^\sharp (f)$ 关于 $\varphi$ 的拉回, 从而 $\mathrm{Ext}^1(Z, \varphi) (\theta^\sharp (f)) = \theta^\sharp (\varphi \circ f)$. 更清楚地说, 以下是交换图:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMSwwLCIoWCwgWCcpIl0sWzIsMCwiXFxtYXRocm17RXh0fV4xKFosIFgnKSJdLFsxLDEsIihYLFgnJykiXSxbMiwxLCJcXG1hdGhybXtFeHR9XjEoWiwgWCcnKSJdLFswLDAsImYiXSxbMCwxLCJcXHZhcnBoaSBcXGNpcmMgZiJdLFszLDAsIlxcdGhldGFeXFxzaGFycCAoZikiXSxbMywxLCJcXHRoZXRhXlxcc2hhcnAgKFxcdmFycGhpIFxcY2lyYyBmKSJdLFswLDEsIlxcdGhldGFeXFxzaGFycCJdLFswLDIsIihYLFxcdmFycGhpKSIsMl0sWzIsMywiXFx0aGV0YV5cXHNoYXJwIiwyXSxbMSwzLCJcXG1hdGhybXtFeHR9XjEoWiwgXFx2YXJwaGkpIl0sWzQsNSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFs2LDcsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	f \& {(X, X')} \& {\mathrm{Ext}^1(Z, X')} \& {\theta^\sharp (f)} \\
+	{\varphi \circ f} \& {(X,X'')} \& {\mathrm{Ext}^1(Z, X'')} \& {\theta^\sharp (\varphi \circ f)}
+	\arrow[maps to, from=1-1, to=2-1]
+	\arrow["{\theta^\sharp}", from=1-2, to=1-3]
+	\arrow["{(X,\varphi)}"', from=1-2, to=2-2]
+	\arrow["{\mathrm{Ext}^1(Z, \varphi)}", from=1-3, to=2-3]
+	\arrow[dashed, maps to, from=1-4, to=2-4]
+	\arrow["{\theta^\sharp}"', from=2-2, to=2-3]
+\end{tikzcd}.
+		\end{equation}
+	\end{proof}
+\end{lemma}
+
+第二则结论是 $\mathrm{Ext}^1$ 具有双函子性.
 
 \begin{theorem}\label{thm:ext1-bifunctor}
     假定\Cref{ex:ext-small}. $\mathrm{Ext}^1 : \mathcal{C}^{\mathrm{op}}\times \mathcal{C} \to \mathbf{Ab}$ 将一组对象 $(Z,X)$ 对应至``所有形如 $0 \to X \to \ ? \to Z \to 0$ 的 ses'' 的同构类. 对任意态射 $f : X \to X'$, $\mathrm{Ext}^1(Z,f)$ 将短正合列 $\theta$ 对应至 $\theta'$, 机理是
@@ -182,7 +325,7 @@
 	为规避过多技术性的细节, 本文一向承认\Cref{ex:ext-small}, 正如承认范畴的 $\mathrm{Hom}$-类是集合.
 \end{remark}
 
-第二则结论是 Noether 同构. 为精简记号, 通常作如下约定.
+第三则结论是 Noether 同构. 为精简记号, 通常作如下约定.
 
 \begin{notation}
     使用 $\rightarrowtail$ ($\twoheadrightarrow$) 表示容许单态射 (容许满态射). 例如, 正合范畴的 ses 形如 $X \rightarrowtail Y \twoheadrightarrow Z$.
@@ -209,9 +352,33 @@
 \end{tikzcd}.
     \end{equation}
     余核的反性质诱导了 $j'$ 与 $q'$. 今断言 $Z \overset{j'}\rightarrowtail W \overset{q'}\twoheadrightarrow B$ 也是 ses.
-    \begin{proof}
-        右上方方块是推出拉回. 依照 EX2, $j'$ 是容许单态射, 从而嵌入某一 ses $Z \overset{j'}\rightarrowtail W \overset{q''}\twoheadrightarrow B'$. 依照推出方块, $\operatorname{cok} j \simeq \operatorname{cok} j'$, 从而 $q'$ 与 $q''$ 相差左复合一个同构. 这说明题设所示的态射序列是 ses.
-    \end{proof}
+	\begin{proof}
+		先作 $Y \rightarrowtail A \twoheadrightarrow B$ 关于 $p$ 的推出. 依照\Cref{thm:homotopy-pullback-ex} 的对偶表述, $\star$ 是推出拉回. 此时, 两个推出方块依照同构 $\varphi$ 分解:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOSxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJYIl0sWzEsMSwiQSJdLFsxLDIsIkIiXSxbNCwyLCJXIl0sWzIsMiwiQiJdLFsyLDEsIlxcb3ZlcmxpbmUgVyIsWzM1OSwxMDAsNjAsMV1dLFswLDEsImkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwicCIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxLDQsImoiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzQsNSwicSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFszLDQsImpcXGNpcmMgaSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMCwzLCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDcsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNiwiciIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs2LDcsInEnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNiwiaiciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw4LCJcXG92ZXJsaW5lIHtyfSIsMCx7ImNvbG91ciI6WzM1OSwxMDAsNjBdfSxbMzU5LDEwMCw2MCwxXV0sWzIsOCwiXFxvdmVybGluZSB7aid9IiwyLHsiY29sb3VyIjpbMzU5LDEwMCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19LFszNTksMTAwLDYwLDFdXSxbOCw3LCJcXG92ZXJsaW5lIHtxJ30iLDIseyJjb2xvdXIiOlszNTksMTAwLDYwXSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fSxbMzU5LDEwMCw2MCwxXV0sWzEsOCwiXFxzdGFyIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsOCwiXFx2YXJwaGkgIiwxLHsiY29sb3VyIjpbMjI5LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzIyOSwxMDAsNjAsMV1dXQ==
+\begin{tikzcd}
+	X & Y & Z \\
+	X & A & \textcolor{rgb,255:red,255;green,51;blue,54}{{\overline W}} \\
+	& B & B && W
+	\arrow["i", tail, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["p", two heads, from=1-2, to=1-3]
+	\arrow["j", tail, from=1-2, to=2-2]
+	\arrow["\star"{description}, draw=none, from=1-2, to=2-3]
+	\arrow["{\overline {j'}}"', color={rgb,255:red,255;green,51;blue,54}, tail, from=1-3, to=2-3]
+	\arrow["{j'}", dashed, from=1-3, to=3-5]
+	\arrow["{j\circ i}", tail, from=2-1, to=2-2]
+	\arrow["{\overline {r}}", color={rgb,255:red,255;green,51;blue,54}, from=2-2, to=2-3]
+	\arrow["q", two heads, from=2-2, to=3-2]
+	\arrow["r"', two heads, from=2-2, to=3-5]
+	\arrow["{\overline {q'}}"', color={rgb,255:red,255;green,51;blue,54}, two heads, from=2-3, to=3-3]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["{\varphi }"{description}, color={rgb,255:red,51;green,88;blue,255}, dashed, from=3-5, to=2-3]
+	\arrow["{q'}", dashed, from=3-5, to=3-3]
+\end{tikzcd}.
+		\end{equation}
+		最后说明满态射 $r$ 诱导的 $q'$ 满足 $\overline {q'} \circ \varphi = q'$. 这一等式在复合满态射 $r$ 后显然相等.
+	\end{proof}
 \end{theorem}
 
 \begin{remark}
@@ -306,6 +473,14 @@
         \end{equation}
     \end{enumerate}
 \end{definition}
+
+\begin{example}
+    以下是一些注意事项.
+    \begin{enumerate}
+        \item $\Sigma$ 是范畴自等价, 这并不意味着 $\Sigma X \simeq X$.
+        \item TR3 中补全的态射的方式未必唯一.
+    \end{enumerate}
+\end{example}
 
 \begin{remark}
     关于三角范畴的定义见\cite{AST_1996__239__R1_0}或\cite{neemanTriangulatedCategories2001}. 更通俗的读物是\cite{TriangulatedDMurfet}或\cite{TriangulatedJPMay}. 特别地, \cite{TriangulatedJPMay} 指出 TR3 可由其余公理推出.
@@ -409,7 +584,7 @@
     \end{enumerate}
 \end{proposition}
 
-\begin{proposition}
+\begin{proposition}\label{prop:triangulated-kernel-cokernel}
 	对预三角范畴 (无需 TR4) 中的态射 $f$, 以下命题等价:
 	\begin{enumerate}
 		\item $f$ 存在核;
@@ -454,21 +629,38 @@
 	\arrow[from=2-3, to=2-4]
 \end{tikzcd}.
 		\end{equation}
-		这说明 $f$ 形如 $K \oplus C \xrightarrow {(0 \  \varphi)} V$, 其中 $\varphi$ 是单态射. 同样的论证说明 $\varphi$ 是可裂单, 且由直和关系 $V \simeq L \oplus D$. 此时, $f$ 形如 $\binom{1 \ \ 0}{0 \ \ }C \oplus K \to D\oplus L$.
+		这说明 $f$ 形如 $K \oplus C \xrightarrow {(0 \  \varphi)} V$, 其中 $\varphi$ 是单态射. 同样的论证说明 $\varphi$ 是可裂单, 且由直和关系 $V \simeq L \oplus D$. 此时, $f$ 形如 $\binom{1 \ \ 0}{0 \ \ 0} : C \oplus K \to D\oplus L$.
 	\end{proof}
 \end{proposition}
 
 \begin{corollary}\label{cor:split-mono-epi}
-	给定好三角 $X \xrightarrow u Y \xrightarrow v Z \xrightarrow w \Sigma X$, 则以下命题等价: (1) $u$ 是单态射; (2) $u$ 是可裂单态射; (3) $v$ 是满态射; (4) $v$ 是可裂满态射; $w = 0$. 特别地, 所有可裂单(满)都有相应的直和项, 即\Cref{def:weakly-idempotent-complete} 定义的弱幂等完备性.
+	给定好三角 $X \xrightarrow u Y \xrightarrow v Z \xrightarrow w \Sigma X$, 则以下命题等价: (1) $u$ 是单态射; (2) $u$ 是可裂单态射; (3) $v$ 是满态射; (4) $v$ 是可裂满态射; $w = 0$.
 \end{corollary}
 
-\begin{example}
-    以下是一些注意事项.
-    \begin{enumerate}
-        \item $\Sigma$ 是范畴自等价, 这并不意味着 $\Sigma X \simeq X$.
-        \item TR3 中补全的态射的方式未必唯一.
-    \end{enumerate}
-\end{example}
+\begin{lemma}
+	特别地, 预三角范畴的所有可裂单(满)都有相应的直和项, 即\Cref{def:weakly-idempotent-complete} 定义的弱幂等完备性.
+	\begin{proof}
+		给定好三角 $X \xrightarrow u Y \xrightarrow v Z \xrightarrow w \Sigma X$, 其中 $v$ 是可裂单. \Cref{cor:split-mono-epi} 说明 $u = 0$. 可以补全以下三角射:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMCwxLCJYIl0sWzEsMSwiWSJdLFsyLDEsIloiXSxbMywxLCJcXFNpZ21hIFgiXSxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIlkgXFxvcGx1cyBcXFNpZ21hIFgiXSxbMywwLCJcXFNpZ21hIFgiXSxbMCwxLCIwIl0sWzEsMiwidiJdLFsyLDMsInciXSxbNCwwLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDEsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw1LCIwIl0sWzUsNiwiXFxiaW5vbSAxIDAgIl0sWzYsNywiKDAgXFwgMSkiXSxbNiwyLCJcXHZhcnBoaSAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	X & Y & {Y \oplus \Sigma X} & {\Sigma X} \\
+	X & Y & Z & {\Sigma X}
+	\arrow["0", from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["{\binom 1 0 }", from=1-2, to=1-3]
+	\arrow[equals, from=1-2, to=2-2]
+	\arrow["{(0 \ 1)}", from=1-3, to=1-4]
+	\arrow["{\varphi }", dashed, from=1-3, to=2-3]
+	\arrow[equals, from=1-4, to=2-4]
+	\arrow["0", from=2-1, to=2-2]
+	\arrow["v", from=2-2, to=2-3]
+	\arrow["w", from=2-3, to=2-4]
+\end{tikzcd}.
+		\end{equation}
+		由``TR3 的特殊情形'', $\varphi$ 是同构. 这说明 $\operatorname{cok} v = W$.
+	\end{proof}
+\end{lemma}
 
 \subsection{同伦的推出拉回}
 
