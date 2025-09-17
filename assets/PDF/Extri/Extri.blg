@@ -6,6 +6,7 @@ A level-1 auxiliary file: Sections/Intro.aux
 A level-1 auxiliary file: Sections/Diagram.aux
 A level-1 auxiliary file: Sections/SpecialExtri.aux
 A level-1 auxiliary file: Sections/Model.aux
+A level-1 auxiliary file: Sections/Homotopy.aux
 The style file: alphaurl.bst
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
@@ -16,45 +17,45 @@ Database file #1: ref.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty journal in joyal
 Warning--empty journal in reedyHOMOTOPYTHEORYMODEL
-You've used 25 entries,
+You've used 26 entries,
             3368 wiz_defined-function locations,
-            886 strings with 10623 characters,
-and the built_in function-call counts, 11774 in all, are:
-= -- 1275
-> -- 312
+            894 strings with 10817 characters,
+and the built_in function-call counts, 12213 in all, are:
+= -- 1321
+> -- 333
 < -- 23
-+ -- 82
-- -- 78
-* -- 637
-:= -- 1623
-add.period$ -- 98
-call.type$ -- 25
-change.case$ -- 126
-chr.to.int$ -- 25
-cite$ -- 27
-duplicate$ -- 388
-empty$ -- 1151
-format.name$ -- 121
-if$ -- 3037
++ -- 88
+- -- 84
+* -- 657
+:= -- 1690
+add.period$ -- 101
+call.type$ -- 26
+change.case$ -- 132
+chr.to.int$ -- 26
+cite$ -- 28
+duplicate$ -- 401
+empty$ -- 1187
+format.name$ -- 128
+if$ -- 3148
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 25
-newline$ -- 147
-num.names$ -- 75
-pop$ -- 292
+missing$ -- 26
+newline$ -- 152
+num.names$ -- 78
+pop$ -- 300
 preamble$ -- 1
-purify$ -- 157
+purify$ -- 164
 quote$ -- 0
-skip$ -- 878
+skip$ -- 915
 stack$ -- 0
-substring$ -- 416
-swap$ -- 58
+substring$ -- 423
+swap$ -- 59
 text.length$ -- 43
 text.prefix$ -- 18
 top$ -- 0
-type$ -- 172
+type$ -- 180
 warning$ -- 2
-while$ -- 76
-width$ -- 28
-write$ -- 357
+while$ -- 79
+width$ -- 29
+write$ -- 370
 (There were 2 warnings)

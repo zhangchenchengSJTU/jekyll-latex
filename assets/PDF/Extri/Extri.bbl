@@ -33,6 +33,11 @@ Richard Crew.
 \newblock Homological {{Algebra Lecture}} 6, 2021.
 \newblock URL: \url{https://people.clas.ufl.edu/rcrew/files/homology-lect6.pdf}.
 
+\bibitem[DG67]{EGA}
+Jean Dieudonn{\'e} and Alexander Grothendieck.
+\newblock \'{E}l\'ements de g\'eom\'etrie alg\'ebrique.
+\newblock {\em Inst. Hautes \'Etudes Sci. Publ. Math.}, 4, 8, 11, 17, 20, 24, 28, 32, 1961--1967.
+
 \bibitem[GZ67]{gabrielCalculusFractionsHomotopy1967}
 Peter Gabriel and Michel Zisman.
 \newblock {\em Calculus of {{Fractions}} and {{Homotopy Theory}}}.

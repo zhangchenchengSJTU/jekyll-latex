@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.28)  16 SEP 2025 17:32
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.28)  17 SEP 2025 13:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -768,7 +768,7 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@erf=\skip80
 \f@nch@O@olf=\skip81
 \f@nch@O@orf=\skip82
-) (./Extri.aux (./Sections/Recollection.aux) (./Sections/Intro.aux) (./Sections/Diagram.aux) (./Sections/SpecialExtri.aux) (./Sections/Model.aux))
+) (./Extri.aux (./Sections/Recollection.aux) (./Sections/Intro.aux) (./Sections/Diagram.aux) (./Sections/SpecialExtri.aux) (./Sections/Model.aux) (./Sections/Homotopy.aux))
 \openout1 = `Extri.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
@@ -943,7 +943,14 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 
 
 
-] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59]) [60] (./Extri.bbl
+] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59]) [60]
+\openout2 = `Sections/Homotopy.aux'.
+
+ (./Sections/Homotopy.tex [61
+
+
+
+] [62] [63] [64] [65] [66] [67]) [68] (./Extri.bbl
 
 Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
 (fontspec)             doesn't exist).
@@ -967,24 +974,24 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
- [61
+ [69
 
 
-]) [62] (./Extri.aux (./Sections/Recollection.aux) (./Sections/Intro.aux) (./Sections/Diagram.aux) (./Sections/SpecialExtri.aux) (./Sections/Model.aux))
+]) [70] (./Extri.aux (./Sections/Recollection.aux) (./Sections/Intro.aux) (./Sections/Diagram.aux) (./Sections/SpecialExtri.aux) (./Sections/Model.aux) (./Sections/Homotopy.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `Extri.out' has not changed.
-(rerunfilecheck)             Checksum: 5E959981A898DC9A9388AEF693100EDF;3221.
+(rerunfilecheck)             Checksum: 17FF04164DFA67315A55067FF20F0E4F;3886.
  ) 
 Here is how much of TeX's memory you used:
- 48964 strings out of 474773
- 1153568 string characters out of 5761289
+ 49851 strings out of 474773
+ 1178005 string characters out of 5761289
  2004842 words of memory out of 5000000
- 70497 multiletter control sequences out of 15000+600000
- 570364 words of font info for 135 fonts, out of 8000000 for 9000
+ 71376 multiletter control sequences out of 15000+600000
+ 570372 words of font info for 136 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  131i,28n,135p,3274b,1537s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Extri.pdf (62 pages).
+Output written on Extri.pdf (70 pages).

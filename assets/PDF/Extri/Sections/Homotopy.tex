@@ -1,0 +1,522 @@
+\section{同伦范畴}
+
+\subsection{局部化}
+
+局部化与分式计算的一般理论见\cite{gabrielCalculusFractionsHomotopy1967}.
+
+\begin{definition}
+    (局部化). 给定范畴 $\mathcal{C}$ 与态射类 $S$. 对任意范畴 $\mathcal{D}$, 定义 $\mathrm{Funct}_S(\mathcal{C}, \mathcal{D})$ 为函子范畴 $\mathrm{Funct}(\mathcal{C}, \mathcal{D})$ 的全子范畴, 其对象为将 $S$ 中的态射映为 $\mathcal{D}$ 中同构的函子.
+    \begin{enumerate}
+        \item 称函子 $Q_1: \mathcal{C} \to \mathcal{C}_1$ 是 $\mathcal{C}$ 关于 $S$ 的弱局部化, 若以下是函子范畴间的等价
+        \begin{equation}
+            Q_1^* : \mathrm{Funct}(\mathcal{C}_1, \mathcal{D}) \xrightarrow{\sim} \mathrm{Funct}_S(\mathcal{C}, \mathcal{D}), \quad F \mapsto F \circ Q_1.
+        \end{equation}
+        \item 称函子 $Q_2: \mathcal{C} \to \mathcal{C}_2$ 是 $\mathcal{C}$ 关于 $S$ 的严格局部化, 若以下是函子范畴间的同构
+        \begin{equation}
+            Q_2^* : \mathrm{Funct}(\mathcal{C}_2, \mathcal{D}) \xrightarrow{\cong} \mathrm{Funct}_S(\mathcal{C}, \mathcal{D}), \quad F \mapsto F \circ Q_2.
+        \end{equation}
+    \end{enumerate}
+\end{definition}
+
+\begin{example}\label{ex: Gabriel-Zisman localization}
+    给定范畴 $\mathcal{C}$ 与态射类 $S$, 其 Gabriel-Zisman 局部化 (\cite{gabrielCalculusFractionsHomotopy1967}) 的构造如下. 
+    \begin{enumerate}
+        \item 我们保持范畴 $\mathcal{C}$ 对象类, 形式地加入 $S$ 中态射的逆元, 得范畴 $\mathcal{C}_S$. 具体地, 子范畴 $\mathcal{C} \subseteq \mathcal{C}_S$ 具有相同对象类. 对任意 $X$ 与 $Y$,
+        \begin{equation}
+            (X,Y)_{\mathcal{C}_S} = (X, Y)_\mathcal{C} \sqcup ((Y,X)_\mathcal{C} \cap \mathcal{S}).
+        \end{equation}
+        依照无交并的定义, 我们将 $(X,Y)$ 中态射表示作二元组 $(n, f)$:
+        \begin{equation}
+            (X,Y)_{\mathcal{C}_S} = \{(0, f) \mid f \in (X,Y)_\mathcal{C}\} \cup \{(1, s) \mid s \in (Y, X)_\mathcal{C}\}.
+        \end{equation}
+        这是类 $\{0,1\} \times \mathsf{Mor}(\mathcal{C})$ 的一个子集. 依照 $\mathcal{C}$ 中态射复合关系约定
+        \begin{enumerate}
+            \item $(0,1_X)$ 是 $X \in \mathcal{C}_S$ 的恒等态射;
+            \item $(0, g) \circ (0, f) \sim (0, g \circ f)$, 若 $g$ 与 $f$ 可复合.
+        \end{enumerate}
+        此时, $\mathcal{C}_S$ 是一个范畴, 但未必是局部小的. 存在子范畴
+        \begin{equation}
+            \iota : \mathcal{C} \to \mathcal{C} \to \mathcal{C}_S,\quad X \mapsto X,\quad f \mapsto (0,f).
+        \end{equation}
+        \item 定义以下规则生成的等价关系 $\sim$:
+        \begin{itemize}
+            \item[$\dagger$] $(1, s) \circ (0, s) \sim (0, 1_X)$ 与 $(0, s) \circ (1, s) \sim (0, 1_Y)$, 若 $s: X \to Y$ 属于 $S$.
+        \end{itemize}
+        得商函子 $\pi: \mathcal{C}_S \to (\mathcal{C}_S)/\sim$.
+        \item 将复合函子 $\mathcal{C} \xrightarrow \iota \mathcal{C}_S \xrightarrow \pi (\mathcal{C}_S)/\sim$ 定义作 Gabriel-Zisman 局部化.
+    \end{enumerate}
+    商函子 $\pi$ 是以类为指标范畴的``滤过余极限''在 NBGC (von Neumann–Bernays–Gödel 与类的选择公理) 公理体系下合理的; 但是, 我们无法在集合视角中检验 $\mathcal{C}_S$ 中两个态射在局部化范畴中相同与否.
+\end{example}
+
+实际上, Gabriel-Zisman 局部化是严格的.
+
+\begin{lemma}\label{lem: Gabriel-Zisman localization is strict}
+    记 $Q:= \pi \circ \iota : \mathcal{C} \to (\mathcal{C}_S)/\sim$ 是\Cref{ex: Gabriel-Zisman localization} 定义的函子, 则有函子范畴的同构
+    \begin{equation}\label{eq: Gabriel-Zisman localization is strict}
+        Q^* : \mathrm{Funct}((\mathcal{C}_S)/\sim, \mathcal{D}) \xrightarrow{\cong} \mathrm{Funct}_S(\mathcal{C}, \mathcal{D}), \quad F \mapsto F \circ Q.
+    \end{equation}
+    \begin{proof}
+        (对象 (函子) 映满). $Q$ 已将 $S$ 映作同构, $Q^\ast : \mathrm{Funct}((\mathcal{C}_S)/\sim, \mathcal{D}) \to \mathrm{Funct}(\mathcal{C}, \mathcal{D})$ 的像必然在全子范畴 $\mathrm{Funct}_S(\mathcal{C}, \mathcal{D})$ 中. 任取 $F : \mathcal{C} \to \mathcal{D}$ 使得 $F(S)$ 是同构, 取 $F$ 关于 $\iota$ 的分解
+        \begin{equation}
+            F_1 : \mathcal{C}_S \to \mathcal{D},\quad X \mapsto FX, \quad (0,f) \mapsto Ff, \quad (1,s) \mapsto (Fs)^{-1}.
+        \end{equation}
+        函子 $F_1$ 将 $\dagger$ 中等价关系映作恒等. 故存在唯一函子 $F_2 : (\mathcal{C}_S)/\sim \to \mathcal{D}$ 使得 $F_1 = F_2 \circ \pi$. 此时, $F = F_2 \circ Q$, 即 $Q^\ast$ 在对象层面上是满的.
+        \\
+                (态射 (自然变换) 全). 取 $\eta : F \to G$ 属于 $\mathrm{Funct}_S(\mathcal{C}, \mathcal{D})$. 自然变换是一族由 $\mathcal{C}$ 中对象标记的 $\mathcal{D}$ 中的态射, 故只需检验 $\eta : F_1 \to G_1$ 与 $F_2 \to G_2$ 是自然变换即可. 对前者, 任取 $s: X \to Y$ 属于 $S$, 以下是交换图:
+        \begin{equation}
+            % https://q.uiver.app/#q=WzAsNixbMSwwLCJYIl0sWzEsMSwiWSJdLFsyLDAsIkZfMVgiXSxbMiwxLCJHXzFYIl0sWzAsMCwiRl8xWSJdLFswLDEsIkdfMVkiXSxbMSwwLCIoMSxzKSJdLFs1LDQsIlxcZXRhX1kiXSxbMywyLCJcXGV0YV9YIl0sWzQsMiwiKEZfMXMpXnstMX0iLDAseyJjdXJ2ZSI6LTJ9XSxbNSwzLCIoR18xcyleey0xfSIsMix7ImN1cnZlIjoyfV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	{F_1Y} \& X \& {F_1X} \\
+	{G_1Y} \& Y \& {G_1X}
+	\arrow["{(F_1s)^{-1}}", curve={height=-12pt}, from=1-1, to=1-3]
+	\arrow["{\eta_Y}", from=2-1, to=1-1]
+	\arrow["{(G_1s)^{-1}}"', curve={height=12pt}, from=2-1, to=2-3]
+	\arrow["{(1,s)}", from=2-2, to=1-2]
+	\arrow["{\eta_X}", from=2-3, to=1-3]
+\end{tikzcd}.
+        \end{equation}
+        对后者, 交换方块在``商''的意义下必定也是交换的.
+        \\
+        (态射 (自然变换) 忠实). 证明 $Q^\ast$ 在态射 (自然变换) 层面全时, 我们注意到 $\{\eta_X\}_{X \in \mathsf{Ob}(\mathcal{C})} : F \circ Q\to F' \circ Q$ 是 $\mathcal{D}$ 中的一族态射. 由于 $Q$ 不改变对象类, 自然无法改变一族 $\mathsf{Ob}(\mathcal{C})$-指标的 $\mathcal{D}$ 中态射, 从而 $\eta$ 在 $Q^\ast$ 下的原像只能是自身. 
+        \\
+        (对象 (函子) 单地映上). 若 $F \circ Q$ 与 $F' \circ Q$ 是相同的函子, 则 $F$ 与 $F'$ 在对象层面相同. 假定 $\eta : F \circ Q \to F' \circ Q$ 与 $\theta : F \circ Q \to F \circ Q$ 是互逆的自然变换, 则存在唯一的原像 $\overline \eta : F \to F'$ 与 $\overline \theta : F' \to F$. 显然 $\overline \theta \circ \overline \eta$ 与 $\overline \eta \circ \overline \theta$ 可以取作恒等自然变换, 从而只能取作恒等变换.
+    \end{proof}
+\end{lemma}
+
+\begin{remark}\label{rmk: universal property of Gabriel-Zisman localization}
+    \Cref{eq: Gabriel-Zisman localization is strict} 是如下泛性质的决定式.
+    \begin{itemize}
+        \item 对任意函子 $F: \mathcal{C} \to \mathcal{D}$ 使得 $F(S)$ 是同构, 存在唯一函子 $\overline F : (\mathcal{C}_S)/\sim \to \mathcal{D}$ 使得 $F = \overline F \circ Q$.
+    \end{itemize}
+    此处谈及的``泛性质''不宜定义作顿范畴中的初/终对象, 应理解作普适函子问题的解 (见 solution d'un problème d'application universelle, \cite{EGA}).
+\end{remark}
+
+\begin{corollary}\label{cor: localization functor is epic}
+    $FQ = GQ$ 当且仅当 $F = G$. 函子 $Q$ 类似``满态射''.
+\end{corollary}
+
+\begin{remark}
+    (关于类的滤过). 假定 $\mathcal{I}$ 是一个图, 其对象与态射构成集合. $\mathcal{C}$ 存在任意余极限. 函子 $F: \mathcal{I} \to \mathcal{C}$ 的余极限是 $\coprod_{i \in I} F(i)$ 的商, 其等价关系由 $F(I)$ 中交换图生成. 通常地, 唯有求出具体的余极限 $\varinjlim_I F$, 我们才能检验 $\coprod_{i \in I} F(i)$ 中两个元素是否等价.
+    \\
+    若 $\mathcal{I}$ 是滤过的, 则无需求解余极限即可判断 $\coprod_{i \in I} F(i)$ 中两个元素是否等价. 事实上, $a_i \in X_i$ 与 $a_j \sim X_j$ 在滤过余极限对象中等价, 当且仅当存在一个包含 $i$ 与 $j$ 的有限子图 $I_0$, 使得 $a_i$ 与 $a_j$ 在 $\varinjlim_{I_0} F$ 中等价.
+    \\
+    在 Gabriel-Zisman 局部化中, $I$ 标记了范畴 $\mathcal{C}_S$ 的点与边, 以及条件 $\dagger$ 蕴含的交换图. $I$ 通常是真类. 若 $I$ 是滤过的 ($\kappa$-滤过的), 则 $\mathcal{C}_S$ 中两个态射在局部化范畴中态射的等价性可以在某个有限子图 (基数小于 $\kappa$ 的子图) 中检验. 通常来说, Gabriel-Zisman 局部化并非滤过的.
+\end{remark}
+
+即便局部化可以被``滤过地''定义, 局部化范畴的 $\mathrm{Hom}$-类未必是集合.
+
+\begin{example}
+    定义 $\mathcal{C}$ 为如下范畴: 对象类是 $\{A, B\} \sqcup \mathcal{X}$, 其中 $\mathcal{X}$ 是真类. 态射有且仅有以下几类:
+    \begin{enumerate}
+        \item 所有恒等态射, \qquad 2. 对任意 $X$, $(A,X)_\mathcal{C} = \{f_X\}$, \qquad 3. 对任意 $X$, $(B,X)_\mathcal{C} = \{g_X\}$.
+    \end{enumerate}
+    记 $\mathcal{S} = \{i_X\}_{X \in \mathcal{X}}$. 此时, $(A,B)_{\mathcal{C}_S/\sim}$ 是一个真类.
+\end{example}
+
+\begin{example}
+    (分式计算). 第一手资料见\cite{gabrielCalculusFractionsHomotopy1967}. 其思想是将局部化范畴中``锯齿状''的态射化简作分式, 且两个分式的等价关系可以在有限步骤内检验. 局部化范畴中的一个态射即一个分式所在的等价类, 而这一等价类又是一个滤过系统, 该态射可表示为``分子部分''的滤过余极限. 由分式定义导出范畴 (Deligne 方法) 的例子见\cite{kellerDerivedCategoriesTheir1996a}.
+\end{example}
+
+\begin{definition}
+    (局部化的记号). 以下规定几类局部化记号.
+    \begin{enumerate}
+        \item (GZ 局部化). 通常记作 $Q: \mathcal{C} \to \mathcal{C}[S^{-1}]$, 即\Cref{ex: Gabriel-Zisman localization} 定义的 $\pi \circ \iota : \mathcal{C} \to \mathcal{C}_S/ \sim$. 泛性质表述见\Cref{rmk: universal property of Gabriel-Zisman localization}.
+        \item (分式). 如果 $S$ 是乘法系, 则由左 (右) 分式构造的局部化范畴记作 $S^{-1}\mathcal{C}$ ($LS^{-1}\mathcal{C}$).
+        \item (加法商). 加法商通常用 $\mathcal{C} / \mathcal{B}$ 表示 (\Cref{thm:extri-quotient}), 之后将证明这是局部化.
+        \item (同伦范畴). 给定模型范畴 $\mathcal{C}$, 其同伦范畴记作 $\mathsf{Ho}(\mathcal{C})$, 定义为 $\mathcal{C}$ 关于弱等价类的局部化.
+    \end{enumerate}
+\end{definition}
+
+\subsection{加法局部化}
+
+一个棘手的问题是, 加法范畴的 GZ 局部化范畴未必是加法范畴.
+
+\begin{example}
+    记 $\mathcal{C}$ 是域 $k$ 中的有限维向量空间范畴, 取 $S = \{0 \to k\}$. $\mathcal{C}[S^{-1}]$. 容易验证, $f \in \mathcal{C}$ 是局部化范畴中的零态射, 当且仅当 $\mathrm{rank}(f) \leq 1$. $\mathcal{C}[S^{-1}]$ 显然不是加法范畴.
+\end{example}
+
+为给出 $Q$ 是加法函子的充分条件, 先作如下准备.
+
+\begin{definition}
+    (积范畴). 将如下范畴定义作范畴 $\mathcal{A}$ 与 $\mathcal{B}$ 的积.
+    \begin{enumerate}
+        \item 对象类是 $\mathsf{Ob}(\mathcal{A}) \times \mathsf{Ob}(\mathcal{B})$ (类的 Catersian 积).
+        \item 态射类是 $\mathsf{Mor}(\mathcal{A}) \times \mathsf{Mor}(\mathcal{B})$ (类的 Catersian 积).
+        \item 恒等态射与态射复合按分量定义.
+    \end{enumerate}
+\end{definition}
+
+\begin{lemma}\label{lem: bifunctor is funct in product}
+    $\mathrm{Funct}(\mathcal{A} \times \mathcal{B}, \mathcal{C})$ 恰好包含由 $\mathcal{A}$ 与 $\mathcal{B}$ 至 $\mathcal{C}$ 的双函子.
+    \begin{proof}
+        给定 $F : \mathcal{A} \times \mathcal{B} \to \mathcal{C}$, 下检验 $F(A, -) : \mathcal{B} \to \mathcal{C}$ 是函子.
+        \begin{enumerate}
+            \item 对象的对应是 $B \mapsto F(A,B)$, \quad 态射的对应是 $f: B \to B' \mapsto F(1_A, f)$.
+            \item 复合律通过积范畴的态射复合 $(1_A, g) \circ (1_A, f) = (1_A, g \circ f)$ 检验, 单位律类似可验证.
+        \end{enumerate}
+        对 $f : A \to A'$ 与 $g : B \to B'$, 有等式
+        \begin{equation}
+            F(f,1_{B'}) \circ F(1_A, g) = F(f,g) = F(1_{A'},g) \circ F(f, 1_B).
+        \end{equation}
+    \end{proof}
+\end{lemma}
+
+\begin{lemma}\label{lem: currying for categories}
+    (范畴的 Curry 化). 以下是函子范畴的同构
+    \begin{equation}
+        \mathrm{Funct}(\mathcal{A} \times \mathcal{B}, \mathcal{C}) \cong \mathrm{Funct}(\mathcal{A}, \mathrm{Funct}(\mathcal{B}, \mathcal{C})), \quad F \mapsto (A \mapsto (B \mapsto F(A,B))).
+    \end{equation}
+    \begin{proof}
+        给定 $F : (A \times B) \to C$, 记对应所得的函子为
+        \begin{equation}
+            \mathfrak F: \mathcal{A} \to \mathrm{Funct}(\mathcal{B}, \mathcal{C}), \quad A \mapsto F(A,-).
+        \end{equation}
+        下证明 $F \mapsto \mathfrak F$ 是函子.
+        \begin{enumerate}
+            \item (对象). \Cref{lem: bifunctor is funct in product} 说明 $F(A,-) : \mathcal{B} \to \mathcal{C}$ 是一个函子. 
+            \item (态射). 给定自然变换 $\theta_{(?,-)} : F \Rightarrow G$, 则 $\theta_{(A, -)} : \mathfrak F(A) \to \mathfrak G(A)$ 也是自然变换 (这无非将 $\mathcal{C}$ 中态射族的指标集由 $\{(?,-)\}$ 限制为 $\{(A,-)\}$).
+            \item (复合律与恒等律). 容易验证. 证明的关键步骤是把双函子遗忘成单函子.
+        \end{enumerate}
+        反之, 我们由 $\mathfrak F$ 对应定义双函子 $F$. 困难之处是检验 $F$ 的双函子性. 任取 $(f,g) : (A,B) \to (A', B')$,
+        \begin{align}
+\theta_{(A',B')} \circ F(f,g) & = \theta_{A'}(B')\circ (\mathfrak F(f))(g)  = \theta_{A'}(B') \circ (\mathfrak F(f)) (\mathrm{id}_{B'}) \circ (\mathfrak F(\mathrm{id}_{A}))(g)\\
+& = (\mathfrak G(f)) (\mathrm{id}_{B'}) \circ \theta_{A}(B') \circ (\mathfrak F(\mathrm{id}_{A}))(g) = (\mathfrak G(f)) (\mathrm{id}_{B'}) \circ (\mathfrak G(\mathrm{id}_{A}))(g) \circ \theta_{A}(B)\\
+& = (\mathfrak G(f))(g) \circ \theta_A(B)  \qquad = G(f, g) \circ \theta_{(A,B)}.
+\end{align}
+复合律与恒等律验证从略.
+    \end{proof}
+\end{lemma}
+
+\begin{theorem}\label{thm: localization commutes with product}
+    (积范畴的局部化). 给定范畴 $\mathcal{C}_1$ 与 $\mathcal{C}_2$, 分别取包含所有同构的态射类 $S_1$ 与 $S_2$, 则 $S_1 \times S_2$ 是 $\mathcal{C}_1 \times \mathcal{C}_2$ 的态射类, 且包含所有同构. 设 $Q_i : \mathcal{C}_i \to \mathcal{C}_i[S_i^{-1}]$ 是 $\mathcal{C}_i$ 关于 $S_i$ 的 GZ 局部化, 则
+    \begin{equation}
+        \mathcal{C}_1 \times \mathcal{C}_2 \to \mathcal{C}_1[S_1^{-1}] \times \mathcal{C}_2[S_2^{-1}],\quad (?, -) \mapsto (Q_1(?), Q_2(-))
+    \end{equation}
+    映 $S_1 \times S_2$ 为同构. 今断言, 局部化诱导的函子
+    \begin{equation}
+        (\mathcal{C}_1 \times \mathcal{C}_2)[(S_1 \times S_2)^{-1}] \to \mathcal{C}_1[S_1^{-1}] \times \mathcal{C}_2[S_2^{-1}]
+    \end{equation}
+    是范畴的同构.
+    \begin{proof}
+        对任意范畴 $\mathcal{D}$, 由\Cref{lem: Gabriel-Zisman localization is strict} 得
+        \begin{equation}
+            \mathrm{Funct}((\mathcal{C}_1 \times \mathcal{C}_2)[(S_1 \times S_2)^{-1}], \mathcal{D}) \cong \mathrm{Funct}_{S_1 \times S_2}(\mathcal{C}_1 \times \mathcal{C}_2, \mathcal{D}),\quad F \mapsto F \circ Q_{1 \times 2}.
+        \end{equation}
+        引入以下引理.
+        \begin{quoting}
+        \begin{lemma}
+            函子 $G : \mathcal{C}_1 \times \mathcal{C}_2 \to \mathcal{D}$ 将 $S_1 \times S_2$ 映作同构, 当且仅当以下条件满足:
+        \begin{enumerate}
+            \item 对任意 $X_1 \in \mathcal{C}_1$, $G(X_1, -)$ 将 $S_2$ 映至 $\mathcal{D}$ 中同构;
+            \item 对任意 $s_1 \in S_1$, $G(s_1, -)$ 是 $\mathrm{Funct}(\mathcal{C}_2, \mathcal{D})$ 中的自然同构.
+        \end{enumerate}
+        \begin{proof}
+            ($\downarrow$). 对任意 $s_2 \in S_2$, $G(X_1, - )(s_2) = G(1_{X_1},s_2)$ 是同构. 对任意 $s_1 \in S_1$, 自然变换 $\{G(s_1, 1_{X_2})\}_{X_2 \in \mathsf{Ob}(\mathcal{C}_2)}$ 是同构. ($\uparrow$). 反之, $G$ 将 $(S_1 \times 1)$ 与 $(1 \times S_2)$ 映作同构, 因此将复合得到的 $S_1 \times S_2$ 映作同构.
+        \end{proof}
+        \end{lemma}
+        \end{quoting}
+        由这一引理,
+        \begin{align}
+            &\mathrm{Funct}_{S_1 \times S_2}(\mathcal{C}_1 \times \mathcal{C}_2, \mathcal{D}) \cong \mathrm{Funct}_{S_1}(\mathcal{C}_1, \mathrm{Funct}_{S_2}(\mathcal{C}_2, \mathcal{D}))\\
+            \cong \ &\mathrm{Funct}(\mathcal{C}_1[S_1^{-1}], \mathrm{Funct}(\mathcal{C}_2[S_2^{-1}], \mathcal{D})) \cong \mathrm{Funct}(\mathcal{C}_1[S_1^{-1}] \times \mathcal{C}_2[S_2^{-1}], \mathcal{D}).
+        \end{align}
+        这说明 $(\mathcal{C}_1 \times \mathcal{C}_2)[(S_1 \times S_2)^{-1}]$ 与 $\mathcal{C}_1[S_1^{-1}] \times \mathcal{C}_2[S_2^{-1}]$ 满足同一泛性质, 从而它们是同构的.
+    \end{proof}
+\end{theorem}
+
+\begin{lemma}
+    (伴随与局部化). 给定伴随函子的一组资料
+    \begin{equation}
+(\mathcal{D} \xrightarrow F\mathcal{C}) \dashv (\mathcal{C}  \xrightarrow G \mathcal{D}) ;\quad ( 1_{\mathcal{D}} \xrightarrow \eta GF, FG \xrightarrow \varepsilon 1_{\mathcal{C}}).
+\end{equation}
+假定存在 $\mathcal{C}$ 态射类的 $S$ 与 $\mathcal{D}$ 态射类的 $T$, 使得 $F(T) \subseteq S$ 且 $G(S) \subseteq T$. 记 $Q_\mathcal{C} : \mathcal{C} \to \mathcal{C}[S^{-1}]$ 与 $Q_\mathcal{D} : \mathcal{D} \to \mathcal{D}[T^{-1}]$ 是相应的 GZ 局部化, 则存在诱导的伴随函子
+\begin{equation}
+(\mathcal{D}[T^{-1}] \xrightarrow{\overline F} \mathcal{C}[S^{-1}]) \dashv (\mathcal{C}[S^{-1}] \xrightarrow{\overline G} \mathcal{D}[T^{-1}]);\quad ( 1_{\mathcal{D}[T^{-1}]} \xrightarrow{\overline \eta} \overline G \ \overline F, \ \overline F \ \overline G \xrightarrow{\overline \varepsilon} 1_{\mathcal{C}[S^{-1}]}).
+\end{equation}
+
+\begin{proof}
+    函子 $\overline F$ 与 $\overline G$ 由泛性质诱导. 自然变换 $\overline \eta$ 定义如下:
+    \begin{equation}
+        % https://q.uiver.app/#q=WzAsNCxbMCwyLCJcXG1hdGhjYWwgRFtUXnstMX1dIl0sWzIsMiwiXFxtYXRoY2FsIERbVF57LTF9XSJdLFswLDAsIlxcbWF0aGNhbCBEIl0sWzIsMCwiXFxtYXRoY2FsIEQiXSxbMCwxLCIxX3tcXG1hdGhjYWwgRFtUXnstMX1dfSIsMCx7Im9mZnNldCI6LTN9XSxbMCwxLCJcXG92ZXJsaW5lIEcgXFwgXFxvdmVybGluZSBGIiwyLHsib2Zmc2V0IjozfV0sWzIsMCwiUV97XFxtYXRoY2FsIER9Il0sWzIsMywiMV97XFxtYXRoY2FsIER9IiwwLHsib2Zmc2V0IjotM31dLFsyLDMsIkdGIiwyLHsib2Zmc2V0IjozfV0sWzMsMSwiUV97XFxtYXRoY2FsIER9Il0sWzQsNSwiXFxvdmVybGluZSBcXGV0YSIsMCx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH19XSxbNyw4LCJcXGV0YSIsMCx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{\mathcal D} \&\& {\mathcal D} \\
+	\\
+	{\mathcal D[T^{-1}]} \&\& {\mathcal D[T^{-1}]}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "{1_{\mathcal D}}", shift left=3, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "GF"', shift right=3, from=1-1, to=1-3]
+	\arrow["{Q_{\mathcal D}}", from=1-1, to=3-1]
+	\arrow["{Q_{\mathcal D}}", from=1-3, to=3-3]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "{1_{\mathcal D[T^{-1}]}}", shift left=3, from=3-1, to=3-3]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "{\overline G \ \overline F}"', shift right=3, from=3-1, to=3-3]
+	\arrow["\eta", between={0.2}{0.8}, Rightarrow, from=0, to=1]
+	\arrow["{\overline \eta}", between={0.2}{0.8}, Rightarrow, from=2, to=3]
+\end{tikzcd}.
+    \end{equation}
+    其中, 选取 $\overline \eta$ 如下:
+    \begin{equation}
+        % https://q.uiver.app/#q=WzAsOCxbMSwwLCJcXG1hdGhybXtGdW5jdH0oMV97XFxtYXRoY2Fse0R9W1Reey0xfV19LCBcXG92ZXJsaW5lIEcgXFwgXFxvdmVybGluZSBGKSJdLFsxLDEsIlxcbWF0aHJte0Z1bmN0fShRX1xcbWF0aGNhbHtEfSwgXFxvdmVybGluZSBHIFxcIFxcb3ZlcmxpbmUgRiBcXCBRX1xcbWF0aGNhbHtEfSkgIl0sWzIsMSwiXFxtYXRocm17RnVuY3R9KFFfXFxtYXRoY2Fse0R9LCBRX1xcbWF0aGNhbHtEfSBcXCBHIEYpICJdLFsyLDAsIlxcbWF0aHJte0Z1bmN0fSgxX1xcbWF0aGNhbHtEfSwgRyBGKSJdLFswLDAsIlxcb3ZlcmxpbmUgXFxldGEiXSxbMywwLCJcXGV0YSJdLFszLDEsIlFfe1xcbWF0aGNhbCBEfVxcZXRhIl0sWzAsMSwiXFxvdmVybGluZSBcXGV0YSBRX3tcXG1hdGhjYWwgRH0iXSxbMCwxLCJcXGNvbmciLDJdLFswLDEsIihRX3tcXG1hdGhjYWwgRH0pXlxcYXN0IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMiwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMywyLCIoUV97XFxtYXRoY2FsIER9KV9cXGFzdCIsMl0sWzMsNSwiXFxuaSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDAsIlxcaW4iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw3LCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzUsNiwiIiwxLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	{\overline \eta} \& {\mathrm{Funct}(1_{\mathcal{D}[T^{-1}]}, \overline G \ \overline F)} \& {\mathrm{Funct}(1_\mathcal{D}, G F)} \& \eta \\
+	{\overline \eta Q_{\mathcal D}} \& {\mathrm{Funct}(Q_\mathcal{D}, \overline G \ \overline F \ Q_\mathcal{D}) } \& {\mathrm{Funct}(Q_\mathcal{D}, Q_\mathcal{D} \ G F) } \& {Q_{\mathcal D}\eta}
+	\arrow["\in"{description}, draw=none, from=1-1, to=1-2]
+	\arrow[maps to, from=1-1, to=2-1]
+	\arrow["\cong"', from=1-2, to=2-2]
+	\arrow["{(Q_{\mathcal D})^\ast}", draw=none, from=1-2, to=2-2]
+	\arrow["\ni"{description}, draw=none, from=1-3, to=1-4]
+	\arrow["{(Q_{\mathcal D})_\ast}"', from=1-3, to=2-3]
+	\arrow[maps to, from=1-4, to=2-4]
+	\arrow[equals, from=2-2, to=2-3]
+\end{tikzcd}.
+    \end{equation}
+    类似地定义 $\overline \varepsilon$. 这类构造具有统一格式 $\overline ? Q = Q ?$.
+    \\
+    下证明伴随中的三角恒等式. 以下第一行复合为恒等自然变换:
+    \begin{equation}
+        % https://q.uiver.app/#q=WzAsMTEsWzAsMCwiXFxvdmVybGluZSBGIl0sWzIsMCwiXFxvdmVybGluZSBGXFwgXFxvdmVybGluZSBHXFwgXFxvdmVybGluZSBGIl0sWzQsMCwiXFxvdmVybGluZSAgRiJdLFswLDEsIlxcb3ZlcmxpbmUgRlFfe1xcbWF0aGNhbCBEfSJdLFsyLDEsIlxcb3ZlcmxpbmUgRlxcIFxcb3ZlcmxpbmUgR1xcIFxcb3ZlcmxpbmUgRiBRX3tcXG1hdGhjYWwgRH0iXSxbNCwxLCJcXG92ZXJsaW5lIEZRX3tcXG1hdGhjYWwgRH0iXSxbMCwyLCJRX3tcXG1hdGhjYWwgQ30gRiJdLFs0LDIsIlFfe1xcbWF0aGNhbCBDfSBGIl0sWzIsMiwiUV97XFxtYXRoY2FsIEN9IEZHRiJdLFs1LDAsIlxcbWF0aHJte0Z1bmN0fShcXG1hdGhjYWwgRFtUXnstMX1dLCBcXG1hdGhjYWwgQ1tTXnstMX1dKSJdLFs1LDEsIlxcbWF0aHJte0Z1bmN0fShcXG1hdGhjYWwgRCwgXFxtYXRoY2FsIENbU157LTF9XSkiXSxbMCwxLCJcXG92ZXJsaW5lICBGIFxcb3ZlcmxpbmUgXFxldGEiXSxbMSwyLCJcXG92ZXJsaW5lICBcXHZhcmVwc2lsb24gXFxvdmVybGluZSAgRiJdLFszLDQsIlxcb3ZlcmxpbmUgIEYgXFxvdmVybGluZSBcXGV0YSBRX3tcXG1hdGhjYWwgRH0iXSxbNCw1LCJcXG92ZXJsaW5lICBcXHZhcmVwc2lsb24gXFxvdmVybGluZSAgRiBRX3tcXG1hdGhjYWwgRH0iXSxbNiw4LCJRX3tcXG1hdGhjYWwgRH0gRlxcZXRhIl0sWzgsNywiUV97XFxtYXRoY2FsIEN9IFxcdmFyZXBzaWxvbiBGIl0sWzMsNiwiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw4LCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDcsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMTAsIihRX3tcXG1hdGhjYWwgRH0pXlxcYXN0Il1d
+\begin{tikzcd}[ampersand replacement=\&]
+	{\overline F} \&\& {\overline F\ \overline G\ \overline F} \&\& {\overline  F} \& {\mathrm{Funct}(\mathcal D[T^{-1}], \mathcal C[S^{-1}])} \\
+	{\overline FQ_{\mathcal D}} \&\& {\overline F\ \overline G\ \overline F Q_{\mathcal D}} \&\& {\overline FQ_{\mathcal D}} \& {\mathrm{Funct}(\mathcal D, \mathcal C[S^{-1}])} \\
+	{Q_{\mathcal C} F} \&\& {Q_{\mathcal C} FGF} \&\& {Q_{\mathcal C} F}
+	\arrow["{\overline  F \overline \eta}", from=1-1, to=1-3]
+	\arrow["{\overline  \varepsilon \overline  F}", from=1-3, to=1-5]
+	\arrow["{(Q_{\mathcal D})^\ast}", from=1-6, to=2-6]
+	\arrow["{\overline  F \overline \eta Q_{\mathcal D}}", from=2-1, to=2-3]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{\overline  \varepsilon \overline  F Q_{\mathcal D}}", from=2-3, to=2-5]
+	\arrow[equals, from=2-3, to=3-3]
+	\arrow[equals, from=2-5, to=3-5]
+	\arrow["{Q_{\mathcal D} F\eta}", from=3-1, to=3-3]
+	\arrow["{Q_{\mathcal C} \varepsilon F}", from=3-3, to=3-5]
+\end{tikzcd}.
+    \end{equation} 
+    依照原伴随的三角恒等式, 第三行复合为 $Q_{\mathcal{D}}$, 故第二行复合也为 $Q_{\mathcal{D}}$. 由 $(Q_\mathcal{D})^\ast$ 全忠实, 第一行复合为 $1_{\overline F}$. 另一三角恒等式的证明类似.
+\end{proof}
+
+\end{lemma}
+
+\begin{theorem}\label{thm: when localization is additive}
+    (加法局部化). 给定加法范畴的 GZ 局部化 $Q: \mathcal{C} \to \mathcal{C}[S^{-1}]$. 若 $S$ 对直和封闭, 则 $Q$ 是加法函子.
+\begin{itemize}
+    \item 称 $S$ 对直和封闭, 若对任意 $f , g \in S$, 总有 $\binom{f \ \ 0}{0 \ \ g} \in S$.
+\end{itemize}
+\begin{proof}
+    记 $I = \{\cdot , \cdot \}$ 是有两个点的离散图. 则有伴随函子
+    \begin{equation}
+        (\mathcal{C} \xrightarrow{\Delta} \mathcal{C}^I) \dashv (\mathcal{C}^I \xrightarrow {\oplus} \mathcal{C}); \quad (1_{\mathcal{C}} \xrightarrow{\eta} \oplus \Delta, \Delta \oplus \xrightarrow{\varepsilon} 1_{\mathcal{C}^I}).
+    \end{equation}
+    将 $C^I$ 视同 $\mathcal{C} \times \mathcal{C}$, 则有 $\Delta : ? \mapsto (?, ?)$ 与 $\oplus : (?, !) \mapsto ? \oplus !$. 由 $S$ 对直和封闭, 则局部化保持伴随函子. 结合\Cref{thm: localization commutes with product}, 得
+    \begin{equation}
+        % https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXG1hdGhjYWwgQyJdLFsyLDAsIlxcbWF0aGNhbCBDIFxcdGltZXMgXFxtYXRoY2FsIEMiXSxbMCwyLCJcXG1hdGhjYWwgQ1tTXnstMX1dIl0sWzIsMiwiKFxcbWF0aGNhbCBDIFxcdGltZXMgXFxtYXRoY2FsIEMpWyhTIFxcdGltZXMgUyleey0xfV0iXSxbMywyLCJcXG1hdGhjYWwgQ1tTXnstMX1dIFxcdGltZXMgXFxtYXRoY2FsIENbU157LTF9XSJdLFswLDEsIlxcRGVsdGEgIiwwLHsib2Zmc2V0IjotMSwiY3VydmUiOi0xfV0sWzEsMCwiXFxvcGx1cyAiLDAseyJvZmZzZXQiOi0xLCJjdXJ2ZSI6LTF9XSxbMSwzLCJRX3tcXG1hdGhjYWwgQyBcXHRpbWVzIFxcbWF0aGNhbCBDfSJdLFszLDQsIlxcY29uZyJdLFswLDIsIlFfe1xcbWF0aGNhbCBDfSIsMl0sWzEsNCwiUV97XFxtYXRoY2FsIEN9IFxcdGltZXMgUV97XFxtYXRoY2FsIEN9IiwwLHsiY3VydmUiOi0zfV0sWzIsMywiXFxvdmVybGluZSBcXERlbHRhIiwwLHsib2Zmc2V0IjotMiwiY3VydmUiOi0xLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywyLCJcXG92ZXJsaW5lIFxcb3BsdXMgIiwwLHsib2Zmc2V0IjotMiwiY3VydmUiOi0xLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw2LCJcXGJvdCIsMSx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMSwxMiwiXFxib3QiLDEseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9LCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{\mathcal C} \&\& {\mathcal C \times \mathcal C} \\
+	\\
+	{\mathcal C[S^{-1}]} \&\& {(\mathcal C \times \mathcal C)[(S \times S)^{-1}]} \& {\mathcal C[S^{-1}] \times \mathcal C[S^{-1}]}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "{\Delta }", shift left, curve={height=-6pt}, from=1-1, to=1-3]
+	\arrow["{Q_{\mathcal C}}"', from=1-1, to=3-1]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{\oplus }", shift left, curve={height=-6pt}, from=1-3, to=1-1]
+	\arrow["{Q_{\mathcal C \times \mathcal C}}", from=1-3, to=3-3]
+	\arrow["{Q_{\mathcal C} \times Q_{\mathcal C}}", curve={height=-18pt}, from=1-3, to=3-4]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "{\overline \Delta}", shift left=2, curve={height=-6pt}, dashed, from=3-1, to=3-3]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "{\overline \oplus }", shift left=2, curve={height=-6pt}, dashed, from=3-3, to=3-1]
+	\arrow["\cong", from=3-3, to=3-4]
+	\arrow["\bot"{description}, draw=none, from=0, to=1]
+	\arrow["\bot"{description}, draw=none, from=2, to=3]
+\end{tikzcd}.
+    \end{equation}
+    记复合函子 $\widetilde \Delta : \mathcal C[S^{-1}] \xrightarrow {\overline \Delta} (\mathcal C \times \mathcal C)[(S \times S)^{-1}] \cong \mathcal C[S^{-1}] \times \mathcal C[S^{-1}]$. 交换图说明 $\widetilde \Delta Q_{\mathcal{C}} = (Q_\mathcal{C} \times Q_\mathcal{C}) \Delta$, 该等式中的 $\widetilde \Delta$ 可以替换作 $\Delta$, 泛性质 ($Q_{\mathcal{C}}$ 右可消, \Cref{cor: localization functor is epic}) 说明 $\widetilde \Delta = \Delta$. 因此, $Q_\mathcal{C}$ 保持 $\Delta$, 故保持直和 $\oplus$. 保持直和的函子是一个加法函子 (\cite{crewHomologicalAlgebraLecture2021}).
+\end{proof}
+\end{theorem}
+
+以下是一类特殊的加法局部化.
+
+\begin{theorem}\label{thm: quotient category is localization}
+    给定加法范畴 $\mathcal{A}$ 与加法全子范畴 $\mathcal{B}$, 下定义两种商.
+    \begin{enumerate}
+        \item (加法商). 定义 $\mathcal{A} / \mathcal{B}$ 为如下范畴: 对象同 $\mathcal{A}$; 对任意 $X$ 与 $Y$, 态射群为原始态射群的商群:
+        \begin{equation}
+            (X,Y)_{\mathcal{A} / \mathcal{B}} = (X,Y)_{\mathcal{A}} / \{\text{被 $\mathcal{B}$ 中对象分解的态射}\}.
+        \end{equation}
+        记函子 $R : \mathcal{A} \to A / \mathcal{B}, \quad X \mapsto RX = X, \quad f \mapsto Rf = [f]$.
+        \item (GZ 局部化). 称 $(f;y)$ 是一对好态射, 若 $f : X \to Y$, $g : Y \to X$, 且 $1_Y - fg$ 与 $1_X - gf$ 都能经 $\mathcal{B}$ 中对象分解. 记 $S$ 是 $\mathcal{A}$ 中所有好态射构成的类. 记 GZ 局部化函子 $Q : \mathcal{A} \to \mathcal{A}[S_\mathcal{B}^{-1}]$.
+    \end{enumerate}
+    则存在范畴的同构 $\Phi$, 使得 $R = \Phi \circ Q$.
+    \begin{proof}
+        先说明 $Q$ 是加法函子. 依照\Cref{thm: when localization is additive}, 只需说明 $S$ 对直和封闭. 给定好态射 $(f;y) : X \to Y$ 与 $(f';y') : X' \to Y'$, 则显然 $(\binom{f \ \ 0}{0 \ \ f'}; \binom{y \ \ 0}{0 \ \ y'}) : X \oplus X' \to Y \oplus Y'$ 也是好态射.
+        \\
+        ($Q$ 被 $R$ 分解). 对任意 $X \in\mathcal{B}$, $QX$ 是零对象. 因此, 群同态 $(M,N)_\mathcal{A} \xrightarrow Q (M,N)_{\mathcal{A}[S^{-1}]}$ 经商群 $(M,N)_{\mathcal{A} / \mathcal{B}}$ 分解. 商群的泛性质决定了一族对应
+        \begin{equation}
+            \overline Q : \mathcal{A}/\mathcal{B} \to \mathcal{A}[S^{-1}],\quad X \mapsto X, \quad [f] \mapsto Qf.
+        \end{equation}
+        为了说明这是函子, 只需验证恒等律与复合律. 注意到 $[g \circ f] = [g] \circ [f]$, 且 $Q$ 是函子, 故
+        \begin{equation}
+            \overline Q([g] \circ [f]) = \overline Q([g \circ f]) = Q(g \circ f) = Qg \circ Qf = \overline Q([g]) \circ \overline Q([f]).
+        \end{equation}
+        \\
+        ($R$ 被 $Q$ 分解). 给定一组好态射 $(f;g)$, 则 $[f] \circ [g] = [f \circ g]$ 与 $[g] \circ [f] = [g \circ f]$ 都是恒等态射. 由泛性质, $R$ 经 $Q$ 唯一地分解.
+        \\
+        以上两种分解都是唯一的 (由商群的泛性质和局部化的泛性质), 从而两函子在去向处相差一个同构. 
+    \end{proof}
+\end{theorem}
+
+\subsection{Quillen 定理}
+
+\begin{theorem}\label{thm: quillen theorem}
+    (Quillen 定理). 给定加法范畴 $\mathcal{A}$ 上的模型结构. 满足以下两条:
+    \begin{enumerate}
+        \item 给定任意 (平凡) 余纤维 $p : A \to C$ 与任意态射 $f : A \to B$, 则存在弱推出使得 $p' : B \to D$ 是 (平凡) 余纤维;
+        \item 给定任意 (平凡) 纤维 $i : X \to Z$ 与任意态射 $g :  Y \to Z$, 则存在弱推出使得 $i' : W \to Y$ 是 (平凡) 纤维.
+    \end{enumerate}
+    \begin{equation}\label{eq: quillen theorem diagram}
+        % https://q.uiver.app/#q=WzAsOCxbMSwwLCJYIl0sWzEsMSwiWiJdLFswLDEsIlkiXSxbMCwwLCJXIl0sWzQsMCwiQSJdLFs1LDAsIkMiXSxbNSwxLCJEIl0sWzQsMSwiQiJdLFsyLDEsImYiLDJdLFszLDIsIlxcbWF0aHNmeyhUKUZpYn0iLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywwLCJmJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDUsImciXSxbNSw2LCJcXG1hdGhzZnsoVClDb2ZpYn0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw3LCJcXG1hdGhzZnsoVClDb2ZpYn0iLDJdLFs3LDYsImcnIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMSwiXFxtYXRoc2Z7KFQpRmlifSJdLFswLDEsInAiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMywyLCJwJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDcsImkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw2LCJpJyIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	W \& X \&\&\& A \& C \\
+	Y \& Z \&\&\& B \& D
+	\arrow["{f'}", dashed, from=1-1, to=1-2]
+	\arrow["{\mathsf{(T)Fib}}"', dashed, from=1-1, to=2-1]
+	\arrow["{p'}", draw=none, from=1-1, to=2-1]
+	\arrow["{\mathsf{(T)Fib}}", from=1-2, to=2-2]
+	\arrow["p"', draw=none, from=1-2, to=2-2]
+	\arrow["g", from=1-5, to=1-6]
+	\arrow["{\mathsf{(T)Cofib}}"', from=1-5, to=2-5]
+	\arrow["i", draw=none, from=1-5, to=2-5]
+	\arrow["{\mathsf{(T)Cofib}}", dashed, from=1-6, to=2-6]
+	\arrow["{i'}"', draw=none, from=1-6, to=2-6]
+	\arrow["f"', from=2-1, to=2-2]
+	\arrow["{g'}"', dashed, from=2-5, to=2-6]
+\end{tikzcd}.
+    \end{equation}
+    记 $\mathcal{C}$, $\mathcal{W}$ 与 $\mathcal{F}$ 分别为余纤维对象, 平凡对象与纤维对象. 此时, 以下是范畴等价:
+    \begin{equation}\label{eq: quillen theorem equivalence}
+        % https://q.uiver.app/#q=WzAsOSxbMCwwLCJcXHBpIFxcbWF0aHNjciBDIl0sWzAsMiwiXFxwaSBcXG1hdGhzY3IgRiJdLFswLDEsIlxccGkgKFxcbWF0aHNjciBDIFxcY2FwIFxcbWF0aHNjciBGICkiXSxbMiwwLCJcXG1hdGhzZntIb30oXFxtYXRoc2NyIEMpIl0sWzMsMCwiXFxtYXRoc2NyIENbIFxcbWF0aHNme1RDb2ZpYn1eey0xfV0iXSxbMiwyLCJcXG1hdGhzZntIb30oXFxtYXRoc2NyIEYpIl0sWzMsMiwiXFxtYXRoc2NyIEZbIFxcbWF0aHNme1RGaWJ9XnstMX1dIl0sWzMsMSwiXFxtYXRoc2NyIENbIFxcbWF0aHNme1dlcX1eey0xfV0iXSxbMiwxLCJcXG1hdGhzZntIb30oXFxtYXRoc2NyIEEpIl0sWzIsMCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsyLDEsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMCwzLCJcXG92ZXJsaW5lIHtcXGdhbW1hIF9jfSJdLFszLDgsIlxcc2ltZXEiXSxbMSw1LCJcXG92ZXJsaW5lIHtcXGdhbW1hIF9mfSIsMl0sWzUsOCwiXFxzaW1lcSIsMl0sWzMsNCwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOCw3LCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDYsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsOCwiXFxvdmVybGluZSBcXGdhbW1hICIsMl0sWzIsOCwiXFxzaW1lcSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDAsIiIsMix7Im9mZnNldCI6LTEsImN1cnZlIjotM31dLFs1LDEsIiIsMix7Im9mZnNldCI6MSwiY3VydmUiOjN9XSxbMTEsMjAsIlxcYm90IiwxLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIxLDEzLCJcXGJvdCIsMSx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}
+	{\pi \mathscr C} && {\mathsf{Ho}(\mathscr C)} & {\mathscr C[ \mathsf{TCofib}^{-1}]} \\
+	{\pi (\mathscr C \cap \mathscr F )} && {\mathsf{Ho}(\mathscr A)} & {\mathscr C[ \mathsf{Weq}^{-1}]} \\
+	{\pi \mathscr F} && {\mathsf{Ho}(\mathscr F)} & {\mathscr F[ \mathsf{TFib}^{-1}]}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "{\overline {\gamma _c}}", from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, shift left, curve={height=-18pt}, from=1-3, to=1-1]
+	\arrow[equals, from=1-3, to=1-4]
+	\arrow["\simeq", from=1-3, to=2-3]
+	\arrow[tail, from=2-1, to=1-1]
+	\arrow["{\overline \gamma }"', from=2-1, to=2-3]
+	\arrow["\simeq", draw=none, from=2-1, to=2-3]
+	\arrow[tail, from=2-1, to=3-1]
+	\arrow[equals, from=2-3, to=2-4]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "{\overline {\gamma _f}}"', from=3-1, to=3-3]
+	\arrow["\simeq"', from=3-3, to=2-3]
+	\arrow[""{name=3, anchor=center, inner sep=0}, shift right, curve={height=18pt}, from=3-3, to=3-1]
+	\arrow[equals, from=3-3, to=3-4]
+	\arrow["\bot"{description}, draw=none, from=0, to=1]
+	\arrow["\bot"{description}, draw=none, from=3, to=2]
+\end{tikzcd}.
+    \end{equation}
+\end{theorem}
+
+\begin{example}
+    对外三角范畴的相同闭模型结构, \Cref{thm:homotopy-pullback-1} 给出\Cref{eq: quillen theorem diagram} 的一种具体构造. \Cref{eq: quillen theorem equivalence} 中范畴等价成立.
+\end{example}
+
+\subsection{由 \texorpdfstring{$\mathcal{C} \cap \mathcal{F}$}{} 到同伦范畴的三种方式}
+
+我们暂不给出\Cref{thm: quillen theorem} 的证明. 对相容闭模型结构, 本小节使用 $\mathcal{C} \cap \mathcal{F}$ 的三种``等价的商''描述同伦范畴. 往后选定外三角范畴 $\mathcal{A}$ 上的相容闭模型结构 (\Cref{def:compatible-model-structure}), 选定记号
+
+\begin{enumerate}
+    \item $\mathsf{Cofib}$, $\mathsf{Fib}$ 与 $\mathsf{Weq}$ 分别为闭模型结构中的余纤维, 纤维与弱等价类;
+    \item $\mathsf{TCofib} = \mathsf{Cofib} \cap \mathsf{Weq}$ 与 $\mathsf{TFib} = \mathsf{Fib} \cap \mathsf{Weq}$ 分别为平凡余纤维与平凡纤维;
+    \item $\mathcal{C}$, $\mathcal{F}$ 与 $\mathcal{W}$ 分别为闭模型结构中的余纤维对象, 纤维对象与平凡对象;
+    \item $\mathsf{T}\mathcal{F} = \mathcal{F} \cap \mathcal{W}$ 与 $\mathsf{T}\mathcal{C} = \mathcal{C} \cap \mathcal{W}$ 分别为平凡纤维对象与平凡余纤维对象.
+    \item (Hovey). $(\mathcal{S}, \mathcal{S}^\perp; {}^\perp \mathcal{V}, \mathcal{V}) = (\mathsf{T}\mathcal{C}, \mathcal{F}, \mathcal{C}, \mathsf{T}\mathcal{C})$ 是其对应的 Hovey 孪生余挠对 (见\Cref{thm:model-to-hovey}, 逆命题即\Cref{sec:hovey-to-model}).
+    \item (Hovey). 平凡对象类 $\mathcal{W} = \mathcal{N} = \mathrm{Cone}(\mathcal{V}, \mathcal{S}) = \mathrm{coCone}(\mathcal{V}, \mathcal{S})$.
+\end{enumerate}
+
+后续证明三种构造局部化的等价方式:
+\begin{equation}\label{eq: three ways to homotopy category}
+    % https://q.uiver.app/#q=WzAsNCxbMSwxLCJcXGZyYWN7XFxtYXRoY2FsIEMgXFxjYXAgXFxtYXRoY2FsIEZ9e1xcbWF0aGNhbCBDIFxcY2FwIFxcbWF0aGNhbCBGIFxcY2FwIFxcbWF0aGNhbCBXfSJdLFsxLDAsIlxcbWF0aGNhbCBDIFxcY2FwIFxcbWF0aGNhbCBGIl0sWzAsMSwiKFxcbWF0aGNhbCBDIFxcY2FwIFxcbWF0aGNhbCBGKVsoXFxtYXRoc2Z7V2VxfV97XFxtYXRoY2FsIEMgXFxjYXAgXFxtYXRoY2FsIEZ9KV57LTF9XSJdLFsyLDEsIlxccGkgKFxcbWF0aGNhbCBDIFxcY2FwIFxcbWF0aGNhbCBGKSJdLFsxLDAsIlFfMiJdLFsxLDMsIlFfMyIsMCx7ImN1cnZlIjotMn1dLFsxLDIsIlFfMSIsMix7ImN1cnZlIjoyfV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	\& {\mathcal C \cap \mathcal F} \\
+	{(\mathcal C \cap \mathcal F)[(\mathsf{Weq}_{\mathcal C \cap \mathcal F})^{-1}]} \& {\frac{\mathcal C \cap \mathcal F}{\mathcal C \cap \mathcal F \cap \mathcal W}} \& {\pi (\mathcal C \cap \mathcal F)}
+	\arrow["{Q_1}"', curve={height=12pt}, from=1-2, to=2-1]
+	\arrow["{Q_2}", from=1-2, to=2-2]
+	\arrow["{Q_3}", curve={height=-12pt}, from=1-2, to=2-3]
+\end{tikzcd}.
+\end{equation}
+
+此处, $\mathsf{Weq}_{\mathcal{C} \cap \mathcal{F}} = \mathsf{Weq}\cap \mathsf{Mor}(\mathcal{C} \cap  \mathcal{F})$, $Q_1$ 是 GZ 局部化, $Q_2$ 是加法商, $Q_3$ 是同伦商 (稍后定义).
+
+\begin{lemma}
+    $\mathsf{Weq}_{\mathcal{C} \cap \mathcal{F}}$ 对直和封闭, 从而 (\Cref{thm: when localization is additive}) $Q_1$ 是加法函子.
+    \begin{proof}
+        给定 $\mathcal{C} \cap \mathcal{F}$ 中弱等价 $f : X \to Y$. 由\Cref{lem:basic-model-structure} 第二条, $f$ 分解作 $\mathsf{TFib} \circ \mathsf{TCofib}$, 得
+        \begin{equation}\label{eq: factorization of weq in C cap F}
+            % https://q.uiver.app/#q=WzAsNSxbMCwwLCJYIl0sWzIsMCwiWSJdLFsxLDEsIkUiXSxbMiwyLCJTIl0sWzAsMiwiViJdLFswLDIsIlxcbWF0aHNme1RDb2ZpYn0iLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzIsMSwiXFxtYXRoc2Z7VEZpYn0iLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCwxLCJmIl0sWzQsMiwiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsyLDMsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \&\& Y \\
+	\& E \\
+	V \&\& S
+	\arrow["f", from=1-1, to=1-3]
+	\arrow["{\mathsf{TCofib}}"', tail, from=1-1, to=2-2]
+	\arrow["{\mathsf{TFib}}"', two heads, from=2-2, to=1-3]
+	\arrow[two heads, from=2-2, to=3-3]
+	\arrow[tail, from=3-1, to=2-2]
+\end{tikzcd}.
+        \end{equation}
+        $\mathsf{TCofib}$ 所在的 conflation 表明 $E \in \mathcal{T}$, $\mathsf{TFib}$ 所在的 conflation 表明 $E \in \mathcal{U}$. 因此 $E \in \mathcal{U} \cap \mathcal{T} (=\mathcal{C} \cap \mathcal{F})$. 这说明 $w$ 经 $\mathcal{C} \cap \mathcal{F}$ 中对象分解. 容易验证 $\mathsf{Weq}_{\mathcal{C} \cap \mathcal{F}}$ 对直和封闭.
+    \end{proof}
+\end{lemma}
+
+\begin{theorem}
+    \Cref{eq: three ways to homotopy category} 中 $Q_1$ 与 $Q_2$ 互相分解, 诱导了\Cref{thm: quotient category is localization} 中所示的典范同构. 同\Cref{thm: quotient category is localization} 中记号, 我们暂时将 $Q_2(f)$ 记作 $[f]$.
+    \begin{proof}
+        ($Q_2$ 经 $Q_1$ 分解). 只需说明对任意 $f \in \mathsf{Weq}_{\mathcal{C} \cap \mathcal{W}}$, $[f]$ 是同构. 由态射分解\Cref{eq: factorization of weq in C cap F}, 只需证明 $X \rightarrowtail E$ 与 $E \twoheadrightarrow Y$ 是同构. 以前者为例, 将 $X \rightarrowtail E = X \oplus S$ 写作直和, 今断言 $(1 \ \ 0) : X \oplus S$ 是 $\frac{\mathcal{C} \cap \mathcal{F}}{\mathcal{C}\cap \mathcal{W} \cap \mathcal{F}}$ 中的逆映射. 往证 $\binom{0 \ \ 0}{0 \ \ 1} : X \oplus S \to X \oplus S$ 通过 $\mathcal{C} \cap \mathcal{W} \cap \mathcal{F}$ 中对象分解. 只需证明 $1_S$ 被 $\mathcal{C} \cap \mathcal{W} \cap \mathcal{F}$ 中对象分解. 考虑可裂 conflation $S \rightarrowtail S_V \twoheadrightarrow S_S$, 则 $S_V \in \mathcal{S} \cap \mathcal{V} = \mathcal{C} \cap \mathcal{F} \cap \mathcal{W}$. 得证.
+        \\
+        ($Q_1$ 经 $Q_2$ 分解). 依照\Cref{thm: quotient category is localization} 将加法商转写作 GZ-局部化. 只需说明对任意 $f : X \to Y$, 若 $[f]$ 是同构, 则 $f \in \mathsf{Weq}_{\mathcal{C} \cap \mathcal{F}}$. 将 $f$ 分解作 $p \circ i \in \mathsf{TFib} \circ \mathsf{Cofib}$, 则 $p$ 是可裂满态射, 记右逆元 $j$. 
+        \begin{equation}
+            % https://q.uiver.app/#q=WzAsNyxbMiwwLCJYIl0sWzQsMCwiWSJdLFszLDEsIkUiXSxbNCwyLCJVIl0sWzIsMiwiUyJdLFswLDAsIlxcLCJdLFs2LDAsIlxcLCJdLFswLDEsImYiXSxbMCwyLCJpIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsyLDEsInAiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiwwLCJxIiwwLHsib2Zmc2V0IjotMywic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzEsMiwiaiIsMCx7Im9mZnNldCI6LTMsInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNCwyXSxbMiwzXV0=
+\begin{tikzcd}
+	{\,} && X && Y && {\,} \\
+	&&& E \\
+	&& V && U
+	\arrow["f", from=1-3, to=1-5]
+	\arrow["i", tail, from=1-3, to=2-4]
+	\arrow["j", shift left=3, tail, from=1-5, to=2-4]
+	\arrow["q", shift left=3, dotted, from=2-4, to=1-3]
+	\arrow["p", two heads, from=2-4, to=1-5]
+	\arrow[from=2-4, to=3-5]
+	\arrow[from=3-3, to=2-4]
+\end{tikzcd}.
+        \end{equation}
+        由上一步骤中的结论, $p \circ j$ 与 $1$ 相差一个 $1_S$, 从而 $[p]$ 与 $[j]$ 是同构. 因此 $[i] = [j] \circ [f]$ 也是同构. 任取 $q : E \to X$ 使得 $[q]$ 是 $[i]$ 的逆元. 下图是加法商范畴中交换:
+        \begin{equation}
+            % https://q.uiver.app/#q=WzAsOCxbMSwxLCJYIl0sWzMsMSwiRSJdLFs1LDEsIlUiXSxbMCwwLCJcXCwiXSxbNiwwLCJcXCwiXSxbMSwwLCJYIl0sWzUsMCwiVSJdLFszLDAsIlggXFxvcGx1cyBVIl0sWzAsMSwiaSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMSwwLCJxIiwwLHsib2Zmc2V0IjotMywic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzEsMiwiXFxwaSJdLFs1LDcsIlxcYmlub20gMTAiXSxbNyw2LCIoMCBcXCBcXCAxKSJdLFsxLDcsIlxcYmlub20gcSBcXHBpICJdLFswLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsNiwiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}
+	{\,} & X && {X \oplus U} && U & {\,} \\
+	& X && E && U
+	\arrow["{\binom 10}", from=1-2, to=1-4]
+	\arrow["{(0 \ \ 1)}", from=1-4, to=1-6]
+	\arrow[equals, from=2-2, to=1-2]
+	\arrow["i", tail, from=2-2, to=2-4]
+	\arrow["{\binom q \pi }", from=2-4, to=1-4]
+	\arrow["q", shift left=3, dotted, from=2-4, to=2-2]
+	\arrow["\pi", from=2-4, to=2-6]
+	\arrow[equals, from=2-6, to=1-6]
+\end{tikzcd}.
+        \end{equation}
+        因此 $[\binom 1 0] : X \to X \oplus U$ 是同构. 容易看出 $[1_U] = 0$. 由定义, $U$ 是 $\mathcal{W}$ 中对象的形变收缩, 故 $U \in \mathcal{U} \cap \mathcal{W} = \mathcal{S}$. 由定义, $i$ 是平凡纤维, 故 $f \in \mathsf{Weq}$.
+    \end{proof}
+\end{theorem}
+
+\begin{remark}
+    以上将 $\frac{\mathcal{C} \cap \mathcal{F}}{\mathcal{C} \cap \mathcal{W} \cap \mathcal{F}}$ 写作 $(\mathcal{C} \cap \mathcal{F})[S^{-1}]$ 的形式, 并证明了范畴关于 $S$ 与 $\mathsf{Weq}_{\mathcal{C} \cap \mathcal{F}}$ 两个态射类的局部化是同构的.
+\end{remark}
+
+\subsection{同伦范畴的三角结构}
+
+本章节证明 $\mathsf{Ho}\mathcal{A}$ 是三角范畴.
+
+
+
+
+
+
+
+
+
