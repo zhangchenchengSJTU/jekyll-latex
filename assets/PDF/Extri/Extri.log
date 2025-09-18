@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.28)  17 SEP 2025 13:27
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.28)  18 SEP 2025 16:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -950,7 +950,7 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 
 
 
-] [62] [63] [64] [65] [66] [67]) [68] (./Extri.bbl
+] [62] [63] [64] [65] [66] [67] [68] [69] [70]) [71] (./Extri.bbl
 
 Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
 (fontspec)             doesn't exist).
@@ -974,24 +974,24 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
- [69
+ [72
 
 
-]) [70] (./Extri.aux (./Sections/Recollection.aux) (./Sections/Intro.aux) (./Sections/Diagram.aux) (./Sections/SpecialExtri.aux) (./Sections/Model.aux) (./Sections/Homotopy.aux))
+] [73]) [74] (./Extri.aux (./Sections/Recollection.aux) (./Sections/Intro.aux) (./Sections/Diagram.aux) (./Sections/SpecialExtri.aux) (./Sections/Model.aux) (./Sections/Homotopy.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `Extri.out' has not changed.
-(rerunfilecheck)             Checksum: 17FF04164DFA67315A55067FF20F0E4F;3886.
+(rerunfilecheck)             Checksum: B25FCD3A0B08BA6A6467547520D33021;4000.
  ) 
 Here is how much of TeX's memory you used:
- 49851 strings out of 474773
- 1178005 string characters out of 5761289
+ 50180 strings out of 474773
+ 1186790 string characters out of 5761289
  2004842 words of memory out of 5000000
- 71376 multiletter control sequences out of 15000+600000
+ 71705 multiletter control sequences out of 15000+600000
  570372 words of font info for 136 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  131i,28n,135p,3274b,1537s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Extri.pdf (70 pages).
+Output written on Extri.pdf (74 pages).

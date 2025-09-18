@@ -161,9 +161,13 @@
     \end{proof}
 \end{lemma}
 
+\begin{remark}
+    由以上引理, 我们似乎更愿意将 $A$ 写作态射 $1_A$. 依照经验, 若某问题涉及双函子, 则``应当''将对象提升作态射.
+\end{remark}
+
 \begin{lemma}\label{lem: currying for categories}
     (范畴的 Curry 化). 以下是函子范畴的同构
-    \begin{equation}
+    \begin{equation}\label{eq: currying for categories}
         \mathrm{Funct}(\mathcal{A} \times \mathcal{B}, \mathcal{C}) \cong \mathrm{Funct}(\mathcal{A}, \mathrm{Funct}(\mathcal{B}, \mathcal{C})), \quad F \mapsto (A \mapsto (B \mapsto F(A,B))).
     \end{equation}
     \begin{proof}
@@ -186,6 +190,14 @@
 复合律与恒等律验证从略.
     \end{proof}
 \end{lemma}
+
+\begin{example}
+    记 $I$ 为图, $k$ 为域 (视作单点范畴). 积范畴 $k \times I$ 即路代数 $kI$. 例如, 对 $v \in \mathsf{Ob}(I)$ 与 $e \in \mathsf{Ob}(I)$, 则 $(1_k, 1_v)$ 与 $(1_k, e)$ 分别是路代数基底中的点与边. 由\Cref{eq: currying for categories}, 得函子范畴的同构:
+    \begin{equation}
+        \mathrm{Funct}(kI, \mathbf{Ab}) \cong \mathrm{Funct}(I, \mathrm{Funct}(k, \mathbf{Ab})).
+    \end{equation}
+    左侧等价于左 $kI$-模范畴; 右侧等价于 $I$ 的左 $k$-(模)表示范畴. 通常要求 $I$ 是有限图, 从而路代数 $kI$ 有单位元.
+\end{example}
 
 \begin{theorem}\label{thm: localization commutes with product}
     (积范畴的局部化). 给定范畴 $\mathcal{C}_1$ 与 $\mathcal{C}_2$, 分别取包含所有同构的态射类 $S_1$ 与 $S_2$, 则 $S_1 \times S_2$ 是 $\mathcal{C}_1 \times \mathcal{C}_2$ 的态射类, 且包含所有同构. 设 $Q_i : \mathcal{C}_i \to \mathcal{C}_i[S_i^{-1}]$ 是 $\mathcal{C}_i$ 关于 $S_i$ 的 GZ 局部化, 则
@@ -223,6 +235,10 @@
         这说明 $(\mathcal{C}_1 \times \mathcal{C}_2)[(S_1 \times S_2)^{-1}]$ 与 $\mathcal{C}_1[S_1^{-1}] \times \mathcal{C}_2[S_2^{-1}]$ 满足同一泛性质, 从而它们是同构的.
     \end{proof}
 \end{theorem}
+
+\begin{remark}
+    以上证明过程与可表函子的米田引理有相似之处, 两者都是说明``泛性质''决定的对象唯一. 对后者, $\mathrm{Hom}$ 的``泛性质''由集合论语言描述.
+\end{remark}
 
 \begin{lemma}
     (伴随与局部化). 给定伴随函子的一组资料
@@ -358,66 +374,273 @@
     \end{proof}
 \end{theorem}
 
-\subsection{Quillen 定理}
+\subsection{Quillen 的同伦范畴}
 
-\begin{theorem}\label{thm: quillen theorem}
-    (Quillen 定理). 给定加法范畴 $\mathcal{A}$ 上的模型结构. 满足以下两条:
+此部分介绍左右同伦关系与 Quillen 的同伦范畴, 第一手资料是\cite{quillenHomotopicalAlgebra1967} 与\cite{quillenRationalHomotopyTheory1969}, 文献导读可参考\cite{hoveyModelCategories2007}.
+
+\begin{definition}
+    (闭区间). 闭区间即单纯形 $\Delta[1]$ 的某种``实现''. 常见的``实现''包含以下两种.
     \begin{enumerate}
-        \item 给定任意 (平凡) 余纤维 $p : A \to C$ 与任意态射 $f : A \to B$, 则存在弱推出使得 $p' : B \to D$ 是 (平凡) 余纤维;
-        \item 给定任意 (平凡) 纤维 $i : X \to Z$ 与任意态射 $g :  Y \to Z$, 则存在弱推出使得 $i' : W \to Y$ 是 (平凡) 纤维.
+        \item $|\Delta[1]| = [0,1]$ 是几何实现, 函子 $|\cdot| : \Delta \to k\mathbf{Top}$ 关于 $\Delta \rightarrowtail \mathbf{PSh}(\Delta)$ 延拓定义了``实现-单纯集化''伴随 (\cite{lurieKerodona}). 详见介绍单纯集方法的书籍.
+        \item $\mathrm h (\Delta) = \text{``图范畴 $\{\cdot \to \cdot\}$''}$ 是同伦实现, 函子 $\mathrm h : \Delta \to \mathbf{Cat}$ 关于 $\Delta \rightarrowtail \mathbf{PSh}(\Delta)$ 延拓定义了``同伦-脉''伴随 (\cite{lurieKerodon}). 详见介绍无穷范畴的书籍.
     \end{enumerate}
-    \begin{equation}\label{eq: quillen theorem diagram}
+    特别地, ``实现''保持单纯形的典范态射 $d^k : \Delta[0] \to \Delta[1]$ ($k \in \{0,1\}$) 与 $s^0 : \Delta[1] \to \Delta[0]$. 我们将五元组 $(\Delta[0], \Delta[1], s^0, d^0, d^1)$ 的实现定义作一个区间基本资料.
+    \begin{enumerate}
+        \item 区间 $I$ 是 $\Delta[1]$ 的实现, 终对象 $\top$ 是 $\Delta[0]$ 的实现 (左伴随保持终对象).
+        \item $i_k : \top \to I$ 是 $d^k$ 的实现, 表示端点 $k \in \{0,1\}$ 的包含;
+        \item $p : I \to \top$ 是 $s^0$ 的实现, 表示收缩 $I$ 到一个点.
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    以上两种``实现''分别对应拓扑语言与范畴语言. 与拓扑学相仿, 可以定义范畴中的柱对象与路对象, 也可以定义映射锥与映射柱等, 其元语言均取自单纯形.
+\end{remark}
+
+\begin{definition}
+    (路对象, 积). 给定对象 $X$. $\mathbf{Cat}$ (或 $\mathbf{Top}$) 中的对角态射为下图态射链 $(\star)$:
+    \begin{equation}
+% https://q.uiver.app/#q=WzAsOCxbMCwxLCJYIFxccHJvZCAgWCJdLFsyLDEsIlheSSJdLFs0LDAsIlxcYnVsbGV0Il0sWzAsMCwiXFxidWxsZXQgXFxzcWN1cCBcXGJ1bGxldCJdLFsyLDAsIkkiXSxbNCwxLCJYIl0sWzUsMCwiKFxcc3RhcikiXSxbNSwxLCJYXnsoXFxzdGFyKX0iXSxbMyw0LCIoaV8wLCBcXCBpXzEpIl0sWzEsMCwiWF57KGlfMCwgXFwgaV8xKX0iLDJdLFs1LDEsIlhecCIsMl0sWzQsMiwicCJdLFs1LDAsIlxcRGVsdGFfWCIsMCx7Im9mZnNldCI6LTIsImN1cnZlIjotMn1dLFs2LDcsIiIsMCx7ImxldmVsIjoyfV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	{\bullet \sqcup \bullet} \&\& I \&\& \bullet \& {(\star)} \\[-6pt]
+	{X \prod  X} \&\& {X^I} \&\& X \& {X^{(\star)}}
+	\arrow["{(i_0, \ i_1)}", from=1-1, to=1-3]
+	\arrow["p", from=1-3, to=1-5]
+	\arrow[Rightarrow, from=1-6, to=2-6]
+	\arrow["{X^{(i_0, \ i_1)}}"', from=2-3, to=2-1]
+	\arrow["{\Delta_X}", shift left=2, curve={height=-12pt}, from=2-5, to=2-1]
+	\arrow["{X^p}"', from=2-5, to=2-3]
+\end{tikzcd}.
+    \end{equation}
+    对 $(\star)$ 作用 $X^{\cdot } = \mathrm{Funct}(\cdot , X)$, 得相应的函子与自然变换. 特别地, $\Delta_X$ 是自然变换. 以上操作是在 $\mathrm{Top}$ (或 $\mathrm{Cat}$) 中进行的, 所有函子与自然变换都视作 $\mathrm{Top}$ (或 $\mathrm{Cat}$) 中对象与态射.
+\end{definition}
+
+\begin{definition}
+    (柱对象, 余积). 给定对象 $X$. $\mathbf{Cat}$ (或 $\mathbf{Top}$) 中的余对角态射为下图态射链 $X \prod (\star)$:
+    \begin{equation}\label{eq: cylinder object}
+        % https://q.uiver.app/#q=WzAsOCxbMCwxLCJYIFxcY29wcm9kICBYIl0sWzIsMSwiWCBcXHByb2QgSSJdLFs0LDAsIlxcYnVsbGV0Il0sWzAsMCwiXFxidWxsZXQgXFxzcWN1cCBcXGJ1bGxldCJdLFsyLDAsIkkiXSxbNCwxLCJYIl0sWzUsMCwiKFxcc3RhcikiXSxbNSwxLCJYIFxccHJvZCB7KFxcc3Rhcil9Il0sWzMsNCwiKGlfMCwgXFwgaV8xKSJdLFswLDEsIlggXFxwcm9kIHsoaV8wLCBcXCBpXzEpfSJdLFsxLDUsIlggXFxwcm9kIHAiXSxbNCwyLCJwIl0sWzAsNSwiXFxuYWJsYV9YIiwyLHsib2Zmc2V0IjoyLCJjdXJ2ZSI6Mn1dLFs2LDcsIiIsMCx7ImxldmVsIjoyfV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	{\bullet \sqcup \bullet} \&\& I \&\& \bullet \& {(\star)} \\[-6pt]
+	{X \coprod  X} \&\& {X \prod I} \&\& X \& {X \prod {(\star)}}
+	\arrow["{(i_0, \ i_1)}", from=1-1, to=1-3]
+	\arrow["p", from=1-3, to=1-5]
+	\arrow[Rightarrow, from=1-6, to=2-6]
+	\arrow["{X \prod {(i_0, \ i_1)}}", from=2-1, to=2-3]
+	\arrow["{\nabla_X}"', shift right=2, curve={height=12pt}, from=2-1, to=2-5]
+	\arrow["{X \prod p}", from=2-3, to=2-5]
+\end{tikzcd}.
+    \end{equation}
+\end{definition}
+
+\begin{lemma}
+    $\Delta_X$ 是两组 $1_X$ 关于积泛性质诱导的态射; $\nabla_X$ 是两组 $1_X$ 关于余积泛性质诱导的态射.
+    \begin{proof}
+        以前者为例. 考虑单纯形范畴中一组复合为恒等的态射
+        \begin{equation}
+            \Delta[0] \xrightarrow{d^k} \Delta[1] \xrightarrow{s^0} \Delta[0] \quad (k = 0,1).
+        \end{equation}
+        经``实现''函子, 得 $p \circ i_k$ 是恒等, 从而 $X^{i_k}\circ X^p$ 是恒等的自然变换. $\{X^{i_k} :X^I \to X \prod X\}_{k  = 0,1}$ 由泛性质诱导的态射是 $X^{(i_0, i_1)} : X^I \to X$. 若复合 $X^p$, 则 $\{1_X = X^{i_k} \circ X^p :X \to X^I \to X \prod X\}_{k  = 0,1}$ 诱导的态射是 $\Delta_X$. 对 $\nabla _X$ 的证明类似.
+    \end{proof} 
+\end{lemma}
+
+我们通过路对象与柱对象定义同伦关系, 以此描述态射类的某种等价关系. 柱同伦 (左同伦) 的拓扑学视角广为数学工作者所知.
+
+\begin{definition}
+    (拓扑学的同伦). 称拓扑空间间的一对连续映射 $f, g : X \to Y$ 是左同伦的, 若 $\operatorname{im}(f) \cup \operatorname{im} (g)\subseteq Y$ 所示的上下柱体能被连续地填补. 即存在连续映射 $H : X \times [0,1] \to Y$, 使得 $H(x,0) = f(x)$ 且 $H(x,1) = g(x)$ 对任意 $x \in X$ 成立. 称 $H$ 为从 $f$ 到 $g$ 的同伦.
+    \\
+    换言之, 下图交换 (左图与右图是等价的):
+    \begin{equation}\label{eq: topological homotopy}
+% https://q.uiver.app/#q=WzAsOCxbMSwyLCJYIl0sWzIsMSwiWSJdLFsxLDAsIlgiXSxbMCwxLCJYIFxccHJvZCBJIl0sWzQsMCwiWCBcXGNvcHJvZCBYIl0sWzQsMiwiWCJdLFs2LDAsIlkiXSxbNiwyLCJYIFxccHJvZCBJIl0sWzAsMywiWCBcXHByb2QgKGlfMCkiLDAseyJjb2xvdXIiOlsyMzUsMTAwLDYwXX0sWzIzNSwxMDAsNjAsMV1dLFsyLDMsIlggXFxwcm9kIChpXzEpIiwyLHsiY29sb3VyIjpbMjM1LDEwMCw2MF19LFsyMzUsMTAwLDYwLDFdXSxbMCwxLCJmIiwyLHsiY29sb3VyIjpbMzU2LDEwMCw2MF19LFszNTYsMTAwLDYwLDFdXSxbMiwxLCJnIiwwLHsiY29sb3VyIjpbMzU2LDEwMCw2MF19LFszNTYsMTAwLDYwLDFdXSxbMywxLCJIIiwwLHsiY29sb3VyIjpbMzU2LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzM1NiwxMDAsNjAsMV1dLFs0LDYsIihmLGcpIiwwLHsiY29sb3VyIjpbMzU2LDEwMCw2MF19LFszNTYsMTAwLDYwLDFdXSxbNyw2LCJIIiwyLHsiY29sb3VyIjpbMzU2LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzM1NiwxMDAsNjAsMV1dLFs0LDcsIihYIFxccHJvZCAoaV8wKSwgWCBcXHByb2QgKGlfMSkpIiwxLHsiY29sb3VyIjpbMjM1LDEwMCw2MF19LFsyMzUsMTAwLDYwLDFdXSxbNyw1LCJYIFxccHJvZCBwIl0sWzQsNSwiXFxuYWJsYV9YIiwyXV0=
+\begin{tikzcd}
+	& X &&& {X \coprod X} && Y \\
+	{X \prod I} && Y \\
+	& X &&& X && {X \prod I}
+	\arrow["{X \prod (i_1)}"', color={rgb,255:red,51;green,68;blue,255}, from=1-2, to=2-1]
+	\arrow["g", color={rgb,255:red,255;green,51;blue,65}, from=1-2, to=2-3]
+	\arrow["{(f,g)}", color={rgb,255:red,255;green,51;blue,65}, from=1-5, to=1-7]
+	\arrow["{\nabla_X}"', from=1-5, to=3-5]
+	\arrow["{(X \prod (i_0), X \prod (i_1))}"{description}, color={rgb,255:red,51;green,68;blue,255}, from=1-5, to=3-7]
+	\arrow["H", color={rgb,255:red,255;green,51;blue,65}, dashed, from=2-1, to=2-3]
+	\arrow["{X \prod (i_0)}", color={rgb,255:red,51;green,68;blue,255}, from=3-2, to=2-1]
+	\arrow["f"', color={rgb,255:red,255;green,51;blue,65}, from=3-2, to=2-3]
+	\arrow["H"', color={rgb,255:red,255;green,51;blue,65}, dashed, from=3-7, to=1-7]
+	\arrow["{X \prod p}", from=3-7, to=3-5]
+\end{tikzcd}.
+    \end{equation}
+\end{definition}
+
+以下是模型结构中左同伦的定义. 以下假定 $\mathcal{A}$ 是带有模型结构 $(\mathsf{Cofib}, \mathsf{Weq}, \mathsf{Fib})$ 的范畴, 满足以下三点:
+\begin{enumerate}
+    \item 范畴有有限积与有限余积;
+    \item 给定任意平凡余纤维 $p : A \to C$ 与任意态射 $f : A \to B$, 则存在弱推出使得 $p' : B \to D$ 是平凡余纤维;
+    \item 给定任意平凡纤维 $i : X \to Z$ 与任意态射 $g :  Y \to Z$, 则存在弱推出使得 $i' : W \to Y$ 是平凡纤维.
+\end{enumerate}
+\begin{equation}\label{eq: quillen theorem diagram}
         % https://q.uiver.app/#q=WzAsOCxbMSwwLCJYIl0sWzEsMSwiWiJdLFswLDEsIlkiXSxbMCwwLCJXIl0sWzQsMCwiQSJdLFs1LDAsIkMiXSxbNSwxLCJEIl0sWzQsMSwiQiJdLFsyLDEsImYiLDJdLFszLDIsIlxcbWF0aHNmeyhUKUZpYn0iLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywwLCJmJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDUsImciXSxbNSw2LCJcXG1hdGhzZnsoVClDb2ZpYn0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw3LCJcXG1hdGhzZnsoVClDb2ZpYn0iLDJdLFs3LDYsImcnIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMSwiXFxtYXRoc2Z7KFQpRmlifSJdLFswLDEsInAiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMywyLCJwJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDcsImkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw2LCJpJyIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
 \begin{tikzcd}[ampersand replacement=\&]
 	W \& X \&\&\& A \& C \\
 	Y \& Z \&\&\& B \& D
 	\arrow["{f'}", dashed, from=1-1, to=1-2]
-	\arrow["{\mathsf{(T)Fib}}"', dashed, from=1-1, to=2-1]
+	\arrow["{\mathsf{Fib}}"', dashed, from=1-1, to=2-1]
 	\arrow["{p'}", draw=none, from=1-1, to=2-1]
-	\arrow["{\mathsf{(T)Fib}}", from=1-2, to=2-2]
+	\arrow["{\mathsf{Fib}}", from=1-2, to=2-2]
 	\arrow["p"', draw=none, from=1-2, to=2-2]
 	\arrow["g", from=1-5, to=1-6]
-	\arrow["{\mathsf{(T)Cofib}}"', from=1-5, to=2-5]
+	\arrow["{\mathsf{Cofib}}"', from=1-5, to=2-5]
 	\arrow["i", draw=none, from=1-5, to=2-5]
-	\arrow["{\mathsf{(T)Cofib}}", dashed, from=1-6, to=2-6]
+	\arrow["{\mathsf{Cofib}}", dashed, from=1-6, to=2-6]
 	\arrow["{i'}"', draw=none, from=1-6, to=2-6]
 	\arrow["f"', from=2-1, to=2-2]
 	\arrow["{g'}"', dashed, from=2-5, to=2-6]
 \end{tikzcd}.
-    \end{equation}
-    记 $\mathcal{C}$, $\mathcal{W}$ 与 $\mathcal{F}$ 分别为余纤维对象, 平凡对象与纤维对象. 此时, 以下是范畴等价:
-    \begin{equation}\label{eq: quillen theorem equivalence}
-        % https://q.uiver.app/#q=WzAsOSxbMCwwLCJcXHBpIFxcbWF0aHNjciBDIl0sWzAsMiwiXFxwaSBcXG1hdGhzY3IgRiJdLFswLDEsIlxccGkgKFxcbWF0aHNjciBDIFxcY2FwIFxcbWF0aHNjciBGICkiXSxbMiwwLCJcXG1hdGhzZntIb30oXFxtYXRoc2NyIEMpIl0sWzMsMCwiXFxtYXRoc2NyIENbIFxcbWF0aHNme1RDb2ZpYn1eey0xfV0iXSxbMiwyLCJcXG1hdGhzZntIb30oXFxtYXRoc2NyIEYpIl0sWzMsMiwiXFxtYXRoc2NyIEZbIFxcbWF0aHNme1RGaWJ9XnstMX1dIl0sWzMsMSwiXFxtYXRoc2NyIENbIFxcbWF0aHNme1dlcX1eey0xfV0iXSxbMiwxLCJcXG1hdGhzZntIb30oXFxtYXRoc2NyIEEpIl0sWzIsMCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsyLDEsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMCwzLCJcXG92ZXJsaW5lIHtcXGdhbW1hIF9jfSJdLFszLDgsIlxcc2ltZXEiXSxbMSw1LCJcXG92ZXJsaW5lIHtcXGdhbW1hIF9mfSIsMl0sWzUsOCwiXFxzaW1lcSIsMl0sWzMsNCwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOCw3LCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDYsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsOCwiXFxvdmVybGluZSBcXGdhbW1hICIsMl0sWzIsOCwiXFxzaW1lcSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDAsIiIsMix7Im9mZnNldCI6LTEsImN1cnZlIjotM31dLFs1LDEsIiIsMix7Im9mZnNldCI6MSwiY3VydmUiOjN9XSxbMTEsMjAsIlxcYm90IiwxLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIxLDEzLCJcXGJvdCIsMSx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\end{equation}
+
+记 $\prod$ 与 $\coprod$ 分别为 $\mathcal{A}$ 中的二元积运算与二元余积运算; 零元积即始对象 $\bot$, 零元余积即终对象 $\top$. 出于习惯, 我们将 $X \coprod Y$ 与 $X \prod Y$ 视作列向量, 态射仍以矩阵形式表示.
+
+\begin{definition}
+    (柱对象, 柱同伦). 如\Cref{eq: topological homotopy} 右图所示, 右上三角是柱同伦关系的的定义式, 左下角是余对角态射的定义 (\Cref{eq: cylinder object}). 由于单纯形范畴到通常范畴未必有``实现''函子, 我们难以定义 $X \prod I$; 一个解决方法是将 $X \prod I$ 换作\textbf{柱对象} $\mathrm{Cyl}(X)$:
+    \begin{equation}
+% https://q.uiver.app/#q=WzAsNyxbMCwwLCJYIFxcY29wcm9kIFgiXSxbMCwyLCJYIl0sWzIsMiwiWCBcXHByb2QgSSJdLFs0LDAsIlggXFxjb3Byb2QgWCJdLFs0LDIsIlgiXSxbNiwyLCJcXG1hdGhybXtDeWx9KFgpIl0sWzMsMSwiXFxpbXBsaWVzIl0sWzAsMiwiKFggXFxwcm9kIChpXzApLCBYIFxccHJvZCAoaV8xKSkiLDAseyJjb2xvdXIiOlsyMzUsMTAwLDYwXX0sWzIzNSwxMDAsNjAsMV1dLFsyLDEsIlggXFxwcm9kIHAiXSxbMCwxLCJcXG5hYmxhX1giLDJdLFs1LDQsIlxcbWF0aHNme1dlcX0iXSxbMyw0LCJcXGJpbm9tIDExIiwyXSxbMyw1LCJcXG1hdGhzZntDb2ZpYn0iLDAseyJjb2xvdXIiOlsyMzUsMTAwLDYwXX0sWzIzNSwxMDAsNjAsMV1dLFszLDUsIihcXHBhcnRpYWxfMCwgXFxwYXJ0aWFsIF8xKSIsMix7ImNvbG91ciI6WzIzNSwxMDAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19LFsyMzUsMTAwLDYwLDFdXSxbNSw0LCJcXHNpZ21hICIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
 \begin{tikzcd}
-	{\pi \mathscr C} && {\mathsf{Ho}(\mathscr C)} & {\mathscr C[ \mathsf{TCofib}^{-1}]} \\
-	{\pi (\mathscr C \cap \mathscr F )} && {\mathsf{Ho}(\mathscr A)} & {\mathscr C[ \mathsf{Weq}^{-1}]} \\
-	{\pi \mathscr F} && {\mathsf{Ho}(\mathscr F)} & {\mathscr F[ \mathsf{TFib}^{-1}]}
-	\arrow[""{name=0, anchor=center, inner sep=0}, "{\overline {\gamma _c}}", from=1-1, to=1-3]
-	\arrow[""{name=1, anchor=center, inner sep=0}, shift left, curve={height=-18pt}, from=1-3, to=1-1]
-	\arrow[equals, from=1-3, to=1-4]
-	\arrow["\simeq", from=1-3, to=2-3]
-	\arrow[tail, from=2-1, to=1-1]
-	\arrow["{\overline \gamma }"', from=2-1, to=2-3]
-	\arrow["\simeq", draw=none, from=2-1, to=2-3]
-	\arrow[tail, from=2-1, to=3-1]
-	\arrow[equals, from=2-3, to=2-4]
-	\arrow[""{name=2, anchor=center, inner sep=0}, "{\overline {\gamma _f}}"', from=3-1, to=3-3]
-	\arrow["\simeq"', from=3-3, to=2-3]
-	\arrow[""{name=3, anchor=center, inner sep=0}, shift right, curve={height=18pt}, from=3-3, to=3-1]
-	\arrow[equals, from=3-3, to=3-4]
-	\arrow["\bot"{description}, draw=none, from=0, to=1]
-	\arrow["\bot"{description}, draw=none, from=3, to=2]
+	{X \coprod X} &&&& {X \coprod X} \\
+	&&& \implies \\
+	X && {X \prod I} && X && {\mathrm{Cyl}(X)}
+	\arrow["{\nabla_X}"', from=1-1, to=3-1]
+	\arrow["{(X \prod (i_0), X \prod (i_1))}", color={rgb,255:red,51;green,68;blue,255}, from=1-1, to=3-3]
+	\arrow["{\binom 11}"', from=1-5, to=3-5]
+	\arrow["{\mathsf{Cofib}}", color={rgb,255:red,51;green,68;blue,255}, from=1-5, to=3-7]
+	\arrow["{(\partial_0, \partial _1)}"', color={rgb,255:red,51;green,68;blue,255}, draw=none, from=1-5, to=3-7]
+	\arrow["{X \prod p}", from=3-3, to=3-1]
+	\arrow["{\mathsf{Weq}}", from=3-7, to=3-5]
+	\arrow["{\sigma }"', draw=none, from=3-7, to=3-5]
 \end{tikzcd}.
     \end{equation}
-\end{theorem}
+    称 $(\mathrm{Cyl}(X), \partial _0, \partial _1, \sigma, X)$ 是 $X$ 对应的柱对象, 若存在余纤维 $(\partial _0 , \partial _1) : X \coprod X \to \mathrm{Cyl}(X)$ 与弱等价 $\sigma : \mathrm{Cyl}(X) \to X$, 使得上图交换. 给定态射 $f, g : X \to Y$, 称 $f$ 与 $g$ 是\textbf{柱同伦}的, 若存在态射 $h : \mathrm{Cyl}(X) \to Y$, 使得下图交换:
+    \begin{equation}
+        % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIFxcY29wcm9kIFgiXSxbMCwyLCJYIl0sWzIsMiwiXFxtYXRocm17Q3lsfShYKSJdLFsyLDAsIlkgIl0sWzIsMSwiXFxtYXRoc2Z7V2VxfSJdLFswLDEsIlxcYmlub20gMTEiLDJdLFswLDIsIlxcbWF0aHNme0NvZmlifSIsMCx7ImNvbG91ciI6WzIzNSwxMDAsNjBdfSxbMjM1LDEwMCw2MCwxXV0sWzAsMiwiKFxccGFydGlhbF8wLCBcXHBhcnRpYWwgXzEpIiwyLHsiY29sb3VyIjpbMjM1LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX0sWzIzNSwxMDAsNjAsMV1dLFsyLDEsIlxcc2lnbWEgIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMywiKGYsZykiLDAseyJjb2xvdXIiOlszNTksMTAwLDYwXX0sWzM1OSwxMDAsNjAsMV1dLFsyLDMsImgiLDIseyJjb2xvdXIiOlszNTksMTAwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzU5LDEwMCw2MCwxXV1d
+\begin{tikzcd}
+	{X \coprod X} && {Y } \\
+	\\
+	X && {\mathrm{Cyl}(X)}
+	\arrow["{(f,g)}", color={rgb,255:red,255;green,51;blue,54}, from=1-1, to=1-3]
+	\arrow["{\binom 11}"', from=1-1, to=3-1]
+	\arrow["{\mathsf{Cofib}}", color={rgb,255:red,51;green,68;blue,255}, from=1-1, to=3-3]
+	\arrow["{(\partial_0, \partial _1)}"', color={rgb,255:red,51;green,68;blue,255}, draw=none, from=1-1, to=3-3]
+	\arrow["h"', color={rgb,255:red,255;green,51;blue,54}, dashed, from=3-3, to=1-3]
+	\arrow["{\mathsf{Weq}}", from=3-3, to=3-1]
+	\arrow["{\sigma }"', draw=none, from=3-3, to=3-1]
+\end{tikzcd}.
+    \end{equation}
 
-\begin{example}
-    对外三角范畴的相同闭模型结构, \Cref{thm:homotopy-pullback-1} 给出\Cref{eq: quillen theorem diagram} 的一种具体构造. \Cref{eq: quillen theorem equivalence} 中范畴等价成立.
+\end{definition}
+
+\begin{definition}
+    (路对象, 路同伦). 可以类似定义路对象 $\mathrm{Path}(-)$ 与路同伦的定义与柱对象与柱同伦类似. 此处仅给出定义路同伦的交换图:
+    \begin{equation}
+        % https://q.uiver.app/#q=WzAsNCxbMiwyLCJZIFxccHJvZCBZIl0sWzIsMCwiWSJdLFswLDAsIlxcbWF0aHJte1BhdGh9KFkpIl0sWzAsMiwiWSAiXSxbMSwyLCJcXG1hdGhzZntXZXF9IiwyXSxbMSwwLCJcXGJpbm9tIDExIl0sWzIsMCwiXFxtYXRoc2Z7RmlifSIsMix7ImNvbG91ciI6WzIzNSwxMDAsNjBdfSxbMjM1LDEwMCw2MCwxXV0sWzIsMCwiXFxiaW5vbSB7ZF8wfXtkXzF9IiwwLHsiY29sb3VyIjpbMjM1LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX0sWzIzNSwxMDAsNjAsMV1dLFsxLDIsInMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMywwLCJcXGJpbm9tIGZnIiwyLHsiY29sb3VyIjpbMzU5LDEwMCw2MF19LFszNTksMTAwLDYwLDFdXSxbMywyLCJrIiwwLHsiY29sb3VyIjpbMzU5LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzM1OSwxMDAsNjAsMV1dXQ==
+\begin{tikzcd}
+	{\mathrm{Path}(Y)} && Y \\
+	\\
+	{Y } && {Y \prod Y}
+	\arrow["{\mathsf{Fib}}"', color={rgb,255:red,51;green,68;blue,255}, from=1-1, to=3-3]
+	\arrow["{\binom {d_0}{d_1}}", color={rgb,255:red,51;green,68;blue,255}, draw=none, from=1-1, to=3-3]
+	\arrow["{\mathsf{Weq}}"', from=1-3, to=1-1]
+	\arrow["s", draw=none, from=1-3, to=1-1]
+	\arrow["{\binom 11}", from=1-3, to=3-3]
+	\arrow["k", color={rgb,255:red,255;green,51;blue,54}, dashed, from=3-1, to=1-1]
+	\arrow["{\binom fg}"', color={rgb,255:red,255;green,51;blue,54}, from=3-1, to=3-3]
+\end{tikzcd}.
+    \end{equation}
+\end{definition}
+
+\begin{remark}
+    Steenrod 方便拓扑空间 (\cite{steenrodConvenientCategoryTopological1967}) 与 $\mathbf{Cat}$ 存在闭合幺半结构. 因此
+    \begin{equation}
+        (\mathrm{Cyl}(X), Y) = (X \prod I, Y) \cong (X, Y^I) = (X, \mathrm{Path}(Y)).
+    \end{equation}
+    假定伴随函子保持某些态射类, 则无需区分路同伦与柱同伦.
+\end{remark}
+
+\begin{example}\label{ex: chain homotopy}
+    $\mathbf{Mod}_R$ 中链复形的一组同伦关系 $s : f \sim g : X \to Y$ ($f-g = sd+ds$) 对应态射 $(s,f,g) : \mathrm{Cyl}(X) \to Y$. 可以检验, $f$ 与 $g$ 是链映射且 $f - g = sd+ds$, 当且仅当下式成立:
+    \begin{equation}
+        (s,f,g) \circ \begin{pmatrix}
+            -d_X & 0 & 0 \\
+            1 & d_X & 0 \\
+            -1 & 0 & d_X
+        \end{pmatrix} = d_Y \circ (s,f,g).
+    \end{equation}
+    特别地, $\mathrm{Cyl}(R)$ 是单纯形 $\Delta[1]$ 在复形范畴中的实现, $\mathrm{Cyl}(X) = X \otimes \mathrm{Cyl}(R)$. 相应地,
+    \begin{equation}
+        \mathrm{Path}(Y) = \mathcal{HOM}(\mathrm{Cyl}(R), Y).
+    \end{equation}
+    链复形的同伦无需区分左右.
 \end{example}
+
+
+
+
+
+
+% \begin{theorem}\label{thm: quillen theorem}
+%     (Quillen 定理). 给定加法范畴 $\mathcal{A}$ 上的模型结构. 满足以下两条:
+%     \begin{enumerate}
+%         \item 给定任意平凡余纤维 $p : A \to C$ 与任意态射 $f : A \to B$, 则存在弱推出使得 $p' : B \to D$ 是平凡余纤维;
+%         \item 给定任意平凡纤维 $i : X \to Z$ 与任意态射 $g :  Y \to Z$, 则存在弱推出使得 $i' : W \to Y$ 是平凡纤维.
+%     \end{enumerate}
+%     \begin{equation}\label{eq: quillen theorem diagram}
+%         % https://q.uiver.app/#q=WzAsOCxbMSwwLCJYIl0sWzEsMSwiWiJdLFswLDEsIlkiXSxbMCwwLCJXIl0sWzQsMCwiQSJdLFs1LDAsIkMiXSxbNSwxLCJEIl0sWzQsMSwiQiJdLFsyLDEsImYiLDJdLFszLDIsIlxcbWF0aHNmeyhUKUZpYn0iLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywwLCJmJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDUsImciXSxbNSw2LCJcXG1hdGhzZnsoVClDb2ZpYn0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw3LCJcXG1hdGhzZnsoVClDb2ZpYn0iLDJdLFs3LDYsImcnIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMSwiXFxtYXRoc2Z7KFQpRmlifSJdLFswLDEsInAiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMywyLCJwJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDcsImkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw2LCJpJyIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+% \begin{tikzcd}[ampersand replacement=\&]
+% 	W \& X \&\&\& A \& C \\
+% 	Y \& Z \&\&\& B \& D
+% 	\arrow["{f'}", dashed, from=1-1, to=1-2]
+% 	\arrow["{\mathsf{Fib}}"', dashed, from=1-1, to=2-1]
+% 	\arrow["{p'}", draw=none, from=1-1, to=2-1]
+% 	\arrow["{\mathsf{Fib}}", from=1-2, to=2-2]
+% 	\arrow["p"', draw=none, from=1-2, to=2-2]
+% 	\arrow["g", from=1-5, to=1-6]
+% 	\arrow["{\mathsf{Cofib}}"', from=1-5, to=2-5]
+% 	\arrow["i", draw=none, from=1-5, to=2-5]
+% 	\arrow["{\mathsf{Cofib}}", dashed, from=1-6, to=2-6]
+% 	\arrow["{i'}"', draw=none, from=1-6, to=2-6]
+% 	\arrow["f"', from=2-1, to=2-2]
+% 	\arrow["{g'}"', dashed, from=2-5, to=2-6]
+% \end{tikzcd}.
+%     \end{equation}
+%     记 $\mathcal{C}$, $\mathcal{W}$ 与 $\mathcal{F}$ 分别为余纤维对象, 平凡对象与纤维对象. 此时, 以下是范畴等价:
+%     \begin{equation}\label{eq: quillen theorem equivalence}
+%         % https://q.uiver.app/#q=WzAsOSxbMCwwLCJcXHBpIFxcbWF0aHNjciBDIl0sWzAsMiwiXFxwaSBcXG1hdGhzY3IgRiJdLFswLDEsIlxccGkgKFxcbWF0aHNjciBDIFxcY2FwIFxcbWF0aHNjciBGICkiXSxbMiwwLCJcXG1hdGhzZntIb30oXFxtYXRoc2NyIEMpIl0sWzMsMCwiXFxtYXRoc2NyIENbIFxcbWF0aHNme1RDb2ZpYn1eey0xfV0iXSxbMiwyLCJcXG1hdGhzZntIb30oXFxtYXRoc2NyIEYpIl0sWzMsMiwiXFxtYXRoc2NyIEZbIFxcbWF0aHNme1RGaWJ9XnstMX1dIl0sWzMsMSwiXFxtYXRoc2NyIENbIFxcbWF0aHNme1dlcX1eey0xfV0iXSxbMiwxLCJcXG1hdGhzZntIb30oXFxtYXRoc2NyIEEpIl0sWzIsMCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsyLDEsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMCwzLCJcXG92ZXJsaW5lIHtcXGdhbW1hIF9jfSJdLFszLDgsIlxcc2ltZXEiXSxbMSw1LCJcXG92ZXJsaW5lIHtcXGdhbW1hIF9mfSIsMl0sWzUsOCwiXFxzaW1lcSIsMl0sWzMsNCwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOCw3LCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDYsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsOCwiXFxvdmVybGluZSBcXGdhbW1hICIsMl0sWzIsOCwiXFxzaW1lcSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDAsIiIsMix7Im9mZnNldCI6LTEsImN1cnZlIjotM31dLFs1LDEsIiIsMix7Im9mZnNldCI6MSwiY3VydmUiOjN9XSxbMTEsMjAsIlxcYm90IiwxLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIxLDEzLCJcXGJvdCIsMSx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+% \begin{tikzcd}
+% 	{\pi \mathscr C} && {\mathsf{Ho}(\mathscr C)} & {\mathscr C[ \mathsf{TCofib}^{-1}]} \\
+% 	{\pi (\mathscr C \cap \mathscr F )} && {\mathsf{Ho}(\mathscr A)} & {\mathscr C[ \mathsf{Weq}^{-1}]} \\
+% 	{\pi \mathscr F} && {\mathsf{Ho}(\mathscr F)} & {\mathscr F[ \mathsf{TFib}^{-1}]}
+% 	\arrow[""{name=0, anchor=center, inner sep=0}, "{\overline {\gamma _c}}", from=1-1, to=1-3]
+% 	\arrow[""{name=1, anchor=center, inner sep=0}, shift left, curve={height=-18pt}, from=1-3, to=1-1]
+% 	\arrow[equals, from=1-3, to=1-4]
+% 	\arrow["\simeq", from=1-3, to=2-3]
+% 	\arrow[tail, from=2-1, to=1-1]
+% 	\arrow["{\overline \gamma }"', from=2-1, to=2-3]
+% 	\arrow["\simeq", draw=none, from=2-1, to=2-3]
+% 	\arrow[tail, from=2-1, to=3-1]
+% 	\arrow[equals, from=2-3, to=2-4]
+% 	\arrow[""{name=2, anchor=center, inner sep=0}, "{\overline {\gamma _f}}"', from=3-1, to=3-3]
+% 	\arrow["\simeq"', from=3-3, to=2-3]
+% 	\arrow[""{name=3, anchor=center, inner sep=0}, shift right, curve={height=18pt}, from=3-3, to=3-1]
+% 	\arrow[equals, from=3-3, to=3-4]
+% 	\arrow["\bot"{description}, draw=none, from=0, to=1]
+% 	\arrow["\bot"{description}, draw=none, from=3, to=2]
+% \end{tikzcd}.
+%     \end{equation}
+% \end{theorem}
+
+% \begin{example}
+%     对外三角范畴的相同闭模型结构, \Cref{thm:homotopy-pullback-1} 给出\Cref{eq: quillen theorem diagram} 的一种具体构造. \Cref{eq: quillen theorem equivalence} 中范畴等价成立.
+% \end{example}
 
 \subsection{由 \texorpdfstring{$\mathcal{C} \cap \mathcal{F}$}{} 到同伦范畴的三种方式}
 
-我们暂不给出\Cref{thm: quillen theorem} 的证明. 对相容闭模型结构, 本小节使用 $\mathcal{C} \cap \mathcal{F}$ 的三种``等价的商''描述同伦范畴. 往后选定外三角范畴 $\mathcal{A}$ 上的相容闭模型结构 (\Cref{def:compatible-model-structure}), 选定记号
+% 我们暂不给出\Cref{thm: quillen theorem} 的证明. 
+
+对相容闭模型结构, 本小节使用 $\mathcal{C} \cap \mathcal{F}$ 的三种``等价的商''描述同伦范畴. 往后选定外三角范畴 $\mathcal{A}$ 上的相容闭模型结构 (\Cref{def:compatible-model-structure}), 选定记号
 
 \begin{enumerate}
     \item $\mathsf{Cofib}$, $\mathsf{Fib}$ 与 $\mathsf{Weq}$ 分别为闭模型结构中的余纤维, 纤维与弱等价类;
@@ -441,6 +664,29 @@
 \end{equation}
 
 此处, $\mathsf{Weq}_{\mathcal{C} \cap \mathcal{F}} = \mathsf{Weq}\cap \mathsf{Mor}(\mathcal{C} \cap  \mathcal{F})$, $Q_1$ 是 GZ 局部化, $Q_2$ 是加法商, $Q_3$ 是同伦商 (稍后定义).
+
+正式证明该命题前, 先看一则熟悉的例子.
+
+\begin{proposition}
+    假定 $\mathcal{R}$ 是一般的加法范畴, $C(\mathcal{R})$ 是复形范畴. 同伦范畴有以下三种等价描述.
+    \begin{enumerate}
+        \item (局部化). 称 $f : X \to Y$ 与 $g : Y \to X$ 同伦等价, 若 $fg - 1_Y, gf - 1_X$ 通过可裂无环复形分解. 记 $S$ 是同伦等价, 定义 $Q_1 : C(\mathcal{R}) \to C(\mathcal{R})[S^{-1}]$;
+        \item (加法商). 记 $\mathcal{N}$ 为所有可裂无环复形构成的全子加法范畴, 定义 $Q_2 : C(\mathcal{R}) \to C(\mathcal{R}) / \mathcal{N}$.
+        \item (同伦商). 称 $f, g : X \to Y$ 同伦, 若存在态射 $s : X \to Y$ 使得 $f - g = sd + ds$. 定义 $Q_3 : C(\mathcal{R}) \to \pi C(\mathcal{R})$ 为加法范畴 $C(\mathcal{R})$ 关于同伦关系的商范畴.
+    \end{enumerate}
+    以下证明过程无需\Cref{thm: when localization is additive}.
+    \begin{proof}
+        显然 $Q_2 (S)$ 是同构, 故 $Q_2$ 经 $Q_1$ 分解.
+        \\
+        再证明 $Q_1$ 经 $Q_3$ 分解, 即同伦等价的态射 $s : f \dim g : X \to Y$ 在 $C(\mathcal{R})[S^{-1}]$ 中同构. \Cref{ex: chain homotopy} 构造了态射 $(s,f,g) : \mathrm{Cyl}(X) \to Y$. 注意到
+        \begin{equation}
+            f = [X \xrightarrow {e_2}f = \mathrm{Cyl}(1_X) \xrightarrow {(s,f,g)} Y], \quad g = [X \xrightarrow {e_3} \mathrm{Cyl}(1_X) \xrightarrow {(s,f,g)} Y].
+        \end{equation}
+        $e_2$ 与 $e_3$ 在 $C(\mathcal{R})[S^{-1}]$ 中相同, 因为两者在复合同伦等价 $\mathrm{Cyl} (X) \to 0$ 后相同.
+        \\
+        最后证明 $Q_3$ 经 $Q_2$ 分解. 显然 $Q_3(f) = Q_3 (g)$ 蕴含 $(f-g)$ 零伦, 即, 通过零对象分解.
+    \end{proof}
+\end{proposition}
 
 \begin{lemma}
     $\mathsf{Weq}_{\mathcal{C} \cap \mathcal{F}}$ 对直和封闭, 从而 (\Cref{thm: when localization is additive}) $Q_1$ 是加法函子.

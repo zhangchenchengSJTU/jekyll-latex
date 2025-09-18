@@ -16,46 +16,47 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ref.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty journal in joyal
+Warning--can't use both author and editor fields in quillenHomotopicalAlgebra1967
 Warning--empty journal in reedyHOMOTOPYTHEORYMODEL
-You've used 26 entries,
+You've used 32 entries,
             3368 wiz_defined-function locations,
-            894 strings with 10817 characters,
-and the built_in function-call counts, 12213 in all, are:
-= -- 1321
-> -- 333
-< -- 23
-+ -- 88
-- -- 84
-* -- 657
-:= -- 1690
-add.period$ -- 101
-call.type$ -- 26
-change.case$ -- 132
-chr.to.int$ -- 26
-cite$ -- 28
-duplicate$ -- 401
-empty$ -- 1187
-format.name$ -- 128
-if$ -- 3148
-int.to.chr$ -- 1
+            937 strings with 11703 characters,
+and the built_in function-call counts, 14808 in all, are:
+= -- 1595
+> -- 389
+< -- 30
++ -- 102
+- -- 96
+* -- 809
+:= -- 2034
+add.period$ -- 122
+call.type$ -- 32
+change.case$ -- 161
+chr.to.int$ -- 31
+cite$ -- 35
+duplicate$ -- 481
+empty$ -- 1447
+format.name$ -- 152
+if$ -- 3818
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 26
-newline$ -- 152
-num.names$ -- 78
-pop$ -- 300
+missing$ -- 30
+newline$ -- 185
+num.names$ -- 96
+pop$ -- 374
 preamble$ -- 1
-purify$ -- 164
+purify$ -- 200
 quote$ -- 0
-skip$ -- 915
+skip$ -- 1107
 stack$ -- 0
-substring$ -- 423
-swap$ -- 59
-text.length$ -- 43
-text.prefix$ -- 18
+substring$ -- 508
+swap$ -- 80
+text.length$ -- 58
+text.prefix$ -- 24
 top$ -- 0
-type$ -- 180
-warning$ -- 2
-while$ -- 79
-width$ -- 29
-write$ -- 370
-(There were 2 warnings)
+type$ -- 224
+warning$ -- 3
+while$ -- 94
+width$ -- 36
+write$ -- 452
+(There were 3 warnings)

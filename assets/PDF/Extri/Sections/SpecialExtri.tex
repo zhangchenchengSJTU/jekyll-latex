@@ -1,5 +1,20 @@
 \section{特殊的外三角范畴}
 
+\subsection{全子范畴}
+
+\begin{definition}
+	(外三角全子范畴). 定义外三角范畴 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 的全子范畴是三元组 $(\mathcal{D},  \mathbb E|_{\mathcal{D}^{\mathrm{op}}\times \mathcal{D}}, \mathfrak s|_{\mathcal{S}})$. 其中,
+	\begin{enumerate}
+		\item $\mathcal{D} \subseteq \mathcal{C}$ 是 $\mathcal{C}$ 的加法全子范畴;
+		\item 给定 $\mathcal{C}$ 中 conflation $A \overset i \rightarrowtail B \overset p \twoheadrightarrow C \overset \delta \dashrightarrow$. 若 $A, B, C$ 的其中两项属于 $\mathcal{D}$, 则第三项亦然;
+		\item $\mathbb E|_{\mathcal{D}^{\mathrm{op}}\times \mathcal{D}}$ 与 $\mathfrak s|_{\mathcal{S}}$ 就是 $\mathbb E$ 与 $\mathfrak s$ 在子范畴上的限制.
+	\end{enumerate}
+\end{definition}
+
+\begin{example}
+	导出范畴是三角范畴, 从而是外三角范畴 (\Cref{sec:triangulated-as-extri}). 扩展模范畴 (\cite{zhouTiltingTheoryExtended2025}) 是外三角子范畴, 这通常既非三角范畴, 也非正合范畴.
+\end{example}
+
 \subsection{正合范畴是外三角范畴}
 
 正合范畴定义见\Cref{def:exact-category}, 本节假定 $\mathrm{Ext}^1$ 的取值是集合 (\Cref{ex:ext-small}).
@@ -154,12 +169,12 @@
 		\begin{enumerate}
 			\item EX0 与 EX0' 显然成立, 可裂短正合列必然是 conflation.
 			\item EX1 与 EX1' 由 ET4 (ET4') 证得. 容易发现, ET4 (ET4') 的推论是 inflation (deflation) 关于合成闭.
-			\item EX2 与 EX2' 对偶, 下仅证明 EX2. 由\Cref{thm:homotopy-pullback-1}, 任意 inflation $A \to B$ 与任意态射 $A \to X$ 可补全作同伦的推出拉回方块, 且 inflation 的对边仍是 inflation. 由 inflation 是单态射, 所有弱拉回问题的解唯一; 由 deflation 是满态射, 所有弱推出问题的解唯一. 这说明上述同伦的推出拉回方块就是范畴意义下的推出拉回方块.
+			\item EX2 与 EX2' 对偶, 下仅证明 EX2. 由\Cref{thm:homotopy-pullback-1}, 任意 inflation $A \to B$ 与任意态射 $A \to X$ 可补全作同伦的推出拉回方块, 且 inflation 的对边仍是 inflation. 注意到该方块既是弱推出, 也是与弱拉回. 由 inflation 是单态射, 所有弱拉回问题的解唯一; 由 deflation 是满态射, 所有弱推出问题的解唯一. 这说明上述同伦的推出拉回方块就是范畴意义下的推出拉回方块.
 		\end{enumerate}
 	\end{proof}
 \end{theorem}
 
-\subsection{三角范畴是外三角范畴}
+\subsection{三角范畴是外三角范畴}\label{sec:triangulated-as-extri}
 
 三角范畴的定义见\Cref{def:triangulated-category}.
 
@@ -597,8 +612,17 @@ Happel 定理 (\cite{happelTriangulatedCategoriesRepresentation1988}, 章节 1.2
 以下是 Happel 定理的一些推论.
 
 \begin{corollary}
-	外三角范畴 $\mathcal{C}$ 是三角范畴, 当且仅当所有态射都是 inflation, 且都是 deflation.
+	外三角范畴 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 能够以\Cref{thm:extri-with-sigma-is-triangulated} 的方式诱导三角范畴, 当且仅当所有态射既是 inflation 又是 deflation.
 	\begin{proof}
-		($\to$) 方向由态射唯一嵌入好三角 (\Cref{prop:triangulated-kernel-cokernel}) 与 TR2 即得. 下证明 ($\gets$) 方向. 若所有态射都是 inflation, 则 $X \to 0$ 均是 inflation. 若 $\mathcal{C}$ 有内射对象, 则内射对象不为非零对象; 另一方面, 容易检验零对象确实是内射对象. 对偶地, $\mathcal{C}$ 的投射对象恰好是零对象. 这说明 $\mathcal{C}$ 是 Frobenius 范畴. 由\Cref{thm:extri-frobenius-happel}, $\mathcal{C} / 0 = \mathcal{C}$ 的骨架是三角范畴, 从而 $\mathcal{C}$ 是三角范畴.
+		($\to$) 方向由态射唯一嵌入好三角 (\Cref{prop:triangulated-kernel-cokernel}) 与 TR2 即得. 下证明 ($\gets$) 方向. 考虑以下引理 (关于内射对象的表述对偶).
+		\begin{quoting}
+		\begin{lemma}
+			上述外三角范畴有足够投射对象, 且投射对象恰好是零对象.
+			\begin{proof}
+				若 $P$ 是投射对象, 则 $1_P$ 经 deflation $0 \to P$ 分解, 故 $P$ 是零对象. 实际上, 零对象必然是投射对象. 显然范畴有足够投射对象.
+			\end{proof}
+		\end{lemma}
+		\end{quoting}
+		这说明 $\mathcal{C}$ 是 Frobenius 范畴. 由\Cref{thm:extri-frobenius-happel}, $\mathcal{C} / 0 = \mathcal{C}$ 的骨架是三角范畴, 从而 $\mathcal{C}$ 是三角范畴.
 	\end{proof}
 \end{corollary}

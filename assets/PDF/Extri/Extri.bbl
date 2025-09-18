@@ -85,6 +85,16 @@ Jue Le and Xiao-Wu Chen.
 \newblock {\em Journal of Algebra}, 310(1):452--457, April 2007.
 \newblock \href {https://doi.org/10.1016/j.jalgebra.2006.11.027} {\path{doi:10.1016/j.jalgebra.2006.11.027}}.
 
+\bibitem[Lura]{lurieKerodona}
+Jacob Lurie.
+\newblock Kerodon.
+\newblock https://kerodon.net/tag/0022.
+
+\bibitem[Lurb]{lurieKerodon}
+Jacob Lurie.
+\newblock Kerodon.
+\newblock https://kerodon.net/tag/004N.
+
 \bibitem[May01]{TriangulatedJPMay}
 John~P. May.
 \newblock The axioms for triangulated categories, 2001.
@@ -120,6 +130,18 @@ Hiroyuki Nakaoka and Yann Palu.
 \newblock arXiv title ''Mutation via Hovey twin cotorsion pairs and model structures in extriangulated categories''.
 \newblock URL: \url{https://hal.science/hal-02136919}.
 
+\bibitem[Qui67]{quillenHomotopicalAlgebra1967}
+Daniel~G. Quillen.
+\newblock {\em Homotopical {{Algebra}}}, volume~43 of {\em Lecture {{Notes}} in {{Mathematics}}}.
+\newblock Springer, Berlin, Heidelberg, 1967.
+\newblock \href {https://doi.org/10.1007/BFb0097438} {\path{doi:10.1007/BFb0097438}}.
+
+\bibitem[Qui69]{quillenRationalHomotopyTheory1969}
+Daniel Quillen.
+\newblock Rational {{Homotopy Theory}}.
+\newblock {\em The Annals of Mathematics}, 90(2):205, September 1969.
+\newblock \href {https://arxiv.org/abs/1970725} {\path{arXiv:1970725}}, \href {https://doi.org/10.2307/1970725} {\path{doi:10.2307/1970725}}.
+
 \bibitem[Ree73]{reedyHOMOTOPYTHEORYMODEL}
 Christopher~L. Reedy.
 \newblock Homotopy theory of model categories.
@@ -131,6 +153,12 @@ Shi Rong and Pu~Zhang.
 \newblock Strong version of {{Snake Lemma}} in exact categories.
 \newblock {\em Homology, Homotopy and Applications}, 23(2):151--163, 2021.
 \newblock \href {https://doi.org/10.4310/HHA.2021.v23.n2.a9} {\path{doi:10.4310/HHA.2021.v23.n2.a9}}.
+
+\bibitem[Ste67]{steenrodConvenientCategoryTopological1967}
+N.~E. Steenrod.
+\newblock A convenient category of topological spaces.
+\newblock {\em Michigan Mathematical Journal}, 14(2):133--152, May 1967.
+\newblock \href {https://doi.org/10.1307/mmj/1028999711} {\path{doi:10.1307/mmj/1028999711}}.
 
 \bibitem[Ver96]{AST_1996__239__R1_0}
 Jean-Louis Verdier.
@@ -148,5 +176,10 @@ Nobuo Yoneda.
 \newblock On {E}xt and exact sequences.
 \newblock {\em J. Fac. Sci. Univ. Tokyo Sect. I}, 8:507--576, 1960.
 \newblock URL: \url{https://mathscinet.ams.org/mathscinet/article?mr=225854}.
+
+\bibitem[Zho25]{zhouTiltingTheoryExtended2025}
+Yu~Zhou.
+\newblock Tilting theory for extended module categories, January 2025.
+\newblock \href {https://arxiv.org/abs/2411.15473} {\path{arXiv:2411.15473}}, \href {https://doi.org/10.48550/arXiv.2411.15473} {\path{doi:10.48550/arXiv.2411.15473}}.
 
 \end{thebibliography}

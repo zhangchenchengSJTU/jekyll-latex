@@ -281,10 +281,12 @@
 	\end{proof}
 \end{theorem}
 
-记 $\omega : = \mathcal{U} \cap \mathcal{V}$ 为一类特殊的自垂直对象.
+\begin{definition}
+	记 $\omega : = \mathcal{U} \cap \mathcal{V}$ 为一类特殊的自垂直对象.
+\end{definition}
 
 \begin{lemma}\label{lem:factor-through-w}
-	对任意 $U \in \mathcal{U}$ 与 $V \in \mathcal{V}$, 任意态射 $f: U \to V$ 通过 $\omega$ 中对象分解.
+	假定 $(\mathcal{U},\mathcal{V})$ 是完备余挠对. 对任意 $U \in \mathcal{U}$ 与 $V \in \mathcal{V}$, 任意态射 $f: U \to V$ 通过 $\omega$ 中对象分解.
 	\begin{proof}
 		取 inflation $i : U \rightarrowtail U_V$. 长正合列表明 $(i, V)$ 满, 故 $f$ 通过 $U_V$ 分解. 显然 $U_V \in \mathcal{U} \cap \mathcal{V} = \omega$.
 	\end{proof}
@@ -293,7 +295,7 @@
 预盖和预包通常不唯一, $(-)_V$ 与 $(-)^U$ 更无法称作函子; 但 $\mathcal{C} / \omega$ 是函子. 实际上, 有以下是更精细的结论.
 
 \begin{theorem}
-	全子加法范畴的嵌入 $(\mathcal{U} / \omega) \to (\mathcal{C} / \omega)$ 具有有伴随 $(-)^U$.
+	假定 $(\mathcal{U},\mathcal{V})$ 是完备余挠对. 全子加法范畴的嵌入 $(\mathcal{U} / \omega) \to (\mathcal{C} / \omega)$ 具有右伴随 $(-)^U$.
 	\begin{proof}
 		对所有对象取定 conflation $M^V \overset i \rightarrowtail M^U \overset p \twoheadrightarrow M \dashrightarrow$. 下证明自然同构
 		\begin{equation}
