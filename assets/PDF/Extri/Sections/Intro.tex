@@ -426,7 +426,7 @@ A & B & C & {\, }
 		$g$ 单即 $(g \circ -)$ 单, 亦即 $(f \circ - ) = 0$, 亦即 $f$ 零, 亦即 $(- \circ f) = 0$, 亦即 $(- \circ g)$ 满, 亦即 $g$ 可裂单.
 		此处涉及一则简单的引理.
 		\begin{quoting}
-		\begin{lemma}
+		\begin{lemma}\label{lem:mono-epi-split}
 			给定任意范畴中的态射 $g$. $(g \circ -) = \mathrm{Hom}(-, g)$ 是函子的满射, 当且仅当 $g$ 是可裂单态射.
 			\begin{proof}
 				若 $g : A \to B$ 是可裂满, 则 $(g \circ -)$ 有右逆元, 故满. 反之, 若 $(g \circ -)$ 满, 则 $(1_B) \in \mathrm{Hom}(g, B)$, 即存在 $h : A \to B$ 使得 $g \circ h = 1_B$, 故 $g$ 可裂满.
@@ -498,7 +498,7 @@ A & B & C & {\, }
 	\end{proof}
 \end{theorem}
 
-\begin{theorem}
+\begin{theorem}\label{thm:ext-tri-inflation-deflation-unique}
 	在同构意义下, inflation (deflation) 嵌入唯一的 conflation.
 	\begin{proof}
 		上一定理的推论.

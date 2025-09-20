@@ -294,7 +294,7 @@
 
 预盖和预包通常不唯一, $(-)_V$ 与 $(-)^U$ 更无法称作函子; 但 $\mathcal{C} / \omega$ 是函子. 实际上, 有以下是更精细的结论.
 
-\begin{theorem}
+\begin{theorem}\label{thm:adjoint}
 	假定 $(\mathcal{U},\mathcal{V})$ 是完备余挠对. 全子加法范畴的嵌入 $(\mathcal{U} / \omega) \to (\mathcal{C} / \omega)$ 具有右伴随 $(-)^U$.
 	\begin{proof}
 		对所有对象取定 conflation $M^V \overset i \rightarrowtail M^U \overset p \twoheadrightarrow M \dashrightarrow$. 下证明自然同构
@@ -929,7 +929,7 @@ $(\text{投射对象}, \mathcal{C})$ 与 $(\mathcal{C}, \text{内射对象})$ �
 		\item[CM4] 范畴中所有态射可表示为 $p \circ i \in (\mathsf{Weq} \cap \mathsf{Fib}) \circ \mathsf{Cofib}$ 与 $p' \circ i' \in \mathsf{Fib} \circ (\mathsf{TCofib} \cap \mathsf{Weq})$.
 	\end{enumerate}
 	\begin{proof}
-		\Cref{def:model-structure} 的第二条即 CM1. \Cref{def:model-structure} 的第一条等价于 CM2-4 (\Cref{prop:wfs-equiv}).
+		\Cref{def:model-structure} 的第二条即 CM1. \Cref{def:model-structure} 的第一条与第三条等价于 CM2-4 (\Cref{prop:wfs-equiv}).
 	\end{proof}
 \end{proposition}
 
@@ -1207,7 +1207,7 @@ Hovey 孪生余挠对由一对特殊的闭模型结构诱导, 称作相同闭模
 	态射 $f$, $gf$ 与 $g$ 分别位于对象 $X$, $Y$ 与 $Z$ 的``对立面''. 依照经验, 若给定一个满足``合成的二推三性质''且对 $\Sigma^\pm$ 封闭的态射类 $\mathcal{M}$, 则有一个三角子范畴与之对应 (TR1-3).
 \end{example}
 
-\begin{theorem}
+\begin{theorem}\label{thm:weq-trivial-corr}
 	给定 conflation $X \overset i \rightarrowtail Y \overset p \twoheadrightarrow Z \overset \delta \dashrightarrow$, 则
 	\begin{enumerate}
 		\item $i \in \mathsf{Weq}$ 当且仅当 $Z \in \mathcal{W}$;
@@ -1238,26 +1238,149 @@ Hovey 孪生余挠对由一对特殊的闭模型结构诱导, 称作相同闭模
 	\end{proof}
 \end{theorem}
 
-% \begin{corollary}
-% 	给定弱等价 $w$ 与任意 inflation $f$, 则存在同伦的推出拉回方块 $\star$ 使得 $f'$ 是 inflation, 且 $w'$ 是弱等价.
-% 	\begin{equation}
-% 		% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNkb3QiXSxbMSwwLCJcXGNkb3QiXSxbMCwxLCJcXGNkb3QiXSxbMSwxLCJcXGNkb3QiXSxbMCwxLCJ3Il0sWzAsMiwiZiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMiwzLCJ3JyIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDMsImYnIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwzLCJcXHN0YXIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
-% \begin{tikzcd}[ampersand replacement=\&]
-% 	\cdot \& \cdot \\
-% 	\cdot \& \cdot
-% 	\arrow["w", from=1-1, to=1-2]
-% 	\arrow["f"', tail, from=1-1, to=2-1]
-% 	\arrow["\star"{description}, draw=none, from=1-1, to=2-2]
-% 	\arrow["{f'}", dashed, tail, from=1-2, to=2-2]
-% 	\arrow["{w'}"', dashed, from=2-1, to=2-2]
-% \end{tikzcd}.
-% 	\end{equation}
-% 	\begin{proof}
-% 		将 $w$ 拆解作 $\mathsf{TFib} \circ \mathsf{TCofib}$, 记作 $w = p \circ i$.
-% 	\end{proof}
-% \end{corollary}
+\begin{proposition}\label{prop:weq-inflation-pullback}
+	给定弱等价 $w$ 与任意 inflation $f$, 则存在同伦的推出拉回方块 $\star$ 使得 $f'$ 是 inflation, 且 $w'$ 是弱等价.
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNkb3QiXSxbMSwwLCJcXGNkb3QiXSxbMCwxLCJcXGNkb3QiXSxbMSwxLCJcXGNkb3QiXSxbMCwxLCJ3Il0sWzAsMiwiZiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMiwzLCJ3JyIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDMsImYnIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwzLCJcXHN0YXIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	\cdot \& \cdot \\
+	\cdot \& \cdot
+	\arrow["w", from=1-1, to=1-2]
+	\arrow["f"', tail, from=1-1, to=2-1]
+	\arrow["\star"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["{f'}", dashed, tail, from=1-2, to=2-2]
+	\arrow["{w'}"', dashed, from=2-1, to=2-2]
+\end{tikzcd}.
+	\end{equation}
+	\begin{proof}
+		将 $w$ 拆解作 $\mathsf{TFib} \circ \mathsf{TCofib}$. 依照\Cref{thm:bi-pullback} 与 ET4 分解构造同伦的推出拉回方块 $\star$ 与 $\bullet$ 如下:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsNixbMCwwLCJcXGNkb3QiXSxbMiwwLCJcXGNkb3QiXSxbMCwxLCJcXGNkb3QiXSxbMSwwLCJcXGNkb3QiXSxbMSwxLCJcXGNkb3QiXSxbMiwxLCJcXGNkb3QiXSxbMCwxLCJ3IiwwLHsib2Zmc2V0IjotMiwiY3VydmUiOi0xfV0sWzAsMiwiZiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMCwzLCJpIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFszLDEsInAiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiw0LCJpJyIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNSwiZiciLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDUsInAnIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFswLDQsIlxcc3RhciIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDQsImYnJyIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsNSwiXFxidWxsZXQiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}
+	\cdot & \cdot & \cdot \\
+	\cdot & \cdot & \cdot
+	\arrow["i"', tail, from=1-1, to=1-2]
+	\arrow["w", shift left=2, curve={height=-6pt}, from=1-1, to=1-3]
+	\arrow["f"', tail, from=1-1, to=2-1]
+	\arrow["\star"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["p"', two heads, from=1-2, to=1-3]
+	\arrow["{f''}"', dashed, tail, from=1-2, to=2-2]
+	\arrow["\bullet"{description}, draw=none, from=1-2, to=2-3]
+	\arrow["{f'}"', dashed, tail, from=1-3, to=2-3]
+	\arrow["{i'}"', dashed, tail, from=2-1, to=2-2]
+	\arrow["{p'}"', dashed, two heads, from=2-2, to=2-3]
+\end{tikzcd}.
+		\end{equation}
+		依照构造, $i' \in \mathsf{TCofib}$ 且 $p' \in \mathsf{TFib}$, 记 $w' = p' \circ i'$. 依照\Cref{thm:homotopy-pullback-5}, 合成所得的方块也是同伦的推出拉回方块.
+	\end{proof}
+\end{proposition}
 
+\begin{proposition}\label{prop:weq-deflation-pushout}
+	对偶地, 任给定去向相同的弱等价 $w$ 与 deflation $p$, 则能够构造同伦的推出拉回方块使得 $p'$ 是 deflation, 且 $w'$ 是弱等价.
+\end{proposition}
 
+\begin{theorem}
+	给定外三角范畴与相容闭模型结构, 任取 $(\alpha, \beta, \gamma)$ 是 conflation 间的态射. 若某两者属于 $\mathsf{Weq}$, 不妨取作 $\alpha$ 和 $\beta$, 则存在 $\widetilde {\gamma} \in \mathsf{Weq}$ 使得 $(\alpha, \beta, \widetilde{\gamma})$ 也是 conflation 间的态射.
+	\begin{proof}
+		下仅证明其中两种情形, 余下一种情形的证明对偶.
+		\\
+		(情形 $1$). 假定 $\alpha, \gamma \in \mathsf{Weq}$. 作同伦的推出拉回方块 $\star$ 使得, 并依照 ET2 取同构 $\varphi$:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTYsWzAsMCwiQSJdLFsyLDAsIkIiXSxbNCwwLCJDIl0sWzQsMSwiQyJdLFswLDEsIkEnIl0sWzIsMSwiRSJdLFswLDMsIkEnIl0sWzIsMywiQiciXSxbNCwzLCJDJyJdLFs0LDIsIkMiXSxbMCwyLCJBJyJdLFsyLDIsIkYiXSxbNSwwLCJcXCwiXSxbNSwxLCJcXCwiXSxbNSwyLCJcXCwiXSxbNSwzLCJcXCwiXSxbMCwxLCJpIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDIsInAiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiwzLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDQsIlxcYWxwaGEiXSxbNCw1LCJqIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwzLCJxIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs2LDcsImknIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs3LDgsInAnIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsNSwiXFxhbHBoYSciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCwxMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTEsNywiXFxnYW1tYSciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOSw4LCJcXGdhbW1hIl0sWzMsOSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTAsMTEsImonIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTEsOSwicSciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzUsMTEsIlxcdmFycGhpICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDEyLCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsMTMsIlxcYWxwaGFfXFxhc3QgXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDE0LCJcXGdhbW1hXlxcYXN0IFxcZGVsdGEnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsMTUsIlxcZGVsdGEnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsNSwiXFxzdGFyIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzExLDgsIlxcc3RhciIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMCw2LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDQsIlxcbWF0aHNme1dlcX0iLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSw1LCJcXG1hdGhzZntXZXF9IiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzExLDcsIlxcbWF0aHNme1dlcX0iLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOSw4LCJcXG1hdGhzZntXZXF9IiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsMTEsIlxcY29uZyIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}
+	A && B && C & {\,} \\
+	{A'} && E && C & {\,} \\
+	{A'} && F && C & {\,} \\
+	{A'} && {B'} && {C'} & {\,}
+	\arrow["i", tail, from=1-1, to=1-3]
+	\arrow["\alpha", from=1-1, to=2-1]
+	\arrow["{\mathsf{Weq}}"', draw=none, from=1-1, to=2-1]
+	\arrow["\star"{description}, draw=none, from=1-1, to=2-3]
+	\arrow["p", two heads, from=1-3, to=1-5]
+	\arrow["{\alpha'}", dashed, from=1-3, to=2-3]
+	\arrow["{\mathsf{Weq}}"', draw=none, from=1-3, to=2-3]
+	\arrow["\delta", dashed, from=1-5, to=1-6]
+	\arrow[equals, from=1-5, to=2-5]
+	\arrow["j", dashed, tail, from=2-1, to=2-3]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["q", dashed, two heads, from=2-3, to=2-5]
+	\arrow["{\varphi }", dashed, from=2-3, to=3-3]
+	\arrow["\cong"', draw=none, from=2-3, to=3-3]
+	\arrow["{\alpha_\ast \delta}", dashed, from=2-5, to=2-6]
+	\arrow[equals, from=2-5, to=3-5]
+	\arrow["{j'}", dashed, tail, from=3-1, to=3-3]
+	\arrow[equals, from=3-1, to=4-1]
+	\arrow["{q'}", dashed, two heads, from=3-3, to=3-5]
+	\arrow["{\gamma'}", dashed, from=3-3, to=4-3]
+	\arrow["{\mathsf{Weq}}"', draw=none, from=3-3, to=4-3]
+	\arrow["\star"{description}, draw=none, from=3-3, to=4-5]
+	\arrow["{\gamma^\ast \delta'}", dashed, from=3-5, to=3-6]
+	\arrow["\gamma", from=3-5, to=4-5]
+	\arrow["{\mathsf{Weq}}"', draw=none, from=3-5, to=4-5]
+	\arrow["{i'}", tail, from=4-1, to=4-3]
+	\arrow["{p'}", two heads, from=4-3, to=4-5]
+	\arrow["{\delta'}", dashed, from=4-5, to=4-6]
+\end{tikzcd}.
+		\end{equation}
+		此时, $\widetilde \beta := \gamma' \circ \varphi \alpha'$ 即为所求.
+		\\
+		(情形 $2$). 假定 $\alpha, \beta \in \mathsf{Weq}$. 先对 $(i, \alpha)$ 作同伦的推出拉回方块, 得弱等价 $\alpha'$. $\beta$ 经 $\alpha'$ 分解所得的 $\beta'$ 也是弱等价 (CM1). 取合适的 $\gamma$ 使得右下方也是同伦的推出拉回方块 (\Cref{thm:homotopy-pullback-2-dual}):
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSJdLFsyLDAsIkIiXSxbNCwwLCJDIl0sWzQsMSwiQyJdLFswLDEsIkEnIl0sWzIsMSwiRSJdLFswLDIsIkEnIl0sWzIsMiwiQiciXSxbNCwyLCJDJyJdLFs1LDAsIlxcLCJdLFs1LDEsIlxcLCJdLFs1LDIsIlxcLCJdLFswLDEsImkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwicCIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDMsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsNCwiXFxhbHBoYSIsMCx7ImNvbG91ciI6WzIyNiwxMDAsNjBdfSxbMjI2LDEwMCw2MCwxXV0sWzQsNSwiaiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMywicSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNiw3LCJpJyIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNyw4LCJwJyIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDksIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywxMCwiXFxhbHBoYV9cXGFzdCBcXGRlbHRhID0gXFxnYW1tYV5cXGFzdCBcXGRlbHRhJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDExLCJcXGRlbHRhJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDUsIlxcc3RhciIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDgsIlxcZ2FtbWEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw2LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDcsIlxcYmV0YSciLDAseyJjb2xvdXIiOlsyMjYsMTAwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjI2LDEwMCw2MCwxXV0sWzUsOCwiXFxzdGFyIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsNywiXFxiZXRhIiwwLHsibGFiZWxfcG9zaXRpb24iOjIwLCJvZmZzZXQiOi0yLCJjdXJ2ZSI6LTMsImNvbG91ciI6WzIyNiwxMDAsNjBdfSxbMjI2LDEwMCw2MCwxXV0sWzEsNSwiXFxhbHBoYSciLDAseyJjb2xvdXIiOlsyMjYsMTAwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjI2LDEwMCw2MCwxXV1d
+\begin{tikzcd}
+	A && B && C & {\,} \\
+	{A'} && E && C & {\,} \\
+	{A'} && {B'} && {C'} & {\,}
+	\arrow["i", tail, from=1-1, to=1-3]
+	\arrow["\alpha", color={rgb,255:red,51;green,99;blue,255}, from=1-1, to=2-1]
+	\arrow["\star"{description}, draw=none, from=1-1, to=2-3]
+	\arrow["p", two heads, from=1-3, to=1-5]
+	\arrow["{\alpha'}", color={rgb,255:red,51;green,99;blue,255}, dashed, from=1-3, to=2-3]
+	\arrow["\beta"{pos=0.2}, shift left=2, color={rgb,255:red,51;green,99;blue,255}, curve={height=-18pt}, from=1-3, to=3-3]
+	\arrow["\delta", dashed, from=1-5, to=1-6]
+	\arrow[equals, from=1-5, to=2-5]
+	\arrow["j", dashed, tail, from=2-1, to=2-3]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["q", dashed, two heads, from=2-3, to=2-5]
+	\arrow["{\beta'}", color={rgb,255:red,51;green,99;blue,255}, dashed, from=2-3, to=3-3]
+	\arrow["\star"{description}, draw=none, from=2-3, to=3-5]
+	\arrow["{\alpha_\ast \delta = \gamma^\ast \delta'}", dashed, from=2-5, to=2-6]
+	\arrow["\gamma", dashed, from=2-5, to=3-5]
+	\arrow["{i'}", tail, from=3-1, to=3-3]
+	\arrow["{p'}", two heads, from=3-3, to=3-5]
+	\arrow["{\delta'}", dashed, from=3-5, to=3-6]
+\end{tikzcd}.
+		\end{equation}
+		将 $\gamma$ 拆解作 $\gamma_f \circ \gamma_c \mathsf{TFib} \circ \mathsf{Cofib}$, 由\Cref{prop:weq-deflation-pushout} 作两次同伦推出拉回:
+		\begin{equation}
+% https://q.uiver.app/#q=WzAsMTIsWzQsMCwiQyJdLFswLDAsIkEnIl0sWzIsMCwiRSJdLFswLDIsIkEnIl0sWzIsMiwiQiciXSxbNCwyLCJDJyJdLFs1LDAsIlxcLCJdLFs1LDIsIlxcLCJdLFs0LDEsIlxcd2lkZXRpbGRlIEMiXSxbMiwxLCJcXHdpZGV0aWxkZSBDIl0sWzAsMSwiQSciXSxbNSwxLCJcXCwiXSxbMSwyLCJqIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiwwLCJxIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFszLDQsImknIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFs0LDUsInAnIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsNiwiXFxnYW1tYV5cXGFzdCBcXGRlbHRhJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDcsIlxcZGVsdGEnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsNSwiXFxnYW1tYSIsMix7ImxhYmVsX3Bvc2l0aW9uIjo3MCwib2Zmc2V0IjoxLCJjdXJ2ZSI6M31dLFsyLDQsIlxcYmV0YSciLDIseyJsYWJlbF9wb3NpdGlvbiI6NzAsIm9mZnNldCI6MSwiY3VydmUiOjMsImNvbG91ciI6WzIyNiwxMDAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFsyMjYsMTAwLDYwLDFdXSxbMiw4LCJcXHN0YXIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOCw1LCJcXGdhbW1hX2MiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzAsOCwiXFxnYW1tYV97dGZ9IiwwLHsiY29sb3VyIjpbMjI2LDEwMCw2MF0sInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX0sWzIyNiwxMDAsNjAsMV1dLFs5LDQsIlxcZ2FtbWFfYyciLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDgsInAnJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiw5LCJcXGdhbW1hX3t0Zn0nIiwwLHsiY29sb3VyIjpbMjI2LDEwMCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19LFsyMjYsMTAwLDYwLDFdXSxbMSwxMCwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTAsMywiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTAsOSwiaScnIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCwxMSwiKFxcZ2FtbWFfYyleXFxhc3QgXFxkZWx0YSciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	{A'} && E && C & {\,} \\
+	{A'} && {\widetilde C} && {\widetilde C} & {\,} \\
+	{A'} && {B'} && {C'} & {\,}
+	\arrow["j", dashed, tail, from=1-1, to=1-3]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["q", dashed, two heads, from=1-3, to=1-5]
+	\arrow["{\gamma_{tf}'}", color={rgb,255:red,51;green,99;blue,255}, dashed, two heads, from=1-3, to=2-3]
+	\arrow["\star"{description}, draw=none, from=1-3, to=2-5]
+	\arrow["{\beta'}"'{pos=0.7}, shift right, color={rgb,255:red,51;green,99;blue,255}, curve={height=18pt}, dashed, from=1-3, to=3-3]
+	\arrow["{\gamma^\ast \delta'}", dashed, from=1-5, to=1-6]
+	\arrow["{\gamma_{tf}}", color={rgb,255:red,51;green,99;blue,255}, two heads, from=1-5, to=2-5]
+	\arrow["\gamma"'{pos=0.7}, shift right, curve={height=18pt}, from=1-5, to=3-5]
+	\arrow["{i''}", dashed, tail, from=2-1, to=2-3]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{p''}", dashed, two heads, from=2-3, to=2-5]
+	\arrow["{\gamma_c'}", dashed, tail, from=2-3, to=3-3]
+	\arrow["{(\gamma_c)^\ast \delta'}", dashed, from=2-5, to=2-6]
+	\arrow["{\gamma_c}", tail, from=2-5, to=3-5]
+	\arrow["{i'}", tail, from=3-1, to=3-3]
+	\arrow["{p'}", two heads, from=3-3, to=3-5]
+	\arrow["{\delta'}", dashed, from=3-5, to=3-6]
+\end{tikzcd}.
+		\end{equation}
+		由 CM1, $\gamma_c' \in \mathsf{Weq}$, 因此 $\gamma_c' \in \mathsf{TCofib}$. 由 ET4 与相容闭模型结构的定义, 得 $\gamma_c \in \mathsf{TCofib}$. 再由 CM1, 复合所得的 $\gamma$ 也是弱等价.
+	\end{proof}
+\end{theorem}
 
 \subsection{Hovey 孪生余挠对 \texorpdfstring{$\to$}{} 相容闭模型结构}\label{sec:hovey-to-model}
 

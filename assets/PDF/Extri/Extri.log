@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.28)  18 SEP 2025 16:49
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.28)  21 SEP 2025 02:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -929,28 +929,33 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 
 
 
-] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32]) [33]
+] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33]) [34]
 \openout2 = `Sections/SpecialExtri.aux'.
 
- (./Sections/SpecialExtri.tex [34
+ (./Sections/SpecialExtri.tex
+Overfull \hbox (20.57895pt too wide) in paragraph at lines 6--7
+[]\TU/SimSun(0)/b/n/10.95 定 义 \TU/Caladea(0)/b/n/10.95 4.1.1. []\TU/Caladea(0)/m/n/10.95 (\TU/SimSun(0)/m/n/10.95 对 \TU/Caladea(0)/m/n/10.95 conflation \TU/SimSun(0)/m/n/10.95 封 闭 的 全 子 范 畴\TU/Caladea(0)/m/n/10.95 ). \TU/SimSun(0)/m/n/10.95 定 义 外 三 角 范 畴 $\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 C\OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 E\OML/cmm/m/it/10.95 ; \U/euf/m/n/10.95 s\OT1/cmr/m/n/10.95 )$ \TU/SimSun(0)/m/n/10.95 的 全 子 范 畴 是 三 元 组 $\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 D\OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 E\OMS/cmsy/m/n/10.95 j[]\OML/cmm/m/it/10.95 ; \U/euf/m/n/10.95 s\OMS/cmsy/m/n/10.95 j[]\OT1/cmr/m/n/10.95 )$\TU/Caladea(0)/m/n/10.95 .
+ []
+
+[35
 
 
 
-] [35] [36] [37] [38] [39] [40]) [41]
+] [36] [37] [38] [39] [40] [41] [42]) [43]
 \openout2 = `Sections/Model.aux'.
 
- (./Sections/Model.tex [42
+ (./Sections/Model.tex [44
 
 
 
-] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59]) [60]
+] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63]) [64]
 \openout2 = `Sections/Homotopy.aux'.
 
- (./Sections/Homotopy.tex [61
+ (./Sections/Homotopy.tex [65
 
 
 
-] [62] [63] [64] [65] [66] [67] [68] [69] [70]) [71] (./Extri.bbl
+] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82]) [83] (./Extri.bbl
 
 Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
 (fontspec)             doesn't exist).
@@ -974,10 +979,10 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
- [72
+ [84
 
 
-] [73]) [74] (./Extri.aux (./Sections/Recollection.aux) (./Sections/Intro.aux) (./Sections/Diagram.aux) (./Sections/SpecialExtri.aux) (./Sections/Model.aux) (./Sections/Homotopy.aux))
+] [85]) [86] (./Extri.aux (./Sections/Recollection.aux) (./Sections/Intro.aux) (./Sections/Diagram.aux) (./Sections/SpecialExtri.aux) (./Sections/Model.aux) (./Sections/Homotopy.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -986,12 +991,12 @@ Package rerunfilecheck Info: File `Extri.out' has not changed.
 (rerunfilecheck)             Checksum: B25FCD3A0B08BA6A6467547520D33021;4000.
  ) 
 Here is how much of TeX's memory you used:
- 50180 strings out of 474773
- 1186790 string characters out of 5761289
- 2004842 words of memory out of 5000000
- 71705 multiletter control sequences out of 15000+600000
+ 53539 strings out of 474773
+ 1278248 string characters out of 5761289
+ 2003842 words of memory out of 5000000
+ 75064 multiletter control sequences out of 15000+600000
  570372 words of font info for 136 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  131i,28n,135p,3274b,1537s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Extri.pdf (74 pages).
+Output written on Extri.pdf (86 pages).

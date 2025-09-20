@@ -10,25 +10,25 @@
 \contentsline {section}{\numberline {3}图表定理}{22}{section.3}%
 \contentsline {subsection}{\numberline {3.1}双 deflation (inflation) 的拉回 (推出)}{22}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}同伦的推出拉回方块}{25}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}弱幂等完备}{29}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}九引理}{31}{subsection.3.4}%
-\contentsline {section}{\numberline {4}特殊的外三角范畴}{34}{section.4}%
-\contentsline {subsection}{\numberline {4.1}全子范畴}{34}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}正合范畴是外三角范畴}{34}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}三角范畴是外三角范畴}{36}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}自等价 $+$ 外三角范畴 $=$ 三角范畴}{36}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}理想商}{37}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Hovey 对应}{42}{section.5}%
-\contentsline {subsection}{\numberline {5.1}余挠对}{42}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}遗传余挠对}{46}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}态射观点}{49}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}模型结构}{52}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Hovey 孪生余挠对}{54}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}相容闭模型结构 $\to $ Hovey 孪生余挠对}{55}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Hovey 孪生余挠对 $\to $ 相容闭模型结构}{57}{subsection.5.7}%
-\contentsline {section}{\numberline {6}同伦范畴}{61}{section.6}%
-\contentsline {subsection}{\numberline {6.1}局部化}{61}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}加法局部化}{63}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Quillen 的同伦范畴}{67}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}由 $\mathcal {C} \cap \mathcal {F}$ 到同伦范畴的三种方式}{69}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}同伦范畴的三角结构}{71}{subsection.6.5}%
+\contentsline {subsection}{\numberline {3.3}弱幂等完备}{30}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}九引理}{32}{subsection.3.4}%
+\contentsline {section}{\numberline {4}特殊的外三角范畴}{35}{section.4}%
+\contentsline {subsection}{\numberline {4.1}全子范畴}{35}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}正合范畴是外三角范畴}{36}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}三角范畴是外三角范畴}{37}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}自等价 $+$ 外三角范畴 $=$ 三角范畴}{38}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}理想商}{39}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Hovey 对应}{44}{section.5}%
+\contentsline {subsection}{\numberline {5.1}余挠对}{44}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}遗传余挠对}{48}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}态射观点}{51}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}模型结构}{54}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Hovey 孪生余挠对}{56}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}相容闭模型结构 $\to $ Hovey 孪生余挠对}{57}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Hovey 孪生余挠对 $\to $ 相容闭模型结构}{60}{subsection.5.7}%
+\contentsline {section}{\numberline {6}同伦范畴}{65}{section.6}%
+\contentsline {subsection}{\numberline {6.1}局部化}{65}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}加法局部化}{67}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Quillen 的同伦范畴}{71}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}由 $\mathcal {C} \cap \mathcal {F}$ 到同伦范畴的三种方式}{76}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}同伦范畴的三角结构}{79}{subsection.6.5}%
