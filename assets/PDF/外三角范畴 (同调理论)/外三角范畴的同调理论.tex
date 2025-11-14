@@ -1,0 +1,393 @@
+\documentclass[11pt]{ctexart}
+\usepackage[margin=2cm,a4paper]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathrsfs,quiver,stmaryrd,xcolor,mathtools}
+\setlength\parindent{0pt}
+\setmainfont{Caladea}
+
+%% 也可以选用其它字库：
+% \setCJKmainfont[%
+%   ItalicFont=AR PL KaitiM GB,
+%   BoldFont=Noto Sans CJK SC,
+% ]{Noto Serif CJK SC}
+% \setCJKsansfont{Noto Sans CJK SC}
+% \renewcommand{\kaishu}{\CJKfontspec{AR PL KaitiM GB}}
+
+\usepackage[hyphens]{url}
+\usepackage{xurl}
+
+% Define some custom colors
+\definecolor{linkblue}{RGB}{0, 0, 180}      % for internal links
+\definecolor{citegreen}{RGB}{0, 150, 0}     % for citations
+\definecolor{urlred}{RGB}{180, 0, 0}        % for URLs
+
+\usepackage[
+    breaklinks,
+	colorlinks=true,   % false: boxed links; true: colored links
+    linkcolor=linkblue,
+    citecolor=citegreen,
+    urlcolor=urlred,
+    filecolor=magenta, % color for file links
+    menucolor=blue,    % color for Acrobat menu items
+]{hyperref}
+
+
+\usepackage[capitalise]{cleveref}
+
+\usepackage{quoting}
+\quotingsetup{vskip=0pt}
+
+\numberwithin{equation}{subsection}
+
+\theoremstyle{definition}
+\newtheorem{definition}{定义}[subsection]
+\newtheorem{proposition}[definition]{命题}
+\newtheorem{theorem}[definition]{定理}
+\newtheorem{notation}[definition]{记号}
+\newtheorem{example}[definition]{例子}
+\newtheorem{exercise}[definition]{习题}
+\newtheorem{question}[definition]{问题}
+\theoremstyle{remark}
+\newtheorem{remark}[definition]{备注}
+\newtheorem{lemma}[definition]{引理}
+\newtheorem{corollary}[definition]{推论}
+
+
+\Crefname{definition}{\textbf{定义}}{\textbf{定义}}
+\Crefname{proposition}{\textbf{命题}}{\textbf{命题}}
+\Crefname{theorem}{\textbf{定理}}{\textbf{定理}}
+\Crefname{notation}{\textbf{记号}}{\textbf{记号}}
+\Crefname{example}{\textbf{例}}{\textbf{例}}
+\Crefname{exercise}{\textbf{习题}}{\textbf{习题}}
+\Crefname{question}{\textbf{问题}}{\textbf{问题}}
+\Crefname{equation}{\textbf{式}}{\textbf{式}}
+\Crefname{align}{\textbf{式}}{\textbf{式}}
+
+\Crefname{remark}{\textit{备注}}{\textit{备注}}
+\Crefname{lemma}{\textit{引理}}{\textit{引理}}
+\Crefname{corollary}{\textit{推论}}{\textit{推论}}
+
+\usepackage{titlesec}
+\titlespacing*{\subsection}{0pt}{\baselineskip}{\baselineskip}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{13.6pt}
+\fancyhf{}
+\fancyhead[L]{\nouppercase{\leftmark\ \ >> \ \ \ \rightmark}} % 左上角显示章节和小节名称
+\fancyhead[R]{\thepage} % 右上角显示页码
+
+\title{外三角范畴的同调理论}
+\author{张陈成}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+这是几篇文章的阅读笔记. 
+
+\section{同调理论}
+
+\subsection{从 Auslander 公式到局部化序列}
+
+\begin{notation}
+    对加法范畴 $\mathcal{A}$ 与 $\mathcal{B}$, 记 $\mathbf{Funct}(\mathcal{A},\mathcal{B})$ 是加法函子的范畴. 
+\end{notation}
+
+\begin{definition}
+    (Serre 子范畴). Abel 范畴 $\mathcal{A}$ 的 Serre 子范畴 $\mathcal{B} \subseteq \mathcal{A}$ 是全子 Abel 范畴, 其关于子对象, 商对象与扩张封闭.
+\end{definition}
+
+\begin{example}
+    若 $F: \mathcal{A} \to \mathcal{B}$ 是 Abel 范畴间的正合函子, 则 $\ker F := \{A \in \mathcal{A} \mid F(A) = 0\}$ 是 $\mathcal{A}$ 的 Serre 子范畴. 反之, 可以对 Serre 子范畴构造局部化, 且局部化函子正合.
+\end{example}
+
+\begin{theorem}
+    (Serre 子范畴的局部化, 熟知结论). 给定 Serre 子范畴 $\mathcal{B} \subseteq \mathcal{A}$.
+    \begin{enumerate}
+        \item (分式局部化). 态射类 $S \subseteq \mathsf{Mor}(\mathcal{A})$ 是构成左右分式. 其中, $f \in S$ 当且仅当 $\ker f, \operatorname{cok} f \in \mathcal{B}$. 通常将极限定义作双分式的滤过余极限:
+        \begin{equation}\label{eq:serre_quotient_hom}
+            (X, Y)_{\mathcal{A}/\mathcal{B}} := \varinjlim_{(X', Y')} (X', Y/Y')_\mathcal{A};\quad X/X', Y' \in \mathcal{B}.
+        \end{equation}
+        \item (泛性质). 局部化 $\mathcal{A} \to \mathcal{A} / \mathcal{B}$ 是正合函子. 对任意正合函子 $F : \mathcal{A} \to \mathcal{C}$, 若 $F (B) = 0$ 对任意 $B \in \mathcal{B}$ 成立, 则 $F$ 唯一地分解为 $\mathcal{A} / \mathcal{B} \to \mathcal{C}$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+    注意: Serre 商不是简单的加法商. 一般地, Abel 范畴关于子范畴的加法商未必是 Abel 范畴.
+\end{remark}
+
+\begin{proposition}
+    对 Serre 商 $\mathcal{A} / \mathcal{C}$ 而言, $\mathcal{A}$ 中的零态射经过零对象分解. 因此, 加法商是 Serre 商的子范畴.
+    \begin{proof}
+        假定 $f : X \to Y$ 是 Serre 商范畴中的零态射. 依照 \Cref{eq:serre_quotient_hom}, 存在复合的零态射
+        \begin{equation}
+            X' \overset i \rightarrowtail X \xrightarrow f Y \twoheadrightarrow Y/Y',\quad X/X', Y' \in \mathcal{B}.
+        \end{equation}
+        往证 $\operatorname{im}(f) \in \mathcal{B}$. 只需证明 ses $0 \to \frac{X' + \ker f}{ \ker f} \to \frac{X}{\ker f} \to \frac{X}{X' + \ker f} \to 0$ 的首尾两项属于 $\mathcal{B}$. 直接地, $\frac{X}{X' + \ker f}$ 是 $\frac{X}{X'}$ 的商, 从而属于 $\mathcal{B}$; 由同构定理,
+        \begin{equation}
+            \frac{X' + \ker f}{ \ker f} \simeq \frac{X'}{X' \cap \ker f} \simeq \operatorname{im} (f \circ i)  \rightarrowtail Y' \in \mathcal{B}.
+        \end{equation}
+    \end{proof}
+\end{proposition}
+
+\begin{example}\label{ex:effaceable_functor}
+    有限表现函子范畴. 给定加法范畴 $\mathcal{C}$, 记 $\mathbf{mod}_\mathcal{C}$ 是有限表现函子范畴. 这是预层范畴 $\mathbf{Funct}(\mathcal{C}^{\mathrm{op}}, \mathrm{Ab})$ 的全子范畴, 对象是
+    \begin{equation}
+        F : \mathcal{C}^{op} \to \mathbf{Ab},\quad F \simeq \mathrm{coker}((-, X)_\mathcal{C} \xrightarrow{(-, f)_\mathcal{C}} (-, Y)_\mathcal{C}).
+    \end{equation}
+    若 $\mathcal{C}$ 有弱核, 则 $\mathbf{mod}_\mathcal{C}$ 是 Abel 范畴 (Lemma 2.1.6., \cite{krauseHomologicalTheoryRepresentations2022}). 记米田嵌入 $\mathbb Y : \mathcal{A} \to \mathbf{mod}_\mathcal{A}$, 对任意 Abel 范畴 $\mathcal{D}$, 有函子
+    \begin{equation}
+        \mathbb Y^\ast : \mathbf{Funct}(\mathbf{mod}_\mathcal{C}, \mathcal{D}) \to \mathbf{Funct}(\mathcal{C}, \mathcal{D}),\quad G \mapsto G \circ \mathbb Y.
+    \end{equation}
+    此时, $\mathbb Y^\ast$, 诱导了两则函子范畴的等价:
+    \begin{enumerate}\label{ex:effaceable_functor-1}
+        \item (Lemma 2.1.7, \cite{krauseHomologicalTheoryRepresentations2022}). 左侧的右正合函子, 与右侧的所有函子;
+        \item (Lemma 2.1.8, \cite{krauseHomologicalTheoryRepresentations2022}). 左侧的正合函子, 与右侧保持弱核的函子.
+    \end{enumerate}
+\end{example}
+
+\begin{example}
+    (Abel 范畴的局部化序列). 给定 Abel 范畴 $\mathcal{A}$, 函子 $\mathbb Y : \mathcal{A} \to \mathbf{mod}_\mathcal{A}$ 存在左伴随:
+    \begin{align}
+        \mathbf{Nat}[F, \mathbb Y(M)] & = \mathbf{Nat}[\operatorname{cok}(-, f)_\mathcal{A}, (-, M)_\mathcal{A}]  \quad \simeq \ker \mathbf{Nat}[(-, f)_\mathcal{A}, (-, M)_\mathcal{A}] \\
+        & \simeq \ker ((f, M)_\mathcal{A}) \quad \simeq (\operatorname{cok} f, M)_\mathcal{A}.
+    \end{align}
+    记左伴随 $Q: \mathbf{mod}_\mathcal{A} \to \mathcal{A},\quad \operatorname{cok}(-, f) \mapsto \operatorname{cok} f$. 记 $\mathrm{eff}(\mathcal{A}) := \ker Q \subseteq \mathcal{A}$ 是 Abel 子范畴, 对象类是 $\{\mathrm{cok}(-, f) \mid f \ \text{满态射}\}$. 此时有如如下 Abel 范畴的函子序列
+    \begin{equation}\label{eq:auslander_formula}
+        % https://q.uiver.app/#q=WzAsMyxbNCwwLCJcXG1hdGhjYWwgQSJdLFsyLDAsIlxcbWF0aGJme21vZH1fXFxtYXRoY2FsIEEiXSxbMCwwLCJcXG1hdGhybXtFZmZ9KFxcbWF0aGNhbCBBKSJdLFsxLDAsIlEiXSxbMiwxXSxbMCwxLCJcXG1hdGhiYiBZIiwwLHsib2Zmc2V0IjotM31dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	{\mathrm{eff}(\mathcal A)} \&\& {\mathbf{mod}_\mathcal A} \&\& {\mathcal A}
+	\arrow[from=1-1, to=1-3]
+	\arrow["Q", from=1-3, to=1-5]
+	\arrow["{\mathbb Y}", shift left=3, from=1-5, to=1-3]
+\end{tikzcd}.
+    \end{equation}
+\end{example}
+
+\begin{lemma}
+    \Cref{eq:auslander_formula} 中, $Q$ 是正合的.
+    \begin{proof}
+    显然 $Q \circ \mathbb Y$ 是范畴等价, 从而保持弱核. 依照 \Cref{ex:effaceable_functor-1}, $Q$ 是正合的.    
+    \end{proof}
+\end{lemma}
+
+\begin{lemma}
+    \Cref{eq:auslander_formula} 中, $Q$ 诱导了范畴等价 $\mathcal{A} \simeq \frac{\mathbf{mod}_\mathcal{A}}{\mathrm{eff}(\mathcal{A})}$.
+    \begin{proof}
+        记 $S \subseteq \mathbf{mod}_\mathcal{A}$ 为一切在 $Q$ 下可逆的映射. 局部化给出分解
+        \begin{equation}
+        \mathbf{mod}_\mathcal{A} \xrightarrow{Q_0} \mathbf{mod}_\mathcal{A}[S^{-1}] \xrightarrow{\overline Q} \mathcal{A}.   
+        \end{equation}
+        下证明 $\overline Q$ 是范畴等价, 其拟逆是 $Q_0 \circ \mathbb Y$.
+        \begin{enumerate}
+            \item 一方面, $\overline {Q} \circ (Q_0 \circ \mathbb Y) = Q\circ \mathbb Y$ 自等价函子;
+            \item 另一方面, 需要证明 $(Q_0 \circ \mathbb Y) \circ \overline {Q}$ 是自等价函子. 由于 $Q_0^\ast$ 诱导了函子范畴同构, 故只需证明 $(1_{\mathbf{mod}_\mathcal{A}[S^{-1}]}) \circ Q_0 \to ((Q_0 \circ \mathbb Y) \circ \overline {Q}) \circ Q_0$ 是自然同构. 事实上, 这一自然变换就是 $Q_0 \eta$. 伴随的三角恒等式说明 $Q\eta : Q \circ \mathbb Y \circ Q$ 是一族自然同构. 由局部化的泛性质, $Q_0 \eta$ 是自然同构. 
+        \end{enumerate}
+        $\mathrm{eff}(\mathcal{A})$ 是正合函子的核, 从而是 Serre 子范畴.
+    \end{proof}
+\end{lemma}
+
+以上范畴等价也称 Auslander 公式 (细节见 \cite{Lenzing1997Auslander}). Auslander 的原始动机是研究模范畴 $\mathbf{mod}_\Lambda$ 的同调理论, 其中 $\Lambda$ 是 Artin 代数.
+
+\begin{example}
+    给定凝聚环 $R$, 即使得 $\mathbf{mod}_R$ 是 Abel 范畴的环. 记有限表现函子范畴 $\mathbf{mod}_{\mathbf{mod}_R}$, 定义赋值函子
+    \begin{equation}
+        \mathrm{ev}_R : \mathbf{mod}_{\mathbf{mod}_R} \to \mathbf{mod}_R,\quad F \mapsto F(R).
+    \end{equation}
+    函子 $\mathrm{ev}_R$ 是正合的, 且是米田嵌入 $\mathbb Y : \mathbf{mod}_R \to \mathbf{mod}_{\mathbf{mod}_R}$ 的左伴随. 记子范畴 $({\mathbf{mod}_{\mathbf{mod}_R} })_0 := \ker(\mathrm{ev}_R)$, 则 $\mathrm{ev}_R$ 诱导了范畴等价
+    \begin{equation}
+        \mathbf{mod}_R \simeq \frac{\mathbf{mod}_{\mathbf{mod}_R}}{({\mathbf{mod}_{\mathbf{mod}_R} })_0}.
+    \end{equation}
+\end{example}
+
+\Cref{eq:auslander_formula} 中的 $\mathrm{eff}(\mathcal{A})$ 是一类``衡量缺陷''的函子, 这是建立导出函子的工具之一.
+
+\begin{lemma}\label{lem:localization_adjoint}
+    (Serre 子范畴的局部化序列, 引理 2.2.10., \cite{krauseHomologicalTheoryRepresentations2022}). 这一定理是对 \Cref{eq:auslander_formula} 的推广. 假定 $\mathcal{B} \subseteq \mathcal{A}$ 是 Serre 子范畴, $Q: \mathcal{A} \to \mathcal{A} / \mathcal{B}$ 是局部化. 假定 $\mathcal{Q}$ 存在右伴随函子 $Q'$, 如下图所示:
+    \begin{equation}
+        % https://q.uiver.app/#q=WzAsMyxbNCwwLCJcXG1hdGhjYWwgQSAvIFxcbWF0aGNhbCBCIl0sWzIsMCwiXFxtYXRoY2FsIEEiXSxbMCwwLCJcXG1hdGhjYWwgQiJdLFsyLDEsIkkiXSxbMCwxLCJRJyIsMCx7Im9mZnNldCI6LTN9XSxbMSwwLCJRIl0sWzEsMiwiSSciLDAseyJvZmZzZXQiOi0zLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	{\mathcal B} && {\mathcal A} && {\mathcal A / \mathcal B}
+	\arrow["I", from=1-1, to=1-3]
+	\arrow["{I'}", shift left=3, dashed, from=1-3, to=1-1]
+	\arrow["Q", from=1-3, to=1-5]
+	\arrow["{Q'}", shift left=3, from=1-5, to=1-3]
+\end{tikzcd}.
+    \end{equation}
+    此时, $Q'$ 是全忠实的. 单位 $\eta : X \to Q' Q X$ 在局部化范畴中可逆, 即, 下图是函子的正合列
+    \begin{equation}
+        0 \to X' \to X \xrightarrow{\eta_X} Q' Q X \to X'' \to 0,\quad X', X'' \in \mathcal{B}.
+    \end{equation}
+    特别地, $X \mapsto X'$ 是 $\mathcal{B} \to \mathcal{A}$ 的右伴随. 
+\end{lemma}
+
+\begin{example}
+    由 \Cref{lem:localization_adjoint}, 将 \Cref{eq:auslander_formula} 中 $\mathrm{eff}(\mathcal{A}) \to \mathbf{mod}_\mathcal{A}$ 的右伴随选取如下:
+    \begin{equation}
+        \mathbf{mod}_\mathcal{A} \to \mathrm{eff}(\mathcal{A}),\quad \mathrm{coker}((-, f)_\mathcal{A}) \mapsto \mathrm{coker}((-, f_1)_\mathcal{A}) ; \quad f_1 : X \twoheadrightarrow \operatorname{im} f.
+    \end{equation}
+\end{example}
+
+\begin{corollary}
+    (粘合). \Cref{lem:localization_adjoint} 及其对偶定理给出以下结论: 对 Abel 范畴的 Serre 子范畴 $\mathcal{B} \subseteq \mathcal{A}$, 记局部化 $Q : \mathcal{A} \to \mathcal{A}/\mathcal{B}$.
+    \begin{equation}
+        % https://q.uiver.app/#q=WzAsMyxbNCwwLCJcXG1hdGhjYWwgQSAvIFxcbWF0aGNhbCBCIl0sWzIsMCwiXFxtYXRoY2FsIEEiXSxbMCwwLCJcXG1hdGhjYWwgQiJdLFsyLDEsIkkiLDFdLFswLDEsIlEnIiwwLHsib2Zmc2V0IjotM31dLFsxLDAsIlEiLDFdLFsxLDIsIkknIiwwLHsib2Zmc2V0IjotMywic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMSwiUScnIiwyLHsib2Zmc2V0IjozfV0sWzEsMiwiSScnIiwyLHsib2Zmc2V0IjozLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	{\mathcal B} && {\mathcal A} && {\mathcal A / \mathcal B}
+	\arrow["I"{description}, from=1-1, to=1-3]
+	\arrow["{I'}", shift left=3, dashed, from=1-3, to=1-1]
+	\arrow["{I''}"', shift right=3, dashed, from=1-3, to=1-1]
+	\arrow["Q"{description}, from=1-3, to=1-5]
+	\arrow["{Q'}", shift left=3, from=1-5, to=1-3]
+	\arrow["{Q''}"', shift right=3, from=1-5, to=1-3]
+\end{tikzcd}.
+    \end{equation}
+    若 $Q$ 有左伴随 $Q''$, 则 $Q''$ 是全忠实的, 且余单位 $\delta_Y : Q Q'' Y \to Y$ 在局部化范畴中可逆, $I'': Y \mapsto \operatorname{cok}(\delta_Y )$ 是 $\mathcal{B} \to \mathcal{A}$ 的左伴随. 对偶地, 若 $Q$ 有右伴随 $Q'$, 则 $Q'$ 是全忠实的, 且单位 $\eta_X : X \to Q' Q X$ 在局部化范畴中可逆, $I': X \mapsto \ker(\eta_X )$ 是 $\mathcal{B} \to \mathcal{A}$ 的右伴随. 用 $I'$ 与 $I''$ 重新表述正合列, 得
+    \begin{equation}
+        0 \to II' X \to X \to Q' Q X ,\quad Q''Q X \to X \to II''X \to 0, \quad X \in \mathcal{A}.
+    \end{equation}
+\end{corollary}
+
+\begin{example}
+    粘合理论的动机是层的拓扑六函子. 记 $X$ 是拓扑空间, $Z \subseteq X$ 是闭子空间, $U := X \setminus Z$. 记 $\mathbf{Sh}(X), \mathbf{Sh}(Z), \mathbf{Sh}(U)$ 分别是 $X, Z, U$ 上 Abel 群值的层范畴. 记包含映射 $i : Z \to X, j : U \to X$. 则有如下粘合图:
+    \begin{equation}
+        % https://q.uiver.app/#q=WzAsMyxbNCwwLCJcXG1hdGhybXtTaH0oVSkiXSxbMiwwLCJcXG1hdGhybXtTaH0oWCkiXSxbMCwwLCJcXG1hdGhybXtTaH0oWikiXSxbMiwxLCJpX1xcYXN0ID0gaV8hIiwxXSxbMCwxLCJqXyoiLDAseyJvZmZzZXQiOi0zfV0sWzEsMCwial4qPWpeISIsMV0sWzEsMiwiaV4hIiwwLHsib2Zmc2V0IjotM31dLFswLDEsImpfISIsMix7Im9mZnNldCI6M31dLFsxLDIsImleXFxhc3QgIiwyLHsib2Zmc2V0IjozfV1d
+\begin{tikzcd}
+	{\mathbf{Sh}(Z)} && {\mathbf{Sh}(X)} && {\mathbf{Sh}(U)}
+	\arrow["{i_\ast = i_!}"{description}, from=1-1, to=1-3]
+	\arrow["{i^!}", shift left=3, from=1-3, to=1-1]
+	\arrow["{i^\ast }"', shift right=3, from=1-3, to=1-1]
+	\arrow["{j^*=j^!}"{description}, from=1-3, to=1-5]
+	\arrow["{j_*}", shift left=3, from=1-5, to=1-3]
+	\arrow["{j_!}"', shift right=3, from=1-5, to=1-3]
+\end{tikzcd}.
+    \end{equation}
+    特别地, 有 ses
+    \begin{equation}
+        0 \to j_!j^! F \to F \to i_* i^* F \to 0,\quad 0 \to i_! i^* G \to G \to j_* j^* G.
+    \end{equation}
+    一般地, 第二个式子未必右正合. 当 $G$ 是松弛层时, 第二个式子右正合.
+\end{example}
+
+\begin{definition}
+    (预包络, 反变有限). 给定加法范畴 $\mathcal{C}$ 与对象类 $\mathcal{X}$.
+    \begin{enumerate}
+        \item 一个右 $\mathcal{X}$ 逼近是态射 $f : X \to C$ 使得 $X \in \mathcal{X}$, 且对任意 $X' \in \mathcal{X}$, 态射 $(X', f) : (X', X) \to (X', C)$ 是满的. 换言之, $(-, X) \xrightarrow{p \circ} ((-)|_\mathcal{X}, C)$ 是预层范畴中的投射预盖. 
+        \item $\mathcal{X}$ 是反变有限的, 若对任意 $C \in \mathcal{C}$, 存在右 $\mathcal{X}$ 逼近.
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    假定 $\mathcal{B} \subseteq \mathcal{A}$ 是反变有限的全子加法子范畴, $\mathbf{mod}_\mathcal{A}$ 是 Abel 范畴, 则有下图
+    \begin{equation}
+        % https://q.uiver.app/#q=WzAsNixbMCwxLCJcXG1hdGhiZnttb2R9X3tcXG1hdGhjYWwgQyAvIFxcbWF0aGNhbCBEfSJdLFsyLDEsIlxcbWF0aGJme21vZH1fe1xcbWF0aGNhbCBDfSJdLFs0LDEsIlxcbWF0aGJme21vZH1fe1xcbWF0aGNhbCBEfSJdLFs0LDAsIlxcbWF0aGNhbCBEIl0sWzAsMCwiXFxtYXRoY2FsIEMgLyBcXG1hdGhjYWwgRCJdLFsyLDAsIlxcbWF0aGNhbCBDIl0sWzMsNSwiaSIsMl0sWzUsNCwicCIsMl0sWzAsMSwicF5cXGFzdCIsMl0sWzEsMiwiaV5cXGFzdCIsMl0sWzIsMSwiaV8hIiwyLHsib2Zmc2V0IjozfV0sWzEsMCwicF8hIiwyLHsib2Zmc2V0IjozfV1d
+\begin{tikzcd}[ampersand replacement=\&,row sep=small]
+	{\mathcal C / \mathcal D} \&\& {\mathcal C} \&\& {\mathcal D} \\
+	{\mathbf{mod}_{\mathcal C / \mathcal D}} \&\& {\mathbf{mod}_{\mathcal C}} \&\& {\mathbf{mod}_{\mathcal D}}
+	\arrow["p"', from=1-3, to=1-1]
+	\arrow["i"', from=1-5, to=1-3]
+	\arrow["{p^\ast}"', from=2-1, to=2-3]
+	\arrow["{p_!}"', shift right=3, from=2-3, to=2-1]
+	\arrow["{i^\ast}"', from=2-3, to=2-5]
+	\arrow["{i_!}"', shift right=3, from=2-5, to=2-3]
+\end{tikzcd}.
+    \end{equation}
+    这是余局部化序列, 即, 
+    \begin{enumerate}
+        \item $(p_!, p_\ast)$ 与 $(i_!, i^\ast)$ 是伴随对;
+        \item $p^\ast$ 与 $i^\ast$ 是全忠实的;
+        \item $\operatorname{im} p^\ast = \ker i^\ast$.
+    \end{enumerate}
+    \begin{proof}
+        $i^\ast$ 与 $p^\ast$ 仅改变输入, 不改变输出, 从而是预层范畴的正合函子. 
+    \end{proof}
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{正向与反向扩张}
+
+整理自 \cite{gorsky2021positivenegativeextensionsextriangulated}.
+
+\begin{notation}
+    环 $R$ 含幺且交换.
+\end{notation}
+
+\begin{notation}
+    约定 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 是外三角范畴的资料. $f^\ast$ 与 $g_\ast$ 分别是自然变换 $\mathbb E(f, -)$ 与 $\mathbb E(-, g)$.
+\end{notation}
+
+\begin{definition}
+    (投射态射, 内射态射). 态射 $f$ 是投射的, 若 $f^\ast$ 是零自然变换; 对偶地, 态射 $g$ 是内射的, 若 $g_\ast$ 是零自然变换.
+\end{definition}
+
+\begin{remark}
+    投射态射构成范畴理想 $\mathcal{P}$; 内射态射构成范畴理想 $\mathcal{I}$.
+\end{remark}
+
+\begin{lemma}
+    投射对象与投射态射的关系.
+    \begin{enumerate}
+        \item $X$ 是投射对象, 当且仅当 $1_X$ 是投射态射. 
+        \item 若 $f$ 通过投射对象分解, 则 $f$ 是投射态射.
+        \item 若 $\mathcal{C}$ 有足够投射对象, 则
+    \begin{equation}
+        f \ \text{ 是投射态射} \iff f \ \text{ 通过投射对象分解}.
+    \end{equation}
+    \end{enumerate}
+    \begin{proof}
+        1 与 2 显然. 下证明 3 的 $\implies$ 方向. 若 $f : X \to Y$ 是投射态射, 则存在投射对象 $P$ 与 deflation $p : P \to Y$. 根据六项正合列, $p$ 与 $f$ 互相分解. 
+    \end{proof}
+\end{lemma}
+
+\begin{definition}
+    (足够投射态射). 若 deflation 是投射的, 则称之投射 deflation. 外三角范畴 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 有足够投射态射, 若对任意对象 $Y \in \mathcal{C}$, 存在投射 deflation $p : P \to Y$. 
+\end{definition}
+
+\begin{remark}
+    假定 $\mathcal{B} \subseteq \mathcal{C}$ 是由投射-内射对象构成的全子加法范畴, 构造外三角范畴的理想商范畴
+    \begin{equation}
+        (\mathcal{C}, \mathbb E, \mathfrak s) \to (\mathcal{C}/\mathcal{B}, \overline{\mathbb E}, \overline {\mathfrak s}).
+    \end{equation}
+    若 $\mathcal{C}$ 有足够投射态射, 则 $\mathcal{C}/\mathcal{B}$ 也有足够投射态射.
+    \begin{proof}
+        理想商保持 deflation. $\mathbb E(f, -) = 0$ 蕴含 $\overline{\mathbb E}([f], -) = 0$.
+    \end{proof}
+\end{remark}
+
+
+
+
+
+\newpage 
+\bibliographystyle{alphaurl}
+\bibliography{ref}
+
+\end{document}
+

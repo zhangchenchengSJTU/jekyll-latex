@@ -1,0 +1,362 @@
+\documentclass{article}
+\usepackage[a4paper, left=0.5in, right=0.5in, top=0.5in, bottom=0.5in]{geometry} % Page margins
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsthm, amsmath, amssymb, mathtools}  % Required for math typesetting
+\usepackage{quiver} % Required for commutative diagrams
+% \usepackage[all, cmtip, 2cell]{xy}
+% \UseTwocells
+
+\usepackage{stmaryrd} % For \mapsfrom
+
+\usepackage[colorlinks]{hyperref} % For hyperlinks in the PDF
+\usepackage[nameinlink]{cleveref} % For referencing multiple labels
+
+\title{Notes on Grothendieck Monoids for Extriangulated Categories}
+\author{Tansing Tiunn}
+\date{\today}
+
+
+% Define theorem styles and environments
+\theoremstyle{plain}  % for theorems, etc. (italic body)
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}  % for definitions, examples (upright body)
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{problem}[theorem]{Problem}
+
+\newtheorem*{notation}{Notation}
+
+\theoremstyle{remark}  % for remarks etc. (upright, less emphasis)
+\newtheorem*{remark}{Remark}
+\newtheorem*{note}{Note}
+
+
+\begin{document}
+
+\maketitle
+
+We collect some aspects from \cite{enomotoGrothendieckMonoidsExtriangulated2022a}
+
+\section{Extriangulated Categories}
+
+\subsection{Exact Functors}
+
+\begin{definition}[2.2., Exact functors between extriangulated categories]
+    Let $(\mathcal{C}, \mathbb E, \mathfrak s)$ and $(\mathcal{D}, \mathbb F, \mathfrak t)$ be extriangulated categories. An exact functor is a pair $(F, \varphi)$ such that
+    \begin{enumerate}
+        \item $F: \mathcal{C} \to \mathcal{D}$ is an additive functor,
+        \item $\varphi_{Z,X}: \mathbb E(Z,X) \to \mathbb F(FZ, FX)$ is a natural transformation of bifunctors,
+        \item for any $\mathfrak s$-conflation $X \xrightarrow{f} Y \xrightarrow{g} Z \overset \delta \dashrightarrow$, the sequence $FX \xrightarrow{Ff} FY \xrightarrow{Fg} FZ \overset{\varphi_{Z,X}(\delta)} \dashrightarrow$ is a $\mathfrak t$-conflation.
+    \end{enumerate}
+\end{definition}
+
+\begin{lemma}[2.4.]
+    Suppose $\mathcal{D}$ is exact. The pair $(F, \varphi)$ is uniquely determined by $F$ if $F$ is conflation preserving.
+    \begin{proof}
+        Given a conflation-preserving functor $F$, we can define $\varphi$ as follows: for any $\mathfrak s$-conflation $X \xrightarrow{f} Y \xrightarrow{g} Z \overset \delta \dashrightarrow$, we define $\varphi (\delta)$ as the extension element corresponding to the $\mathfrak t$-conflation $FX \xrightarrow{Ff} FY \xrightarrow{Fg} FZ \overset{\varphi(\delta)} \dashrightarrow$. Note that the morphism of $\mathfrak t$-conflations is uniquely determined by two commutative squares, so $(F\gamma)^\ast \varphi (\delta') = (F\alpha)_\ast \varphi (\delta)$ in the following diagram:
+        \begin{equation}
+            % https://q.uiver.app/#q=WzAsOCxbMCwwLCJGWCJdLFsxLDAsIkZZIl0sWzIsMCwiRloiXSxbMCwxLCJGWCciXSxbMSwxLCJGWSciXSxbMiwxLCJGWiciXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwyLCJGZyJdLFsyLDUsIkZcXGdhbW1hIl0sWzAsMywiRlxcYWxwaGEiXSxbMyw0LCJGZiciXSxbNCw1LCJGZyciXSxbMCwxLCJGZiJdLFsxLDQsIkZcXGJldGEiXSxbMiw2LCJcXHZhcnBoaSAoXFxkZWx0YSkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw3LCJcXHZhcnBoaSAoXFxkZWx0YScpIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	FX \& FY \& FZ \& {\,} \\
+	{FX'} \& {FY'} \& {FZ'} \& {\,}
+	\arrow["Ff", from=1-1, to=1-2]
+	\arrow["{F\alpha}", from=1-1, to=2-1]
+	\arrow["Fg", from=1-2, to=1-3]
+	\arrow["{F\beta}", from=1-2, to=2-2]
+	\arrow["{\varphi (\delta)}", dashed, from=1-3, to=1-4]
+	\arrow["{F\gamma}", from=1-3, to=2-3]
+	\arrow["{Ff'}", from=2-1, to=2-2]
+	\arrow["{Fg'}", from=2-2, to=2-3]
+	\arrow["{\varphi (\delta')}", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+        \end{equation}
+
+    \end{proof}
+\end{lemma}
+
+\subsection{Grothendieck Monoids}
+
+We assume all extriangulated categories are essentially small.
+
+\begin{notation}[Monoid]
+    A monoid is an Abelian (additive) group without the requirement of inverses.
+\end{notation}
+
+\begin{notation}
+    Let $\mathrm{Iso}(-)$ denote the isomorphism classes of objects in a category. $[X]$ is the isomorphism class of an object $X$. Note that $[-]$ preserves direct sums, i.e. $[X \oplus Y] = [X] + [Y]$. $\mathrm{Iso}(\mathcal{C})$ is a monoid.
+\end{notation}
+
+\begin{definition}[2.5. Grothendieck monoid]
+    Let $(\mathcal{C}, \mathbb E, \mathfrak s)$ be an extriangulated category. The Grothendieck monoid $\mathsf M (\mathcal{C})$ is characterised by a quotient of classes map
+    \begin{equation}
+        \pi : \mathrm{Iso}(\mathcal{C}) \twoheadrightarrow (\mathrm{Iso}(\mathcal{C}) / \sim )=: \mathsf M (\mathcal{C})
+    \end{equation}
+    $\sim$: for any conflation $X \xrightarrow{f} Y \xrightarrow{g} Z \overset \delta \dashrightarrow$, one has $\pi([X]) + \pi([Z]) = \pi([Y])$.
+\end{definition}
+
+\begin{remark}[Universal property]
+    For map $p : \mathrm{Iso}(\mathcal{C}) \to N$ respecting conflations, $p$ factors through $\pi$ uniquely.
+\end{remark}
+
+\begin{definition}[2.6]
+    For any conflation $X \xrightarrow{f} Y \xrightarrow{g} Z \overset \delta \dashrightarrow$, we denote $[Y] \sim_c [X \oplus Z]$. This generates an additive equivalence relation $\approx _c$.
+\end{definition}
+
+\begin{notation}
+    We write $X \sim _c Y$ (resp. $X \simeq_c Y$) when $[X] \approx_c [Y]$ (resp. $[X] \approx_c [Y]$).
+\end{notation}
+
+\begin{proposition}[2.7.]
+    $\mathsf M (\mathcal{C}) \cong \mathrm{Iso}(\mathcal{C}) / \approx_c$.
+\end{proposition}
+
+\begin{proposition}[2.8.]
+    This yields a functor
+    \begin{equation}\label{eq:grothendieck_monoid_functor}
+        \mathsf M : \mathsf{ETCat} \to \mathsf{Mon},\quad (\mathcal{C}, \mathbb E, \mathfrak s) \mapsto \mathsf M (\mathcal{C}),\quad (F, \varphi) \mapsto ([X] \mapsto [FX]).
+    \end{equation}
+\end{proposition}
+
+\begin{remark}
+    The usual Grothendieck group functor $\mathsf K_0$ is a completion of $\mathsf M$.
+\end{remark}
+
+\begin{example}
+    When $\mathcal{C}$ is Abelian length with $n$ simple objects, then $\mathsf M (\mathcal{C}) \cong \mathbb N^n$; when $\mathcal{C}$ is triangulated, then $\mathsf M (\mathcal{C})$ is a group.
+\end{example}
+
+\begin{remark}
+    $D(\mathcal{A})$ and $D^{\geq 0}(\mathcal{A})$ admits the same Grothendieck monoid, since $[X] = - [\Sigma X] = [\Sigma ^2 X]$. However, $D^{\geq 0}(\mathcal{A})$ is not triangulated in general.
+\end{remark}
+
+\subsection{Exmaple: Serre Subcategory}
+
+\begin{example}
+    There is a covariant Galois connection between the replete subcategories of $\mathcal{C}$, and the subset of $\mathsf M (\mathcal{C})$:
+    \begin{enumerate}
+        \item For a subcategory $\mathcal{A} \subseteq \mathcal{C}$, let $\mathsf M _{\mathcal{A}} := \mathrm{Im}(\mathrm{Iso}(\mathcal{A}) \to \mathrm{Iso}(\mathcal{C}) \xrightarrow \pi \mathsf M (\mathcal{C}))$.
+        \item (A monic assigmnent). For a subset $S \subseteq \mathsf M (\mathcal{C})$, let $\mathcal{C}_S := \{ X \in \mathcal{C} \mid [X] \in S\}$.
+    \end{enumerate}
+    Note that $\mathcal{A} \mapsto \mathsf S \mapsto \mathcal{A}$ is identical, if and only if $\mathcal{A}$ is closed under $\approx_c$. We obtain the closure part of the Galois connection:
+    \begin{equation}\label{eq:galois}
+        2^{\mathsf M} \simeq \{\mathcal{C}_\bullet\},\quad S \mapsto \mathcal{C}_S.
+    \end{equation}
+\end{example}
+
+\begin{definition}[Serre subcategory]
+    $\mathcal{A} \subseteq \mathcal{C}$ is Serre, provided that for any conflation $X \xrightarrow{f} Y \xrightarrow{g} Z \overset \delta \dashrightarrow$, $X, Z \in \mathcal{A}$ if and only if $Y \in \mathcal{A}$.
+\end{definition}
+
+\begin{definition}[A4]
+    Say a submonoid $N \subseteq M$ is a face, provided any $(x+y) \in N$ if and only if $x, y \in N$.
+\end{definition}
+
+\begin{remark}
+    \cref{eq:galois} restricts to a bijection between Serre subcategories of $\mathcal{C}$ and faces of $\mathsf M (\mathcal{C})$.
+\end{remark}
+
+We examise functorial property of \cref{eq:grothendieck_monoid_functor}.
+
+\begin{example}[Inclusion]
+    Let $i : \mathcal{A} \to \mathcal{C}$ be an inclusion of extension closed subcategory. One has
+    \begin{equation}\label{eq:inclusion}
+        \mathsf M (i) : \mathsf M (\mathcal{A}) \twoheadrightarrow  \mathsf M _\mathcal{A} \rightarrowtail \mathsf M (\mathcal{C}),\quad [X] \mapsto [X].
+    \end{equation}
+\end{example}
+
+\begin{proposition}[3.6, 3.7]
+    $\mathsf M (\mathcal{A}) \twoheadrightarrow  \mathsf M _\mathcal{A}$ in \cref{eq:inclusion} is an isomorphism if and only if for any $X,Y \in \mathcal{A}$, $X \sim_c Y$ in $\mathcal{C}$ iff $X \sim_c Y$ in $\mathcal{A}$. In particular, if $\mathcal{A}$ is Serre, then $\mathsf M (\mathcal{A}) \cong \mathsf M _\mathcal{A}$.
+\end{proposition}
+
+Moreover, we introduce
+
+\begin{definition}[3.9., subcategories]
+    Let $\mathcal{A} \subseteq \mathcal{C}$ be a subcategory.
+    \begin{enumerate}
+        \item Say $\mathcal{A}$ is $\sim_c$ closed, provided for any conflation $X \xrightarrow{f} Y \xrightarrow{g} Z \overset \delta \dashrightarrow$ in $\mathcal{C}$, if $X \oplus Z \in \mathcal{A}$, then so is $Y$;
+        \item Say $\mathcal{A}$ is Serre, provided for any conflation $X \xrightarrow{f} Y \xrightarrow{g} Z \overset \delta \dashrightarrow$ in $\mathcal{C}$, $X, Z \in \mathcal{A}$ if and only if $Y \in \mathcal{A}$;
+        \item Say $\mathcal{A}$ is dense, provided $\mathsf{add}(\mathcal{A}) = \mathcal{C}$;
+        \item Say $\mathcal{A}$ is 2o3, provided for any conflation $X \xrightarrow{f} Y \xrightarrow{g} Z \overset \delta \dashrightarrow$ in $\mathcal{C}$, if two of $X, Y, Z$ are in $\mathcal{A}$, then so is the third;
+        \item Say $\mathcal{A}$ is thick, provided it is 2o3 and closed under direct summands.
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    For triangulated cases, 2o3 subcategories are precisely triangulated subcategories.
+\end{remark}
+
+\begin{proposition}[3.13]
+    The relation of subcategories:
+    \begin{equation}
+        % https://q.uiver.app/#q=WzAsNCxbMiwyLCJjIl0sWzIsMCwiXFxtYXRocm17c21kfSJdLFswLDMsIlxcdGV4dHsybzN9Il0sWzQsMywiXFx0ZXh0e2RlbnNlfSJdLFsyLDEsIlxcdGV4dHt0aGlja30iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJidWxsZXQgaG9sbG93In0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSwzLCJcXHRleHR7ZW50aXJlfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJ1bGxldCBob2xsb3cifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDMsIiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJ1bGxldCBob2xsb3cifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDAsIlxcdGV4dHtTZXJyZX0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJidWxsZXQgaG9sbG93In0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiwwLCIiLDIseyJzaG9ydGVuIjp7InNvdXJjZSI6MjB9LCJsZXZlbCI6MX1dLFs3LDIsIiIsMCx7InNob3J0ZW4iOnsic291cmNlIjoxMH0sImxldmVsIjoxfV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	\&\& {\text{smd}} \\
+	\\
+	\&\& c \\
+	{\text{2o3}} \&\&\&\& {\text{dense}}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "{\text{Serre}}"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, no head, from=1-3, to=3-3]
+	\arrow["{\text{entire}}"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, no head, from=1-3, to=4-5]
+	\arrow["{\text{thick}}"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, no head, from=4-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, no head, from=4-1, to=4-5]
+	\arrow[between={0.1}{1}, from=0, to=4-1]
+	\arrow[between={0.2}{1}, from=1, to=3-3]
+\end{tikzcd}.
+    \end{equation}
+\end{proposition}
+
+\subsection{Example: 2o3-and-dense Subcategories}
+
+\begin{theorem}\label{thm:2o3_dense}
+    \cref{eq:galois} restricts to a bijection between 2o3-and-dense subcategories of $\mathcal{C}$ and submonoids $\mathsf S \subseteq \mathsf M (\mathcal{C})$ which are
+    \begin{enumerate}
+        \item (subtractive). For any $x, y \in \mathsf M (\mathcal{C})$, if $(x+y), x \in \mathsf S$, then $y \in \mathsf S$;
+        \item (cofinal). For any $x \in \mathsf M (\mathcal{C})$, there exists $s \in \mathsf M$ such that $(x+s) \in \mathsf S$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+    A substractive monoid of a group is a group. (All groups are commutative).
+\end{remark}
+
+Cofinal subtractive submonoids comes from the following covariant Galois connection.
+
+\begin{example}
+    A group completion is a funtor $\rho : \mathsf{Mon} \to \mathsf{Grp}$ sending $\mathsf M$ to a group $\rho (\mathsf M) = (\mathsf M \times \mathsf M) / \sim$, 
+    \begin{equation}
+        (m_1, n_1) \sim (m_2, n_2) \iff \exists x \in \mathsf M, m_1 + n_2 + x = m_2 + n_1 + x.
+    \end{equation}
+    The image of $(m,n)$ in $\rho (\mathsf M)$ is $m-n$.
+\end{example}
+
+\begin{remark}
+    $\rho : \mathsf{Mon} \to \mathsf{Grp}$ admits a right adjoint $\iota : \mathsf{Grp} \to \mathsf{Mon}$, the inclusion. This yields the universal property that
+    \begin{itemize}
+        \item for any monoid morphism $f : \mathsf M \to G$ to a group $G$, there exists a unique group morphism $\tilde f : \rho (\mathsf M) \to G$ such that $f = \tilde f \circ \eta _\mathsf M$, where $\eta _\mathsf M : \mathsf M \to \rho (\mathsf M)$ is the canonical map.
+    \end{itemize}
+    Moreover, $(\iota (-), \mathsf{M})_{\mathsf{Mon}}$ is representable when $\mathsf{M}$ admits a largest subgroup.
+\end{remark}
+
+\begin{proposition}[3.16]
+    The assignment (natural transformation) $\eta _{\mathsf{M}} : \mathsf{M} \to \rho(\mathsf{M})$ maps $m$ to equivalency class of $(m, 0)$. This yields a covariant Galois connection between submonoids of $\mathsf M$ and subgroups of $\rho (\mathsf M)$:
+    \begin{equation}\label{eq:galois}
+        \eta _\mathsf M ^{-1}(\mathsf H) \mapsfrom \mathsf H,\quad \{\text{submonoids of } \mathsf M\} \leftrightarrows \{\text{subgroups of } \rho (\mathsf M)\},\quad \mathsf S \mapsto \langle \eta _\mathsf M (\mathsf S) \rangle.
+    \end{equation}
+    The closure part of the Galois connection restricts to the collection of cofinal subtractive submonoids on the left.
+\end{proposition}
+
+\begin{corollary}[3.17]
+    For \cref{thm:2o3_dense}, there is a bijection between 2o3-and-dense subcategories of $\mathcal{C}$ and subgroups of $\rho (\mathsf M (\mathcal{C})) = \mathsf{K}_0 (\mathcal{C})$. If $\mathcal{C}$ is triangulated, then subgroups of $\mathsf M (\mathcal{C}) = \mathsf K_0 (\mathcal{C})$ corresponds to dense triangulated subcategories.
+\end{corollary}
+
+\begin{corollary}[3.18]
+    When $\mathcal{A}$ is Abelian length with finite many simples, we see $\mathsf{M}(\mathcal{A}) \simeq \mathbb N ^n$. A 2o3-and-dense subcategoy corresponds to a submonoid of $\mathbb N^n$ which is cofinal and subtractive, hence corresponds to a subgroup of $\mathbb Z^n$ containing an all positive element.
+\end{corollary}
+
+\begin{definition}[Generator]
+    Say an extriangulated category $\mathcal{C}$ has a generator $\mathcal{G} \subseteq \mathsf{Ob}(\mathcal{C})$, when for any $X \in \mathcal{C}$, there exists a deflation $G \twoheadrightarrow X$ with $G \in \mathcal{G}$.
+\end{definition}
+
+\begin{theorem}
+    Suppose $\mathcal{C}$ has a generator $\mathcal{G}$. Then there is a bijection between 
+    \begin{enumerate}
+        \item 2o3-and-dense subcategories of $\mathcal{C}$ containing $\mathcal{G}$;
+        \item substractive cofinal submonoids of $\mathsf M (\mathcal{C})$ containing $[\mathcal{G}] := \{ [G] \mid G \in \mathcal{G}\}$;
+        \item substractive submonoids of $\mathsf M (\mathcal{C})$ containing $[\mathcal{G}] := \{ [G] \mid G \in \mathcal{G}\}$;
+        \item subgroups of $\mathsf K_0 (\mathcal{C})$ containing $[\mathcal{G}] := \{ [G] \mid G \in \mathcal{G}\}$,
+    \end{enumerate}
+    \begin{proof}
+        (1) $\Leftrightarrow$ (2) by \cref{thm:2o3_dense}. (2) $\Leftrightarrow$ (3) is clear. (3) $\Leftrightarrow$ (4) by the Galois connection (\cref{eq:galois}).
+    \end{proof}
+\end{theorem}
+
+\subsection{Localisations}
+
+\begin{notation}
+    Let $(\mathcal{C}, \mathbb E, \mathfrak s)$ be an extriangulated category. Let $\mathcal{N} \subseteq \mathcal{A}$ be a thick subcategory. We set 
+    \begin{enumerate}
+        \item $\mathcal{L}_\mathcal{N} := \{i \mid \exists X \xrightarrow{i} Y \to  N \overset \delta \dashrightarrow, N \in \mathcal{N}\}$;
+        \item $\mathcal{R}_\mathcal{N} := \{p \mid \exists N \to X \xrightarrow{p} Y \overset \delta \dashrightarrow, N \in \mathcal{N}\}$;
+        \item $\mathcal{S}_{\mathcal{N}}$ the finite compositions of morphisms in $\mathcal{L}$ and $\mathcal{R}$.
+    \end{enumerate}
+    Note that $\mathcal{S} _\mathcal{N}$ and $\mathcal{N}$ determines each other.
+\end{notation}
+
+\begin{remark}
+    Both $\mathcal{L}_\mathcal{N}$ and $\mathcal{R}_\mathcal{N}$ contains all isomorphisms and are closed under composition.
+\end{remark}
+
+\begin{definition}[Exact localisation]
+    Suppose that $S$ is a class of morphisms in $\mathcal{C}$, the localising functor $Q: \mathcal{C} \to \mathcal{C} [S^{-1}]$ is exact. Say it is an exact localisation, provided that $Q$ satisfies the following universal property:
+    \begin{itemize}
+        \item for any exact functor $F : \mathcal{C} \to \mathcal{D}$ such that $F(s)$ is an isomorphism for all $s \in S$, there exists a unique exact functor $\tilde F : \mathcal{C} [S^{-1}] \to \mathcal{D}$ such that $F = \tilde F \circ Q$. 
+    \end{itemize}
+    
+\end{definition}
+
+\begin{proposition}[4.3, analogue to Serre quotient]
+    Suppose that $\mathcal{N} \subseteq \mathcal{C}$ is thick, and the localisation $Q : \mathcal{C} \to  \mathcal{C} / \mathcal{N} := \mathcal{C} [(\mathcal{S}_\mathcal{N})^{-1}]$ is exact. For any exact functor $F : \mathcal{C} \to \mathcal{D}$ such that $F(\mathcal{N})$ are zero objects, there exists a unique exact functor $\tilde F : \mathcal{C} / \mathcal{N} \to \mathcal{D}$ such that $F = \tilde F \circ Q$.
+\end{proposition}
+
+\begin{remark}
+    The Serre quotient of Abelian categories $Q : \mathcal{A} \twoheadrightarrow \mathcal{A} \to \mathcal{A} / \mathcal{C}$ is exact, which induces an isomorphism
+    \begin{equation}
+        \mathrm{Ex}_{\mathcal{C} \to 0} (\mathcal{A} / \mathcal{C}, \mathcal{B}) \simeq \mathrm{Ex}(\mathcal{A}, \mathcal{B}),\quad F \mapsto F \circ Q.
+    \end{equation}
+\end{remark}
+
+We show a technique and associated results to a two-step localisation.
+
+\begin{notation}
+    We set $\mathrm{St}_\mathcal{N}(\mathcal{C})$ as an additive stable category.
+\end{notation}
+
+\begin{remark}
+    The universal property yields $\mathcal{C} \xrightarrow{[-]} \mathrm{St}_\mathcal{N}(\mathcal{C}) \xrightarrow{Q} \mathcal{C} / \mathcal{N}$. We write the composition as $Q$ for simplicity.
+\end{remark}
+
+\begin{notation}[4.4]\label{not:conditions}
+    We show a condition of $[S_\mathcal{N}]$ over $\mathrm{St}_\mathcal{N}(\mathcal{C})$ so that $\mathcal{C} / \mathcal{N}$ is extriangulated and $Q: \mathcal{C} \to \mathcal{C} / \mathcal{N}$ is exact.
+    \begin{enumerate}
+        \item When $[f]$ is iso for $f$ split monic (or split epic), then $f \in S_\mathcal{N}$.
+        \item $[S_\mathcal{N}]$ admits two-out-of-three property of compositions in $\mathrm{St}_\mathcal{N}(\mathcal{C})$.
+        \item $[S_\mathcal{N}]$ is a left and right multiplicative system in $\mathrm{St}_\mathcal{N}(\mathcal{C})$.
+        \item Let $\mathsf{Inf}$ and $\mathsf{Def}$ be the class of all inflations and deflations in $\mathcal{C}$. Then $[S_\mathcal{N}] \circ [\mathsf{Inf}] \circ [S_\mathcal{N}]$ and $[S_\mathcal{N}] \circ [\mathsf{Def}] \circ [S_\mathcal{N}]$ are closed under compositions in $\mathrm{St}_\mathcal{N}(\mathcal{C})$.
+    \end{enumerate}
+\end{notation}
+
+\begin{theorem}
+    With \cref{not:conditions}, the calculation of fractions yields $\mathrm{St}_{\mathcal{N}}(\mathcal{C}) \to [S_\mathcal{N}]^{-1}\mathrm{St}_{\mathcal{N}}(\mathcal{C})$, which is an exact localisation of extriangulated categories, which yields an isomorphism $[S_\mathcal{N}]^{-1}\mathrm{St}_{\mathcal{N}}(\mathcal{C}) \cong \mathcal{C}/\mathcal{N}$.
+\end{theorem}
+
+\begin{corollary}
+    A morphism in $\mathcal{C} / \mathcal{N}$ is a left or right fraction in $\mathrm{St}_\mathcal{N}(\mathcal{C})$. 
+\end{corollary}
+
+\begin{corollary}
+    An extension element in $\mathcal{C} / \mathcal{N}$ is a bifraction in $\mathrm{St}_\mathcal{N}(\mathcal{C})$. Note that the induced $\mathbb E$-functor exists in $\mathcal{C} / \mathcal{N}$, even though $\mathrm{St}_\mathcal{N}(\mathcal{C})$ is not extriangulated in general.
+\end{corollary}
+
+\begin{corollary}
+    Any inflation (or deflation) in $\mathcal{C} / \mathcal{N}$ is an image of an inflation (or deflation) in $\mathcal{C}$ composing with isomorphisms in $\mathcal{C} / \mathcal{N}$.
+\end{corollary}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,90 @@
+\section{外三角范畴的 Heller-构造}
+
+\subsection{基本资料}
+
+这一构造来自观察\cite{5f74a9f0-3930-3e27-b7cf-0a7de1f54fd0}. 我们希望由一个外三角范畴 $(\mathcal{C}, \mathcal{E}, \mathfrak s)$ 构造新的外三角范畴 $(\mathcal{E}, \mathbb F, \mathfrak t)$, 其中 $\mathcal{E}$ 以 $\mathcal{C}$ 中全体扩张元为对象.
+
+\begin{definition}
+    (加法范畴 $\mathcal{E}$). 方便起见, 我们将 $\delta \in \mathbb E(Z,X)$ 记作 $(X, \delta, Z)$, 即明确 $\delta$ 所属的扩张群. 定义 $\mathcal{E}$ 为如下加法范畴:
+    \begin{enumerate}
+        \item $\mathsf{Ob}(\mathcal{E}) = \bigcup _{Z,X \in \mathcal{C}} \mathbb E(Z,X)$, 即 $\mathcal{C}$ 中全体扩张元;
+        \item 对扩张元 $(X,\delta, Z)$ 与 $(A, \eta, C)$, 定义态射 $(\alpha , \gamma) \in (X,A)_\mathcal{C} \oplus (Z,C)_\mathcal{C}$, 满足 $\alpha _\ast \delta = \gamma ^\ast \eta$;
+        \item 恒等态射与态射复合由 $\mathcal{C}$ 中的复合诱导.
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    由 $\mathbb E$ 是双函子, 得 $(1, g) \circ (f,1) = (f,1) \circ (1,g)$.
+\end{remark}
+
+\begin{definition}
+    ($\mathbb F$). 定义对应 $\mathbb F: \mathcal{E} ^{\mathrm{op}} \times \mathcal{E} \to \mathbf{Ab}$,
+    \begin{equation}
+        ((X,\delta ,Z), (A,\eta,C)) \mapsto (\alpha, \gamma) \in \mathbb E(X,A) \oplus \mathbb E(Z,C).
+    \end{equation}
+\end{definition}
+
+\begin{lemma}
+    $\mathbb F$ 是加法双函子.
+    \begin{proof}
+        两个加法双函子的直和仍是加法双函子.
+    \end{proof}
+\end{lemma}
+
+\begin{definition}
+    ($\mathfrak t$). 对 $(\alpha, \gamma) \in \mathbb E(X,A) \oplus \mathbb E(Z,C)$, 定义 $\mathfrak t(\alpha, \gamma)$ 为一类图的同构类, 其中一个代表元是:
+    \begin{equation}\label{eq:heller-diagram}
+        % https://q.uiver.app/#q=WzAsOCxbMCwwLCJBIl0sWzEsMCwiTCJdLFsyLDAsIlgiXSxbMywwLCJcXCwiXSxbMCwxLCJDIl0sWzEsMSwiTiJdLFsyLDEsIloiXSxbMywxLCJcXCwiXSxbMCwxLCJpIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDIsInAiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMiwzLCJcXGFscGhhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsNSwiaiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNSw2LCJxIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzYsNywiXFxnYW1tYSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDQsIlxcZXRhIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsNSwiXFx2YXJlcHNpbG9uICIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDYsIlxcZGVsdGEiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& L \& X \& {\,} \\
+	C \& N \& Z \& {\,}
+	\arrow["i", tail, from=1-1, to=1-2]
+	\arrow["\eta"{description}, draw=none, from=1-1, to=2-1]
+	\arrow["p", two heads, from=1-2, to=1-3]
+	\arrow["{\varepsilon }"{description}, draw=none, from=1-2, to=2-2]
+	\arrow["\alpha", dashed, from=1-3, to=1-4]
+	\arrow["\delta"{description}, draw=none, from=1-3, to=2-3]
+	\arrow["j", tail, from=2-1, to=2-2]
+	\arrow["q", two heads, from=2-2, to=2-3]
+	\arrow["\gamma", dashed, from=2-3, to=2-4]
+\end{tikzcd},
+    \end{equation}
+    满足 $i_\ast \eta = j^\ast \varepsilon$, 以及 $p_\ast \varepsilon = q^\ast\delta$. 所有与\Cref{eq:heller-diagram} 等价图如下
+\begin{equation}
+    % https://q.uiver.app/#q=WzAsOCxbMCwwLCJBIl0sWzEsMCwiTCciXSxbMiwwLCJYIl0sWzMsMCwiXFwsIl0sWzAsMSwiQyJdLFsxLDEsIk4nIl0sWzIsMSwiWiJdLFszLDEsIlxcLCJdLFswLDEsIlxcdmFycGhpIGkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwicFxcdmFycGhpIF57LTF9IiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsMywiXFxhbHBoYSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDUsIlxccHNpIGoiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzUsNiwicVxccHNpXnstMX0iLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNiw3LCJcXGdhbW1hIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsNCwiXFxldGEiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSw1LCJcXHBzaV5cXGFzdFxcdmFycGhpX1xcYXN0XFx2YXJlcHNpbG9uICIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDYsIlxcZGVsdGEiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& {L'} \& X \& {\,} \\
+	C \& {N'} \& Z \& {\,}
+	\arrow["{\varphi i}", tail, from=1-1, to=1-2]
+	\arrow["\eta"{description}, draw=none, from=1-1, to=2-1]
+	\arrow["{p\varphi ^{-1}}", two heads, from=1-2, to=1-3]
+	\arrow["{\psi^\ast\varphi_\ast\varepsilon }"{description}, draw=none, from=1-2, to=2-2]
+	\arrow["\alpha", dashed, from=1-3, to=1-4]
+	\arrow["\delta"{description}, draw=none, from=1-3, to=2-3]
+	\arrow["{\psi j}", tail, from=2-1, to=2-2]
+	\arrow["{q\psi^{-1}}", two heads, from=2-2, to=2-3]
+	\arrow["\gamma", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+\end{equation}
+    其中, $\varphi$ 与 $\psi$ 取遍所有同构.
+\end{definition}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

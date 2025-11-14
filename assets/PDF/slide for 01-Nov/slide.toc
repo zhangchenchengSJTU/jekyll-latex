@@ -1,0 +1,13 @@
+\beamer@sectionintoc {1}{A Review of Extriangulated Categories}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Axioms of Extriangulated Categories}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Fundamental Results in \cite {nakaokaExtriangulatedCategoriesHovey2019}}{8}{0}{1}
+\beamer@sectionintoc {2}{Homotopic Squares}{11}{0}{2}
+\beamer@subsectionintoc {2}{1}{The Idea of Homotopic Squares}{11}{0}{2}
+\beamer@subsectionintoc {2}{2}{Homotopic Squares are Everywhere}{14}{0}{2}
+\beamer@subsectionintoc {2}{3}{Composite/Translate/Split Properties}{25}{0}{2}
+\beamer@subsectionintoc {2}{4}{Morphisms are Both $\mathbb E$-inflations and $\mathbb E$-deflations}{31}{0}{2}
+\beamer@sectionintoc {3}{Diagram Lemmas}{37}{0}{3}
+\beamer@subsectionintoc {3}{1}{On WIC conditions}{37}{0}{3}
+\beamer@subsectionintoc {3}{2}{Homotopic morphisms of $\mathbb E$-conflations}{42}{0}{3}
+\beamer@subsectionintoc {3}{3}{$3 \times 3$ Lemmas without WIC}{44}{0}{3}
+\beamer@subsectionintoc {3}{4}{Snake Lemmas}{59}{0}{3}

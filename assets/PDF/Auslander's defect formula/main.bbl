@@ -1,0 +1,20 @@
+\begin{thebibliography}{NP19}
+
+\bibitem[AF12]{anderson2012rings}
+F.W. Anderson and K.R. Fuller.
+\newblock {\em Rings and Categories of Modules}.
+\newblock Graduate Texts in Mathematics. Springer New York, 2012.
+\newblock URL: \url{http://lib.ysu.am/disciplines_bk/fe3d976562178fdc9f74740ece7137ce.pdf}.
+
+\bibitem[GZ67]{gabrielCalculusFractionsHomotopy1967}
+Peter Gabriel and Michel Zisman.
+\newblock {\em Calculus of {{Fractions}} and {{Homotopy Theory}}}.
+\newblock Springer, Berlin, Heidelberg, 1967.
+\newblock \href {https://doi.org/10.1007/978-3-642-85844-4} {\path{doi:10.1007/978-3-642-85844-4}}.
+
+\bibitem[NP19]{nakaokaExtriangulatedCategoriesHovey2019}
+Hiroyuki Nakaoka and Yann Palu.
+\newblock Extriangulated categories, {{Hovey}} twin cotorsion pairs and model structures.
+\newblock {\em Cahiers de topologie et g{\'e}om{\'e}trie diff{\'e}rentielle cat{\'e}goriques}, LX(2):117--193, 2019.
+
+\end{thebibliography}

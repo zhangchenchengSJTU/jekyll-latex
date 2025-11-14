@@ -1,0 +1,1130 @@
+\section{Diagram Lemmas}
+
+\subsection{Composites of Morphisms}
+
+We summarise some useful diagram lemmas involving morphism compositions and homotopic squares.
+
+\begin{definition}
+    A morphism $\varphi$ called a \textit{section} if there exists a morphism $\psi$ such that $\psi \circ \varphi = \mathrm{id}$, and called a \textit{retraction} if there exists a morphism $\theta$ such that $\varphi \circ \theta = \mathrm{id}$. Say $f'$ is a retract of $f$ if there exists a commutative diagram
+    \begin{equation}
+        % https://q.uiver.app/#q=WzAsNixbMCwwLCJBJyJdLFsxLDAsIkEiXSxbMCwxLCJCJyJdLFsyLDAsIkEnIl0sWzEsMSwiQiJdLFsyLDEsIkInIl0sWzAsMSwiaSIsMl0sWzIsNCwiaiJdLFs0LDUsInEiXSxbMCwyLCJmJyJdLFszLDUsImYnIl0sWzEsMywicCIsMl0sWzEsNCwiZiJdLFswLDMsIjFfe0EnfSIsMCx7ImN1cnZlIjotMiwibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw1LCIxX3tCJ30iLDIseyJjdXJ2ZSI6MiwibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{A'} \& A \& {A'} \\
+	{B'} \& B \& {B'}
+	\arrow["i"', from=1-1, to=1-2]
+	\arrow["{1_{A'}}", curve={height=-12pt}, equals, from=1-1, to=1-3]
+	\arrow["{f'}", from=1-1, to=2-1]
+	\arrow["p"', from=1-2, to=1-3]
+	\arrow["f", from=1-2, to=2-2]
+	\arrow["{f'}", from=1-3, to=2-3]
+	\arrow["j", from=2-1, to=2-2]
+	\arrow["{1_{B'}}"', curve={height=12pt}, equals, from=2-1, to=2-3]
+	\arrow["q", from=2-2, to=2-3]
+\end{tikzcd}.
+    \end{equation}
+\end{definition}
+
+\begin{proposition}\label{prop:comp-infldefl}
+    Let $g \circ f : X \xrightarrow{f} Y \xrightarrow{g} Z$ be a composition of morphisms in an extriangulated category.
+    \begin{enumerate}
+        \item If $f$ and $g$ are $\mathbb{E}$-inflations, then so is $g \circ f$.
+        \item If $gf$ is an $\mathbb E$-inflation and $g$ is an $\mathbb E$-deflation, then $f$ is an $\mathbb E$-inflation.
+        \item If $gf$ is an $\mathbb E$-inflations, then $f$ is a retract of an $\mathbb E$-inflation.
+        \item If $gf$ is an $\mathbb E$-inflation and $f$ is an $\mathbb E$-deflation, then $g$ is a retract of an $\mathbb E$-inflation.
+    \end{enumerate}
+    \begin{proof}
+        \textit{1.} By ET4.
+        
+        \textit{2.} We apply \cref{prop:strict-et4-h} to $gf$ and $g$, and obtain
+        \begin{equation}
+            % https://q.uiver.app/#q=WzAsOSxbMSwyLCJYIl0sWzEsMSwiUyJdLFsyLDEsIlkiXSxbMiwyLCJaIl0sWzEsMCwiSyJdLFsyLDAsIksiXSxbMywxLCJDIl0sWzMsMiwiQyJdLFswLDEsIlgiXSxbNCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDcsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMywiZ2YiXSxbMyw3XSxbMSwyLCJoIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNiwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMl0sWzIsMywiZyJdLFsxLDAsInAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwzLCJcXHNxdWFyZSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs4LDIsImYiLDAseyJsYWJlbF9wb3NpdGlvbiI6MjAsImN1cnZlIjotNH1dLFs4LDAsIjEiLDJdLFs4LDEsInMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	\& K \& K \\
+	X \& S \& Y \& C \\
+	\& X \& Z \& C
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow[dashed, from=1-2, to=2-2]
+	\arrow[from=1-3, to=2-3]
+	\arrow["s", dashed, from=2-1, to=2-2]
+	\arrow["f"{pos=0.2}, curve={height=-24pt}, from=2-1, to=2-3]
+	\arrow["1"', from=2-1, to=3-2]
+	\arrow["h", dashed, from=2-2, to=2-3]
+	\arrow["p", dashed, from=2-2, to=3-2]
+	\arrow["\square"{description}, draw=none, from=2-2, to=3-3]
+	\arrow[dashed, from=2-3, to=2-4]
+	\arrow["g", from=2-3, to=3-3]
+	\arrow[equals, from=2-4, to=3-4]
+	\arrow["gf", from=3-2, to=3-3]
+	\arrow[from=3-3, to=3-4]
+\end{tikzcd}.
+        \end{equation}
+        The homotopic square $\square$ is a weak pullback (\cref{prop:weak}). Hence, there is $s$ such that $ps = 1_X$ and $hs = f$. Since $p$ is both an $\mathbb E$-deflation and a retraction, it has a kernel $K$. Therefore, $s$ is a split $\mathbb E$-inflation. $f = hs$ is again an $\mathbb E$-inflation.
+
+        \textit{3.} Since $gf = (1,0)\circ \binom {gf}f$ is an inflation, $\binom {gf}f$ is also an $\mathbb E$-inflation by \textit{2}. The composition $\binom 0f = \binom {1 \ g}{0 \ 1}^{-1} \circ \binom {gf}f$ is again an $\mathbb E$-inflation. Note that $f$ is a retract of the inflation $\binom 0f$.
+
+        \textit{4.} We apply \cref{prop:strict-et4-h} to $gf$ and $f$, and obtain 
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsOSxbMCwxLCJYIl0sWzEsMSwiWiJdLFswLDIsIlkiXSxbMCwwLCJLIl0sWzEsMCwiSyJdLFsyLDEsIkMiXSxbMiwyLCJDIl0sWzEsMiwiRSJdLFsxLDMsIloiXSxbMCwxLCJnZiJdLFswLDIsImYiXSxbMywwXSxbNCwzLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsMV0sWzEsNywiaCJdLFsyLDcsImkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNyw2LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw1XSxbMSw4LCIxX1oiLDAseyJsYWJlbF9wb3NpdGlvbiI6OTAsImN1cnZlIjotM31dLFsyLDgsImciLDJdLFs3LDgsInMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw3LCJcXHNxdWFyZSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	K \& K \\
+	X \& Z \& C \\
+	Y \& E \& C \\
+	\& Z
+	\arrow[from=1-1, to=2-1]
+	\arrow[equals, from=1-2, to=1-1]
+	\arrow[from=1-2, to=2-2]
+	\arrow["gf", from=2-1, to=2-2]
+	\arrow["f", from=2-1, to=3-1]
+	\arrow["\square"{description}, draw=none, from=2-1, to=3-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow["h", from=2-2, to=3-2]
+	\arrow["{1_Z}"{pos=0.9}, curve={height=-18pt}, from=2-2, to=4-2]
+	\arrow["i", dashed, from=3-1, to=3-2]
+	\arrow["g"', from=3-1, to=4-2]
+	\arrow[dashed, from=3-2, to=3-3]
+	\arrow["s", dashed, from=3-2, to=4-2]
+	\arrow[equals, from=3-3, to=2-3]
+\end{tikzcd}.
+\end{equation}
+        The homotopic square $\square$ is a weak pushout \cref{prop:weak}. Hence, there is $s$ such that $sh = 1_Z$ and $si = g$. We see $g$ is a retract of an $\mathbb E$-inflation.
+    \end{proof}
+\end{proposition}
+
+The next lemma shows structure of retract of $\mathbb E$-inflations ($\mathbb E$-deflations).
+
+\begin{lemma}\label{lem:hs-retract-inf}
+	Any retract of an $\mathbb E$-inflation take the form $p\circ u$, where $u$ is an $\mathbb E$-inflation and $p$ is a retraction. Dually, any retract of an $\mathbb E$-deflation take the form $v\circ i$, where $v$ is an $\mathbb E$-deflation and $i$ is a section.
+	\begin{proof}
+		We show the first statement only. Let $f' : A' \to B'$ be a retract of an $\mathbb E$-inflation $f : A \to B$. We fix an $\mathbb E$-conflation $A \xrightarrow{f} B \xrightarrow{g} C \overset{\delta}{\dashrightarrow}$ and a realisation of $p_\ast \delta$ as $A' \xrightarrow{\overline f} E \xrightarrow{v} C \overset{p_\ast \delta}{\dashrightarrow}$. By \cref{lem:hs-f?1}, there is a homotopic morphism of $\mathbb E$-conflations $(p;m;1_C)$:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSciXSxbMSwwLCJBIl0sWzAsMSwiQiciXSxbMiwwLCJBJyJdLFsxLDEsIkIiXSxbMywxLCJCJyJdLFsxLDIsIkMiXSxbMSwzLCJcXCwiXSxbMiwyLCJDIl0sWzIsMywiXFwsIl0sWzIsMSwiRSJdLFszLDAsIkEnIl0sWzAsMSwiaSJdLFsyLDQsImoiXSxbMCwyLCJmJyJdLFsxLDMsInAiXSxbMSw0LCJmIl0sWzQsNiwiZyJdLFs2LDcsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw4LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs4LDksInBfXFxhc3QgXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDUsInEiLDIseyJsYWJlbF9wb3NpdGlvbiI6OTAsImN1cnZlIjoyfV0sWzMsMTAsIlxcb3ZlcmxpbmUgZiJdLFsxMCw4LCJcXG92ZXJsaW5lIGciXSxbNCwxMCwibSJdLFsxMCw1LCJzIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzExLDUsImYnIl0sWzMsMTEsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMTAsIlxcc3F1YXJlIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	{A'} \& A \& {A'} \& {A'} \\
+	{B'} \& B \& E \& {B'} \\
+	\& C \& C \\
+	\& {\,} \& {\,}
+	\arrow["i", from=1-1, to=1-2]
+	\arrow["{f'}", from=1-1, to=2-1]
+	\arrow["p", from=1-2, to=1-3]
+	\arrow["f", from=1-2, to=2-2]
+	\arrow["\square"{description}, draw=none, from=1-2, to=2-3]
+	\arrow[equals, from=1-3, to=1-4]
+	\arrow["{\overline f}", from=1-3, to=2-3]
+	\arrow["{f'}", from=1-4, to=2-4]
+	\arrow["j", from=2-1, to=2-2]
+	\arrow["m", from=2-2, to=2-3]
+	\arrow["q"'{pos=0.9}, curve={height=12pt}, from=2-2, to=2-4]
+	\arrow["g", from=2-2, to=3-2]
+	\arrow["s", dashed, from=2-3, to=2-4]
+	\arrow["{\overline g}", from=2-3, to=3-3]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["\delta", dashed, from=3-2, to=4-2]
+	\arrow["{p_\ast \delta}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+		\end{equation}
+		$\square$ is a weak pushout by \cref{prop:weak}. There is $s$ such that $q = sm$ and $f' = s \overline f$. Since $smj = 1_{b'}$, $s$ is a retraction.
+	\end{proof}
+\end{lemma}
+
+\subsection{On Homotopic Squares}
+
+We examine the properties traversing parallel edges of homotopic squares. Furthermore, we discuss the composition and cancellation properties of homotopic squares.
+
+\begin{proposition}\label{prop:hs-inflation}
+	If $u$ is an inflation in the following homotopic square
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJBXzEiXSxbMSwwLCJCXzEiXSxbMCwxLCJBXzIiXSxbMSwxLCJCXzIiXSxbMCwyLCJmIl0sWzAsMSwidSJdLFsxLDMsImciXSxbMiwzLCJ2Il0sWzAsMywiXFxzcXVhcmUiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{A_1} \& {B_1} \\
+	{A_2} \& {B_2}
+	\arrow["u", from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["\square"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["v", from=2-1, to=2-2]
+\end{tikzcd},
+\end{equation}
+	then $v$ is also an $\mathbb E$-inflation. Conversely, if $v$ is an $\mathbb E$-inflation, then so is $u$. In this case, $(f;g;1)$ is a homotopic morphism of $\mathbb E$-conflations.
+	\begin{proof}
+		We assume $u$ to be an $\mathbb E$-inflation. Let $A_1 \xrightarrow{u} B_1 \xrightarrow{p} C \overset{\delta_1}{\dashrightarrow}$ be an $\mathbb E$-conflation. We complete the following commutative diagram by \cref{prop:pb-2}
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiQV8xIl0sWzEsMSwiQl8xIFxcb3BsdXMgQV8yIl0sWzIsMSwiQl8yIl0sWzEsMCwiQV8yIl0sWzIsMCwiQV8yIl0sWzAsMiwiQV8xIl0sWzEsMiwiQl8xIl0sWzIsMiwiQyJdLFszLDIsIlxcLCJdLFszLDEsIlxcLCJdLFsyLDMsIlxcLCJdLFsxLDMsIlxcLCJdLFswLDEsIlxcYmlub20gdWYiXSxbMSwyLCIoLWcsdikiXSxbMywxLCJcXGJpbm9tIDAxIl0sWzMsNCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCwyLCJ2IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw2LCJ1Il0sWzEsNiwiKDEsMCkiXSxbNiw3LCJwIl0sWzIsNywiLXEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNyw4LCJcXGRlbHRhXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw5LCJcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsMTAsIi1cXGRlbHRhXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwxMSwiMCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	\& {A_2} \& {A_2} \\
+	{A_1} \& {B_1 \oplus A_2} \& {B_2} \& {\,} \\
+	{A_1} \& {B_1} \& C \& {\,} \\
+	\& {\,} \& {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["{\binom 01}", from=1-2, to=2-2]
+	\arrow["v", dashed, from=1-3, to=2-3]
+	\arrow["{\binom uf}", from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{(-g,v)}", from=2-2, to=2-3]
+	\arrow["{(1,0)}", from=2-2, to=3-2]
+	\arrow["{\varepsilon }", dashed, from=2-3, to=2-4]
+	\arrow["{-q}", dashed, from=2-3, to=3-3]
+	\arrow["u", from=3-1, to=3-2]
+	\arrow["p", from=3-2, to=3-3]
+	\arrow["0", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_1}", dashed, from=3-3, to=3-4]
+	\arrow["{-\delta_2}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+		\end{equation}
+		This diagram gives a conflation $A_2 \xrightarrow{v} B_2 \xrightarrow{q} C \overset{\delta_2}{\dashrightarrow}$, showing that $v$ is an inflation. Since $\binom 01_\ast (-\delta_2) + \binom uf _\ast \delta_1 = 0$, we see $f_\ast \delta_1 = \delta_2$. Hence, we have $qg = p$ and $f_\ast \delta_1 = \delta_2$, yielding that $(f;g;1)$ is a homotopic morphism of conflations.
+
+		Conversely, when $u$ is an $\mathbb E$-inflation in $A_2 \xrightarrow{u} B_2 \xrightarrow{q}C\overset{\delta_2}\dashrightarrow$. We complete the following commutative diagram by \cref{prop:po-2}:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiQV8xIl0sWzEsMSwiQl8xIFxcb3BsdXMgQV8yIl0sWzIsMSwiQl8yIl0sWzEsMCwiQV8yIl0sWzIsMCwiQV8yIl0sWzAsMiwiQV8xIl0sWzEsMiwiQl8xIl0sWzIsMiwiQyJdLFszLDIsIlxcLCJdLFszLDEsIlxcLCJdLFsyLDMsIlxcLCJdLFsxLDMsIlxcLCJdLFswLDEsIlxcYmlub20gdWYiXSxbMSwyLCIoLWcsdikiXSxbMywxLCJcXGJpbm9tIDAxIl0sWzMsNCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCwyLCJ2Il0sWzAsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw2LCJ1IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNiwiKDEsMCkiXSxbNiw3LCJwIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNywiLXEiXSxbNyw4LCJcXGRlbHRhXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw5LCJcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsMTAsIi1cXGRlbHRhXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwxMSwiMCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	\& {A_2} \& {A_2} \\
+	{A_1} \& {B_1 \oplus A_2} \& {B_2} \& {\,} \\
+	{A_1} \& {B_1} \& C \& {\,} \\
+	\& {\,} \& {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["{\binom 01}", from=1-2, to=2-2]
+	\arrow["v", from=1-3, to=2-3]
+	\arrow["{\binom uf}", from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{(-g,v)}", from=2-2, to=2-3]
+	\arrow["{(1,0)}", from=2-2, to=3-2]
+	\arrow["{\varepsilon }", dashed, from=2-3, to=2-4]
+	\arrow["{-q}", from=2-3, to=3-3]
+	\arrow["u", dashed, from=3-1, to=3-2]
+	\arrow["p", dashed, from=3-2, to=3-3]
+	\arrow["0", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_1}", dashed, from=3-3, to=3-4]
+	\arrow["{-\delta_2}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+		\end{equation}
+		Hence, $u$ is an $\mathbb E$-inflation. The rest of the verification is the same as the previous case.
+	\end{proof}
+\end{proposition}
+
+\begin{theorem}\label{thm:hs-infdef}
+	We consider the following homotopic square:
+	\begin{equation}
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJBXzEiXSxbMSwwLCJCXzEiXSxbMCwxLCJBXzIiXSxbMSwxLCJCXzIiXSxbMCwyLCJmIl0sWzAsMSwidSJdLFsxLDMsImciXSxbMiwzLCJ2Il0sWzAsMywiXFxzcXVhcmUiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{A_1} \& {B_1} \\
+	{A_2} \& {B_2}
+	\arrow["u", from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["\square"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["v", from=2-1, to=2-2]
+\end{tikzcd}.
+\end{equation}
+Then $u$ is an $\mathbb E$-inflation (resp. $\mathbb E$-deflation) if and only if $v$ is an $\mathbb E$-inflation (resp. $\mathbb E$-deflation).
+	\begin{proof}
+		The $\mathbb E$-inflation case follows from \cref{prop:hs-inflation}. The $\mathbb E$-deflation case is dual.
+	\end{proof}
+\end{theorem}
+
+\begin{lemma}\label{lem:hs-retraction}
+	We take arbitrary homotopic square:
+	\begin{equation}
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJBXzEiXSxbMSwwLCJCXzEiXSxbMCwxLCJBXzIiXSxbMSwxLCJCXzIiXSxbMCwyLCJmIl0sWzAsMSwidSJdLFsxLDMsImciXSxbMiwzLCJ2Il0sWzAsMywiXFxzcXVhcmUiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{A_1} \& {B_1} \\
+	{A_2} \& {B_2}
+	\arrow["u", from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["\square"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["v", from=2-1, to=2-2]
+\end{tikzcd}.
+\end{equation}
+When $v$ is a retraction, then so is $u$. Dually, when $u$ is a section, then so is $v$.
+	\begin{proof}
+		We show the first statement only. Assume $v$ is a retraction with right inverse $i$. By \cref{prop:weak}, there is $s$ such that the following diagram commutes:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsNSxbMSwxLCJBXzEiXSxbMiwxLCJCXzEiXSxbMSwyLCJBXzIiXSxbMiwyLCJCXzIiXSxbMCwwLCJCXzEiXSxbMCwyLCJmIl0sWzAsMSwidSJdLFsxLDMsImciXSxbMiwzLCJ2Il0sWzAsMywiXFxzcXVhcmUiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCwyLCJpZyIsMix7ImN1cnZlIjoyfV0sWzQsMSwiMV97Ql8xfSIsMCx7ImN1cnZlIjotMn1dLFs0LDAsInMiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{B_1} \\
+	\& {A_1} \& {B_1} \\
+	\& {A_2} \& {B_2}
+	\arrow["s"', dashed, from=1-1, to=2-2]
+	\arrow["{1_{B_1}}", curve={height=-12pt}, from=1-1, to=2-3]
+	\arrow["ig"', curve={height=12pt}, from=1-1, to=3-2]
+	\arrow["u", from=2-2, to=2-3]
+	\arrow["f", from=2-2, to=3-2]
+	\arrow["\square"{description}, draw=none, from=2-2, to=3-3]
+	\arrow["g", from=2-3, to=3-3]
+	\arrow["v", from=3-2, to=3-3]
+\end{tikzcd}.
+		\end{equation}
+		Hence, we have $su = 1_{B_1}$, showing that $u$ is a retraction.
+	\end{proof}
+\end{lemma}
+
+\begin{theorem}[\textbf{Theorem 3.2.}, \cite{HeXieZhou+2023}]\label{thm:hs-composition}
+Homotopic squares are closed under horizontal and vertical compositions.
+	\begin{proof}
+		We consider horizontal compotisions only. Let $\square$ be homotopic:
+\begin{equation}\label{diag:hlp1}
+	% https://q.uiver.app/#q=WzAsNixbMCwwLCJBIl0sWzEsMCwiQiJdLFsyLDAsIkMiXSxbMCwxLCJEIl0sWzEsMSwiRSJdLFsyLDEsIkYiXSxbMCwxLCJmIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYnVsbGV0IGhvbGxvdyJ9fX1dLFsxLDIsImciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJidWxsZXQgaG9sbG93In19fV0sWzIsNSwiXFxnYW1tYSJdLFswLDMsIlxcYWxwaGEiXSxbMyw0LCJ1Il0sWzQsNSwidiJdLFsxLDQsIlxcYmV0YSJdLFswLDQsIlxcYm94ZWQge1xcc2NyaXB0c3R5bGUgXFxrYXBwYX0iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSw1LCJcXGJveGVkIHtcXHNjcmlwdHN0eWxlIFxcZXBzaWxvbn0iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& B \& C \\
+	D \& E \& F
+	\arrow["f"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=1-1, to=1-2]
+	\arrow["\alpha", from=1-1, to=2-1]
+	\arrow["{\boxed {\scriptstyle \kappa}}"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["g"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=1-2, to=1-3]
+	\arrow["\beta", from=1-2, to=2-2]
+	\arrow["{\boxed {\scriptstyle \epsilon}}"{description}, draw=none, from=1-2, to=2-3]
+	\arrow["\gamma", from=1-3, to=2-3]
+	\arrow["u", from=2-1, to=2-2]
+	\arrow["v", from=2-2, to=2-3]
+\end{tikzcd}.
+\end{equation}
+		We take the direct sum of the $\mathbb E$-conflation realising the left square and $0 \to C \xrightarrow{1} C \overset {0_{C0}}\dashrightarrow$, and obtain
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsOCxbMCwxLCJBIl0sWzMsMSwiRSBcXG9wbHVzIEMiXSxbMSwxLCJCIFxcb3BsdXMgRCBcXG9wbHVzIEMiXSxbNCwxLCJcXCwiXSxbNCwwLCJcXCwiXSxbMywwLCJFIFxcb3BsdXMgQyJdLFsxLDAsIkIgXFxvcGx1cyBEIFxcb3BsdXMgQyJdLFswLDAsIkEiXSxbMCwyLCJcXGxlZnQoXFxzdWJzdGFja3stZlxcXFwgXFxhbHBoYVxcXFxnZn1cXHJpZ2h0KSJdLFsyLDEsIlxcYmlub217XFxiZXRhIFxcIHUgXFwgMH17ZyBcXCAwIFxcIDF9Il0sWzEsMywiXFxrYXBwYVxcb3BsdXMgMF97QzB9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNCwiXFxrYXBwYVxcb3BsdXMgMF97QzB9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiw1LCJcXGJpbm9te1xcYmV0YSBcXCB1IFxcIDB9ezAgXFwgMCBcXCAxfSJdLFsyLDYsIlxcbGVmdChcXHN1YnN0YWNrezEgXFwgMCBcXCAgMCBcXFxcIDAgXFwgMSBcXCAwIFxcXFwgZyBcXCAwIFxcIDF9XFxyaWdodCkiLDJdLFsyLDYsIlxcc2ltZXEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNyw2LCJcXGxlZnQoXFxzdWJzdGFja3stZlxcXFwgXFxhbHBoYVxcXFwwfVxccmlnaHQpIl0sWzcsMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& {B \oplus D \oplus C} \&\& {E \oplus C} \& {\,} \\
+	A \& {B \oplus D \oplus C} \&\& {E \oplus C} \& {\,}
+	\arrow["\begin{array}{c} \left(\substack{-f\\ \alpha\\0}\right) \end{array}", from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["{\binom{\beta \ u \ 0}{0 \ 0 \ 1}}", from=1-2, to=1-4]
+	\arrow["{\kappa\oplus 0_{C0}}", dashed, from=1-4, to=1-5]
+	\arrow[equals, from=1-4, to=2-4]
+	\arrow["\begin{array}{c} \left(\substack{-f\\ \alpha\\gf}\right) \end{array}", from=2-1, to=2-2]
+	\arrow["\begin{array}{c} \left(\substack{1 \ 0 \  0 \\ 0 \ 1 \ 0 \\ g \ 0 \ 1}\right) \end{array}"', from=2-2, to=1-2]
+	\arrow["\simeq", draw=none, from=2-2, to=1-2]
+	\arrow["{\binom{\beta \ u \ 0}{g \ 0 \ 1}}", from=2-2, to=2-4]
+	\arrow["{\kappa\oplus 0_{C0}}", dashed, from=2-4, to=2-5]
+\end{tikzcd}.
+\end{equation}
+		By \cref{prop:pb-2}, there exists a completion of the following diagram
+\begin{equation}\label{diag:hlp2}
+% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiQSJdLFsyLDEsIkUgXFxvcGx1cyBDIl0sWzEsMSwiQiBcXG9wbHVzIEQgXFxvcGx1cyBDIl0sWzMsMSwiXFwsIl0sWzEsMiwiRCBcXG9wbHVzIEMiXSxbMCwyLCJBIl0sWzEsMCwiQiJdLFsyLDAsIkIiXSxbMiwyLCJGIl0sWzMsMiwiXFwsIl0sWzIsMywiXFwsIl0sWzEsMywiXFwsIl0sWzAsMiwiXFxsZWZ0KFxcc3Vic3RhY2t7LWZcXFxcIFxcYWxwaGFcXFxcZ2Z9XFxyaWdodCkiXSxbMiwxLCJcXGJpbm9te1xcYmV0YSBcXCB1IFxcIDB9e2cgXFwgMCBcXCAxfSJdLFsxLDMsIlxca2FwcGFcXG9wbHVzIDBfe0MwfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsNCwiXFxiaW5vbXswIFxcIDEgXFwgMH17MCBcXCAwIFxcIDF9Il0sWzUsNCwiXFxiaW5vbSBcXGFscGhhIHtnZn0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw3LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDIsIlxcbGVmdChcXHN1YnN0YWNrezFcXFxcMFxcXFwwfVxccmlnaHQpIl0sWzcsMSwiXFxiaW5vbSBcXGJldGEgZyJdLFs0LDgsIih2dSwtXFxnYW1tYSkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw4LCIodiwtXFxnYW1tYSkiXSxbOCw5LCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsMTAsIlxcdmFyZXBzaWxvbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCwxMSwiMCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	\& B \& B \\
+	A \& {B \oplus D \oplus C} \& {E \oplus C} \& {\,} \\
+	A \& {D \oplus C} \& F \& {\,} \\
+	\& {\,} \& {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["\begin{array}{c} \left(\substack{1\\0\\0}\right) \end{array}", from=1-2, to=2-2]
+	\arrow["{\binom \beta g}", from=1-3, to=2-3]
+	\arrow["\begin{array}{c} \left(\substack{-f\\ \alpha\\gf}\right) \end{array}", from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{\binom{\beta \ u \ 0}{g \ 0 \ 1}}", from=2-2, to=2-3]
+	\arrow["{\binom{0 \ 1 \ 0}{0 \ 0 \ 1}}", from=2-2, to=3-2]
+	\arrow["{\kappa\oplus 0_{C0}}", dashed, from=2-3, to=2-4]
+	\arrow["{(v,-\gamma)}", from=2-3, to=3-3]
+	\arrow["{\binom \alpha {gf}}", dashed, from=3-1, to=3-2]
+	\arrow["{(vu,-\gamma)}", dashed, from=3-2, to=3-3]
+	\arrow["0", dashed, from=3-2, to=4-2]
+	\arrow["\delta", dashed, from=3-3, to=3-4]
+	\arrow["{\varepsilon }", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+\end{equation}
+		Such completion is unique, as the buttom conflation is solved to be unique.
+	\end{proof}
+\end{theorem}
+
+\begin{corollary}
+	Following \cref{diag:hlp2}, we see $(v,-\gamma)^\ast \delta = (\delta \oplus 0_{C0})$. Hence $v^\ast \delta = \kappa$. The identity $\left(\substack{1\\0\\0}\right) _\ast \varepsilon + \left(\substack{-f\\ \alpha\\gf}\right)_\ast \delta$ yields $f_\ast \delta = \varepsilon$.
+\end{corollary}
+
+\begin{theorem}\label{thm:hs-comp}
+	Let $\boxed{\kappa}$ be a homotopic square. If $\binom \alpha {gf}$ is an $\mathbb E$-inflation, then so is $\binom g\beta$. Consequently, the diagram completes to a composition of homotopic squares.
+\begin{equation}\label{diag:hlp3}
+	% https://q.uiver.app/#q=WzAsNixbMCwwLCJBIl0sWzEsMCwiQiJdLFsyLDAsIkMiXSxbMCwxLCJEIl0sWzEsMSwiRSJdLFsyLDEsIkYiXSxbMCwxLCJmIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYnVsbGV0IGhvbGxvdyJ9fX1dLFsxLDIsImciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJidWxsZXQgaG9sbG93In19fV0sWzIsNSwiXFxnYW1tYSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDMsIlxcYWxwaGEiXSxbMyw0LCJ1Il0sWzQsNSwidiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDQsIlxcYmV0YSJdLFswLDQsIlxcYm94ZWQgXFxrYXBwYSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDUsIlxcYm94ZWQgXFx2YXJlcHNpbG9uICIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& B \& C \\
+	D \& E \& F
+	\arrow["f"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=1-1, to=1-2]
+	\arrow["\alpha", from=1-1, to=2-1]
+	\arrow["{\boxed \kappa}"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["g"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=1-2, to=1-3]
+	\arrow["\beta", from=1-2, to=2-2]
+	\arrow["{\boxed \varepsilon }"{description}, draw=none, from=1-2, to=2-3]
+	\arrow["\gamma", dashed, from=1-3, to=2-3]
+	\arrow["u", from=2-1, to=2-2]
+	\arrow["v", dashed, from=2-2, to=2-3]
+\end{tikzcd}.
+\end{equation}
+		\begin{proof}
+			We take the direct sum of the $\mathbb E$-conflation realising the left square and $0 \to C \xrightarrow{1} C \overset {0_{C0}}\dashrightarrow$, and obtain
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsOCxbMCwxLCJBIl0sWzMsMSwiRSBcXG9wbHVzIEMiXSxbMSwxLCJCIFxcb3BsdXMgRCBcXG9wbHVzIEMiXSxbNCwxLCJcXCwiXSxbNCwwLCJcXCwiXSxbMywwLCJFIFxcb3BsdXMgQyJdLFsxLDAsIkIgXFxvcGx1cyBEIFxcb3BsdXMgQyJdLFswLDAsIkEiXSxbMCwyLCJcXGxlZnQoXFxzdWJzdGFja3stZlxcXFwgXFxhbHBoYVxcXFxnZn1cXHJpZ2h0KSJdLFsyLDEsIlxcYmlub217XFxiZXRhIFxcIHUgXFwgMH17ZyBcXCAwIFxcIDF9Il0sWzEsMywiXFxrYXBwYVxcb3BsdXMgMF97QzB9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNCwiXFxrYXBwYVxcb3BsdXMgMF97QzB9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiw1LCJcXGJpbm9te1xcYmV0YSBcXCB1IFxcIDB9ezAgXFwgMCBcXCAxfSJdLFsyLDYsIlxcbGVmdChcXHN1YnN0YWNrezEgXFwgMCBcXCAgMCBcXFxcIDAgXFwgMSBcXCAwIFxcXFwgZyBcXCAwIFxcIDF9XFxyaWdodCkiLDJdLFsyLDYsIlxcc2ltZXEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNyw2LCJcXGxlZnQoXFxzdWJzdGFja3stZlxcXFwgXFxhbHBoYVxcXFwwfVxccmlnaHQpIl0sWzcsMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& {B \oplus D \oplus C} \&\& {E \oplus C} \& {\,} \\
+	A \& {B \oplus D \oplus C} \&\& {E \oplus C} \& {\,}
+	\arrow["\begin{array}{c} \left(\substack{-f\\ \alpha\\0}\right) \end{array}", from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["{\binom{\beta \ u \ 0}{0 \ 0 \ 1}}", from=1-2, to=1-4]
+	\arrow["{\kappa\oplus 0_{C0}}", dashed, from=1-4, to=1-5]
+	\arrow[equals, from=1-4, to=2-4]
+	\arrow["\begin{array}{c} \left(\substack{-f\\ \alpha\\gf}\right) \end{array}", from=2-1, to=2-2]
+	\arrow["\begin{array}{c} \left(\substack{1 \ 0 \  0 \\ 0 \ 1 \ 0 \\ g \ 0 \ 1}\right) \end{array}"', from=2-2, to=1-2]
+	\arrow["\simeq", draw=none, from=2-2, to=1-2]
+	\arrow["{\binom{\beta \ u \ 0}{g \ 0 \ 1}}", from=2-2, to=2-4]
+	\arrow["{\kappa\oplus 0_{C0}}", dashed, from=2-4, to=2-5]
+\end{tikzcd}.
+\end{equation}
+Let $A \xrightarrow{\binom \alpha {gf}}D \oplus C\xrightarrow{(p,-\gamma)} F \overset{\delta}{\dashrightarrow}$ be any $\mathbb E$-conflation. By \cref{prop:pb-2}, we obtain:
+	\begin{equation*}
+		% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiQSJdLFsyLDEsIkUgXFxvcGx1cyBDIl0sWzEsMSwiQiBcXG9wbHVzIEQgXFxvcGx1cyBDIl0sWzMsMSwiXFwsIl0sWzEsMiwiRCBcXG9wbHVzIEMiXSxbMCwyLCJBIl0sWzEsMCwiQiJdLFsyLDAsIkIiXSxbMiwyLCJGIl0sWzMsMiwiXFwsIl0sWzIsMywiXFwsIl0sWzEsMywiXFwsIl0sWzAsMiwiXFxsZWZ0KFxcc3Vic3RhY2t7LWZcXFxcIFxcYWxwaGFcXFxcZ2Z9XFxyaWdodCkiXSxbMiwxLCJcXGJpbm9te1xcYmV0YSBcXCB1IFxcIDB9e2cgXFwgMCBcXCAxfSJdLFsxLDMsIlxca2FwcGEgXFxvcGx1cyAwIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw0LCJcXGJpbm9tezAgXFwgMSBcXCAwfXswIFxcIDAgXFwgMX0iXSxbNSw0LCJcXGJpbm9tIFxcYWxwaGEge2dmfSJdLFs2LDcsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMiwiXFxsZWZ0KFxcc3Vic3RhY2t7MVxcXFwwXFxcXDB9XFxyaWdodCkiXSxbNywxLCJcXGJpbm9tIFxcYmV0YSBnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsOCwiKHAsLVxcZ2FtbWEpIl0sWzEsOCwiKHYsLVxcZ2FtbWEpIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsOSwiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDEwLCJcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMTEsIjAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	\& B \& B \\
+	A \& {B \oplus D \oplus C} \& {E \oplus C} \& {\,} \\
+	A \& {D \oplus C} \& F \& {\,} \\
+	\& {\,} \& {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["\begin{array}{c} \left(\substack{1\\0\\0}\right) \end{array}", from=1-2, to=2-2]
+	\arrow["{\binom \beta g}", dashed, from=1-3, to=2-3]
+	\arrow["\begin{array}{c} \left(\substack{-f\\ \alpha\\gf}\right) \end{array}", from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{\binom{\beta \ u \ 0}{g \ 0 \ 1}}", from=2-2, to=2-3]
+	\arrow["{\binom{0 \ 1 \ 0}{0 \ 0 \ 1}}", from=2-2, to=3-2]
+	\arrow["{\kappa \oplus 0}", dashed, from=2-3, to=2-4]
+	\arrow["{(v,-\gamma)}", dashed, from=2-3, to=3-3]
+	\arrow["{\binom \alpha {gf}}", from=3-1, to=3-2]
+	\arrow["{(p,-\gamma)}", from=3-2, to=3-3]
+	\arrow["0", dashed, from=3-2, to=4-2]
+	\arrow["\delta", dashed, from=3-3, to=3-4]
+	\arrow["{\varepsilon }", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+	\end{equation*}
+	Hence, $\binom g\beta$ is an $\mathbb E$-inflation.
+		\end{proof}
+\end{theorem}
+
+\begin{theorem}\label{thm:hs-comp-dual}
+	Let $\boxed{\varepsilon}$ be a homotopic square. If $(\gamma, vu)$ is an $\mathbb E$-inflation, then so is $(\gamma,v)$. Consequently, the diagram completes to a composition of homotopic squares.
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsNixbMCwwLCJBIl0sWzEsMCwiQiJdLFsyLDAsIkMiXSxbMCwxLCJEIl0sWzEsMSwiRSJdLFsyLDEsIkYiXSxbMCwxLCJmIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMiwiZyJdLFsyLDUsIlxcZ2FtbWEiXSxbMCwzLCJcXGFscGhhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsNCwidSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJ1bGxldCBob2xsb3cifX19XSxbNCw1LCJ2IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYnVsbGV0IGhvbGxvdyJ9fX1dLFsxLDQsIlxcYmV0YSJdLFswLDQsIlxcYm94ZWQgXFxrYXBwYSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDUsIlxcYm94ZWQgXFx2YXJlcHNpbG9uICIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& B \& C \\
+	D \& E \& F
+	\arrow["f", dashed, from=1-1, to=1-2]
+	\arrow["\alpha", dashed, from=1-1, to=2-1]
+	\arrow["{\boxed \kappa}"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["g", from=1-2, to=1-3]
+	\arrow["\beta", from=1-2, to=2-2]
+	\arrow["{\boxed \varepsilon }"{description}, draw=none, from=1-2, to=2-3]
+	\arrow["\gamma", from=1-3, to=2-3]
+	\arrow["u"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=2-1, to=2-2]
+	\arrow["v"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=2-2, to=2-3]
+\end{tikzcd}.
+	\end{equation}
+	\begin{proof}
+		Dual to \cref{thm:hs-comp}. 
+	\end{proof}
+\end{theorem}
+
+\begin{corollary}
+	\Cref{diag:hlp3} completes to a composition of homotopic squares if one of $\alpha,\beta,g$ is an $\mathbb E$-inflation.
+	\begin{proof}
+		When $g$ or $\beta$ is an $\mathbb E$-inflation, then so is $\binom g\beta$. $\alpha$ is an $\mathbb E$-inflation if any only if $\beta$ is so, by \cref{thm:hs-infdef}.
+	\end{proof}
+\end{corollary}
+
+\begin{proposition}[Splitting condition]\label{prop:hs-splitting}
+	Suppose the left commutative diagram is a homotopic square. If one the following conditions holds: (1). $u$ is an inflation, (2). $v$ is a deflation, (3). $\gamma$ is a deflation. Then there is a way to write $h$ as $gf$ such that the right commutative diagram is a composite of homotopic squares.
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTEsWzAsMCwiQSJdLFsyLDAsIkMiXSxbMCwxLCJEIl0sWzEsMSwiRSJdLFsyLDEsIkYiXSxbMywwLCJBIl0sWzMsMSwiRCJdLFs0LDEsIkUiXSxbNSwxLCJGIl0sWzUsMCwiQyJdLFs0LDAsIkIiXSxbMSw0LCJcXGdhbW1hIl0sWzAsMiwiXFxhbHBoYSJdLFsyLDMsInUiXSxbMyw0LCJ2Il0sWzAsMSwiaCJdLFs1LDYsIlxcYWxwaGEiXSxbNiw3LCJ1Il0sWzcsOCwidiJdLFs5LDgsIlxcZ2FtbWEiXSxbMTAsOSwiZyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDEwLCJmIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEwLDcsIlxcYmV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDcsIlxcc3F1YXJlIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEwLDgsIlxcc3F1YXJlIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEyLDExLCJcXHNxdWFyZSIsMSx7InNob3J0ZW4iOnsic291cmNlIjoyMH0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}
+	A && C & A & B & C \\
+	D & E & F & D & E & F
+	\arrow["h", from=1-1, to=1-3]
+	\arrow[""{name=0, anchor=center, inner sep=0}, "\alpha", from=1-1, to=2-1]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "\gamma", from=1-3, to=2-3]
+	\arrow["f", dashed, from=1-4, to=1-5]
+	\arrow["\alpha", from=1-4, to=2-4]
+	\arrow["\square"{description}, draw=none, from=1-4, to=2-5]
+	\arrow["g", dashed, from=1-5, to=1-6]
+	\arrow["\beta", dashed, from=1-5, to=2-5]
+	\arrow["\square"{description}, draw=none, from=1-5, to=2-6]
+	\arrow["\gamma", from=1-6, to=2-6]
+	\arrow["u", from=2-1, to=2-2]
+	\arrow["v", from=2-2, to=2-3]
+	\arrow["u", from=2-4, to=2-5]
+	\arrow["v", from=2-5, to=2-6]
+	\arrow["\square"{description}, draw=none, from=0, to=1]
+\end{tikzcd}.
+	\end{equation}
+	\begin{proof}
+		It suffices to show that $(v, \gamma)$ is a deflation in each of the three cases.
+		
+		(Case 1). Since $(v,-\gamma) \binom {u \ \ 0}{0 \ \ 1} = (vu, - \gamma)$ is a deflation and $\binom {u \ \ 0}{0 \ \ 1}$ is an inflation, we see $(v,-\gamma)$ is also a deflation by \cref{prop:comp-infldefl}. (Case 2 and 3). By \cref{prop:comp-infldefl}, $(v, \gamma)$ is a deflation.
+
+		By \cref{thm:hs-comp-dual}, we obtain two homotopic squares:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsNyxbMSwxLCJcXG92ZXJsaW5lIEEiXSxbMSwyLCJEIl0sWzIsMiwiRSJdLFszLDIsIkYiXSxbMywxLCJDIl0sWzIsMSwiQiJdLFswLDAsIkEiXSxbMCwxLCJcXG92ZXJsaW5lIFxcYWxwaGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwyLCJ1Il0sWzIsMywidiJdLFs0LDMsIlxcZ2FtbWEiXSxbNSw0LCJnIl0sWzAsNSwiXFxvdmVybGluZSBmIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMiwiXFxiZXRhIl0sWzAsMiwiXFxzcXVhcmUiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSwzLCJcXHNxdWFyZSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDQsImgiLDAseyJjdXJ2ZSI6LTJ9XSxbNiwxLCJcXGFscGhhIiwyLHsiY3VydmUiOjJ9XSxbNiw1LCJmIiwwLHsibGFiZWxfcG9zaXRpb24iOjcwLCJjdXJ2ZSI6LTEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDAsIlxcdmFycGhpICIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+	A \\
+	& {\overline A} & B & C \\
+	& D & E & F
+	\arrow["{\varphi }"', dashed, from=1-1, to=2-2]
+	\arrow["f"{pos=0.7}, curve={height=-6pt}, dashed, from=1-1, to=2-3]
+	\arrow["h", curve={height=-12pt}, from=1-1, to=2-4]
+	\arrow["\alpha"', curve={height=12pt}, from=1-1, to=3-2]
+	\arrow["{\overline f}", dashed, from=2-2, to=2-3]
+	\arrow["{\overline \alpha}", dashed, from=2-2, to=3-2]
+	\arrow["\square"{description}, draw=none, from=2-2, to=3-3]
+	\arrow["g", from=2-3, to=2-4]
+	\arrow["\beta", from=2-3, to=3-3]
+	\arrow["\square"{description}, draw=none, from=2-3, to=3-4]
+	\arrow["\gamma", from=2-4, to=3-4]
+	\arrow["u", from=3-2, to=3-3]
+	\arrow["v", from=3-3, to=3-4]
+\end{tikzcd}.
+		\end{equation}
+		The morphism $f$ is constructed by \cref{prop:weak}. The composition of the two homotopic squares is also homotopic (\cref{thm:hs-composition}), and $\varphi$ is constructed by applying ET3$^{\mathrm{op}}$ to the following diagram:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMCwxLCJcXG92ZXJsaW5lIEEiXSxbMSwxLCJCIFxcb3BsdXMgQyJdLFsyLDEsIkYiXSxbMCwwLCJBIl0sWzEsMCwiQiBcXG9wbHVzIEMiXSxbMiwwLCJGIl0sWzMsMCwiXFwsIl0sWzMsMSwiXFwsIl0sWzAsMSwiXFxiaW5vbSB7ZyBcXG92ZXJsaW5lIGZ9e1xcb3ZlcmxpbmUgXFxhbHBoYX0iXSxbMSwyLCIoXFxnYW1tYSwgLXZ1KSJdLFsxLDQsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNSwiKFxcZ2FtbWEsIC12dSkiXSxbMyw0LCJcXGJpbm9tIGhcXGFscGhhIl0sWzMsMCwiXFx2YXJwaGkgIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw2LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw3LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	A & {B \oplus C} & F & {\,} \\
+	{\overline A} & {B \oplus C} & F & {\,}
+	\arrow["{\binom h\alpha}", from=1-1, to=1-2]
+	\arrow["{\varphi }", dashed, from=1-1, to=2-1]
+	\arrow["{(\gamma, -vu)}", from=1-2, to=1-3]
+	\arrow[dashed, from=1-3, to=1-4]
+	\arrow["{\binom {g \overline f}{\overline \alpha}}", from=2-1, to=2-2]
+	\arrow[equals, from=2-2, to=1-2]
+	\arrow["{(\gamma, -vu)}", from=2-2, to=2-3]
+	\arrow[equals, from=2-3, to=1-3]
+	\arrow[dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+		\end{equation}
+		$\varphi$ is an isomorphism by \cref{cor:five-lemma}. This completes the proof.
+	\end{proof}
+\end{proposition}
+
+\begin{lemma}\label{lem:hs-retract}
+	We take arbitrary homotopic square:
+	\begin{equation}
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJBXzEiXSxbMSwwLCJCXzEiXSxbMCwxLCJBXzIiXSxbMSwxLCJCXzIiXSxbMCwyLCJmIl0sWzAsMSwidSJdLFsxLDMsImciXSxbMiwzLCJ2Il0sWzAsMywiXFxzcXVhcmUiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{A_1} \& {B_1} \\
+	{A_2} \& {B_2}
+	\arrow["u", from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["\square"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["v", from=2-1, to=2-2]
+\end{tikzcd}.
+\end{equation}
+When $v$ is a retract of some $\mathbb E$-inflation, then so is $u$.
+\begin{proof}
+	By \cref{lem:hs-retract-inf}, $v$ takes the form $p w$ for some inflation $w$ and retraction $p$. Consider the following diagram. By \cref{thm:hs-comp-dual}, the diagram splits into two homotopic squares. It yields that $u$ is a composition of an $\mathbb E$-inflation and a retraction. Hence, $u$ a retract of an $\mathbb E$-inflation.
+\end{proof}
+\end{lemma}
+
+\begin{lemma}\label{lem:hs-retract-op}
+	We take arbitrary homotopic square:
+	\begin{equation}
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJBXzEiXSxbMSwwLCJCXzEiXSxbMCwxLCJBXzIiXSxbMSwxLCJCXzIiXSxbMCwyLCJmIl0sWzAsMSwidSJdLFsxLDMsImciXSxbMiwzLCJ2Il0sWzAsMywiXFxzcXVhcmUiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{A_1} \& {B_1} \\
+	{A_2} \& {B_2}
+	\arrow["u", from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["\square"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["v", from=2-1, to=2-2]
+\end{tikzcd}.
+\end{equation}
+When $u$ is a retract of some $\mathbb E$-inflation, then so is $v$.
+\begin{proof}
+	We take $u = ri$ such that $i$ is an $\mathbb E$-inflation and $r$ is a retraction. We construct the left homotopic square by \cref{lem:hs-f?1}. Since $\binom r{f'}$ is an $\mathbb E$-inflation by \cref{thm:hs-comp}, we complete the right homotopic square. The composite of the two homotopic squares is again homotopic by \cref{thm:hs-composition}.
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsNixbMCwwLCJBXzEiXSxbMiwwLCJCXzEiXSxbMCwxLCJBXzIiXSxbMiwxLCJCXzInIl0sWzEsMCwiRSJdLFsxLDEsIkYiXSxbMCwyLCJmIl0sWzEsMywiZyciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw0LCJpIl0sWzQsMSwiciJdLFs0LDUsImYnIl0sWzIsNSwiaSciXSxbNSwzLCJyJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDUsIlxcc3F1YXJlIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsMywiXFxzcXVhcmUiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{A_1} \& E \& {B_1} \\
+	{A_2} \& F \& {B_2'}
+	\arrow["i", from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["\square"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["r", from=1-2, to=1-3]
+	\arrow["{f'}", from=1-2, to=2-2]
+	\arrow["\square"{description}, draw=none, from=1-2, to=2-3]
+	\arrow["{g'}", dashed, from=1-3, to=2-3]
+	\arrow["{i'}", from=2-1, to=2-2]
+	\arrow["{r'}", dashed, from=2-2, to=2-3]
+\end{tikzcd}.
+	\end{equation}
+	By \cref{cor:five-lemma}, there is an isomorphism $\varphi$ such that the following diagram is a morphism of $\mathbb E$-conflations
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsOCxbMCwwLCJBIl0sWzIsMCwiQl8xIFxcb3BsdXMgQV8yIl0sWzQsMCwiQl8yJyJdLFswLDEsIkEiXSxbMiwxLCJCXzEgXFxvcGx1cyBBXzIiXSxbNSwwLCJcXCwiXSxbNSwxLCJcXCwiXSxbNCwxLCJCXzIiXSxbMCwxLCJcXGJpbm9tIHtyaX1mIl0sWzEsMiwiKGcnLC1pJykiXSxbMCwzLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDQsIlxcYmlub20gdWYiXSxbMSw0LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDUsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDYsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDcsIihnLC12KSJdLFsyLDcsIlxcdmFycGhpICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	A \&\& {B_1 \oplus A_2} \&\& {B_2'} \& {\,} \\
+	A \&\& {B_1 \oplus A_2} \&\& {B_2} \& {\,}
+	\arrow["{\binom {ri}f}", from=1-1, to=1-3]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["{(g',-i')}", from=1-3, to=1-5]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow[dashed, from=1-5, to=1-6]
+	\arrow["{\varphi }", dashed, from=1-5, to=2-5]
+	\arrow["{\binom uf}", from=2-1, to=2-3]
+	\arrow["{(g,-v)}", from=2-3, to=2-5]
+	\arrow[dashed, from=2-5, to=2-6]
+\end{tikzcd}.
+	\end{equation}
+\end{proof}
+\end{lemma}
+
+\begin{theorem}\label{thm:hs-retract}
+	We consider the following homotopic square:
+	\begin{equation}
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJBXzEiXSxbMSwwLCJCXzEiXSxbMCwxLCJBXzIiXSxbMSwxLCJCXzIiXSxbMCwyLCJmIl0sWzAsMSwidSJdLFsxLDMsImciXSxbMiwzLCJ2Il0sWzAsMywiXFxzcXVhcmUiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{A_1} \& {B_1} \\
+	{A_2} \& {B_2}
+	\arrow["u", from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["\square"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["v", from=2-1, to=2-2]
+\end{tikzcd}.
+\end{equation}
+Then $u$ is a retract of an $\mathbb E$-inflation (resp. retract of an $\mathbb E$-deflation) if and only if $v$ is a retract of an $\mathbb E$-inflation (resp. retract of an $\mathbb E$-deflation).
+	\begin{proof}
+		By \cref{lem:hs-retract,lem:hs-retract-op} and their duals.
+	\end{proof}
+\end{theorem}
+
+\subsection{An Application: Happel's Theorem}
+
+\begin{definition}[$S$, $\mathcal{L}$, and $\mathcal{R}$]\label{def:slr}
+	We define the following classes of morphisms and objects in an extriangulated category $(\mathcal{C}, \mathbb{E}, \mathfrak{s})$:
+	\begin{itemize}
+		\item $S$ is the class of morphisms which are both $\mathbb E$-inflations and $\mathbb E$-deflations.
+		\item $\mathcal{L}$ is the class of objects $L$ such that $L \to 0$ is an $\mathbb E$-deflation.
+		\item $\mathcal{R}$ is the class of objects $R$ such that $0 \to R$ is an $\mathbb E$-inflation.
+	\end{itemize}
+	Note that $\mathcal{L}$ and $\mathcal{R}$ are additive full subcategories.
+\end{definition}
+
+\begin{proposition}\label{prop:slr}
+	Either one of $S$, $\mathcal{L}$, and $\mathcal{R}$ determines the other two.
+	\begin{proof}
+		It suffices to show $\mathcal{L}$ and $S$ are mutually determined. The dual argument works for $\mathcal{R}$ and $S$
+
+		($S$ determines $\mathcal{L}$). Any $f \in S$ admits two $\mathbb E$-conflations:
+		\begin{equation}
+			K \xrightarrow{k} A \xrightarrow{f} B \overset{\kappa}{\dashrightarrow}, \quad A \xrightarrow{f} B \xrightarrow{c} C \overset{\varepsilon}{\dashrightarrow}.
+		\end{equation}
+		In homotopis squares, we have 
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsNixbMCwwLCJLIl0sWzEsMCwiQSJdLFsxLDEsIkIiXSxbMiwxLCJDIl0sWzIsMCwiMCJdLFswLDEsIjAiXSxbMCwxLCJrIl0sWzEsMiwiZiJdLFsyLDMsImMiXSxbMCw1XSxbNSwyXSxbMSw0XSxbNCwzXSxbMCwyLCJcXGJveGVke1xcc2NyaXB0c3R5bGUgXFxrYXBwYSB9IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMywiXFxib3hlZHtcXHNjcmlwdHN0eWxlIFxcdmFyZXBzaWxvbiB9IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	K \& A \& 0 \\
+	0 \& B \& C
+	\arrow["k", from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow["{\boxed{\scriptstyle \kappa }}"{description}, draw=none, from=1-1, to=2-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow["f", from=1-2, to=2-2]
+	\arrow["{\boxed{\scriptstyle \varepsilon }}"{description}, draw=none, from=1-2, to=2-3]
+	\arrow[from=1-3, to=2-3]
+	\arrow[from=2-1, to=2-2]
+	\arrow["c", from=2-2, to=2-3]
+\end{tikzcd}.
+		\end{equation}
+		By \cref{thm:hs-composition}, we see $K \in \mathcal{L}$. Indeed, any $L \in \mathcal{L}$ is determined in this way. We take the conflation $L \to 0 \to R \dashrightarrow$ and find that $(0 \to R) \in S$. We do the same construction for $0 \to R$ and complete the proof.
+
+		($\mathcal{L}$ determines $S$). We claim that $f \in S$ iff there is a $\mathbb E$-conflation $K \to X \xrightarrow{f} Y \dashrightarrow$ for some $K \in \mathcal{L}$. The ``only if ($\to$)'' part is clear. For the ``if ($\leftarrow$)'' part, we consider the homotopic square
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsNCxbMCwwLCJLIl0sWzAsMSwiWCJdLFsxLDEsIlkiXSxbMSwwLCIwIl0sWzAsM10sWzAsMV0sWzEsMiwiZiJdLFszLDJdXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	K \& 0 \\
+	X \& Y
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow[from=1-2, to=2-2]
+	\arrow["f", from=2-1, to=2-2]
+\end{tikzcd}.
+		\end{equation}
+		By \cref{thm:hs-infdef}, $f$ is both an $\mathbb E$-inflation and an $\mathbb E$-deflation since $(K \to 0)$ is so. This completes the proof.
+	\end{proof}
+\end{proposition}
+
+\begin{proposition}\label{prop:s-2-out-of-3}
+	$S$ is closed under composition and contains all isomorphisms. Moreover, it satisfies the 2-out-of-3 property when $\mathbb E$-inflations and $\mathbb E$-deflations are closed under retracts.
+	\begin{proof}
+		Isomorphisms are both $\mathbb E$-inflations and $\mathbb E$-deflations. By ET4 and ET4$^{\mathrm{op}}$, $S$ is closed under composition. Now we suppose $g\circ f$ and $g$ are in $S$. By \cref{prop:comp-infldefl}, $f$ is both an $\mathbb E$-inflation and a retract of an $\mathbb E$-deflation. Hence, $f \in S$ by assumption.
+	\end{proof}
+\end{proposition}
+
+We then show a direct connection of $\mathcal{L}$ and $\mathcal{R}$. 
+
+\begin{theorem}\label{thm:lr-equivalence}
+	For each $X \in \mathcal{L}$, we fix $X \to 0 \to FX \overset{\delta_X}{\dashrightarrow}$. Then the assignment of objects $X \mapsto FX$ induces an equivalence of categories. Moreover, there is a collection of natural isomorphisms functorial in $X$:
+	\begin{equation}
+		\ell _{-,X} : \mathbb E(-,X) \cong \mathcal{C}(-, FX)\quad (X \in \mathcal{L}).
+	\end{equation}
+	\begin{proof}
+		We show functoriality of $F$. For any morphism $f$ in the category $\mathcal{L}$, there is $g$ such that $(f;0;g)$ is a morphism of $\mathbb E$-conflations:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzAsMSwiWSJdLFsyLDAsIkZYIl0sWzIsMSwiRlkiXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwwLCIwIl0sWzEsMSwiMCJdLFsyLDQsIlxcZGVsdGFfWCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDUsIlxcZGVsdGFfWSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDZdLFs2LDJdLFswLDEsImYiXSxbMSw3XSxbNywzXSxbNiw3XSxbMiwzLCJnIl1d
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& 0 \& FX \& {\,} \\
+	Y \& 0 \& FY \& {\,}
+	\arrow[from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-2, to=2-2]
+	\arrow["{\delta_X}", dashed, from=1-3, to=1-4]
+	\arrow["g", from=1-3, to=2-3]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow["{\delta_Y}", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+		\end{equation}
+		We claim $g$ is unique. If not, then there is another $g'$ such that $g'^\ast \delta_Y = f_\ast \delta_X = g^\ast \delta_Y$. Since $(g-g')^\ast \delta_Y = 0$, $(g-g')$ passes through $0 \to FY$ by \cref{eq:les-1}. Thus, $g=g'$.
+
+		It remains to show $F$ is an equivalence. The above analysis (and its dual) shows the isomorphism $\mathcal{C}(X,Y) \cong \mathcal{C}(FX, FY)$. To see that $F$ is dense, for any $R \in \mathcal{R}$, we take the conflation $K \to 0 \to R \dashrightarrow$. Note that $K \in \mathcal{L}$ and $FK \cong R$ by \cref{cor:five-lemma}. This completes the proof.
+
+		Finally we define $\ell$ by ET3 as follows:
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsOCxbMCwxLCJYIl0sWzAsMCwiWCJdLFsyLDEsIkZYIl0sWzIsMCwiWiJdLFszLDEsIlxcLCJdLFszLDAsIlxcLCJdLFsxLDEsIjAiXSxbMSwwLCJZIl0sWzIsNCwiXFxkZWx0YV9YIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsNSwiXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDZdLFs2LDJdLFsxLDcsImYiXSxbNywzLCJnIl0sWzcsNl0sWzAsMSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMywyLCJcXGVsbF97WixYfShcXHZhcmVwc2lsb24gKSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	X \& 0 \& FX \& {\,}
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["g", from=1-2, to=1-3]
+	\arrow[from=1-2, to=2-2]
+	\arrow["{\varepsilon }", dashed, from=1-3, to=1-4]
+	\arrow["{\ell_{Z,X}(\varepsilon )}", dashed, from=1-3, to=2-3]
+	\arrow[equals, from=2-1, to=1-1]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow["{\delta_X}", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+\end{equation}
+		This assignment is unique; otherwise, the minus of two candicate morphism $(g-g') : Z \to FX$ factors through $0 \to FX$, which implies $g=g'$. Conversely, any $\gamma : Z \to FX$ determines $\gamma^\ast \delta_X \in \mathbb E(Z,X)$. Since $\ell(\gamma^\ast \delta_X) = \gamma$, and $\ell(\varepsilon)^\ast \delta_X = \varepsilon$, we find the inverse map of $\ell$. To see the naturality, it suffices to show $\ell(a_\ast c^\ast \varepsilon) = (Fa)\circ \ell (\varepsilon) \circ c$. Consider
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsMjQsWzAsMCwiWCJdLFsxLDAsIlgiXSxbMCwyLCJGWCJdLFsxLDIsIloiXSxbMCwzLCJcXCwiXSxbMSwzLCJcXCwiXSxbMCwxLCIwIl0sWzEsMSwiWSJdLFsyLDIsIlonIl0sWzIsMCwiWCJdLFsyLDEsIkUiXSxbMywwLCJYJyJdLFszLDEsIk0iXSxbMywyLCJaJyJdLFsyLDMsIlxcLCJdLFszLDMsIlxcLCJdLFs0LDAsIlgnIl0sWzQsMiwiRlgnIl0sWzQsMSwiMCJdLFs0LDMsIlxcLCJdLFs1LDAsIlgiXSxbNSwxLCIwIl0sWzUsMiwiRlgiXSxbNSwzLCJcXCwiXSxbMiw0LCJcXGRlbHRhX1giLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMyw1LCJcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsNl0sWzYsMl0sWzEsNywiZiJdLFs3LDMsImciXSxbNyw2XSxbMCwxLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDIsIlxcZWxsIChcXHZhcmVwc2lsb24gKSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDMsImMiLDJdLFs5LDEsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMTBdLFsxMCw4XSxbMTAsN10sWzksMTEsImEiXSxbMTMsOCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTEsMTJdLFsxMiwxM10sWzEwLDEyXSxbMTMsMTUsImFfXFxhc3QgY15cXGFzdCBcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsMTQsImNeXFxhc3QgXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxNiwxMSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTYsMThdLFsxOCwxN10sWzE3LDE5LCJcXGRlbHRhX3tYJ30iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTMsMTcsIlxcZWxsIChhX1xcYXN0IGNeXFxhc3QgXFx2YXJlcHNpbG9uICkiXSxbMTIsMThdLFsyMCwxNiwiYSIsMl0sWzIwLDIxXSxbMjEsMjJdLFsyMSwxOF0sWzIyLDE3LCJGYSIsMl0sWzIyLDIzLCJcXGRlbHRhX1giLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& X \& X \& {X'} \& {X'} \& X \\
+	0 \& Y \& E \& M \& 0 \& 0 \\
+	FX \& Z \& {Z'} \& {Z'} \& {FX'} \& FX \\
+	{\,} \& {\,} \& {\,} \& {\,} \& {\,} \& {\,}
+	\arrow[equals, from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow["f", from=1-2, to=2-2]
+	\arrow[equals, from=1-3, to=1-2]
+	\arrow["a", from=1-3, to=1-4]
+	\arrow[from=1-3, to=2-3]
+	\arrow[from=1-4, to=2-4]
+	\arrow[equals, from=1-5, to=1-4]
+	\arrow[from=1-5, to=2-5]
+	\arrow["a"', from=1-6, to=1-5]
+	\arrow[from=1-6, to=2-6]
+	\arrow[from=2-1, to=3-1]
+	\arrow[from=2-2, to=2-1]
+	\arrow["g", from=2-2, to=3-2]
+	\arrow[from=2-3, to=2-2]
+	\arrow[from=2-3, to=2-4]
+	\arrow[from=2-3, to=3-3]
+	\arrow[from=2-4, to=2-5]
+	\arrow[from=2-4, to=3-4]
+	\arrow[from=2-5, to=3-5]
+	\arrow[from=2-6, to=2-5]
+	\arrow[from=2-6, to=3-6]
+	\arrow["{\delta_X}", dashed, from=3-1, to=4-1]
+	\arrow["{\ell (\varepsilon )}"', dashed, from=3-2, to=3-1]
+	\arrow["{\varepsilon }", dashed, from=3-2, to=4-2]
+	\arrow["c"', from=3-3, to=3-2]
+	\arrow["{c^\ast \varepsilon }", dashed, from=3-3, to=4-3]
+	\arrow[equals, from=3-4, to=3-3]
+	\arrow["{\ell (a_\ast c^\ast \varepsilon )}", from=3-4, to=3-5]
+	\arrow["{a_\ast c^\ast \varepsilon }", dashed, from=3-4, to=4-4]
+	\arrow["{\delta_{X'}}", dashed, from=3-5, to=4-5]
+	\arrow["Fa"', from=3-6, to=3-5]
+	\arrow["{\delta_X}", dashed, from=3-6, to=4-6]
+\end{tikzcd}.
+\end{equation}
+		We see $\ell (a_\ast c^\ast \varepsilon )^\ast \delta_{X'} = a_\ast c^\ast \ell (\varepsilon)^\ast \delta_X =c^\ast \ell (\varepsilon)^\ast (Fa)^\ast \delta_{X'}$. Hence, $\Big(\ell(a_\ast c^\ast \varepsilon) - (Fa)\ell (\varepsilon) c\Big)^\ast \delta_{X'} = 0$. The above analysis shows $\varphi ^\ast \delta_{X'} = 0$ iff $\varphi = 0$. This completes the proof.
+	\end{proof}
+\end{theorem}
+
+\begin{theorem}\label{thm:rl-equivalence}
+	In \cref{thm:lr-equivalence}, there is a collection of natural isomorphisms functorial in $X$:
+	\begin{equation}
+		\rho _{-,X} : \mathbb E(FX,-) \cong \mathcal{C}(X,-)\quad (X \in \mathcal{L}).
+	\end{equation}
+	\begin{proof}
+		We define $\rho$ by ET3$^{\mathrm{op}}$ as follows:
+		\begin{equation}\label{eq:rho}
+			% https://q.uiver.app/#q=WzAsOCxbMiwxLCJGWCJdLFswLDEsIlkiXSxbMSwxLCJaIl0sWzAsMCwiWCJdLFsyLDAsIkZYIl0sWzEsMCwiMCJdLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFsxLDJdLFsyLDBdLFswLDQsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMSwiXFxyaG8gKFxcdmFyZXBzaWxvbikiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMyw1XSxbNSw0XSxbMCw3LCJcXHZhcmVwc2lsb24iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw2LCJcXGRlbHRhX1giLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwyXV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& 0 \& FX \& {\,} \\
+	Y \& Z \& FX \& {\,}
+	\arrow[from=1-1, to=1-2]
+	\arrow["{\rho (\varepsilon)}", dashed, from=1-1, to=2-1]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-2, to=2-2]
+	\arrow["{\delta_X}", dashed, from=1-3, to=1-4]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow[equals, from=2-3, to=1-3]
+	\arrow["\varepsilon", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+		\end{equation}
+		Such completion by ET3$^{\mathrm{op}}$ is unique. If there is another $\alpha$ such that $(\alpha;0_{Z0};1_{FX})$ and $(\rho (\varepsilon);0_{Y0};1_{FX})$ are both morphisms of $\mathbb E$-conflations, then $(\alpha - \rho (\varepsilon))_\ast \delta_X = 0$. Hence $(\alpha - \rho (\varepsilon))$ factors through $X \to 0$, which yields that $\alpha = \rho (\varepsilon)$.
+
+		We show $\rho$ is an isomorphism by finding its inverse. $f \mapsto f_\ast \delta_X$. Note that $\rho(f_\ast \delta_X) = f$ by unique completion of ET3$^{\mathrm{op}}$. $\rho(\varepsilon)_\ast\delta_X = \varepsilon$ is clearly shown in \cref{eq:rho}.
+
+		We finally show the naturality. It suffices to show $\rho((F\gamma)^\ast \alpha_\ast \varepsilon) = \alpha \circ \rho (\varepsilon) \circ \gamma$ for any $\gamma : X' \to X$ and $\alpha : Y \to Y'$. Consider
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMjQsWzQsMiwiRlgiXSxbNCwwLCJZIl0sWzQsMSwiWiJdLFs1LDAsIlgiXSxbNSwyLCJGWCJdLFs1LDEsIjAiXSxbNSwzLCJcXCwiXSxbNCwzLCJcXCwiXSxbMywyLCJGWCciXSxbMywwLCJZIl0sWzMsMSwiRSJdLFszLDMsIlxcLCJdLFsyLDAsIlknIl0sWzIsMSwiRiJdLFsyLDIsIkZYJyJdLFsyLDMsIlxcLCJdLFsxLDAsIlgnIl0sWzEsMiwiRlgnIl0sWzEsMSwiMCJdLFsxLDMsIlxcLCJdLFswLDAsIlgiXSxbMCwyLCJGWCJdLFswLDEsIjAiXSxbMCwzLCJcXCwiXSxbMSwyXSxbMiwwXSxbMCw0LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDVdLFs1LDRdLFswLDcsIlxcdmFyZXBzaWxvbiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDYsIlxcZGVsdGFfWCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDJdLFs4LDAsIkZcXGdhbW1hIl0sWzEsOSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOSwxMF0sWzEwLDhdLFsxMCwyXSxbOCwxMSwiKEZcXGdhbW1hKV5cXGFzdCBcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzksMTIsIlxcYWxwaGEiLDJdLFs4LDE0LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxNCwxNSwiXFxhbHBoYV9cXGFzdCAoRlxcZ2FtbWEpXlxcYXN0IFxcdmFyZXBzaWxvbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTIsMTNdLFsxMywxNF0sWzEwLDEzXSxbMywxLCJcXHJobyAoXFx2YXJlcHNpbG9uKSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxNCwxNywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTcsMTksIlxcZGVsdGFfe1gnfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxNiwxOF0sWzE4LDE3XSxbMTYsMTIsIlxccmhvIChcXGFscGhhX1xcYXN0IChGXFxnYW1tYSleXFxhc3QgXFx2YXJlcHNpbG9uICkiXSxbMTgsMTNdLFsyMSwxNywiRlxcZ2FtbWEiXSxbMjAsMTYsIlxcZ2FtbWEiXSxbMjAsMjJdLFsyMiwyMV0sWzIxLDIzLCJcXGRlbHRhX1giLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMjIsMThdXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& {X'} \& {Y'} \& Y \& Y \& X \\
+	0 \& 0 \& F \& E \& Z \& 0 \\
+	FX \& {FX'} \& {FX'} \& {FX'} \& FX \& FX \\
+	{\,} \& {\,} \& {\,} \& {\,} \& {\,} \& {\,}
+	\arrow["\gamma", from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow["{\rho (\alpha_\ast (F\gamma)^\ast \varepsilon )}", from=1-2, to=1-3]
+	\arrow[from=1-2, to=2-2]
+	\arrow[from=1-3, to=2-3]
+	\arrow["\alpha"', from=1-4, to=1-3]
+	\arrow[from=1-4, to=2-4]
+	\arrow[equals, from=1-5, to=1-4]
+	\arrow[from=1-5, to=2-5]
+	\arrow["{\rho (\varepsilon)}"', dashed, from=1-6, to=1-5]
+	\arrow[from=1-6, to=2-6]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-1, to=3-1]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-2, to=3-2]
+	\arrow[from=2-3, to=3-3]
+	\arrow[from=2-4, to=2-3]
+	\arrow[from=2-4, to=2-5]
+	\arrow[from=2-4, to=3-4]
+	\arrow[from=2-5, to=3-5]
+	\arrow[from=2-6, to=2-5]
+	\arrow[from=2-6, to=3-6]
+	\arrow["{F\gamma}", from=3-1, to=3-2]
+	\arrow["{\delta_X}", dashed, from=3-1, to=4-1]
+	\arrow["{\delta_{X'}}", dashed, from=3-2, to=4-2]
+	\arrow[equals, from=3-3, to=3-2]
+	\arrow["{\alpha_\ast (F\gamma)^\ast \varepsilon }", dashed, from=3-3, to=4-3]
+	\arrow[equals, from=3-4, to=3-3]
+	\arrow["{F\gamma}", from=3-4, to=3-5]
+	\arrow["{(F\gamma)^\ast \varepsilon }", dashed, from=3-4, to=4-4]
+	\arrow[equals, from=3-5, to=3-6]
+	\arrow["\varepsilon", dashed, from=3-5, to=4-5]
+	\arrow["{\delta_X}", dashed, from=3-6, to=4-6]
+\end{tikzcd}.
+		\end{equation}
+		We see $\rho (\alpha_\ast (F\gamma)^\ast \varepsilon )_\ast\delta_{X'} = \alpha_\ast (F\gamma)^\ast \rho(\varepsilon)_\ast \delta_X = \alpha_\ast \rho(\varepsilon)_\ast \gamma_\ast \delta_{X'}$. Hence, $\Big(\rho(\alpha_\ast (F\gamma)^\ast \varepsilon ) - \alpha \circ \rho (\varepsilon) \circ \gamma\Big)_\ast \delta_{X'} = 0$. The above analysis shows $\varphi _\ast \delta_{X'} = 0$ iff $\varphi = 0$. This completes the proof.
+	\end{proof}
+\end{theorem}
+
+We then examine some conditions for any extriangulated category to be (right) triangulated.
+
+\begin{definition}\label{def:ext-tri}
+	Let $(\mathcal{C}, \mathbb E, \mathfrak s)$ be an extriangulated category. Say such extriangulated category admits a (right) triangulated structure, if there is an auto-equivalence $F : \mathcal{C} \to \mathcal{C}$ and a natural isomorphism $\ell : \mathbb E(\cdot ,-) \cong \mathcal{C}(\cdot, F(-))$ such that
+	\begin{equation}
+		\triangle := \{(X \xrightarrow{f} Y \xrightarrow{g} Z\xrightarrow{\ell(\delta)}FX) \mid (X \xrightarrow{f} Y \xrightarrow{g} Z \overset{\delta}{\dashrightarrow}) \ \text{is an $\mathbb E$-conflation}\}
+	\end{equation}
+	is a (right) triangulated structure on $\mathcal{C}$. That is, $(\mathcal{C},F,\triangle)$ is a (right) triangulated category.
+\end{definition}
+
+\begin{theorem}\label{thm:ext-tri}
+	An extriangulated cateogry $(\mathcal{C}, \mathbb E, \mathfrak{s})$ admits a right triangulated structure iff the following equivalent conditions are satisfied.
+	\begin{enumerate}
+		\item (\textbf{Theorem 3.12}, \cite{tattarStructureAislesCoaisles2024}). $\{0\}$ provides enough injective objects.
+		\item All $X \to 0$ are $\mathbb E$-inflations, in other words, $\mathcal{L} = \mathcal{C}$.
+		\item All morphisms are $\mathbb E$-inflations.
+		\item All $\mathbb E$-deflations are $\mathbb E$-inflations, in other words, $S$ is the class of all $\mathbb E$-deflations.
+	\end{enumerate}
+	\begin{proof}
+		We show the equivalence of the above four conditions. ($1 \to 2$). Clear. ($2 \to 3$). Since $X \to 0$ an $\mathbb E$-inflation, any $[X \xrightarrow{f}Y] = [X \xrightarrow{\binom{f}{0}} Y \oplus 0 \cong Y]$ is also an $\mathbb E$-inflation by \cref{prop:comp-infldefl}. ($3 \to 4$). Clear. ($4 \to 1$). For any object $X$, the $\mathbb E$-deflation $X \to 0$ is also an $\mathbb E$-inflation by assumption. Hence, $\{0\}$ provides enough injective objects.
+
+		We then show that $\mathcal{C}$ admits an extriangulated structure if at least one of the following equivalent conditions is satisfied. When $\mathcal{C}$ admits a right triangulated structure, all morphisms are $\mathbb E$-inflations. Conversely, if $\mathcal{L} = \mathcal{C}$, then there is an natural isomorphism $\ell : \mathbb E(-,X) \cong \mathcal{C}(-, FX)$ and a equivalence $F : \mathcal{C} \simeq \mathcal{R}$ by \cref{thm:lr-equivalence}. We show that $(\mathcal{C}, F, \triangle)$ is a right triangulated category by verifying the SP-axioms in \cite{keller-vossieck1987}.
+		\begin{enumerate}
+			\item (Verificaiton of SP0 and SP1). $\mathbb E$-conflations are closed under isomorphisms and contain all $[0 \to X \xrightarrow{1_X} X \dashrightarrow]$ by definition. By \textit{3.}, any morphism $f : X \to Y$ is an $\mathbb E$-inflation.
+			\item (Verificaiton of SP2). For any $\mathbb E$-conflation $X \xrightarrow{f} Y \xrightarrow{g} Z \overset \delta \dashrightarrow$, we show $X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{\ell (\delta)}FX$ is closed under clockwise rotation. Consider
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsOCxbMCwxLCJYIl0sWzAsMCwiWCJdLFsyLDEsIkZYIl0sWzIsMCwiWiJdLFszLDEsIlxcLCJdLFszLDAsIlxcLCJdLFsxLDEsIjAiXSxbMSwwLCJZIl0sWzIsNCwiXFxkZWx0YV9YIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsNSwiXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDZdLFs2LDJdLFsxLDcsImYiXSxbNywzLCJnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYnVsbGV0IGhvbGxvdyJ9fX1dLFs3LDZdLFswLDEsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMiwiXFxlbGwgKFxcdmFyZXBzaWxvbiApIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsMiwiXFxib3hlZHtcXHNjcmlwdHN0eWxlIGZfXFxhc3QgXFxkZWx0YV9YfSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	X \& 0 \& FX \& {\,}
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["g"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=1-2, to=1-3]
+	\arrow[from=1-2, to=2-2]
+	\arrow["{\boxed{\scriptstyle f_\ast \delta_X}}"{description}, draw=none, from=1-2, to=2-3]
+	\arrow["{\varepsilon }", dashed, from=1-3, to=1-4]
+	\arrow["{\ell (\varepsilon )}", dashed, from=1-3, to=2-3]
+	\arrow[equals, from=2-1, to=1-1]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow["{\delta_X}", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+			\end{equation}
+			Hence, $Y \xrightarrow{-g}Z\xrightarrow{\ell(\varepsilon)}FX \xrightarrow{\ell(f_\ast \delta_X)}FY$ is also a right triangle. Note that $\ell(f_\ast \delta_X) = (Ff) \circ \ell(\delta_X) = Ff$ by naturality of $\ell$. This completes the verification.
+			\item (Verificaiton of SP3 and SP4). It follows from ET3 and ET4 directly.
+		\end{enumerate}
+	\end{proof}
+\end{theorem}
+
+\begin{remark}
+	Not all right triangulated categories are obtained in this way. For example, we choose $\text{Ab}$ as our ambient category, and $\{X \xrightarrow{f} Y \xrightarrow{\pi}\operatorname{cok}f \to 0 \mid f \in \mathsf{Mor}(\text{Ab})\}$ as the class of right triangles. This gives a right triangulated structure on $\text{Ab}$, but it does not arise from an extriangulated category since the suspension functor is not an equivalence.
+\end{remark}
+
+\begin{theorem}\label{thm:tri-equiv}
+	We show some equivalent conditions for an extriangulated category to be triangulated.
+	\begin{enumerate}
+		\item (\textbf{Proposition 3.2}, \cite{nakaokaExtriangulatedCategoriesHovey2019}). There is an auto-equivalence $F : \mathcal{C} \to \mathcal{C}$ and a natural isomorphism $\ell : \mathbb E(\cdot ,-) \cong \mathcal{C}(\cdot, F(-))$.
+		\item $\mathcal{L} = \mathcal{R} = \mathcal{C}$, that is, $0 \to X$ and $X \to 0$ are both $\mathbb E$-inflations and $\mathbb E$-deflations for any $X$.
+		\item $S = \mathsf{Mor}(\mathcal{C})$, that is, all morphisms are both $\mathbb E$-inflations and $\mathbb E$-deflations.
+	\end{enumerate}
+	\begin{proof}
+		If \textit{1.} holds, then $(\mathcal{C}, F, \triangle)$ is triangulated. The verification is similar to that of \cref{thm:ext-tri}. A triangulated satisfies both \textit{2.} and \textit{3.}. The equivalence of \textit{2.} and \textit{3.} is clear by \cref{prop:slr}. If \textit{3.} holds, then we have \textit{1.} by \cref{thm:lr-equivalence}.
+	\end{proof}
+\end{theorem}
+
+\begin{corollary}[Happel's theorem and its converse]
+	Let $(\mathcal{C}, \mathbb E, \mathfrak{s})$ be extriangulated. If any only if $\mathcal{C}$ is Frobenius exact, there exists an additive full subcategory $\mathcal{B} \subseteq (\text{Proj} \cap \text{Inj})$ such that the ideal quotient (\textbf{Proposition 3.30.}, \cite{nakaokaExtriangulatedCategoriesHovey2019}) $\mathcal{C} / \mathcal{B}$ is triangulated. In this case, the class of projective-injective objects are precisely the summands of objects in $\mathcal{B}$.
+	\begin{proof}
+		($\gets$). If $\mathcal{C}$ is Frobenius exact, then we take $\mathcal{B}$ are the class of projective-injective objects. Any $X \in \mathcal{C}$ admits two types of conflations
+		\begin{equation}\label{eq:frobenius}
+			K \to P \to X \dashrightarrow, \quad X \to I \to Q \dashrightarrow\quad P,I \in \mathcal{B}.
+		\end{equation}
+		Hence, any $X \to 0$ and $0 \to X$ are both $\mathbb E$-inflations and $\mathbb E$-deflations in $\mathcal{C}/\mathcal{B}$. By \cref{thm:tri-equiv}, $\mathcal{C}/\mathcal{B}$ is triangulated.
+		
+		($\to$). If there is $\mathcal{B} \subseteq \text{Proj} \cap \text{Inj}$ such that $\mathcal{C}/\mathcal{B}$ is triangulated, then any $X \to 0$ and $0 \to X$ are both $\mathbb E$-inflations and $\mathbb E$-deflations in $\mathcal{C}/\mathcal{B}$ (by \cref{thm:tri-equiv}). Hence, any $X \in \mathcal{C}$ admits two types of conflations as described in \cref{eq:frobenius}. This shows that $\mathcal{B}$ provides enough projective-injective objects. We embed all projective (injective) objects in $\mathcal{C}$ into \cref{eq:frobenius}, and find that all projective (injection) objects in $\mathcal{C}$ are a summands of objects in $\mathcal{B}$. 
+	\end{proof}
+\end{corollary}
+
+\begin{corollary}
+	Let $(\mathcal{C}' , \mathbb E', \mathfrak s') \subseteq (\mathcal{C}, \mathbb E, \mathfrak s)$ be an extriangulated subcategory with $\mathsf{Ob}(\mathcal{C}) = \mathsf{Ob}(\mathcal{C}')$. If $(\mathcal{C}' , \mathbb E', \mathfrak s')$ admits a (right) triangulated structure, then so is $(\mathcal{C}, \mathbb E, \mathfrak s)$.
+	\begin{proof}
+		Note that an extriangulated category admits a right triangulated structure iff all $X \to 0$ are $\mathbb E$-inflations (\cref{thm:ext-tri}). If $(\mathcal{C}' , \mathbb E', \mathfrak s')$ admits a (right) triangulated structure, then all $X \to 0$ are $\mathbb E'$-inflations, which are also $\mathbb E$-inflations. This completes the proof. The proof for triangulated case is similar by \cref{thm:tri-equiv}.
+	\end{proof}
+\end{corollary}
+
+\subsection{Remarks on WIC Condition}
+
+Anaglous to exact categories (\textbf{Proposition 7.6.}, \cite{buhlerExactCategories2010a}), \cite{nakaokaExtriangulatedCategoriesHovey2019} introduced a WIC condition for extriangulated categories, serving as a strong version of being weakly idempotent completeness. 
+	\begin{enumerate}
+		\item (Weakly idempotent complete) every section has a cokernel;
+		\item (\textbf{Condition 5.8.}, \cite{nakaokaExtriangulatedCategoriesHovey2019} WIC) if $gf$ is an $\mathbb E$-inflation, then so is $f$.
+	\end{enumerate}
+
+	The equivalency of these two conditions are shown in \cite{klapproth2023nextensionclosedsubcategoriesnexangulated}. We propose a simple proof and another equivalent condition inspired by Heller's axiom (\textbf{Appendix B.}, \cite{buhlerExactCategories2010a}).
+
+	
+\begin{lemma}
+	An additive category $\mathcal{C}$ is weakly idempotent complete, if and only if the following condition holds: 1. any section has a cokernel; 2. any retraction has a kernel.
+	\begin{proof}
+		We show \textit{1.} implies \textit{2.} only. Let $X \xrightarrow{q} C$ be a retraction, with section $C \xrightarrow{i} X$ as its right inverse. We denote by $X \xrightarrow{p} K$ the cokernel of $i$. Since $(1-iq)i = 0$, we find $j$ such that $jp = (1-iq)$.
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsNCxbMSwwLCJYIl0sWzAsMCwiQyJdLFsyLDAsIksiXSxbMSwxLCJYIl0sWzAsMSwicSIsMCx7Im9mZnNldCI6LTEsImN1cnZlIjotMX1dLFsxLDAsImkiLDAseyJvZmZzZXQiOi0xLCJjdXJ2ZSI6LTF9XSxbMCwyLCJwIiwwLHsib2Zmc2V0IjotMSwiY3VydmUiOi0xfV0sWzIsMywiaiIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMCwib2Zmc2V0IjotMSwiY3VydmUiOi0yLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwzLCIxLWlxIl1d
+\begin{tikzcd}[ampersand replacement=\&]
+	C \& X \& K \\
+	\& X
+	\arrow["i", shift left, curve={height=-6pt}, from=1-1, to=1-2]
+	\arrow["q", shift left, curve={height=-6pt}, from=1-2, to=1-1]
+	\arrow["p", shift left, curve={height=-6pt}, from=1-2, to=1-3]
+	\arrow["{1-iq}", from=1-2, to=2-2]
+	\arrow["j"{pos=0.3}, shift left, curve={height=-12pt}, dashed, from=1-3, to=2-2]
+\end{tikzcd}.
+		\end{equation}
+		We see $pj = 1_K$ as $pjp = p(1-iq) = p$, and $qj = 0$ as $qjp = q(1-iq) = 0$. We find structure maps of this direct sum.
+	\end{proof}
+\end{lemma}
+
+\begin{remark}
+	Triangulated categories are automatically WIC. For exact categories, see \cite{buhlerExactCategories2010a}.
+\end{remark}
+
+\begin{definition}
+	A \textit{$3 \times 3$ diagram} consists of $6$ conflations arranged in a commutative diagram
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTUsWzAsMCwiQV8xIl0sWzEsMCwiQV8yIl0sWzIsMCwiQV8zIl0sWzAsMSwiQl8xIl0sWzIsMSwiQl8zIl0sWzMsMCwiXFwsIl0sWzMsMSwiXFwsIl0sWzEsMSwiQl8yIl0sWzAsMiwiQ18xIl0sWzEsMiwiQ18yIl0sWzIsMiwiQ18zIl0sWzAsMywiXFwsIl0sWzEsMywiXFwsIl0sWzIsMywiXFwsIl0sWzMsMiwiXFwsIl0sWzAsMSwiZl9BIl0sWzEsMiwiZ19BIl0sWzMsNywiZl9CIl0sWzcsNCwiZ19CIl0sWzIsNSwiXFxkZWx0YV9BIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsNiwiXFxkZWx0YV9CIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMywiaV8xIl0sWzEsNywiaV8yIl0sWzIsNCwiaV8zIl0sWzMsOCwicF8xIl0sWzcsOSwicF8yIl0sWzQsMTAsInBfMyJdLFsxMCwxNCwiXFxkZWx0YV9DIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsMTEsIlxcdmFyZXBzaWxvbiBfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDEyLCJcXHZhcmVwc2lsb24gXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsMTMsIlxcdmFyZXBzaWxvbiBfMyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDksImZfQyJdLFs5LDEwLCJnX0MiXV0=
+\begin{tikzcd}
+	{A_1} & {A_2} & {A_3} & {\,} \\
+	{B_1} & {B_2} & {B_3} & {\,} \\
+	{C_1} & {C_2} & {C_3} & {\,} \\
+	{\,} & {\,} & {\,}
+	\arrow["{f_A}", from=1-1, to=1-2]
+	\arrow["{i_1}", from=1-1, to=2-1]
+	\arrow["{g_A}", from=1-2, to=1-3]
+	\arrow["{i_2}", from=1-2, to=2-2]
+	\arrow["{\delta_A}", dashed, from=1-3, to=1-4]
+	\arrow["{i_3}", from=1-3, to=2-3]
+	\arrow["{f_B}", from=2-1, to=2-2]
+	\arrow["{p_1}", from=2-1, to=3-1]
+	\arrow["{g_B}", from=2-2, to=2-3]
+	\arrow["{p_2}", from=2-2, to=3-2]
+	\arrow["{\delta_B}", dashed, from=2-3, to=2-4]
+	\arrow["{p_3}", from=2-3, to=3-3]
+	\arrow["{f_C}", from=3-1, to=3-2]
+	\arrow["{\varepsilon _1}", dashed, from=3-1, to=4-1]
+	\arrow["{g_C}", from=3-2, to=3-3]
+	\arrow["{\varepsilon _2}", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_C}", dashed, from=3-3, to=3-4]
+	\arrow["{\varepsilon _3}", dashed, from=3-3, to=4-3]
+\end{tikzcd},
+	\end{equation}
+	such that $(i_1;i_2;i_3)$, $(p_1;p_2;p_3)$, $(f_A;f_B;f_C)$ and $(g_A;g_B;g_C)$ are morphisms of conflations.
+\end{definition}
+
+\begin{theorem}\label{thm:wic}
+	An extriangulated category is weakly idempotent complete, if and only if the following equivalent statements holds.
+	\begin{enumerate}
+		\item (The definition). Any section has a cokernel.
+		\item When there is an inflation takes the form $\binom i0$, then $i$ is an inflation.
+		\item When there is an inflation takes the form $\binom {i \ \ 0}{0 \ \ j}$, then $i$ and $j$ are inflations.
+		\item (WIC condition). When there is an inflation takes the form $fi$, then $i$ is an inflation.
+		\item Inflations are closed under retracts.
+		\item Let $g_A$, $g_B$ be $\mathbb E$-deflations and $i_2$, $i_3$ be $\mathbb E$-inflations, such that $g_B \circ i_2 = i_3 \circ g_A$. One can complete this commutative square into a $3 \times 3$ diagram:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTUsWzAsMCwiQV8xIl0sWzEsMCwiQV8yIl0sWzIsMCwiQV8zIl0sWzAsMSwiQl8xIl0sWzIsMSwiQl8zIl0sWzMsMCwiXFwsIl0sWzMsMSwiXFwsIl0sWzEsMSwiQl8yIl0sWzAsMiwiQ18xIl0sWzEsMiwiQ18yIl0sWzIsMiwiQ18zIl0sWzAsMywiXFwsIl0sWzEsMywiXFwsIl0sWzIsMywiXFwsIl0sWzMsMiwiXFwsIl0sWzAsMSwiZl9BIl0sWzEsMiwiZ19BIl0sWzMsNywiZl9CIl0sWzcsNCwiZ19CIl0sWzIsNSwiXFxkZWx0YV9BIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsNiwiXFxkZWx0YV9CIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMywiaV8xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNywiaV8yIl0sWzIsNCwiaV8zIl0sWzMsOCwicF8xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsOSwicF8yIl0sWzQsMTAsInBfMyJdLFsxMCwxNCwiXFxkZWx0YV9DIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsMTEsIlxcdmFyZXBzaWxvbiBfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDEyLCJcXHZhcmVwc2lsb24gXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsMTMsIlxcdmFyZXBzaWxvbiBfMyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDksImZfQyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDEwLCJnX0MiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{A_1} \& {A_2} \& {A_3} \& {\,} \\
+	{B_1} \& {B_2} \& {B_3} \& {\,} \\
+	{C_1} \& {C_2} \& {C_3} \& {\,} \\
+	{\,} \& {\,} \& {\,}
+	\arrow["{f_A}", from=1-1, to=1-2]
+	\arrow["{i_1}", dashed, from=1-1, to=2-1]
+	\arrow["{g_A}", from=1-2, to=1-3]
+	\arrow["{i_2}", from=1-2, to=2-2]
+	\arrow["{\delta_A}", dashed, from=1-3, to=1-4]
+	\arrow["{i_3}", from=1-3, to=2-3]
+	\arrow["{f_B}", from=2-1, to=2-2]
+	\arrow["{p_1}", dashed, from=2-1, to=3-1]
+	\arrow["{g_B}", from=2-2, to=2-3]
+	\arrow["{p_2}", from=2-2, to=3-2]
+	\arrow["{\delta_B}", dashed, from=2-3, to=2-4]
+	\arrow["{p_3}", from=2-3, to=3-3]
+	\arrow["{f_C}", dashed, from=3-1, to=3-2]
+	\arrow["{\varepsilon _1}", dashed, from=3-1, to=4-1]
+	\arrow["{g_C}", dashed, from=3-2, to=3-3]
+	\arrow["{\varepsilon _2}", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_C}", dashed, from=3-3, to=3-4]
+	\arrow["{\varepsilon _3}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+		\end{equation}
+	\end{enumerate}
+	We omit the dual statements for \textit{1.} to \textit{5.}.
+	\begin{proof}
+		(\textit{1.} $\to$ \textit{2.}). Let $X \xrightarrow{\binom i0} Y \oplus W \xrightarrow{(s,t)}Z \overset \delta\dashrightarrow$ be a conflation. Note that $\binom{s \ \ 0}{0 \ \ 1}\binom i0 = 0$. By \cref{eq:les-2}, we can find $\binom ab$ such that $\binom ab (s,t) = \binom{s \ \ 0}{0 \ \ 1}$:
+
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsNSxbMCwwLCJYIl0sWzEsMCwiWVxcb3BsdXMgVyJdLFsyLDAsIloiXSxbMywwLCJcXCwiXSxbMSwxLCJaIFxcb3BsdXMgVyJdLFswLDEsIlxcYmlub20gaTAiXSxbMSwyLCIocyx0KSJdLFsyLDMsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw0LCJcXGJpbm9te3MgXFwgXFwgMH17MCBcXCBcXCAxfSJdLFswLDQsIjAiLDIseyJsYWJlbF9wb3NpdGlvbiI6MzAsImN1cnZlIjoyfV0sWzIsNCwiXFxiaW5vbSBhYiIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMCwiY3VydmUiOi0yLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& {Y\oplus W} \& Z \& {\,} \\
+	\& {Z \oplus W}
+	\arrow["{\binom i0}", from=1-1, to=1-2]
+	\arrow["0"'{pos=0.3}, curve={height=12pt}, from=1-1, to=2-2]
+	\arrow["{(s,t)}", from=1-2, to=1-3]
+	\arrow["{\binom{s \ \ 0}{0 \ \ 1}}", from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["{\binom ab}"{pos=0.3}, curve={height=-12pt}, dashed, from=1-3, to=2-2]
+\end{tikzcd}.
+		\end{equation}
+
+		This shows that $t$ a section. By assumption, $Z \simeq Q \oplus W$. Hence $X \xrightarrow{\binom i0} Y \oplus W \xrightarrow{\binom{s_1 \ 0}{s_2 \ 1}} Q \oplus W \overset \delta \dashrightarrow$ is a conflation. By \cref{prop:pb-2}, there is a way to complete the following diamgram:
+
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiWCJdLFsxLDEsIllcXG9wbHVzIFciXSxbMiwxLCJRIFxcb3BsdXMgVyJdLFszLDEsIlxcLCJdLFsxLDAsIlciXSxbMiwwLCJXIl0sWzIsMiwiUSJdLFsxLDIsIlkiXSxbMCwyLCJYIl0sWzMsMiwiXFwsIl0sWzEsMywiXFwsIl0sWzIsMywiXFwsICJdLFswLDEsIlxcYmlub20gaTAiXSxbMSwyLCJcXGJpbm9te3NfMSBcXCAwfXtzXzIgXFwgMX0iXSxbMiwzLCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCwxLCJcXGJpbm9tIDAxIl0sWzUsMiwiXFxiaW5vbSAwMSJdLFswLDgsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsNywiaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDYsInNfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDksIlxcdmFyZXBzaWxvbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw3LCIoMSwwKSJdLFsyLDYsIigxLDApIl0sWzYsMTEsIjAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNywxMCwiMCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	\& W \& W \\
+	X \& {Y\oplus W} \& {Q \oplus W} \& {\,} \\
+	X \& Y \& Q \& {\,} \\
+	\& {\,} \& {\, }
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["{\binom 01}", from=1-2, to=2-2]
+	\arrow["{\binom 01}", from=1-3, to=2-3]
+	\arrow["{\binom i0}", from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{\binom{s_1 \ 0}{s_2 \ 1}}", from=2-2, to=2-3]
+	\arrow["{(1,0)}", from=2-2, to=3-2]
+	\arrow["\delta", dashed, from=2-3, to=2-4]
+	\arrow["{(1,0)}", from=2-3, to=3-3]
+	\arrow["i", dashed, from=3-1, to=3-2]
+	\arrow["{s_1}", dashed, from=3-2, to=3-3]
+	\arrow["0", dashed, from=3-2, to=4-2]
+	\arrow["{\varepsilon }", dashed, from=3-3, to=3-4]
+	\arrow["0", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+		\end{equation}
+
+		The morphism $i$ and $s_1$ at the bottom row is uniquely determined by a straightforward calculation. Hence, $i$ is an inflation.
+		
+		(\textit{2.} $\to$ \textit{4.}). When $fi$ is an inflation, then so is $\binom i{fi}$ by \cref{prop:comp-infldefl}. Here $\binom i0 = \binom{1 \ 0}{f \ 1}^{-1} \circ \binom {i}{fi}$ is again an $\mathbb E$-inflation. By assumption, $i$ is an inflation.
+		
+		(\textit{4.} $\to$ \textit{1.}). Since isomorphisms are inflations, sections are inflations. Thus they have cokernels.
+		
+		(\textit{5.} $\to$ \textit{3.} $\to$ \textit{2.}). This is straightforward.
+		
+		(\textit{1.} and \textit{4.} implies \textit{5.}). Let $f'$ be a retract of some inflation $f$, i.e.
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsNixbMCwwLCJYJyJdLFsyLDAsIlgnIl0sWzAsMSwiWSciXSxbMiwxLCJZJyJdLFsxLDAsIlgiXSxbMSwxLCJZIl0sWzAsMiwiZiciXSxbMSwzLCJmJyJdLFs0LDUsImYiXSxbMCw0LCJpIl0sWzQsMSwicCJdLFsyLDUsImoiXSxbNSwzLCJxIl1d
+		\begin{tikzcd}
+			{X'} & X & {X'} \\
+			{Y'} & Y & {Y'}
+			\arrow["i", from=1-1, to=1-2]
+			\arrow["{f'}", from=1-1, to=2-1]
+			\arrow["p", from=1-2, to=1-3]
+			\arrow["f", from=1-2, to=2-2]
+			\arrow["{f'}", from=1-3, to=2-3]
+			\arrow["j", from=2-1, to=2-2]
+			\arrow["q", from=2-2, to=2-3]
+		\end{tikzcd}.
+		\end{equation} 
+		By \textit{1.}, $fi$ is a composite of inflations. By \textit{4.}, $f'$ is an inflation.
+		
+		(\textit{4.} $\to$ \textit{6.}). This is \textbf{Lemma 5.9.} in \cite{nakaokaExtriangulatedCategoriesHovey2019}.
+		
+		(\textit{6.} $\to$ \textit{1.}). For sake of contradiction, we prove the contrapositive statement. Let $X \xrightarrow{i} Y$ be a section which does not have a cokernel. We denote $q$ as its right inverse. Consider
+		\begin{equation}
+			\begin{pmatrix}
+				0 & q \\ i & 1-iq
+			\end{pmatrix}\begin{pmatrix}
+				0 & q \\ i & 1-iq
+			\end{pmatrix} = \begin{pmatrix}
+				1 & 0 \\ 0 & 1
+			\end{pmatrix}.
+		\end{equation}
+		We obtain isomorphic split $\mathbb E$-conflations:
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsOCxbMCwxLCJZIl0sWzEsMSwiWCBcXG9wbHVzIFkiXSxbMiwxLCJYIl0sWzAsMCwiWSJdLFsyLDAsIlgiXSxbMSwwLCJYIFxcb3BsdXMgWSJdLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFswLDEsIlxcYmlub20gcXsxLWlxfSJdLFsxLDIsIigwLHEpIl0sWzAsMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw0LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDUsIlxcYmlub20gMDEiXSxbNSw0LCIoMSwwKSJdLFs1LDEsIlxcYmlub20gezAgXFxxcXVhZCBxIH17aSBcXHF1YWQgMS1pcX0iXSxbNCw2LCIwIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNywiMCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	Y \& {X \oplus Y} \& X \& {\,} \\
+	Y \& {X \oplus Y} \& X \& {\,}
+	\arrow["{\binom 01}", from=1-1, to=1-2]
+	\arrow["{(1,0)}", from=1-2, to=1-3]
+	\arrow["{\binom {0 \qquad q }{i \quad 1-iq}}", from=1-2, to=2-2]
+	\arrow["0", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=2-1, to=1-1]
+	\arrow["{\binom q{1-iq}}", from=2-1, to=2-2]
+	\arrow["{(0,q)}", from=2-2, to=2-3]
+	\arrow[equals, from=2-3, to=1-3]
+	\arrow["0", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+\end{equation}
+		It remains to show the following diagram fails to be completed to a $3 \times 3$-diagram:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOSxbMCwxLCJZIl0sWzEsMSwiWCBcXG9wbHVzIFkiXSxbMiwxLCJYIl0sWzIsMCwiMCJdLFsxLDAsIlgiXSxbMCwwLCJYIl0sWzEsMiwiWSJdLFsyLDIsIlgiXSxbMCwyLCJaIl0sWzAsMSwiXFxiaW5vbSBxezEtaXF9Il0sWzEsMiwiKDAscSkiXSxbMywyXSxbNCwxLCJcXGJpbm9tICAxMCJdLFs0LDNdLFs1LDAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDQsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsNywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiw3LCJxIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNiwiKDAsMSkiXSxbMCw4LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCw2LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	X & X & 0 \\
+	Y & {X \oplus Y} & X \\
+	Z & Y & X
+	\arrow[equals, from=1-1, to=1-2]
+	\arrow[dashed, from=1-1, to=2-1]
+	\arrow[from=1-2, to=1-3]
+	\arrow["{\binom  10}", from=1-2, to=2-2]
+	\arrow[from=1-3, to=2-3]
+	\arrow["{\binom q{1-iq}}", from=2-1, to=2-2]
+	\arrow[dashed, from=2-1, to=3-1]
+	\arrow["{(0,q)}", from=2-2, to=2-3]
+	\arrow["{(0,1)}", from=2-2, to=3-2]
+	\arrow[equals, from=2-3, to=3-3]
+	\arrow[dashed, from=3-1, to=3-2]
+	\arrow["q", dashed, from=3-2, to=3-3]
+\end{tikzcd}.
+		\end{equation}
+		If such completion exists, then $q$ is both an $\mathbb E$-deflation and a retraction, thus it has a kernel. This contradicts our assumption.
+		\end{proof}
+\end{theorem}
+

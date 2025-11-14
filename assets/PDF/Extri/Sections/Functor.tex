@@ -1,0 +1,63 @@
+\section{同调性质}
+
+\subsection{函子}
+
+\Cref{sec:extri-subcategory} 与\Cref{sec:extri-ideal-quotient} 表明外三角范畴在特殊的自范畴与商范畴运算封闭. 为了系统化的表述, 我们应当定义外三角范畴间的函子. 
+
+\begin{definition}\label{def:extri-functor}
+    (外三角函子). 外三角范畴 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 与 $(\mathcal{C}', \mathbb E', \mathfrak s')$ 间的一个函子描述作二元对 $(F, \theta)$. 其中,
+    \begin{enumerate}
+        \item $F: \mathcal{C} \to \mathcal{D}$ 是加法函子, 其保持 conflation;
+        \item $\theta_{Z,X} : \mathbb E(Z, X) \to \mathbb E' (FZ, FX),\quad \delta \mapsto \theta_{Z,X}(\delta)$. 使得对任意 $\mathcal{C}$ 中 conflation $X \overset {i} \rightarrowtail Y \overset {p} \twoheadrightarrow Z \overset \delta \dashrightarrow$, 总有 $\mathcal{C}'$ 中 conflation $FX \overset {Fi} \rightarrowtail FY \overset {Fp} \twoheadrightarrow FZ \overset {\theta_{Z,X}(\delta)} \dashrightarrow$.
+    \end{enumerate}
+    
+\end{definition}
+
+\begin{remark}
+    自然性表明 $\theta(g_\ast f^\ast \delta) = (Fg)_\ast (Ff)^\ast \theta(\delta)$.
+\end{remark}
+
+\begin{theorem}
+    (外三角等价). 称\Cref{def:extri-functor} 中的外三角函子 $(F, \theta)$ 是\textbf{外三角等价}, 若以下等价命题成立
+    \begin{enumerate}
+        \item $F$ 是范畴等价, 且 $\theta$ 是双自然同构;
+        \item 存在逆函子 $(G, \phi): (\mathcal{C}', \mathbb E', \mathfrak s') \to (\mathcal{C}, \mathbb E, \mathfrak s)$, 使得 $(G, \phi) \circ (F, \theta) \cong 1_{\mathcal{C}}$ 且 $(F, \theta) \circ (G, \phi) \cong 1_{\mathcal{C}'}$.
+    \end{enumerate}
+    \begin{proof}
+        只看 ($1 \to 2$). 任取伴随等价的资料 $(F \dashv G; \eta, \varepsilon)$. 定义
+        \begin{equation}
+            \phi : \mathbb E'(C, A) \to \mathbb E(GC, GA),\quad \delta \mapsto \theta^{-1}\left[(\varepsilon _A)_\ast (\varepsilon _C^{-1})^\ast\delta \right].
+        \end{equation}
+        具体地, 上下效果相同:
+        \begin{equation}
+            % https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXG1hdGhiYiBFJyAoQyxBKSJdLFsxLDAsIlxcbWF0aGJiIEUoR0MsIEdBKSJdLFsyLDAsIlxcbWF0aGJiIEUnIChGR0MsIEZHQSkiXSxbMCwxLCJcXGRlbHRhIl0sWzIsMSwiKFxcdmFyZXBzaWxvbiBfQSlfXFxhc3QgKFxcdmFyZXBzaWxvbiBfQ157LTF9KV5cXGFzdFxcZGVsdGEgIl0sWzAsMSwiXFxwaGkgIl0sWzEsMiwiXFx0aGV0YSJdLFszLDQsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&, row sep = small]
+	{\mathbb E' (C,A)} \& {\mathbb E(GC, GA)} \& {\mathbb E' (FGC, FGA)} \\
+	\delta \&\& {(\varepsilon _A)_\ast (\varepsilon _C^{-1})^\ast\delta }
+	\arrow["{\phi }", from=1-1, to=1-2]
+	\arrow["\theta", from=1-2, to=1-3]
+	\arrow[maps to, from=2-1, to=2-3]
+\end{tikzcd}.
+        \end{equation}
+        继而证明 $(G, \phi)$ 是一个外三角函子, 即证 $\phi$ 是双自然变换. 往证等式
+        \begin{equation}
+            \phi(g_\ast f^\ast \delta) = (Gg)_\ast (Gf)^\ast \phi(\delta).
+        \end{equation}
+        将两侧作用同构 $\theta$, 即证
+        \begin{equation}
+            \theta \phi(g_\ast f^\ast \delta) = (FGg)_\ast (FGf)^\ast \theta \phi(\delta).
+        \end{equation}
+        记 $g : A' \to A$ 与 $f: C \to C'$, 上式即
+        \begin{equation}
+            (\varepsilon _{A'})_\ast (\varepsilon _{C'}^{-1})^\ast (g_\ast f^\ast \delta) = (FGg)_\ast (FGf)^\ast (\varepsilon _A)_\ast (\varepsilon _C^{-1})^\ast \delta.
+        \end{equation}
+        由 $\varepsilon$ 是自然变换, 得 $\varepsilon_{A'} \circ g = (FGg) \circ \varepsilon _A$ 与 $\varepsilon _C \circ (FGf) = f \circ \varepsilon _{C'}$. 故上式成立.
+        \\
+        容易验证自然同构 $(G, \phi) \circ (F, \theta) \cong 1_{\mathcal{C}}$ 与 $(F, \theta) \circ (G, \phi) \cong 1_{\mathcal{C}'}$.
+    \end{proof}
+\end{theorem}
+
+
+
+
+

@@ -54,11 +54,3 @@ layout: default
 
 <h2>Collections</h2>
 
-{% for post in site.posts %}
-  {% if
-    post.categories contains "collection"
-  %}
-    <h5><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h5>
-    <p>{{ post.date | date: "%Y-%m-%d" }} • {{ post.categories | join: ", " }}</p>
-  {% endif %}
-{% endfor %}

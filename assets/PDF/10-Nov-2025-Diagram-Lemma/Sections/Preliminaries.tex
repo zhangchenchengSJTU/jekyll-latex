@@ -1,0 +1,441 @@
+\section{Preliminaries}
+
+\subsection{Axiom of Extriangulated Categories}
+
+Extriangulated categories were introduced by Nakaoka and Palu in \cite{nakaokaExtriangulatedCategoriesHovey2019}, which simultaneously generalise exact categories and triangulated categories. We recall the basic definitions from \cite{nakaokaExtriangulatedCategoriesHovey2019}.
+
+\begin{notation}
+	We fix an additive category $\mathcal{C}$ and an additive bifunctor
+	\begin{equation}
+		\mathbb E: \mathcal{C}^{op} \times \mathcal{C} \to \text{Ab},\quad (X, Y) \mapsto \mathbb E(Y, X).
+	\end{equation}
+	We introduce some notations concerning $\mathbb E$.
+	\begin{itemize}
+		\item For any morphism $f \in \mathsf{Mor}(\mathcal{C})$, we denote the natural transformation $f^\ast := \mathbb E(f, -)$ and $g_\ast := \mathbb E(-, g)$. Note that the bifunctoriality implies $f_\ast g^\ast = g^\ast f_\ast$.
+		\item A morphism of extension elements $\delta \to \delta'$ is a pair of morphisms $(\alpha; \gamma)$ such that $\alpha_\ast \delta = \gamma^\ast \delta'$.
+		\item For any $\delta \in \mathbb E(Z,X)$ and $\delta' \in \mathbb E(Z', X')$, we denote $\delta \oplus \delta' \in \mathbb E(Z \oplus Z', X \oplus X')$ as the image of $(\delta, \delta') \in \mathbb E(Z,X) \oplus \mathbb E(Z',X')$ under the inclusion $\mathbb E(Z,X) \oplus \mathbb E(Z',X') \hookrightarrow \mathbb E(Z \oplus Z', X \oplus X')$.
+	\end{itemize}
+
+	We also fix $\mathfrak s$ as a collection of ``mappings'' sending each $\delta \in \mathbb E(Z,X)$ to an equivalence class of sequences $[X \xrightarrow{f} Y \xrightarrow{g} Z]$. Here two sequences $X \xrightarrow{f} Y \xrightarrow{g} Z$ and $X \xrightarrow{f'} Y' \xrightarrow{g'} Z$ are equivalent if there exists an isomorphism $\varphi: Y \to Y'$ such that the following diagram commutes:
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsNixbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJYIl0sWzIsMSwiWiJdLFsxLDEsIlknIl0sWzAsMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw0LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDEsImYiXSxbMSwyLCJnIl0sWzMsNSwiZiciXSxbNSw0LCJnJyJdLFsxLDUsIlxcdmFycGhpICJdLFsxLDUsIlxcY29uZyIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \\
+	X \& {Y'} \& Z
+	\arrow["f", from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["g", from=1-2, to=1-3]
+	\arrow["{\varphi }", from=1-2, to=2-2]
+	\arrow["\cong"', draw=none, from=1-2, to=2-2]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["{f'}", from=2-1, to=2-2]
+	\arrow["{g'}", from=2-2, to=2-3]
+\end{tikzcd}.
+	\end{equation}
+	
+\end{notation}
+
+We begin with the axiom of extriangulated categories. An extriangulated category is characterised by a triple $(\mathcal{C}, \mathbb E, \mathfrak s)$ satisfying a list of axioms, including ET1, ET2, ET3 (ET3$^{op}$), ET4 (ET4$^{op}$).
+
+\begin{axiom}[ET1]
+	$\mathcal{C}$ is an additive cateogry, and $\mathbb E: \mathcal{C}^{op} \times \mathcal{C} \to \text{Ab}$ is an additive bifunctor.
+\end{axiom}
+
+\begin{axiom}[ET2]
+	$\mathfrak s$ is an additive realisation, which satisfies the following conditions.
+	\begin{itemize}
+		\item (Additive). $\delta (0) = [X \xrightarrow{\binom 10} X \oplus Y \xrightarrow{(0,1)} Y]$. For any $\delta_1, \delta_2$, $\mathfrak s(\delta_1 \oplus \delta_2) = \mathfrak s(\delta_1) \oplus \mathfrak s(\delta_2)$, explicitly,
+		\begin{equation}
+			[X_1 \xrightarrow{f_1} Y_1 \xrightarrow{g_1} Z_1] \oplus [X_2 \xrightarrow{f_2} Y_2 \xrightarrow{g_2} Z_2] = [X_1 \oplus X_2 \xrightarrow{\binom{f_1 \ 0 \ }{\ 0 \ f_2}} Y_1 \oplus Y_2 \xrightarrow{\binom{g_1 \ 0 \ }{\ 0 \ g_2}} Z_1 \oplus Z_2].
+		\end{equation}
+		\item (Realisation). For any morphism of extension elements $(\alpha; \gamma): \delta \to \delta'$, we take arbitrary representatives $X \xrightarrow{f} Y \xrightarrow{g} Z$ of $\mathfrak s(\delta)$ and $X' \xrightarrow{f'} Y' \xrightarrow{g'} Z'$ of $\mathfrak s(\delta')$. Then there exists $\beta: Y \to Y'$ such that the following diagram commutes:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsNixbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJYJyJdLFsyLDEsIlonIl0sWzEsMSwiWSciXSxbMCwxLCJmIl0sWzEsMiwiZyJdLFszLDUsImYnIl0sWzUsNCwiZyciXSxbMSw1LCJcXGJldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwzLCJcXGFscGhhIl0sWzIsNCwiXFxnYW1tYSJdXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \\
+	{X'} \& {Y'} \& {Z'}
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["\alpha", from=1-1, to=2-1]
+	\arrow["g", from=1-2, to=1-3]
+	\arrow["\beta", dashed, from=1-2, to=2-2]
+	\arrow["\gamma", from=1-3, to=2-3]
+	\arrow["{f'}", from=2-1, to=2-2]
+	\arrow["{g'}", from=2-2, to=2-3]
+\end{tikzcd}.
+		\end{equation}
+	\end{itemize}
+\end{axiom}
+
+\begin{notation}
+	For triple $(\mathcal{C}, \mathbb E, \mathfrak s)$ satisfying ET1 and ET2, we denote an element of $\mathfrak s(\delta)$ by $X \xrightarrow{f} Y \xrightarrow{g} Z \overset{\delta}{\dashrightarrow}$. We call it an \textit{$\mathbb E$-conflation}, $f$ an \textit{$\mathbb E$-inflation}, and $g$ an \textit{$\mathbb E$-deflation}. A morphism of $\mathbb E$-conflations is a triple $(\alpha; \beta; \gamma)$ such that $(\alpha; \beta)$ is a morphism of extension elements, and the following diagram commutes:
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJYJyJdLFsyLDEsIlonIl0sWzEsMSwiWSciXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMCwxLCJmIl0sWzEsMiwiZyJdLFszLDUsImYnIl0sWzUsNCwiZyciXSxbMSw1LCJcXGJldGEiXSxbMCwzLCJcXGFscGhhIl0sWzIsNCwiXFxnYW1tYSJdLFsyLDYsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw3LCJcXGRlbHRhJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDcsIihcXGFscGhhX1xcYXN0IFxcZGVsdGEgPSBcXGdhbW1hXlxcYXN0IFxcZGVsdGEnKSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	{X'} \& {Y'} \& {Z'} \& {\,}
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["\alpha", from=1-1, to=2-1]
+	\arrow["g", from=1-2, to=1-3]
+	\arrow["\beta", from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["\gamma", from=1-3, to=2-3]
+	\arrow["{(\alpha_\ast \delta = \gamma^\ast \delta')}", draw=none, from=1-4, to=2-4]
+	\arrow["{f'}", from=2-1, to=2-2]
+	\arrow["{g'}", from=2-2, to=2-3]
+	\arrow["{\delta'}", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+	\end{equation}
+\end{notation}
+
+\begin{axiom}[ET3]
+	For $\beta \circ f = f' \circ \alpha$ where $f$ and $f'$ are $\mathbb E$-inflations, there exists $\gamma$ making $(\alpha; \beta; \gamma)$ a morphism of $\mathbb E$-conflations.
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJYJyJdLFsyLDEsIlonIl0sWzEsMSwiWSciXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMCwxLCJmIl0sWzEsMiwiZyJdLFszLDUsImYnIl0sWzUsNCwiZyciXSxbMSw1LCJcXGJldGEiXSxbMCwzLCJcXGFscGhhIl0sWzIsNCwiXFxnYW1tYSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDYsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw3LCJcXGRlbHRhJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	{X'} \& {Y'} \& {Z'} \& {\,}
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["\alpha", from=1-1, to=2-1]
+	\arrow["g", from=1-2, to=1-3]
+	\arrow["\beta", from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["\gamma", dashed, from=1-3, to=2-3]
+	\arrow["{f'}", from=2-1, to=2-2]
+	\arrow["{g'}", from=2-2, to=2-3]
+	\arrow["{\delta'}", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+	\end{equation}
+\end{axiom}
+
+\begin{axiom}[ET3$^{\mathrm{op}}$]
+	For $\gamma \circ g = g' \circ \gamma$ where $g$ and $g'$ are $\mathbb E$-deflations, there exists $\alpha$ making $(\alpha; \beta; \gamma)$ a morphism of $\mathbb E$-conflations.
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJYJyJdLFsyLDEsIlonIl0sWzEsMSwiWSciXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMCwxLCJmIl0sWzEsMiwiZyJdLFszLDUsImYnIl0sWzUsNCwiZyciXSxbMSw1LCJcXGJldGEiXSxbMCwzLCJcXGFscGhhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNCwiXFxnYW1tYSJdLFsyLDYsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw3LCJcXGRlbHRhJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	{X'} \& {Y'} \& {Z'} \& {\,}
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["\alpha", dashed, from=1-1, to=2-1]
+	\arrow["g", from=1-2, to=1-3]
+	\arrow["\beta", from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["\gamma", from=1-3, to=2-3]
+	\arrow["{f'}", from=2-1, to=2-2]
+	\arrow["{g'}", from=2-2, to=2-3]
+	\arrow["{\delta'}", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+	\end{equation}
+\end{axiom}
+
+\begin{axiom}[ET4]
+	Let $A \xrightarrow{f}B \xrightarrow{g} D \overset \delta \dashrightarrow$ and $B \xrightarrow{u} C \xrightarrow{v} E \overset \varepsilon \dashrightarrow$ be $\mathbb E$-conflations. There exists a commutative diagram
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSJdLFsxLDAsIkIiXSxbMiwwLCJEIl0sWzAsMSwiQSJdLFsxLDEsIkMiXSxbMSwyLCJFIl0sWzIsMiwiRSJdLFsyLDEsIkYiXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbMCwxLCJmIl0sWzEsMiwiZyJdLFswLDMsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsNCwibSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDQsInUiLDJdLFs0LDUsInYiLDJdLFs1LDYsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNywiaCIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDcsInciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNyw2LCJxIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsOCwiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDksIlxcdGhldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwxMCwiXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDExLCJcXGV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& B \& D \& {\,} \\
+	A \& C \& F \& {\,} \\
+	\& E \& E \\
+	\& {\,} \& {\,}
+	\arrow["f", from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["g", from=1-2, to=1-3]
+	\arrow["u"', from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["w", dashed, from=1-3, to=2-3]
+	\arrow["m"', dashed, from=2-1, to=2-2]
+	\arrow["h"', dashed, from=2-2, to=2-3]
+	\arrow["v"', from=2-2, to=3-2]
+	\arrow["\theta", dashed, from=2-3, to=2-4]
+	\arrow["q", dashed, from=2-3, to=3-3]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["{\varepsilon }", dashed, from=3-2, to=4-2]
+	\arrow["\eta", dashed, from=3-3, to=4-3]
+\end{tikzcd}
+	\end{equation}
+	such that $(1_A;u;w)$, $(f;1_C;q)$ and $(g;h;1_E)$ are morphisms of $\mathbb E$-conflations.
+\end{axiom}
+
+\begin{axiom}[ET4$^{\mathrm{op}}$]
+	Let $A \xrightarrow{m} C \xrightarrow{h} F \overset \theta \dashrightarrow$ and $F \xrightarrow{w} F \xrightarrow{q} E \overset \eta \dashrightarrow$ be $\mathbb E$-conflations. There exists a commutative diagram
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSJdLFsxLDAsIkIiXSxbMiwwLCJEIl0sWzAsMSwiQSJdLFsxLDEsIkMiXSxbMSwyLCJFIl0sWzIsMiwiRSJdLFsyLDEsIkYiXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbMCwxLCJmIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMiwiZyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDMsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsNCwibSIsMl0sWzEsNCwidSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDUsInYiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw2LCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDcsImgiLDJdLFsyLDcsInciXSxbNyw2LCJxIl0sWzIsOCwiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDksIlxcdGhldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwxMCwiXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDExLCJcXGV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& B \& D \& {\,} \\
+	A \& C \& F \& {\,} \\
+	\& E \& E \\
+	\& {\,} \& {\,}
+	\arrow["f", dashed, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["g", dashed, from=1-2, to=1-3]
+	\arrow["u"', dashed, from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["w", from=1-3, to=2-3]
+	\arrow["m"', from=2-1, to=2-2]
+	\arrow["h"', from=2-2, to=2-3]
+	\arrow["v"', dashed, from=2-2, to=3-2]
+	\arrow["\theta", dashed, from=2-3, to=2-4]
+	\arrow["q", from=2-3, to=3-3]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["{\varepsilon }", dashed, from=3-2, to=4-2]
+	\arrow["\eta", dashed, from=3-3, to=4-3]
+\end{tikzcd}
+	\end{equation}
+	such that $(1_A;u;w)$, $(f;1_C;q)$ and $(g;h;1_E)$ are morphisms of $\mathbb E$-conflations.
+\end{axiom}
+
+
+\subsection{Corollaries of Six-term Long Exact Sequences}
+
+\begin{lemma}[\textbf{Corollary 3.12.} \cite{nakaokaExtriangulatedCategoriesHovey2019}]\label{lem:six-term-long-exact-sequences}
+    For any conflation $X \xrightarrow{f} Y \xrightarrow{g} Z \overset{\delta}{\dashrightarrow}$, one has the following two exact sequences of functors:
+    \begin{equation}\label{eq:les-1}
+        \mathcal{C}(-, X) \xrightarrow{\mathcal{C}(-, f)} \mathcal{C}(-, Y) \xrightarrow{\mathcal{C}(-, g)} \mathcal{C}(-, Z) \xrightarrow{\delta_\sharp} \mathbb E(-, X) \xrightarrow{f_\ast} \mathbb E(-, Y) \xrightarrow{g_\ast} \mathbb E(-, Z),
+    \end{equation}
+    \begin{equation}\label{eq:les-2}
+        \mathcal{C}(Z, -) \xrightarrow{\mathcal{C}(g, -)} \mathcal{C}(Y, -) \xrightarrow{\mathcal{C}(f, -)} \mathcal{C}(X, -) \xrightarrow{\delta^\sharp} \mathbb E(Z, -) \xrightarrow{g^\ast} \mathbb E(Y, -) \xrightarrow{f^\ast} \mathbb E(X, -).
+    \end{equation}
+	Here $\delta_\sharp : \mathcal{C}(-, Z) \to \mathbb E(-, X)$ is a natural transformation sending $T \xrightarrow{\varphi} Z$ to $\varphi^\ast \delta$, and $\delta^\sharp : \mathcal{C}(X, -) \to \mathbb E(Z, -)$ is a natural transformation sending $X \xrightarrow{\psi} T$ to $\psi_\ast \delta$.
+\end{lemma}
+
+\begin{corollary}\label{cor:five-lemma}
+    We show some corollaries of six-term long exact sequences.
+    \begin{enumerate}
+		\item (\textbf{Corollary 3.5.} \cite{nakaokaExtriangulatedCategoriesHovey2019}). Let $X \xrightarrow{f} Y \xrightarrow{g} Z \overset \delta \dashrightarrow$ be an $\mathbb E$-conflation. Then $f$ is a section if and only if $g$ is a retraction if and only if $\delta = 0$.
+        \item A monic deflation is a section, and an epic inflation is an retraction.
+        \item (\textbf{Corollary 3.6.} \cite{nakaokaExtriangulatedCategoriesHovey2019}). Let $(\alpha;\beta;\gamma)$ be a morphism of $\mathbb E$-conflations. If two of $\alpha, \beta, \gamma$ are isomorphisms, so is the third one.
+        \item Any $\mathbb E$-inflation ($\mathbb E$-deflation) fits into an $\mathbb E$-conflation unique up to isomorphisms.
+    \end{enumerate}
+	We only show the second statement here.
+	\begin{proof}
+		We consider an $\mathbb E$-conflation $X \xrightarrow{f} Y \xrightarrow{g} Z \overset \delta \dashrightarrow$ where $g$ is monic. By \cref{eq:les-1}, $\mathcal{C}(-,f)$ is zero. Hence, $f = 0$. By \cref{eq:les-2}, $\mathcal{C}(g,-)$ is epic. Thus, for the identity morphism $1_Y$, there exists $h: Y \to X$ such that $hf = 1_Y$. Therefore, $f$ is a section. The dual argument is analogous.
+	\end{proof}
+\end{corollary}
+
+Thanks to \textit{2.} in \cref{cor:five-lemma}, we obtain two strict forms of ET4 axiom.
+
+\begin{lemma}\label{lem:strict-et4}
+    Let $A \xrightarrow{f} B \xrightarrow{g} D \overset{\delta}{\dashrightarrow}$, $B \xrightarrow{u} C \xrightarrow{v} E \overset{\varepsilon}{\dashrightarrow}$, and $A \xrightarrow{m} C \xrightarrow{h} F \overset{\theta}{\dashrightarrow}$ be conflations. Then there exists a commutative diagram
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSJdLFsxLDAsIkIiXSxbMiwwLCJEIl0sWzAsMSwiQSJdLFsxLDEsIkMiXSxbMSwyLCJFIl0sWzIsMiwiRSJdLFsyLDEsIkYiXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbMCwxLCJmIl0sWzEsMiwiZyJdLFswLDMsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsNCwibSIsMl0sWzEsNCwidSIsMl0sWzQsNSwidiIsMl0sWzUsNiwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw3LCJoIiwyXSxbMiw3LCJ3IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsNiwicSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDgsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNyw5LCJcXHRoZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMTAsIlxcdmFyZXBzaWxvbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwxMSwiXFxldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& B \& D \& {\,} \\
+	A \& C \& F \& {\,} \\
+	\& E \& E \\
+	\& {\,} \& {\,}
+	\arrow["f", from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["g", from=1-2, to=1-3]
+	\arrow["u"', from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["w", dashed, from=1-3, to=2-3]
+	\arrow["m"', from=2-1, to=2-2]
+	\arrow["h"', from=2-2, to=2-3]
+	\arrow["v"', from=2-2, to=3-2]
+	\arrow["\theta", dashed, from=2-3, to=2-4]
+	\arrow["q", dashed, from=2-3, to=3-3]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["{\varepsilon }", dashed, from=3-2, to=4-2]
+	\arrow["\eta", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+	\end{equation}
+    which satisfy the condition in ET4 axiom.
+    \begin{proof}
+        We apply ET4-axiom to conflations realising from $\delta$ and $\varepsilon$. By \textit{4.} in \cref{cor:five-lemma}, $m = uf$ fits into a conflation of the form
+        \[
+            A \xrightarrow{m} C \xrightarrow{\varphi ^{-1} h} F' \overset{\varphi ^\ast \theta}{\dashrightarrow}.
+        \]
+        Here $\varphi: F' \to F$ is an isomorphism.
+    \end{proof}
+\end{lemma}
+
+There is another strict form of ET4 axiom.
+
+\begin{lemma}\label{lem:strict-et4-2}
+    Let $A \xrightarrow{f} B \xrightarrow{g} D \overset{\delta}{\dashrightarrow}$, $D \xrightarrow{w} F \xrightarrow{q} E \overset{\eta}{\dashrightarrow}$, and $A \xrightarrow{m} C \xrightarrow{h} F \overset{\theta}{\dashrightarrow}$ be conflations. Then there exists a commutative diagram
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSJdLFsxLDAsIkIiXSxbMiwwLCJEIl0sWzAsMSwiQSJdLFsxLDEsIkMiXSxbMSwyLCJFIl0sWzIsMiwiRSJdLFsyLDEsIkYiXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbMCwxLCJmIl0sWzEsMiwiZyJdLFswLDMsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsNCwibSIsMl0sWzEsNCwidSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDUsInYiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw2LCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDcsImgiLDJdLFsyLDcsInciXSxbNyw2LCJxIl0sWzIsOCwiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDksIlxcdGhldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwxMCwiXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDExLCJcXGV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+	A & B & D & {\,} \\
+	A & C & F & {\,} \\
+	& E & E \\
+	& {\,} & {\,}
+	\arrow["f", from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["g", from=1-2, to=1-3]
+	\arrow["u"', dashed, from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["w", from=1-3, to=2-3]
+	\arrow["m"', from=2-1, to=2-2]
+	\arrow["h"', from=2-2, to=2-3]
+	\arrow["v"', dashed, from=2-2, to=3-2]
+	\arrow["\theta", dashed, from=2-3, to=2-4]
+	\arrow["q", from=2-3, to=3-3]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["{\varepsilon }", dashed, from=3-2, to=4-2]
+	\arrow["\eta", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+\end{equation}
+        \begin{proof}
+            Note that the deflation $v = q h$ is uniquely determined. We take arbitrary realisation of $\varepsilon$. We apply \cref{lem:strict-et4} for realisations of $\varepsilon$, $\theta$ and $\eta$, there is an conflation $A \xrightarrow{\varphi m} B' \xrightarrow{g\varepsilon^{-1}} D \overset{\delta}{\dashrightarrow}$. Here $\delta = w^\ast \theta$ is uniquely determined, and $\varphi: B' \to B$ is an isomorphism.
+        \end{proof}
+\end{lemma}
+
+\subsection{Pullbacks of Two \texorpdfstring{$\mathbb E$}{PDFstring}-Deflations}\label{sec:pullback-two-deflations}
+
+ET4 shows that pulling back (pushing out) an inflation along a deflation yields four merged conflations. There is also a result for pushing out (pulling back) two inflations (deflations) along each other.
+
+\begin{proposition}[\textbf{Proposition 3.15.} \cite{nakaokaExtriangulatedCategoriesHovey2019}]\label{prop:pb}
+    Let $A_1 \xrightarrow{f_1} B_1 \xrightarrow{g_1} C \overset{\delta_1}{\dashrightarrow}$ and $A_2 \xrightarrow{f_2} B_2 \xrightarrow{g_2} C \overset{\delta_2}{\dashrightarrow}$ be two conflations. Then there exists a commutative diagram
+    \begin{equation}\label{eq:pb}
+% https://q.uiver.app/#q=WzAsMTIsWzAsMiwiQV8xIl0sWzEsMiwiQl8xIl0sWzIsMiwiQyJdLFsyLDEsIkJfMiJdLFsyLDAsIkFfMiJdLFsxLDAsIkFfMiJdLFswLDEsIkFfMSJdLFsxLDEsIkUiXSxbMywyLCJcXCwiXSxbMiwzLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMCwxLCJmXzEiXSxbMSwyLCJnXzEiXSxbMiw4LCJcXGRlbHRhXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCwzLCJmXzIiXSxbMywyLCJnXzIiXSxbMiw5LCJcXGRlbHRhXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw3LCJlXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNywzLCJwXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw0LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNywiZV8yIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsMSwicF8xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsMTAsIihnXzIpXlxcYXN0IFxcZGVsdGFfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDExLCIoZ18xKV5cXGFzdCBcXGRlbHRhXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	\& {A_2} \& {A_2} \\
+	{A_1} \& E \& {B_2} \& {\,} \\
+	{A_1} \& {B_1} \& C \& {\,} \\
+	\& {\,} \& {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["{e_2}", dashed, from=1-2, to=2-2]
+	\arrow["{f_2}", from=1-3, to=2-3]
+	\arrow["{e_1}", dashed, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{p_2}", dashed, from=2-2, to=2-3]
+	\arrow["{p_1}", dashed, from=2-2, to=3-2]
+	\arrow["{(g_2)^\ast \delta_1}", dashed, from=2-3, to=2-4]
+	\arrow["{g_2}", from=2-3, to=3-3]
+	\arrow["{f_1}", from=3-1, to=3-2]
+	\arrow["{g_1}", from=3-2, to=3-3]
+	\arrow["{(g_1)^\ast \delta_2}", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_1}", dashed, from=3-3, to=3-4]
+	\arrow["{\delta_2}", dashed, from=3-3, to=4-3]
+\end{tikzcd},
+	 \end{equation}
+		such that $(1_{A_1};p_2;g_2)$, $(1_{A_2};p_1;g_1)$ are morphisms of $\mathbb{E}$-conflations, and $(e_1)_\ast \delta_1 + (e_2)_\ast \delta_2 = 0$.
+\end{proposition}
+
+\begin{proposition}\label{prop:pb-1}
+	We may choose $A_1 \xrightarrow{e_1} E \xrightarrow{p_2} B_2 \overset {(g_2)^\ast \delta_1}\dashrightarrow$ in \cref{prop:pb} to be any conflation realised from $(g_2)^\ast \delta_1$.
+	\begin{proof}
+		The proof is similar to that of \cref{lem:strict-et4-2}, by \textit{2.} in \cref{cor:five-lemma}.
+	\end{proof}
+\end{proposition}
+
+\begin{remark}
+    We denote $e_1 : A_1 \to E$ and $e_2: A_2 \to E$ in a general diagram \cref{eq:pb} consisting of four conflations, three commutative squares. There is no $e_{1\ast} \delta_1 + e_{2\ast} \delta_2 = 0$ in general. For instance, consider the following diagram in a triangulated category with shift functor $\Sigma$:
+    \begin{equation}
+        % https://q.uiver.app/#q=WzAsMTIsWzAsMiwiWCJdLFsxLDIsIjAiXSxbMiwyLCJcXFNpZ21hIFgiXSxbMiwxLCIwIl0sWzIsMCwiWCJdLFsxLDAsIlgiXSxbMCwxLCJYIl0sWzEsMSwiWCJdLFszLDIsIlxcLCJdLFsyLDMsIlxcLCJdLFszLDEsIlxcLCJdLFsxLDMsIlxcLCJdLFswLDFdLFsxLDJdLFs0LDNdLFszLDJdLFsyLDksIjFfe1xcU2lnbWEgWH0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw3LCJcXHBzaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDMsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDQsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw3LCJcXHZhcnBoaSAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNywxLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywxMCwiMCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDExLCIwIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsOCwiMV97XFxTaWdtYSBYfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}
+	& X & X \\
+	X & X & 0 & {\,} \\
+	X & 0 & {\Sigma X} & {\,} \\
+	& {\,} & {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["{\varphi }", dashed, from=1-2, to=2-2]
+	\arrow[from=1-3, to=2-3]
+	\arrow["\psi", dashed, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow[dashed, from=2-2, to=2-3]
+	\arrow[dashed, from=2-2, to=3-2]
+	\arrow["0", dashed, from=2-3, to=2-4]
+	\arrow[from=2-3, to=3-3]
+	\arrow[from=3-1, to=3-2]
+	\arrow[from=3-2, to=3-3]
+	\arrow["0", dashed, from=3-2, to=4-2]
+	\arrow["{1_{\Sigma X}}", dashed, from=3-3, to=3-4]
+	\arrow["{1_{\Sigma X}}", dashed, from=3-3, to=4-3]
+\end{tikzcd}
+    \end{equation}
+    $\varphi$ and $\psi$ are chosen to be arbitrary isomorphisms. We do not have $\varphi _\ast (1_{\Sigma X}) + \psi _\ast (1_{\Sigma X}) =0$ in general.
+\end{remark}
+
+\begin{proposition}[\textbf{Proposition 3.17.} \cite{nakaokaExtriangulatedCategoriesHovey2019}]\label{prop:pb-2}
+    Given three conflations (in solid arrows), there is a way to complete the diagram
+\begin{equation}\label{eq:pb-2}
+   % https://q.uiver.app/#q=WzAsMTIsWzAsMiwiQV8xIl0sWzEsMiwiQl8xIl0sWzIsMiwiQyJdLFsyLDEsIkJfMiJdLFsyLDAsIkFfMiJdLFsxLDAsIkFfMiJdLFswLDEsIkFfMSJdLFsxLDEsIkUiXSxbMywyLCJcXCwiXSxbMiwzLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMCwxLCJmXzEiXSxbMSwyLCJnXzEiXSxbMiw4LCJcXGRlbHRhXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCwzLCJmXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywyLCJnXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw5LCJcXGRlbHRhXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw3LCJlXzEiXSxbNywzLCJwXzIiXSxbNSw0LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNywiZV8yIl0sWzcsMSwicF8xIl0sWzMsMTAsIlxcZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMTEsIlxcdmFyZXBzaWxvbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	\& {A_2} \& {A_2} \\
+	{A_1} \& E \& {B_2} \& {\,} \\
+	{A_1} \& {B_1} \& C \& {\,} \\
+	\& {\,} \& {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["{e_2}", from=1-2, to=2-2]
+	\arrow["{f_2}", dashed, from=1-3, to=2-3]
+	\arrow["{e_1}", from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{p_2}", from=2-2, to=2-3]
+	\arrow["{p_1}", from=2-2, to=3-2]
+	\arrow["\eta", dashed, from=2-3, to=2-4]
+	\arrow["{g_2}", dashed, from=2-3, to=3-3]
+	\arrow["{f_1}", from=3-1, to=3-2]
+	\arrow["{g_1}", from=3-2, to=3-3]
+	\arrow["{\varepsilon }", dashed, from=3-2, to=4-2]
+	\arrow["{\delta_1}", dashed, from=3-3, to=3-4]
+	\arrow["{\delta_2}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+\end{equation}
+    which satisfy the condition of \cref{prop:po}.
+\end{proposition}
+
+\subsection{Pushouts of Two \texorpdfstring{$\mathbb E$}{PDFstring}-Inflations}
+
+We revisit the dual statements \cref{sec:pullback-two-deflations}.
+
+\begin{proposition}[Dual to \cref{prop:pb}]\label{prop:po}
+	Let $A \xrightarrow{f_1} B_1 \xrightarrow{g_1} C_1 \overset{\delta_1}{\dashrightarrow}$ and $A \xrightarrow{f_2} B_2 \xrightarrow{g_2} C_2 \overset{\delta_2}{\dashrightarrow}$ be two conflations. Then there exists a commutative diagram
+	\begin{equation}\label{eq:po}
+		% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSJdLFsxLDAsIkJfMiJdLFsyLDAsIkNfMiJdLFswLDEsIkJfMSJdLFswLDIsIkNfMSJdLFswLDMsIlxcLCJdLFszLDAsIlxcLCJdLFsyLDEsIkNfMiJdLFsxLDIsIkNfMSJdLFsxLDMsIlxcLCJdLFszLDEsIlxcLCJdLFsxLDEsIkUiXSxbMCwzLCJmXzEiXSxbMyw0LCJnXzEiXSxbNCw1LCJcXHZhcmVwc2lsb24gXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxLCJmXzIiXSxbMSwyLCJnXzIiXSxbMiw2LCJcXHZhcmVwc2lsb24gXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw3LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDgsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMTEsImVfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSw3LCJwXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwxMSwiZV8yIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzExLDgsInBfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDEwLCIoZl8xKV9cXGFzdCBcXHZhcmVwc2lsb24gXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCw5LCIoZl8yKV9cXGFzdCBcXHZhcmVwc2lsb24gXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& {B_2} \& {C_2} \& {\,} \\
+	{B_1} \& E \& {C_2} \& {\,} \\
+	{C_1} \& {C_1} \\
+	{\,} \& {\,}
+	\arrow["{f_2}", from=1-1, to=1-2]
+	\arrow["{f_1}", from=1-1, to=2-1]
+	\arrow["{g_2}", from=1-2, to=1-3]
+	\arrow["{e_2}", dashed, from=1-2, to=2-2]
+	\arrow["{\varepsilon _2}", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["{e_1}", dashed, from=2-1, to=2-2]
+	\arrow["{g_1}", from=2-1, to=3-1]
+	\arrow["{p_2}", dashed, from=2-2, to=2-3]
+	\arrow["{p_1}", dashed, from=2-2, to=3-2]
+	\arrow["{(f_1)_\ast \varepsilon _2}", dashed, from=2-3, to=2-4]
+	\arrow[equals, from=3-1, to=3-2]
+	\arrow["{\varepsilon _1}", dashed, from=3-1, to=4-1]
+	\arrow["{(f_2)_\ast \varepsilon _1}", dashed, from=3-2, to=4-2]
+\end{tikzcd},
+	\end{equation}
+	such that $(f_1;1_{C_2};p_2)$, $(f_2;1_{C_1};p_1)$ are morphisms of $\mathbb{E}$-conflations, and $(f_1)_\ast \varepsilon _2 + (f_2)_\ast \varepsilon _1 = 0$.
+\end{proposition}
+
+\begin{proposition}[Dual to \cref{prop:pb-1}]\label{prop:po-1}
+	We may choose $B_1 \xrightarrow{e_1} E \xrightarrow{p_2} C_2 \overset {(f_1)_\ast \varepsilon _2}\dashrightarrow$ in \cref{prop:po} to be any conflation realised from $(f_1)_\ast \varepsilon _2$.
+\end{proposition}
+
+\begin{proposition}[Dual to \cref{prop:pb-2}]\label{prop:po-2}
+	Given three conflations (in solid arrows), there is a way to complete the diagram
+	\begin{equation}\label{eq:po-2}
+		% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSJdLFsxLDAsIkJfMiJdLFsyLDAsIkNfMiJdLFswLDEsIkJfMSJdLFswLDIsIkNfMSJdLFswLDMsIlxcLCJdLFszLDAsIlxcLCJdLFsyLDEsIkNfMiJdLFsxLDIsIkNfMSJdLFsxLDMsIlxcLCJdLFszLDEsIlxcLCJdLFsxLDEsIkUiXSxbMCwzLCJmXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMyw0LCJnXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw1LCJcXHZhcmVwc2lsb24gXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxLCJmXzIiXSxbMSwyLCJnXzIiXSxbMiw2LCJcXHZhcmVwc2lsb24gXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw3LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDgsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMTEsImVfMSJdLFsxMSw3LCJwXzIiXSxbMSwxMSwiZV8yIl0sWzExLDgsInBfMSJdLFs3LDEwLCJcXGV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDksIlxcdmFyZXBzaWxvbiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& {B_2} \& {C_2} \& {\,} \\
+	{B_1} \& E \& {C_2} \& {\,} \\
+	{C_1} \& {C_1} \\
+	{\,} \& {\,}
+	\arrow["{f_2}", from=1-1, to=1-2]
+	\arrow["{f_1}", dashed, from=1-1, to=2-1]
+	\arrow["{g_2}", from=1-2, to=1-3]
+	\arrow["{e_2}", from=1-2, to=2-2]
+	\arrow["{\varepsilon _2}", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["{e_1}", from=2-1, to=2-2]
+	\arrow["{g_1}", dashed, from=2-1, to=3-1]
+	\arrow["{p_2}", from=2-2, to=2-3]
+	\arrow["{p_1}", from=2-2, to=3-2]
+	\arrow["\eta", dashed, from=2-3, to=2-4]
+	\arrow[equals, from=3-1, to=3-2]
+	\arrow["{\varepsilon _1}", dashed, from=3-1, to=4-1]
+	\arrow["\varepsilon", dashed, from=3-2, to=4-2]
+\end{tikzcd},
+	\end{equation}
+	which satisfy the condition of \cref{prop:po}.
+\end{proposition}
+

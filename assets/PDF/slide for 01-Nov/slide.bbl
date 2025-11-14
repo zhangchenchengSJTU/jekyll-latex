@@ -1,0 +1,63 @@
+\begin{thebibliography}{KLW24}
+
+\bibitem[BN93]{CM_1993__86_2_209_0}
+Marcel B\"okstedt and Amnon Neeman.
+\newblock Homotopy limits in triangulated categories.
+\newblock {\em Compositio Mathematica}, 86(2):209--234, 1993.
+
+\bibitem[B{\"u}h10]{buhlerExactCategories2010a}
+Theo B{\"u}hler.
+\newblock Exact categories.
+\newblock {\em Expositiones Mathematicae}, 28(1):1--69, January 2010.
+
+\bibitem[He19]{heExtensionsCovariantlyFinite2019}
+Jing He.
+\newblock Extensions of covariantly finite subcategories revisited.
+\newblock {\em Czechoslovak Mathematical Journal}, 69(2):403--415, June 2019.
+
+\bibitem[hp15]{209434}
+Yann~Palu (https://mathoverflow.net/users/75065/yann palu).
+\newblock Extension-closed subcategories of triangulated categories as almost exact categories.
+\newblock MathOverflow, 2015.
+\newblock URL:https://mathoverflow.net/q/209434 (version: 2015-06-16).
+
+\bibitem[HXZ23]{HeXieZhou+2023}
+Jing He, Chenbei Xie, and Panyue Zhou.
+\newblock Homotopy cartesian squares in extriangulated categories.
+\newblock {\em Open Mathematics}, 21(1):20220570, 2023.
+
+\bibitem[IY08]{iyamaMutationTriangulatedCategories2008a}
+Osamu Iyama and Yuji Yoshino.
+\newblock Mutation in triangulated categories and rigid {{Cohen}}--{{Macaulay}} modules.
+\newblock {\em Inventiones mathematicae}, 172(1):117--168, April 2008.
+
+\bibitem[Kla23]{klapproth2023nextensionclosedsubcategoriesnexangulated}
+Carlo Klapproth.
+\newblock $n$-extension closed subcategories of $n$-exangulated categories, 2023.
+
+\bibitem[KLW24]{Kong02072024}
+Xiaoxue Kong, Zengqiang Lin, and Minxiong Wang.
+\newblock The (et4) axiom for extriangulated categories.
+\newblock {\em Communications in Algebra}, 52(7):2724--2736, 2024.
+
+\bibitem[LN19]{LIU201996}
+Yu~Liu and Hiroyuki Nakaoka.
+\newblock Hearts of twin cotorsion pairs on extriangulated categories.
+\newblock {\em Journal of Algebra}, 528:96--149, 2019.
+
+\bibitem[LZ16]{Lin2016HomotopyCD}
+Zengqiang Lin and Yani Zheng.
+\newblock Homotopy cartesian diagrams in \$n\$-angulated categories.
+\newblock {\em Homology, Homotopy and Applications}, 2016.
+
+\bibitem[Nak10]{Nakaoka2010FrobeniusCO}
+Hiroyuki Nakaoka.
+\newblock Frobenius condition on a pretriangulated category, and triangulation on the associated stable category.
+\newblock {\em arXiv: Category Theory}, 2010.
+
+\bibitem[NP19]{nakaokaExtriangulatedCategoriesHovey2019}
+Hiroyuki Nakaoka and Yann Palu.
+\newblock Extriangulated categories, {{Hovey}} twin cotorsion pairs and model structures.
+\newblock {\em Cahiers de topologie et g{\'e}om{\'e}trie diff{\'e}rentielle cat{\'e}goriques}, LX(2):117--193, 2019.
+
+\end{thebibliography}

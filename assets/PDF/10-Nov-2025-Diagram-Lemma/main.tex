@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[a4paper, left=0.5in, right=0.5in, top=0.5in, bottom=0.5in]{geometry} % Page margins
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsthm, amsmath, amssymb, mathtools}  % Required for math typesetting
+\usepackage{tikz-cd}
+\usepackage{quiver} % Required for commutative diagrams
+
+\usepackage{extarrows} % For long arrows with text above and below
+
+\usepackage[all, cmtip, 2cell]{xy}
+\UseTwocells
+
+\usepackage[colorlinks]{hyperref} % For hyperlinks in the PDF
+\usepackage[nameinlink]{cleveref} % For referencing multiple labels
+
+\setlength\parindent{0pt} % No paragraph indentation
+
+\title{Diagrams Lemmas in Extriangulated Categories}
+\author{Chencheng Zhang}
+\date{\today}
+
+
+% Define theorem styles and environments
+\theoremstyle{plain}  % for theorems, etc. (italic body)
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{axiom}{Axiom}
+\newtheorem*{condition}{Condition}
+
+\theoremstyle{definition}  % for definitions, examples (upright body)
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{problem}[theorem]{Problem}
+
+\newtheorem*{notation}{Notation}
+
+\theoremstyle{remark}  % for remarks etc. (upright, less emphasis)
+\newtheorem*{remark}{Remark}
+\newtheorem*{note}{Note}
+
+\numberwithin{equation}{subsection}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\begin{abstract}
+	$\varnothing$.
+\end{abstract}
+
+\include{Sections/Preliminaries}
+
+\include{Sections/HomotopicSquares}
+
+\include{Sections/DiagramLemma}
+
+\include{Sections/SnakeLemma}
+
+
+\newpage 
+\bibliographystyle{alphaurl}
+\bibliography{ref}
+
+
+\end{document}

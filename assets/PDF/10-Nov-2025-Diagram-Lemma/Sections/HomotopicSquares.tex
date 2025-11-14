@@ -1,0 +1,863 @@
+\newpage\section{Homotopic Square}
+
+\subsection{Homotopic squares and morphisms}
+
+The concept of homotopic squares originated from triangulated categories (\cite{CM_1993__86_2_209_0}), and was generalised to $n$-angulated (\cite{Lin2016HomotopyCD}) and extriangulated (\cite{heExtensionsCovariantlyFinite2019}) cases. This concept is a generalisation of both pullback-and-pushout squares in exact categories, and homotopic bicartesian squares in triangulated categories.
+
+\begin{definition}[\textbf{Definition 3.1.} \cite{heExtensionsCovariantlyFinite2019}]
+	A \textit{homotopic square} in an extriangulated category is a commutative diagram
+	\begin{equation}\label{eq:htsq}
+		% https://q.uiver.app/#q=WzAsNCxbMCwwLCJBXzEiXSxbMSwwLCJCXzEiXSxbMCwxLCJBXzIiXSxbMSwxLCJCXzIiXSxbMCwyLCJmIl0sWzAsMSwidSJdLFsxLDMsImciXSxbMiwzLCJ2Il1d
+\begin{tikzcd}
+	{A_1} & {B_1} \\
+	{A_2} & {B_2}
+	\arrow["u", from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["v", from=2-1, to=2-2]
+\end{tikzcd},
+	\end{equation}
+		such that $A_1 \xrightarrow{\binom fu} B_1 \oplus A_2 \xrightarrow{(v,-g)}B_2\dashrightarrow$ is a conflation.
+\end{definition}
+
+\begin{remark}
+	There are various of names of homotopic squares in literature, e.g. homotopy bicartesian squares, homotopy pullback squares, Mayer-Vietoris squares, or distinguished weak squares. We use the name \textit{homotopic square} for simplicity.
+\end{remark}
+
+\begin{notation}
+	We use $\boxed{\varepsilon}$ to denote the extension element associated with the homotopic square as in \cref{eq:htsq}. 
+	\begin{equation}\label{eq:htsq-notation}
+		% https://q.uiver.app/#q=WzAsOCxbMCwwLCJBXzEiXSxbMSwwLCJCXzEiXSxbMCwxLCJBXzIiXSxbMSwxLCJCXzIiXSxbMiwxLCJBXzEiXSxbMywxLCJCXzEgXFxvcGx1cyBBXzIiXSxbNCwxLCJCXzIiXSxbNSwxLCJcXCwiXSxbMCwyLCJmIl0sWzAsMSwidSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJ1bGxldCBob2xsb3cifX19XSxbMSwzLCJnIl0sWzIsMywidiJdLFswLDMsIlxcYm94ZWR7XFx2YXJlcHNpbG9uIH0iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw1LCJcXGJpbm9tIGZ7LXV9Il0sWzUsNiwiKHYsZykiXSxbNiw3LCJcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	{A_1} \& {B_1} \\
+	{A_2} \& {B_2} \& {A_1} \& {B_1 \oplus A_2} \& {B_2} \& {\,}
+	\arrow["u"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["{\boxed{\varepsilon }}"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["v", from=2-1, to=2-2]
+	\arrow["{\binom f{-u}}", from=2-3, to=2-4]
+	\arrow["{(v,g)}", from=2-4, to=2-5]
+	\arrow["{\varepsilon }", dashed, from=2-5, to=2-6]
+\end{tikzcd}.
+	\end{equation}
+	The circled arrow indicates the morphism with a negative sign in the $\mathbb E$-conflation. We omit the content in $\square$ and the circled arrow when there is no confusion.
+\end{notation}
+
+\begin{proposition}\label{prop:weak}
+	Homotopic squares are weak pullback and weak pushout squares.
+	\begin{proof}
+		To show \cref{eq:htsq-notation} is a weak pullback square, it is equivalent to show that $\binom f{-u}$ is a weak kernel of $(v,g)$. This is clear by long exact sequences \cref{eq:les-1}. The dual statement is similar.
+	\end{proof}
+\end{proposition}
+
+\begin{definition}
+	Say a morphism of $\mathbb E$-conflations $(\alpha; \beta; \gamma)$ is \textit{homotopic}, provided
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsMTMsWzAsMCwiWCJdLFsxLDAsIlkiXSxbMiwwLCJaIl0sWzMsMCwiXFwsIl0sWzAsMSwiQSJdLFsxLDIsIkIiXSxbMiwyLCJDIl0sWzMsMSwiXFwsIl0sWzIsMSwiWiJdLFszLDIsIlxcLCJdLFswLDIsIkEiXSxbMSwxLCJFIl0sWzQsMSwiXFxzY3JpcHRzdHlsZSAoXFxiZXRhID0gXFxiZXRhXzIgXFxjaXJjIFxcYmV0YV8xKSJdLFswLDEsImYiXSxbMSwyLCJnIl0sWzIsMywiXFxrYXBwYSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDQsIlxcYWxwaGEiLDJdLFs4LDcsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDEwLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMCw1LCJ1Il0sWzUsNiwidiJdLFs0LDExLCJzIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYnVsbGV0IGhvbGxvdyJ9fX1dLFs4LDIsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsNiwiXFxnYW1tYSJdLFs2LDksIlxcdmFyZXBzaWxvbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwxMSwiXFxiZXRhXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTEsNSwiXFxiZXRhXzIiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxMSwiXFxib3hlZHtcXHNjcmlwdHN0eWxlIHReXFxhc3QgXFxrYXBwYX0iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTEsOCwidCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJ1bGxldCBob2xsb3cifX19XSxbMTEsNiwiXFxib3hlZHtcXHNjcmlwdHN0eWxlIHNfXFxhc3QgXFx2YXJlcHNpbG9uIH0iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	A \& E \& Z \& {\,} \& {\scriptstyle (\beta = \beta_2 \circ \beta_1)} \\
+	A \& B \& C \& {\,}
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["\alpha"', from=1-1, to=2-1]
+	\arrow["{\boxed{\scriptstyle t^\ast \kappa}}"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["g", from=1-2, to=1-3]
+	\arrow["{\beta_1}", dashed, from=1-2, to=2-2]
+	\arrow["\kappa", dashed, from=1-3, to=1-4]
+	\arrow["s"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["t"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=2-2, to=2-3]
+	\arrow["{\beta_2}"', dashed, from=2-2, to=3-2]
+	\arrow["{\boxed{\scriptstyle s_\ast \varepsilon }}"{description}, draw=none, from=2-2, to=3-3]
+	\arrow[equals, from=2-3, to=1-3]
+	\arrow[dashed, from=2-3, to=2-4]
+	\arrow["\gamma", from=2-3, to=3-3]
+	\arrow["u", from=3-1, to=3-2]
+	\arrow["v", from=3-2, to=3-3]
+	\arrow["{\varepsilon }", dashed, from=3-3, to=3-4]
+\end{tikzcd}.
+\end{equation}
+\end{definition}
+
+We revisit some results in completing two morphisms into a homotopic square.
+
+\begin{lemma}[\textbf{Proposition 1.20.} \cite{LIU201996}]\label{lem:hs-f?1}
+	Let $(f; 1_Z)$ be a morphism of extensions. We can find a commutative diagram
+	\begin{equation}\label{eq:hs-f?1}
+% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJYJyJdLFsxLDEsIlknIl0sWzIsMSwiWiJdLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFsyLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMywiZiIsMl0sWzEsNCwiZyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDIsInYiXSxbMyw0LCJ1JyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJ1bGxldCBob2xsb3cifX19XSxbNCw1LCJ2JyJdLFsyLDYsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw3LCJmX1xcYXN0IFxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxLCJ1Il0sWzAsNCwiXFxib3hlZHtcXHNjcmlwdHN0eWxlIHYnXlxcYXN0IFxcZGVsdGF9IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	{X'} \& {Y'} \& Z \& {\,}
+	\arrow["u", from=1-1, to=1-2]
+	\arrow["f"', from=1-1, to=2-1]
+	\arrow["{\boxed{\scriptstyle v'^\ast \delta}}"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["v", from=1-2, to=1-3]
+	\arrow["g", dashed, from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["{u'}"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=2-1, to=2-2]
+	\arrow["{v'}", from=2-2, to=2-3]
+	\arrow["{f_\ast \delta}", dashed, from=2-3, to=2-4]
+\end{tikzcd},
+	\end{equation}
+	such that $(f;g;1_Z)$ is a homotopic morphism of $\mathbb E$-conflations.
+\end{lemma}
+
+\begin{lemma}[\textbf{Theorem 3.3.} in \cite{Kong02072024}]\label{lem:hs-?g1}
+	For any $\mathbb E$-deflations $v$ and $v'$ with $v'g = v$, one can find a commutative diagram
+	\begin{equation}\label{eq:hs-?g1}
+% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJYJyJdLFsxLDEsIlknIl0sWzIsMSwiWiJdLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFsyLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMywiZiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDQsImciXSxbMSwyLCJ2Il0sWzMsNCwidSciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJidWxsZXQgaG9sbG93In19fV0sWzQsNSwidiciXSxbMiw2LCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNywiZl9cXGFzdCBcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMSwidSJdLFswLDQsIlxcYm94ZWR7XFxzY3JpcHRzdHlsZSB2J15cXGFzdCBcXGRlbHRhfSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	{X'} \& {Y'} \& Z \& {\,}
+	\arrow["u", from=1-1, to=1-2]
+	\arrow["f"', dashed, from=1-1, to=2-1]
+	\arrow["{\boxed{\scriptstyle v'^\ast \delta}}"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["v", from=1-2, to=1-3]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["{u'}"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=2-1, to=2-2]
+	\arrow["{v'}", from=2-2, to=2-3]
+	\arrow["{f_\ast \delta}", dashed, from=2-3, to=2-4]
+\end{tikzcd},
+	\end{equation}
+	such that $(f;g;1_Z)$ is a homotopic morphism of $\mathbb E$-conflations.
+\end{lemma}
+
+\begin{lemma}[Dual to \cref{lem:hs-f?1}]\label{lem:hs-1?h}
+	Let $(1_X;h)$ be a morphism of extensions. We can find a commutative diagram
+	\begin{equation}\label{eq:hs-1?h}
+		% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJYIl0sWzEsMSwiWSciXSxbMiwxLCJaJyJdLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFsyLDUsImgiXSxbMSw0LCJnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMiwidiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJ1bGxldCBob2xsb3cifX19XSxbMyw0LCJ1JyJdLFs0LDUsInYnIl0sWzIsNiwiaF5cXGFzdCBcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNywiXFx2YXJlcHNpbG9uIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMSwidSJdLFsyLDQsIlxcYm94ZWR7XFxzY3JpcHRzdHlsZSB1X1xcYXN0IFxcZGVsdGF9IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMywiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	X \& {Y'} \& {Z'} \& {\,}
+	\arrow["u", from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["v"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=1-2, to=1-3]
+	\arrow["g", dashed, from=1-2, to=2-2]
+	\arrow["{h^\ast \varepsilon }", dashed, from=1-3, to=1-4]
+	\arrow["{\boxed{\scriptstyle u_\ast \delta}}"{description}, draw=none, from=1-3, to=2-2]
+	\arrow["h", from=1-3, to=2-3]
+	\arrow["{u'}", from=2-1, to=2-2]
+	\arrow["{v'}", from=2-2, to=2-3]
+	\arrow["\varepsilon", dashed, from=2-3, to=2-4]
+\end{tikzcd},
+		\end{equation}
+	such that $(1_X;g;h)$ is a homotopic morphism of $\mathbb E$-conflations.
+\end{lemma}
+
+\begin{lemma}[Dual to \cref{lem:hs-?g1}]\label{lem:hs-1g?}
+	For any $\mathbb E$-inflations $u$ and $u'$ with $u' f = u$, one can find a commutative diagram
+	\begin{equation}\label{eq:hs-1g?}
+		% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJYIl0sWzEsMSwiWSciXSxbMiwxLCJaJyJdLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFsyLDUsImgiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw0LCJnIl0sWzEsMiwidiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJ1bGxldCBob2xsb3cifX19XSxbMyw0LCJ1JyJdLFs0LDUsInYnIl0sWzIsNiwiaF5cXGFzdCBcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNywiXFx2YXJlcHNpbG9uIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMSwidSJdLFsyLDQsIlxcYm94ZWR7XFxzY3JpcHRzdHlsZSB1X1xcYXN0IFxcZGVsdGF9IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMywiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	X \& {Y'} \& {Z'} \& {\,}
+	\arrow["u", from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["v"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=1-2, to=1-3]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["{h^\ast \varepsilon }", dashed, from=1-3, to=1-4]
+	\arrow["{\boxed{\scriptstyle u_\ast \delta}}"{description}, draw=none, from=1-3, to=2-2]
+	\arrow["h", dashed, from=1-3, to=2-3]
+	\arrow["{u'}", from=2-1, to=2-2]
+	\arrow["{v'}", from=2-2, to=2-3]
+	\arrow["\varepsilon", dashed, from=2-3, to=2-4]
+\end{tikzcd},
+	\end{equation}
+	such that $(1_X;g;h)$ is a homootpic morphism of $\mathbb E$-conflations.
+\end{lemma}
+The above lemmas demonstrate that the completion of morphisms of $\mathbb E$-conflations in ET2, ET3, ET3$^{\mathrm{op}}$ can be made homotopic.
+
+\begin{theorem}\label{thm:hs-morphism}
+	Let $(\alpha;\beta;\gamma)$ be a morphism of $\mathbb E$-conflations. Then there are modifications $(\alpha';\beta;\gamma)$, $(\alpha;\beta';\gamma)$, and $(\alpha;\beta;\gamma')$ which are all homotopic morphisms of $\mathbb E$-conflations.
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMywwLCJcXCAiXSxbMywxLCJcXCAiXSxbMCwxLCJBIl0sWzEsMSwiQiJdLFsyLDEsIkMiXSxbMCwxLCJmIl0sWzEsMiwiZyJdLFsyLDMsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw2LCJ1Il0sWzYsNywidiJdLFs3LDQsIlxcdmFyZXBzaWxvbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw1LCJcXGFscGhhIl0sWzEsNiwiXFxiZXRhIl0sWzIsNywiXFxnYW1tYSJdLFszLDQsIihcXGFscGhhIF9cXGFzdCBcXGRlbHRhID0gXFxnYW1tYV5cXGFzdCBcXHZhcmVwc2lsb24gKSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\ } \\
+	A \& B \& C \& {\ }
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["\alpha", from=1-1, to=2-1]
+	\arrow["g", from=1-2, to=1-3]
+	\arrow["\beta", from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["\gamma", from=1-3, to=2-3]
+	\arrow["{(\alpha _\ast \delta = \gamma^\ast \varepsilon )}", draw=none, from=1-4, to=2-4]
+	\arrow["u", from=2-1, to=2-2]
+	\arrow["v", from=2-2, to=2-3]
+	\arrow["{\varepsilon }", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+	\end{equation}
+	\begin{proof}
+		We show the existence of $\beta'$. We realise $\alpha_\ast \delta = \gamma^\ast \varepsilon$ by any $\mathbb E$-conflation, and take $\beta_1$ and $\beta_2$ by \cref{lem:hs-f?1} and \cref{lem:hs-1?h} respectively.
+		\begin{equation}
+	% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFsxLDAsIlkiXSxbMiwwLCJaIl0sWzMsMCwiXFwgIl0sWzMsMiwiXFwgIl0sWzAsMiwiQSJdLFsxLDIsIkIiXSxbMiwyLCJDIl0sWzAsMSwiQSJdLFsyLDEsIloiXSxbMSwxLCJNIl0sWzMsMSwiXFwsIl0sWzAsMSwiZiJdLFsxLDIsImciXSxbMiwzLCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNiwidSJdLFs2LDcsInYiXSxbNyw0LCJcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNiwiXFxiZXRhIiwwLHsibGFiZWxfcG9zaXRpb24iOjIwLCJjdXJ2ZSI6LTJ9XSxbMCw4LCJcXGFscGhhIl0sWzksNywiXFxnYW1tYSJdLFs4LDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsOSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOCwxMCwiYSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDEwLCJzIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEwLDksImIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOSwxMSwiXFxhbHBoYV9cXGFzdCBcXGRlbHRhID0gXFxnYW1tYV5cXGFzdCBcXHZhcmVwc2lsb24gIiwwLHsibGFiZWxfcG9zaXRpb24iOjEwMCwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEwLDYsInQiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxMCwiXFxzcXVhcmUiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTAsNywiXFxzcXVhcmUiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}
+	X & Y & Z & {\ } \\
+	A & M & Z & {\,} \\
+	A & B & C & {\ }
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["\alpha", from=1-1, to=2-1]
+	\arrow["\square"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["g", from=1-2, to=1-3]
+	\arrow["s", dashed, from=1-2, to=2-2]
+	\arrow["\beta"{pos=0.2}, curve={height=-12pt}, from=1-2, to=3-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["a", dashed, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["b", dashed, from=2-2, to=2-3]
+	\arrow["t", dashed, from=2-2, to=3-2]
+	\arrow["\square"{description}, draw=none, from=2-2, to=3-3]
+	\arrow["{\alpha_\ast \delta = \gamma^\ast \varepsilon }"{pos=1}, dashed, from=2-3, to=2-4]
+	\arrow["\gamma", from=2-3, to=3-3]
+	\arrow["u", from=3-1, to=3-2]
+	\arrow["v", from=3-2, to=3-3]
+	\arrow["{\varepsilon }", dashed, from=3-3, to=3-4]
+\end{tikzcd}.
+\end{equation}
+Then $\beta' = \beta_2 \circ \beta_1$ gives the desired modification.
+
+We show the existence of $\alpha'$. By \cref{lem:hs-1?h}, we can find a commutative diagram
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFsxLDAsIlkiXSxbMiwwLCJaIl0sWzMsMCwiXFwgIl0sWzMsMiwiXFwgIl0sWzAsMiwiQSJdLFsxLDIsIkIiXSxbMiwyLCJDIl0sWzAsMSwiQSJdLFsyLDEsIloiXSxbMSwxLCJNIl0sWzMsMSwiXFwsIl0sWzAsMSwiZiJdLFsxLDIsImciXSxbMiwzLCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNiwidSJdLFs2LDcsInYiXSxbNyw0LCJcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNiwiXFxiZXRhIiwyLHsibGFiZWxfcG9zaXRpb24iOjIwLCJjdXJ2ZSI6Mn1dLFs5LDcsIlxcZ2FtbWEiXSxbOCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDksIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsMTAsImEiXSxbMSwxMCwicyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDExLCJcXGdhbW1hXlxcYXN0IFxcdmFyZXBzaWxvbiAiLDAseyJsYWJlbF9wb3NpdGlvbiI6NDAsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMCw2LCJ0Il0sWzEwLDksImIiXSxbMTAsNywiXFxzcXVhcmUiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}
+	X & Y & Z & {\ } \\
+	A & M & Z & {\,} \\
+	A & B & C & {\ }
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["g", from=1-2, to=1-3]
+	\arrow["s", dashed, from=1-2, to=2-2]
+	\arrow["\beta"'{pos=0.2}, curve={height=12pt}, from=1-2, to=3-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["a", from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["b", from=2-2, to=2-3]
+	\arrow["t", from=2-2, to=3-2]
+	\arrow["\square"{description}, draw=none, from=2-2, to=3-3]
+	\arrow["{\gamma^\ast \varepsilon }"{pos=0.4}, dashed, from=2-3, to=2-4]
+	\arrow["\gamma", from=2-3, to=3-3]
+	\arrow["u", from=3-1, to=3-2]
+	\arrow["v", from=3-2, to=3-3]
+	\arrow["{\varepsilon }", dashed, from=3-3, to=3-4]
+\end{tikzcd}.
+		\end{equation}
+		Since $\square$ is a weak pullback square (\cref{prop:weak}), there is $s$ such that $ts = \beta$ and $bs = g$. We complete $\alpha : X \to A$ by \cref{lem:hs-?g1}. The existence of $\gamma'$ is dual to that of $\alpha'$.
+	\end{proof}
+\end{theorem}
+
+\subsection{Morphism of \texorpdfstring{$\mathbb E$}{PDFstring}-conflations \texorpdfstring{$(f;g;1)$}{PDFstring} revisited}
+
+We examine how $(f;g;1)$ fails to be a homotopic morphism of conflations. Here we fix
+
+\begin{equation}\label{eq:hs-fg1}
+	% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJYJyJdLFsxLDEsIlknIl0sWzIsMSwiWiJdLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFsyLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMywiZiJdLFsxLDQsImciXSxbMCwxLCJ1Il0sWzEsMiwidiJdLFszLDQsInUnIl0sWzQsNSwidiciXSxbMiw2LCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNywiZl9cXGFzdCBcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	{X'} \& {Y'} \& Z \& {\,}
+	\arrow["u", from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["v", from=1-2, to=1-3]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["{u'}", from=2-1, to=2-2]
+	\arrow["{v'}", from=2-2, to=2-3]
+	\arrow["{f_\ast \delta}", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+\end{equation}
+
+\begin{lemma}\label{lem:hs-fg1}
+	For mapping sequence $X \xrightarrow{\binom{u}{f}} Y \oplus X' \xrightarrow{(g,-u')} Y' \overset{v'^\ast \delta} \dashrightarrow$ associated to \cref{eq:hs-fg1}, we have $(g,-u') \circ \binom{u}{f} = 0$, $(g,-u')^\ast (v'^\ast \delta) = 0$ and $\binom uf_\ast (v'^\ast \delta) = 0$.
+	\begin{proof}
+		The commutative diagram shows $(g,-u') \circ \binom{u}{f} = 0$. We can also check 
+		\begin{equation}
+			(g,-u')^\ast (v'^\ast \delta) = (v'\circ (g,-u'))^\ast \delta = (v,0)^\ast \delta = 0.
+		\end{equation}
+		By \cref{lem:hs-f?1} and long exact sequence \cref{eq:les-2}, we have $\binom uf_\ast (v'^\ast \delta) = 0$.
+	\end{proof}
+\end{lemma}
+
+\begin{proposition}
+	In comparison to \cref{eq:les-2}, we have the following $6$-term chain complex
+		\begin{equation}\label{equation:quasi-conflation-morphism-dual}
+		\mathcal{C}(Y', -) \xrightarrow{\mathcal{C}((g,-u'), -)} \underset \triangle {\mathcal{C}(Y \oplus X', -)} \xrightarrow{\mathcal{C}(\binom uf, -)} \underset \triangle {\mathcal{C}(X, -)} \xrightarrow{((v')^\ast \delta)^\sharp} \mathbb E(Y', -) \xrightarrow{(g,-u')^\ast} \underset \triangle {\mathbb E(Y \oplus X', -)} \xrightarrow{(\binom uf)^\ast} \mathbb E(X, -),
+	\end{equation}
+	which is exact at $\mathcal{C}(Y \oplus X', -)$, $\mathcal{C}(X, -)$, and $\mathbb E(Y \oplus X, -)$ (labelled by $\triangle$).
+	\begin{proof}
+		We show exactness at each position.
+		\begin{enumerate}
+			\item (Exactness at $\mathcal{C}(Y \oplus X', -)$). By \cref{lem:hs-fg1}, $\ker \mathcal{C}(\binom uf, -) \supseteq \operatorname{im} \mathcal{C}((g,-u'), -)$. For the converse, we take $(a,b)$ such that $(a,b)\binom uf = 0$. Since $b_\ast (f_\ast \delta) = (au)_\ast \delta = 0$, we find $s$ such that $su' = b$ 
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsOSxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJYJyJdLFsxLDEsIlknIl0sWzIsMSwiWiJdLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFsyLDIsIlQiXSxbMiw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDMsImYiXSxbMSw0LCJnIl0sWzAsMSwidSJdLFsxLDIsInYiXSxbMyw0LCJ1JyJdLFs0LDUsInYnIl0sWzIsNiwiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDcsImZfXFxhc3QgXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDgsImEiLDAseyJsYWJlbF9wb3NpdGlvbiI6MjAsImN1cnZlIjotMn1dLFszLDgsImIiLDAseyJjdXJ2ZSI6Mn1dLFs0LDgsInMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw4LCJ0IiwwLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	X & Y & Z & {\,} \\
+	{X'} & {Y'} & Z & {\,} \\
+	&& T
+	\arrow["u", from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["v", from=1-2, to=1-3]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["a"{pos=0.2}, curve={height=-12pt}, from=1-2, to=3-3]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["{u'}", from=2-1, to=2-2]
+	\arrow["b", curve={height=12pt}, from=2-1, to=3-3]
+	\arrow["{v'}", from=2-2, to=2-3]
+	\arrow["s", dashed, from=2-2, to=3-3]
+	\arrow["{f_\ast \delta}", dashed, from=2-3, to=2-4]
+	\arrow["t", curve={height=-12pt}, dashed, from=2-3, to=3-3]
+\end{tikzcd}.
+			\end{equation} 
+			Since $(sg-a)u = (su'f - au) = 0$, there is $t$ such that $tv = (sg-a)$. We can verify that
+			\begin{equation}
+				(s-tv')u' = su' = b,\quad (s-tv')g = sg - tv'g sg- (sg-a) = a.
+			\end{equation}
+			Hence, $(a,b)$ is in the image of $\mathcal{C}((g,-u'), -)$. It also shows that the left square is a weak poshout. 
+			\item (Exactness at $\mathcal{C}(X, -)$). There exists a homotopic square $X \xrightarrow{\binom uf}Y \oplus X' \xrightarrow{(\overline g,-u')} Y' \overset {(v')^\ast \delta}\dashrightarrow$ for some $\overline g$ (\cref{lem:hs-f?1}). By \cref{eq:les-2}, the exactness holds.
+			\item (At $\mathbb E(Y', -)$). We show $\operatorname{im}((v')^\ast \delta)^\sharp \subseteq \ker (g,-u')^\ast$. For any $X \xrightarrow \varphi \cdot$, we have $(g,-u')^\ast(v')^\ast \delta (\varphi) = \varphi _\ast (v,0)^\ast \delta = 0$.
+			\item (Exactness at $\mathbb E(Y \oplus X', -)$). $(\overline g, -u') \binom uf = 0$ is clear. Conversely, we take any $\varphi \in \mathbb E(Y \oplus X', T)$ such that $\binom uf^\ast \varepsilon = 0$. Note that there is a conflation $X \xrightarrow{\binom uf}Y \oplus X' \xrightarrow{(\overline g,-u')} Y' \overset {(v')^\ast \delta}\dashrightarrow$, hence $\varepsilon = (\overline g,-u')^\ast \eta$ for some $\eta \in \mathbb E(Y', T)$. By weak pushout square, we obtain $s$ such that $s(g,-u') = (\overline g, -u')$:
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsMTUsWzIsMSwiWSBcXG9wbHVzIFgnIl0sWzAsMSwiVCJdLFsxLDEsIk0iXSxbMiwwLCJYIl0sWzIsMiwiWSciXSxbMywxLCJcXCwiXSxbMiwzLCJcXCwiXSxbMCwyLCJUIl0sWzEsMiwiTiJdLFszLDIsIlxcLCJdLFs0LDAsIlgiXSxbNSwwLCJZIl0sWzQsMSwiWCciXSxbNSwxLCJZJyJdLFs2LDIsIlknIl0sWzEsMiwiaSJdLFsyLDAsInAiXSxbMywwLCJcXGJpbm9tIHVmIl0sWzMsMiwiIiwwLHsiY3VydmUiOjIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDQsIihcXG92ZXJsaW5lIGcsIC11JykiXSxbMCw1LCJcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsNiwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNyw4XSxbOCw0XSxbNCw5LCJcXGV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDhdLFsxMCwxMSwidSJdLFsxMCwxMiwiZiIsMl0sWzEyLDEzLCJ1JyIsMl0sWzExLDEzLCJnIl0sWzEyLDE0LCJ1JyIsMix7ImN1cnZlIjoyfV0sWzExLDE0LCJcXG92ZXJsaW5lIGciLDAseyJjdXJ2ZSI6LTJ9XSxbMTMsMTQsInMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	&& X && X & Y \\
+	T & M & {Y \oplus X'} & {\,} & {X'} & {Y'} \\
+	T & N & {Y'} & {\,} &&& {Y'} \\
+	&& {\,}
+	\arrow[curve={height=12pt}, dashed, from=1-3, to=2-2]
+	\arrow["{\binom uf}", from=1-3, to=2-3]
+	\arrow["u", from=1-5, to=1-6]
+	\arrow["f"', from=1-5, to=2-5]
+	\arrow["g", from=1-6, to=2-6]
+	\arrow["{\overline g}", curve={height=-12pt}, from=1-6, to=3-7]
+	\arrow["i", from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["p", from=2-2, to=2-3]
+	\arrow[from=2-2, to=3-2]
+	\arrow["{\varepsilon }", dashed, from=2-3, to=2-4]
+	\arrow["{(\overline g, -u')}", from=2-3, to=3-3]
+	\arrow["{u'}"', from=2-5, to=2-6]
+	\arrow["{u'}"', curve={height=12pt}, from=2-5, to=3-7]
+	\arrow["s", dashed, from=2-6, to=3-7]
+	\arrow[from=3-1, to=3-2]
+	\arrow[from=3-2, to=3-3]
+	\arrow["\eta", dashed, from=3-3, to=3-4]
+	\arrow[dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+			\end{equation}
+			Hence $\varepsilon = (g,-u')^\ast (s^\ast \eta)$.
+		\end{enumerate}
+	\end{proof}
+\end{proposition}
+
+We show that the suffient criterion for in \cite{canonacoSufficientCriterionHomotopy2011} is also valid in extriangulated categories.
+
+\begin{condition}[\textbf{Condition C}]
+	Say a unital ring $R$ satisfies condition \textbf{C}, if it satisfies \textbf{C1} and \textbf{C2}. 
+	\begin{enumerate}
+		\item[\textbf{C1}] For any $r \in R$, there exists $a\in R$ such that $1+r+ar^2$ is a unit in $R$, and 
+		\item[\textbf{C2}] For any $r \in R$, there exists $b \in R$ such that $1+r+ r^2 b$ is a unit in $R$.
+	\end{enumerate}
+	For instance, a finite dimensional algebra over a field satisfies \textbf{C}.
+\end{condition}
+
+The next theorem is sligtly different from \textbf{Proposition 2.1} in \cite{canonacoSufficientCriterionHomotopy2011}.
+
+\begin{proposition}
+	If $Y'$ in \cref{eq:hs-fg1} satisfies condition \textbf{C1}, then $\square$ is a homotopic square:
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJYJyJdLFsxLDEsIlknIl0sWzIsMSwiWiJdLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFsyLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMywiZiJdLFsxLDQsImciXSxbMCwxLCJ1Il0sWzEsMiwidiJdLFszLDQsInUnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYnVsbGV0IGhvbGxvdyJ9fX1dLFs0LDUsInYnIl0sWzIsNiwiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDcsImZfXFxhc3QgXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDQsIlxcYm94ZWR7XFxzY3JpcHRzdHlsZSB7dideXFxhc3QgXFxkZWx0YX19IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	{X'} \& {Y'} \& Z \& {\,}
+	\arrow["u", from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["{\square}"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["v", from=1-2, to=1-3]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["{u'}"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=2-1, to=2-2]
+	\arrow["{v'}", from=2-2, to=2-3]
+	\arrow["{f_\ast \delta}", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+	\end{equation}
+	The extension element associated to $\square$ is $\theta^\ast (v'^\ast \delta)$ for some automorphism $\theta \in \mathrm{Aut}(Y')$.
+	\begin{proof}
+		By \cref{lem:hs-f?1}, there is $\overline g : Y \to Y'$ such that $X \xrightarrow{\binom uf} Y \oplus X' \xrightarrow{(\overline g,-u')} Y' \overset{(v')^\ast \delta}\dashrightarrow$ is an $\mathbb E$-conflation. Since $(g-\overline g) \circ u = 0$, there is $\varphi : Z \to Y'$ such that $\varphi \circ v = (\overline g-g)$:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJYJyJdLFsxLDEsIlknIl0sWzIsMSwiWiJdLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFsyLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMywiZiJdLFswLDEsInUiXSxbMSwyLCJ2Il0sWzMsNCwidSciXSxbNCw1LCJ2JyJdLFsyLDYsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw3LCJmX1xcYXN0IFxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw0LCJcXG92ZXJsaW5lIGciLDAseyJvZmZzZXQiOi0xfV0sWzEsNCwiZyIsMix7Im9mZnNldCI6MX1dLFsyLDQsIlxcdmFycGhpICIsMSx7ImxhYmVsX3Bvc2l0aW9uIjo0MCwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	{X'} \& {Y'} \& Z \& {\,}
+	\arrow["u", from=1-1, to=1-2]
+	\arrow["f", from=1-1, to=2-1]
+	\arrow["v", from=1-2, to=1-3]
+	\arrow["{\overline g}", shift left, from=1-2, to=2-2]
+	\arrow["g"', shift right, from=1-2, to=2-2]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["{\varphi }"{description, pos=0.4}, dashed, from=1-3, to=2-2]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["{u'}", from=2-1, to=2-2]
+	\arrow["{v'}", from=2-2, to=2-3]
+	\arrow["{f_\ast \delta}", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+		\end{equation}
+		By assumption \textbf{C1}, there is some $a$ such that $1 + (\varphi v') + a(\varphi v')^2$ is a unit. We can verify
+		\begin{equation}
+			(1 + (\varphi v') + a(\varphi v')^2) u' = u' + (\varphi + a \varphi v' \varphi) \circ (v' u') = u',
+		\end{equation}
+		and 
+		\begin{equation}
+			(1 + (\varphi v') + a(\varphi v')^2) g = \overline g - \varphi \circ v + \varphi (v' g) + a \varphi v' \varphi v' g = \overline g + a \varphi v' (\overline g - g) = \overline g.
+		\end{equation}
+	\end{proof}
+\end{proposition}
+
+\begin{proposition}
+	If $Y$ in \cref{eq:hs-g1} satisfies condition \textbf{C2}, then $\square$ is a homotopic square:
+	\begin{equation}\label{eq:hs-g1}
+% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzEsMCwiWSJdLFsyLDAsIloiXSxbMCwxLCJYIl0sWzEsMSwiWSciXSxbMiwxLCJaJyJdLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFsyLDUsImgiXSxbMSw0LCJnIl0sWzEsMiwidiJdLFszLDQsInUnIl0sWzQsNSwidiciXSxbMiw2LCJoXlxcYXN0IFxcdmFyZXBzaWxvbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw3LCJcXHZhcmVwc2lsb24iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxLCJ1Il0sWzAsMywiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSw1LCJcXHNxdWFyZSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& Y \& Z \& {\,} \\
+	X \& {Y'} \& {Z'} \& {\,}
+	\arrow["u", from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["v", from=1-2, to=1-3]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["\square"{description}, draw=none, from=1-2, to=2-3]
+	\arrow["{h^\ast \varepsilon }", dashed, from=1-3, to=1-4]
+	\arrow["h", from=1-3, to=2-3]
+	\arrow["{u'}", from=2-1, to=2-2]
+	\arrow["{v'}", from=2-2, to=2-3]
+	\arrow["\varepsilon", dashed, from=2-3, to=2-4]
+\end{tikzcd}.
+	\end{equation}
+	The extension element associated to $\square$ is $\theta_\ast (h^\ast \varepsilon)$ for some automorphism $\theta \in \mathrm{Aut}(Y)$.
+\end{proposition}
+
+\begin{proposition}
+	The left square in \cref{eq:hs-fg1} is not always homotopic, see \textbf{Section 3} in \cite{canonacoSufficientCriterionHomotopy2011}. 
+\end{proposition}
+
+\subsection{More examples of homotopic morphisms}
+
+We show more examples of homotopic morphisms.
+
+\begin{example}
+	Let $(\mathcal{A}, \mathcal{E})$ be an $\mathrm{Ext}^1$-small exact category. It has a natural extriangulated structure (\textbf{Example 2.13.} \cite{nakaokaExtriangulatedCategoriesHovey2019}). In this case,
+	\begin{enumerate}
+		\item all $\mathbb E$-conflations are exactly short exact sequences in $\mathcal{E}$,
+		\item any homotopic square is both a pushout and a pullback square, and
+		\item any morphisms of conflations are homotopic.
+	\end{enumerate}
+\end{example}
+
+\begin{lemma}\label{lem:hs-iso}
+	Let $(f;g;h)$ be a homotopic morphism of $\mathbb E$-conflations. Suppose there is an isomorphism of $\mathbb E$-conflations $(\alpha; \beta; \gamma)$ such that $(f\circ \alpha; g \circ \beta; h \circ \gamma)$ is composable. Then $(f\circ \alpha; g \circ \beta; h \circ \gamma)$ is also a homotopic morphism of $\mathbb E$-conflations.
+	\begin{proof}
+		We consider the following diagram:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTYsWzEsMCwiWCJdLFsxLDEsIlkiXSxbMSwyLCJaIl0sWzMsMCwiQSJdLFszLDEsIkIiXSxbMiwyLCJaIl0sWzAsMCwiWCciXSxbMCwxLCJZJyJdLFswLDIsIlonIl0sWzAsMywiXFwsIl0sWzEsMywiXFwsIl0sWzIsMywiXFwsIl0sWzMsMiwiQyJdLFsyLDAsIkEiXSxbMiwxLCJFIl0sWzMsMywiXFwsIl0sWzYsMCwiXFxhbHBoYSJdLFs3LDEsIlxcYmV0YSJdLFs4LDIsIlxcZ2FtbWEiXSxbNiw3LCJ1JyJdLFs3LDgsInYnIl0sWzgsOSwiXFxrYXBwYSciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxLCJ1Il0sWzEsMiwidiJdLFsyLDEwLCJcXGthcHBhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMyw0LCJtIl0sWzUsMTEsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDAsIlxcc2ltZXEiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNywxLCJcXHNpbWVxIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsMiwiXFxzaW1lcSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDEyLCJuIl0sWzAsMTMsImYiXSxbMSwxNCwiZ18xIl0sWzE0LDQsImdfMiJdLFsxMywxNCwicyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJ1bGxldCBob2xsb3cifX19XSxbMTQsNSwidCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJ1bGxldCBob2xsb3cifX19XSxbMTIsMTUsIlxcdmFyZXBzaWxvbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxNCwiXFxib3hlZHtcXHNjcmlwdHN0eWxlIHReXFxhc3QgXFxrYXBwYX0iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTQsMTIsIlxcYm94ZWR7XFxzY3JpcHRzdHlsZSBzX1xcYXN0IFxcdmFyZXBzaWxvbn0iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSwxMiwiaCJdLFsxMywzLCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	{X'} \& X \& A \& A \\
+	{Y'} \& Y \& E \& B \\
+	{Z'} \& Z \& Z \& C \\
+	{\,} \& {\,} \& {\,} \& {\,}
+	\arrow["\alpha", from=1-1, to=1-2]
+	\arrow["\simeq"', draw=none, from=1-1, to=1-2]
+	\arrow["{u'}", from=1-1, to=2-1]
+	\arrow["f", from=1-2, to=1-3]
+	\arrow["u", from=1-2, to=2-2]
+	\arrow["{\boxed{\scriptstyle t^\ast \kappa}}"{description}, draw=none, from=1-2, to=2-3]
+	\arrow[equals, from=1-3, to=1-4]
+	\arrow["s"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=1-3, to=2-3]
+	\arrow["m", from=1-4, to=2-4]
+	\arrow["\beta", from=2-1, to=2-2]
+	\arrow["\simeq"', draw=none, from=2-1, to=2-2]
+	\arrow["{v'}", from=2-1, to=3-1]
+	\arrow["{g_1}", from=2-2, to=2-3]
+	\arrow["v", from=2-2, to=3-2]
+	\arrow["{g_2}", from=2-3, to=2-4]
+	\arrow["t"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=2-3, to=3-3]
+	\arrow["{\boxed{\scriptstyle s_\ast \varepsilon}}"{description}, draw=none, from=2-3, to=3-4]
+	\arrow["n", from=2-4, to=3-4]
+	\arrow["\gamma", from=3-1, to=3-2]
+	\arrow["\simeq"', draw=none, from=3-1, to=3-2]
+	\arrow["{\kappa'}", dashed, from=3-1, to=4-1]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["\kappa", dashed, from=3-2, to=4-2]
+	\arrow["h", from=3-3, to=3-4]
+	\arrow[dashed, from=3-3, to=4-3]
+	\arrow["{\varepsilon }", dashed, from=3-4, to=4-4]
+\end{tikzcd}.
+		\end{equation}
+		It suffices to show the following diagram is a homotopic morphism of $\mathbb E$-conflations:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCciXSxbMCwxLCJZJyJdLFswLDIsIlonIl0sWzIsMiwiWiciXSxbMiwzLCJcXCwiXSxbMiwwLCJBIl0sWzIsMSwiRSJdLFswLDMsIlxcLCJdLFs0LDMsIlxcLCJdLFs0LDIsIkMiXSxbNCwxLCJCIl0sWzQsMCwiQSJdLFsyLDMsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsNCwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsNSwiZlxcYWxwaGEiXSxbMSw2LCJnXzFcXGJldGEiLDJdLFs1LDYsInMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJidWxsZXQgaG9sbG93In19fV0sWzYsMywiXFxnYW1tYV57LTF9dCIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJ1bGxldCBob2xsb3cifX19XSxbMCw2LCJcXGJveGVke1xcc2NyaXB0c3R5bGUgeyhcXGdhbW1hXnstMX0pdH1eXFxhc3QgXFxrYXBwYX0iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw3LCJcXGthcHBhJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDIsInYnIl0sWzAsMSwidSciLDJdLFs5LDgsIlxcdmFyZXBzaWxvbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw5LCJcXGJveGVke1xcc2NyaXB0c3R5bGUgc19cXGFzdCBcXHZhcmVwc2lsb259IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsOSwiaFxcZ2FtbWEiLDJdLFsxMCw5LCJuIl0sWzYsMTAsImdfMiJdLFsxMSwxMCwibSIsMl0sWzUsMTEsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	{X'} \&\& A \&\& A \\
+	{Y'} \&\& E \&\& B \\
+	{Z'} \&\& {Z'} \&\& C \\
+	{\,} \&\& {\,} \&\& {\,}
+	\arrow["{f\alpha}", from=1-1, to=1-3]
+	\arrow["{u'}"', from=1-1, to=2-1]
+	\arrow["{\boxed{\scriptstyle {(\gamma^{-1})t}^\ast \kappa}}"{description}, draw=none, from=1-1, to=2-3]
+	\arrow[equals, from=1-3, to=1-5]
+	\arrow["s"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=1-3, to=2-3]
+	\arrow["m"', from=1-5, to=2-5]
+	\arrow["{g_1\beta}"', from=2-1, to=2-3]
+	\arrow["{v'}", from=2-1, to=3-1]
+	\arrow["{g_2}", from=2-3, to=2-5]
+	\arrow["{\gamma^{-1}t}"'{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=2-3, to=3-3]
+	\arrow["{\boxed{\scriptstyle s_\ast \varepsilon}}"{description}, draw=none, from=2-3, to=3-5]
+	\arrow["n", from=2-5, to=3-5]
+	\arrow[equals, from=3-1, to=3-3]
+	\arrow["{\kappa'}", dashed, from=3-1, to=4-1]
+	\arrow["{h\gamma}"', from=3-3, to=3-5]
+	\arrow[dashed, from=3-3, to=4-3]
+	\arrow["{\varepsilon }", dashed, from=3-5, to=4-5]
+\end{tikzcd}.
+		\end{equation}
+		The verification of $\boxed{\scriptstyle s_\ast \varepsilon}$ is clear. Note that
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYJyJdLFsyLDAsIkFcXG9wbHVzIFknIl0sWzQsMCwiRSJdLFs1LDAsIlxcLCJdLFswLDEsIlgiXSxbNCwxLCJFIl0sWzIsMSwiQSBcXG9wbHVzIFkiXSxbNSwxLCJcXCwiXSxbMCwxLCJcXGJpbm9te2ZcXGFscGhhfXt1J30iXSxbMSwyLCIoLXMsIGdfMSBcXGJldGEpIl0sWzIsMywiKFxcZ2FtbWFeey0xfSB0KV5cXGFzdCBcXGthcHBhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNywidF5cXGFzdCBcXGthcHBhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsNCwiXFxhbHBoYSJdLFsyLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNiwiXFxiaW5vbXtmfXt1fSJdLFs2LDUsIigtcywgZ18xKSJdLFsxLDYsIjEgXFxvcGx1cyBcXGJldGEiXV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	{X'} \&\& {A\oplus Y'} \&\& E \& {\,} \\
+	X \&\& {A \oplus Y} \&\& E \& {\,}
+	\arrow["{\binom{f\alpha}{u'}}", from=1-1, to=1-3]
+	\arrow["\alpha", from=1-1, to=2-1]
+	\arrow["{(-s, g_1 \beta)}", from=1-3, to=1-5]
+	\arrow["{1 \oplus \beta}", from=1-3, to=2-3]
+	\arrow["{(\gamma^{-1} t)^\ast \kappa}", dashed, from=1-5, to=1-6]
+	\arrow[equals, from=1-5, to=2-5]
+	\arrow["{\binom{f}{u}}", from=2-1, to=2-3]
+	\arrow["{(-s, g_1)}", from=2-3, to=2-5]
+	\arrow["{t^\ast \kappa}", dashed, from=2-5, to=2-6]
+\end{tikzcd}.
+		\end{equation}
+		The diagram is commutative and $\alpha_\ast (\gamma^{-1} t)^\ast \kappa = (\gamma^\ast)^{-1} (\alpha_\ast) \kappa = t^\ast \kappa$. Hence, $\boxed{\scriptstyle {(\gamma^{-1})t}^\ast \kappa}$ is verified.
+	\end{proof}
+\end{lemma}
+
+\begin{proposition}
+	Homotopic morphisms are not closed under composition. Indeed, any morphism of $\mathbb E$-conflations is a compostion of two homotopic morphisms.
+	\begin{proof}
+		Let $(\alpha;\beta;\gamma)$ be a morphism of $\mathbb E$-conflations. We consider the following diagram:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTYsWzAsMCwiWCJdLFsyLDAsIlkiXSxbNCwwLCJaIl0sWzUsMCwiXFwsIl0sWzAsMSwiWCBcXG9wbHVzIEEiXSxbMiwxLCJZIFxcb3BsdXMgQiJdLFs0LDEsIlogXFxvcGx1cyBDIl0sWzUsMSwiXFwsIl0sWzAsMiwiWCBcXG9wbHVzIEEiXSxbMiwyLCJZIFxcb3BsdXMgQiJdLFs0LDIsIlogXFxvcGx1cyBDIl0sWzUsMiwiXFwsIl0sWzAsMywiQSJdLFsyLDMsIkIiXSxbNCwzLCJDIl0sWzUsMywiXFwsIl0sWzAsMSwiZiJdLFsxLDIsImciXSxbMiwzLCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsNSwiXFxiaW5vbSB7ZiBcXCAwfXswIFxcIHV9Il0sWzUsNiwiXFxiaW5vbSB7ZyBcXCAwfXswIFxcIHZ9Il0sWzYsNywiXFxkZWx0YSBcXG9wbHVzIFxcdmFyZXBzaWxvbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsMTEsIlxcZGVsdGEgXFxvcGx1cyBcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzksMTAsIlxcYmlub20ge2cgXFwgMH17MCBcXCB2fSJdLFs4LDksIlxcYmlub20ge2YgXFwgMH17MCBcXCB1fSJdLFsxMiwxMywidSJdLFsxMywxNCwidiJdLFsxNCwxNSwiXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDQsIlxcYmlub20gMTAiXSxbMSw1LCJcXGJpbm9tIDEwIl0sWzIsNiwiXFxiaW5vbSAxMCJdLFs4LDEyLCIoMCwxKSJdLFs5LDEzLCIoMCwxKSJdLFsxMCwxNCwiKDAsMSkiXSxbNCw4LCJcXGJpbm9tIHsxIFxcIDB9e1xcYWxwaGEgXFwgMX0iXSxbNSw5LCJcXGJpbm9tIHsxIFxcIDB9e1xcYmV0YSBcXCAxfSJdLFs2LDEwLCJcXGJpbm9tIHsxIFxcIDB9e1xcZ2FtbWEgXFwgMX0iXSxbNCw4LCJcXHNpbWVxIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsOSwiXFxzaW1lcSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDEwLCJcXHNpbWVxIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	X \&\& Y \&\& Z \& {\,} \\
+	{X \oplus A} \&\& {Y \oplus B} \&\& {Z \oplus C} \& {\,} \\
+	{X \oplus A} \&\& {Y \oplus B} \&\& {Z \oplus C} \& {\,} \\
+	A \&\& B \&\& C \& {\,}
+	\arrow["f", from=1-1, to=1-3]
+	\arrow["{\binom 10}", from=1-1, to=2-1]
+	\arrow["g", from=1-3, to=1-5]
+	\arrow["{\binom 10}", from=1-3, to=2-3]
+	\arrow["\delta", dashed, from=1-5, to=1-6]
+	\arrow["{\binom 10}", from=1-5, to=2-5]
+	\arrow["{\binom {f \ 0}{0 \ u}}", from=2-1, to=2-3]
+	\arrow["{\binom {1 \ 0}{\alpha \ 1}}", from=2-1, to=3-1]
+	\arrow["\simeq"', draw=none, from=2-1, to=3-1]
+	\arrow["{\binom {g \ 0}{0 \ v}}", from=2-3, to=2-5]
+	\arrow["{\binom {1 \ 0}{\beta \ 1}}", from=2-3, to=3-3]
+	\arrow["\simeq"', draw=none, from=2-3, to=3-3]
+	\arrow["{\delta \oplus \varepsilon }", dashed, from=2-5, to=2-6]
+	\arrow["{\binom {1 \ 0}{\gamma \ 1}}", from=2-5, to=3-5]
+	\arrow["\simeq"', draw=none, from=2-5, to=3-5]
+	\arrow["{\binom {f \ 0}{0 \ u}}", from=3-1, to=3-3]
+	\arrow["{(0,1)}", from=3-1, to=4-1]
+	\arrow["{\binom {g \ 0}{0 \ v}}", from=3-3, to=3-5]
+	\arrow["{(0,1)}", from=3-3, to=4-3]
+	\arrow["{\delta \oplus \varepsilon }", dashed, from=3-5, to=3-6]
+	\arrow["{(0,1)}", from=3-5, to=4-5]
+	\arrow["u", from=4-1, to=4-3]
+	\arrow["v", from=4-3, to=4-5]
+	\arrow["{\varepsilon }", dashed, from=4-5, to=4-6]
+\end{tikzcd}.
+		\end{equation}
+		Here $(\binom 10;\binom 10;\binom 10)$ and $((0,1);(0,1);(0,1))$ are morphisms of $\mathbb E$-conflations. We show $(\binom {1 \ 0}{\alpha \ 1};\binom {1 \ 0}{\beta \ 1};\binom {1 \ 0}{\gamma \ 1})$ is an automorphism of $\mathbb E$-conflations. The commutativity of the left square is due to
+		\begin{equation}
+			\binom {f \ 0}{0 \ u} \circ \binom {1 \ 0}{\alpha \ 1} - \binom {1 \ 0}{\beta \ 1} \circ \binom {f \ 0}{0 \ u} = \binom{\quad 0 \quad \ 0}{u\alpha - \beta f \ \  0} = 0.
+		\end{equation}
+		The commutativity of the right square is dually verified. We show that the extension elements are equal:
+		\begin{equation}
+			\binom {1 \ 0}{\gamma \ 1}^\ast (\delta \oplus \varepsilon) - \binom {1 \ 0}{\alpha \ 1}_\ast(\delta \oplus \varepsilon) =  (\delta, \gamma^\ast \varepsilon, 0, \varepsilon) -  (\delta, \alpha_\ast \delta, 0, \varepsilon) = 0.
+		\end{equation}
+		Here the elements are identified in $\mathbb E(Z \oplus C, X \oplus A) \cong \mathbb E(Z,X) \oplus \mathbb E(Z,A) \oplus \mathbb E(C,X) \oplus \mathbb E(C,A)$.
+
+		By \cref{lem:hs-iso}, it remains to verify that both $(\binom 10;\binom 10;\binom 10)$ and $((0,1);(0,1);(0,1))$ are homotopic morphisms of $\mathbb E$-conflations. We only verify $(\binom 10;\binom 10;\binom 10)$. Consider the following diagram:
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFsyLDAsIlkiXSxbNCwwLCJaIl0sWzUsMCwiXFwsIl0sWzAsMSwiWCBcXG9wbHVzIEEiXSxbMiwyLCJZIFxcb3BsdXMgQiJdLFs0LDIsIlogXFxvcGx1cyBDIl0sWzUsMiwiXFwsIl0sWzAsMiwiWCBcXG9wbHVzIEEiXSxbNCwxLCJaIl0sWzUsMSwiXFwsIl0sWzIsMSwiWSBcXG9wbHVzIEEiXSxbMCwxLCJmIl0sWzEsMiwiZyJdLFsyLDMsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw2LCJcXGJpbm9tIHtnIFxcIDB9ezAgXFwgdn0iLDJdLFs2LDcsIlxcZGVsdGEgXFxvcGx1cyBcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsNCwiXFxiaW5vbSAxMCJdLFs5LDYsIlxcYmlub20gMTAiXSxbMiw5LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDgsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsNSwiXFxiaW5vbSB7ZiBcXCAwfXswIFxcIHV9IiwyXSxbMSwxMSwiXFxiaW5vbSAxMCJdLFsxMSw1LCIxX1kgXFxvcGx1cyB1IiwyXSxbNCwxMSwiZiBcXG9wbHVzIDFfQSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJ1bGxldCBob2xsb3cifX19XSxbMTEsOSwiKGcsMCkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJidWxsZXQgaG9sbG93In19fV0sWzksMTAsIlxcZGVsdGEgXFxvcGx1cyAwX3swQX0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxMSwiXFxib3hlZHtcXHNjcmlwdHN0eWxlIChnLDApXlxcYXN0IFxcZGVsdGF9IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzExLDYsIlxcYm94ZWR7XFxzY3JpcHRzdHlsZSAoZiBcXG9wbHVzIDEpX1xcYXN0KFxcZGVsdGEgXFxvcGx1cyBcXHZhcmVwc2lsb24pfSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \&\& Y \&\& Z \& {\,} \\
+	{X \oplus A} \&\& {Y \oplus A} \&\& Z \& {\,} \\
+	{X \oplus A} \&\& {Y \oplus B} \&\& {Z \oplus C} \& {\,}
+	\arrow["f", from=1-1, to=1-3]
+	\arrow["{\binom 10}", from=1-1, to=2-1]
+	\arrow["{\boxed{\scriptstyle (g,0)^\ast \delta}}"{description}, draw=none, from=1-1, to=2-3]
+	\arrow["g", from=1-3, to=1-5]
+	\arrow["{\binom 10}", from=1-3, to=2-3]
+	\arrow["\delta", dashed, from=1-5, to=1-6]
+	\arrow[equals, from=1-5, to=2-5]
+	\arrow["{f \oplus 1_A}"'{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=2-1, to=2-3]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{(g,0)}"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=2-3, to=2-5]
+	\arrow["{1_Y \oplus u}"', from=2-3, to=3-3]
+	\arrow["{\boxed{\scriptstyle (f \oplus 1)_\ast(\delta \oplus \varepsilon)}}"{description}, draw=none, from=2-3, to=3-5]
+	\arrow["{\delta \oplus 0_{0A}}", dashed, from=2-5, to=2-6]
+	\arrow["{\binom 10}", from=2-5, to=3-5]
+	\arrow["{\binom {f \ 0}{0 \ u}}"', from=3-1, to=3-3]
+	\arrow["{\binom {g \ 0}{0 \ v}}"', from=3-3, to=3-5]
+	\arrow["{\delta \oplus \varepsilon }", dashed, from=3-5, to=3-6]
+\end{tikzcd}.
+\end{equation}
+		We verify the homotopy element $\boxed{\scriptstyle (g,0)^\ast \delta}$. Note that the following is a split $\mathbb E$-conflation:
+		\begin{equation}
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzIsMCwiWVxcb3BsdXMgWCBcXG9wbHVzIEEiXSxbNCwwLCJZIFxcb3BsdXMgQSJdLFs2LDAsIlxcLCJdLFswLDEsIlxcbGVmdChcXHN1YnN0YWNre2ZcXFxcLTFcXFxcMH1cXHJpZ2h0KSJdLFsxLDIsIlxcYmlub20gezEgXFwgZiBcXCAwfXswIFxcIDAgXFwgMX0iXSxbMiwzLCIoZywwKV5cXGFzdCBcXGRlbHRhID0gMCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \&\& {Y\oplus X \oplus A} \&\& {Y \oplus A} \&\& {\,}
+	\arrow["\begin{array}{c} \left(\substack{f\\-1\\0}\right) \end{array}", from=1-1, to=1-3]
+	\arrow["{\binom {1 \ f \ 0}{0 \ 0 \ 1}}", from=1-3, to=1-5]
+	\arrow["{(g,0)^\ast \delta = 0}", dashed, from=1-5, to=1-7]
+\end{tikzcd}.
+		\end{equation}
+		The extension elment in the right buttom is $(f_\ast \delta) \oplus \varepsilon$. Note that
+		\begin{equation}
+% https://q.uiver.app/#q=WzAsNCxbNCwwLCJaIFxcb3BsdXMgQyJdLFs1LDAsIlxcLCJdLFsyLDAsIlogXFxvcGx1cyBZIFxcb3BsdXMgQiJdLFswLDAsIlkgXFxvcGx1cyBBIl0sWzAsMSwiXFx2YXJlcHNpbG9uIFxcb3BsdXMgMCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDAsIlxcYmlub20gezEgXFwgLWcgXFwgXFwgXFwgXFwgMH17MCBcXCBcXCBcXCBcXCAwIFxcIC12fSJdLFszLDIsIlxcbGVmdChcXHN1YnN0YWNre2cgXFwgMFxcXFwxIFxcIDBcXFxcIDAgXFwgdX1cXHJpZ2h0KSJdXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	{Y \oplus A} \&\& {Z \oplus Y \oplus B} \&\& {Z \oplus C} \& {\,}
+	\arrow["\begin{array}{c} \left(\substack{g \ 0\\1 \ 0\\ 0 \ u}\right) \end{array}", from=1-1, to=1-3]
+	\arrow["{\binom {1 \ -g \ \ \ \ 0}{0 \ \ \ \ 0 \ -v}}", from=1-3, to=1-5]
+	\arrow["{\varepsilon \oplus 0}", dashed, from=1-5, to=1-6]
+\end{tikzcd}
+		\end{equation}
+		is a direct sum of $\mathbb E$-conflations, which is again an $\mathbb E$-conflation. We complete the proof.
+	\end{proof}
+\end{proposition}
+
+\begin{proposition}\label{prop:strict-et4-h}
+	In \cref{lem:strict-et4}, we may choose $w$ to be any morphism constructed from \cref{lem:hs-1g?}. Then there is $q$ such that the following diagram satisfy the condition in ET4 axiom.
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSJdLFsxLDAsIkIiXSxbMiwwLCJEIl0sWzAsMSwiQSJdLFsxLDEsIkMiXSxbMSwyLCJFIl0sWzIsMiwiRSJdLFsyLDEsIkYiXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbMCwxLCJmIl0sWzEsMiwiZyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJ1bGxldCBob2xsb3cifX19XSxbMCwzLCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDQsIm0iLDJdLFsxLDQsInUiLDJdLFs0LDUsInYiLDJdLFs1LDYsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNywiaCIsMl0sWzIsNywidyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDYsInEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw4LCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsOSwiXFx0aGV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDEwLCJcXHZhcmVwc2lsb24gIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMTEsIlxcZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNywiXFxib3hlZHtcXHNjcmlwdHN0eWxlIGZfXFxhc3RcXHRoZXRhfSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& B \& D \& {\,} \\
+	A \& C \& F \& {\,} \\
+	\& E \& E \\
+	\& {\,} \& {\,}
+	\arrow["f", from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["g"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=1-2, to=1-3]
+	\arrow["u"', from=1-2, to=2-2]
+	\arrow["{\boxed{\scriptstyle f_\ast\theta}}"{description}, draw=none, from=1-2, to=2-3]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["w", dashed, from=1-3, to=2-3]
+	\arrow["m"', from=2-1, to=2-2]
+	\arrow["h"', from=2-2, to=2-3]
+	\arrow["v"', from=2-2, to=3-2]
+	\arrow["\theta", dashed, from=2-3, to=2-4]
+	\arrow["q", dashed, from=2-3, to=3-3]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["{\varepsilon }", dashed, from=3-2, to=4-2]
+	\arrow["\eta", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+	\end{equation}
+	\begin{proof}
+		We take $w$ as in \cref{lem:hs-?g1}. By \cref{prop:pb-2}, we take the conflation realising $\eta$ in the following commutative diagram:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiQiJdLFsxLDEsIkRcXG9wbHVzIEMiXSxbMiwyLCJFIl0sWzIsMSwiRiJdLFszLDEsIlxcLCJdLFswLDIsIkIiXSxbMiwwLCJEIl0sWzEsMiwiQyJdLFszLDIsIlxcLCJdLFsxLDAsIkQiXSxbMSwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbMCwxLCJcXGJpbm9tIHstZ311Il0sWzEsMywiKHcsIGgpIl0sWzMsNCwiZl9cXGFzdCBcXHRoZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMywidyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDIsInEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDcsInUiXSxbNywyLCJ2Il0sWzIsOCwiXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDYsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMSwiXFxiaW5vbSAxMCJdLFsxLDcsIigwLDEpIl0sWzcsMTAsIjAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiwxMSwiXFxldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}
+	& D & D \\
+	B & {D\oplus C} & F & {\,} \\
+	B & C & E & {\,} \\
+	& {\,} & {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["{\binom 10}", from=1-2, to=2-2]
+	\arrow["w", dashed, from=1-3, to=2-3]
+	\arrow["{\binom {-g}u}", from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{(w, h)}", from=2-2, to=2-3]
+	\arrow["{(0,1)}", from=2-2, to=3-2]
+	\arrow["{f_\ast \theta}", dashed, from=2-3, to=2-4]
+	\arrow["q", dashed, from=2-3, to=3-3]
+	\arrow["u", from=3-1, to=3-2]
+	\arrow["v", from=3-2, to=3-3]
+	\arrow["0", dashed, from=3-2, to=4-2]
+	\arrow["{\varepsilon }", dashed, from=3-3, to=3-4]
+	\arrow["\eta", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+		\end{equation}
+		We verify such construction satisfies ET4 axiom. It is straightforward to obtain $qh = v$ and $q^\ast \varepsilon = f_\ast \theta$ from the above diagram. Moreover, since $\binom 10_\ast \eta + \binom{-g}{u}_\ast \varepsilon = 0$, we have $g_\ast \varepsilon = \eta$. This complete the verification.
+	\end{proof}
+\end{proposition}
+
+\begin{proposition}\label{prop:strict-et4-2-h}
+	In \cref{lem:strict-et4-2}, we may choose $u$ to be any morphism constructed from \cref{lem:hs-1?h}. Then there is a way to complete the diagram which satisfies ET4 axiom.
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSJdLFsxLDAsIkIiXSxbMiwwLCJEIl0sWzAsMSwiQSJdLFsxLDEsIkMiXSxbMSwyLCJFIl0sWzIsMiwiRSJdLFsyLDEsIkYiXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbMCwxLCJmIl0sWzEsMiwiZyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJ1bGxldCBob2xsb3cifX19XSxbMCwzLCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDQsIm0iLDJdLFsxLDQsInUiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw1LCJ2IiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNiwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw3LCJoIiwyXSxbMiw3LCJ3Il0sWzcsNiwicSJdLFsyLDgsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNyw5LCJcXHRoZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMTAsIlxcdmFyZXBzaWxvbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwxMSwiXFxldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw3LCJcXGJveGVke1xcc2NyaXB0c3R5bGUgZl9cXGFzdFxcdGhldGF9IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& B \& D \& {\,} \\
+	A \& C \& F \& {\,} \\
+	\& E \& E \\
+	\& {\,} \& {\,}
+	\arrow["f", from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["g"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=1-2, to=1-3]
+	\arrow["u"', dashed, from=1-2, to=2-2]
+	\arrow["{\boxed{\scriptstyle f_\ast\theta}}"{description}, draw=none, from=1-2, to=2-3]
+	\arrow["\delta", dashed, from=1-3, to=1-4]
+	\arrow["w", from=1-3, to=2-3]
+	\arrow["m"', from=2-1, to=2-2]
+	\arrow["h"', from=2-2, to=2-3]
+	\arrow["v"', dashed, from=2-2, to=3-2]
+	\arrow["\theta", dashed, from=2-3, to=2-4]
+	\arrow["q", from=2-3, to=3-3]
+	\arrow[equals, from=3-2, to=3-3]
+	\arrow["{\varepsilon }", dashed, from=3-2, to=4-2]
+	\arrow["\eta", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+\end{equation}
+	\begin{proof}
+		We take $u$ as in \cref{lem:hs-1?h}. By \cref{prop:po-2}, we take the conflation realising $\epsilon$ in the following commutative diagram:
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiQiJdLFsxLDEsIkRcXG9wbHVzIEMiXSxbMiwyLCJFIl0sWzIsMSwiRiJdLFszLDEsIlxcLCJdLFswLDIsIkIiXSxbMiwwLCJEIl0sWzEsMiwiQyJdLFszLDIsIlxcLCJdLFsxLDAsIkQiXSxbMSwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbMCwxLCJcXGJpbm9tIHstZ311Il0sWzEsMywiKHcsIGgpIl0sWzMsNCwiZl9cXGFzdCBcXHRoZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMywidyJdLFszLDIsInEiXSxbMCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDcsInUiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNywyLCJ2IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsOCwiXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDYsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMSwiXFxiaW5vbSAxMCJdLFsxLDcsIigwLDEpIl0sWzcsMTAsIjAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiwxMSwiXFxldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	\& D \& D \\
+	B \& {D\oplus C} \& F \& {\,} \\
+	B \& C \& E \& {\,} \\
+	\& {\,} \& {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["{\binom 10}", from=1-2, to=2-2]
+	\arrow["w", from=1-3, to=2-3]
+	\arrow["{\binom {-g}u}", from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{(w, h)}", from=2-2, to=2-3]
+	\arrow["{(0,1)}", from=2-2, to=3-2]
+	\arrow["{f_\ast \theta}", dashed, from=2-3, to=2-4]
+	\arrow["q", from=2-3, to=3-3]
+	\arrow["u", dashed, from=3-1, to=3-2]
+	\arrow["v", dashed, from=3-2, to=3-3]
+	\arrow["0", dashed, from=3-2, to=4-2]
+	\arrow["{\varepsilon }", dashed, from=3-3, to=3-4]
+	\arrow["\eta", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+\end{equation}
+		The verification of ET4 axiom is the same as in \cref{prop:strict-et4-h}.
+	\end{proof}
+\end{proposition}
+
+\begin{proposition}\label{prop:po-1-h}
+	In \cref{prop:po-1}, we may choose $e_2$ to be any morphism constructed from \cref{lem:hs-f?1}. Then there is a way to complete the diagram which satisfies the condition in \cref{prop:po}.
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSJdLFsxLDAsIkJfMiJdLFsyLDAsIkNfMiJdLFswLDEsIkJfMSJdLFswLDIsIkNfMSJdLFswLDMsIlxcLCJdLFszLDAsIlxcLCJdLFsyLDEsIkNfMiJdLFsxLDIsIkNfMSJdLFsxLDMsIlxcLCJdLFszLDEsIlxcLCJdLFsxLDEsIkUiXSxbMCwzLCJmXzEiLDJdLFszLDQsImdfMSIsMl0sWzQsNSwiXFx2YXJlcHNpbG9uIF8xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMSwiZl8yIl0sWzEsMiwiZ18yIl0sWzIsNiwiXFx2YXJlcHNpbG9uIF8yIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw4LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDExLCJlXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJidWxsZXQgaG9sbG93In19fV0sWzExLDcsInBfMiJdLFsxLDExLCJlXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTEsOCwicF8xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsMTAsIihmXzEpX1xcYXN0IFxcdmFyZXBzaWxvbiBfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDksIihmXzIpX1xcYXN0IFxcdmFyZXBzaWxvbiBfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDExLCJcXGJveGVke1xcc2NyaXB0c3R5bGUgcF8yXlxcYXN0XFx2YXJlcHNpbG9uIF8yfSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& {B_2} \& {C_2} \& {\,} \\
+	{B_1} \& E \& {C_2} \& {\,} \\
+	{C_1} \& {C_1} \\
+	{\,} \& {\,}
+	\arrow["{f_2}", from=1-1, to=1-2]
+	\arrow["{f_1}"', from=1-1, to=2-1]
+	\arrow["{\boxed{\scriptstyle p_2^\ast\varepsilon _2}}"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["{g_2}", from=1-2, to=1-3]
+	\arrow["{e_2}", dashed, from=1-2, to=2-2]
+	\arrow["{\varepsilon _2}", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["{e_1}"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=2-1, to=2-2]
+	\arrow["{g_1}"', from=2-1, to=3-1]
+	\arrow["{p_2}", from=2-2, to=2-3]
+	\arrow["{p_1}", dashed, from=2-2, to=3-2]
+	\arrow["{(f_1)_\ast \varepsilon _2}", dashed, from=2-3, to=2-4]
+	\arrow[equals, from=3-1, to=3-2]
+	\arrow["{\varepsilon _1}", dashed, from=3-1, to=4-1]
+	\arrow["{(f_2)_\ast \varepsilon _1}", dashed, from=3-2, to=4-2]
+\end{tikzcd}.
+\end{equation}
+\begin{proof}
+	We take $e_2$ as in \cref{lem:hs-f?1}. By \cref{prop:po-2}, we take the conflation realising $-\kappa$ in the following commutative diagram:
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiQSJdLFsxLDEsIkJfMSBcXG9wbHVzIEJfMiJdLFsyLDEsIkUiXSxbMywxLCJcXCwiXSxbMSwwLCJCXzIiXSxbMiwwLCJCXzIiXSxbMCwyLCJBIl0sWzEsMiwiQl8xIl0sWzIsMiwiQ18xIl0sWzMsMiwiXFwsIl0sWzEsMywiXFwsIl0sWzIsMywiXFwsIl0sWzAsMSwiXFxiaW5vbSB7Zl8xfXtmXzJ9Il0sWzEsMiwiKC1lXzEsZV8yKSJdLFsyLDMsInBfMl5cXGFzdCBcXHZhcmVwc2lsb24gXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsMSwiXFxiaW5vbSAwMSJdLFsxLDcsIigxLDApIl0sWzYsNywiZl8xIl0sWzcsOCwiZ18xIl0sWzgsOSwiXFx2YXJlcHNpbG9uIF8xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsMTAsIjAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwyLCJlXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw4LCItcF8xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsMTEsIi1cXGthcHBhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	\& {B_2} \& {B_2} \\
+	A \& {B_1 \oplus B_2} \& E \& {\,} \\
+	A \& {B_1} \& {C_1} \& {\,} \\
+	\& {\,} \& {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["{\binom 01}", from=1-2, to=2-2]
+	\arrow["{e_2}", dashed, from=1-3, to=2-3]
+	\arrow["{\binom {f_1}{f_2}}", from=2-1, to=2-2]
+	\arrow["{(-e_1,e_2)}", from=2-2, to=2-3]
+	\arrow["{(1,0)}", from=2-2, to=3-2]
+	\arrow["{p_2^\ast \varepsilon _2}", dashed, from=2-3, to=2-4]
+	\arrow["{-p_1}", dashed, from=2-3, to=3-3]
+	\arrow[equals, from=3-1, to=2-1]
+	\arrow["{f_1}", from=3-1, to=3-2]
+	\arrow["{g_1}", from=3-2, to=3-3]
+	\arrow["0", dashed, from=3-2, to=4-2]
+	\arrow["{\varepsilon _1}", dashed, from=3-3, to=3-4]
+	\arrow["{-\kappa}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+\end{equation}
+	The identity $\binom 01_\ast (-\kappa) + \binom{f_1}{f_2}_\ast\varepsilon_1 = 0$ yields $(f_2)_\ast \varepsilon_1= \kappa$. We show such construction satisfies the condition in \cref{prop:po}. It is straightforward to obtain $p_1 e_1 = g_1$ and $p_1^\ast \varepsilon _1 + p_2^\ast \varepsilon _2 = 0$ from the above diagram. This complete the verification.
+\end{proof}
+\end{proposition}
+
+\begin{proposition}\label{prop:po-2-h}
+	In \cref{prop:po-2}, we may choose $f_1$ to be any morphism constructed from \cref{lem:hs-?g1}. Then there is a way to complete the diagram which satisfies the condition in \cref{prop:po}.
+	\begin{equation}
+% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSJdLFsxLDAsIkJfMiJdLFsyLDAsIkNfMiJdLFswLDEsIkJfMSJdLFswLDIsIkNfMSJdLFswLDMsIlxcLCJdLFszLDAsIlxcLCJdLFsyLDEsIkNfMiJdLFsxLDIsIkNfMSJdLFsxLDMsIlxcLCJdLFszLDEsIlxcLCJdLFsxLDEsIkUiXSxbMCwzLCJmXzEiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMyw0LCJnXzEiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw1LCJcXHZhcmVwc2lsb24gXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxLCJmXzIiXSxbMSwyLCJnXzIiXSxbMiw2LCJcXHZhcmVwc2lsb24gXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw3LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDgsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMTEsImVfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJ1bGxldCBob2xsb3cifX19XSxbMTEsNywicF8yIl0sWzEsMTEsImVfMiJdLFsxMSw4LCJwXzEiXSxbNywxMCwiXFxldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCw5LCJcXHZhcmVwc2lsb24iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxMSwiXFxib3hlZHtcXHNjcmlwdHN0eWxlIHBfMl5cXGFzdFxcdmFyZXBzaWxvbiBfMn0iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	A \& {B_2} \& {C_2} \& {\,} \\
+	{B_1} \& E \& {C_2} \& {\,} \\
+	{C_1} \& {C_1} \\
+	{\,} \& {\,}
+	\arrow["{f_2}", from=1-1, to=1-2]
+	\arrow["{f_1}"', dashed, from=1-1, to=2-1]
+	\arrow["{\boxed{\scriptstyle p_2^\ast\varepsilon _2}}"{description}, draw=none, from=1-1, to=2-2]
+	\arrow["{g_2}", from=1-2, to=1-3]
+	\arrow["{e_2}", from=1-2, to=2-2]
+	\arrow["{\varepsilon _2}", dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow["{e_1}"{inner sep=.8ex}, "\bullet"{marking, text=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}, "\circ"{marking}, from=2-1, to=2-2]
+	\arrow["{g_1}"', dashed, from=2-1, to=3-1]
+	\arrow["{p_2}", from=2-2, to=2-3]
+	\arrow["{p_1}", from=2-2, to=3-2]
+	\arrow["\eta", dashed, from=2-3, to=2-4]
+	\arrow[equals, from=3-1, to=3-2]
+	\arrow["{\varepsilon _1}", dashed, from=3-1, to=4-1]
+	\arrow["\varepsilon", dashed, from=3-2, to=4-2]
+\end{tikzcd}.
+	\end{equation}
+	\begin{proof}
+		We take $f_1$ as in \cref{lem:hs-?g1}. By \cref{prop:po-1}, we take the conflation realising $\varepsilon_1$ in the following commutative diagram:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiQSJdLFsxLDEsIkJfMSBcXG9wbHVzIEJfMiJdLFsyLDEsIkUiXSxbMywxLCJcXCwiXSxbMSwwLCJCXzIiXSxbMiwwLCJCXzIiXSxbMCwyLCJBIl0sWzEsMiwiQl8xIl0sWzIsMiwiQ18xIl0sWzMsMiwiXFwsIl0sWzEsMywiXFwsIl0sWzIsMywiXFwsIl0sWzAsMSwiXFxiaW5vbSB7Zl8xfXtmXzJ9Il0sWzEsMiwiKC1lXzEsZV8yKSJdLFsyLDMsInBfMl5cXGFzdCBcXHZhcmVwc2lsb24gXzIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsMSwiXFxiaW5vbSAwMSJdLFsxLDcsIigxLDApIl0sWzYsNywiZl8xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsOCwiZ18xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsOSwiXFx2YXJlcHNpbG9uIF8xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsMTAsIjAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwyLCJlXzIiXSxbMiw4LCItcF8xIl0sWzgsMTEsIi1cXGthcHBhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	\& {B_2} \& {B_2} \\
+	A \& {B_1 \oplus B_2} \& E \& {\,} \\
+	A \& {B_1} \& {C_1} \& {\,} \\
+	\& {\,} \& {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow["{\binom 01}", from=1-2, to=2-2]
+	\arrow["{e_2}", from=1-3, to=2-3]
+	\arrow["{\binom {f_1}{f_2}}", from=2-1, to=2-2]
+	\arrow["{(-e_1,e_2)}", from=2-2, to=2-3]
+	\arrow["{(1,0)}", from=2-2, to=3-2]
+	\arrow["{p_2^\ast \varepsilon _2}", dashed, from=2-3, to=2-4]
+	\arrow["{-p_1}", from=2-3, to=3-3]
+	\arrow[equals, from=3-1, to=2-1]
+	\arrow["{f_1}", dashed, from=3-1, to=3-2]
+	\arrow["{g_1}", dashed, from=3-2, to=3-3]
+	\arrow["0", dashed, from=3-2, to=4-2]
+	\arrow["{\varepsilon _1}", dashed, from=3-3, to=3-4]
+	\arrow["{-\kappa}", dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+		\end{equation}
+		The identity $\binom 01_\ast (-\kappa) + \binom{f_1}{f_2}_\ast\varepsilon_2 = 0$ yields $(f_2)_\ast \varepsilon_1= \kappa$. We show such construction satisfies the condition in \cref{prop:po}. It is straightforward to obtain $p_1 e_1 = g_1$ and $p_1^\ast \varepsilon _1 + p_2^\ast \varepsilon _2 = 0$ from the above diagram. This complete the verification.
+	\end{proof}
+\end{proposition}
+
+\Cref{prop:strict-et4-h,prop:strict-et4-2-h} show the good completions for ET4, while \cref{prop:po-1-h,prop:po-2-h} show the good completions for \cref{prop:po} (pushout of two $\mathbb E$-inflations). There are dual results for ET4$^{\mathrm{op}}$ and the pullback of two $\mathbb E$-deflations. We omit them here.

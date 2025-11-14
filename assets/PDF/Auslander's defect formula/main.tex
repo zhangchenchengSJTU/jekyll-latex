@@ -1,0 +1,1114 @@
+\documentclass{article}
+\usepackage[a4paper, left=0.5in, right=0.5in, top=0.5in, bottom=0.5in]{geometry} % Page margins
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsthm, amsmath, amssymb, mathtools}  % Required for math typesetting
+% \usepackage{quiver} % Required for commutative diagrams
+\usepackage[all, cmtip, 2cell]{xy}
+\UseTwocells
+
+\usepackage[colorlinks]{hyperref} % For hyperlinks in the PDF
+\usepackage[nameinlink]{cleveref} % For referencing multiple labels
+
+\title{Homological Theories for Extriangulated Categories}
+\author{Tansing Tiunn}
+\date{\today}
+
+
+% Define theorem styles and environments
+\theoremstyle{plain}  % for theorems, etc. (italic body)
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}  % for definitions, examples (upright body)
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{problem}[theorem]{Problem}
+
+\newtheorem*{notation}{Notation}
+
+\theoremstyle{remark}  % for remarks etc. (upright, less emphasis)
+\newtheorem*{remark}{Remark}
+\newtheorem*{note}{Note}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Homotopy for Finitely Presented Functors}
+
+\subsection{Finitely Presented Functors}
+
+\begin{notation}
+    Throughout, all categories and functors are assumed to be additive. We write $\mathrm{Fun}(\mathcal{A}, \mathcal{B})$ for the category of additive functors from $\mathcal{A}$ to $\mathcal{B}$.
+\end{notation}
+
+\begin{definition}[Finitely presented functors]
+    Let $\mathcal{A}$ be an additive category. A functor $F:\mathcal{A}^{\mathrm{op}} \to \mathbf{Ab}$ is called finitely presented if there exists an exact sequence of functors
+    \begin{equation}\label{eq:fp_functor}
+        \mathrm{Hom}_{\mathcal{A}}(-, X) \to \mathrm{Hom}_{\mathcal{A}}(-,Y) \to F \to 0
+    \end{equation}
+    for some objects $X,Y \in \mathcal{A}$.
+\end{definition}
+
+\begin{remark}
+    By Yoneda's lemma, the natural transformations $\mathrm{Hom}_{\mathcal{A}}(-, X) \to \mathrm{Hom}_{\mathcal{A}}(-,Y)$ correspond to morphisms $X \to Y$ in $\mathcal{A}$.
+\end{remark}
+
+\begin{notation}
+We denote the category of additive functors from $\mathcal{A}^{\mathrm{op}}$ to $\mathbf{Ab}$ by $\mathrm{Mod}_\mathcal{A}$, and the category of finitely presented functors by $\mathrm{mod}_\mathcal{A}$.
+\end{notation}
+
+\begin{notation}
+    We write for simplicity $\mathrm{Hom}_{\mathcal{A}}(-,?)$ as $(-, ?)_\mathcal{A}$, or $(-, ?)$ when there is no ambiguity.
+\end{notation}
+
+We show some closure properties of $\mathrm{mod}_\mathcal{A} \rightarrowtail \mathrm{Mod}_\mathcal{A}$.
+
+\begin{proposition}\label{prop:fp_cok}
+    $\mathrm{mod}_\mathcal{A}$ is closed under cokernels.
+    \begin{proof}
+        Let $F, G \in \mathrm{mod}_\mathcal{A}$ and $h: F \to G$ be a natural transformation. We want to show that $\mathrm{Coker}(h) \in \mathrm{mod}_\mathcal{A}$. Since $F$ and $G$ are finitely presented, there exists a commutative diagram of right exact sequences
+        \begin{equation}
+            \xymatrix{
+(-, X^{-1}) \ar@{->}[r]^{{(-,f)}} \ar@{-->}[d]^{{(-, \varphi^{-1})}} & (-, X^0) \ar@{->>}[r]^{p} \ar@{-->}[d]^{{(-, \varphi^0)}} & F(-) \ar@{->}[d]^{h} \\
+(-, Y^{-1}) \ar@{->}[r]^{{(-,g)}} & (-, Y^0) \ar@{->>}[r]^{q} & G(-)
+            }.
+        \end{equation}
+        The morphisms $(-, \varphi^\bullet)$ are induced by projective objects. We take the mapping cone of the left square to obtain the following commutative diagram
+        \begin{equation}\label{eq:fp_cok_diag}
+\xymatrix{
+(-, X^{-1}) \ar@{->}[rr]^{{(-,f)}} \ar@{->}[d]^{{(-, \varphi^{-1})}} &  & (-, X^0) \ar@{->}[d]^{{(-, \varphi^{0})}} & \mathfrak X^\bullet \ar@{->}[d]^{\Phi ^\bullet} \\
+(-, Y^{-1}) \ar@{->}[rr]^{{(-,g)}} \ar@{->}[d]^{{(-, \binom 10)}} &  & (-, Y^0) \ar@{->}[d]^{\mathrm{id}} & \mathfrak Y^\bullet \ar@{->}[d] \\
+(-, Y^{-1}\oplus X^0) \ar@{->}[rr]^{{(-, (g,-\varphi^0))}} &  & (-, Y^0) & \mathrm{Cone}(\Phi^\bullet)
+}.
+        \end{equation}
+        By long exact sequence, we obtain
+        \begin{equation}
+            \operatorname{cok} (h) \simeq \operatorname{cok}\left[ H^0 (\mathfrak X^\bullet) \to H^0 (\mathfrak Y^\bullet)\right] \simeq \operatorname{cok}\left[ (-, (g, - \varphi ^0)) \right].
+        \end{equation}
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}\label{prop:fp_ext}
+    $\mathrm{mod}_\mathcal{A}$ is closed under extensions. That is, given a short exact sequence $0 \to F \to G \to H \to 0$ in $\mathrm{Mod}_\mathcal{A}$, if $F, H \in \mathrm{mod}_\mathcal{A}$, then $G \in \mathrm{mod}_\mathcal{A}$.
+    \begin{proof}
+        Let $\mathfrak P^\bullet$ and $\mathfrak R^\bullet$ be presentations of $F$ and $H$, respectively. By horseshoe lemma, there exists a presentation $\mathfrak Q^\bullet$ of $G$ which fits into a degreewise split short exact sequence
+        \begin{equation}
+            0 \to \mathfrak P^\bullet \to \mathfrak Q^\bullet \to \mathfrak R^\bullet \to 0.
+        \end{equation}
+        Hence, $\mathfrak Q^\bullet$ has representable components. This completes the proof.
+    \end{proof}
+\end{proposition}
+
+\begin{remark}\label{rem:fp_colim}
+    The finite colimits (equivalently characterised by biproducts and cokernels) in $\mathrm{mod}_\mathcal{A}$ are the same as those in $\mathrm{Mod}_\mathcal{A}$. In other words, finite colimits of finitely presented functors are computed pointwise.
+    
+    Not all colimits in $\mathrm{mod}_\mathcal{A}$ are computed pointwise. For instance, let $\mathcal{A}$ be any category that admits arbitrary coproducts. We claim that $\coprod_{i \in I}(-, X_i) \simeq (-, \coprod _{i\in I}X_i)$ in $\mathrm{mod}_\mathcal{A}$. All functors in $\mathrm{mod}_\mathcal{A}$ preserves products, as products are exact in $\mathbf{Ab}$. By Yoneda lemma,
+    \begin{equation}
+        \left[(-, \coprod _{i\in I}X_i), F(-)\right] \simeq F\left(\coprod _{i\in I}X_i\right) \simeq \prod _{i \in I} F(X_i) \simeq \prod _{i\in I}\left[(-, X_i), F(-)\right]\simeq \left[\coprod _{i\in I}(-, X_i), F(-)\right].
+    \end{equation}
+\end{remark}
+
+We show that representable functor are projective, making \cref{eq:fp_functor} a projective presentation.
+
+\begin{lemma}\label{lem:rep_proj}
+    Representable functors are projective in both $\mathrm{Mod}_\mathcal{A}$ and $\mathrm{mod}_\mathcal{A}$.
+    \begin{proof}
+        Since cokernels in $\mathrm{mod}_\mathcal{A}$ is computed in $\mathrm{Mod}_\mathcal{A}$ (\cref{prop:fp_cok}), it suffices to show that representable functors are projective in $\mathrm{Mod}_\mathcal{A}$. Let $P = (-, X)$ be a representable functor, and let $\theta : F \twoheadrightarrow G$ be an epimorphism in $\mathrm{Mod}_\mathcal{A}$. By Yoneda lemma,
+        \begin{equation}
+            \left[(-, X), \theta \right] \simeq [\theta _X : F(X) \twoheadrightarrow G(X)]
+        \end{equation}
+        is epic. Hence $(-, X)$ is projective.
+    \end{proof}
+\end{lemma}
+
+\begin{remark}
+    The converse of \cref{lem:rep_proj} is not ture. For instance, suppose that there is an idempotent $e \in (X,X)$ such that $\operatorname{cok} e$ is non-representable. Then $\operatorname{cok}(-, e)$ is not representable, but it is projective as it is a direct summand of the projective object $(-, X)$.
+\end{remark}
+
+\subsection{When \texorpdfstring{$\mathrm{mod}_\mathcal{A}$}{} is Abelian}
+
+We learn by \cref{prop:fp_ext} and \cref{prop:fp_cok} that $\mathrm{mod}_\mathcal{A}$ is an full subcategory of the Abelian category $\mathrm{Mod}_\mathcal{A}$, which is closed under extensions and cokernels. However, $\mathrm{mod}_\mathcal{A}$ is lack of kernels in general.
+
+\begin{definition}[Weak kernel]\label{def:weak_kernel}
+    Say $K \xrightarrow{i} X$ is a weak kernel of $X \xrightarrow f Y$ if for any $j: W \to X$ such that $fj = 0$, there exists a (not necessarily unique) morphism $k: W \to K$ such that $jk = i$.
+\end{definition}
+
+\begin{lemma}\label{lem:weak_kernel}
+    $K \xrightarrow{i} X$ is a weak kernel of $X \xrightarrow f Y$, if and only if $(-, K) \xrightarrow{(-, i)} (-, X) \xrightarrow{(-, f)} (-, Y)$ is exact at $(-, X)$, computed pointwise.
+    \begin{proof}
+        \cref{def:weak_kernel} means precisely $\ker (-, f) = \operatorname{im} (-, i)$.
+    \end{proof}
+\end{lemma}
+
+\begin{example}
+    Kernels are weak kernels. For any distinguished triangle $X \xrightarrow u Y \xrightarrow v Z \xrightarrow w \Sigma X$ in a (pre-)triangulated category, $X \xrightarrow u Y$ is a weak kernel of $Y \xrightarrow v Z$.
+\end{example}
+
+\begin{remark}
+    We can define weak cokernels dually. However, $f$ is not always a weak cokernel of $i$ in \cref{def:weak_kernel}.
+\end{remark}
+
+\begin{example}\label{ex:fp_proj_res}
+    Suppose $\mathcal{A}$ has weak kernels. Any $F \in \mathrm{mod}_\mathcal{A}$ admits a projective resolution of length $\infty$:
+    \begin{equation}
+        \cdots \xrightarrow{(-, f^{-2})} (-, X^{-2}) \xrightarrow{(-, f^{-1})} (-, X^{-1}) \xrightarrow{(-, f^0)} (-, X^0) \xrightarrow p F \to 0,
+    \end{equation}
+    wherein $f^{-(k+1)}$ is a weak kernel of $f^{-k}$ for each $k \geq 0$.
+\end{example}
+
+\begin{theorem}\label{thm:fp_abelian}
+    $\mathrm{mod}_\mathcal{A}$ has kernels (computed pointwise in $\mathrm{Mod}_\mathcal{A}$) if and only if $\mathcal{A}$ has weak kernels.
+    \begin{proof}
+        ($\Rightarrow$). We show that any $f : X \to Y$ has kernels. Set $F = \operatorname{cok} (-, f)$. By assumption, there are $H, K \in \mathrm{mod}_\mathcal{A}$ while $(i', p')$ and $(i, p)$ are kernel-cokernel pairs in $\mathrm{Mod}_\mathcal{A}$:
+        \begin{equation}
+            \xymatrix{
+(-, M) \ar@{->>}[rd]^{p''} \ar@{-->}[rr]^{i'\circ p''} &  & (-, X) \ar@{->}[rr]^{{(-,f)}} \ar@{->>}[rd]^{p'} &  & (-, Y) \ar@{->>}[r]^{p} & F \\
+ & H \ \ar@{>->}[ru]^{i'} &  & K \ \ar@{>->}[ru]^{i} &  & 
+            }.
+        \end{equation}
+        Clearly, $\operatorname{im}(i' \circ p'') \simeq H \simeq \ker p' = \ker (-,f)$. By Yoneda lemma, $i' \circ p'' = (-, l)$ for some $l : M \to X$. Hence, $l$ is a weak kernel of $f$ (\cref{lem:weak_kernel}).
+
+        ($\Leftarrow$). When $\mathrm{mod}_\mathcal{C}$ has weak kernels, we extend \cref{eq:fp_cok_diag} to 3-term presentations:
+        \begin{equation}
+\xymatrix{
+(-, X^{-2}) \ar@{-->}[rr]^{{(-,a)}} \ar@{->}[d]^{{(-, \varphi ^{-2})}} &  & (-, X^{-1}) \ar@{->>}[rr]^{{(-,f)}} \ar@{->}[d]^{{(-, \varphi^{-1})}} &  & (-, X^0) \ar@{->}[d]^{{(-, \varphi^0)}} & \mathfrak X^\bullet \ar@{->}[d]^{\Phi ^\bullet} \\
+(-, Y^{-2}) \ar@{-->}[rr]^{{(-, b)}} \ar@{>->}[d]^{{(-, \binom 10)}} &  & (-, Y^{-1}) \ar@{->>}[rr]^{{(-,g)}} \ar@{>->}[d]^{{(-, \binom 10)}} &  & (-, Y^0) \ar@{=}[d] & \mathfrak Y^\bullet \ar@{->}[d] \\
+(-, Y^{-2}\oplus X^{-1}) \ar@{-->}[rr]^{{(-, \binom{b,-\varphi ^{-1}}{0, -f})}} &  & (-, Y^{-1}\oplus X^0) \ar@{->>}[rr]^{{(-, (g,-\varphi^0))}} &  & (-, Y^0) & \mathrm{Cone}(\Phi^\bullet)
+}.
+        \end{equation}
+        By long exact sequence, we obtain 
+        \begin{equation}
+\xymatrix{
+H^{-1}\mathfrak Y^\bullet \ar@{->}[r] \ar@{=}[d] & H^{-1}\mathrm{Cone}(\Phi^\bullet) \ar@{->}[r] \ar@{->>}[d] & H^0\mathfrak X^\bullet \ar@{=}[d] \ar@{->}[r] & H^0\mathfrak Y^\bullet \ar@{=}[d] \ar@{->}[r] & H^0\mathrm{Cone}(\Phi^\bullet) \ar@{=}[d] \ar@{->}[r] & H^1\mathfrak X^\bullet \ar@{=}[d] \\
+0 \ar@{->}[r] & \ker h \ \ \ar@{>->}[r] & F \ar@{->}[r]^{h} & G \ar@{->>}[r] & \operatorname {coker}h \ar@{->}[r] & 0
+}.
+        \end{equation}
+        It suffices to show that $H^{-1}\mathrm{Cone}(\Phi ^\bullet) \simeq \frac{\ker (-, (g,-\varphi^0))}{\operatorname{im}(-, \binom{b,-\varphi ^{-1}}{0, -f})} \in \mathrm{mod}_\mathcal{C}$. By \cref{prop:fp_cok}, we show $\ker (-, (g,-\varphi^0))\in \mathrm{mod}_\mathcal{C}$ and $\operatorname{im}(-, \binom{b,-\varphi ^{-1}}{0, -f}) \in \mathrm{mod}_\mathcal{C}$. Note that
+        \begin{equation}
+            \operatorname{im}(-, \binom{b,-\varphi ^{-1}}{0, -f}) \simeq \operatorname{cok} \left[(-, Y^{-3}\oplus X^{-2}) \to (-, Y^{-2}\oplus X^{-1})\right] \in \mathrm{mod}_\mathcal{C}.
+        \end{equation}
+        A computation of kernel-cokernel sequence shows the short exact sequence
+        \begin{equation}
+            0 \to \ker (-, g) \to \ker (-, (g,-\varphi^0)) \to \operatorname{cok} (-, \binom 1 0) \to 0.
+        \end{equation}
+        By \cref{prop:fp_ext}, we see $\ker (-, (g,-\varphi^0)) \in \mathrm{mod}_\mathcal{C}$.
+    \end{proof}
+\end{theorem}
+
+\begin{corollary}\label{cor:fp_abelian}
+    Under the assumption of \cref{thm:fp_abelian}, there is a canonical isomorphism $\operatorname{cok} \ker \simeq \ker \operatorname{cok}$ in $\mathrm{mod}_\mathcal{A}$ which is computed pointwise. If any only if $\mathcal{A}$ has weak kernels, $\mathrm{mod}_\mathcal{A}$ is an Abelian subcategory of $\mathrm{Mod}_\mathcal{A}$ whose finite limits and colimits are computed pointwise.
+\end{corollary}
+
+We slightly enhance \cref{thm:fp_abelian} to get rid of the pointwise condition.
+
+\begin{lemma}\label{lem:fp_kernel}
+    When $\mathrm{mod}_\mathcal{A}$ has kernels, then the kernel must be computed pointwise.
+    \begin{proof}
+        It suffices to show that $\mathcal{A}$ has weak kernels (\cref{thm:fp_abelian}). Let $f: X \to Y$ be any morphism in $\mathcal{A}$. By assumption, we take presentation of $\ker (-, f)$ and obtain 
+        \begin{equation}
+            \xymatrix{
+(-, N) \ar@{->}[rr]^{{(-, g)}} &  & (-, M) \ar@{->>}[rd]^{p} \ar@{-->}[rr]^{{(-, \varphi )}} &  & (-, X) \ar@{->}[rr]^{{(-,f)}} &  & (-, Y) \\
+ &  &  & K \ \ar@{>->}[ru]^{i} &  &  & 
+            }.
+        \end{equation}
+        By Yoneda lemma, $i \circ p$ takes the form $(-, \varphi)$. We claim that $\varphi$ is a weak kernel of $f$. Indeed, any morphism $j: W \to X$ corresponds to a natural transformation $(-, j) : (-, W) \to (-, X)$. When $f \circ j = 0$, we see $(-, j)$ factors through $i$. By lifting property projective objects, $(-, j)$ factors through $(-, \varphi)$. By Yoneda lemma again, $j$ factors through $\varphi$. This completes the proof.
+    \end{proof}
+\end{lemma}
+
+\begin{remark}
+    We mention that \cref{lem:fp_kernel} is a non-trivial but a satisfying coincidence. The general (co)limits in $\mathrm{mod}_\mathcal{A}$ might not be computed pointwisely, see \cref{rem:fp_colim}.
+\end{remark}
+
+\begin{theorem}
+    $\mathrm{mod}_\mathcal{A}$ has kernel iff $\mathcal{A}$ has weak kernels, iff $\mathrm{mod}_\mathcal{A}$ has kernels computed pointwise, iff $\mathcal{A}$ is Abelian.
+    \begin{proof}
+        By \cref{thm:fp_abelian}, \cref{cor:fp_abelian}, and \cref{lem:fp_kernel}.
+    \end{proof}
+\end{theorem}
+
+\subsection{Homological Universal Properties}
+
+\begin{definition}[Yoneda embedding]
+    The Yoneda embedding is defined to be the fully faithful functor
+    \begin{equation}
+        \mathbb{Y} : \mathcal{A} \to \mathrm{mod}_\mathcal{A}, \quad X \mapsto (-, X).
+    \end{equation}
+\end{definition}
+
+\begin{remark}\label{rem:yoneda_exact}
+    By universal property of $\mathrm{Hom}$, the Yoneda embedding preserves all limits, and thus is left exact.
+\end{remark}
+
+We with \cref{rem:yoneda_exact} to be a right adjoint. 
+
+\begin{proposition}\label{prop:fp_left_adj}
+    The Yoneda embedding $\mathbb{Y} : \mathcal{A} \to \mathrm{mod}_\mathcal{A}$ admits a left adjoint iff $\mathcal{A}$ has cokernels.
+    \begin{proof}
+    The left adjoit exists iff $[F, \mathbb Y(-)]_{\mathrm {mod}_\mathcal{A}}$ is representable for any $F \in \mathrm{mod}_\mathcal{A}$. We take arbitrary $F = \operatorname{cok}(-, f)$. By Yoneda lemma,
+    \begin{equation}
+        [F, \mathbb Y(-)]_{\mathrm {mod}_\mathcal{A}} \simeq \ker [\mathbb Y(f), \mathbb Y(-)]_{\mathrm {mod}_\mathcal{A}} \simeq \ker (f, -)_\mathcal{A}.
+    \end{equation}
+    The functor is representable iff $f$ has cokernel. 
+    \end{proof}
+\end{proposition}
+
+\begin{corollary}
+    When $\mathcal{A}$ has cokernel, the assignment
+    \begin{equation}
+        \mathrm{mod}_\mathcal{A} \to \mathcal{A},\quad \operatorname{cok} (-, f) \mapsto \operatorname{cok} f
+    \end{equation}
+    is a well-defined functor preserving all colimits.
+\end{corollary}
+
+\begin{theorem}\label{thm:fp_univ_prop}
+    Let $\mathcal{A}$ and $\mathcal{B}$ be an additive category. Suppose that $\mathcal{B}$ has cokernels. The following functor categories are equivalent:
+    \begin{equation}\label{eq:fp_univ_prop}
+        (\mathbb Y_\mathcal{A})^\ast : \mathrm{REx}(\mathrm{mod}_\mathcal{A}, \mathcal{B}) \to \mathrm{Fun}(\mathcal{A}, \mathcal{B}), \quad T \mapsto T \circ \mathbb Y_\mathcal{A}.
+    \end{equation}
+    Here $\mathrm{REx} \subseteq \mathrm{Fun}$ consists of all right exact (i.e., cokernel-preserving) functors.
+    \begin{proof}
+        We take the adjunction $L_\mathcal{B} \dashv \mathbb Y_\mathcal{B}$. Any functor $F: \mathcal{A} \to \mathcal{B}$ extends to a right exact functor $\tilde F : \mathrm{mod}_\mathcal{A} \to \mathrm{mod}_\mathcal{B}$. 
+        \begin{equation}
+            \xymatrix{
+\mathcal A \ar@{->}[rr]^{F} \ar@{->}[d]^{\mathbb Y_{\mathcal A}} &  & \mathcal B \ar@/^/@{->}[d]^{\mathbb Y_{\mathcal B}} \\
+\mathrm{mod}_{\mathcal A} \ar@{->}[rr]^{\widetilde F} &  & \mathrm{mod}_{\mathcal B} \ar@/^/@{-->}[u]^{L_{\mathcal B}}
+            }.
+        \end{equation}
+        Composing with the left adjoint, we obtain a right exact functor
+        \begin{equation}
+            L_\mathcal{B} \circ \tilde F : \mathrm{mod}_\mathcal{A} \to \mathcal{B}.
+        \end{equation}
+        We show $F \mapsto L_\mathcal{B} \circ \tilde F$ is a inverse of $(\mathbb Y_\mathcal{A})^\ast$. Over the level of objects,
+        \begin{enumerate}
+            \item $(\mathbb Y_\mathcal{A})^\ast (L_\mathcal{B} \circ \tilde F) = (L_\mathcal{B} \circ \tilde F) \circ \mathbb Y_\mathcal{A} = L_\mathcal{B} \circ (\mathbb Y_\mathcal{B} \circ F) \simeq \mathrm{id}_\mathcal{B} \circ F$, and
+            \item $L_\mathcal{B} \circ \widetilde{\mathbb Y_\mathcal{A}^\ast (G)} \simeq L_\mathcal{B} \circ (\mathbb Y_\mathcal{B} \circ G) \simeq \mathrm{id}_\mathcal{B} \circ G$.
+        \end{enumerate}
+        For natural transformations, we show the correspondence:
+        \begin{equation}
+\xymatrix@C+2pc{
+\mathrm{mod}_\mathcal{A} \rtwocell^{F}_{G}{\;\;\;\theta} & \mathcal{B}
+} \leftrightarrow \{\theta_F\}_{F \in \mathrm{mod}_\mathcal{A}} \leftrightarrows \{\theta_{(-, X)}\}_{X \in \mathcal{A}} \leftrightarrow \xymatrix@C+2pc{
+\mathcal{A} \rtwocell^{F\circ\mathbb Y_\mathcal{A}}_{G\circ\mathbb Y_\mathcal{A}}{\ \ \ \ \theta \mathbb Y_\mathcal{A}} & \mathcal{B}
+}.
+        \end{equation}
+        Here $\{\theta_F\}$ determines $\{\theta_{(-, X)}\}$ by restriction, and $\{\theta_{(-, X)}\}$ determines $\{\theta_F\}$ by universal property of cokernels. 
+    \end{proof}
+\end{theorem}
+
+\begin{theorem}\label{thm:fp_exact}
+    Suppose in \cref{thm:fp_univ_prop} that $\mathcal{A}$ has weak kernels. Then the equivalence restricts to
+    \begin{equation}
+        (\mathbb Y_\mathcal{A})^\ast : \mathrm{Ex}(\mathrm{mod}_\mathcal{A}, \mathcal{B}) \to \mathrm{Fun}_{w}(\mathcal{A}, \mathcal{B}).
+    \end{equation}
+    Here $\mathrm{Ex} \subseteq \mathrm{REx}$ consists of all exact functors, and $\mathrm{Fun}_w \subseteq \mathrm{Fun}$ consists of all weak kernel-preserving functors.
+    \begin{proof}
+        By \cref{thm:fp_univ_prop}, it suffices to verify that $(\mathbb{Y}_\mathcal{A})^\ast$ is essentially surjective restricted to the subcategories. Clearly, $(\mathbb Y_\mathcal{A})^\ast$ sends exact functors to those in $\mathrm{Fun}_w (\mathcal{A}, \mathcal{B})$. Conversely, we show for any $F \in \mathrm{Fun}_w (\mathcal{A}, \mathcal{B})$, the preimage $\mathfrak F \in \mathrm{REx}(\mathrm{mod}_\mathcal{A}, \mathcal{B})$ (\cref{eq:fp_univ_prop}) is exact. We take any short exact sequence $0 \to K \to G \to H \to 0$ in $\mathrm{mod}_\mathcal{A}$ and construct the $2$-presentation (\cref{ex:fp_proj_res}) by horseshoe lemma:
+        \begin{equation}\label{eq:fp_exact_diag}
+            \xymatrix{
+0 \ar@{->}[r] & (-, X^{-2}) \ar@{->}[d] \ar@{->}[r] & (-, Y^{-2}) \ar@{->}[r] \ar@{->}[d] & (-, Z^{-2}) \ar@{->}[r] \ar@{->}[d] & 0 \\
+0 \ar@{->}[r] & (-, X^{-1}) \ar@{->}[d] \ar@{->}[r] & (-, Y^{-1}) \ar@{->}[r] \ar@{->}[d] & (-, Z^{-1}) \ar@{->}[r] \ar@{->}[d] & 0 \\
+0 \ar@{->}[r] & (-, X^0) \ar@{->>}[d] \ar@{->}[r] & (-, Y^0) \ar@{->>}[d] \ar@{->}[r] & (-, Z^0) \ar@{->>}[d] \ar@{->}[r] & 0 \\
+0 \ar@{->}[r] & K \ar@{->}[r]^{i} & G \ar@{->}[r]^{p} & H \ar@{->}[r] & 0
+            }.
+        \end{equation}
+        Applying $\mathfrak F$ to \cref{eq:fp_exact_diag}, we obtain the commutative diagram (note that $\mathfrak F$ is right exact):
+        \begin{equation}
+            \xymatrix{
+0 \ar@{->}[r] & F(X^{-2}) \ar@{->}[d] \ar@{->}[r] & F(Y^{-2}) \ar@{->}[r] \ar@{->}[d] & F(Z^{-2}) \ar@{->}[r] \ar@{->}[d] & 0 \\
+0 \ar@{->}[r] & F(X^{-1}) \ar@{->}[d] \ar@{->}[r] & F(Y^{-1}) \ar@{->}[r] \ar@{->}[d] & F(Z^{-1}) \ar@{->}[r] \ar@{->}[d] & 0 \\
+0 \ar@{->}[r] & F(X^{0}) \ar@{->>}[d] \ar@{->}[r] & F(Y^{0}) \ar@{->>}[d] \ar@{->}[r] & F(Z^{0}) \ar@{->>}[d] \ar@{->}[r] & 0 \\
+\ker \mathfrak F(i) \ \ar@{>->}[r] & \mathfrak F(K) \ar@{->}[r]^{\mathfrak F(i)} & \mathfrak F(G) \ar@{->}[r]^{\mathfrak F(p)} & \mathfrak F(H) \ar@{->}[r] & 0
+            }.
+        \end{equation}
+        By snack lemma between exact complexes, $\ker \mathfrak F(i) \simeq H(F(Z^{-1}) \to F(Z^{-1}) \to F(Z^0)) = 0$.
+    \end{proof}
+\end{theorem}
+
+\begin{corollary}
+    Let $\mathcal{A}$ be any category.
+    \begin{enumerate}
+        \item For any category $\mathcal{B}$ with cokernels, the functor $F: \mathcal{A} \to \mathcal{B}$ extends uniquely (under equivalences) to a right exact functor $\mathrm{mod}_\mathcal{A} \to \mathcal{B}$ (\cref{thm:fp_univ_prop}).
+        \item If $\mathcal{A}$ has weak kernels, then for any Abelian category $\mathcal{B}$, the functor $F: \mathcal{A} \to \mathcal{B}$ extends uniquely (under equivalences) to an exact functor $\mathrm{mod}_\mathcal{A} \to \mathcal{B}$ (\cref{thm:fp_exact}).
+    \end{enumerate}
+\end{corollary}
+
+\begin{corollary}\label{cor:fp_left_adj}
+    When $\mathcal{A}$ has weak kernels, the left adjoint of the $\mathbb Y : \mathcal{A} \to \mathrm{mod}_\mathcal{A}$ (\cref{thm:fp_univ_prop}) is exact. 
+    \begin{proof}
+        The weak kernel-preserving functor $\mathrm{id}_\mathcal{A} : \mathcal{A} \to \mathcal{A}$ extends to this exact functor $\mathrm{mod}_\mathcal{A} \to \mathcal{A}$. 
+    \end{proof}
+\end{corollary}
+
+\begin{example}
+    Let $\mathcal{T}$ be pre-triangulated. Any homological functor $H: \mathcal{T} \to \mathbf{Ab}$ (i.e., sending distinguished triangles to long exact sequences) extends to an exact functor $\mathrm{mod}_\mathcal{T} \to \mathbf{Ab}$, which is uniquely under equivalences. Note that $\mathcal{T} \to \mathrm{mod}_\mathcal{T}$ and $\mathcal{T} \to (\mathrm{mod}_{\mathcal{T}^{\mathrm{op}}})^{\mathrm{op}}$ factors through one another, the Abelian category $\mathrm{mod}_\mathcal{T}$ is Frobenius exact. The projectives are summands of representable functors.
+\end{example}
+
+\section{Auslander's Defects}
+
+\subsection{Defects}
+
+\begin{notation}
+    Let $\mathcal{A}$ be an Abelian category, $\mathcal{E}$ consists of all short exact sequences in $\mathcal{A}$.
+\end{notation}
+
+\begin{definition}[Defect]
+    Let $\delta \in \mathrm{Ext}^1(Z, X)$ be any extension, realised by a short exact sequence $X \xrightarrow f Y \xrightarrow g Z$. We set
+    \begin{equation}
+        0 \to (-, X) \xrightarrow{(-, f)} (-, Y) \xrightarrow{(-, g)} (-, Z) \to \delta^\ast \to 0,
+    \end{equation}
+    and 
+    \begin{equation}
+        0 \to (Z, -) \xrightarrow{(g, -)} (Y, -) \xrightarrow{(f, -)} (X, -) \to \delta_\ast \to 0.
+    \end{equation}
+\end{definition}
+
+\begin{lemma}\label{lem:defect_homotopy}
+    $\delta ^\ast \simeq \varepsilon ^\ast$ if and only if the corresponding shrot exact sequences are homotopy equivalent.
+    \begin{proof}
+        When $\delta^\ast \simeq \varepsilon^\ast$, there are induced commutative diagram between $4$-term exact sequences:
+        \begin{equation}
+            \xymatrix{
+(-, X) \ \ar@{>->}[r] \ar@{-->}[d] & (-, Y) \ar@{->}[r] \ar@{-->}[d] & (-, Z) \ar@{->>}[r] \ar@{-->}[d] & \delta^\ast \ar@{->}[d]^{\simeq} \\
+(-, A) \ \ar@{>->}[r] & (-, B) \ar@{->}[r] & (-, C) \ar@{->>}[r] & \varepsilon ^\ast
+            }.
+        \end{equation}
+        There dashed arrows are induced by projective objects. Once we truncate the last columns, we obtain a quasi-equivalence between projective complexes, which is also a homotopy equivalence. By Yoneda lemma, we obtain a homotopy equivalence between short exact sequences in $\mathcal{E}$. The converse is clear.
+    \end{proof}
+\end{lemma}
+
+\begin{notation}
+    Let $\mathrm{def}_\mathcal{A}$ denotes the full subcategory of $\mathrm{mod}_\mathcal{A}$ consisting of all defects $\delta^\ast$ for $\delta \in \mathcal{E}$.
+\end{notation}
+
+\begin{theorem}
+    $(-)^\ast : \mathcal{E} \to \mathrm{def}_\mathcal{A},\quad \delta \mapsto \delta^\ast$ induces an equivalence between the homotopy category of $\mathcal{E}$ and $\mathrm{def}_\mathcal{A}$.
+    \begin{proof}
+        By \cref{lem:defect_homotopy}, $\overline {(-)^\ast} : (\mathcal{E}/ \sim) \to \mathrm{def}(\mathcal{A})$ is a well-defined functor. $\overline {(-)^\ast}$ is also full and essentially surjective as $(-)^\ast$ is. It remains to show that $\overline {(-)^\ast}$ is faithful. Let $\delta, \varepsilon \in \mathcal{E}$ be any two extensions connected by a morphism $(\alpha, \beta, \gamma)$, suppose that $\overline {(\alpha, \beta, \gamma)^\ast } = 0$. We obtain $s^{-1}$ such that $v \circ s^{-1} = \gamma$ by cokernel $w$. Note that $\beta - s^{-1} \circ l$ is annihilated by $v$, it factors through $u$ by some $s^{-2}$. Finally, we see $s^{-2} \circ k = \alpha$ by composing a monomorphism $u$.
+        \begin{equation}
+            \xymatrix{
+(-, X) \ \ar@{>->}[r]^{k} \ar@{-->}[d]^{\alpha} & (-, Y) \ar@{->}[r]^{l} \ar@{-->}[d]^{\beta} \ar@{->}[ld]^{s^{-2}} & (-, Z) \ar@{->>}[r]^{m} \ar@{-->}[d]^{\gamma} \ar@{->}[ld]^{s^{-1}} & \delta^\ast \ar@{->}[d]^{0} \\
+(-, A) \ \ar@{>->}[r]^{u} & (-, B) \ar@{->}[r]^{v} & (-, C) \ar@{->>}[r]^{w} & \varepsilon ^\ast
+            }.
+        \end{equation}
+    \end{proof}
+\end{theorem}
+
+\begin{corollary}\label{cor:defect_mod}
+    A similar argument shows that $\mathrm{mod}_\mathcal{A}$ is the homotopy category of left exact sequences. Hence,
+    \begin{equation}
+        \xymatrix{
+\textbf{Left exact sequences} \ar@{->>}[rr] &  & \frac{\textbf{Left exact sequences}}{\textbf{Homotopy}} \ar@{->}[rr]^{\simeq} &  & \mathrm{mod}_{\mathcal A} \\
+\textbf{Exact sequences} \ar@{->>}[rr] \ar@{>->}[u] &  & \frac{\textbf{Exact sequences}}{\textbf{Homotopy}} \ar@{>->}[u] \ar@{->}[rr]^{\simeq} &  & \mathrm{def}_{\mathcal A} \ar@{>->}[u]
+        }.
+    \end{equation}
+\end{corollary}
+
+\begin{lemma}[Heller's exact category]\label{lem:fp_exact_str}
+    $\mathcal{E}$ admits an exact structure where the conflations are  $3 \times 3$ diagrams of short exact sequences. 
+    \begin{proof}
+        The kernel-cokernel pairs are clear. We verify EX0, EX1, and EX2 and omit the verification of dual axioms.
+        \begin{enumerate}
+            \item The axiom EX0 says isomorphisms are both inflations. This is clear.
+            \item The axiom EX1 says that the composition of two inflations is still a inflation. We take two composable inflations $(f_1, f_2, f_3)$ and $(g_1, g_2, g_3)$, and consider the following diagram (Noether's isomorphism):
+                \begin{equation}
+                \xymatrix{
+                A_i \ar@{=}[d] \ar@{>->}[r]^{f_i} & B_i \ar@{->>}[r]^{u_i} \ar@{>->}[d]^{g_i} & C_i \ar@{>->}[d]^{v_i} &  &  \\
+                A_i \ar@{>->}[r]^{g_i \circ f_i} & D_i \ar@{->>}[r]^{p_i} \ar@{->>}[d]^{q_i \circ p_i} & E_i \ar@{->>}[d]^{q_i} &  & i \in \{1,2,3\} \\
+                & F_i \ar@{=}[r] & F_i &  & 
+                }
+                \end{equation}
+                We explain the construction of $\text{Diagram}_1 \rightarrowtail \text{Diagram}_2\twoheadrightarrow \text{Diagram}_3$. We construct all arrows connecting to $A_\bullet$, $B_\bullet$ and $D_\bullet$, all associated squares commute by assumption. We introduce $C_1 \rightarrowtail C_2 \twoheadrightarrow C_3$, $E_1 \rightarrowtail E_2 \twoheadrightarrow E_3$ and $F_1 \rightarrowtail F_2 \twoheadrightarrow F_3$ by cokernels. These three mapping chains are conflations by $3 \times 3$ lemma. The rest of the morphisms are uniquely determined by universal properties. The commutativity are verified by composing with deflation. For instance, to see $E_1 \rightarrowtail E_2 \twoheadrightarrow F_2$ coincides with $E_1 \twoheadrightarrow F_1 \rightarrowtail F_2$, we compose $D_1 \twoheadrightarrow E_1$ forward and see the commutativity by diagram chasing.
+                \item The axiom EX2 says that the pushout of an inflation along any morphism exists and is still an inflation. This axiom is easily verified in functor category.
+        \end{enumerate}
+    \end{proof}
+\end{lemma}
+
+\begin{example}
+    Even if $\mathcal{A}$ is Abelian, $\mathcal{E}$ is not necessarily Abelian. For instance, the morphism
+    \begin{equation}
+        \xymatrix{
+0 \ \ar@{>->}[r] \ar@{->}[d] & A \ar@{->>}[r]^{\mathrm{id}_A} \ar@{->}[d]^{\mathrm{id}_A} & A \ar@{->}[d] \\
+A \ \ar@{>->}[r]^{\mathrm{id}_A} & A \ar@{->>}[r] & 0
+}
+    \end{equation}
+    is both monic and epic, but not an isomorphism.
+\end{example}
+
+\subsection{Auslander's Defect Formula}
+
+\begin{notation}
+    We fix $\mathcal{A} := \mathrm{Mod}_R$ as the category of right modules over a unital (not necessary commutative) ring $R$. Let $E$ be any injective object (summands of $\prod\limits_{i \in I} ({}_RR, \mathbb Q / \mathbb R)_{\mathbf{Ab}}$) in $\mathrm{Mod}_R$. We introduce two contravariant functors:
+    \begin{enumerate}
+        \item $(-)^\star := (-, R) : \mathrm{Mod}_R \to {}_R\mathrm{Mod},\quad M \mapsto (M, R)$, and 
+        \item $D(-) := (-, E) : \mathrm{Mod}_R \to {}_R\mathrm{Mod},\quad N \mapsto (N, E)$.
+    \end{enumerate}
+\end{notation}
+
+\begin{lemma}
+    $(-)^\star$ induce a duality restricted to finitely generated projective modules.
+    \begin{proof}
+        $(-)^\star$ induces an equivalence between finitely generated free modules, hence between finitely generated projective modules by taking summands.
+    \end{proof}
+\end{lemma}
+
+We ask to what extent $(-)^\star$ induces a ``duality'' between $\mathrm{mod}_R$ and $\mathrm{mod}_{R^{\mathrm{op}}}$.
+
+\begin{definition}[Auslander-Bridger transpose]
+    We assume $R$ to be semi-perfect, so that any finitely generated module admits a minimal projective presentations. Let $M \in \mathrm{mod}_R$ be any finitely presented module. We take a minimal projective presentation $P^{-1} \xrightarrow f P^0 \to M \to 0$ and define the Auslander-Bridger transpose of $M$ to be $\operatorname{Tr} M := \operatorname{cok} (f^\star)$. Hence, there is a $4$-term exact sequence
+    \begin{equation}
+        0 \to M^\star \to (P^0)^\star \xrightarrow{f^\star} (P^{-1})^\star \to \operatorname{Tr} M \to 0.
+    \end{equation}
+\end{definition}
+
+\begin{remark}
+    We recollect some properties of $\operatorname{Tr}$.
+    \begin{enumerate}
+        \item Suppose $M \in \mathrm{mod}_R$ has no projective summands, then so is $\operatorname{Tr} M$.
+        \item Suppose $M \in \mathrm{mod}_R$ has no projective summands. If and only if $f$ is a minimal projective presentation of $M$, $f^\star$ is a minimal projective presentation of $\operatorname{Tr} M$.
+        \item Suppose $M \in \mathrm{mod}_R$ has no projective summands, then $\operatorname{Tr} \operatorname{Tr} M \simeq M$.
+        \item Let $f$ and $g$ be any two projective presentations of $M$, then $\operatorname{cok} (f^\star) \oplus P \simeq \operatorname{cok} (g^\star) \oplus Q$ for some projective modules $P, Q$. Moreover, $\mathrm{Tr}$ introduces a duality between stable categories $\underline{\mathrm{mod}}_R$ and $\underline{_R\mathrm{mod}}$.
+    \end{enumerate}
+    \begin{proof}
+        The proof concerns with radical theory. See \S 32 of \cite{anderson2012rings}.
+    \end{proof}
+\end{remark}
+
+\begin{example}\label{ex:defect_tr}
+    For any $M \in \mathrm{mod}_R$ with minimal presentation $M = \operatorname{cok} f$ and $A \in \mathrm{Mod}_R$, there is a $4$-term exact sequnce 
+    \begin{equation}
+        \xymatrix{
+ &  & A \otimes (P^{0})^\star \ar@{->}[r]^{A \otimes f^\star} \ar@{->}[d]^{\simeq} & A \otimes (P^{-1})^\star \ar@{->}[r]^{A \otimes p} \ar@{->}[d]^{\simeq} & A \otimes \operatorname {Tr}M \ar@{->}[r] & 0 \\
+0 \ar@{->}[r] & (M, A) \ar@{->}[r]^{{(p,A)}} & (P^0, A) \ar@{->}[r]^{{(f, A)}} & (P^{-1},A) &  & 
+        }.
+    \end{equation}
+\end{example}
+
+\begin{theorem}[Auslander's defect formula]
+    Let $A \xrightarrow f B \xrightarrow g C$ be any short exact sequence in $\mathrm{Mod}_R$ which corresponds to an extension $\delta \in \mathrm{Ext}^1(C,A)$. Then there is a natural isomorphism $D \delta^\ast \simeq \delta_\ast (D\operatorname{Tr} X)$ for any $X \in \mathrm{mod}_R$.
+    \begin{proof}
+        We apply the $4$-term exact sequence in \cref{ex:defect_tr} to the short exact sequence, and obtain the following commutative diagram with exact rows and columns by snake lemma:
+        \begin{equation}
+            \xymatrix{
+ &  &  & \delta^\ast (X) \ar@{>->}[d] \\
+(X, A) \ar@{>->}[r] \ar@{>->}[d] & (P^0, A) \ar@{->}[r] \ar@{>->}[d] & (P^{-1},A) \ar@{->>}[r] \ar@{>->}[d] & A \otimes \operatorname {Tr}X \ar@{->}[d] \\
+(X,B) \ar@{>->}[r] \ar@{->}[d] & (P^0,B) \ar@{->}[r] \ar@{->>}[d] & (P^{-1},B) \ar@{->>}[r] \ar@{->>}[d] & B \otimes \operatorname {Tr}X \ar@{->>}[d] \\
+(X,C) \ar@{>->}[r] \ar@{->>}[d] & (P^0,C) \ar@{->}[r] & (P^{-1},C) \ar@{->>}[r] & C \otimes \operatorname {Tr}X \\
+\delta^\ast (X) &  &  & 
+}
+        \end{equation}
+        Hence, 
+        \begin{equation}
+            D(\delta^\ast X) \simeq D(\ker (f \otimes \operatorname{Tr}X)) \simeq \operatorname{cok} (D(f \otimes \operatorname{Tr}X)) \simeq \operatorname{cok} (f, \operatorname{Tr}X) \simeq \delta_\ast (D\operatorname{Tr}X).
+        \end{equation}
+    \end{proof} 
+\end{theorem}
+
+\begin{corollary}
+    Note that $\delta_\ast (D R) = 0$ as $DR$ is injective. We see $D(\delta^\ast X) \simeq \delta_\ast (DX^\triangle)$, where $X^\triangle \simeq \operatorname{cok} p^\star$ for any projective presentation $P^{-1} \xrightarrow p P^0 \to X \to 0$.
+\end{corollary}
+
+\begin{notation}
+    We write $F(\operatorname{Tr}X)$ when $X \in \mathrm{mod}_R$ and all $F(X^\triangle )$ takes isomorphic values, even though there is no minimal projective presentation of $X$. For instance, $D(\delta^\ast X) \simeq \delta_\ast (D\operatorname{Tr}X)$ over any ring.
+\end{notation}
+
+\begin{theorem}[Auslander-Reiten formula]
+    For any $X \in \mathrm{mod}_R$, there are natural isomorphisms
+    \begin{equation}\label{eq:AR_formula}
+        D\underline {(X, -)} \simeq \operatorname{Ext}^1(-, D\operatorname{Tr} X) : \mathrm{Mod}_R^{\mathrm{op}} \to \mathbf{Ab},
+    \end{equation}
+    and 
+    \begin{equation}\label{eq:AR_formula_2}
+        \overline {(-, D\operatorname{Tr}X)} \simeq D\mathrm{Ext}^1(X, -) : \mathrm{Mod}_R^{\mathrm{op}} \to \mathbf{Ab}.
+    \end{equation}
+    \begin{proof}
+        We show \cref{eq:AR_formula}. For any $C \in \mathrm{Mod}_R$ and short exact sequence $\delta : 0 \to K \to P \to C \to 0$ with $P$ projective, we see
+        \begin{equation}
+            \delta^\ast (X) = \operatorname{cok} ((X, P) \to (X, C)) \simeq \underline{(X, C)}.
+        \end{equation}
+        Hence, $D\underline{(X, C)} \simeq D(\delta^\ast X) \simeq \delta_\ast (D\operatorname{Tr}X) \simeq \operatorname{Ext}^1(C, D\operatorname{Tr}X)$. One can show \cref{eq:AR_formula_2} by injective pre-envelopes.
+    \end{proof}
+\end{theorem}
+
+\begin{remark}
+    In context of AR theory, $\tau := D\operatorname{Tr}$ is known as the AR translation.
+\end{remark}
+
+\subsection{Locally Effaceable Functors}
+
+\begin{definition}[Locally Effaceable functor]\label{def:loc_efface}
+    Let $\mathcal{A}$ be any additive category. Say $F : \mathcal{A}^{\mathrm{op}} \to \mathbf{Ab}$ is locally effaceable if for any object $X \in \mathcal{A}$ and any element $x \in FX$, there is an epimorphism $p : Y \to X$ such that $F(p)(x) = 0$.
+\end{definition}
+
+\begin{notation}
+    We write $\mathrm{Eff}_\mathcal{A}$ for the full subcategory of $\mathrm{Mod}_\mathcal{A}$ consisting of all locally effaceable functors.
+\end{notation}
+
+\begin{remark}
+    Some one call \cref{def:loc_efface} ``coeffacable''.
+\end{remark}
+
+\begin{example}
+    How one understands \cref{def:loc_efface}? Note that an epimorphism $p : Y \to X$ (especially in the concrete categories) creates phantom information. For instance, the epimorphism $p : \mathbb R \twoheadrightarrow \mathbb R / \mathbb Z$ creates loops. Under a loop-detecting functor $H_1$, the phantom information $[w] \in H_1(\mathbb R / \mathbb Z)$ is killed by $H_1(p)([w]) = 0$.
+\end{example}
+
+\begin{lemma}\label{lem:efface_serre}
+    $\mathrm{Eff}_\mathcal{A}$ is a Serre subcategory of $\mathrm{Mod}_\mathcal{A}$.
+    \begin{proof}
+        We verify that $\mathrm{Eff}_\mathcal{A}$ is closed under subobjects, quotients and extensions. Equivalently, for any mapping sequence $F \xrightarrow{\iota} G \xrightarrow{\pi} H$ exact at $G$, if $F, H \in \mathrm{Eff}_\mathcal{A}$, then so is $G$.
+        
+        For any $X \in \mathcal{A}$ and $m \in GX$, we have $\pi_X(m) \in HX$. By exactness, there is an epimorphism $p : Y \to X$ such that $H(p)(\pi_X(m)) = 0$. Hence, $\pi_Y(G(p)(m)) = H(p)(\pi_X(m)) = 0$. There is $\widetilde m \in FY$ such that $\iota_Y(\widetilde m) = G(p)(m)$. Since $F \in \mathrm{Eff}_\mathcal{A}$, there is an epimorphism $q : Z \to Y$ such that $F(q)(\widetilde m) = 0$. We see $(p \circ q) : Z \to X$ is an epimorphism such that $G(p \circ q)(m) = G(q)(G(p)(m)) = G(q)(\iota_Y(\widetilde m)) = \iota_Z(F(q)(\widetilde m)) = 0$. We see $G \in \mathrm{Eff}_\mathcal{A}$.
+        % \begin{enumerate}
+            % \item (Closed under subobjects). Let $G \in \mathrm{Eff}_\mathcal{A}$ and $\iota : F \rightarrowtail G$ be any subfunctor. For any $X \in \mathcal{A}$ and $m \in FX$, there is an epimorphism $p : Y \to X$ such that $G(p)(\iota _X (m)) = 0$. Hence, $\iota_Y (F(p)(m)) = 0$. Since $\iota_Y$ is monic, $F(p)(m) = 0$. We see $F \in \mathrm{Eff}_\mathcal{A}$.
+            % \item (Closed under quotients). Let $G \in \mathrm{Eff}_\mathcal{A}$ and $\pi : G \twoheadrightarrow H$ be any quotient functor. For any $X \in \mathcal{A}$ and $m \in HX$, there is $\widetilde m \in GX$ such that $\pi_X(\widetilde m) = m$. There is an epimorphism $p : Y \to X$ such that $G(p)(\widetilde m) = 0$. Hence, $H(p)(m) = H(p)(\pi_X(\widetilde m)) = \pi_Y(G(p)(\widetilde m)) = 0$. We see $H \in \mathrm{Eff}_\mathcal{A}$.
+            % \item (Closed under extensions). Let $0 \to F \xrightarrow{\iota} G \xrightarrow{\pi} H \to 0$ be any short exact sequence with $F, H \in \mathrm{Eff}_\mathcal{A}$. For any $X \in \mathcal{A}$ and $m \in GX$, we have $\pi_X(m) \in HX$. By exactness, there is an epimorphism $p : Y \to X$ such that $H(p)(\pi_X(m)) = 0$. Hence, $\pi_Y(G(p)(m)) = H(p)(\pi_X(m)) = 0$. There is $\widetilde m \in FY$ such that $\iota_Y(\widetilde m) = G(p)(m)$. Since $F \in \mathrm{Eff}_\mathcal{A}$, there is an epimorphism $q : Z \to Y$ such that $F(q)(\widetilde m) = 0$. We see $(p \circ q) : Z \to X$ is an epimorphism such that $G(p \circ q)(m) = G(q)(G(p)(m)) = G(q)(\iota_Y(\widetilde m)) = \iota_Z(F(q)(\widetilde m)) = 0$. We see $G \in \mathrm{Eff}_\mathcal{A}$.
+        % \end{enumerate}
+    \end{proof}
+\end{lemma}
+
+We analysis a special kind of locally effaceable functors.
+
+\begin{proposition}\label{prop:epi_efface}
+    If $F:= \operatorname{cok} (-, p) \in \mathrm{Eff}_\mathcal{A}$, then $p$ is epic.
+    \begin{proof}
+        We take the universal element $u := \theta_Y(\mathrm{id}_Y) \in F(p) \simeq [(-, Y), F] \ni \theta$ in the presentation
+        \begin{equation}
+            (-, X) \xrightarrow{(-, p)} (-, Y) \xrightarrow{\theta} F \to 0.
+        \end{equation}
+        By assumption, there is an epimorphism $q : T \twoheadrightarrow Y$ such that $F(q)(u) = 0$. We see $0 = F(q)(u) = \theta_T(q)$, hence $q \in \operatorname{im} ((T, p))$. There is $r \in (T, X)$ such that $p \circ r = q$. Since $q$ is epic, so is $p$.
+    \end{proof}
+\end{proposition}
+
+\begin{definition}\label{def:epi_complete}
+    We define a property for category that, any cospan of an epimorphism and any morphism can be completed to a commutative square with an epimorphism as the other leg. More precisely, any diagram on the left hand side completes to a commutative diagram on the right hand side ($\twoheadrightarrow$ for epimorphisms)
+    \begin{equation}
+        \xymatrix{
+ & \cdot \ar@{->>}[d] &  & \cdot \ar@{-->}[r] \ar@{-->>}[d] & \cdot \ar@{->>}[d] \\
+\cdot \ar@{->}[r] & \cdot &  & \cdot \ar@{->}[r] & \cdot
+        }.
+    \end{equation}
+\end{definition}
+
+\begin{remark}
+    The category with enough projectives, exact categories, triangulated categories has property \cref{def:epi_complete}.
+\end{remark}
+
+\begin{proposition}\label{prop:epi_complete}
+    Suppose $\mathcal{A}$ has the property \cref{def:epi_complete}. If $p \in \mathcal{A}$ is an epimorphism, then $F:= \operatorname{cok} (-, p) \in \mathrm{Eff}_\mathcal{A}$.
+    \begin{proof}
+        We take any $M \in \mathcal{A}$ and $m \in FM$. There is $f \in (M, Y)$ such that $\theta_M(f) = m$. We take the following commutative diagram:
+        \begin{equation}
+\xymatrix{
+ &  & f\circ q \ar@{|-->}[rr] &  & \theta_L (f \circ q) \ar@{=}[rd] &  \\
+L \ar@{-->}[r]^{g} \ar@{-->>}[d]^{q} & X \ar@{->>}[d]^{p} &  & (L,Y) \ar@{->>}[r]^{\theta_L} & FL & (Fq)(m) \\
+M \ar@{->}[r]^{f} & Y &  & (M,Y) \ar@{->>}[r]^{\theta_M} \ar@{->}[u]_{{(M,q)}} & FM \ar@{->}[u]_{Fq} &  \\
+ &  & f \ar@{|->}[rrr] \ar@{|->}[uuu] &  &  & m \ar@{|->}[uu]
+}.
+        \end{equation}
+        Note that $\theta_L (f \circ q) = \theta_L (p \circ g) \subseteq \operatorname{im} (\theta _L \circ (L, p)) = 0$. Hence, $(Fq)(m) = 0$.
+    \end{proof}
+\end{proposition}
+
+\begin{notation}
+    We write $\mathrm{eff}_\mathcal{A} := \mathrm{Eff}_\mathcal{A} \cap \mathrm{mod}_\mathcal{A}$ for the full subcategory of $\mathrm{mod}_\mathcal{A}$ consisting of all locally effaceable finitely presented functors.
+\end{notation}
+
+\begin{theorem}\label{thm:epi_efface}
+    Under assumption of \cref{def:epi_complete}, $\mathrm{eff}_\mathcal{A}$ consists of $\operatorname{cok} (-, p)$ for some epimorphism $p$.
+    \begin{proof}
+        By \cref{prop:epi_efface} and \cref{prop:epi_complete}.
+    \end{proof}
+\end{theorem}
+
+\begin{remark}
+    $\mathrm{def}_\mathcal{A} \subseteq \mathrm{eff}_\mathcal{A}$ when $\mathcal{A}$ is exact. The converse is not true in general, at least for non-idempotent complete ones.
+\end{remark}
+
+\begin{corollary}
+    $\mathrm{eff}_\mathcal{A}$ is closed under cokernels and extensions (pointwise computed).
+    \begin{proof}
+        The cokernels and extensions in both $\mathrm{mod}_\mathcal{A}$ and $\mathrm{Eff}_\mathcal{A}$ are pointwise computed.
+    \end{proof}
+\end{corollary}
+
+\begin{corollary}\label{cor:efface_abelian}
+    When $\mathcal{A}$ has weak kernels, $\mathrm{eff}_\mathcal{A}$ is Abelian (pointwise computed). $\mathrm{eff}_\mathcal{A}$ is also a Serre subcategory of $\mathrm{mod}_\mathcal{A}$.
+        \begin{proof}
+        The kernels, cokernels and extensions in both $\mathrm{mod}_\mathcal{A}$ and $\mathrm{Eff}_\mathcal{A}$ are pointwise computed, thus $\operatorname{coim} \simeq \operatorname{im}$ holds in $\mathrm{eff}_\mathcal{A}$. It yields that $\mathrm{eff}_\mathcal{A}$ is Abelian.
+
+        We show $\mathrm{eff}_\mathcal{A}$ is a Serre subcategory of $\mathrm{mod}_\mathcal{A}$. For any functor $L \in \mathrm{mod}_\mathcal{A}$ obtained by taking either taking subobjects, quotients or extensions in $\mathrm{mod}_\mathcal{A}$ of functors in $\mathrm{eff}_\mathcal{A}$, we see $F$ belongs to both $\mathrm{mod}_\mathcal{A}$ and $\mathrm{Eff}_\mathcal{A}$, hence $L \in \mathrm{eff}_\mathcal{A}$.
+            \begin{equation}\label{eq:effaceable_serre}
+\xymatrix{
+\ \mathrm{eff}_\mathcal A\ : \ar@{=}[r] \ar@{>->}[d]^{\text{Serre}} & \mathrm{Eff}_\mathcal A \cap \mathrm{mod}_\mathcal A \ar@{>->}[d] \ar@{>->}[r] & \mathrm{Eff}_\mathcal A \ar@{>->}[d]^{\text{Serre}} \\
+\mathrm{mod}_\mathcal A \ar@{=}[r] & \mathrm{mod}_\mathcal A \ar@{>->}[r] & \mathrm{Mod}_\mathcal A
+}.
+    \end{equation}
+    \end{proof}
+\end{corollary}
+
+% \begin{proposition}
+%     $0$ is the only projective object in $\mathrm{eff}_\mathcal{A}$.
+%     \begin{proof}
+%         When $F \simeq \operatorname{cok} (-, f)$ is projective, then $f$ is epic by \cref{prop:epi_efface}. We obtain
+%         \begin{equation}
+% \xymatrix{
+% (-,X) \ar@{->>}[rd]^{q} \ar@{->}[rr]^{{(-,f)}} &  & (-,Y) \ar@{->>}[r] \ar@/^1pc/@{-->>}[ld]^{p} & F \\
+%  & K \ar@{>->}[ru]^{i} \ar@/^1pc/@{>->}[lu]^{j} &  & 
+% }.
+%         \end{equation}
+%         Here $i$ lies in split exact sequence. Since $K$ is projective, induced morphism $q$ is split epic. We take $j$ and $p$ such that $pi = \mathrm{id}_K = qj$. We write $a = iq$ and $b = jq$, then $ab$ and $ba$ are idempotent.
+%     \end{proof}
+% \end{proposition}
+
+\subsection{Admissible Locally Effaceable Functors}
+
+For exact categories, non-admissible epimorphisms are usually viewed as a usual map. The definition of locally effaceable functors includes unusable ones. We introduce admissible locally effaceable functors to avoid this issue. The theory is established over extriangulated categories (see \cite{nakaokaExtriangulatedCategoriesHovey2019} for an introduction).
+
+\begin{notation}
+    An extriangulated category is a triplet $(\mathcal{A}, \mathbb E, \mathfrak s)$, where $\mathcal{A}$ is an additive category, $\mathbb E : \mathcal{A}^{\mathrm{op}} \times \mathcal{A} \to \mathbf{Ab}$ is an additive bifunctor, and $\mathfrak s$ is a realization of $\mathbb E$ satisfying certain axioms. For any $\delta \in \mathbb E(Z, X)$, aka an $\mathbb E$-extension, we write a realisation of $\delta$ as $X \overset f \rightarrowtail Y \overset g\twoheadrightarrow Z\overset \delta \dashrightarrow$, aka an $\mathbb E$-conflation or an $\mathbb E$-triangle. We call $f$ an $\mathbb R$-inflation and $g$ an $\mathbb E$-deflation.
+\end{notation}
+
+\begin{example}
+    For any $\mathbb E$-triangle $X \overset f \rightarrowtail Y \overset g\twoheadrightarrow Z\overset \delta \dashrightarrow$, there are long exact sequences with $6$ terms, i.e.,
+    \begin{equation}
+        (-, X) \xrightarrow{(-, f)} (-, Y) \xrightarrow{(-, g)} (-, Z) \xrightarrow{\delta_\sharp} \mathbb E(-, X) \xrightarrow{\mathbb E(-, f)} \mathbb E(-, Y) \xrightarrow{\mathbb E(-, g)} \mathbb E(-, Z),
+    \end{equation}
+    and 
+    \begin{equation}\label{eq:long_exact_6}
+        (Z, -) \xrightarrow{(g, -)} (Y, -) \xrightarrow{(f, -)} (X, -) \xrightarrow{\delta^\sharp} \mathbb E(Z, -) \xrightarrow{\mathbb E(g, -)} \mathbb E(Y, -) \xrightarrow{\mathbb E(f, -)} \mathbb E(X, -).
+    \end{equation}
+    Hence, $f$ is a weak kernel of $g$ and $g$ is a weak cokernel of $f$.
+\end{example}
+
+We show that WIC condition (\textbf{Condition 5.8}, \cite{nakaokaExtriangulatedCategoriesHovey2019}) is the same as weakly idempotent completeness. 
+
+\begin{proposition}
+    An extriangulated category is a weakly idempotent complete additive category, if and only if, for any inflation of the form $f \circ i$, $i$ is also an inflation.
+    \begin{proof}
+        We assume $\mathcal{A}$ is idempotent complete. By \textbf{Corollary 3.16} in \cite{nakaokaExtriangulatedCategoriesHovey2019}, $\binom {f \circ i}{i}$ is an inflation. Hence, $\binom i 0$ is an inflation by composing an isomorphism. By \cref{eq:long_exact_6}, we obtain $\binom{a}{b}$ as in the following commutative diagram:
+        \begin{equation}
+\xymatrix{
+X \ \ar@{>->}[r]^{\binom i0} \ar@/_1pc/@{->}[rd]_{0} & Y \oplus Z \ar@{->>}[r]^{{(s,t)}} \ar@{->}[d]^{{\binom{s,0}{0,1}}} & W \ar@/^1pc/@{.>}[ld]^{\binom ab} \\
+ & W \oplus Z & 
+}.
+        \end{equation}
+        Hence, $t$ is split monic. We identify $t = \binom 01 : Q \oplus Z$ by assumption. By \textbf{Proposition 3.17} in \cite{nakaokaExtriangulatedCategoriesHovey2019}, we obtain a commutative diagram of $\mathbb E$-triangles:
+        \begin{equation}
+            \xymatrix{
+ & Z \ar@{=}[r] \ar@{>->}[d]^{\binom 01} & Z \ar@{>->}[d]^{\binom 01} \\
+X \ar@{>->}[r]^{\binom i0} \ar@{=}[d] & Y \oplus Z \ar@{->>}[r]^{{\binom{s_1,0}{s_2,1}}} \ar@{->>}[d]^{{(1,0)}} & Q \oplus Z \ar@{->>}[d]^{{(1,0)}} \\
+X \ar@{>-->}[r]^{i} & Y \ar@{-->}[r]^{s_1} & Q
+            }.
+        \end{equation}
+        We see $i$ is an inflation.
+        
+        Conversely, for any split monomorphism $i : X \to Y$, there is $p : Y \to X$ such that $pi = \mathrm{id}_X$. Since $\mathrm{id}_X$ is an inflation, so is $i$ by assumption. $\operatorname{cok} i$ is clearly found in the corresponding $\mathbb E$-triangle. We see $\mathcal{A}$ is idempotent complete.
+    \end{proof}
+\end{proposition}
+
+\begin{definition}[Admissible locally effaceable functor]
+    Say $F \in \mathrm{Mod}_\mathcal{A}$ is admissible locally effaceable if for any $X \in \mathcal{A}$ and any $x \in FX$, there is an $\mathbb E$-deflation $p : Y \twoheadrightarrow X$ such that $F(p)(x) = 0$.
+\end{definition}
+
+\begin{notation}
+    We write $\mathrm{Eff}^a_\mathcal{A}$ for the full subcategory of $\mathrm{Mod}_\mathcal{A}$ consisting of all admissible locally effaceable functors.
+\end{notation}
+
+\begin{remark}
+    $\mathrm{Eff}^a_\mathcal{A} \subsetneqq \mathrm{Eff}_\mathcal{A}$, since an $\mathbb E$-deflation is not an epimorphism in general.
+\end{remark}
+
+\begin{corollary}
+    $\mathrm{Eff}^a_\mathcal{A}$ is also a Serre subcategory $\mathrm{Mod}_\mathcal{A}$. In fact, the proof of \cref{lem:efface_serre} is valid by replacing epimorphisms with any collection of morphisms closed under compositions.
+\end{corollary}
+
+\begin{corollary}\label{cor:admissible_epi}
+    Assuming the weakly idempotent completeness of $\mathcal{A}$, $\mathrm{Eff}^a_\mathcal{A} \cap \mathrm{mod}_\mathcal{A} = \{\operatorname{cok}(-, p) \mid p \ \text{is an $\mathbb{E}$-deflation}\}$. The proof of \cref{prop:epi_efface} is valid when $\mathcal{A}$ is weakly idempotent completeness; the proof of \cref{prop:epi_complete} is still valid by ET3 axiom.
+\end{corollary}
+
+\begin{definition}[$\mathbb E$-defects]\label{def:defect}
+    We set $\delta^\ast := \operatorname{im}(\delta_\sharp)$ and $\delta_\ast := \operatorname{im}(\delta^\sharp)$ for any $\mathbb E$-extension $\delta \in \mathbb E(Z, X)$.
+\end{definition}
+
+\begin{notation}
+    We write $\mathrm{def}^a_\mathcal{A}$ for the full subcategory of $\mathrm{mod}_\mathcal{A}$ consisting of all admissible $\mathbb E$-defects.
+\end{notation}
+
+\begin{theorem}\label{thm:defect_efface}
+    $\mathrm{def}^a_\mathcal{A} \simeq (\mathrm{Eff}_\mathcal{A}^a \cap \mathrm{mod}_\mathcal{A})$.
+    \begin{proof}
+        By \cref{cor:admissible_epi}, $\{\operatorname{cok}(-, p) \mid p \ \text{is an $\mathbb{E}$-deflation}\}$ is precisely $\mathrm{Eff}_\mathcal{A}^a \cap \mathrm{mod}_\mathcal{A}$.
+    \end{proof}
+\end{theorem}
+
+\begin{notation}
+    $\mathrm{eff}^a_\mathcal{A} := \mathrm{Eff}^a_\mathcal{A} \cap \mathrm{mod}_\mathcal{A}$, this notion is analogous to \cref{eq:effaceable_serre}.
+\end{notation}
+
+\begin{corollary}
+    Assuming $\mathcal{A}$ has weak kernels. 
+    \begin{enumerate}
+        \item $\mathrm{eff}^a_\mathcal{A}$ is Abelian (pointwise computed); $\mathrm{eff}^a_\mathcal{A}$ is also a Serre subcategory of $\mathrm{mod}_\mathcal{A}$ (\cref{cor:efface_abelian}).
+        \item $\mathrm{eff}^a_\mathcal{A} \simeq \mathrm{def}^a_\mathcal{A} \simeq \frac{\textbf{$\mathbb E$-conflations}}{\textbf{Homotopy}}$ (\cref{thm:defect_efface} and \cref{cor:defect_mod}). 
+    \end{enumerate}
+\end{corollary}
+
+\section{Serre Subcategories}
+
+\subsection{Abelian Localisations}
+
+We begin with a general construction of localisations.
+
+\begin{definition}[Localisation]\label{def:localisation}
+    Let $\mathcal{C}$ be any category and $S$ be any collection of morphisms in $\mathcal{C}$. Say $Q: \mathcal{C} \to \mathcal{C}_1$ is a localisation of $\mathcal{C}$ with respect to $S$ if the following is an isomorphism (not merely an equivalence) of functor categories:
+    \begin{equation}\label{eq:localisation}
+        Q^\ast : \mathrm{Fun}(\mathcal{C}_1, \mathcal{D}) \xrightarrow{\simeq} \mathrm{Fun}_S(\mathcal{C}, \mathcal{D}),\quad F \mapsto F \circ Q\quad (\forall \mathcal{D}).
+    \end{equation}
+    Here $\mathrm{Fun}_S(\mathcal{C}, \mathcal{D}) := \{F \in \mathrm{Fun}(\mathcal{C}, \mathcal{D}) \mid F(s) \text{ is an isomorphism for all } s \in S\}$.
+\end{definition}
+
+\begin{example}[Gabriel-Zisman's approach]\label{ex:gz_localisation}
+    The construction is seperated into two steps: $\mathcal{C} \xrightarrow \iota \mathcal{C}_S \xrightarrow \pi (\mathcal{C}_S/\sim )$.
+    \begin{enumerate}
+        \item (Construction of $\iota$). The category $\mathcal{C}_S$ consists of the same objects as $\mathcal{C}$. We take the assignment $\langle X, Y\rangle := (X, Y)_\mathcal{C} \sqcup (S \cap (Y,X))_\mathcal{C}$. We write $A \sqcup B = \{(0,a), (1,b) \mid a \in A, b \in B\}$ for a disjoint union. Let $(X,Y)_{\mathcal{C}_S}$ be freely generated by these letters, that is, the collection of finite compositions of $\langle X, Y\rangle := (X, Y)_\mathcal{C} \sqcup (S \cap (Y,X))_\mathcal{C}$. We identify $(0, \mathrm{id}_X)$ as an identical morphism in $\mathcal{C}_S$, and $(0, g \circ f)$ as $(0, g) \circ (0,f)$. Now, $\iota : \mathcal{C} \to \mathcal{C} _S$ is a functor.
+        \item (Construction of $\pi$). Let $\sim$ be an equivalence relation of morphisms generated by $(1, s) \circ (0,s) \sim (0,\mathrm{id}_X)$ and $(0,s) \circ (1,s) \sim (0, \mathrm{id}_Y)$ for any $[X \xrightarrow s Y] \in S$.
+    \end{enumerate}
+    We take $Q = \pi \circ \iota : \mathcal{C} \to (\mathcal{C}_S/ \sim)$, and write $\pi ((n, f)) = : [n, f]$.
+\end{example}
+
+\begin{remark}\label{rem:set_theoretic_issue}
+    The quotient $\pi$ is well-defined in sense of the axiom of vonNeumann-Bernays-Gödel and the axiom of choice, whereas it is impossible to determined whether $Q(f) = Q(f')$ set-theoritically. 
+\end{remark}
+
+\begin{theorem}
+    The construction \cref{ex:gz_localisation} is a localisation in sense of \cref{def:localisation}.
+    \begin{proof}
+        Note that $F \circ Q$ maps $s$ to an isomorphism (with inverse $F([1,s])$) for any $s \in S$. We obtain a functor
+        \begin{equation}
+                Q^\ast : \mathrm{Fun}(\mathcal{C}_S / \sim, \mathcal{D}) \xrightarrow{\simeq} \mathrm{Fun}_S(\mathcal{C}, \mathcal{D}),\quad F \mapsto F \circ \pi \circ \iota.
+        \end{equation}
+        To see that $Q^\ast$ is essentially surjective, we take any $G \in \mathrm{Fun}_S(\mathcal{C}, \mathcal{D})$. We define $\widetilde G : \mathcal{C}_S \to \mathcal{D}$ as by $X \mapsto GX$, $(0,f) \mapsto Gf$, and $(1,s) \mapsto (Gs)^{-1}$. Note that $\widetilde F$ is a functor as it satisfies the rule of identities and compositions. The functor passes through the quotient $\pi$ since $\widetilde G(1,s)$ and $\widetilde G (0,s)$ are mutually inverse for any $s \in S$.
+
+        We show $Q^\ast$ is full. Note that a natural transformation $\eta : F \to G$ in $\mathrm{Fun}_S(\mathcal{C}, \mathcal{D})$ is labelled by $\mathsf{Ob}(\mathcal{C}) = \mathsf{Ob}(\mathcal{C}_S/\sim)$. For any $s \in S$, one has 
+        \begin{equation}
+            \xymatrix{
+\widetilde GY \ar@{->}[r]^{\eta_Y} \ar@{->}[d]^{(\widetilde Gs)^{-1}} & \widetilde FY \ar@{->}[d]^{(\widetilde Fs)^{-1}} & Y \\
+\widetilde GX \ar@{->}[r]^{\eta_X} & \widetilde FX & X \ar@{->}[u]^{s}
+            }.
+        \end{equation}
+        Hence, $\eta$ induces commutative squares for zig-zag diagrams. Now $\eta$ is a natural transformation $\widetilde F \to \widetilde G$ in $\mathrm{Fun}(\mathcal{C}_S, \mathcal{D})$. The commutative diagrams passes through the quotient $\pi$. Hence, $\eta$ is also a natural transformation of functors in $\mathrm{Fun}(\mathcal{C}_S/\sim, \mathcal{D})$, yielding the fullness of $Q^\ast$.
+
+        We show $Q^\ast$ is faithful. Note that $Q^\ast$ never changes a collection of morphisms in $\mathcal{D}$ labelled by $\mathsf{Ob}(\mathcal{C}) = \mathsf{Ob}(\mathcal{C}_S/\sim)$.
+
+        We finally show that $Q^\ast$ is injective on objects. Let $F, G \in \mathrm{Fun}(\mathcal{C}_S/\sim, \mathcal{D})$ such that $F \circ Q = G \circ Q$. Then $\{\mathrm{id}_X\} : F \circ Q \to G \circ Q$ is a natural isomorphism. By previous discussion on fully faithfulness, there are unique pair of inversal natural isomorphisms $\eta : F \to G$ and $\theta : G \to F$. By construction, $\eta$ and $\theta$ consists of identical morphisms. Hence $F = G$.
+    \end{proof}
+\end{theorem}
+
+\begin{theorem}[Universal property of localisation]\label{thm:universal_property_localisation}
+    We denote the localisation (in sense of \cref{def:localisation}) by a functor $Q : \mathcal{C} \to \mathcal{C} [S^{-1}]$. For any functor $F : \mathcal{C} \to \mathcal{D}$ that maps $s$ to isomorphisms for all $s \in S$, there is a unique functor $\widetilde F : \mathcal{C}[S^{-1}] \to \mathcal{D}$ such that $F = \widetilde F \circ Q$.
+    \begin{proof}
+        This is a rephrasing of \cref{def:localisation}.
+    \end{proof}
+\end{theorem}
+
+By \cref{rem:set_theoretic_issue}, it is somehow impossible to determine whether two morphisms in localisation categories are equal. When the localisation admits fractional calculation, each $(X,Y)_{\mathcal{C}[S^{-1}]}$ is a (large) filtrant colimit of sets. Hence, one can determine whether two morphisms are equal within a set in the filtrant system.
+
+\begin{definition}[Multiplicative system]\label{def:multiplicative_system}
+    A collection $S$ of morphisms in $\mathcal{C}$ is a left multiplicative system if it satisfies the following axioms:
+    \begin{enumerate}
+        \item (LMS1). $S$ is closed under compositions and contains all identities.
+        \item (LMS2). Any diagram $X' \xleftarrow s X \xrightarrow f Y$ with $s \in S$ completes to a commutative square with $t \in S$ as the other leg.
+        \item (LMS3). For any pair of morphisms $f, g : X \to Y$, there is $s : Y \to Z$ in $S$ such that $sf = sg$, if and only if, there is $t : W \to X$ in $S$ such that $ft = gt$.
+    \end{enumerate}
+    One has right multiplicative systems by dualising the above axioms.
+\end{definition}
+
+\begin{theorem}\label{thm:localisation_fraction}
+    Assume $\mathcal{C}$ admits a left multiplicative system $S$ (\cref{def:multiplicative_system}). Say two fractions $(s,f)$ and $(s',f')$ are equivalent, provided there are $t, t' \in S$ such that $ts = t's' \in S$ and $tf = t'f'$. Then it is an equivalence relation. Now the class of morphism is characterised by the filtrant colimit
+    \begin{equation}
+        (X,Y)_{\mathcal{C}[S^{-1}]} := \varinjlim_{(s : X \to X') \in S} (X', Y)_\mathcal{C}.
+    \end{equation}
+    When $\mathcal{C}$ admits a right multiplicative system, then the class of morphism is characterised by the filtrant colimit
+    \begin{equation}\label{eq:right_fraction}
+        (X,Y)_{\mathcal{C}[S^{-1}]} := \varinjlim_{(t : Y' \to Y) \in S} (X, Y')_\mathcal{C}.
+    \end{equation}
+    The resulting categories are additive, and the localisation functor $Q : \mathcal{C} \to \mathcal{C}[S^{-1}]$ is also additive.
+    \begin{proof}
+        The general theory is found in \cite{gabrielCalculusFractionsHomotopy1967}. 
+    \end{proof}
+\end{theorem}
+
+\begin{example}[Localisation of Serre subcategory]
+    Let $\mathcal{A}$ be an Abelian category and $\mathcal{C}$ be a Serre subcategory. We take $S := \{f \in \mathcal{A} \mid \operatorname{ker} f, \operatorname{cok} f \in \mathcal{C}\}$. Then $S$ is a multiplicative system. Moreover, 
+    \begin{equation}\label{eq:serre_quotient_colimit}
+        (X,Y)_{\mathcal{A}[S^{-1}]} = \varinjlim_{X/X', Y' \in \mathcal{C}} (X', Y/Y')_\mathcal{A}.
+    \end{equation}
+    The morphisms in $(X,Y)_{\mathcal{A}[S^{-1}]}$ is approached by $(X', Y/Y')_\mathcal{A}$ in the following commutative diagram:
+    \begin{equation}\label{eq:serre_quotient}
+\xymatrix{
+X'\  \ar@{->}[d] \ar@{>->}[r]^{\in S} & X \ar@{->>}[r] \ar@{.>}[d] & X/X' & X/X' \ (\in \mathcal C) \\
+Y/Y' & Y \ar@{->>}[l]^{\in S} & \ Y' \ar@{>->}[l] & Y' \ (\in \mathcal C)
+}.
+    \end{equation}
+\end{example}
+
+\begin{notation}
+    We usually denote the Serre quotient by $\mathcal{A}/\mathcal{C}$. 
+\end{notation}
+
+\begin{lemma}\label{lem:zero_morphism_quotient}
+    Let $Q : \mathcal{A} \to \mathcal{A}/\mathcal{C}$ be the Serre quotient. For any $f \in \mathsf{Mor}(\mathcal{A})$, $Qf$ is a zero morphism if and only if $f$ passes through an object in $\mathcal{C}$.
+    \begin{proof}
+        $Q : \mathcal{C} \to 0$ is clear. Conversely, if $Qf = 0$, then there is a zero composition
+        \begin{equation}
+            \xymatrix{
+X'\  \ar@{>->}[r]^{i} & X \ar@{->}[r]^{f} & Y \ar@{->>}[r]^{j} & Y/Y'
+}
+        \end{equation}
+        where $X/X', Y' \in \mathcal{C}$. We consider the short exact sequence by Noetherian isomorphism:
+        \begin{equation}
+            0 \to \frac{X' + \ker f}{\ker f} \to \frac{X}{\ker f} \to \frac{X}{X' + \ker f} \to 0.
+        \end{equation}
+        Note that $\frac{X}{X' + \ker f}$ is a quotient object of $X/X' \in \mathcal{C}$, and
+        \begin{equation}
+            \frac{X' + \ker f}{\ker f} \simeq \frac{X'}{X' \cap \ker f} \simeq \operatorname{im} (f \circ i) 
+        \end{equation}
+        is a subobject of $Y' \in \mathcal{C}$. Hence, $\operatorname{im} f \simeq \frac{X}{\ker f}$ lies in $\mathcal{C}$, yielding that $f$ passes through an object in $\mathcal{C}$.
+    \end{proof}
+\end{lemma}
+
+\begin{remark}\label{rem:stable_quotient}
+    Note that a Serre quotient $\mathcal{A} / \mathcal{C}$ is not a stable additive category in general. \cref{lem:zero_morphism_quotient} shows that the stable category is a subcategory with the same objects.
+\end{remark}
+
+\subsection{Serre Subcategories}
+
+\begin{notation}
+    We denote the localisation sequence of a Serre subcategory by 
+    \begin{equation}\label{eq:localisation_sequence}
+        \xymatrix{
+\mathcal C \ \ar@{>->}[r]^{i} & \mathcal A \ar@{->>}[r]^{Q} & \mathcal A / \mathcal C
+        }.
+    \end{equation}
+    This sequence is defined up to equivalence of categories, rather than isomorphisms.
+\end{notation}
+
+\begin{lemma}
+    The Serre quotient category $\mathcal{A} / \mathcal{C}$ is Abelian, and $Q$ in \cref{eq:localisation_sequence} is additive (\cref{thm:localisation_fraction}) and exact.
+    \begin{proof}
+        For any left exact sequence $0 \to K \xrightarrow{i} X \xrightarrow{f} Y$ in $\mathcal{A}$, we claim $0 \to QK \xrightarrow{Qi} QX \xrightarrow{Qf} QY$ is also left exact in $\mathcal{A} / \mathcal{C}$. It suffices to show the universal property of kernels, i.e.,
+        \begin{equation}\label{eq:universal_property_kernel}
+            0 \to (W, QK) \xrightarrow{(W,Qi)} (W, QX) \xrightarrow{(W,Qf)} (W,QY)\qquad (\forall W \in \mathcal{A}).
+        \end{equation}
+        By \cref{eq:right_fraction} and exactness of filtrant colimits in $\mathbf{Ab}$, \cref{eq:universal_property_kernel} holds. Dually, $\mathcal{A} / \mathcal{C}$ has cokernels.
+        
+        It shows that $Q$ preserves kernels and cokernels, hence $\mathcal{A} / \mathcal{C}$ is Abelian and $Q$ is exact.
+    \end{proof}
+\end{lemma}
+
+\begin{remark}
+    Let $\mathcal{C} \rightarrowtail \mathcal{A}$ be Serre subcategory. We show the differences of stable additive quotient $(\mathrm{St}_\mathcal{A})$ and Serre quotient via universal property:
+    \begin{enumerate}
+        \item for any additive category $\mathcal{D}$ and additive functor $F : \mathcal{A} \to \mathcal{D}$ that vanishes on $\mathcal{C}$, there is a unique additive functor $\widetilde F : \mathrm{St}_\mathcal{C}{\mathcal{A}} \to \mathcal{D}$ such that $F = \widetilde F \circ \pi$ (by universal property \cref{eq:localisation});
+        \item for any Abelian category $\mathcal{B}$ and exact functor $F : \mathcal{A} \to \mathcal{B}$ that vanishes on $\mathcal{C}$, there is a unique exact functor $\widetilde F : \mathcal{A}/\mathcal{C} \to \mathcal{B}$ such that $F = \widetilde F \circ Q$ (\cref{cor:universal_property_quotient}).
+    \end{enumerate}
+    Let $\mathcal{A}$ be Frobenius hereditary Abelian, and $\mathcal{P}$ be the full subcategory of all projective-injective objects. The stable category $\mathrm{St}_\mathcal{P}{\mathcal{A}}$ is triangulated, but not semi-simple in practice. When $\mathcal{A} / \mathcal{C}$ coincides with $\mathrm{St}_\mathcal{C}{\mathcal{A}}$ as categories, $\mathcal{A} / \mathcal{C}$ is Abelian, thus is semi-simple triangulated.
+\end{remark}
+
+\begin{example}
+    We show that the category of (small) Abelian categories exhibits a group category-analogue. Abelian categories and exact functors are analogous to groups and group homomorphisms. A Serre subcategory is analogous to a normal subgroup. The Serre quotient is analogous to the quotient group.
+\end{example}
+
+\begin{lemma}
+    The kernel of an exact functor between Abelian categories is a Serre subcategory.
+    \begin{proof}
+        It is clear by the definition of Serre subcategories.
+    \end{proof}
+\end{lemma}
+
+\begin{theorem}\label{thm:localisation_functor}
+    For any Abelian category $\mathcal{B}$, the localisation sequence yields an inclusion $\mathrm{Fun}_{\mathcal{C} \to 0}(\mathcal{A}, \mathcal{B}) \rightarrowtail \mathrm{Fun}(\mathcal{A} / \mathcal{C}, \mathcal{B})$, which restricted to an isomorphism of categories of exact functors:
+    \begin{equation}\label{eq:localisation_functor}
+        \xymatrix{
+\mathrm{Fun}_{\mathcal C \to 0}(\mathcal A, \mathcal B) \ar@{>->}[rr] &  & \mathrm{Fun}_{S}(\mathcal A, \mathcal B) \ar@{->>}[rr]^{Q^\ast} &  & \mathrm{Fun}(\mathcal A / \mathcal C, \mathcal B) \\
+\mathrm{Ex}_{\mathcal C \to 0}(\mathcal A, \mathcal B) \ar@{->}[rr]_{\cong} \ar@{>->}[u] &  & \mathrm{Ex}_{S}(\mathcal A, \mathcal B) \ar@{->}[rr]_{\cong} \ar@{>->}[u] \ar@{->}[rr]^{Q^\ast|_{\mathrm{Ex}}} &  & \mathrm{Ex}(\mathcal A / \mathcal C, \mathcal B) \ar@{>->}[u]
+        }.
+    \end{equation}
+    Here $\mathrm{Fun}_{\mathcal{C} \to 0} \subseteq \mathrm{Fun}$ is the full subcategory consisting of functors that vanish on $\mathcal{C}$.
+    \begin{proof}
+        Any functor eliminating $\mathcal{C}$ maps $S$ to isomorphisms, yielding the inclusion $\mathrm{Fun}_{\mathcal{C} \to 0}(\mathcal{A}, \mathcal{B}) \rightarrowtail \mathrm{Fun}_S(\mathcal{A}, \mathcal{B})$. The inclusion $\mathrm{Ex}_{\mathcal C \to 0}(\mathcal A, \mathcal B) \rightarrowtail \mathrm{Ex}_{S}(\mathcal A, \mathcal B)$ is clear, making the left square commutative. Clearly, an exact functor $\mathcal{A} \to \mathcal{B}$ maps $\mathcal{C}$ to $0$, if and only if it maps $S$ to isomorphisms. Hence, the left buttom inclusion is an isomorphism. 
+
+        We show $Q^\ast|_{\mathrm{Ex}}$ maps to $\mathrm{Ex}(\mathcal{A}/\mathcal{C},\mathcal{B})$. For any $QA \xrightarrow{Qf} QB\xrightarrow{Qg} QC$ in $\mathcal{A}/\mathcal{C}$ exact at $QB$, we see that $\operatorname{im} f \rightarrowtail B \twoheadrightarrow \operatorname{im}g$ is short exact in $\mathcal{A} / \mathcal{C}$. The induced epimorphism $\frac{B}{\operatorname{im} f} \twoheadrightarrow \operatorname{im} g$ is in $S$. Hence, for any exact functor $F : \mathcal{A} \to \mathcal{B}$, we have the short exact sequence $F(\operatorname{im} f) \rightarrowtail FB \twoheadrightarrow F(\frac{B}{\operatorname{im}f}) \simeq F(\operatorname{im} g)$. Therefore, $FA \xrightarrow{Ff} FB\xrightarrow{Fg} FC$ is exact at $FB$.
+
+        $Q^\ast|_{\mathrm{Ex}}$ is essentially surjective since $Q$ is exact. Note that $Q^\ast$ is an isomorphism of categories. Hence, $Q^\ast|_{\mathrm{Ex}}$ is also an isomorphism of categories. 
+    \end{proof}
+\end{theorem}
+
+\begin{corollary}\label{cor:universal_property_quotient}
+    We conclude a universal property by \cref{eq:localisation_functor}: any exact functor $F : \mathcal{A} \to \mathcal{B}$ that vanishes on $\mathcal{C}$ factors through a unique exact functor $\widetilde F : \mathcal{A}/\mathcal{C} \to \mathcal{B}$ such that $F = \widetilde F \circ Q$.
+\end{corollary}
+
+\begin{corollary}
+    If any only if the stable category $\mathrm{St}_\mathcal{C}{\mathcal{A}}$ is Abelian, and the quotient $\mathcal{A} \twoheadrightarrow \mathrm{St}_\mathcal{C}{\mathcal{A}}$ is exact, the inclusion (\cref{rem:stable_quotient}) $\mathrm{St}_\mathcal{C} \mathcal{A} \rightarrowtail \mathcal{A} / \mathcal{C}$ is identical.
+\end{corollary}
+
+\begin{example}
+    We decompose an exact functor $F : \mathcal{A} \to \mathcal{B}$ between Abelian categories as follows:
+    \begin{equation}
+\xymatrix{
+\ker F \ar@{>->}[r] & \mathcal A \ar@{->}[rrr]^{F} \ar@{->>}[rd] \ar@{->}[ld] &  &  & \mathcal B \ar@{->>}[r] & \frac{\mathcal B}{\langle\mathcal A/ \ker F\rangle} \\
+\mathrm{St}_{\ker F}(\mathcal A) \ar@/_1pc/@{->}[rrrrr]_{\langle\rangle} \ar@{->}[rr] &  & \mathcal A/ \ker F \ar@{->}[r]^{\langle\rangle} & \langle\mathcal A/ \ker F\rangle \ar@{>->}[ru] \ar@{-->}[rr]^{\simeq} &  & \langle \mathrm{St}_{\ker F}(\mathcal A)\rangle  \ar@{>->}[lu]
+}.
+    \end{equation}
+    Here $\mathrm{St}_{\ker F}(\mathcal{A})$ is the coimage ($\operatorname{im}^1$) of $F$, and $\langle -\rangle$ is the Serre closure of the essential image ($\operatorname{im}^2$). Note that $\langle \mathrm{St}_{\ker F}(\mathcal{A})\rangle$ is a subcatetory of $\mathcal{A} / \ker F$ (\cref{rem:stable_quotient}), it has the same Serre closure as $\mathcal{A} / \ker F$.
+\end{example}
+
+We generalise \cref{cor:efface_abelian} as follows.
+
+\begin{proposition}
+    Let $\mathcal{B} \to \mathcal{A}$ be an exact inclusion of Abelian categories, $\mathcal{C} \rightarrowtail A$ be a Serre subcategory. Then $\mathcal{B} \cap \mathcal{C} \rightarrowtail \mathcal{B}$ is also a Serre subcategory, and there is an exact functor $\mathcal{B}/(\mathcal{B} \cap \mathcal{C}) \to \mathcal{A}/\mathcal{C}$ which is an inclusion on objects.
+    \begin{proof}
+        Within $\mathcal{B}$, any subobject of $X \in \mathcal{B} \cap \mathcal{C}$ lies in both $\mathcal{B}$ and $\mathcal{C}$, and so do quotient objects. The extension term in $\mathcal{B} \cap \mathcal{C}$ is also an extension term in $\mathcal{A}$, by exact inclusion. Hence, $\mathcal{B} \cap \mathcal{C}$ is a Serre subcategory of $\mathcal{B}$. The universal property yields the exact functor $\mathcal{B}/(\mathcal{B} \cap \mathcal{C}) \to \mathcal{A}/\mathcal{C}$ (\cref{cor:universal_property_quotient}).
+    \end{proof}
+\end{proposition}
+
+\begin{remark}
+    It is hard to determine whether $\mathcal{B}/(\mathcal{B} \cap \mathcal{C}) \to \mathcal{A}/\mathcal{C}$ is faithful in general. Let $f$ be a morphism in $\mathcal{B}$ factors through an object in $\mathcal{C}$, then $f$ may not factor through an object in $\mathcal{B} \cap \mathcal{C}$.
+\end{remark}
+
+\begin{theorem}[Noetherian isomorphism]
+    Let $\mathcal{C} \rightarrowtail \mathcal{B}$ and $\mathcal{B} \rightarrowtail \mathcal{A}$ be Serre subcategories. $\mathcal{C} \rightarrowtail \mathcal{A}$ is clearly a Serre subcategory. There is an induced localisation sequence
+    \begin{equation}
+\xymatrix{
+\mathcal C \ar@{=}[d] \ar@{>->}[r]^{I} & \mathcal B \ar@{->>}[r]^{Q} \ar@{>->}[d]^{J} & \mathcal B/\mathcal C \ar@{>-->}[d]^{L} \\
+\mathcal C \ar@{>->}[r]^{JI} & \mathcal A \ar@{->>}[r]^{R} \ar@{->>}[d]^{S} & \mathcal A/\mathcal C \ar@{-->>}[d]^{P} \\
+ & \mathcal A/\mathcal B \ar@{->}[r]^{\cong} & \frac{\mathcal A/\mathcal C}{\mathcal B/\mathcal C}
+}.
+    \end{equation}
+    \begin{proof}
+        We firstly show that $L$ induces a Serre subcategory. To see $L$ is fully faithful, we take any $X,Y \in \mathcal{B}$. The colimit \cref{eq:serre_quotient_colimit} takes the same value in $\mathcal{B}/\mathcal{C}$ and $\mathcal{A}/\mathcal{C}$, since $\mathcal{B} \rightarrowtail \mathcal{C}$ is Serre. To see $\mathcal{B} / \mathcal{C} \rightarrowtail \mathcal{A} / \mathcal{C}$ is Serre, we take any sequence $RA \to RB \to RC$ in $\mathcal{A} / \mathcal{C}$ which is exact at $RB$. Note that this is an image of some exact sequence in $\mathcal{A}$ (see the proof of \cref{thm:localisation_functor}), denoted by $A \to B \to C$. When $RA, RC \in \mathcal{B} / \mathcal{C}$, we assume $A$ and $B$ lie in $\mathcal{B}$ as $L$ is fully faithful. Hence, $B \in \mathcal{B}$ since $\mathcal{B} \rightarrowtail \mathcal{A}$ is Serre. Therefore, $RB \in \mathcal{B} / \mathcal{C}$, completing the proof that $L$ is a Serre subcategory.
+
+        There is a unique exact functor $F: \mathcal{A} / \mathcal{B} \to \frac{\mathcal{A} / \mathcal{C}}{\mathcal{A} / \mathcal{B}}$ by \cref{cor:universal_property_quotient}. The functor $S$ factors through $R$ by $S = TR$, by universal property of localisation. $T$ is also an exact functor by the same verification for $L$. Hence, there is an unique exact functor $G : \frac{\mathcal{A} / \mathcal{C}}{\mathcal{B} / \mathcal{C}} \to \mathcal{A} / \mathcal{B}$ such that $T = G P$. We show $F$ and $G$ are quasi-inverses. The uniqueness shows that $GF$ and $FG$ are identities. 
+    \end{proof}
+\end{theorem}
+
+
+
+\subsection{Localisation Sequences}
+
+Now we consider the Serre quotient of $\mathrm{eff}_\mathcal{A} \rightarrowtail \mathrm{mod}_\mathcal{A}$ in \cref{cor:efface_abelian} and $\mathrm{eff}^a_\mathcal{A} \rightarrowtail \mathrm{mod}_\mathcal{A}$ in \cref{cor:defect_mod}.
+
+\begin{theorem}
+    Let $\mathcal{A}$ be additive with weak kernels (under the assumption of \cref{cor:efface_abelian}). Then the there is a localisation sequence of Serre subcategory:
+    \begin{equation}\label{eq:localisation_efface}
+\xymatrix{
+\mathrm{eff}_\mathcal A \ar@{>->}[rr]^{I} &  & \mathrm{mod}_\mathcal A \ar@{->>}[rr]^{Q} &  & \mathcal A \ar@/^1pc/@{>->}[ll]^{\mathbb Y}
+}.
+    \end{equation}
+    Here $I$ is the inclusion, $Q$ is the exact left adjoint of the Yoneda embedding $\mathbb Y : \mathcal{A} \to \mathrm{mod}_\mathcal{A}$. The existence of $Q$ is due to \cref{prop:fp_left_adj}, the exactness is due to \cref{cor:fp_left_adj}.
+    \begin{proof}
+        The universal property of Serre quotient (\cref{cor:universal_property_quotient}) yields a factorisation
+        \begin{equation}
+            Q = [\mathrm{mod}_\mathcal{A} \xrightarrow{Q_0} ({\mathrm{mod}_\mathcal{A}} / {\mathrm{eff}_\mathcal{A}}) \xrightarrow{\overline Q} \mathcal{A}].
+        \end{equation}
+        It suffices to show $\overline Q$ is an equivalence with quasi-inverse $Q_0 \circ \mathbb Y$. The composition $\overline Q \circ (Q_0 \circ \mathbb Y) = Q \circ \mathbb Y \simeq \mathrm{id}_\mathcal{A}$ is clearly an auto-equivalence. Conversely, we show $(Q_0 \circ \mathbb Y) \circ \overline Q \simeq \mathrm{id}_{{\mathrm{mod}_\mathcal{A}} / {\mathrm{eff}_\mathcal{A}}}$. Note that $(Q_0)^\ast$ induces an isomorphism of categories (\cref{def:localisation}), it suffices to find a natural isomorphism $Q_0 \circ \mathbb Y \circ Q \xrightarrow{\simeq} Q_0$. We claim $Q_0 \eta : Q_0 \to Q_0 \circ \mathbb Y \circ Q$ is an natural isomorphism by showing that each $\eta _F : F \to \mathbb Y(Q(F))$ has effaceable kernel and cokernel. We take $F = \operatorname{cok} (-, f)$ for the right exact sequence $X \xrightarrow{f} Y \xrightarrow{p} \operatorname{cok} f \to 0$, then there is a $4$-term exact sequence
+        \begin{equation}
+            0 \to H \rightarrowtail F \xrightarrow{\eta_F} (-, \operatorname{cok} f) \twoheadrightarrow \operatorname{cok} (-, p) \to 0.
+        \end{equation}
+        yielding by
+        \begin{equation}
+\xymatrix{
+(-,X) \ar@{->}[rr]^{{(-,f)}} \ar@{->>}[rd] &  & (-,Y) \ar@{->}[rr]^{{(-,p)}} \ar@{->>}[rd] &  & (-, \operatorname {cok}f) \\
+ & \operatorname {im}(-,f) \ar@{>->}[ru] \ar@{->>}[rd] &  & F \ar@{->}[ru]_{\eta_F} &  \\
+ &  & H \ar@{>->}[ru] &  & 
+}.
+        \end{equation}
+        Since $\operatorname{cok} (-, p)$ is effaceable, and $H$ is a quotient of, we complete the proof.
+    \end{proof}
+\end{theorem}
+
+\begin{theorem}
+    The localisation sequence extend to
+    \begin{equation}
+        \xymatrix{
+\mathrm{eff}_\mathcal A \ar@{>->}[rr]^{I} &  & \mathrm{mod}_\mathcal A \ar@{->>}[rr]^{Q} \ar@/^1pc/@{->>}[ll]^{\mathbb C} &  & \mathcal A \ar@/^1pc/@{>->}[ll]^{\mathbb Y}
+        }.
+    \end{equation}
+    Here $\mathbb C : \operatorname{cok} (-, f) \mapsto \operatorname{cok} (-, p)$ for any $X \xrightarrow f Y \overset p \twoheadrightarrow \operatorname{cok}f$.
+    \begin{proof}
+        Note that for any epimorphism $q : A \twoheadrightarrow B$,
+        \begin{equation}
+            [\operatorname{cok}(-, q), \operatorname{cok} (-, f)] \simeq \ker \Big([(-, B), \operatorname{cok} (-, f)] \to [(-, A), \operatorname{cok} (-, f)]\Big) \simeq \ker (\operatorname{cok} (B,f) \to \operatorname{cok} (A,f)).
+        \end{equation}
+    \end{proof}
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage 
+\bibliographystyle{alphaurl}
+\bibliography{ref}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

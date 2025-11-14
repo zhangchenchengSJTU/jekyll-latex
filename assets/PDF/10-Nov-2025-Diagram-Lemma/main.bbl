@@ -1,0 +1,73 @@
+\begin{thebibliography}{KLW24}
+
+\bibitem[BN93]{CM_1993__86_2_209_0}
+Marcel B\"okstedt and Amnon Neeman.
+\newblock Homotopy limits in triangulated categories.
+\newblock {\em Compositio Mathematica}, 86(2):209--234, 1993.
+\newblock URL: \url{https://www.numdam.org/item/CM_1993__86_2_209_0/}.
+
+\bibitem[B{\"u}h10]{buhlerExactCategories2010a}
+Theo B{\"u}hler.
+\newblock Exact categories.
+\newblock {\em Expositiones Mathematicae}, 28(1):1--69, January 2010.
+\newblock \href {https://doi.org/10.1016/j.exmath.2009.04.004} {\path{doi:10.1016/j.exmath.2009.04.004}}.
+
+\bibitem[CK11]{canonacoSufficientCriterionHomotopy2011}
+Alberto Canonaco and Matthias K{\"u}nzer.
+\newblock A {{Sufficient Criterion}} for {{Homotopy Cartesianess}}.
+\newblock {\em Applied Categorical Structures}, 19(3):651--658, June 2011.
+\newblock \href {https://doi.org/10.1007/s10485-009-9197-0} {\path{doi:10.1007/s10485-009-9197-0}}.
+
+\bibitem[He19]{heExtensionsCovariantlyFinite2019}
+Jing He.
+\newblock Extensions of covariantly finite subcategories revisited.
+\newblock {\em Czechoslovak Mathematical Journal}, 69(2):403--415, June 2019.
+\newblock \href {https://doi.org/10.21136/CMJ.2018.0338-17} {\path{doi:10.21136/CMJ.2018.0338-17}}.
+
+\bibitem[HXZ23]{HeXieZhou+2023}
+Jing He, Chenbei Xie, and Panyue Zhou.
+\newblock Homotopy cartesian squares in extriangulated categories.
+\newblock {\em Open Mathematics}, 21(1):20220570, 2023.
+\newblock URL: \url{https://doi.org/10.1515/math-2022-0570} [cited 2025-10-30], \href {https://doi.org/doi:10.1515/math-2022-0570} {\path{doi:doi:10.1515/math-2022-0570}}.
+
+\bibitem[Kla23]{klapproth2023nextensionclosedsubcategoriesnexangulated}
+Carlo Klapproth.
+\newblock $n$-extension closed subcategories of $n$-exangulated categories, 2023.
+\newblock URL: \url{https://arxiv.org/abs/2209.01128}, \href {https://arxiv.org/abs/2209.01128} {\path{arXiv:2209.01128}}.
+
+\bibitem[KLW24]{Kong02072024}
+Xiaoxue Kong, Zengqiang Lin, and Minxiong Wang.
+\newblock The (et4) axiom for extriangulated categories.
+\newblock {\em Communications in Algebra}, 52(7):2724--2736, 2024.
+\newblock \href {https://arxiv.org/abs/https://doi.org/10.1080/00927872.2024.2305284} {\path{arXiv:https://doi.org/10.1080/00927872.2024.2305284}}, \href {https://doi.org/10.1080/00927872.2024.2305284} {\path{doi:10.1080/00927872.2024.2305284}}.
+
+\bibitem[KV87]{keller-vossieck1987}
+Bernhard Keller and Dieter Vossieck.
+\newblock Sous les catégories dérivées.
+\newblock {\em C.~R. Acad. Sci. Paris Sér. I Math.}, 305(6):225--228, 1987.
+\newblock French, with English summary. Available at \url{http://www.math.jussieu.fr/~keller/publ/scdabs.html}.
+
+\bibitem[LN19]{LIU201996}
+Yu~Liu and Hiroyuki Nakaoka.
+\newblock Hearts of twin cotorsion pairs on extriangulated categories.
+\newblock {\em Journal of Algebra}, 528:96--149, 2019.
+\newblock \href {https://doi.org/10.1016/j.jalgebra.2019.03.005} {\path{doi:10.1016/j.jalgebra.2019.03.005}}.
+
+\bibitem[LZ16]{Lin2016HomotopyCD}
+Zengqiang Lin and Yani Zheng.
+\newblock Homotopy cartesian diagrams in \$n\$-angulated categories.
+\newblock {\em Homology, Homotopy and Applications}, 2016.
+\newblock URL: \url{https://api.semanticscholar.org/CorpusID:119324212}.
+
+\bibitem[NP19]{nakaokaExtriangulatedCategoriesHovey2019}
+Hiroyuki Nakaoka and Yann Palu.
+\newblock Extriangulated categories, {{Hovey}} twin cotorsion pairs and model structures.
+\newblock {\em Cahiers de topologie et g\'eom\'etrie diff\'erentielle cat\'egoriques}, LX(2):117--193, 2019.
+
+\bibitem[Tat24]{tattarStructureAislesCoaisles2024}
+Aran Tattar.
+\newblock The {{Structure}} of {{Aisles}} and {{Co-aisles}} of t-{{Structures}} and {{Co-t-structures}}.
+\newblock {\em Applied Categorical Structures}, 32(1):5, February 2024.
+\newblock \href {https://doi.org/10.1007/s10485-023-09755-8} {\path{doi:10.1007/s10485-023-09755-8}}.
+
+\end{thebibliography}
