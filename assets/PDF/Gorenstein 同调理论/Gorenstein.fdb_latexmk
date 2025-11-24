@@ -1,26 +1,26 @@
 # Fdb version 4
-["bibtex Gorenstein"] 1763888284.39911 "Gorenstein.aux" "Gorenstein.bbl" "Gorenstein" 1763888728.29218 0
+["bibtex Gorenstein"] 1763952882.59454 "Gorenstein.aux" "Gorenstein.bbl" "Gorenstein" 1763954061.26929 0
   "./ref.bib" 1763786987 1561 2e1dcf43ed1169631e03f3ca977e633d ""
-  "Gorenstein.aux" 1763888725 248 0260f1ccdb6b90665748fdd65831fe1b "xelatex"
-  "Section/ProperClass.aux" 1763888725 3237 9fc96f0ade9ecc8dd1ee59b6cbf277d0 "xelatex"
+  "Gorenstein.aux" 1763954058 248 0260f1ccdb6b90665748fdd65831fe1b "xelatex"
+  "Section/ProperClass.aux" 1763954058 3237 d9906673cbf852c1aa2bce745d4b6883 "xelatex"
   "c:/texlive/2024/texmf-dist/bibtex/bst/urlbst/alphaurl.bst" 1740728801 36789 471f9462b8363fe2bc95f4511e37e918 ""
   (generated)
   "Gorenstein.bbl"
   "Gorenstein.blg"
   (rewritten before read)
-["xdvipdfmx"] 1763888726.88512 "Gorenstein.xdv" "Gorenstein.pdf" "Gorenstein" 1763888728.3132 0
-  "Gorenstein.xdv" 1763888725 460888 30412ed7d7d0452b00b62b575db1c750 "xelatex"
+["xdvipdfmx"] 1763954059.94624 "Gorenstein.xdv" "Gorenstein.pdf" "Gorenstein" 1763954061.28736 0
+  "Gorenstein.xdv" 1763954058 493108 45203b3e76521ddcf962ebe7b766878f "xelatex"
   (generated)
   "Gorenstein.pdf"
   (rewritten before read)
-["xelatex"] 1763888718.73202 "d:/GitHub/jekyll-latex/assets/PDF/Gorenstein 同调理论/Gorenstein.tex" "Gorenstein.xdv" "Gorenstein" 1763888728.29312 0
-  "Gorenstein.aux" 1763888725 248 0260f1ccdb6b90665748fdd65831fe1b "xelatex"
-  "Gorenstein.bbl" 1763888285 402 a0b62608cdcecb47387fcf163ee8d95c "bibtex Gorenstein"
-  "Gorenstein.out" 1763888725 822 2117fc8212305cb8e35d7ef572d66db1 "xelatex"
+["xelatex"] 1763954051.53548 "d:/GitHub/jekyll-latex/assets/PDF/Gorenstein 同调理论/Gorenstein.tex" "Gorenstein.xdv" "Gorenstein" 1763954061.2698 0
+  "Gorenstein.aux" 1763954058 248 0260f1ccdb6b90665748fdd65831fe1b "xelatex"
+  "Gorenstein.bbl" 1763952883 402 a0b62608cdcecb47387fcf163ee8d95c "bibtex Gorenstein"
+  "Gorenstein.out" 1763954058 822 2117fc8212305cb8e35d7ef572d66db1 "xelatex"
   "Gorenstein.tex" 1763788498 5430 980e5482cf69cfc4458cd4b14e140858 ""
-  "Gorenstein.toc" 1763888725 517 9abd5f292d9a846b50744034efc6b8b8 "xelatex"
-  "Section/ProperClass.aux" 1763888725 3237 9fc96f0ade9ecc8dd1ee59b6cbf277d0 "xelatex"
-  "Section/ProperClass.tex" 1763888717 76889 2c798eb8c0104a111ff88113cc20ca96 ""
+  "Gorenstein.toc" 1763954058 517 9abd5f292d9a846b50744034efc6b8b8 "xelatex"
+  "Section/ProperClass.aux" 1763954058 3237 d9906673cbf852c1aa2bce745d4b6883 "xelatex"
+  "Section/ProperClass.tex" 1763954050 82897 a922cf0eb7275ddb93ce45beed0fd40f ""
   "c:/Windows/Fonts/msyh.ttc" 1756300068 19704352 1e10e74402e59d54499af795caf0b135 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1740726853 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1740729019 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""

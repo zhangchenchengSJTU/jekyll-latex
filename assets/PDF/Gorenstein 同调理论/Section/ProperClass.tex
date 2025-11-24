@@ -855,8 +855,61 @@
 \end{tikzcd}.
 			\end{equation}
 			由归纳假设, $E$ 与 $A$ 的 $\mathcal{GP}(\xi)$-投射维数是 $n+1$.
-			\item (归纳: $\mathfrak A(n) \land \mathfrak B(n) \to \mathfrak B(n+1)$). 考虑
-			\item (归纳: $\mathfrak A(n) \land \mathfrak C(n) \to \mathfrak C(n+1)$).
+			\item (归纳: $\mathfrak C(n + 1) \to \mathfrak B(n+1)$). 由 WIC-free 的 $3\times 3$-引理做得下图
+			\begin{equation}
+% https://q.uiver.app/#q=WzAsMTcsWzAsMiwiQSJdLFsxLDIsIkIiXSxbMiwyLCJHIixbMjcwLDYwLDYwLDFdXSxbMywyLCJcXCwiXSxbNCwyLCJcXG1hdGhjYWwgR3BkX1xceGkgQSA9IG4rMSJdLFswLDEsIkcnJyJdLFswLDAsIkEnIl0sWzIsMCwiRyciLFsyNzAsNjAsNjAsMV1dLFsyLDEsIlAiLFsyNzAsNjAsNjAsMV1dLFszLDAsIlxcLCJdLFswLDMsIlxcLCJdLFsyLDMsIlxcLCJdLFszLDEsIlxcLCAiXSxbMSwwLCJCJyJdLFsxLDEsIkcnJyBcXG9wbHVzIFAiXSxbMSwzLCJcXCwgIl0sWzQsMCwiXFxtYXRoY2FsIEdwZF9cXHhpIEEnID0gbiJdLFswLDEsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzEsMiwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMiwzLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsNSwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbNSwwLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXX1dLFswLDEwLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsOCwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbOCwyLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXX1dLFsyLDExLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMTMsIiIsMix7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTMsNywiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDksIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwxNCwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMTQsOCwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbOCwxMiwiMCIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFswLDYwLDYwLDFdXSxbMTMsMTQsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxNCwxLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwxNSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	{A'} \& {B'} \& \textcolor{rgb,255:red,153;green,92;blue,214}{{G'}} \& {\,} \& {\mathcal Gpd_\xi A' = n} \\
+	{G''} \& {G'' \oplus P} \& \textcolor{rgb,255:red,153;green,92;blue,214}{P} \& {\, } \\
+	A \& B \& \textcolor{rgb,255:red,153;green,92;blue,214}{G} \& {\,} \& {\mathcal Gpd_\xi A = n+1} \\
+	{\,} \& {\, } \& {\,}
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=1-1, to=1-2]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=1-1, to=2-1]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=1-2, to=1-3]
+	\arrow[dashed, from=1-2, to=2-2]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=1-3, to=1-4]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=1-3, to=2-3]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=2-1, to=2-2]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-1, to=3-1]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=2-2, to=2-3]
+	\arrow[dashed, from=2-2, to=3-2]
+	\arrow["0", color={rgb,255:red,214;green,92;blue,92}, dashed, from=2-3, to=2-4]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=2-3, to=3-3]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=3-1, to=3-2]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-1, to=4-1]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=3-2, to=3-3]
+	\arrow[dashed, from=3-2, to=4-2]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=3-4]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+			\end{equation}
+			由 $3\times 3$, 上图所有行与列皆为 $(-, \mathcal{P}(\xi))$-正合的. 由 $\mathfrak B(n)$ 知 $\mathcal Gpd_\xi B' = n$. 由 $\mathfrak A(n)$ 知 $\mathcal{G}pd_\xi B = n+1$.
+			\item (归纳: $\mathfrak A(n) \land \mathfrak B(n) \to \mathfrak C(n+1)$). 考虑
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsMTYsWzAsMiwiQSJdLFsxLDIsIkIiXSxbMiwyLCJHIixbMjcwLDYwLDYwLDFdXSxbMywyLCJcXCwiXSxbNCwyLCJcXG1hdGhjYWwgR3BkX1xceGkgQiA9IG4rMSJdLFswLDEsIkgiXSxbMiwxLCJHIixbMjcwLDYwLDYwLDFdXSxbMywwLCJcXCwiXSxbMCwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbMywxLCJcXCwgIl0sWzEsMCwiQiciXSxbMSwzLCJcXCwgIl0sWzQsMCwiXFxtYXRoY2FsIEdwZF9cXHhpIEInID0gbiJdLFsxLDEsIkcnIixbMjcwLDYwLDYwLDFdXSxbMCwwLCJCJyJdLFswLDEsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzEsMiwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMiwzLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwwLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw4LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw5LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwxMCwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMTIsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSwxNCwiIiwyLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbNSwxNCwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMTQsNiwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMTQsMSwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMTUsMTEsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE1LDUsIiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDIsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	{B'} \& {B'} \&\& {\,} \& {\mathcal Gpd_\xi B' = n} \\
+	H \& \textcolor{rgb,255:red,153;green,92;blue,214}{{G'}} \& \textcolor{rgb,255:red,153;green,92;blue,214}{G} \& {\, } \\
+	A \& B \& \textcolor{rgb,255:red,153;green,92;blue,214}{G} \& {\,} \& {\mathcal Gpd_\xi B = n+1} \\
+	{\,} \& {\, } \& {\,}
+	\arrow[equals, from=1-1, to=1-2]
+	\arrow[dashed, from=1-1, to=2-1]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=1-2, to=2-2]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-1, to=2-2]
+	\arrow[dashed, from=2-1, to=3-1]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-2, to=2-3]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-2, to=3-2]
+	\arrow[dashed, from=2-3, to=2-4]
+	\arrow[equals, from=2-3, to=3-3]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=3-1, to=3-2]
+	\arrow[dashed, from=3-1, to=4-1]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=3-2, to=3-3]
+	\arrow[dashed, from=3-2, to=4-2]
+	\arrow[dashed, from=3-3, to=3-4]
+	\arrow[dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+			\end{equation}
+			由 $3\times 3$, 上图所有行与列皆为 $(-, \mathcal{P}(\xi))$-正合的. $H \in \mathcal{GP}$. 由 $\mathfrak C(n+1)$ 知 $\mathcal Gpd_\xi A = n+1$.
 		\end{itemize}
 	\end{proof}
 \end{lemma}
