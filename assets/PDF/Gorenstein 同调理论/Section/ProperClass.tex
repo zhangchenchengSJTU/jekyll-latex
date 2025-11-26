@@ -10,14 +10,14 @@
 记 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 为外三角范畴.
 \end{notation}
 
-\begin{definition}[真类 $\xi$]\label{def:proper_class}
+\begin{definition}[真类 $\xi$]\label{def:xi}
     称 $\xi$ 是 $\mathbb E$-三角组成的真类, 若满足以下条件:
     \begin{enumerate}
         \item[P1] $\xi$ 对双积与同构封闭, 且包含所有可裂的 $\mathbb E$-三角.
         \item[P2] $\xi$ 对基变换封闭: 任取 $\xi$-三角 $X \xrightarrow f Y \xrightarrow g Z \overset \delta \dashrightarrow$, 任何 $\gamma^\ast \delta$ 的实现 $X \xrightarrow {f'} Y' \xrightarrow {g'} Z' \overset {\gamma^\ast \delta} \dashrightarrow$ 也属于 $\xi$.
         \item[P2$^{\mathrm{op}}$] $\xi$ 对余基变换封闭: 任取 $\xi$-三角 $X \xrightarrow f Y \xrightarrow g Z \overset \delta \dashrightarrow$, 任何 $\alpha_\ast \delta$ 的实现 $X' \xrightarrow {f'} Y' \xrightarrow {g'} Z \overset {\alpha\ast \delta} \dashrightarrow$ 也属于 $\xi$.
         \item[P3] $\xi$ 饱和: 给定 $\delta_1$ 与 $\delta_2$ 实现的``拉回''
-        \begin{equation}
+        \begin{equation}\label{eq:P3}
 % https://q.uiver.app/#q=WzAsMTIsWzAsMSwiXFxjZG90Il0sWzEsMSwiXFxjZG90Il0sWzEsMCwiXFxjZG90Il0sWzIsMCwiXFxjZG90Il0sWzIsMSwiXFxjZG90Il0sWzEsMiwiXFxjZG90Il0sWzAsMiwiXFxjZG90Il0sWzIsMiwiXFxjZG90Il0sWzMsMSwiXFwsICJdLFszLDIsIlxcLCAiXSxbMiwzLCJcXCwgIl0sWzEsMywiXFwsICJdLFswLDYsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwxLCIiLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDQsIiIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsOCwiXFxkZWx0YV8xJyIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzAsNjAsNjAsMV1dLFsyLDEsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDUsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDExLCJcXGRlbHRhXzInIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsNCwiIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfV0sWzQsNywiIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfV0sWzcsMTAsIlxcZGVsdGFfMiIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzAsNjAsNjAsMV1dLFs2LDUsIiIsMCx7ImNvbG91ciI6WzI0MCw2MCw2MF19XSxbNSw3LCIiLDAseyJjb2xvdXIiOlsyNDAsNjAsNjBdfV0sWzcsOSwiXFxkZWx0YV8xIiwwLHsiY29sb3VyIjpbMjQwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjQwLDYwLDYwLDFdXV0=
 \begin{tikzcd}[ampersand replacement=\&]
 	\& \cdot \& \cdot \\
@@ -45,49 +45,16 @@
 \end{definition}
 
 \begin{remark}
-    \Cref{def:proper_class} 中的``真类 (proper class)''无关集合论中的``真类''概念.
+    \Cref{def:xi} 中的``真类 (proper class)''无关集合论中的``真类''概念.
 \end{remark}
 
 \begin{remark}
-    可对偶地定义 P3$^{\mathrm{op}}$, 但 $\xi$ 的定义并没有这一条.
+    可对偶地定义 P3$^{\mathrm{op}}$. 这是 \cref{thm:proper_class_extriangulated} 的推论.
 \end{remark}
 
 \begin{notation}
-    方便起见, 将 $\xi$ 中三角标注作橘色 ($\color{rgb,255:red,214;green,153;blue,92}\blacksquare$). 引入 $\xi$-三角, $\xi$-扩张元, $\xi$-单射, $\xi$-满射等记号. 
+    方便起见, 将 $\xi$ 中三角标注作橘色 ($\color{rgb,255:red,214;green,153;blue,92}\blacksquare$). 引入 $\xi$-三角, $\xi$-扩张元, $\xi$-单射, $\xi$-满射等名称. 
 \end{notation}
-
-\begin{lemma}\label{lem:proper_class_saturation}
-    给定 $\delta_1'$, $\delta_2$ 与 $\delta_2'$ 使得其实现作下图中的 $\mathbb E$-三角:
-    \begin{equation}
-% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiXFxjZG90Il0sWzEsMSwiXFxjZG90Il0sWzEsMCwiXFxjZG90Il0sWzIsMCwiXFxjZG90Il0sWzIsMSwiXFxjZG90Il0sWzEsMiwiXFxjZG90Il0sWzAsMiwiXFxjZG90Il0sWzIsMiwiXFxjZG90Il0sWzMsMSwiXFwsICJdLFszLDIsIlxcLCAiXSxbMiwzLCJcXCwgIl0sWzEsMywiXFwsICJdLFswLDYsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwxLCJmJ18xIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfSxbMzAsNjAsNjAsMV1dLFsxLDQsImcnXzEiLDAseyJjb2xvdXIiOlszMCw2MCw2MF19LFszMCw2MCw2MCwxXV0sWzQsOCwiXFxkZWx0YV8xJyIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzAsNjAsNjAsMV1dLFsyLDEsImYnXzIiLDJdLFsxLDUsImcnXzIiXSxbNSwxMSwiXFxkZWx0YV8yJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDQsImZfMiIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXX0sWzMwLDYwLDYwLDFdXSxbNCw3LCJnXzIiLDAseyJjb2xvdXIiOlszMCw2MCw2MF19LFszMCw2MCw2MCwxXV0sWzcsMTAsIlxcZGVsdGFfMiIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzAsNjAsNjAsMV1dLFs2LDUsImZfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDcsImdfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDksIlxcZGVsdGFfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
-\begin{tikzcd}[ampersand replacement=\&]
-	\& \cdot \& \cdot \\
-	\cdot \& \cdot \& \cdot \& {\, } \\
-	\cdot \& \cdot \& \cdot \& {\, } \\
-	\& {\, } \& {\, }
-	\arrow[equals, from=1-2, to=1-3]
-	\arrow["{f'_2}"', from=1-2, to=2-2]
-	\arrow["{f_2}", color={rgb,255:red,214;green,153;blue,92}, from=1-3, to=2-3]
-	\arrow["{f'_1}", color={rgb,255:red,214;green,153;blue,92}, from=2-1, to=2-2]
-	\arrow[equals, from=2-1, to=3-1]
-	\arrow["{g'_1}", color={rgb,255:red,214;green,153;blue,92}, from=2-2, to=2-3]
-	\arrow["{g'_2}", from=2-2, to=3-2]
-	\arrow["{\delta_1'}", color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-3, to=2-4]
-	\arrow["{g_2}", color={rgb,255:red,214;green,153;blue,92}, from=2-3, to=3-3]
-	\arrow["{f_1}", dashed, from=3-1, to=3-2]
-	\arrow["{g_1}", dashed, from=3-2, to=3-3]
-	\arrow["{\delta_2'}", dashed, from=3-2, to=4-2]
-	\arrow["{\delta_1}", dashed, from=3-3, to=3-4]
-	\arrow["{\delta_2}", color={rgb,255:red,214;green,153;blue,92}, dashed, from=3-3, to=4-3]
-\end{tikzcd}.
-    \end{equation}
-    存在 $\delta_1$ 的实现使得底行能被补全, 且 $(1;g_2';g_2')$ 与 $(1;g_1';g_1)$ 是 $\mathbb E$-三角射, 同时 $(f_1')_\ast \delta_1 + (f_2')_\ast \delta_2 = 0$. 
-    
-    此时, 若 $\delta'$ 与 $\delta_2$ 是 $\xi$-扩张元, 则 $\delta_1$ 与 $\delta_2'$ 必是 $\xi$-扩张元.
-    \begin{proof}
-        $\delta_1$ 的构造熟知. 由定义, $\delta_2'$ 必是 $\xi$-扩张元. 由 P3 可知 $\delta_1$ 也是 $\xi$-扩张元.
-    \end{proof}
-\end{lemma}
 
 \begin{theorem}\label{thm:proper_class_extriangulated}
     假定外三角的类 $\xi$ 对同构封闭, 则 $\xi$ 是真类当且仅当 $(\mathcal{C}, \mathbb E_\xi, \mathfrak s_\xi)$ 是外三角范畴. 此处
@@ -96,7 +63,7 @@
         \item $\mathfrak s_\xi$ 即 $\mathfrak s$ 在 $\mathbb E_\xi$ 上的限制.
     \end{enumerate}
     \begin{proof}
-        ($\gets$). P1, P2, P2$^{\mathrm{op}}$ 由 $\mathbb E_\xi$ 的加法双函子性保证. P4 即 \cref{lem:proper_class_saturation}.
+        ($\gets$). P1, P2, P2$^{\mathrm{op}}$ 由 $\mathbb E_\xi$ 的加法双函子性保证. P3 证明如下. 假定 \cref{eq:P3} 中 $\delta_1'$, $\delta_2$ 是 $\xi$-扩张元, 由 P2 知 $\delta_2'$ 也是 $\xi$-扩张元. $\delta_1$ 可在外三角范畴 $(\mathcal{C}, \mathbb E_\xi, \mathfrak s_\xi)$ 中直接构造. 
 
         ($\to$). ET1, ET2, ET3, ET3$^{\mathrm{op}}$ 显然成立. 只需验证 ET4 与 ET4$^{\mathrm{op}}$.
         \begin{enumerate}
@@ -230,21 +197,21 @@
 
 \subsection{\texorpdfstring{$\xi$}{}-同调代数}
 
-\begin{definition}[投射对象]
-    $P$ 是投射对象, 若以下等价命题 (证明略) 成立:
-    \begin{enumerate}
-        \item 对所有 $\mathbb E$-满射 $g$, 群同态 $(P, g)$ 满;
-        \item $\mathbb E(P, -)$ 是零函子, 即所有 $\mathbb E$-三角 $A \xrightarrow f B \xrightarrow g P \overset \delta \dashrightarrow$ 可裂.
-    \end{enumerate}
-\end{definition}
+% \begin{definition}[投射对象]
+%     $P$ 是投射对象, 若以下等价命题 (证明略) 成立:
+%     \begin{enumerate}
+%         \item 对所有 $\mathbb E$-满射 $g$, 群同态 $(P, g)$ 满;
+%         \item $\mathbb E(P, -)$ 是零函子, 即所有 $\mathbb E$-三角 $A \xrightarrow f B \xrightarrow g P \overset \delta \dashrightarrow$ 可裂.
+%     \end{enumerate}
+% \end{definition}
 
-\begin{notation}
-    记 $\mathcal{P}$ 是投射对象构成的子范畴.
-\end{notation}
+% \begin{notation}
+%     记 $\mathcal{P}$ 是投射对象构成的子范畴.
+% \end{notation}
 
-\begin{remark}
-    $\mathcal{P}$ 对扩张 (含直和) 与形变收缩 (含直和项) 封闭. $\mathcal{P}$ 作为外三角子范畴是半单 Abel 范畴.
-\end{remark}
+% \begin{remark}
+%     $\mathcal{P}$ 对扩张 (含直和) 与形变收缩 (含直和项) 封闭. $\mathcal{P}$ 作为外三角子范畴是半单 Abel 范畴.
+% \end{remark}
 
 \begin{notation}
     往后选定真类 $\xi$.
@@ -262,40 +229,13 @@
 \end{remark}
 
 \begin{notation}
-    记 $\mathcal{P}(\xi)$ 是 $\xi$ 投射对象构成的类, 对直和与直和项封闭.
+    记 $\mathcal{P}(\xi)$ 是 $\xi$ 投射对象构成的类, 其对余积 (若存在) 与缩回封闭.
 \end{notation}
 
-\begin{example}
-    $\mathcal{P}(\xi)$ 未必对扩张封闭. 给定 $\mathcal{P}(\xi)$ 对象组成的 $\mathbb E$ 三角 $P' \xrightarrow{i} P \xrightarrow{p} P'' \overset {\pi} \dashrightarrow$ 与任意 $\xi$-三角 $A \xrightarrow f B \xrightarrow g C \overset {\delta'} \dashrightarrow$, 有正合列的交换图
-    \begin{equation}
-        % https://q.uiver.app/#q=WzAsOSxbMCwwLCIoUCcnLEEpIl0sWzAsMSwiKFAnJyxCKSJdLFswLDIsIihQJycsQykiXSxbMiwwLCIoUCxBKSJdLFsyLDEsIihQLEIpIl0sWzIsMiwiKFAsQykiXSxbNCwwLCIoUCcsQSkiXSxbNCwxLCIoUCcsQikiXSxbNCwyLCIoUCcsQykiXSxbMCwxLCIoUCcnLGYpIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX1dLFsxLDIsIihQJycsZykiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw0LCIoUCxmKSJdLFs2LDcsIihQJyxmKSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbNyw4LCIoUCcsZykiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCwzLCIocCxBKSJdLFszLDYsIihpLEEpIl0sWzEsNCwiKHAsQikiXSxbNCw3LCIoaSxCKSJdLFsyLDUsIihwLEMpIl0sWzUsOCwiKGksQykiXSxbNCw1LCIoUCxnKSJdXQ==
-\begin{tikzcd}[ampersand replacement=\&]
-	{(P'',A)} \&\& {(P,A)} \&\& {(P',A)} \\
-	{(P'',B)} \&\& {(P,B)} \&\& {(P',B)} \\
-	{(P'',C)} \&\& {(P,C)} \&\& {(P',C)}
-	\arrow["{(p,A)}", from=1-1, to=1-3]
-	\arrow["{(P'',f)}", tail, from=1-1, to=2-1]
-	\arrow["{(i,A)}", from=1-3, to=1-5]
-	\arrow["{(P,f)}", from=1-3, to=2-3]
-	\arrow["{(P',f)}", tail, from=1-5, to=2-5]
-	\arrow["{(p,B)}", from=2-1, to=2-3]
-	\arrow["{(P'',g)}", two heads, from=2-1, to=3-1]
-	\arrow["{(i,B)}", from=2-3, to=2-5]
-	\arrow["{(P,g)}", from=2-3, to=3-3]
-	\arrow["{(P',g)}", two heads, from=2-5, to=3-5]
-	\arrow["{(p,C)}", from=3-1, to=3-3]
-	\arrow["{(i,C)}", from=3-3, to=3-5]
-\end{tikzcd}.
-    \end{equation}
-    计算谱序列知
-    \begin{enumerate}
-        \item $\ker (p,B) \simeq H\left[\ker (P'',f) \xrightarrow{\widetilde {(i,A)}} \ker (P,f)\xrightarrow{\widetilde {(p,A)}}\ker (P',f)\right]$,
-        \item $\mathrm{coker} (i,B) \simeq H\left[\mathrm{coker} (P'',g) \xrightarrow{\widehat{(p,C)}} \mathrm{coker} (P,g) \xrightarrow{\widehat{(i,C)}} \mathrm{coker} (P',g)\right]$.
-    \end{enumerate}
-\end{example}
-
 \begin{remark}
-    $\mathcal{P}(\xi)$ 显然是 $(\mathcal{C}, \mathbb E_\xi, \mathfrak s_\xi)$ 的外三角子范畴, 且是半单 Abel 范畴. 
+    $\mathcal{P}(\xi)$ 显然是 $(\mathcal{C}, \mathbb E_\xi, \mathfrak s_\xi)$ 的外三角子范畴, 且是半单 Abel 范畴.
+	
+	$\mathcal{P}(\xi)$ 未必是 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 的外三角子范畴.
 \end{remark}
 
 \begin{definition}[足够 $\mathcal{P}(\xi)$-投射对象]
@@ -332,7 +272,7 @@
 	\arrow[draw={rgb,255:red,214;green,153;blue,92}, dashed, from=3-3, to=4-3]
 \end{tikzcd}.
         \end{equation}
-        由 P3, $X \xrightarrow f Y \xrightarrow g Z \overset \delta \dashrightarrow$ 是 $\xi$-三角.
+    	可裂短正合列是 $\xi$-三角. 由 P3, $X \xrightarrow f Y \xrightarrow g Z \overset \delta \dashrightarrow$ 是 $\xi$-三角.
     \end{proof}
 \end{proposition}
 
@@ -369,6 +309,10 @@
     在原文中, 默认 $(-, \mathcal{W})$-正合的 $\mathbb E$-三角 (复形) 是 $\xi$-三角 (复形).
 \end{remark}
 
+\begin{notation}
+	方便起见, 称一个 $\mathbb E$-单射 ($\mathbb E$-满射, 或扩张元) 是 $(-,\mathcal{W})$ 正合的, 若其所在的 $\mathbb E$-三角是 $(-,\mathcal{W})$ 正合的.
+\end{notation}
+
 \begin{proposition}[$\mathcal{P}(\xi)$-投射维数的等价定义]
 	$pd_\xi M \leq n$, 当且仅当对任意 $\xi$-正合复形
 	\begin{equation}
@@ -404,7 +348,7 @@
 \end{remark}
 
 \begin{proposition}\label{prop:W_exact_0}
-    若 $\varepsilon$ 所在的 $\mathbb E$-三角是 $(-, \mathcal{W})$-正合的, 则任意 $\lambda_\ast \delta$ 所在的三角亦然.
+    若 $\varepsilon$ 是 $(-, \mathcal{W})$-正合的, 则任意 $\lambda_\ast \delta$ 亦然.
     \begin{equation}
         % https://q.uiver.app/#q=WzAsOCxbMiwxLCJcXGNkb3QiXSxbMSwxLCJcXGNkb3QiXSxbMCwxLCJcXGNkb3QiXSxbMSwwLCJcXGNkb3QiXSxbMiwwLCJcXGNkb3QiXSxbMCwwLCJcXGNkb3QiXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwwLCJmJyIsMCx7ImNvbG91ciI6WzI0MCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzI0MCw2MCw2MCwxXV0sWzIsMSwiIiwwLHsiY29sb3VyIjpbMjQwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMyw0LCJmIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19LFswLDYwLDYwLDFdXSxbNSwzLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXX1dLFs1LDIsIlxcbGFtYmRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsNiwiXFx2YXJlcHNpbG9uICIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFswLDYwLDYwLDFdXSxbMCw3LCJcXGxhbWJkYV9cXGFzdCBcXHZhcmVwc2lsb24gIiwwLHsiY29sb3VyIjpbMjQwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjQwLDYwLDYwLDFdXV0=
 \begin{tikzcd}[ampersand replacement=\&]
@@ -427,7 +371,7 @@
 \end{proposition}
 
 \begin{proposition}\label{prop:W_exact_1}
-    若 $\delta$ 与 $\varepsilon$ 所在的 $\mathbb E$-三角是 $(-, \mathcal{W})$-正合的, 则 $\varepsilon'$ 所在的三角亦然.
+    若 $\delta$ 与 $\varepsilon$ 是 $(-, \mathcal{W})$-正合的, 则 $\varepsilon'$ 亦然.
     \begin{equation}
 % https://q.uiver.app/#q=WzAsMTIsWzIsMiwiXFxjZG90Il0sWzIsMSwiXFxjZG90Il0sWzIsMCwiXFxjZG90Il0sWzEsMSwiXFxjZG90Il0sWzEsMiwiXFxjZG90Il0sWzAsMSwiXFxjZG90Il0sWzMsMSwiXFwsIl0sWzEsMCwiXFxjZG90Il0sWzEsMywiXFwsIl0sWzAsMCwiXFxjZG90Il0sWzMsMCwiXFwsIl0sWzIsMywiXFwsIl0sWzEsMCwiZiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfSxbMCw2MCw2MCwxXV0sWzIsMSwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMywxLCJnIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19LFswLDYwLDYwLDFdXSxbNCwwLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDQsImdmIiwwLHsiY29sb3VyIjpbMjQwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjQwLDYwLDYwLDFdXSxbNSwzLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXX1dLFs3LDMsIiIsMCx7ImNvbG91ciI6WzI0MCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDcsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsMTAsIlxcZGVsdGEnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNiwiXFxkZWx0YSIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFswLDYwLDYwLDFdXSxbNCw4LCJcXHZhcmVwc2lsb24gJyIsMCx7ImNvbG91ciI6WzI0MCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzI0MCw2MCw2MCwxXV0sWzAsMTEsIlxcdmFyZXBzaWxvbiAiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMCw2MCw2MCwxXV1d
 \begin{tikzcd}[ampersand replacement=\&]
@@ -457,7 +401,7 @@
 \end{proposition}
 
 \begin{proposition}\label{prop:W_exact_2}
-    若 $\delta'$ 与 $\varepsilon$ 所在的 $\mathbb E$-三角是 $(-, \mathcal{W})$-正合的, 则 $\delta$ 所在的三角亦然.
+    若 $\delta'$ 与 $\varepsilon$ 是 $(-, \mathcal{W})$-正合的, 则 $\delta$ 亦然.
     \begin{equation}
 % https://q.uiver.app/#q=WzAsMTIsWzAsMiwiXFxjZG90Il0sWzEsMiwiXFxjZG90Il0sWzIsMiwiXFxjZG90Il0sWzMsMiwiXFwsICJdLFsyLDAsIlxcY2RvdCJdLFsyLDEsIlxcY2RvdCJdLFsyLDMsIlxcLCAiXSxbMCwxLCJcXGNkb3QiXSxbMSwxLCJcXGNkb3QiXSxbMywxLCJcXCwgIl0sWzEsMCwiXFxjZG90Il0sWzEsMywiXFwsICJdLFswLDEsIiIsMCx7ImNvbG91ciI6WzI0MCw2MCw2MF19XSxbMSwyLCJmJyIsMCx7ImNvbG91ciI6WzI0MCw2MCw2MF19LFsyNDAsNjAsNjAsMV1dLFsyLDMsIlxcZGVsdGEiLDAseyJjb2xvdXIiOlsyNDAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFsyNDAsNjAsNjAsMV1dLFs0LDUsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzUsMiwiZyIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfSxbMCw2MCw2MCwxXV0sWzIsNiwiXFx2YXJlcHNpbG9uICIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFswLDYwLDYwLDFdXSxbNywwLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs3LDgsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCw1LCJmIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzAsNjAsNjAsMV1dLFs1LDksIlxcZGVsdGEgJyIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFswLDYwLDYwLDFdXSxbMTAsNCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTAsOCwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMTEsIlxcdmFyZXBzaWxvbiAnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
 \begin{tikzcd}[ampersand replacement=\&]
@@ -513,7 +457,7 @@
 	\arrow["{\varepsilon }", color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=4-3]
 \end{tikzcd}.
         \end{equation}
-        依照 \cref{prop:W_exact_1}, 蓝色 $\mathbb E$-三角是 $(-, \mathcal{P}(\xi))$-正合的.
+        依照 \cref{prop:W_exact_1}, $\delta$ $(-, \mathcal{P}(\xi))$-正合的.
     \end{proof}
 \end{theorem}
 
@@ -580,25 +524,25 @@
 		\begin{enumerate}
 			\item (向左延伸). 作以下 $\xi$-三角的交换图
 			\begin{equation}
-				% https://q.uiver.app/#q=WzAsMTIsWzIsMSwiUFxcb3BsdXMgRyJdLFsxLDEsIlFfMCJdLFswLDEsIktfMCJdLFszLDEsIlxcLCJdLFsyLDIsIlAiXSxbMSwyLCJQIl0sWzIsMCwiRyJdLFszLDAsIlxcLCJdLFsyLDMsIlxcLCJdLFsxLDMsIlxcLCJdLFswLDAsIktfMCJdLFsxLDAsIlAnIl0sWzIsMSwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMSwwLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXX1dLFswLDMsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsMiwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw0LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMCwxMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzExLDYsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDcsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSwxLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXX1dLFsxLDUsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzUsOSwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDAsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzAsNCwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbNCw4LCIwIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzAsNjAsNjAsMV1dXQ==
+% https://q.uiver.app/#q=WzAsMTIsWzIsMSwiUFxcb3BsdXMgRyIsWzI3MCw2MCw2MCwxXV0sWzEsMSwiUV8wIl0sWzAsMSwiS18wIl0sWzMsMSwiXFwsIl0sWzIsMiwiUCIsWzI3MCw2MCw2MCwxXV0sWzEsMiwiUCIsWzI3MCw2MCw2MCwxXV0sWzIsMCwiRyIsWzI3MCw2MCw2MCwxXV0sWzMsMCwiXFwsIl0sWzIsMywiXFwsIl0sWzEsMywiXFwsIl0sWzAsMCwiS18wIl0sWzEsMCwiUCciXSxbMiwxLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXX1dLFsxLDAsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzAsMywiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMCwyLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDQsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEwLDExLCIiLDAseyJjb2xvdXIiOlsyNDAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTEsNiwiIiwwLHsiY29sb3VyIjpbMjQwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsNywiIiwwLHsiY29sb3VyIjpbMjQwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzExLDEsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzEsNSwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbNSw5LCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMCwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMCw0LCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXX1dLFs0LDgsIjAiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMCw2MCw2MCwxXV1d
 \begin{tikzcd}[ampersand replacement=\&]
-	{K_0} \& {P'} \& G \& {\,} \\
-	{K_0} \& {Q_0} \& {P\oplus G} \& {\,} \\
-	\& P \& P \\
+	{K_0} \& {P'} \& \textcolor{rgb,255:red,153;green,92;blue,214}{G} \& {\,} \\
+	{K_0} \& {Q_0} \& \textcolor{rgb,255:red,153;green,92;blue,214}{{P\oplus G}} \& {\,} \\
+	\& \textcolor{rgb,255:red,153;green,92;blue,214}{P} \& \textcolor{rgb,255:red,153;green,92;blue,214}{P} \\
 	\& {\,} \& {\,}
-	\arrow[dashed, from=1-1, to=1-2]
+	\arrow[color={rgb,255:red,92;green,92;blue,214}, dashed, from=1-1, to=1-2]
 	\arrow[equals, from=1-1, to=2-1]
-	\arrow[dashed, from=1-2, to=1-3]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=1-2, to=2-2]
-	\arrow[dashed, from=1-3, to=1-4]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=1-3, to=2-3]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-1, to=2-2]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-2, to=2-3]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-2, to=3-2]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=2-3, to=2-4]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-3, to=3-3]
+	\arrow[color={rgb,255:red,92;green,92;blue,214}, dashed, from=1-2, to=1-3]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=1-2, to=2-2]
+	\arrow[color={rgb,255:red,92;green,92;blue,214}, dashed, from=1-3, to=1-4]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=1-3, to=2-3]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=2-1, to=2-2]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=2-2, to=2-3]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=2-2, to=3-2]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=2-3, to=2-4]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=2-3, to=3-3]
 	\arrow[equals, from=3-2, to=3-3]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-2, to=4-2]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=3-2, to=4-2]
 	\arrow["0", color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=4-3]
 \end{tikzcd}.
 			\end{equation}
@@ -623,26 +567,29 @@
 			\end{equation}
 			此时有 $(-,\mathcal{P}(\xi))$-正合三角的交换图, 
 			\begin{equation}
-% https://q.uiver.app/#q=WzAsMTAsWzAsMSwiUCBcXG9wbHVzIEciXSxbMSwxLCJQIFxcb3BsdXMgUV8xIl0sWzIsMSwiUCBcXG9wbHVzIEtfMiIsWzI3MCw2MCw2MCwxXV0sWzMsMSwiXFwsIl0sWzAsMiwiUCIsWzI3MCw2MCw2MCwxXV0sWzEsMiwiUCIsWzI3MCw2MCw2MCwxXV0sWzEsMCwiUV8xIl0sWzAsMCwiRyJdLFsyLDAsIlAgXFxvcGx1cyBLXzIiLFsyNzAsNjAsNjAsMV1dLFszLDAsIlxcLCJdLFswLDEsIlxcYmlub20gezEgXFwgXFwgMH17Zl8xIFxcIGZfMn0iXSxbMSwyLCJcXGJpbm9tIHsxIFxcIFxcIGxcXCB9ezAgXFwgbX0iXSxbMiwzLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCw1LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs3LDAsIlxcYmlub20gMDEiXSxbMCw0LCIoMSwwKSJdLFs2LDEsIlxcYmlub20gMDEiXSxbMSw1LCIoMSwwKSJdLFs3LDYsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw4LCIiLDEseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsOSwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDIsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiUCBcXG9wbHVzIEciXSxbMSwxLCJQIFxcb3BsdXMgUV8xIl0sWzIsMSwiUCBcXG9wbHVzIEtfMiIsWzI3MCw2MCw2MCwxXV0sWzMsMSwiXFwsIl0sWzAsMiwiUCIsWzI3MCw2MCw2MCwxXV0sWzEsMiwiUCIsWzI3MCw2MCw2MCwxXV0sWzEsMCwiUV8xIl0sWzAsMCwiRyJdLFsyLDAsIlAgXFxvcGx1cyBLXzIiLFsyNzAsNjAsNjAsMV1dLFszLDAsIlxcLCJdLFswLDMsIlxcLCJdLFsxLDMsIlxcLCJdLFswLDEsIlxcYmlub20gezEgXFwgXFwgMH17Zl8xIFxcIGZfMn0iLDAseyJjb2xvdXIiOlswLDYwLDYwXX0sWzAsNjAsNjAsMV1dLFsxLDIsIlxcYmlub20gezEgXFwgXFwgbFxcIH17MCBcXCBtfSIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfSxbMCw2MCw2MCwxXV0sWzIsMywiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsMCwiXFxiaW5vbSAwMSIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfSxbMCw2MCw2MCwxXV0sWzAsNCwiKDEsMCkiLDAseyJjb2xvdXIiOlswLDYwLDYwXX0sWzAsNjAsNjAsMV1dLFs2LDEsIlxcYmlub20gMDEiLDAseyJjb2xvdXIiOlswLDYwLDYwXX0sWzAsNjAsNjAsMV1dLFsxLDUsIigxLDApIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19LFswLDYwLDYwLDFdXSxbNyw2LCIiLDEseyJjb2xvdXIiOlsyNDAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw4LCIiLDEseyJjb2xvdXIiOlsyNDAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCw5LCIiLDEseyJjb2xvdXIiOlsyNDAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCwyLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDExLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMTAsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
 \begin{tikzcd}[ampersand replacement=\&]
 	G \& {Q_1} \& \textcolor{rgb,255:red,153;green,92;blue,214}{{P \oplus K_2}} \& {\,} \\
 	{P \oplus G} \& {P \oplus Q_1} \& \textcolor{rgb,255:red,153;green,92;blue,214}{{P \oplus K_2}} \& {\,} \\
-	\textcolor{rgb,255:red,153;green,92;blue,214}{P} \& \textcolor{rgb,255:red,153;green,92;blue,214}{P}
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=1-1, to=1-2]
-	\arrow["{\binom 01}", from=1-1, to=2-1]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=1-2, to=1-3]
-	\arrow["{\binom 01}", from=1-2, to=2-2]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=1-3, to=1-4]
+	\textcolor{rgb,255:red,153;green,92;blue,214}{P} \& \textcolor{rgb,255:red,153;green,92;blue,214}{P} \\
+	{\,} \& {\,}
+	\arrow[draw={rgb,255:red,92;green,92;blue,214}, dashed, from=1-1, to=1-2]
+	\arrow["{\binom 01}", color={rgb,255:red,214;green,92;blue,92}, from=1-1, to=2-1]
+	\arrow[draw={rgb,255:red,92;green,92;blue,214}, dashed, from=1-2, to=1-3]
+	\arrow["{\binom 01}", color={rgb,255:red,214;green,92;blue,92}, from=1-2, to=2-2]
+	\arrow[draw={rgb,255:red,92;green,92;blue,214}, dashed, from=1-3, to=1-4]
 	\arrow[equals, from=1-3, to=2-3]
-	\arrow["{\binom {1 \ \ 0}{f_1 \ f_2}}", from=2-1, to=2-2]
-	\arrow["{(1,0)}", from=2-1, to=3-1]
-	\arrow["{\binom {1 \ \ l\ }{0 \ m}}", from=2-2, to=2-3]
-	\arrow["{(1,0)}", from=2-2, to=3-2]
-	\arrow[dashed, from=2-3, to=2-4]
+	\arrow["{\binom {1 \ \ 0}{f_1 \ f_2}}", color={rgb,255:red,214;green,92;blue,92}, from=2-1, to=2-2]
+	\arrow["{(1,0)}", color={rgb,255:red,214;green,92;blue,92}, from=2-1, to=3-1]
+	\arrow["{\binom {1 \ \ l\ }{0 \ m}}", color={rgb,255:red,214;green,92;blue,92}, from=2-2, to=2-3]
+	\arrow["{(1,0)}", color={rgb,255:red,214;green,92;blue,92}, from=2-2, to=3-2]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=2-3, to=2-4]
 	\arrow[equals, from=3-1, to=3-2]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=3-1, to=4-1]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=3-2, to=4-2]
 \end{tikzcd}.
 			\end{equation}
-
+			由 \cref{thm:W_exact_3}, 第一行是 $(-,\mathcal{P}(\xi))$-正合的.
 		\end{enumerate} 
 	\end{proof}
 \end{lemma}
@@ -652,7 +599,7 @@
 	\begin{equation}
 		G \xrightarrow{i} P \xrightarrow{p} G' \overset \delta \dashrightarrow,\quad G'' \xrightarrow{j} Q \xrightarrow{q} G \overset {\varepsilon} \dashrightarrow.
 	\end{equation}
-	则 $G', G'' \in \mathcal{GP}(\xi)$.
+	则 $G', G'' \in \mathcal{GP}(\xi)$. 
 	\begin{proof}
 		考虑 \cref{rmk:pd_well_defined}. 以及 $\mathcal{GP}(\xi)$ 中对象对 $\mathcal{P}(\xi)$-中直和项的消去封闭 (\cref{lem:GP_P_sum}).
 	\end{proof}
@@ -661,7 +608,7 @@
 \begin{theorem}\label{thm:GP_resolving}
     给定 $\xi$-三角 $A \xrightarrow f B \xrightarrow g C \overset \delta \dashrightarrow$, 其中 $C \in \mathcal{GP}(\xi)$. 此时 $A \in \mathcal{GP}(\xi)$ 当且仅当 $B \in \mathcal{GP}(\xi)$.
     \begin{proof}
-        假定 $A \in \mathcal{GP}(\xi)$. 下图 $(i_A; i_C): \delta \to 0$ 是扩张元的态射. 由 WIC-free 的 $3\times 3$-引理得
+        假定 $A \in \mathcal{GP}(\xi)$. 下图 $(i_A; i_C)$ 是扩张元的态射. 由 WIC-free 的 $3\times 3$-引理得 $\xi$-三角的交换图
         \begin{equation}
 % https://q.uiver.app/#q=WzAsMTUsWzAsMCwiQSIsWzI3MCw2MCw2MCwxXV0sWzEsMCwiQiJdLFsyLDAsIkMiLFsyNzAsNjAsNjAsMV1dLFszLDAsIlxcLCJdLFswLDEsIlBfQSIsWzI3MCw2MCw2MCwxXV0sWzEsMSwiUF9BIFxcb3BsdXMgUF9DIixbMjcwLDYwLDYwLDFdXSxbMiwxLCJQX0MiLFsyNzAsNjAsNjAsMV1dLFszLDEsIlxcLCJdLFswLDIsIkEnIixbMjcwLDYwLDYwLDFdXSxbMiwyLCJDJyIsWzI3MCw2MCw2MCwxXV0sWzEsMiwiQiciXSxbMCwzLCJcXCwiXSxbMSwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbMywyLCJcXCwiXSxbMCwxLCJmIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19LFswLDYwLDYwLDFdXSxbMSwyLCJnIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19LFswLDYwLDYwLDFdXSxbMiwzLCJcXGRlbHRhIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzAsNjAsNjAsMV1dLFswLDQsImlfQSIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfSxbMCw2MCw2MCwxXV0sWzQsNSwiXFxiaW5vbSAxMCIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfSxbMCw2MCw2MCwxXV0sWzUsNiwiKDAsMSkiLDAseyJjb2xvdXIiOlswLDYwLDYwXX0sWzAsNjAsNjAsMV1dLFs2LDcsIjAiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMCw2MCw2MCwxXV0sWzIsNiwiaV9DIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19LFswLDYwLDYwLDFdXSxbNCw4LCJwX0EiLDAseyJjb2xvdXIiOlswLDYwLDYwXX0sWzAsNjAsNjAsMV1dLFs2LDksInBfQyIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfSxbMCw2MCw2MCwxXV0sWzEsNSwiXFxiaW5vbSB7c317aV9DIGd9IiwwLHsiY29sb3VyIjpbMjQwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjQwLDYwLDYwLDFdXSxbOCwxMCwiZiciLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMCw2MCw2MCwxXV0sWzEwLDksImcnIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzAsNjAsNjAsMV1dLFs1LDEwLCIoZidwX0EsIHQpIiwwLHsiY29sb3VyIjpbMjQwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjQwLDYwLDYwLDFdXSxbOCwxMSwiXFx2YXJlcHNpbG9uIF9BIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzAsNjAsNjAsMV1dLFsxMCwxMiwiXFx2YXJlcHNpbG9uIF9CIiwwLHsiY29sb3VyIjpbMjQwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjQwLDYwLDYwLDFdXSxbOSwxMywiXFx2YXJlcHNpbG9uIF9DIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzAsNjAsNjAsMV1dLFs5LDE0LCJcXGRlbHRhJyIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFswLDYwLDYwLDFdXV0=
 \begin{tikzcd}[ampersand replacement=\&]
@@ -689,11 +636,11 @@
 	\arrow["{\varepsilon _C}", color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=4-3]
 \end{tikzcd}.
         \end{equation}
-        上图不依赖外三角范畴的选取, 故 $\varepsilon _B$ 是 $\xi$-扩张元. 由 \cref{thm:GP_W_exact}, 上图除 $\varepsilon_B$ 所在列外的五个 $\mathbb E$-三角都是 $(-, \mathcal{P}(\xi))$-正合的. 对上图作用 $(-, \mathcal{P}(\xi))$ 并使用 $3 \times 3$-引理, 中间列必正合. 因此上图所有列都是 $(-, \mathcal{P}(\xi))$-正合的. 另一方向证明对偶. 从而 $B \in \mathcal{GP}(\xi)$.
+       	由 \cref{thm:GP_W_exact}, 上图除 $\varepsilon_B$ 外的五个扩张元都是 $(-, \mathcal{P}(\xi))$-正合的. \cref{thm:W_exact_3} 说明中间列 $(-,\mathcal{P}(\xi))$正合. \Cref{lem:GP_syzygy_closed} 说明 $B \in \mathcal{GP}(\xi)$.
 
         假定 $B \in \mathcal{GP}(\xi)$, 作 $(-,\mathcal{P}(\xi))$-正合三角 $B \to Q_B \to B''\dashrightarrow$, 其中 $Q_B \in \mathcal{P}(\xi)$. ET4 给出下图:
         \begin{equation}
-			% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSJdLFsxLDAsIkIiLFsyNzAsNjAsNjAsMV1dLFsyLDAsIkMiLFsyNzAsNjAsNjAsMV1dLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFsyLDMsIlxcLCJdLFsxLDMsIlxcLCJdLFsxLDEsIlFfQiIsWzI3MCw2MCw2MCwxXV0sWzIsMSwiRSJdLFsxLDIsIkInJyIsWzI3MCw2MCw2MCwxXV0sWzAsMSwiQSJdLFsyLDIsIkInJyIsWzI3MCw2MCw2MCwxXV0sWzAsMSwiZiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfSxbMCw2MCw2MCwxXV0sWzEsMiwiZyIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfSxbMCw2MCw2MCwxXV0sWzIsMywiXFxkZWx0YSIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFswLDYwLDYwLDFdXSxbMTAsNywiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsOCwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNywiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbOSw2LCJcXHZhcmVwc2lsb24gIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzAsNjAsNjAsMV1dLFs3LDksIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzksMTEsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsMTEsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTEsNSwiXFx2YXJlcHNpbG9uICciLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMCw2MCw2MCwxXV0sWzAsMTAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsOCwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDQsIlxcZGVsdGEgJyciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSJdLFsxLDAsIkIiLFsyNzAsNjAsNjAsMV1dLFsyLDAsIkMiLFsyNzAsNjAsNjAsMV1dLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFsyLDMsIlxcLCJdLFsxLDMsIlxcLCJdLFsxLDEsIlFfQiIsWzI3MCw2MCw2MCwxXV0sWzIsMSwiRSJdLFsxLDIsIkInJyIsWzI3MCw2MCw2MCwxXV0sWzAsMSwiQSJdLFsyLDIsIkInJyIsWzI3MCw2MCw2MCwxXV0sWzAsMSwiZiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfSxbMCw2MCw2MCwxXV0sWzEsMiwiZyIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfSxbMCw2MCw2MCwxXV0sWzIsMywiXFxkZWx0YSIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFswLDYwLDYwLDFdXSxbMTAsNywiIiwwLHsiY29sb3VyIjpbMjQwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsOCwiIiwwLHsiY29sb3VyIjpbMjQwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNywiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbOSw2LCJcXHZhcmVwc2lsb24gIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzAsNjAsNjAsMV1dLFs3LDksIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzksMTEsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsMTEsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTEsNSwiXFx2YXJlcHNpbG9uICciLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMCw2MCw2MCwxXV0sWzAsMTAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsOCwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDQsIlxcZGVsdGEgJyciLDAseyJjb2xvdXIiOlsyNDAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFsyNDAsNjAsNjAsMV1dXQ==
 \begin{tikzcd}[ampersand replacement=\&]
 	A \& \textcolor{rgb,255:red,153;green,92;blue,214}{B} \& \textcolor{rgb,255:red,153;green,92;blue,214}{C} \& {\,} \\
 	A \& \textcolor{rgb,255:red,153;green,92;blue,214}{{Q_B}} \& E \& {\,} \\
@@ -702,20 +649,20 @@
 	\arrow["f", color={rgb,255:red,214;green,92;blue,92}, from=1-1, to=1-2]
 	\arrow[equals, from=1-1, to=2-1]
 	\arrow["g", color={rgb,255:red,214;green,92;blue,92}, from=1-2, to=1-3]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=1-2, to=2-2]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=1-2, to=2-2]
 	\arrow["\delta", color={rgb,255:red,214;green,92;blue,92}, dashed, from=1-3, to=1-4]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=1-3, to=2-3]
-	\arrow[dashed, from=2-1, to=2-2]
-	\arrow[dashed, from=2-2, to=2-3]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-2, to=3-2]
-	\arrow["{\delta ''}", dashed, from=2-3, to=2-4]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=2-3, to=3-3]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=1-3, to=2-3]
+	\arrow[color={rgb,255:red,92;green,92;blue,214}, dashed, from=2-1, to=2-2]
+	\arrow[color={rgb,255:red,92;green,92;blue,214}, dashed, from=2-2, to=2-3]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=2-2, to=3-2]
+	\arrow["{\delta ''}", color={rgb,255:red,92;green,92;blue,214}, dashed, from=2-3, to=2-4]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=2-3, to=3-3]
 	\arrow[equals, from=3-2, to=3-3]
 	\arrow["{\varepsilon }", color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-2, to=4-2]
 	\arrow["{\varepsilon '}", color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=4-3]
 \end{tikzcd}.
         \end{equation} 
-        上文已证明 $\mathcal{GP}(\xi)$ 扩张闭, 从而 $E \in \mathcal{GP}(\xi)$. 因此 $\delta ''$ 是 $(-, \mathcal{P}(\xi))$-正合的. \cref{lem:GP_syzygy_closed} 说明 $A \in \mathcal{GP}(\xi)$.
+        已证 $\mathcal{GP}(\xi)$ 扩张闭, 故 $E \in \mathcal{GP}(\xi)$. 因此 $\delta ''$ 是 $(-, \mathcal{P}(\xi))$-正合的. \cref{lem:GP_syzygy_closed} 说明 $A \in \mathcal{GP}(\xi)$.
     \end{proof}
 \end{theorem}
 
@@ -792,21 +739,17 @@
 	约定 $\mathcal{GP}(\xi)$ 中对象的 $\mathcal{GP}(\xi)$-投射维数为 $0$. 归纳地, 称 $\mathcal{G} pd_\xi M \leq n + 1$, 若存在 $\xi$-三角 $K \xrightarrow f G \xrightarrow g M \overset \delta \dashrightarrow$ 使得 $G \in \mathcal{GP}(\xi)$ 且 $\mathcal{G} pd_\xi K \leq n$. 称 $\mathcal{G} pd_\xi M = n$ 若 $\mathcal{G} pd_\xi M \leq n$ 且不满足 $\mathcal{G} pd_\xi M \leq n-1$. 
 \end{definition}
 
-\begin{notation}
-	记 $\mathcal{P}(\xi)$ 是 $\mathcal{P}(\xi)$-投射对象, $\widetilde{\mathcal{P}(\xi)}$ 是 $pd_\xi$ 有限的对象. 记 $\mathcal{GP}(\xi)$ 是 $\mathcal{GP}(\xi)$-投射对象, $\widetilde{\mathcal{GP}(\xi)}$ 是 $\mathcal{GP}(\xi)$-投射维数有限的对象.
-\end{notation}
-
 \begin{lemma}[维数移动]
 	使用 $G$ 表示 $\mathcal{GP}(\xi)$ 中的某个元素. 以下三个命题对 $n \geq 0$ 成立:
 	\begin{enumerate}
-		\item[$\mathfrak A(n)$] 对 $(-, \mathcal{P}(\xi))$-正合的 $\mathbb E$-三角 $A \to G \to C \dashrightarrow$, 若 $\mathcal{G}pd_\xi C = n+1$, 则 $\mathcal{G}pd_\xi A = n$.
-		\item[$\mathfrak B(n)$] 对 $(-, \mathcal{P}(\xi))$-正合的 $\mathbb E$-三角 $A \to B \to G \dashrightarrow$, 若 $\mathcal{G}pd_\xi A = n$, 则 $\mathcal{G}pd_\xi B = n$.
-		\item[$\mathfrak C(n)$] 对 $(-, \mathcal{P}(\xi))$-正合的 $\mathbb E$-三角 $A \to B \to G \dashrightarrow$, 若 $\mathcal{G}pd_\xi B = n$, 则 $\mathcal{G}pd_\xi A = n$.
+		\item[$\mathfrak A(n)$] 对 $\xi$-三角 $A \to G \to C \dashrightarrow$, 若 $\mathcal{G}pd_\xi C = n+1$, 则 $\mathcal{G}pd_\xi A = n$.
+		\item[$\mathfrak B(n)$] 对 $\xi$-三角 $A \to B \to G \dashrightarrow$, 若 $\mathcal{G}pd_\xi A = n$, 则 $\mathcal{G}pd_\xi B = n$.
+		\item[$\mathfrak C(n)$] 对 $\xi$-三角 $A \to B \to G \dashrightarrow$, 若 $\mathcal{G}pd_\xi B = n$, 则 $\mathcal{G}pd_\xi A = n$.
 	\end{enumerate}
 	\begin{proof}
-		使用数学归纳法证明. 由 \cref{thm:GP_resolving}, $\mathfrak A(0)$ 与 $\mathfrak B(0)$ 成立. 下证明 $\mathfrak C(0)$. 存在 $G', G'' \in \mathcal{GP}(\xi)$ 使得
+		使用数学归纳法证明. 由 \cref{thm:GP_resolving}, $\mathfrak B(0)$ 与 $\mathfrak C(0)$ 成立. 下证明 $\mathfrak A(0)$. 存在 $G', G'' \in \mathcal{GP}(\xi)$ 使得
 		\begin{equation}
-% https://q.uiver.app/#q=WzAsMTIsWzIsMCwiRyciLFsyNzAsNjAsNjAsMV1dLFsyLDEsIkcnJyIsWzI3MCw2MCw2MCwxXV0sWzIsMiwiQyJdLFsxLDIsIkciLFsyNzAsNjAsNjAsMV1dLFswLDIsIkEiXSxbMCwxLCJBIl0sWzEsMCwiRyciLFsyNzAsNjAsNjAsMV1dLFsxLDEsIkUiXSxbMywxLCJcXCwiXSxbMywyLCJcXCwiXSxbMiwzLCJcXCwiXSxbMSwzLCJcXCwiXSxbNSw0LCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDAsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNywiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDEsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw3LCIiLDEseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsMywiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDMsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzMsMiwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMCwxLCIiLDEseyJjb2xvdXIiOlswLDYwLDYwXX1dLFsxLDIsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzIsMTAsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywxMSwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDgsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw5LCIiLDEseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+% https://q.uiver.app/#q=WzAsMTIsWzIsMCwiRyciLFsyNzAsNjAsNjAsMV1dLFsyLDEsIkcnJyIsWzI3MCw2MCw2MCwxXV0sWzIsMiwiQyJdLFsxLDIsIkciLFsyNzAsNjAsNjAsMV1dLFswLDIsIkEiXSxbMCwxLCJBIl0sWzEsMCwiRyciLFsyNzAsNjAsNjAsMV1dLFsxLDEsIkUiXSxbMywxLCJcXCwiXSxbMywyLCJcXCwiXSxbMiwzLCJcXCwiXSxbMSwzLCJcXCwiXSxbNSw0LCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDAsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNywiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDEsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw3LCIiLDEseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsMywiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDNdLFszLDJdLFswLDFdLFsxLDJdLFsyLDEwLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywxMSwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDgsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw5LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
 \begin{tikzcd}[ampersand replacement=\&]
 	\& \textcolor{rgb,255:red,153;green,92;blue,214}{{G'}} \& \textcolor{rgb,255:red,153;green,92;blue,214}{{G'}} \\
 	A \& E \& \textcolor{rgb,255:red,153;green,92;blue,214}{{G''}} \& {\,} \\
@@ -814,25 +757,25 @@
 	\& {\,} \& {\,}
 	\arrow[equals, from=1-2, to=1-3]
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=1-2, to=2-2]
-	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=1-3, to=2-3]
+	\arrow[from=1-3, to=2-3]
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=2-1, to=2-2]
 	\arrow[equals, from=2-1, to=3-1]
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=2-2, to=2-3]
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=2-2, to=3-2]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=2-3, to=2-4]
-	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=2-3, to=3-3]
-	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=3-1, to=3-2]
-	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=3-2, to=3-3]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-2, to=4-2]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=3-4]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=4-3]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=2-3, to=2-4]
+	\arrow[from=2-3, to=3-3]
+	\arrow[from=3-1, to=3-2]
+	\arrow[from=3-2, to=3-3]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=3-2, to=4-2]
+	\arrow[dashed, from=3-3, to=3-4]
+	\arrow[dashed, from=3-3, to=4-3]
 \end{tikzcd}.
 		\end{equation}
-		由 \cref{thm:GP_resolving}, $E,A \in \mathcal{GP}(\xi)$.
+		由 \cref{thm:GP_resolving}, $E\in \mathcal{GP}(\xi)$, 进而 $A \in \mathcal{GP}(\xi)$.
 		\begin{itemize}
 			\item (归纳: $\mathfrak B(n+1) \land \mathfrak C(n+1) \to \mathfrak A(n+1)$). 考虑
 			\begin{equation}
-% https://q.uiver.app/#q=WzAsMTQsWzIsMCwiQyciXSxbMiwxLCJHJyciLFsyNzAsNjAsNjAsMV1dLFsyLDIsIkMiXSxbMSwyLCJHIixbMjcwLDYwLDYwLDFdXSxbMCwyLCJBIl0sWzAsMSwiQSJdLFsxLDAsIkMnIl0sWzEsMSwiRSJdLFszLDEsIlxcLCJdLFszLDIsIlxcLCJdLFsyLDMsIlxcLCJdLFsxLDMsIlxcLCJdLFs0LDIsIlxcbWF0aGNhbCBHcGRfXFx4aSBDID0gbisyIl0sWzQsMCwiXFxtYXRoY2FsIEdwZF9cXHhpIEMnID0gbisxIl0sWzUsNCwiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiwwLCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDcsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNywxLCIiLDEseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsNywiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDMsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCwzLCIiLDEseyJjb2xvdXIiOlswLDYwLDYwXX1dLFszLDIsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzAsMSwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMSwyLCIiLDEseyJjb2xvdXIiOlswLDYwLDYwXX1dLFsyLDEwLCIiLDEseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsMTEsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw4LCIiLDEseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsOSwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+% https://q.uiver.app/#q=WzAsMTQsWzIsMCwiQyciXSxbMiwxLCJHJyciLFsyNzAsNjAsNjAsMV1dLFsyLDIsIkMiXSxbMSwyLCJHIixbMjcwLDYwLDYwLDFdXSxbMCwyLCJBIl0sWzAsMSwiQSJdLFsxLDAsIkMnIl0sWzEsMSwiRSJdLFszLDEsIlxcLCJdLFszLDIsIlxcLCJdLFsyLDMsIlxcLCJdLFsxLDMsIlxcLCJdLFs0LDIsIlxcbWF0aGNhbCBHcGRfXFx4aSBDID0gbisyIl0sWzQsMCwiXFxtYXRoY2FsIEdwZF9cXHhpIEMnID0gbisxIl0sWzUsNCwiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiwwLCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDcsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNywxLCIiLDEseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsNywiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDMsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCwzXSxbMywyXSxbMCwxXSxbMSwyXSxbMiwxMCwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsMTEsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw4LCIiLDEseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsOSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
 \begin{tikzcd}[ampersand replacement=\&]
 	\& {C'} \& {C'} \&\& {\mathcal Gpd_\xi C' = n+1} \\
 	A \& E \& \textcolor{rgb,255:red,153;green,92;blue,214}{{G''}} \& {\,} \\
@@ -840,53 +783,53 @@
 	\& {\,} \& {\,}
 	\arrow[equals, from=1-2, to=1-3]
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=1-2, to=2-2]
-	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=1-3, to=2-3]
+	\arrow[from=1-3, to=2-3]
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=2-1, to=2-2]
 	\arrow[equals, from=2-1, to=3-1]
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=2-2, to=2-3]
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=2-2, to=3-2]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=2-3, to=2-4]
-	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=2-3, to=3-3]
-	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=3-1, to=3-2]
-	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=3-2, to=3-3]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-2, to=4-2]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=3-4]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=4-3]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=2-3, to=2-4]
+	\arrow[from=2-3, to=3-3]
+	\arrow[from=3-1, to=3-2]
+	\arrow[from=3-2, to=3-3]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=3-2, to=4-2]
+	\arrow[dashed, from=3-3, to=3-4]
+	\arrow[dashed, from=3-3, to=4-3]
 \end{tikzcd}.
 			\end{equation}
-			由归纳假设, $E$ 与 $A$ 的 $\mathcal{GP}(\xi)$-投射维数是 $n+1$.
-			\item (归纳: $\mathfrak C(n + 1) \to \mathfrak B(n+1)$). 由 WIC-free 的 $3\times 3$-引理做得下图
+			由 $\mathfrak B(n+1)$, 得 $\mathcal{G}pd_\xi E = n+1$. 由 $\mathfrak A(n+1)$, 得 $\mathcal{G}pd_\xi A = n + 1$.
+			\item (归纳: $\mathfrak A(n) \land \mathfrak B(n) \to \mathfrak B(n+1)$). 由 WIC-free 的 $3\times 3$-引理作得下图
 			\begin{equation}
-% https://q.uiver.app/#q=WzAsMTcsWzAsMiwiQSJdLFsxLDIsIkIiXSxbMiwyLCJHIixbMjcwLDYwLDYwLDFdXSxbMywyLCJcXCwiXSxbNCwyLCJcXG1hdGhjYWwgR3BkX1xceGkgQSA9IG4rMSJdLFswLDEsIkcnJyJdLFswLDAsIkEnIl0sWzIsMCwiRyciLFsyNzAsNjAsNjAsMV1dLFsyLDEsIlAiLFsyNzAsNjAsNjAsMV1dLFszLDAsIlxcLCJdLFswLDMsIlxcLCJdLFsyLDMsIlxcLCJdLFszLDEsIlxcLCAiXSxbMSwwLCJCJyJdLFsxLDEsIkcnJyBcXG9wbHVzIFAiXSxbMSwzLCJcXCwgIl0sWzQsMCwiXFxtYXRoY2FsIEdwZF9cXHhpIEEnID0gbiJdLFswLDEsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzEsMiwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMiwzLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsNSwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbNSwwLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXX1dLFswLDEwLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsOCwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbOCwyLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXX1dLFsyLDExLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMTMsIiIsMix7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTMsNywiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDksIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwxNCwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMTQsOCwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbOCwxMiwiMCIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFswLDYwLDYwLDFdXSxbMTMsMTQsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxNCwxLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwxNSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+% https://q.uiver.app/#q=WzAsMTcsWzAsMiwiQSJdLFsxLDIsIkIiXSxbMiwyLCJHIixbMjcwLDYwLDYwLDFdXSxbMywyLCJcXCwiXSxbNCwyLCJcXG1hdGhjYWwgR3BkX1xceGkgQSA9IG4rMSJdLFswLDEsIkcnJyJdLFswLDAsIkEnIl0sWzIsMCwiRyciLFsyNzAsNjAsNjAsMV1dLFsyLDEsIlAiLFsyNzAsNjAsNjAsMV1dLFszLDAsIlxcLCJdLFswLDMsIlxcLCJdLFsyLDMsIlxcLCJdLFszLDEsIlxcLCAiXSxbMSwwLCJCJyJdLFsxLDEsIkcnJyBcXG9wbHVzIFAiXSxbMSwzLCJcXCwgIl0sWzQsMCwiXFxtYXRoY2FsIEdwZF9cXHhpIEEnID0gbiJdLFswLDEsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzEsMiwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMiwzLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsNV0sWzUsMF0sWzAsMTAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDgsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzgsMiwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMiwxMSwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDEzLCIiLDIseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEzLDcsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNyw5LCIiLDEseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMTQsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzE0LDgsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzgsMTIsIjAiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMCw2MCw2MCwxXV0sWzEzLDE0LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTQsMSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMTUsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
 \begin{tikzcd}[ampersand replacement=\&]
 	{A'} \& {B'} \& \textcolor{rgb,255:red,153;green,92;blue,214}{{G'}} \& {\,} \& {\mathcal Gpd_\xi A' = n} \\
 	{G''} \& {G'' \oplus P} \& \textcolor{rgb,255:red,153;green,92;blue,214}{P} \& {\, } \\
 	A \& B \& \textcolor{rgb,255:red,153;green,92;blue,214}{G} \& {\,} \& {\mathcal Gpd_\xi A = n+1} \\
 	{\,} \& {\, } \& {\,}
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=1-1, to=1-2]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=1-1, to=2-1]
+	\arrow[from=1-1, to=2-1]
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=1-2, to=1-3]
 	\arrow[dashed, from=1-2, to=2-2]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=1-3, to=1-4]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=1-3, to=1-4]
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=1-3, to=2-3]
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=2-1, to=2-2]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-1, to=3-1]
+	\arrow[from=2-1, to=3-1]
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=2-2, to=2-3]
 	\arrow[dashed, from=2-2, to=3-2]
 	\arrow["0", color={rgb,255:red,214;green,92;blue,92}, dashed, from=2-3, to=2-4]
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=2-3, to=3-3]
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=3-1, to=3-2]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-1, to=4-1]
+	\arrow[dashed, from=3-1, to=4-1]
 	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=3-2, to=3-3]
 	\arrow[dashed, from=3-2, to=4-2]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=3-4]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=4-3]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=3-4]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=4-3]
 \end{tikzcd}.
 			\end{equation}
-			由 $3\times 3$, 上图所有行与列皆为 $(-, \mathcal{P}(\xi))$-正合的. 由 $\mathfrak B(n)$ 知 $\mathcal Gpd_\xi B' = n$. 由 $\mathfrak A(n)$ 知 $\mathcal{G}pd_\xi B = n+1$.
-			\item (归纳: $\mathfrak A(n) \land \mathfrak B(n) \to \mathfrak C(n+1)$). 考虑
+			由 $\mathfrak B(n)$ 知 $\mathcal Gpd_\xi B' = n$. 由 $\mathfrak A(n)$ 知 $\mathcal{G}pd_\xi B = n+1$.
+			\item (归纳: $\mathfrak A(n) \to \mathfrak C(n+1)$). 考虑
 			\begin{equation}
-				% https://q.uiver.app/#q=WzAsMTYsWzAsMiwiQSJdLFsxLDIsIkIiXSxbMiwyLCJHIixbMjcwLDYwLDYwLDFdXSxbMywyLCJcXCwiXSxbNCwyLCJcXG1hdGhjYWwgR3BkX1xceGkgQiA9IG4rMSJdLFswLDEsIkgiXSxbMiwxLCJHIixbMjcwLDYwLDYwLDFdXSxbMywwLCJcXCwiXSxbMCwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbMywxLCJcXCwgIl0sWzEsMCwiQiciXSxbMSwzLCJcXCwgIl0sWzQsMCwiXFxtYXRoY2FsIEdwZF9cXHhpIEInID0gbiJdLFsxLDEsIkcnIixbMjcwLDYwLDYwLDFdXSxbMCwwLCJCJyJdLFswLDEsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzEsMiwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMiwzLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwwLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw4LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw5LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwxMCwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMTIsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSwxNCwiIiwyLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbNSwxNCwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMTQsNiwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMTQsMSwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMTUsMTEsIiIsMix7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE1LDUsIiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDIsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+% https://q.uiver.app/#q=WzAsMTYsWzAsMiwiQSJdLFsxLDIsIkIiXSxbMiwyLCJHIixbMjcwLDYwLDYwLDFdXSxbMywyLCJcXCwiXSxbNCwyLCJcXG1hdGhjYWwgR3BkX1xceGkgQiA9IG4rMSJdLFswLDEsIkgiXSxbMiwxLCJHIixbMjcwLDYwLDYwLDFdXSxbMywwLCJcXCwiXSxbMCwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbMywxLCJcXCwgIl0sWzEsMCwiQiciXSxbMSwzLCJcXCwgIl0sWzQsMCwiXFxtYXRoY2FsIEdwZF9cXHhpIEInID0gbiJdLFsxLDEsIkcnIixbMjcwLDYwLDYwLDFdXSxbMCwwLCJCJyJdLFswLDEsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzEsMiwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMiwzLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwwLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw4LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw5LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwxMCwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMTIsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSwxNF0sWzUsMTQsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzE0LDYsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzE0LDFdLFsxNSwxMSwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTUsNSwiIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMiwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
 \begin{tikzcd}[ampersand replacement=\&]
 	{B'} \& {B'} \&\& {\,} \& {\mathcal Gpd_\xi B' = n} \\
 	H \& \textcolor{rgb,255:red,153;green,92;blue,214}{{G'}} \& \textcolor{rgb,255:red,153;green,92;blue,214}{G} \& {\, } \\
@@ -894,44 +837,102 @@
 	{\,} \& {\, } \& {\,}
 	\arrow[equals, from=1-1, to=1-2]
 	\arrow[dashed, from=1-1, to=2-1]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=1-2, to=2-2]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-1, to=2-2]
+	\arrow[from=1-2, to=2-2]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=2-1, to=2-2]
 	\arrow[dashed, from=2-1, to=3-1]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-2, to=2-3]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-2, to=3-2]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=2-2, to=2-3]
+	\arrow[from=2-2, to=3-2]
 	\arrow[dashed, from=2-3, to=2-4]
 	\arrow[equals, from=2-3, to=3-3]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=3-1, to=3-2]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=3-1, to=3-2]
 	\arrow[dashed, from=3-1, to=4-1]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=3-2, to=3-3]
+	\arrow[draw={rgb,255:red,214;green,92;blue,92}, from=3-2, to=3-3]
 	\arrow[dashed, from=3-2, to=4-2]
 	\arrow[dashed, from=3-3, to=3-4]
 	\arrow[dashed, from=3-3, to=4-3]
 \end{tikzcd}.
 			\end{equation}
-			由 $3\times 3$, 上图所有行与列皆为 $(-, \mathcal{P}(\xi))$-正合的. $H \in \mathcal{GP}$. 由 $\mathfrak C(n+1)$ 知 $\mathcal Gpd_\xi A = n+1$.
+			由 \cref{thm:GP_resolving} 得 $H \in \mathcal{GP}$. 由 $\mathfrak A(n)$ 知 $\mathcal Gpd_\xi A = n+1$.
 		\end{itemize}
+		归纳图示:
+		\begin{equation}
+% https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhmcmFrIEEobikiXSxbMCwxLCJcXG1hdGhmcmFrIEIobikiXSxbMiwyLCJcXG1hdGhmcmFrIEMobisxKSJdLFsyLDEsIlxcbWF0aGZyYWsgQihuKzEpIl0sWzIsMCwiXFxtYXRoZnJhayBBKG4rMSkiXSxbMCwyLCJcXG1hdGhmcmFrIEMobikiXSxbMCwyLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXX1dLFswLDMsIiIsMix7ImNvbG91ciI6WzI0MCw2MCw2MF19XSxbMSwzLCIiLDAseyJjb2xvdXIiOlsyNDAsNjAsNjBdfV0sWzMsNCwiIiwwLHsiY29sb3VyIjpbMTIwLDYwLDYwXX1dLFsyLDQsIiIsMSx7ImN1cnZlIjo1LCJjb2xvdXIiOlsxMjAsNjAsNjBdfV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	{\mathfrak A(n)} \&\& {\mathfrak A(n+1)} \\
+	{\mathfrak B(n)} \&\& {\mathfrak B(n+1)} \\
+	{\mathfrak C(n)} \&\& {\mathfrak C(n+1)}
+	\arrow[color={rgb,255:red,92;green,92;blue,214}, from=1-1, to=2-3]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=1-1, to=3-3]
+	\arrow[color={rgb,255:red,92;green,92;blue,214}, from=2-1, to=2-3]
+	\arrow[color={rgb,255:red,92;green,214;blue,92}, from=2-3, to=1-3]
+	\arrow[color={rgb,255:red,92;green,214;blue,92}, curve={height=30pt}, from=3-3, to=1-3]
+\end{tikzcd}.
+		\end{equation}
 	\end{proof}
 \end{lemma}
 
-\begin{proposition}[$\mathcal{G}pd_\xi$ 的等价定义]
-	以下关于 $M$ 的定义等价
-	\begin{enumerate}
-		\item $\mathcal{G} pd_\xi M \leq n$,
-		\item 对任意 $\xi$-正合复形
-	\begin{equation}
-		K_n \xrightarrow{d_n} G_{n-1} \xrightarrow{d_{n-1}} \cdots \xrightarrow{d_1} G_0 \xrightarrow{d_0} M\quad (P_i \in \mathcal{GP}(\xi)),
-	\end{equation}
-	总有 $K_n \in \mathcal{GP}(\xi)$.
-	\item 对任意 $\xi$-正合复形
+\begin{corollary}
+	对不可裂的 $\xi$-三角 $A \to G \to C \dashrightarrow$, 若 $\mathcal{G}pd_\xi A = n+1$, 则 $\mathcal{G}pd_\xi A = n+2$.
+	\begin{proof}
+		假定 $\mathcal{G}pd_\xi A = n + 1$. 由定义, $\mathcal{G}pd_\xi C\leq n+2$. 由 $\mathfrak A(n)$ 知只能有 $\mathcal{G}pd_\xi C = n+2$.  
+	\end{proof}
+\end{corollary}
+
+\begin{corollary}[$\mathcal{G}pd_\xi$ 的等价定义]
+	$\mathcal{G}pd_\xi M \leq n$ 当且仅当对任意 $\xi$-正合复形
 	\begin{equation}
 		K_n \xrightarrow{d_n} P_{n-1} \xrightarrow{d_{n-1}} \cdots \xrightarrow{d_1} P_0 \xrightarrow{d_0} M\quad (P_i \in \mathcal{P}(\xi)),
 	\end{equation}
-	\end{enumerate}
 	总有 $K_n \in \mathcal{GP}(\xi)$.
 	\begin{proof}
-		($1 \to 2$). 记命题 $\mathfrak P(k)$ 为 ``($1 \to 2$) 对 $\mathcal{G} pd_\xi M \leq k$ 情形成立''. \cref{thm:GP_resolving} 说明 $\mathfrak P(0)$ 成立. 若 $\mathfrak P(n)$ 成立, 下证明 $\mathfrak P(n+1)$ 成立. 若 $\mathcal{G} pd_\xi M \leq n+1$, 则存在 $(-, \mathcal{P}(\xi))$-正合三角 $K \xrightarrow f G \xrightarrow g M \overset \delta \dashrightarrow$ 使得 $G \in \mathcal{GP}(\xi)$ 且 $\mathcal{G} pd_\xi K \leq n$. 对任意 $\xi$-正合复形
+		($\to$). 依照 $\mathcal{P}(\xi) \subseteq \mathcal{GP}(\xi)$ 与维数移位. ($\gets$). 取如上所述的 $M$. 依照定义, $\mathcal{G}pd_\xi M \leq n$. 
+	\end{proof}
+\end{corollary}
+
+\begin{corollary}
+	若 $pd_\xi M < \infty$, 则 $pd_\xi M = \mathcal{G}pd_\xi M$.
+\end{corollary}
+
+\begin{notation}
+	给定 $I \subseteq (\mathbb N \cup \{\infty\})$.
+	\begin{itemize}
+		\item 记 $\mathcal{P}(\xi)$ 是 $\mathcal{P}(\xi)$-投射对象, $\widetilde{\mathcal{P}(\xi)}$ 是 $pd_\xi$ 有限的对象, ${\mathcal{P}(\xi)}^I$ 是 $\mathcal{P}(\xi)$-投射维数在 $I$ 内的对象.
+		\item 记 $\mathcal{GP}(\xi)$ 是 $\mathcal{GP}(\xi)$-投射对象, $\widetilde{\mathcal{GP}(\xi)}$ 是 $\mathcal{GP}(\xi)$-投射维数有限的对象, ${\mathcal{GP}(\xi)}^I$ 是 $\mathcal{GP}(\xi)$-投射维数在 $I$ 内的对象.
+	\end{itemize}
+\end{notation}
+
+\begin{lemma}
+	$\mathbb E(\mathcal{GP}(\xi), \widetilde{\mathcal{P}(\xi)}) = 0$.
+	\begin{proof}
+		只需证明 $\mathbb E(\mathcal{GP}(\xi), {\mathcal{P}(\xi)}^n) = 0$ 对一切 $n \geq 0$ 成立. 由 \cref{thm:GP_resolving} 知 $n = 0$ 时显然成立. 假定 $\mathbb E(\mathcal{GP}(\xi), {\mathcal{P}(\xi)}^n) = 0$ 成立, 下证明 $\mathbb E(\mathcal{GP}(\xi), {\mathcal{P}(\xi)}^{n+1}) = 0$. 取定 $G \in \mathcal{GP}(\xi)$ 与 $M \in {\mathcal{P}(\xi)}^{n+1}$, 作 $M$ 的 $\mathcal{P}(\xi)$ 作 $\xi$-三角 $K \to P \to M \dashrightarrow$, 其中 $P \in \mathcal{P}(\xi)$. 长正合列表明
+		\begin{equation}
+			(G,K) \to (G,P) \to (G,M) \to \mathbb E_\xi(G,K) \to \mathbb E_\xi(G,P) = 0.
+		\end{equation}
+	\end{proof}
+\end{lemma}
+
+\begin{proposition}
+	完全投射分解是 $(-, \widetilde{\mathcal{P}(\xi)})$-正合的.
+	\begin{proof}
+		取定 $(-, \mathcal{P}(\xi))$-正合的 $\xi$-三角
+		\begin{equation}
+			G\xrightarrow{i} P \xrightarrow{p} G' \overset \eta \dashrightarrow,\quad G,G' \in \mathcal{GP}(\xi), \ P \in \mathcal{P}(\xi).
+		\end{equation}
+		依定义, 以上 $\xi$-三角 $(-, \mathcal{P}(\xi)^{pd_\xi = 0})$-正合. 假定该 $\xi$-三角 $(-, \widetilde{\mathcal{P}(\xi)}^{pd_\xi =n})$-正合, 下证明其 $M$-正合, 其中
+		\begin{equation}
+			L \xrightarrow f Q \xrightarrow g M \dashrightarrow ,\quad pd_\xi L = n, \ Q\in \mathcal{P}(\xi), \ pd_\xi M = n+1.
+		\end{equation}
+		考虑长正合列
+		\begin{equation}
+			(G',L) \to (P,L) \to (G,L) \to \mathbb E_\xi(G',L) \to \mathbb E_\xi(P,L) = 0.
+		\end{equation}
+		依照归纳假设, 前三项是短正合列, 从而 $\mathbb E_\xi(G',L) = 0$. 同理 $\mathbb E_\xi(G',P) = 0$. 作 $3\times 3$-交换图
 	\end{proof}
 \end{proposition}
 
-
+\begin{proposition}
+	给定 $\xi$-三角 $A \to B \to C \dashrightarrow$, 其中 $C \in \mathcal{GP}(\xi)$. \Cref{thm:GP_W_exact} 证明了该 $\mathbb E$-三角是 $(-, \mathcal{P}(\xi))$-正合的. 实际上, 该 $\mathbb E$-三角也是 $(-, \widetilde{\mathcal{P}(\xi)})$-正合的.
+	\begin{proof}
+		依照与 \Cref{thm:GP_W_exact} 类似的证明 (``满态射''性质). 只需说明所有
+	\end{proof}
+\end{proposition}
