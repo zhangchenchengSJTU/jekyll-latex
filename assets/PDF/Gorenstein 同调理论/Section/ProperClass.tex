@@ -896,43 +896,184 @@
 \begin{notation}
 	给定 $I \subseteq (\mathbb N \cup \{\infty\})$.
 	\begin{itemize}
-		\item 记 $\mathcal{P}(\xi)$ 是 $\mathcal{P}(\xi)$-投射对象, $\widetilde{\mathcal{P}(\xi)}$ 是 $pd_\xi$ 有限的对象, ${\mathcal{P}(\xi)}^I$ 是 $\mathcal{P}(\xi)$-投射维数在 $I$ 内的对象.
+		\item 记 $\mathcal{P}(\xi)$ 是 $\mathcal{P}(\xi)$-投射对象, $\widetilde{\mathcal{P}(\xi)}$ 是 $pd_\xi$ 有限的对象, ${\mathcal{P}(\xi)}^I$ 是 $\mathcal{P}(\xi)$-投射维数在 $I$ 中的对象.
 		\item 记 $\mathcal{GP}(\xi)$ 是 $\mathcal{GP}(\xi)$-投射对象, $\widetilde{\mathcal{GP}(\xi)}$ 是 $\mathcal{GP}(\xi)$-投射维数有限的对象, ${\mathcal{GP}(\xi)}^I$ 是 $\mathcal{GP}(\xi)$-投射维数在 $I$ 内的对象.
 	\end{itemize}
 \end{notation}
 
-\begin{lemma}
-	$\mathbb E(\mathcal{GP}(\xi), \widetilde{\mathcal{P}(\xi)}) = 0$.
+\begin{proposition}\label{prop:GP_ext_vanish}
+	$\mathbb E_\xi(\mathcal{GP}(\xi), \widetilde{\mathcal{P}(\xi)}) = 0$.
 	\begin{proof}
-		只需证明 $\mathbb E(\mathcal{GP}(\xi), {\mathcal{P}(\xi)}^n) = 0$ 对一切 $n \geq 0$ 成立. 由 \cref{thm:GP_resolving} 知 $n = 0$ 时显然成立. 假定 $\mathbb E(\mathcal{GP}(\xi), {\mathcal{P}(\xi)}^n) = 0$ 成立, 下证明 $\mathbb E(\mathcal{GP}(\xi), {\mathcal{P}(\xi)}^{n+1}) = 0$. 取定 $G \in \mathcal{GP}(\xi)$ 与 $M \in {\mathcal{P}(\xi)}^{n+1}$, 作 $M$ 的 $\mathcal{P}(\xi)$ 作 $\xi$-三角 $K \to P \to M \dashrightarrow$, 其中 $P \in \mathcal{P}(\xi)$. 长正合列表明
+		只需证明 $\mathbb E_\xi(\mathcal{GP}(\xi), {\mathcal{P}(\xi)}^{\leq n}) = 0$ 对一切 $n \geq 0$ 成立. 由 \cref{thm:GP_resolving} 知 $n = 0$ 时显然成立. 假定 $\mathbb E_\xi(\mathcal{GP}(\xi), {\mathcal{P}(\xi)}^{\leq n}) = 0$ 成立, 下证明 $\mathbb E_\xi(\mathcal{GP}(\xi), {\mathcal{P}(\xi)}^{\leq n+1}) = 0$. 取定
 		\begin{equation}
-			(G,K) \to (G,P) \to (G,M) \to \mathbb E_\xi(G,K) \to \mathbb E_\xi(G,P) = 0.
+			N \xrightarrow{f} P \xrightarrow{g} M \dashrightarrow ,\quad pd_\xi N = n, \quad P\in \mathcal{P}(\xi), \quad pd_\xi M = n+1,
 		\end{equation}
-	\end{proof}
-\end{lemma}
-
-\begin{proposition}
-	完全投射分解是 $(-, \widetilde{\mathcal{P}(\xi)})$-正合的.
-	\begin{proof}
-		取定 $(-, \mathcal{P}(\xi))$-正合的 $\xi$-三角
+		以及 $(-, \mathcal{P})$-正合 $\mathbb E$-三角
 		\begin{equation}
-			G\xrightarrow{i} P \xrightarrow{p} G' \overset \eta \dashrightarrow,\quad G,G' \in \mathcal{GP}(\xi), \ P \in \mathcal{P}(\xi).
+			G' \xrightarrow{i} Q \xrightarrow{p} G \dashrightarrow ,\quad G',G \in \mathcal{GP}(\xi), \quad Q \in \mathcal{P}(\xi).
 		\end{equation}
-		依定义, 以上 $\xi$-三角 $(-, \mathcal{P}(\xi)^{pd_\xi = 0})$-正合. 假定该 $\xi$-三角 $(-, \widetilde{\mathcal{P}(\xi)}^{pd_\xi =n})$-正合, 下证明其 $M$-正合, 其中
+		此时有正合列的交换图 ($\color{rgb,255:red,92;green,214;blue,214}\blacksquare$ 色对象是零 Abel 群):
 		\begin{equation}
-			L \xrightarrow f Q \xrightarrow g M \dashrightarrow ,\quad pd_\xi L = n, \ Q\in \mathcal{P}(\xi), \ pd_\xi M = n+1.
+% https://q.uiver.app/#q=WzAsOSxbMCwwLCIoUSxQKSJdLFsxLDAsIihRLE0pIl0sWzIsMCwiXFxtYXRoYmIgRV9cXHhpKFEsTikiLFsxODAsNjAsNjAsMV1dLFswLDEsIihHJyxQKSJdLFsxLDEsIihHJyxNKSJdLFswLDIsIlxcbWF0aGJiIEVfXFx4aShHLFApIixbMTgwLDYwLDYwLDFdXSxbMSwyLCJcXG1hdGhiYiBFX1xceGkoRyxNKSJdLFsyLDEsIlxcbWF0aGJiIEVfXFx4aShHJyxOKSIsWzE4MCw2MCw2MCwxXV0sWzEsMywiXFxtYXRoYmIgRV9cXHhpKFEsTSkiLFsxODAsNjAsNjAsMV1dLFswLDFdLFsxLDJdLFszLDVdLFsxLDRdLFs0LDYsIigoXFxkZWx0YV9cXHhpKV5cXHNoYXJwKV9NIl0sWzIsN10sWzQsN10sWzUsNl0sWzAsM10sWzMsNCwiKEcnLCBnKSJdLFs2LDhdXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	{(Q,P)} \& {(Q,M)} \& \textcolor{rgb,255:red,92;green,214;blue,214}{{\mathbb E_\xi(Q,N)}} \\
+	{(G',P)} \& {(G',M)} \& \textcolor{rgb,255:red,92;green,214;blue,214}{{\mathbb E_\xi(G',N)}} \\
+	\textcolor{rgb,255:red,92;green,214;blue,214}{{\mathbb E_\xi(G,P)}} \& {\mathbb E_\xi(G,M)} \\
+	\& \textcolor{rgb,255:red,92;green,214;blue,214}{{\mathbb E_\xi(Q,M)}}
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-2, to=2-2]
+	\arrow[from=1-3, to=2-3]
+	\arrow["{(G', g)}", from=2-1, to=2-2]
+	\arrow[from=2-1, to=3-1]
+	\arrow[from=2-2, to=2-3]
+	\arrow["{((\delta_\xi)^\sharp)_M}", from=2-2, to=3-2]
+	\arrow[from=3-1, to=3-2]
+	\arrow[from=3-2, to=4-2]
+\end{tikzcd}.
 		\end{equation}
-		考虑长正合列
-		\begin{equation}
-			(G',L) \to (P,L) \to (G,L) \to \mathbb E_\xi(G',L) \to \mathbb E_\xi(P,L) = 0.
-		\end{equation}
-		依照归纳假设, 前三项是短正合列, 从而 $\mathbb E_\xi(G',L) = 0$. 同理 $\mathbb E_\xi(G',P) = 0$. 作 $3\times 3$-交换图
+		由于 $((\delta_\xi)^\sharp)_M \circ (G', g)$ 是零态射, 且 $(G', g)$ 是满态射, 故 $((\delta_\xi)^\sharp)_M = 0$. 由长正合列, 得 $\mathbb E_\xi(G,M) = 0$.
 	\end{proof}
 \end{proposition}
+
+\begin{proposition}
+	完全投射分解是 $(-,\widetilde {\mathcal{P}(\xi)})$-正合的.
+	\begin{proof}
+		由定义, 完全投射分解是 $(-, \mathcal{P}(\xi))$-正合的. 假定是 $(-, \mathcal{P}(\xi)^{\leq n})$-正合的, 下证明其 $(-,\mathcal{P}(\xi)^{\leq n+1})$ 正合. 沿用 \cref{prop:GP_ext_vanish} 中记号, 得正合列的交换图
+		\begin{equation}
+% https://q.uiver.app/#q=WzAsMTUsWzEsMSwiKFEsUCkiXSxbMSwyLCIoUSxNKSJdLFsxLDMsIlxcbWF0aGJiIEVfXFx4aShRLE4pIixbMTgwLDYwLDYwLDFdXSxbMiwxLCIoRycsUCkiXSxbMiwyLCIoRycsTSkiXSxbMywxLCJcXG1hdGhiYiBFX1xceGkoRyxQKSIsWzE4MCw2MCw2MCwxXV0sWzMsMiwiXFxtYXRoYmIgRV9cXHhpKEcsTSkiLFsxODAsNjAsNjAsMV1dLFsyLDMsIlxcbWF0aGJiIEVfXFx4aShHJyxOKSIsWzE4MCw2MCw2MCwxXV0sWzMsMCwiXFxtYXRoYmIgRV9cXHhpKEcsTikiLFsxODAsNjAsNjAsMV1dLFsyLDAsIihHJyxOKSJdLFsxLDAsIihRLE4pIl0sWzAsMCwiKEcsTikiXSxbMCwxLCIoRyxQKSJdLFswLDIsIihHLE0pIl0sWzAsMywiXFxtYXRoYmIgRV9cXHhpKEcsTikiLFsxODAsNjAsNjAsMV1dLFswLDFdLFszLDVdLFsxLDRdLFsyLDddLFs0LDddLFs1LDZdLFswLDNdLFszLDRdLFs4LDVdLFs5LDhdLFs5LDMsIihHJyxmKSJdLFsxMCw5XSxbMTAsMCwiKFEsZikiLDAseyJjb2xvdXIiOlsyNDAsNjAsNjBdLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fSxbMjQwLDYwLDYwLDFdXSxbMTEsMTAsIihwLE4pIiwwLHsiY29sb3VyIjpbMjQwLDYwLDYwXSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibW9ubyJ9fX0sWzI0MCw2MCw2MCwxXV0sWzExLDEyLCIoRyxmKSJdLFsxMiwwLCIocCxQKSIsMCx7ImNvbG91ciI6WzI0MCw2MCw2MF0sInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19LFsyNDAsNjAsNjAsMV1dLFsxMiwxM10sWzEzLDFdLFsxMywxNF0sWzQsNl0sWzE0LDJdLFsxLDJdXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	{(G,N)} \& {(Q,N)} \& {(G',N)} \& \textcolor{rgb,255:red,92;green,214;blue,214}{{\mathbb E_\xi(G,N)}} \\
+	{(G,P)} \& {(Q,P)} \& {(G',P)} \& \textcolor{rgb,255:red,92;green,214;blue,214}{{\mathbb E_\xi(G,P)}} \\
+	{(G,M)} \& {(Q,M)} \& {(G',M)} \& \textcolor{rgb,255:red,92;green,214;blue,214}{{\mathbb E_\xi(G,M)}} \\
+	\textcolor{rgb,255:red,92;green,214;blue,214}{{\mathbb E_\xi(G,N)}} \& \textcolor{rgb,255:red,92;green,214;blue,214}{{\mathbb E_\xi(Q,N)}} \& \textcolor{rgb,255:red,92;green,214;blue,214}{{\mathbb E_\xi(G',N)}}
+	\arrow["{(p,N)}", color={rgb,255:red,92;green,92;blue,214}, tail, from=1-1, to=1-2]
+	\arrow["{(G,f)}", from=1-1, to=2-1]
+	\arrow[from=1-2, to=1-3]
+	\arrow["{(Q,f)}", color={rgb,255:red,92;green,92;blue,214}, tail, from=1-2, to=2-2]
+	\arrow[from=1-3, to=1-4]
+	\arrow["{(G',f)}", from=1-3, to=2-3]
+	\arrow[from=1-4, to=2-4]
+	\arrow["{(p,P)}", color={rgb,255:red,92;green,92;blue,214}, tail, from=2-1, to=2-2]
+	\arrow[from=2-1, to=3-1]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-2, to=3-2]
+	\arrow[from=2-3, to=2-4]
+	\arrow[from=2-3, to=3-3]
+	\arrow[from=2-4, to=3-4]
+	\arrow[from=3-1, to=3-2]
+	\arrow[from=3-1, to=4-1]
+	\arrow[from=3-2, to=3-3]
+	\arrow[from=3-2, to=4-2]
+	\arrow[from=3-3, to=3-4]
+	\arrow[from=3-3, to=4-3]
+	\arrow[from=4-1, to=4-2]
+	\arrow[from=4-2, to=4-3]
+\end{tikzcd}.
+		\end{equation}
+		由态射合成, $(G,f)$-单. 对 $G' \to P' \to G'' \dashrightarrow$ 作同样的交换图, 得 $(G',f)$-单. 上图包含五条短正合列, 由 $3\times 3$ 引理得第六条短正合列, 这完成了归纳假设.
+	\end{proof}
+\end{proposition}
+
+\begin{corollary}
+	由维数移动知 $\widetilde {\mathcal{P}(\xi)}$ 是厚子范畴. 所有 $\widetilde {\mathcal{P}(\xi)}$ 中的 $\mathbb E$-三角都是 $(\mathcal{GP}(\xi),-)$-正合的.
+	\begin{proof}
+		这蕴含在上述命题的证明中.
+	\end{proof}
+\end{corollary}
 
 \begin{proposition}
 	给定 $\xi$-三角 $A \to B \to C \dashrightarrow$, 其中 $C \in \mathcal{GP}(\xi)$. \Cref{thm:GP_W_exact} 证明了该 $\mathbb E$-三角是 $(-, \mathcal{P}(\xi))$-正合的. 实际上, 该 $\mathbb E$-三角也是 $(-, \widetilde{\mathcal{P}(\xi)})$-正合的.
 	\begin{proof}
-		依照与 \Cref{thm:GP_W_exact} 类似的证明 (``满态射''性质). 只需说明所有
+		依照与 \cref{thm:GP_W_exact} 一致的证明思路, 只需说明完全投射分解 $(-, \widetilde{\mathcal{P}(\xi)})$-正合, 即上一命题.
 	\end{proof}
 \end{proposition}
+
+\subsection{Hovey 四元组}
+
+\begin{lemma}
+	约定 $\mathcal{P}(\xi)^{-1} = \{0\}$. 对 $n\geq 0$, 有如下等式:
+	\begin{equation}
+			\mathcal{GP} (\xi)^{\leq n} \subseteq \mathrm{Cone}(\mathcal{P}(\xi)^{\leq n-1}, \mathcal{GP}(\xi)), \quad \mathcal{GP} (\xi)^{\leq n} \subseteq \mathrm{coCone}( \mathcal{P}(\xi)^{\leq n}, \mathcal{GP}(\xi)).
+		\end{equation}
+		\begin{proof}
+			下归纳证明. 上述命题对 $\mathcal{GP}(\xi)^{\leq 0} = \mathcal{GP}(\xi)$ 显然成立. 假定上述命题对 $\mathcal{GP}(\xi)^{n}$ 成立, 下证明其对 $\mathcal{GP}(\xi)^{n+1}$ 成立.
+			\begin{enumerate}
+				\item (前式). 取定 $M \in \mathcal{GP}(\xi)^{\leq n+1}$, 则存在 $\xi$-三角的交换图
+				\begin{equation}
+					% https://q.uiver.app/#q=WzAsMTUsWzIsMCwiTSJdLFsxLDAsIlAiXSxbMCwwLCJMIl0sWzQsMCwiXFxtYXRoY2FsIEdwZF9cXHhpIE0gPSBuKzEiXSxbNCwxLCJcXG1hdGhjYWwgR3BkX1xceGkgTCA9IG4iXSxbMywwLCJcXCwiXSxbMCwxLCJBIl0sWzAsMiwiRyJdLFs0LDIsInBkX1xceGkgQSBcXGxlcSBuIl0sWzEsMiwiRyJdLFsyLDEsIk0iXSxbMSwxLCJIIl0sWzAsMywiXFwsIl0sWzEsMywiXFwsIl0sWzMsMSwiXFwsIl0sWzIsMV0sWzEsMF0sWzAsNSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsOSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwxMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw2XSxbNiw3XSxbNywxMiwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEwLDE0LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOSwxMywiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMTEsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSwxMCwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMTEsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSw5LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	L \& P \& M \& {\,} \& {\mathcal Gpd_\xi M = n+1} \\
+	A \& H \& M \& {\,} \& {\mathcal Gpd_\xi L = n} \\
+	G \& G \&\&\& {pd_\xi A \leq n} \\
+	{\,} \& {\,}
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow[from=1-2, to=1-3]
+	\arrow[dashed, from=1-2, to=2-2]
+	\arrow[dashed, from=1-3, to=1-4]
+	\arrow[equals, from=1-3, to=2-3]
+	\arrow[dashed, from=2-1, to=2-2]
+	\arrow[from=2-1, to=3-1]
+	\arrow[dashed, from=2-2, to=2-3]
+	\arrow[dashed, from=2-2, to=3-2]
+	\arrow[dashed, from=2-3, to=2-4]
+	\arrow[equals, from=3-1, to=3-2]
+	\arrow[dashed, from=3-1, to=4-1]
+	\arrow[dashed, from=3-2, to=4-2]
+\end{tikzcd}.
+				\end{equation}
+				因此 $\mathcal{GP}(\xi)^{\leq n+1} \subseteq \mathrm{Cone}(\mathcal{P}(\xi)^{\leq n}, \mathcal{GP}(\xi))$.
+				\item (后式). 对上述 $M$, 作下图:
+				\begin{equation}
+					% https://q.uiver.app/#q=WzAsMTgsWzIsMCwiTSJdLFsxLDAsIlAiXSxbMCwwLCJMIl0sWzQsMCwiXFxtYXRoY2FsIEdwZF9cXHhpIE0gPSBuKzEiXSxbNCwxLCJcXG1hdGhjYWwgR3BkX1xceGkgTCA9IG4iXSxbMywwLCJcXCwiXSxbMCwxLCJBIl0sWzAsMiwiRyJdLFs0LDIsInBkX1xceGkgQSBcXGxlcSBuIl0sWzEsMiwiUSJdLFsyLDEsIk4iXSxbMSwxLCJQIFxcb3BsdXMgUSJdLFswLDMsIlxcLCJdLFsxLDMsIlxcLCJdLFszLDEsIlxcLCJdLFsyLDIsIkcnIl0sWzIsMywiXFwsIl0sWzMsMiwiXFwsIl0sWzIsMV0sWzEsMF0sWzAsNSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNl0sWzYsN10sWzcsMTIsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMCwxNCwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzksMTMsIjAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwxMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzExLDEwLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwxMSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzExLDksIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDldLFs5LDE1XSxbMCwxMCwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEwLDE1LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTUsMTYsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxNSwxNywiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	L \& P \& M \& {\,} \& {\mathcal Gpd_\xi M = n+1} \\
+	A \& {P \oplus Q} \& N \& {\,} \& {\mathcal Gpd_\xi L = n} \\
+	G \& Q \& {G'} \& {\,} \& {pd_\xi A \leq n} \\
+	{\,} \& {\,} \& {\,}
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow[from=1-2, to=1-3]
+	\arrow[dashed, from=1-2, to=2-2]
+	\arrow[dashed, from=1-3, to=1-4]
+	\arrow[dashed, from=1-3, to=2-3]
+	\arrow[dashed, from=2-1, to=2-2]
+	\arrow[from=2-1, to=3-1]
+	\arrow[dashed, from=2-2, to=2-3]
+	\arrow[dashed, from=2-2, to=3-2]
+	\arrow[dashed, from=2-3, to=2-4]
+	\arrow[dashed, from=2-3, to=3-3]
+	\arrow[from=3-1, to=3-2]
+	\arrow[dashed, from=3-1, to=4-1]
+	\arrow[from=3-2, to=3-3]
+	\arrow["0", dashed, from=3-2, to=4-2]
+	\arrow[dashed, from=3-3, to=3-4]
+	\arrow[dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+				\end{equation}
+				由维数移动, $pd_\xi N \leq n+1$. 因此 $\mathcal{GP}(\xi)^{\leq n+1} \subseteq \mathrm{coCone}( \mathcal{P}(\xi)^{\leq n+1}, \mathcal{GP}(\xi))$.
+			\end{enumerate}
+		\end{proof}
+\end{lemma}
+
+\begin{corollary}
+	若 $(\mathcal{C}, \mathbb E_\xi, \mathfrak s_\xi)$ 中所有对象有有限 Gorenstein 投射维数, 则 $(\mathcal{GP}(\xi), \widetilde{\mathcal{P}(\xi)})$ 是完备余挠对.
+\end{corollary}
+
+\begin{theorem}
+	$((\mathcal{P}(\xi),\mathcal{C}), (\mathcal{GP}(\xi), \widetilde{\mathcal{P}(\xi)}))$ 是 Hovey 四元组.
+	\begin{proof}
+		已证这是两个余挠对. 容易验证
+		\begin{equation}
+			\mathrm{Cone}(\widetilde{\mathcal{P}(\xi)}, \mathcal{P}(\xi)) = \mathrm{coCone}(\widetilde{\mathcal{P}(\xi)}, \mathcal{P}(\xi)) = \widetilde{\mathcal{P}(\xi)}.
+		\end{equation}
+		从而这是 Hovey 四元组.
+	\end{proof}
+\end{theorem}
+
+\begin{corollary}
+	若 $(\mathcal{C}, \mathbb E_\xi, \mathfrak s_\xi)$ 的 Gorenstein 投射维数 $\leq n$, 则 $\widetilde {P(\xi)} = \mathcal{P}(\xi)^{\leq n}$. 此时 $((\mathcal{P}(\xi),\mathcal{C}),(\mathcal{GP}(\xi), \widetilde{\mathcal{P}(\xi)}))$ 是 Hovey 四元组.
+\end{corollary}
+

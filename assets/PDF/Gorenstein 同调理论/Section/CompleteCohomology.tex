@@ -1,0 +1,167 @@
+\section{阅读笔记: Complete cohomology for extriangulated categories}
+
+文章见 \cite{doi:10.1142/S1005386721000547}.
+
+\subsection{\texorpdfstring{$\xi$}{}-上同调}
+
+\begin{notation}
+    假定 $(\mathcal{C}, \mathbb E_\xi, \mathfrak s_\xi)$ 有足够投射. 记 $X$ 的投射分解为链复形 $P_X$.
+\end{notation}
+
+\begin{definition}[上有界复形的 $\mathcal{P}(\xi)$-投射分解]
+    给定上有界复形
+    \begin{equation}
+        M : \cdots \to M_2 \xrightarrow{d_1} M_1 \xrightarrow{d_0} M_0 \to 0.
+    \end{equation}
+    称 $\varphi : P \to M$ 是一个投射分解, 若 $P$ 是取值 $\mathcal{P}(\xi)$ 中复形, 且 $\mathrm{Cone}(\varphi)$ 是 $\xi$-正合复形.
+\end{definition}
+
+\begin{proposition}
+    上有界复形的投射分解总是存在的.
+    \begin{proof}
+        归纳地构造 $P$:
+        \begin{equation}
+% https://q.uiver.app/#q=WzAsMTIsWzgsMiwiTV8wIl0sWzYsMiwiTV8xIl0sWzQsMiwiTV8yIl0sWzcsMSwiS18wIl0sWzYsMCwiUF8wIl0sWzUsMSwiS18xIl0sWzQsMCwiUF8xIl0sWzIsMiwiTV8zIl0sWzMsMSwiS18yIl0sWzIsMCwiUF8yIl0sWzEsMSwiXFxjZG90cyJdLFswLDIsIlxcY2RvdHMiXSxbMSwwLCJkXzAiXSxbNCwzLCJwXzAiXSxbMywwLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDMsImZfMCJdLFs1LDQsImdfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDEsInFfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDEsImRfMSJdLFs2LDUsInBfMSJdLFsyLDUsImZfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDIsInFfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDYsImdfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDIsImRfMiJdLFs3LDgsImZfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDgsInBfMiJdLFsxMCw5LCJnXzMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsNywicV8zIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzExLDcsImRfMyJdLFsxMSwxMCwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzE2LDE1LCJcXHNxdWFyZSIsMyx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMiwyMCwiXFxzcXVhcmUiLDMseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9LCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMjYsMjQsIlxcc3F1YXJlIiwzLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&, column sep = small]
+	\&\& {P_2} \&\& {P_1} \&\& {P_0} \\
+	\& \cdots \&\& {K_2} \&\& {K_1} \&\& {K_0} \\
+	\cdots \&\& {M_3} \&\& {M_2} \&\& {M_1} \&\& {M_0}
+	\arrow["{p_2}", from=1-3, to=2-4]
+	\arrow["{p_1}", from=1-5, to=2-6]
+	\arrow["{p_0}", from=1-7, to=2-8]
+	\arrow[""{name=0, anchor=center, inner sep=0}, "{g_3}", dashed, from=2-2, to=1-3]
+	\arrow["{q_3}", dashed, from=2-2, to=3-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{g_2}", dashed, from=2-4, to=1-5]
+	\arrow["{q_2}", dashed, from=2-4, to=3-5]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "{g_1}", dashed, from=2-6, to=1-7]
+	\arrow["{q_1}", dashed, from=2-6, to=3-7]
+	\arrow[equals, from=2-8, to=3-9]
+	\arrow[dashed, from=3-1, to=2-2]
+	\arrow["{d_3}", from=3-1, to=3-3]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "{f_2}", dashed, from=3-3, to=2-4]
+	\arrow["{d_2}", from=3-3, to=3-5]
+	\arrow[""{name=4, anchor=center, inner sep=0}, "{f_1}", dashed, from=3-5, to=2-6]
+	\arrow["{d_1}", from=3-5, to=3-7]
+	\arrow[""{name=5, anchor=center, inner sep=0}, "{f_0}", from=3-7, to=2-8]
+	\arrow["{d_0}", from=3-7, to=3-9]
+	\arrow["\square"{marking, allow upside down}, draw=none, from=0, to=3]
+	\arrow["\square"{marking, allow upside down}, draw=none, from=1, to=4]
+	\arrow["\square"{marking, allow upside down}, draw=none, from=2, to=5]
+\end{tikzcd}.
+        \end{equation}
+        假定构造了 $K_{\leq n}$, $g_{\leq n}$, $q_{\leq n}$, $p_{\leq n}$ 与 $f_{\leq n}$. 取同伦方块
+        \begin{equation}
+            % https://q.uiver.app/#q=WzAsMTIsWzIsMSwiTV97bisxfSJdLFsyLDAsIktfbiJdLFsxLDAsIlBfbiJdLFsxLDEsIktfe24rMX0iXSxbMCwwLCJMX24iXSxbMCwxLCJMX24gIl0sWzMsMCwiXFwsIl0sWzMsMSwiXFwsIl0sWzQsMSwiS197biArMX0iXSxbNSwxLCJQX24gXFxvcGx1cyBNX3tuKzF9Il0sWzYsMSwiS19uIl0sWzcsMSwiXFwsIl0sWzIsMSwicF9uIl0sWzAsMSwiZl9uIl0sWzMsMiwiZ197bisxfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDAsInFfe24rMX0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCwyLCJpX24iXSxbNSwzLCJqX24iXSxbNCw1LCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDYsIlxcZGVsdGFfbiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDcsIihmX24pXlxcYXN0IFxcZGVsdGFfbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCw5LCJcXGJpbm9te2dfe24rMX19ey1xX3tuKzF9fSJdLFs5LDEwLCIocF9uLCBmX24pIl0sWzEwLDExLCIoal9uKV9cXGFzdCBcXGRlbHRhX24iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTQsMTMsIlxcc3F1YXJlIiwzLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	{L_n} \& {P_n} \& {K_n} \& {\,} \\
+	{L_n } \& {K_{n+1}} \& {M_{n+1}} \& {\,} \& {K_{n +1}} \& {P_n \oplus M_{n+1}} \& {K_n} \& {\,}
+	\arrow["{i_n}", from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["{p_n}", from=1-2, to=1-3]
+	\arrow["{\delta_n}", dashed, from=1-3, to=1-4]
+	\arrow["{j_n}", from=2-1, to=2-2]
+	\arrow[""{name=0, anchor=center, inner sep=0}, "{g_{n+1}}", dashed, from=2-2, to=1-2]
+	\arrow["{q_{n+1}}", dashed, from=2-2, to=2-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{f_n}", from=2-3, to=1-3]
+	\arrow["{(f_n)^\ast \delta_n }", dashed, from=2-3, to=2-4]
+	\arrow["{\binom{g_{n+1}}{-q_{n+1}}}", from=2-5, to=2-6]
+	\arrow["{(p_n, f_n)}", from=2-6, to=2-7]
+	\arrow["{(j_n)_\ast \delta_n}", dashed, from=2-7, to=2-8]
+	\arrow["\square"{marking, allow upside down}, draw=none, from=0, to=1]
+\end{tikzcd}.
+        \end{equation}
+        由于 $f_n \circ d_{n+1}$ 与 $0 \circ p_n$ 都是 $M_{n+2} \to K_n$ 的零态射, 从而存在 $f_{n+1} : M_{n + 2} \to K_{n+1}$ 使得 $d_{n+1} = q_{n+1} \circ f_{n+1}$ 且 $g_{n+1}f_{n+1} = 0$. 往复归纳即可:
+\begin{equation}
+    % https://q.uiver.app/#q=WzAsMTUsWzUsMiwiTV97bisxfSJdLFszLDIsIk1fe24rMn0iXSxbNiwxLCJLX24iXSxbNSwwLCJQX24iXSxbNCwxLCJLX3tuKzF9Il0sWzMsMCwiUF97bisxfSJdLFsyLDEsIktfe24rMn0iXSxbMSwyLCJNX3tuKzN9Il0sWzEsMCwiUF97bisyfSJdLFswLDAsIlxcY2RvdHMiXSxbMCwxLCJcXGNkb3RzIl0sWzAsMiwiXFxjZG90cyJdLFs3LDAsIlxcY2RvdHMiXSxbNywxLCJcXGNkb3RzIl0sWzcsMiwiXFxjZG90cyJdLFszLDIsInBfbiJdLFswLDIsImZfbiJdLFs0LDMsImdfe24rMX0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCwwLCJxX3tuKzF9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMCwiZF97bisxfSJdLFs1LDQsInBfe24rMX0iXSxbMSw0LCJmX3tuKzF9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMSwicV97bisyfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDUsImdfe24rMn0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNywxLCJkXzIiXSxbNyw2LCJmX3tuKzJ9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsNiwicF97bisyfSJdLFsxLDMsIjAiLDIseyJsYWJlbF9wb3NpdGlvbiI6NDAsImN1cnZlIjoyLCJjb2xvdXIiOlswLDYwLDYwXX0sWzAsNjAsNjAsMV1dLFs3LDUsIjAiLDIseyJsYWJlbF9wb3NpdGlvbiI6NDAsIm9mZnNldCI6MSwiY3VydmUiOjIsImNvbG91ciI6WzAsNjAsNjBdfSxbMCw2MCw2MCwxXV0sWzE3LDE2LCJcXHNxdWFyZSIsMyx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMywyMSwiXFxzcXVhcmUiLDMseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9LCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&, column sep = small]
+	\cdots \& {P_{n+2}} \&\& {P_{n+1}} \&\& {P_n} \&\& \cdots \\
+	\cdots \&\& {K_{n+2}} \&\& {K_{n+1}} \&\& {K_n} \& \cdots \\
+	\cdots \& {M_{n+3}} \&\& {M_{n+2}} \&\& {M_{n+1}} \&\& \cdots
+	\arrow["{p_{n+2}}", from=1-2, to=2-3]
+	\arrow["{p_{n+1}}", from=1-4, to=2-5]
+	\arrow["{p_n}", from=1-6, to=2-7]
+	\arrow[""{name=0, anchor=center, inner sep=0}, "{g_{n+2}}", dashed, from=2-3, to=1-4]
+	\arrow["{q_{n+2}}", dashed, from=2-3, to=3-4]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{g_{n+1}}", dashed, from=2-5, to=1-6]
+	\arrow["{q_{n+1}}", dashed, from=2-5, to=3-6]
+	\arrow["0"'{pos=0.4}, shift right, color={rgb,255:red,214;green,92;blue,92}, curve={height=12pt}, from=3-2, to=1-4]
+	\arrow["{f_{n+2}}", dashed, from=3-2, to=2-3]
+	\arrow["{d_2}", from=3-2, to=3-4]
+	\arrow["0"'{pos=0.4}, color={rgb,255:red,214;green,92;blue,92}, curve={height=12pt}, from=3-4, to=1-6]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "{f_{n+1}}", dashed, from=3-4, to=2-5]
+	\arrow["{d_{n+1}}", from=3-4, to=3-6]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "{f_n}", from=3-6, to=2-7]
+	\arrow["\square"{marking, allow upside down}, draw=none, from=0, to=2]
+	\arrow["\square"{marking, allow upside down}, draw=none, from=1, to=3]
+\end{tikzcd}.
+\end{equation}
+容易检验映射锥是 $\xi$-正合复形:
+\begin{equation}\label{eq:ho_resol}
+    % https://q.uiver.app/#q=WzAsOCxbNywwLCIwIFxcb3BsdXMgTV8wIl0sWzUsMCwiUF8wIFxcb3BsdXMgTV8xIl0sWzMsMCwiUF8xIFxcb3BsdXMgTV8yIl0sWzYsMSwiS18wIl0sWzQsMSwiS18xIl0sWzEsMCwiUF8yIFxcb3BsdXMgTV8xIl0sWzIsMSwiS18yIl0sWzAsMCwiXFxjZG90cyJdLFszLDAsIlxcYmlub20gMDEiLDJdLFsxLDMsIihwXzAsZl8wKSIsMl0sWzQsMSwiXFxiaW5vbXtnXzF9ey1xXzF9IiwyXSxbMiw0LCIocF8xLGZfMSkiLDJdLFsxLDAsIlxcc2NyaXB0c3R5bGUgXFxiZWdpbntwbWF0cml4fTAmMFxcXFwgcF8wICYgZF8wXFxlbmR7cG1hdHJpeH0iXSxbMiwxLCJcXHNjcmlwdHN0eWxlIFxcYmVnaW57cG1hdHJpeH1nXzFwXzEmMFxcXFwgLXFfMXBfMSAmIC1kXzFcXGVuZHtwbWF0cml4fSJdLFs1LDYsIihwXzIsZl8yKSIsMl0sWzYsMiwiXFxiaW5vbXtnXzJ9ey1xXzJ9IiwyXSxbNSwyLCJcXHNjcmlwdHN0eWxlIFxcYmVnaW57cG1hdHJpeH1nXzJwXzImMFxcXFwgLXFfMnBfMiAmIC1kXzJcXGVuZHtwbWF0cml4fSJdLFs3LDVdXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	\cdots \& {P_2 \oplus M_1} \&\& {P_1 \oplus M_2} \&\& {P_0 \oplus M_1} \&\& {0 \oplus M_0} \\
+	\&\& {K_2} \&\& {K_1} \&\& {K_0}
+	\arrow[from=1-1, to=1-2]
+	\arrow["{\scriptstyle \begin{pmatrix}g_2p_2&0\\ -q_2p_2 & -d_2\end{pmatrix}}", from=1-2, to=1-4]
+	\arrow["{(p_2,f_2)}"', from=1-2, to=2-3]
+	\arrow["{\scriptstyle \begin{pmatrix}g_1p_1&0\\ -q_1p_1 & -d_1\end{pmatrix}}", from=1-4, to=1-6]
+	\arrow["{(p_1,f_1)}"', from=1-4, to=2-5]
+	\arrow["{\scriptstyle \begin{pmatrix}0&0\\ p_0 & d_0\end{pmatrix}}", from=1-6, to=1-8]
+	\arrow["{(p_0,f_0)}"', from=1-6, to=2-7]
+	\arrow["{\binom{g_2}{-q_2}}"', from=2-3, to=1-4]
+	\arrow["{\binom{g_1}{-q_1}}"', from=2-5, to=1-6]
+	\arrow["{\binom 01}"', from=2-7, to=1-8]
+\end{tikzcd}.
+\end{equation}
+    \end{proof}
+\end{proposition}
+
+\begin{remark}
+	若 $\mathrm{Cone}(\varphi)$ 是 $\xi$-正合复形, 则必有 \cref{eq:ho_resol} 中所示的交换图.
+\end{remark}
+
+\begin{proposition}
+    取定投射分解. 上有界复形的态射 $\varphi : M \to N$, 诱导了 $\mathcal{P}(\xi)$-投射复形的链映射 $\pi : P \to Q$. 该链映射在同伦意义下唯一.
+    \begin{proof}
+        假定构造了 $\psi : K_{\leq n} \to L_{\leq n}$. 由 $\mathcal{P}(\xi)$-投射对象的性质构造 $\pi_n$, 再由 ET3 构造 $\psi_{n+1}$:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzIsMCwiUF9uIl0sWzMsMSwiS19uIl0sWzIsMiwiTV97bisxfSJdLFsxLDEsIktfe24rMX0iXSxbMCwyLCJNX3tuICsyfSJdLFswLDAsIlBfe24rMX0iXSxbNCw0LCJMX24iXSxbMywzLCJRX24iXSxbMyw1LCJOX24iXSxbMiw0LCJMX3tuKzF9Il0sWzEsNSwiTl97biArMX0iXSxbMSwzLCJRX3tuKzF9Il0sWzAsMSwicF9uIl0sWzIsMSwiZl9uICJdLFszLDAsImdfe24rMX0iXSxbMywyLCJxX3tuKzF9Il0sWzUsMywicF97biArMX0iXSxbNCwzLCJmX3tuKzF9Il0sWzcsNiwicF9uJyJdLFs5LDcsImdfe24rMX0nIl0sWzgsNiwiZidfbiAiXSxbMTEsOSwicF97bisxfSciXSxbOSw4LCJxX3tuKzF9JyJdLFsxMCw5LCJmX3tuKzF9JyJdLFsxLDYsIlxccHNpIF9uICIsMSx7ImN1cnZlIjotMSwiY29sb3VyIjpbMjQwLDYwLDYwXX0sWzI0MCw2MCw2MCwxXV0sWzAsNywiXFxwaSBfbiAiLDEseyJjdXJ2ZSI6LTEsImNvbG91ciI6WzI0MCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzI0MCw2MCw2MCwxXV0sWzIsOCwiXFx2YXJwaGkgX24gIiwxLHsiY3VydmUiOi0xLCJjb2xvdXIiOlsyNDAsNjAsNjBdfSxbMjQwLDYwLDYwLDFdXSxbMyw5LCJcXHBzaV97bisxfSIsMSx7ImN1cnZlIjotMSwiY29sb3VyIjpbMjQwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjQwLDYwLDYwLDFdXSxbMTQsMTMsIlxcc3F1YXJlIiwzLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE5LDIwLCJcXHNxdWFyZSIsMyx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	{P_{n+1}} \&\& {P_n} \\
+	\& {K_{n+1}} \&\& {K_n} \\
+	{M_{n +2}} \&\& {M_{n+1}} \\
+	\& {Q_{n+1}} \&\& {Q_n} \\
+	\&\& {L_{n+1}} \&\& {L_n} \\
+	\& {N_{n +1}} \&\& {N_n}
+	\arrow["{p_{n +1}}", from=1-1, to=2-2]
+	\arrow["{p_n}", from=1-3, to=2-4]
+	\arrow["{\pi _n }"{description}, color={rgb,255:red,92;green,92;blue,214}, curve={height=-6pt}, dashed, from=1-3, to=4-4]
+	\arrow[""{name=0, anchor=center, inner sep=0}, "{g_{n+1}}", from=2-2, to=1-3]
+	\arrow["{q_{n+1}}", from=2-2, to=3-3]
+	\arrow["{\psi_{n+1}}"{description}, color={rgb,255:red,92;green,92;blue,214}, curve={height=-6pt}, dashed, from=2-2, to=5-3]
+	\arrow["{\psi _n }"{description}, color={rgb,255:red,92;green,92;blue,214}, curve={height=-6pt}, from=2-4, to=5-5]
+	\arrow["{f_{n+1}}", from=3-1, to=2-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{f_n }", from=3-3, to=2-4]
+	\arrow["{\varphi _n }"{description}, color={rgb,255:red,92;green,92;blue,214}, curve={height=-6pt}, from=3-3, to=6-4]
+	\arrow["{p_{n+1}'}", from=4-2, to=5-3]
+	\arrow["{p_n'}", from=4-4, to=5-5]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "{g_{n+1}'}", from=5-3, to=4-4]
+	\arrow["{q_{n+1}'}", from=5-3, to=6-4]
+	\arrow["{f_{n+1}'}", from=6-2, to=5-3]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "{f'_n }", from=6-4, to=5-5]
+	\arrow["\square"{marking, allow upside down}, draw=none, from=0, to=1]
+	\arrow["\square"{marking, allow upside down}, draw=none, from=2, to=3]
+\end{tikzcd}.
+		\end{equation}
+		由结果知, 所有链映射 $\pi$ 通过以上方式给出. 
+    \end{proof}
+\end{proposition}
+
+
+
+
+
+
+
+
+

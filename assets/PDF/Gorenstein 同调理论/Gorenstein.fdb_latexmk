@@ -1,26 +1,29 @@
 # Fdb version 4
-["bibtex Gorenstein"] 1764080501.02416 "Gorenstein.aux" "Gorenstein.bbl" "Gorenstein" 1764080506.26195 0
-  "./ref.bib" 1763786987 1561 2e1dcf43ed1169631e03f3ca977e633d ""
-  "Gorenstein.aux" 1764080504 248 0260f1ccdb6b90665748fdd65831fe1b "xelatex"
-  "Section/ProperClass.aux" 1764080504 3178 a79abc44f26ee10c939186491fd83105 "xelatex"
+["bibtex Gorenstein"] 1764297094.91959 "Gorenstein.aux" "Gorenstein.bbl" "Gorenstein" 1764297371.90591 0
+  "./ref.bib" 1764245462 2872 313a3a101c2acd5c15e7079091a595d8 ""
+  "Gorenstein.aux" 1764297368 336 330553dd3ee6713438e0e2e090cd07e2 "xelatex"
+  "Section/CompleteCohomology.aux" 1764297368 1133 d56a42196097857600f1ebc4110d9559 "xelatex"
+  "Section/ProperClass.aux" 1764297367 3443 ca4582133d5432eedb1d620b018b689a "xelatex"
   "c:/texlive/2024/texmf-dist/bibtex/bst/urlbst/alphaurl.bst" 1740728801 36789 471f9462b8363fe2bc95f4511e37e918 ""
   (generated)
   "Gorenstein.bbl"
   "Gorenstein.blg"
   (rewritten before read)
-["xdvipdfmx"] 1764080505.53121 "Gorenstein.xdv" "Gorenstein.pdf" "Gorenstein" 1764080506.27127 0
-  "Gorenstein.xdv" 1764080504 469924 d347d9a8bbe49159fcf0992fb9662f80 "xelatex"
+["xdvipdfmx"] 1764297370.57827 "Gorenstein.xdv" "Gorenstein.pdf" "Gorenstein" 1764297371.92334 0
+  "Gorenstein.xdv" 1764297368 654964 4af7edffe7bbc19fb02b0967068fa3e4 "xelatex"
   (generated)
   "Gorenstein.pdf"
   (rewritten before read)
-["xelatex"] 1764080501.4281 "d:/GitHub/jekyll-latex/assets/PDF/Gorenstein 同调理论/Gorenstein.tex" "Gorenstein.xdv" "Gorenstein" 1764080506.26226 0
-  "Gorenstein.aux" 1764080504 248 0260f1ccdb6b90665748fdd65831fe1b "xelatex"
-  "Gorenstein.bbl" 1764080501 402 a0b62608cdcecb47387fcf163ee8d95c "bibtex Gorenstein"
-  "Gorenstein.out" 1764080504 822 2117fc8212305cb8e35d7ef572d66db1 "xelatex"
-  "Gorenstein.tex" 1764061999 5430 980e5482cf69cfc4458cd4b14e140858 ""
-  "Gorenstein.toc" 1764080504 516 5a946c3fb533e441b99c9c9a6c815e06 "xelatex"
-  "Section/ProperClass.aux" 1764080504 3178 a79abc44f26ee10c939186491fd83105 "xelatex"
-  "Section/ProperClass.tex" 1764080496 81715 bfeeb9fefa34515541177fbd1e25bda9 ""
+["xelatex"] 1764297361.24561 "d:/GitHub/jekyll-latex/assets/PDF/Gorenstein 同调理论/Gorenstein.tex" "Gorenstein.xdv" "Gorenstein" 1764297371.90649 0
+  "Gorenstein.aux" 1764297368 336 330553dd3ee6713438e0e2e090cd07e2 "xelatex"
+  "Gorenstein.bbl" 1764297095 862 30bfe5380619f666d041c37cc5bd8b56 "bibtex Gorenstein"
+  "Gorenstein.out" 1764297368 1367 ea21dfa359f255e6bd361a5c3fde65ca "xelatex"
+  "Gorenstein.tex" 1764296792 5534 86c20a87cb137deba7dd4347f9378162 ""
+  "Gorenstein.toc" 1764297368 801 4e1ec762fd66a46d066a50eda031fe9b "xelatex"
+  "Section/CompleteCohomology.aux" 1764297368 1133 d56a42196097857600f1ebc4110d9559 "xelatex"
+  "Section/CompleteCohomology.tex" 1764297351 14008 38a242a09d4c600163977b3acfb071e9 ""
+  "Section/ProperClass.aux" 1764297367 3443 ca4582133d5432eedb1d620b018b689a "xelatex"
+  "Section/ProperClass.tex" 1764248540 91863 6ecbdfdc57eefd66754e61d859b13a5e ""
   "c:/Windows/Fonts/msyh.ttc" 1756300068 19704352 1e10e74402e59d54499af795caf0b135 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1740726853 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1740729019 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -221,12 +224,13 @@
   "c:/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1740729240 10849681 69d56c4b4a15f85f81031ce1ef8c005b ""
   "c:/texlive/2024/texmf.cnf" 1740729061 713 e69b156964470283e0530f5060668171 ""
   "c:/texlive/texmf-local/tex/latex/quiver/quiver.sty" 1751804110 1999 415524e3e500d158be48459b7e09ec69 ""
-  "d:/GitHub/jekyll-latex/assets/PDF/Gorenstein 同调理论/Gorenstein.tex" 1764061999 5430 980e5482cf69cfc4458cd4b14e140858 ""
+  "d:/GitHub/jekyll-latex/assets/PDF/Gorenstein 同调理论/Gorenstein.tex" 1764296792 5534 86c20a87cb137deba7dd4347f9378162 ""
   (generated)
   "Gorenstein.aux"
   "Gorenstein.log"
   "Gorenstein.out"
   "Gorenstein.toc"
   "Gorenstein.xdv"
+  "Section/CompleteCohomology.aux"
   "Section/ProperClass.aux"
   (rewritten before read)

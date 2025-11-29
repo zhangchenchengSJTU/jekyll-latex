@@ -319,6 +319,9 @@ INPUT Gorenstein.aux
 INPUT ./Section/ProperClass.aux
 INPUT ./Section/ProperClass.aux
 INPUT Section/ProperClass.aux
+INPUT ./Section/CompleteCohomology.aux
+INPUT ./Section/CompleteCohomology.aux
+INPUT Section/CompleteCohomology.aux
 OUTPUT Gorenstein.aux
 INPUT c:/texlive/2024/texmf-dist/tex/latex/graphics/color.sty
 INPUT ./Gorenstein.out
@@ -390,6 +393,12 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm7.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
+INPUT ./Section/CompleteCohomology.tex
+INPUT ./Section/CompleteCohomology.tex
+OUTPUT Section/CompleteCohomology.aux
+INPUT ./Section/CompleteCohomology.tex
+INPUT ./Section/CompleteCohomology.tex
+INPUT Section/CompleteCohomology.tex
 INPUT ./Gorenstein.bbl
 INPUT ./Gorenstein.bbl
 INPUT Gorenstein.bbl
@@ -397,5 +406,8 @@ INPUT Gorenstein.aux
 INPUT ./Section/ProperClass.aux
 INPUT ./Section/ProperClass.aux
 INPUT Section/ProperClass.aux
+INPUT ./Section/CompleteCohomology.aux
+INPUT ./Section/CompleteCohomology.aux
+INPUT Section/CompleteCohomology.aux
 INPUT ./Gorenstein.out
 INPUT ./Gorenstein.out
