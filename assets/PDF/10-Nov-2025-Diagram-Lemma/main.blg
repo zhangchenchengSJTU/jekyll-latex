@@ -5,52 +5,46 @@ A level-1 auxiliary file: Sections/Preliminaries.aux
 A level-1 auxiliary file: Sections/HomotopicSquares.aux
 A level-1 auxiliary file: Sections/DiagramLemma.aux
 A level-1 auxiliary file: Sections/SnakeLemma.aux
-The style file: alphaurl.bst
-Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=200001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=4) to 20 items from 10.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
+The style file: Yang.bst
 Database file #1: ref.bib
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 You've used 12 entries,
-            3368 wiz_defined-function locations,
-            802 strings with 8173 characters,
-and the built_in function-call counts, 6474 in all, are:
-= -- 717
-> -- 219
-< -- 4
-+ -- 65
-- -- 62
-* -- 432
-:= -- 939
-add.period$ -- 46
+            2559 wiz_defined-function locations,
+            642 strings with 6371 characters,
+and the built_in function-call counts, 4584 in all, are:
+= -- 369
+> -- 134
+< -- 0
++ -- 59
+- -- 44
+* -- 285
+:= -- 649
+add.period$ -- 36
 call.type$ -- 12
-change.case$ -- 70
-chr.to.int$ -- 12
+change.case$ -- 59
+chr.to.int$ -- 0
 cite$ -- 12
-duplicate$ -- 175
-empty$ -- 565
-format.name$ -- 78
-if$ -- 1599
-int.to.chr$ -- 1
-int.to.str$ -- 0
-missing$ -- 11
-newline$ -- 73
-num.names$ -- 36
-pop$ -- 105
+duplicate$ -- 368
+empty$ -- 389
+format.name$ -- 52
+if$ -- 909
+int.to.chr$ -- 0
+int.to.str$ -- 12
+missing$ -- 100
+newline$ -- 63
+num.names$ -- 24
+pop$ -- 131
 preamble$ -- 1
-purify$ -- 82
+purify$ -- 46
 quote$ -- 0
-skip$ -- 445
+skip$ -- 84
 stack$ -- 0
-substring$ -- 322
-swap$ -- 30
-text.length$ -- 18
-text.prefix$ -- 4
+substring$ -- 286
+swap$ -- 235
+text.length$ -- 0
+text.prefix$ -- 0
 top$ -- 0
-type$ -- 96
+type$ -- 48
 warning$ -- 0
-while$ -- 50
+while$ -- 42
 width$ -- 14
-write$ -- 179
+write$ -- 121

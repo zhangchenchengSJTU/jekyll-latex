@@ -1,8 +1,8 @@
-PWD d:/GitHub/jekyll-latex/assets/PDF/12-Oct-2025-Diagram-Lemma
+PWD d:/GitHub/jekyll-latex/assets/PDF/10-Nov-2025-Diagram-Lemma
 INPUT c:/texlive/2024/texmf.cnf
 INPUT c:/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT d:/GitHub/jekyll-latex/assets/PDF/12-Oct-2025-Diagram-Lemma/main.tex
+INPUT d:/GitHub/jekyll-latex/assets/PDF/10-Nov-2025-Diagram-Lemma/main.tex
 OUTPUT main.log
 INPUT c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
