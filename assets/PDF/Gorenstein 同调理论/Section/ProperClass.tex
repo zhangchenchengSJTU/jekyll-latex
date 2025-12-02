@@ -10,12 +10,34 @@
 记 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 为外三角范畴.
 \end{notation}
 
-\begin{definition}[真类 $\xi$]\label{def:xi}
+\begin{definition}[真类]\label{def:xi}
     称 $\xi$ 是 $\mathbb E$-三角组成的真类, 若满足以下条件:
     \begin{enumerate}
         \item[P1] $\xi$ 对双积与同构封闭, 且包含所有可裂的 $\mathbb E$-三角.
-        \item[P2] $\xi$ 对基变换封闭: 任取 $\xi$-三角 $X \xrightarrow f Y \xrightarrow g Z \overset \delta \dashrightarrow$, 任何 $\gamma^\ast \delta$ 的实现 $X \xrightarrow {f'} Y' \xrightarrow {g'} Z' \overset {\gamma^\ast \delta} \dashrightarrow$ 也属于 $\xi$.
-        \item[P2$^{\mathrm{op}}$] $\xi$ 对余基变换封闭: 任取 $\xi$-三角 $X \xrightarrow f Y \xrightarrow g Z \overset \delta \dashrightarrow$, 任何 $\alpha_\ast \delta$ 的实现 $X' \xrightarrow {f'} Y' \xrightarrow {g'} Z \overset {\alpha\ast \delta} \dashrightarrow$ 也属于 $\xi$.
+        \item[P2] $\xi$ 对基变换和余积变换封闭. 对下图所示的 $\mathbb E$-三角射, 若中间行属于 $\xi$, 则上下行也属于 $\xi$:
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiWCJdLFsxLDEsIlkiXSxbMiwxLCJaIl0sWzMsMSwiXFwsIl0sWzAsMCwiWCJdLFsxLDAsIlknIl0sWzIsMCwiWiciXSxbMCwyLCJYJyciXSxbMSwyLCJZJyciXSxbMiwyLCJaIl0sWzMsMCwiXFwsIl0sWzMsMiwiXFwsIl0sWzAsMSwiZiIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXX0sWzMwLDYwLDYwLDFdXSxbMiwzLCJcXGRlbHRhIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszMCw2MCw2MCwxXV0sWzcsOCwiZicnIiwwLHsiY29sb3VyIjpbMjQwLDYwLDYwXX0sWzI0MCw2MCw2MCwxXV0sWzgsOSwiZycnIiwwLHsiY29sb3VyIjpbMjQwLDYwLDYwXX0sWzI0MCw2MCw2MCwxXV0sWzksMTEsIlxcYWxwaGFfXFxhc3QgXFxkZWx0YSIsMCx7ImNvbG91ciI6WzI0MCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzI0MCw2MCw2MCwxXV0sWzQsNSwiZiciLDAseyJjb2xvdXIiOlsyNDAsNjAsNjBdfSxbMjQwLDYwLDYwLDFdXSxbNSw2LCJnJyIsMCx7ImNvbG91ciI6WzI0MCw2MCw2MF19LFsyNDAsNjAsNjAsMV1dLFs2LDEwLCJcXGdhbW1hXlxcYXN0IFxcZGVsdGEiLDAseyJjb2xvdXIiOlsyNDAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFsyNDAsNjAsNjAsMV1dLFsxLDIsImciLDAseyJjb2xvdXIiOlszMCw2MCw2MF19LFszMCw2MCw2MCwxXV0sWzUsMSwiXFxnYW1tYSciXSxbMCw3LCJcXGFscGhhIl0sWzEsOCwiXFxhbHBoYSciXSxbNiwyLCJcXGdhbW1hIl0sWzQsMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw5LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	X \& {Y'} \& {Z'} \& {\,} \\
+	X \& Y \& Z \& {\,} \\
+	{X''} \& {Y''} \& Z \& {\,}
+	\arrow["{f'}", color={rgb,255:red,92;green,92;blue,214}, from=1-1, to=1-2]
+	\arrow[equals, from=1-1, to=2-1]
+	\arrow["{g'}", color={rgb,255:red,92;green,92;blue,214}, from=1-2, to=1-3]
+	\arrow["{\gamma'}", from=1-2, to=2-2]
+	\arrow["{\gamma^\ast \delta}", color={rgb,255:red,92;green,92;blue,214}, dashed, from=1-3, to=1-4]
+	\arrow["\gamma", from=1-3, to=2-3]
+	\arrow["f", color={rgb,255:red,214;green,153;blue,92}, from=2-1, to=2-2]
+	\arrow["\alpha", from=2-1, to=3-1]
+	\arrow["g", color={rgb,255:red,214;green,153;blue,92}, from=2-2, to=2-3]
+	\arrow["{\alpha'}", from=2-2, to=3-2]
+	\arrow["\delta", color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-3, to=2-4]
+	\arrow[equals, from=2-3, to=3-3]
+	\arrow["{f''}", color={rgb,255:red,92;green,92;blue,214}, from=3-1, to=3-2]
+	\arrow["{g''}", color={rgb,255:red,92;green,92;blue,214}, from=3-2, to=3-3]
+	\arrow["{\alpha_\ast \delta}", color={rgb,255:red,92;green,92;blue,214}, dashed, from=3-3, to=3-4]
+\end{tikzcd}.
+		\end{equation}
         \item[P3] $\xi$ 饱和: 给定 $\delta_1$ 与 $\delta_2$ 实现的``拉回''
         \begin{equation}\label{eq:P3}
 % https://q.uiver.app/#q=WzAsMTIsWzAsMSwiXFxjZG90Il0sWzEsMSwiXFxjZG90Il0sWzEsMCwiXFxjZG90Il0sWzIsMCwiXFxjZG90Il0sWzIsMSwiXFxjZG90Il0sWzEsMiwiXFxjZG90Il0sWzAsMiwiXFxjZG90Il0sWzIsMiwiXFxjZG90Il0sWzMsMSwiXFwsICJdLFszLDIsIlxcLCAiXSxbMiwzLCJcXCwgIl0sWzEsMywiXFwsICJdLFswLDYsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsMywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwxLCIiLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDQsIiIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsOCwiXFxkZWx0YV8xJyIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzAsNjAsNjAsMV1dLFsyLDEsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDUsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDExLCJcXGRlbHRhXzInIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsNCwiIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfV0sWzQsNywiIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfV0sWzcsMTAsIlxcZGVsdGFfMiIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzAsNjAsNjAsMV1dLFs2LDUsIiIsMCx7ImNvbG91ciI6WzI0MCw2MCw2MF19XSxbNSw3LCIiLDAseyJjb2xvdXIiOlsyNDAsNjAsNjBdfV0sWzcsOSwiXFxkZWx0YV8xIiwwLHsiY29sb3VyIjpbMjQwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjQwLDYwLDYwLDFdXV0=
@@ -48,10 +70,6 @@
     \Cref{def:xi} 中的``真类 (proper class)''无关集合论中的``真类''概念.
 \end{remark}
 
-\begin{remark}
-    可对偶地定义 P3$^{\mathrm{op}}$. 这是 \cref{thm:proper_class_extriangulated} 的推论.
-\end{remark}
-
 \begin{notation}
     方便起见, 将 $\xi$ 中三角标注作橘色 ($\color{rgb,255:red,214;green,153;blue,92}\blacksquare$). 引入 $\xi$-三角, $\xi$-扩张元, $\xi$-单射, $\xi$-满射等名称. 
 \end{notation}
@@ -63,11 +81,13 @@
         \item $\mathfrak s_\xi$ 即 $\mathfrak s$ 在 $\mathbb E_\xi$ 上的限制.
     \end{enumerate}
     \begin{proof}
-        ($\gets$). P1, P2, P2$^{\mathrm{op}}$ 由 $\mathbb E_\xi$ 的加法双函子性保证. P3 证明如下. 假定 \cref{eq:P3} 中 $\delta_1'$, $\delta_2$ 是 $\xi$-扩张元, 由 P2 知 $\delta_2'$ 也是 $\xi$-扩张元. $\delta_1$ 可在外三角范畴 $(\mathcal{C}, \mathbb E_\xi, \mathfrak s_\xi)$ 中直接构造. 
+		方便起见, 将外三角范畴 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 与带特定结构的加法范畴 $(\mathcal{C}, \mathbb E_\xi, \mathfrak s)$ 分别称作大范畴与小范畴. 
+		\\
+        ($\gets$). 假定小范畴是外三角范畴, 下证 $\xi$ 是真类. P1 与 P2 由 $\mathbb E_\xi$ 的加法双函子性保证. P3 证明如下. 假定 \cref{eq:P3} 中 $\delta_1'$, $\delta_2$ 是 $\xi$-扩张元, 由 P2 知 $\delta_2'$ 也是 $\xi$-扩张元. 由图表定理, $\delta_1$ 可在小范畴中直接构造. 
 
         ($\to$). ET1, ET2, ET3, ET3$^{\mathrm{op}}$ 显然成立. 只需验证 ET4 与 ET4$^{\mathrm{op}}$.
         \begin{enumerate}
-            \item (ET4 的验证). 给定 $\xi$-单射 $s$ 与 $f$ 的复合, 在原先的外三角范畴中作同伦的 ET4 图
+            \item (ET4 的验证). 给定 $\xi$-单射 $s$ 与 $f$ 的复合, 在大范畴中作同伦的 ET4 图
             \begin{equation}
 % https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFsxLDAsIlkiXSxbMiwwLCJaIl0sWzEsMSwiQSJdLFsxLDIsIkMiXSxbMCwxLCJYIl0sWzIsMSwiQiJdLFsyLDIsIkMiXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbMSwyLCJnIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfSxbMzAsNjAsNjAsMV1dLFsxLDMsInMiLDAseyJjb2xvdXIiOlszMCw2MCw2MF19LFszMCw2MCw2MCwxXV0sWzMsNCwidCIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXX0sWzMwLDYwLDYwLDFdXSxbMCwxLCJmIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfSxbMzAsNjAsNjAsMV1dLFswLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw4LCJcXGRlbHRhIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszMCw2MCw2MCwxXV0sWzUsMywic2YiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMyw2LCJwIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsOSwiXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDEwLCJcXGV0YSIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzAsNjAsNjAsMV1dLFsyLDYsIm0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw3LCJuIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsMTEsIlxca2FwcGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSw2LCJcXHNxdWFyZSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
 \begin{tikzcd}[ampersand replacement=\&]
@@ -92,9 +112,9 @@
 	\arrow["\kappa", dashed, from=3-3, to=4-3]
 \end{tikzcd}.
             \end{equation}
-            直接地, $\kappa = g_\ast \eta$ 与 $n^\ast \eta$ 都是 $\xi$-扩张元. 作交换图 (ET4 给出 $n^\ast \eta = f_\ast \varepsilon$):
-            \begin{equation}
-% https://q.uiver.app/#q=WzAsMTIsWzIsMCwiWSAiXSxbMiwxLCJaIFxcb3BsdXMgQSJdLFsyLDIsIkIiXSxbMiwzLCJcXCwiXSxbMCwyLCJYIl0sWzEsMiwiQSJdLFszLDIsIlxcLCJdLFsxLDAsIlkiXSxbMCwxLCJYIl0sWzEsMSwiWSBcXG9wbHVzIEEiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMCwxLCJcXGJpbm9te2d9e3N9IiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfSxbMzAsNjAsNjAsMV1dLFsxLDIsIigtbSxwKSIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXX0sWzMwLDYwLDYwLDFdXSxbMiwzLCJuXlxcYXN0IFxcZXRhIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszMCw2MCw2MCwxXV0sWzQsNSwic2YiXSxbNSwyLCJwIl0sWzIsNiwiXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDQsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNyw5LCJcXGJpbm9tIDEwIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszMCw2MCw2MCwxXV0sWzksNSwiKDAsMSkiLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzMwLDYwLDYwLDFdXSxbMSwxMCwiXFxkZWx0YSBcXG9wbHVzIDAiLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzMwLDYwLDYwLDFdXSxbNSwxMSwiMCIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzAsNjAsNjAsMV1dLFs4LDksIiIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzksMSwiIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+            直接地, $\kappa = g_\ast \eta$ 与 $n^\ast \eta = f_\ast \varepsilon$ 都是 $\xi$-扩张元. 在大范畴中作``拉回'':
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsMTIsWzIsMCwiWSAiXSxbMiwxLCJaIFxcb3BsdXMgQSJdLFsyLDIsIkIiXSxbMiwzLCJcXCwiXSxbMCwyLCJYIl0sWzEsMiwiQSJdLFszLDIsIlxcLCJdLFsxLDAsIlkiXSxbMCwxLCJYIl0sWzEsMSwiWSBcXG9wbHVzIEEiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMCwxLCJcXGJpbm9te2d9e3N9IiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfSxbMzAsNjAsNjAsMV1dLFsxLDIsIigtbSxwKSIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXX0sWzMwLDYwLDYwLDFdXSxbMiwzLCJuXlxcYXN0IFxcZXRhIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszMCw2MCw2MCwxXV0sWzQsNSwic2YiXSxbNSwyLCJwIl0sWzIsNiwiXFx2YXJlcHNpbG9uICIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDQsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNyw5LCJcXGJpbm9tIDEwIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszMCw2MCw2MCwxXV0sWzksNSwiKDAsMSkiLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzMwLDYwLDYwLDFdXSxbMSwxMCwiXFxkZWx0YSBcXG9wbHVzIDAiLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzMwLDYwLDYwLDFdXSxbNSwxMSwiMCIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzAsNjAsNjAsMV1dLFs4LDksIlxcYmlub20ge2Z9ezB9IiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszMCw2MCw2MCwxXV0sWzksMSwiZ1xcb3BsdXMgMV9BIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszMCw2MCw2MCwxXV1d
 \begin{tikzcd}[ampersand replacement=\&]
 	\& Y \& {Y } \\
 	X \& {Y \oplus A} \& {Z \oplus A} \& {\,} \\
@@ -103,9 +123,9 @@
 	\arrow[equals, from=1-2, to=1-3]
 	\arrow["{\binom 10}", color={rgb,255:red,214;green,153;blue,92}, dashed, from=1-2, to=2-2]
 	\arrow["{\binom{g}{s}}", color={rgb,255:red,214;green,153;blue,92}, from=1-3, to=2-3]
-	\arrow[color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-1, to=2-2]
+	\arrow["{\binom {f}{0}}", color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-1, to=2-2]
 	\arrow[equals, from=2-1, to=3-1]
-	\arrow[color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-2, to=2-3]
+	\arrow["{g\oplus 1_A}", color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-2, to=2-3]
 	\arrow["{(0,1)}", color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-2, to=3-2]
 	\arrow["{\delta \oplus 0}", color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-3, to=2-4]
 	\arrow["{(-m,p)}", color={rgb,255:red,214;green,153;blue,92}, from=2-3, to=3-3]
@@ -115,9 +135,9 @@
 	\arrow["{\varepsilon }", dashed, from=3-3, to=3-4]
 	\arrow["{n^\ast \eta}", color={rgb,255:red,214;green,153;blue,92}, dashed, from=3-3, to=4-3]
 \end{tikzcd}.
-            \end{equation}
-            由 P3 得 $X \xrightarrow{sf} Y' \xrightarrow p Z \overset {\delta \oplus 0} \dashrightarrow$ 是 $\xi$-三角.
-            \item (ET4$^{\mathrm{op}}$ 的验证). 给定 $\xi$-满射 $n$ 与 $p$ 的复合, 在原先的外三角范畴中作同伦的 ET4$^{\mathrm{op}}$ 图
+\end{equation}
+            由 P3 得 $X \xrightarrow{sf} A \xrightarrow p Y \overset {\delta} \dashrightarrow$ 是 $\xi$-三角.
+            \item (ET4$^{\mathrm{op}}$ 的验证). 给定 $\xi$-满射 $n$ 与 $p$ 的复合, 在大范畴中作同伦的 ET4$^{\mathrm{op}}$ 图
             \begin{equation}
 % https://q.uiver.app/#q=WzAsMTIsWzAsMCwiWCJdLFsxLDAsIlkiXSxbMiwwLCJaIl0sWzEsMSwiQSJdLFsxLDIsIkMiXSxbMCwxLCJYIl0sWzIsMSwiQiJdLFsyLDIsIkMiXSxbMywwLCJcXCwiXSxbMywxLCJcXCwiXSxbMSwzLCJcXCwiXSxbMiwzLCJcXCwiXSxbMSwyLCJnIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMywicyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDQsIm5wIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMSwiZiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNywiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw4LCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMywiaSIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXX0sWzMwLDYwLDYwLDFdXSxbMyw2LCJwIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfSxbMzAsNjAsNjAsMV1dLFs2LDksIlxcdmFyZXBzaWxvbiAiLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzMwLDYwLDYwLDFdXSxbNCwxMCwiXFxldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw2LCJtIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfSxbMzAsNjAsNjAsMV1dLFs2LDcsIm4iLDAseyJjb2xvdXIiOlszMCw2MCw2MF19LFszMCw2MCw2MCwxXV0sWzcsMTEsIlxca2FwcGEiLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzMwLDYwLDYwLDFdXSxbMSw2LCJcXHNxdWFyZSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
 \begin{tikzcd}[ampersand replacement=\&]
@@ -142,21 +162,21 @@
 	\arrow["\kappa", color={rgb,255:red,214;green,153;blue,92}, dashed, from=3-3, to=4-3]
 \end{tikzcd}.
             \end{equation}
-            直接地, $\delta = m^\ast \varepsilon$ 与 $f_\ast \varepsilon$ 都是 $\xi$-扩张元. 作交换图 (ET4$^{\mathrm{op}}$ 给出 $f_\ast \varepsilon = n^\ast \eta$):
-            \begin{equation}
-% https://q.uiver.app/#q=WzAsMTIsWzAsMiwiWSJdLFsxLDIsIkEiXSxbMiwyLCJDIl0sWzIsMSwiQiJdLFsyLDAsIloiXSxbMCwxLCJZIl0sWzEsMSwiQSBcXG9wbHVzIFoiXSxbMSwwLCJaIl0sWzMsMiwiXFwsIl0sWzIsMywiXFwsIl0sWzMsMSwiXFwsIl0sWzEsMywiXFwsIl0sWzAsMSwicyJdLFsxLDIsIm5wIl0sWzIsOCwiXFxldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCwzLCJtIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfSxbMzAsNjAsNjAsMV1dLFszLDIsIm4iLDAseyJjb2xvdXIiOlszMCw2MCw2MF19LFszMCw2MCw2MCwxXV0sWzIsOSwiXFxrYXBwYSIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzAsNjAsNjAsMV1dLFs1LDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsNCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNyw2LCIiLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDEsIiIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNiwiIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywxMCwiZl9cXGFzdCBcXHZhcmVwc2lsb24gIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszMCw2MCw2MCwxXV0sWzEsMTEsIjAiLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzMwLDYwLDYwLDFdXSxbNiwzLCIiLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+            直接地, $\delta = m^\ast \varepsilon$ 与 $n^\ast \eta = f_\ast \varepsilon$ 都是 $\xi$-扩张元. 在大范畴中作``拉回'':
+\begin{equation}
+	% https://q.uiver.app/#q=WzAsMTIsWzAsMiwiWSJdLFsxLDIsIkEiXSxbMiwyLCJDIl0sWzIsMSwiQiJdLFsyLDAsIloiXSxbMCwxLCJZIl0sWzEsMSwiQSBcXG9wbHVzIFoiXSxbMSwwLCJaIl0sWzMsMiwiXFwsIl0sWzIsMywiXFwsIl0sWzMsMSwiXFwsIl0sWzEsMywiXFwsIl0sWzAsMSwicyJdLFsxLDIsIm5wIl0sWzIsOCwiXFxldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCwzLCJtIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfSxbMzAsNjAsNjAsMV1dLFszLDIsIm4iLDAseyJjb2xvdXIiOlszMCw2MCw2MF19LFszMCw2MCw2MCwxXV0sWzIsOSwiXFxrYXBwYSIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzAsNjAsNjAsMV1dLFs1LDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsNCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNyw2LCJcXGJpbm9tIDAxIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszMCw2MCw2MCwxXV0sWzYsMSwiKDEsMCkiLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzMwLDYwLDYwLDFdXSxbNSw2LCJcXGJpbm9tIHtzfXstZ30iLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzMwLDYwLDYwLDFdXSxbMywxMCwiZl9cXGFzdCBcXHZhcmVwc2lsb24gIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszMCw2MCw2MCwxXV0sWzEsMTEsIjAiLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzMwLDYwLDYwLDFdXSxbNiwzLCIocCxtKSIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMzAsNjAsNjAsMV1dXQ==
 \begin{tikzcd}[ampersand replacement=\&]
 	\& Z \& Z \\
 	Y \& {A \oplus Z} \& B \& {\,} \\
 	Y \& A \& C \& {\,} \\
 	\& {\,} \& {\,}
 	\arrow[equals, from=1-2, to=1-3]
-	\arrow[color={rgb,255:red,214;green,153;blue,92}, dashed, from=1-2, to=2-2]
+	\arrow["{\binom 01}", color={rgb,255:red,214;green,153;blue,92}, dashed, from=1-2, to=2-2]
 	\arrow["m", color={rgb,255:red,214;green,153;blue,92}, from=1-3, to=2-3]
-	\arrow[color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-1, to=2-2]
+	\arrow["{\binom {s}{-g}}", color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-1, to=2-2]
 	\arrow[equals, from=2-1, to=3-1]
-	\arrow[color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-2, to=2-3]
-	\arrow[color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-2, to=3-2]
+	\arrow["{(p,m)}", color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-2, to=2-3]
+	\arrow["{(1,0)}", color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-2, to=3-2]
 	\arrow["{f_\ast \varepsilon }", color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-3, to=2-4]
 	\arrow["n", color={rgb,255:red,214;green,153;blue,92}, from=2-3, to=3-3]
 	\arrow["s", from=3-1, to=3-2]
@@ -165,16 +185,16 @@
 	\arrow["\eta", dashed, from=3-3, to=3-4]
 	\arrow["\kappa", color={rgb,255:red,214;green,153;blue,92}, dashed, from=3-3, to=4-3]
 \end{tikzcd}.
-            \end{equation}
+\end{equation}
             由 P3 得 $Y \xrightarrow{s} A \xrightarrow{np} C \overset \eta \dashrightarrow$ 是 $\xi$-三角.
         \end{enumerate}
     \end{proof}
 \end{theorem}
 
 \begin{proposition}
-    考虑 \cref{thm:proper_class_extriangulated} 给出的外三角子范畴 $(\mathcal{C},\mathbb E_\xi, \mathfrak s_\xi) \subseteq (\mathcal{C}, \mathbb E, \mathfrak s)$. 若 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 弱幂等完备, 则 $(\mathcal{C},\mathbb E_\xi, \mathfrak s_\xi)$ 亦然.
+    若 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 弱幂等完备, 则 $(\mathcal{C},\mathbb E_\xi, \mathfrak s_\xi)$ 亦然.
     \begin{proof}
-        依照 WIC 的等价定义, 只需证明, 若 $\binom i0 : A \to B \oplus C$ 是 $\xi$-单射, 则 $i$ 是 $\xi$-单射. 由 WIC 条件, $i$ 是 $\mathbb E$-单射, 从而有交换图
+        即证, 若 $\binom i0 : A \to B \oplus C$ 是 $\xi$-单射, 则 $i$ 是 $\xi$-单射. 由 WIC 条件, $i$ 是 $\mathbb E$-单射, 从而有交换图
         \begin{equation}
 % https://q.uiver.app/#q=WzAsOCxbMCwwLCJBIl0sWzAsMSwiQSJdLFsxLDEsIkIgXFxvcGx1cyBDIl0sWzEsMCwiQiJdLFsyLDEsIk0iXSxbMiwwLCJNJyJdLFszLDAsIlxcLCJdLFszLDEsIlxcLCJdLFswLDMsImkiXSxbMyw1LCJwIl0sWzMsMiwiXFxiaW5vbSAxMCJdLFswLDEsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMiwiXFxiaW5vbSBpMCIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXX0sWzMwLDYwLDYwLDFdXSxbMiw0LCIiLDAseyJjb2xvdXIiOlszMCw2MCw2MF19XSxbNSw2LCJcXGRlbHRhJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDcsIlxcZGVsdGEiLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzMwLDYwLDYwLDFdXSxbNSw0LCJcXGdhbW1hIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
 \begin{tikzcd}[ampersand replacement=\&]
@@ -191,34 +211,18 @@
 	\arrow["\delta", color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-3, to=2-4]
 \end{tikzcd}.
         \end{equation} 
-        由 ET3 构造 $\gamma$. 从而 $\delta' = \gamma^\ast \delta$ 是 $\xi$-扩张元, 即 $i$ 是 $\xi$-单射.
+        由 ET3 构造 $\gamma$. 此时 $\delta' = \gamma^\ast \delta$ 是 $\xi$-扩张元, 因此 $i$ 是 $\xi$-单射.
     \end{proof}
 \end{proposition}
 
 \subsection{\texorpdfstring{$\xi$}{}-同调代数}
 
-% \begin{definition}[投射对象]
-%     $P$ 是投射对象, 若以下等价命题 (证明略) 成立:
-%     \begin{enumerate}
-%         \item 对所有 $\mathbb E$-满射 $g$, 群同态 $(P, g)$ 满;
-%         \item $\mathbb E(P, -)$ 是零函子, 即所有 $\mathbb E$-三角 $A \xrightarrow f B \xrightarrow g P \overset \delta \dashrightarrow$ 可裂.
-%     \end{enumerate}
-% \end{definition}
-
-% \begin{notation}
-%     记 $\mathcal{P}$ 是投射对象构成的子范畴.
-% \end{notation}
-
-% \begin{remark}
-%     $\mathcal{P}$ 对扩张 (含直和) 与形变收缩 (含直和项) 封闭. $\mathcal{P}$ 作为外三角子范畴是半单 Abel 范畴.
-% \end{remark}
-
 \begin{notation}
-    往后选定真类 $\xi$.
+    往后假定范畴弱幂等完备. 取定真类 $\xi$.
 \end{notation}
 
-\begin{definition}[$\mathcal{P}(\xi)$-投射对象]
-    称 $X$ 是 $\xi$ 投射对象, 若对一切 $\xi$-三角 $A \xrightarrow f B \xrightarrow g C \overset \delta \dashrightarrow$, 有短正合列
+\begin{definition}[$\xi$-投射对象]
+    称 $X$ 是 $\xi$-投射对象, 若对一切 $\xi$-三角 $A \xrightarrow f B \xrightarrow g C \overset \delta \dashrightarrow$, 有短正合列
     \begin{equation}
         0 \to (X,A) \xrightarrow {(X,f)} (X,B) \xrightarrow {(X,g)} (X,C) \to 0.
     \end{equation}
@@ -229,26 +233,33 @@
 \end{remark}
 
 \begin{notation}
-    记 $\mathcal{P}(\xi)$ 是 $\xi$ 投射对象构成的类, 其对余积 (若存在) 与缩回封闭.
+    记 $\mathcal{P}(\xi)$ 是 $\xi$-投射对象构成的类.
 \end{notation}
 
 \begin{remark}
-    $\mathcal{P}(\xi)$ 显然是 $(\mathcal{C}, \mathbb E_\xi, \mathfrak s_\xi)$ 的外三角子范畴, 且是半单 Abel 范畴.
-	
-	$\mathcal{P}(\xi)$ 未必是 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 的外三角子范畴.
+    其对余积 (若存在) 与缩回封闭. $\mathcal{P}(\xi)$ 显然是 $(\mathcal{C}, \mathbb E_\xi, \mathfrak s_\xi)$ 的外三角子范畴, 且是半单 Abel 范畴; 但是 $\mathcal{P}(\xi)$ 未必是 $(\mathcal{C}, \mathbb E, \mathfrak s)$ 的外三角子范畴.
 \end{remark}
 
-\begin{definition}[足够 $\mathcal{P}(\xi)$-投射对象]
-    称外三角范畴有足够 $\mathcal{P}(\xi)$-投射对象, 若对任意对象 $A$, 存在 $\xi$-三角 $K \xrightarrow f P \xrightarrow g A \overset \delta \dashrightarrow$ 使得 $P$ 是 $\mathcal{P}(\xi)$-投射对象.
-\end{definition}
+\begin{notation}
+    假定外三角范畴有足够 $\mathcal{P}(\xi)$-投射对象. 即是说, 对任意对象 $A$ 都存在 $\xi$-三角 $K \xrightarrow f P \xrightarrow g A \overset \delta \dashrightarrow$ 使得 $P$ 是 $\mathcal{P}(\xi)$-投射对象.
+\end{notation}
 
 \begin{proposition}
-    假定范畴有足够 $\mathcal{P}(\xi)$-投射对象. 则 $\mathbb E$-三角 $X \xrightarrow f Y \xrightarrow g Z \overset \delta \dashrightarrow$ 是 $\xi$-三角当且仅当对所有 $\mathcal{P}(\xi)$-投射对象 $P$, 有正合列
+	$\mathcal{P}(\xi)$-投射预盖恰好是 $\mathcal{P}(\xi)$ 出发的 $\xi$-满射.
+\begin{proof}
+	任取 $\mathcal{P}(\xi)$-投射预盖 $q : Q \to A$. 存在 $\xi$-三角 $K \xrightarrow f P \xrightarrow g A \overset \delta \dashrightarrow$. 由投射预盖的定义, $g$ 经 $q$ 分解. 由 WIC, $q$ 是 $\xi$-满射. 反之, 设 $q : Q \to A$ 是 $\mathcal{P}(\xi)$ 出发的 $\xi$-满射. 由定义知 $(-, q)$ 映 $\mathcal{P}(\xi)$ 为满射, 从而 $q$ 是 $\mathcal{P}(\xi)$-投射预盖.
+\end{proof}
+\end{proposition}
+
+下一引理说明 $\xi$-三角与 $\mathcal{P}(\xi)$-投射对象通过某种``垂直配对''决定彼此.
+
+\begin{proposition}
+    假定范畴有足够 $\mathcal{P}(\xi)$-投射对象. 则 $\mathbb E$-三角 $X \xrightarrow f Y \xrightarrow g Z \overset \delta \dashrightarrow$ 是 $\xi$-三角, 当且仅当对所有 $\mathcal{P}(\xi)$-投射对象 $P$ 都有短正合列
     \begin{equation}
         0 \to (P,X) \xrightarrow {(P,f)} (P,Y) \xrightarrow {(P,g)} (P,Z) \to 0.
     \end{equation}
     \begin{proof}
-        仅证明 ($\gets$) 部分. 给定 $\mathbb E$-三角 $X \xrightarrow f Y \xrightarrow g Z \overset \delta \dashrightarrow$. 由范畴有足够 $\mathcal{P}(\xi)$-投射对象, 作交换图,
+        仅证明 ($\gets$) 部分. 给定 $\mathbb E$-三角 $X \xrightarrow f Y \xrightarrow g Z \overset \delta \dashrightarrow$. 由范畴有足够 $\mathcal{P}(\xi)$-投射对象, 作交换图
         \begin{equation}
 % https://q.uiver.app/#q=WzAsMTIsWzAsMiwiWCJdLFsxLDIsIlkiXSxbMiwyLCJaIl0sWzMsMiwiXFwsIl0sWzIsMSwiUCJdLFsyLDAsIksiXSxbMiwzLCJcXCwiXSxbMSwwLCJLIl0sWzAsMSwiWCJdLFsxLDEsIlggXFxvcGx1cyBQIl0sWzEsMywiXFwsIl0sWzMsMSwiXFwsIl0sWzAsMSwiZiJdLFsxLDIsImciXSxbMiwzLCJcXGRlbHRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNCwiIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfV0sWzQsMiwiIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfV0sWzIsNiwiIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCwwLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs3LDUsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsOSwiIiwyLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOSw0LCIiLDIseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDksIiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDEsIiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDEwLCIiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCwxMSwiIiwyLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
 \begin{tikzcd}[ampersand replacement=\&]
@@ -284,12 +295,48 @@
     约定 $\mathcal{P}(\xi)$ 中对象的 $\mathcal{P}(\xi)$-投射维数为 $0$. 归纳地, 称 $pd_\xi M \leq n + 1$, 若存在 $\xi$-三角 $K \xrightarrow f P \xrightarrow g M \overset \delta \dashrightarrow$ 使得 $P \in \mathcal{P}(\xi)$ 且 $pd_\xi K \leq n$. 称 $pd_\xi M = n$, 若有 $pd_\xi M \leq n$, 但没有 $pd_\xi M \leq n-1$.
 \end{definition}
 
+\begin{lemma}\label{lem:pd_smd}
+	对 $P \in \mathcal{P}(\xi)$, 总有 $pd_\xi M = pd_\xi (M \oplus P)$.
+	\begin{proof}
+		记命题 $\mathfrak M (n)$ 为 ``$pd_\xi M = pd_\xi (M \oplus P)$ 对 $pd_\xi M = n$ 成立'', 证明 $\{\mathfrak M(n)\}_{n \in \mathbb N\cup \{\infty\}}$. 由定义知 $\mathfrak M(0)$ 成立. 假定 $\mathfrak M(\leq n)$ 成立. 今任取 $pd_\xi M = n+1$.
+		\begin{enumerate}
+			\item 一方面, $pd_\xi (M \oplus P) \leq n + 1$. 取 $\xi$-三角 $K \xrightarrow f Q \xrightarrow g M \overset \delta \dashrightarrow$ 使得 $Q \in \mathcal{P}(\xi)$ 且 $pd_\xi K \leq n$. 则有 $\xi$-三角 $K \xrightarrow {\binom f0} Q \oplus P \xrightarrow {(g,0)} M \oplus P \overset {\delta'} \dashrightarrow$.
+			\item 另一方面, $pd_\xi (M \oplus P) \not\leq n$. 假定 $pd_\xi (M \oplus P) \leq n$. 取 $\xi$-三角 $K' \xrightarrow {f'} Q' \xrightarrow {g'} M \oplus P \overset {\delta'} \dashrightarrow$ 使得 $Q' \in \mathcal{P}(\xi)$ 且 $pd_\xi K' \leq (n-1)$. 作交换图
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsMTIsWzAsMSwiSyciXSxbMSwxLCJRJyJdLFsyLDEsIk0gXFxvcGx1cyBQIl0sWzMsMSwiXFwsIl0sWzIsMCwiUCJdLFsyLDIsIk0iXSxbMSwwLCJQIl0sWzAsMiwiSyciXSxbMiwzLCJcXCwiXSxbMSwzLCJcXCwiXSxbMywyLCJcXCwiXSxbMSwyLCJFIl0sWzAsMSwiZiciLDAseyJjb2xvdXIiOlszMCw2MCw2MF19LFszMCw2MCw2MCwxXV0sWzEsMiwiZyciLDAseyJjb2xvdXIiOlszMCw2MCw2MF19LFszMCw2MCw2MCwxXV0sWzIsMywiXFxkZWx0YSciLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzMwLDYwLDYwLDFdXSxbNiw0LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDIsIiIsMCx7ImNvbG91ciI6WzMwLDYwLDYwXX1dLFswLDcsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsMTEsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMSw1LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwxLCIiLDAseyJjb2xvdXIiOlszMCw2MCw2MF19XSxbMSwxMSwiIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdfV0sWzExLDksIjAiLDAseyJjb2xvdXIiOlszMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzMwLDYwLDYwLDFdXSxbMiw1LCIiLDAseyJjb2xvdXIiOlszMCw2MCw2MF19XSxbNSw4LCIwIiwwLHsiY29sb3VyIjpbMzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFszMCw2MCw2MCwxXV0sWzUsMTAsIlxcdmFyZXBzaWxvbiAiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&]
+	\& P \& P \\
+	{K'} \& {Q'} \& {M \oplus P} \& {\,} \\
+	{K'} \& E \& M \& {\,} \\
+	\& {\,} \& {\,}
+	\arrow[equals, from=1-2, to=1-3]
+	\arrow[color={rgb,255:red,214;green,153;blue,92}, from=1-2, to=2-2]
+	\arrow[color={rgb,255:red,214;green,153;blue,92}, from=1-3, to=2-3]
+	\arrow["{f'}", color={rgb,255:red,214;green,153;blue,92}, from=2-1, to=2-2]
+	\arrow[equals, from=2-1, to=3-1]
+	\arrow["{g'}", color={rgb,255:red,214;green,153;blue,92}, from=2-2, to=2-3]
+	\arrow[color={rgb,255:red,214;green,153;blue,92}, from=2-2, to=3-2]
+	\arrow["{\delta'}", color={rgb,255:red,214;green,153;blue,92}, dashed, from=2-3, to=2-4]
+	\arrow[color={rgb,255:red,214;green,153;blue,92}, from=2-3, to=3-3]
+	\arrow[dashed, from=3-1, to=3-2]
+	\arrow[dashed, from=3-2, to=3-3]
+	\arrow["0", color={rgb,255:red,214;green,153;blue,92}, dashed, from=3-2, to=4-2]
+	\arrow["{\varepsilon }", dashed, from=3-3, to=3-4]
+	\arrow["0", color={rgb,255:red,214;green,153;blue,92}, dashed, from=3-3, to=4-3]
+\end{tikzcd}.
+			\end{equation}
+			此处 $E$ 是 $Q'$ 的直和项. 由底行得 $pd_\xi M \leq n$, 矛盾.
+		\end{enumerate}
+		最后证明 $\mathfrak M(\infty)$. 实际上, 以上第二步说明 $pd_\xi (M \oplus P) \geq pd_\xi M$, 从而得证.
+	\end{proof}
+\end{lemma}
+
 \begin{remark}\label{rmk:pd_well_defined}
-    投射维数的归纳定义无关 $\mathcal{P}(\xi)$-投射模的选取: 假定有 $\xi$-三角
+    投射维数的归纳定义无关 $\mathcal{P}(\xi)$-投射模的选取. 可使用若松技巧证明, 假定有 $\xi$-三角
     \begin{equation}
         K_1 \xrightarrow{f_1} P_1 \xrightarrow{g_1} X \overset {\delta_1} \dashrightarrow, \quad K_2 \xrightarrow{f_2} P_2 \xrightarrow{g_2} X \overset {\delta_2} \dashrightarrow,
     \end{equation}
-    两者在 $X$ 处的拉回是两条可裂的 $\xi$-三角, 从而 $K_1 \oplus P_2 \cong K_2 \oplus P_1$. 进而 $pd_\xi K_1 = pd_\xi K_2$.
+    两者在 $X$ 处的拉回是两条可裂的 $\xi$-三角, 从而 $K_1 \oplus P_2 \cong K_2 \oplus P_1$. 依照 \cref{lem:pd_smd} 得 $pd_\xi K_1 = pd_\xi K_2$. 这一备注是为了说明 \cref{prop:projective_dimension_equiv}.
 \end{remark}
 
 \begin{definition}[完全 $\mathcal{P}(\xi)$-投射分解]
@@ -313,7 +360,7 @@
 	方便起见, 称一个 $\mathbb E$-单射 ($\mathbb E$-满射, 或扩张元) 是 $(-,\mathcal{W})$ 正合的, 若其所在的 $\mathbb E$-三角是 $(-,\mathcal{W})$ 正合的.
 \end{notation}
 
-\begin{proposition}[$\mathcal{P}(\xi)$-投射维数的等价定义]
+\begin{proposition}[$\mathcal{P}(\xi)$-投射维数的等价定义]\label{prop:projective_dimension_equiv}
 	$pd_\xi M \leq n$, 当且仅当对任意 $\xi$-正合复形
 	\begin{equation}
 		K_n \xrightarrow{d_n} P_{n-1} \xrightarrow{d_{n-1}} \cdots \xrightarrow{d_1} P_0 \xrightarrow{d_0} M\quad (P_i \in \mathcal{P}(\xi)),

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.28)  28 NOV 2025 10:36
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.28)  2 DEC 2025 20:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -768,7 +768,7 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@erf=\skip80
 \f@nch@O@olf=\skip81
 \f@nch@O@orf=\skip82
-) (./Gorenstein.aux (./Section/ProperClass.aux) (./Section/CompleteCohomology.aux))
+) (./Gorenstein.aux (./Section/ProperClass.aux))
 \openout1 = `Gorenstein.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
@@ -915,14 +915,7 @@ LaTeX Font Info:    Trying to load font information for U+euf on input line 10.
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [2
 
-] [3] [4] [5] [6] [7] [8] [9] [10] [11]) [12]
-\openout2 = `Section/CompleteCohomology.aux'.
-
- (./Section/CompleteCohomology.tex [13
-
-
-
-]) [14] (./Gorenstein.bbl
+] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12]) [13] (./Gorenstein.bbl
 
 Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
 (fontspec)             doesn't exist).
@@ -946,24 +939,24 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-) [15
+) [14
 
 
-] (./Gorenstein.aux (./Section/ProperClass.aux) (./Section/CompleteCohomology.aux))
+] (./Gorenstein.aux (./Section/ProperClass.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `Gorenstein.out' has not changed.
-(rerunfilecheck)             Checksum: EA21DFA359F255E6BD361A5C3FDE65CA;1367.
+(rerunfilecheck)             Checksum: 79A6850A585389C4783C32B6AAF103E0;936.
  ) 
 Here is how much of TeX's memory you used:
- 37234 strings out of 474773
- 840588 string characters out of 5761289
- 1994842 words of memory out of 5000000
- 58803 multiletter control sequences out of 15000+600000
+ 36697 strings out of 474773
+ 827406 string characters out of 5761289
+ 1987842 words of memory out of 5000000
+ 58273 multiletter control sequences out of 15000+600000
  569051 words of font info for 121 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  131i,16n,135p,3295b,1294s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Gorenstein.xdv (15 pages, 654964 bytes).
+Output written on Gorenstein.xdv (14 pages, 583496 bytes).

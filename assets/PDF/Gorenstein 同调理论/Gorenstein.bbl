@@ -1,15 +1,9 @@
-\begin{thebibliography}{HZZZ21}
+\begin{thebibliography}{HZZ20}
 
 \bibitem[HZZ20]{huProperClassesGorensteinness2020a}
 Jiangsheng Hu, Dongdong Zhang, and Panyue Zhou.
 \newblock Proper classes and {{Gorensteinness}} in extriangulated categories.
 \newblock {\em Journal of Algebra}, 551:23--60, June 2020.
 \newblock \href {https://doi.org/10.1016/j.jalgebra.2019.12.028} {\path{doi:10.1016/j.jalgebra.2019.12.028}}.
-
-\bibitem[HZZZ21]{doi:10.1142/S1005386721000547}
-Jiangsheng Hu, Dongdong Zhang, Tiwei Zhao, and Panyue Zhou.
-\newblock Complete cohomology for extriangulated categories.
-\newblock {\em Algebra Colloquium}, 28(04):701--720, 2021.
-\newblock \href {https://arxiv.org/abs/https://doi.org/10.1142/S1005386721000547} {\path{arXiv:https://doi.org/10.1142/S1005386721000547}}, \href {https://doi.org/10.1142/S1005386721000547} {\path{doi:10.1142/S1005386721000547}}.
 
 \end{thebibliography}
