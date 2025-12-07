@@ -2,7 +2,7 @@
 
 文章见 \cite{doi:10.1142/S1005386721000547}.
 
-\subsection{\texorpdfstring{$\xi$}{}-上同调}
+\subsection{\texorpdfstring{$\xi$}{}-上投射分解}
 
 \begin{notation}
     假定 $(\mathcal{C}, \mathbb E_\xi, \mathfrak s_\xi)$ 有足够投射. 记 $X$ 的投射分解为链复形 $P_X$.
@@ -13,14 +13,14 @@
     \begin{equation}
         M : \cdots \to M_2 \xrightarrow{d_1} M_1 \xrightarrow{d_0} M_0 \to 0.
     \end{equation}
-    称 $\varphi : P \to M$ 是一个投射分解, 若 $P$ 是取值 $\mathcal{P}(\xi)$ 中复形, 且 $\mathrm{Cone}(\varphi)$ 是 $\xi$-正合复形.
+    称 $\varphi : P \to M$ 是一个投射分解, 若链映射 $\varphi$ 的每一项是 $\xi$-满射, $P$ 是取值 $\mathcal{P}(\xi)$ 中复形, 且 $\mathrm{Cone}(\varphi)$ 是 $\xi$-正合复形.
 \end{definition}
 
 \begin{proposition}
     上有界复形的投射分解总是存在的.
     \begin{proof}
         归纳地构造 $P$:
-        \begin{equation}
+        \begin{equation}\label{eq:proj_resol}
 % https://q.uiver.app/#q=WzAsMTIsWzgsMiwiTV8wIl0sWzYsMiwiTV8xIl0sWzQsMiwiTV8yIl0sWzcsMSwiS18wIl0sWzYsMCwiUF8wIl0sWzUsMSwiS18xIl0sWzQsMCwiUF8xIl0sWzIsMiwiTV8zIl0sWzMsMSwiS18yIl0sWzIsMCwiUF8yIl0sWzEsMSwiXFxjZG90cyJdLFswLDIsIlxcY2RvdHMiXSxbMSwwLCJkXzAiXSxbNCwzLCJwXzAiXSxbMywwLCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDMsImZfMCJdLFs1LDQsImdfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDEsInFfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDEsImRfMSJdLFs2LDUsInBfMSJdLFsyLDUsImZfMSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDIsInFfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDYsImdfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDIsImRfMiJdLFs3LDgsImZfMiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDgsInBfMiJdLFsxMCw5LCJnXzMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsNywicV8zIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzExLDcsImRfMyJdLFsxMSwxMCwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzE2LDE1LCJcXHNxdWFyZSIsMyx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMiwyMCwiXFxzcXVhcmUiLDMseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9LCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMjYsMjQsIlxcc3F1YXJlIiwzLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
 \begin{tikzcd}[ampersand replacement=\&, column sep = small]
 	\&\& {P_2} \&\& {P_1} \&\& {P_0} \\
@@ -117,46 +117,336 @@
 \end{proposition}
 
 \begin{remark}
-	若 $\mathrm{Cone}(\varphi)$ 是 $\xi$-正合复形, 则必有 \cref{eq:ho_resol} 中所示的交换图.
+	依照同伦方块的可分裂性, \cref{eq:proj_resol} 可进一步地拆解作下图:
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsMjAsWzQsNSwiTV8wIl0sWzMsNSwiTV8xIl0sWzIsNSwiTV8yIl0sWzEsNSwiTV8zIl0sWzQsNCwiUF8wICJdLFszLDQsIktfezEsMX0iXSxbMiw0LCJLX3syLDF9Il0sWzEsNCwiS197MywxfSJdLFszLDMsIlBfMSJdLFsyLDMsIktfezIsMn0iXSxbMSwzLCJLX3szLDJ9Il0sWzEsMiwiS197MywzfSJdLFsyLDIsIlBfMiJdLFsxLDEsIlBfMyJdLFswLDUsIlxcY2RvdHMiXSxbMCw0LCJcXGNkb3RzIl0sWzAsMywiXFxjZG90cyJdLFswLDIsIlxcY2RvdHMiXSxbMCwxLCJcXGNkb3RzIl0sWzAsMCwiXFxkZG90cyJdLFs0LDAsIlxcb3ZlcmxpbmUge3BfMH0iXSxbMSwwLCJkXk1fMCJdLFsyLDEsImReTV8xIl0sWzMsMiwiZF5NXzIiXSxbMTQsMywiZF5NXzMiXSxbNSw0LCJnX3sxLDF9Il0sWzUsMSwicV97MSwxfSJdLFs2LDUsImdfezIsMX0iXSxbNyw2LCJnX3szLDF9Il0sWzYsMiwicV97MiwxfSJdLFs3LDMsInFfezMsMX0iXSxbOCw1LCJcXG92ZXJsaW5lIHtwXzF9Il0sWzEyLDksIlxcb3ZlcmxpbmUge3BfMn0iXSxbMTMsMTEsIlxcb3ZlcmxpbmUge3BfM30iXSxbOSw4LCJnX3syLDJ9Il0sWzE1LDcsImdfezQsMX0iXSxbMTAsOSwiZ197MywyfSJdLFsxNiwxMCwiZ197NCwyfSJdLFsxMSwxMiwiZ197MywzfSJdLFsxNywxMSwiZ197NCwzfSJdLFsxOCwxMywiZ197NCw0fSJdLFs5LDYsInFfezIsMn0iXSxbMTAsNywicV97MywyfSJdLFsxMSwxMCwicV97MywzfSJdLFsxOSwxM10sWzEzLDEyXSxbMTIsOF0sWzgsNF0sWzgsMSwiIiwwLHsib2Zmc2V0IjoyLCJjdXJ2ZSI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEyLDIsIiIsMCx7Im9mZnNldCI6MiwiY3VydmUiOjEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMywzLCIiLDAseyJvZmZzZXQiOjIsImN1cnZlIjoxLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCwwLCIiLDAseyJvZmZzZXQiOjIsImN1cnZlIjoxLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTgsMTEsIlxcc3F1YXJlIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzExLDksIlxcc3F1YXJlIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksNSwiXFxzcXVhcmUiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSwwLCJcXHNxdWFyZSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDYsIlxcc3F1YXJlIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMTAsIlxcc3F1YXJlIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEwLDE3LCJcXHNxdWFyZSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxNiw3LCJcXHNxdWFyZSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs3LDIsIlxcc3F1YXJlIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMTUsIlxcc3F1YXJlIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&]
+	\ddots \\
+	\cdots \& {P_3} \\
+	\cdots \& {K_{3,3}} \& {P_2} \\
+	\cdots \& {K_{3,2}} \& {K_{2,2}} \& {P_1} \\
+	\cdots \& {K_{3,1}} \& {K_{2,1}} \& {K_{1,1}} \& {P_0 } \\
+	\cdots \& {M_3} \& {M_2} \& {M_1} \& {M_0}
+	\arrow[from=1-1, to=2-2]
+	\arrow["{g_{4,4}}", from=2-1, to=2-2]
+	\arrow["\square"{description}, draw=none, from=2-1, to=3-2]
+	\arrow["{\overline {p_3}}", from=2-2, to=3-2]
+	\arrow[from=2-2, to=3-3]
+	\arrow[shift right=2, curve={height=6pt}, dashed, from=2-2, to=6-2]
+	\arrow["{g_{4,3}}", from=3-1, to=3-2]
+	\arrow["{g_{3,3}}", from=3-2, to=3-3]
+	\arrow["{q_{3,3}}", from=3-2, to=4-2]
+	\arrow["\square"{description}, draw=none, from=3-2, to=4-3]
+	\arrow["{\overline {p_2}}", from=3-3, to=4-3]
+	\arrow[from=3-3, to=4-4]
+	\arrow[shift right=2, curve={height=6pt}, dashed, from=3-3, to=6-3]
+	\arrow["{g_{4,2}}", from=4-1, to=4-2]
+	\arrow["\square"{description}, draw=none, from=4-1, to=5-2]
+	\arrow["\square"{description}, draw=none, from=4-2, to=3-1]
+	\arrow["{g_{3,2}}", from=4-2, to=4-3]
+	\arrow["{q_{3,2}}", from=4-2, to=5-2]
+	\arrow["{g_{2,2}}", from=4-3, to=4-4]
+	\arrow["{q_{2,2}}", from=4-3, to=5-3]
+	\arrow["\square"{description}, draw=none, from=4-3, to=5-4]
+	\arrow["{\overline {p_1}}", from=4-4, to=5-4]
+	\arrow[from=4-4, to=5-5]
+	\arrow[shift right=2, curve={height=6pt}, dashed, from=4-4, to=6-4]
+	\arrow["{g_{4,1}}", from=5-1, to=5-2]
+	\arrow["{g_{3,1}}", from=5-2, to=5-3]
+	\arrow["{q_{3,1}}", from=5-2, to=6-2]
+	\arrow["\square"{description}, draw=none, from=5-2, to=6-3]
+	\arrow["\square"{description}, draw=none, from=5-3, to=4-2]
+	\arrow["{g_{2,1}}", from=5-3, to=5-4]
+	\arrow["{q_{2,1}}", from=5-3, to=6-3]
+	\arrow["{g_{1,1}}", from=5-4, to=5-5]
+	\arrow["{q_{1,1}}", from=5-4, to=6-4]
+	\arrow["\square"{description}, draw=none, from=5-4, to=6-5]
+	\arrow["{\overline {p_0}}", from=5-5, to=6-5]
+	\arrow[shift right=2, curve={height=6pt}, dashed, from=5-5, to=6-5]
+	\arrow["{d^M_3}", from=6-1, to=6-2]
+	\arrow["\square"{description}, draw=none, from=6-2, to=5-1]
+	\arrow["{d^M_2}", from=6-2, to=6-3]
+	\arrow["{d^M_1}", from=6-3, to=6-4]
+	\arrow["\square"{description}, draw=none, from=6-4, to=5-3]
+	\arrow["{d^M_0}", from=6-4, to=6-5]
+\end{tikzcd}.
+	\end{equation}
+	以上所有 $\square$ 是同伦方块. 注意, 同伦方块的横向或纵向合成也是同伦方块.
 \end{remark}
 
-\begin{proposition}
+\begin{proposition}\label{prop:cm_htp}
     取定投射分解. 上有界复形的态射 $\varphi : M \to N$, 诱导了 $\mathcal{P}(\xi)$-投射复形的链映射 $\pi : P \to Q$. 该链映射在同伦意义下唯一.
-    \begin{proof}
-        假定构造了 $\psi : K_{\leq n} \to L_{\leq n}$. 由 $\mathcal{P}(\xi)$-投射对象的性质构造 $\pi_n$, 再由 ET3 构造 $\psi_{n+1}$:
+	\begin{proof}
+		以下竖向态射是 $\xi$-满的. 斜向态射 $K_{i,j} \to L_{i,j}$ 由同伦方块的泛性质诱导, $\psi_i$ 由 $\mathcal{P}(\xi)$-投射对象的性质给出:
 		\begin{equation}
-			% https://q.uiver.app/#q=WzAsMTIsWzIsMCwiUF9uIl0sWzMsMSwiS19uIl0sWzIsMiwiTV97bisxfSJdLFsxLDEsIktfe24rMX0iXSxbMCwyLCJNX3tuICsyfSJdLFswLDAsIlBfe24rMX0iXSxbNCw0LCJMX24iXSxbMywzLCJRX24iXSxbMyw1LCJOX24iXSxbMiw0LCJMX3tuKzF9Il0sWzEsNSwiTl97biArMX0iXSxbMSwzLCJRX3tuKzF9Il0sWzAsMSwicF9uIl0sWzIsMSwiZl9uICJdLFszLDAsImdfe24rMX0iXSxbMywyLCJxX3tuKzF9Il0sWzUsMywicF97biArMX0iXSxbNCwzLCJmX3tuKzF9Il0sWzcsNiwicF9uJyJdLFs5LDcsImdfe24rMX0nIl0sWzgsNiwiZidfbiAiXSxbMTEsOSwicF97bisxfSciXSxbOSw4LCJxX3tuKzF9JyJdLFsxMCw5LCJmX3tuKzF9JyJdLFsxLDYsIlxccHNpIF9uICIsMSx7ImN1cnZlIjotMSwiY29sb3VyIjpbMjQwLDYwLDYwXX0sWzI0MCw2MCw2MCwxXV0sWzAsNywiXFxwaSBfbiAiLDEseyJjdXJ2ZSI6LTEsImNvbG91ciI6WzI0MCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzI0MCw2MCw2MCwxXV0sWzIsOCwiXFx2YXJwaGkgX24gIiwxLHsiY3VydmUiOi0xLCJjb2xvdXIiOlsyNDAsNjAsNjBdfSxbMjQwLDYwLDYwLDFdXSxbMyw5LCJcXHBzaV97bisxfSIsMSx7ImN1cnZlIjotMSwiY29sb3VyIjpbMjQwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMjQwLDYwLDYwLDFdXSxbMTQsMTMsIlxcc3F1YXJlIiwzLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE5LDIwLCJcXHNxdWFyZSIsMyx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
-\begin{tikzcd}[ampersand replacement=\&]
-	{P_{n+1}} \&\& {P_n} \\
-	\& {K_{n+1}} \&\& {K_n} \\
-	{M_{n +2}} \&\& {M_{n+1}} \\
-	\& {Q_{n+1}} \&\& {Q_n} \\
-	\&\& {L_{n+1}} \&\& {L_n} \\
-	\& {N_{n +1}} \&\& {N_n}
-	\arrow["{p_{n +1}}", from=1-1, to=2-2]
-	\arrow["{p_n}", from=1-3, to=2-4]
-	\arrow["{\pi _n }"{description}, color={rgb,255:red,92;green,92;blue,214}, curve={height=-6pt}, dashed, from=1-3, to=4-4]
-	\arrow[""{name=0, anchor=center, inner sep=0}, "{g_{n+1}}", from=2-2, to=1-3]
-	\arrow["{q_{n+1}}", from=2-2, to=3-3]
-	\arrow["{\psi_{n+1}}"{description}, color={rgb,255:red,92;green,92;blue,214}, curve={height=-6pt}, dashed, from=2-2, to=5-3]
-	\arrow["{\psi _n }"{description}, color={rgb,255:red,92;green,92;blue,214}, curve={height=-6pt}, from=2-4, to=5-5]
-	\arrow["{f_{n+1}}", from=3-1, to=2-2]
-	\arrow[""{name=1, anchor=center, inner sep=0}, "{f_n }", from=3-3, to=2-4]
-	\arrow["{\varphi _n }"{description}, color={rgb,255:red,92;green,92;blue,214}, curve={height=-6pt}, from=3-3, to=6-4]
-	\arrow["{p_{n+1}'}", from=4-2, to=5-3]
-	\arrow["{p_n'}", from=4-4, to=5-5]
-	\arrow[""{name=2, anchor=center, inner sep=0}, "{g_{n+1}'}", from=5-3, to=4-4]
-	\arrow["{q_{n+1}'}", from=5-3, to=6-4]
-	\arrow["{f_{n+1}'}", from=6-2, to=5-3]
-	\arrow[""{name=3, anchor=center, inner sep=0}, "{f'_n }", from=6-4, to=5-5]
-	\arrow["\square"{marking, allow upside down}, draw=none, from=0, to=1]
-	\arrow["\square"{marking, allow upside down}, draw=none, from=2, to=3]
+			% https://q.uiver.app/#q=WzAsMzgsWzgsOCwiTV8wIixbMzAwLDYwLDYwLDFdXSxbNiw4LCJNXzEiLFszMDAsNjAsNjAsMV1dLFs0LDgsIk1fMiIsWzMwMCw2MCw2MCwxXV0sWzIsOCwiTV8zIixbMzAwLDYwLDYwLDFdXSxbOCw2LCJQXzAgIixbMzAwLDYwLDYwLDFdXSxbNiw2LCJLX3sxLDF9IixbMzAwLDYwLDYwLDFdXSxbNCw2LCJLX3syLDF9IixbMzAwLDYwLDYwLDFdXSxbMiw2LCJLX3szLDF9IixbMzAwLDYwLDYwLDFdXSxbNiw0LCJQXzEiLFszMDAsNjAsNjAsMV1dLFs0LDQsIktfezIsMn0iLFszMDAsNjAsNjAsMV1dLFsyLDQsIktfezMsMn0iLFszMDAsNjAsNjAsMV1dLFsyLDIsIktfezMsM30iLFszMDAsNjAsNjAsMV1dLFs0LDIsIlBfMiIsWzMwMCw2MCw2MCwxXV0sWzIsMCwiUF8zIixbMzAwLDYwLDYwLDFdXSxbMCw4LCJcXGNkb3RzIixbMzAwLDYwLDYwLDFdXSxbMCw2LCJcXGNkb3RzIixbMzAwLDYwLDYwLDFdXSxbMCw0LCJcXGNkb3RzIixbMzAwLDYwLDYwLDFdXSxbMCwyLCJcXGNkb3RzIixbMzAwLDYwLDYwLDFdXSxbMCwwLCJcXGNkb3RzIixbMzAwLDYwLDYwLDFdXSxbOSw5LCJOXzAiXSxbNyw5LCJOXzEiXSxbNSw5LCJOXzIiXSxbMyw5LCJOXzMiXSxbMSw5LCJcXGNkb3RzIl0sWzEsNywiXFxjZG90cyJdLFsxLDUsIlxcY2RvdHMiXSxbMSwzLCJcXGNkb3RzIl0sWzEsMSwiXFxjZG90cyJdLFs5LDcsIlFfMCJdLFs3LDUsIlFfMSJdLFs1LDMsIlFfMiJdLFszLDEsIlFfMyJdLFs3LDcsIkxfezEsMX0iXSxbNSw3LCJMX3syLDF9Il0sWzUsNSwiTF97MiwyfSJdLFszLDcsIkxfezMsMX0iXSxbMyw1LCJMX3szLDJ9Il0sWzMsMywiTF97MywzfSJdLFs0LDAsIlxcb3ZlcmxpbmUge3BfMH0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsImNvbG91ciI6WzMwMCw2MCw2MF19LFszMDAsNjAsNjAsMV1dLFsxLDAsImReTV8wIiwwLHsibGFiZWxfcG9zaXRpb24iOjMwLCJjb2xvdXIiOlszMDAsNjAsNjBdfSxbMzAwLDYwLDYwLDFdXSxbMiwxLCJkXk1fMSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMCwiY29sb3VyIjpbMzAwLDYwLDYwXX0sWzMwMCw2MCw2MCwxXV0sWzMsMiwiZF5NXzIiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsImNvbG91ciI6WzMwMCw2MCw2MF19LFszMDAsNjAsNjAsMV1dLFsxNCwzLCJkXk1fMyIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMCwiY29sb3VyIjpbMzAwLDYwLDYwXX0sWzMwMCw2MCw2MCwxXV0sWzUsNCwiZ197MSwxfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMCwiY29sb3VyIjpbMzAwLDYwLDYwXX0sWzMwMCw2MCw2MCwxXV0sWzUsMSwicV97MSwxfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMCwiY29sb3VyIjpbMzAwLDYwLDYwXX0sWzMwMCw2MCw2MCwxXV0sWzcsNiwiZ197MywxfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMCwiY29sb3VyIjpbMzAwLDYwLDYwXX0sWzMwMCw2MCw2MCwxXV0sWzYsMiwicV97MiwxfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMCwiY29sb3VyIjpbMzAwLDYwLDYwXX0sWzMwMCw2MCw2MCwxXV0sWzcsMywicV97MywxfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMCwiY29sb3VyIjpbMzAwLDYwLDYwXX0sWzMwMCw2MCw2MCwxXV0sWzgsNSwiXFxvdmVybGluZSB7cF8xfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMCwiY29sb3VyIjpbMzAwLDYwLDYwXX0sWzMwMCw2MCw2MCwxXV0sWzEyLDksIlxcb3ZlcmxpbmUge3BfMn0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsImNvbG91ciI6WzMwMCw2MCw2MF19LFszMDAsNjAsNjAsMV1dLFsxMywxMSwiXFxvdmVybGluZSB7cF8zfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMCwiY29sb3VyIjpbMzAwLDYwLDYwXX0sWzMwMCw2MCw2MCwxXV0sWzksOCwiZ197MiwyfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMCwiY29sb3VyIjpbMzAwLDYwLDYwXX0sWzMwMCw2MCw2MCwxXV0sWzE1LDcsImdfezQsMX0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsImNvbG91ciI6WzMwMCw2MCw2MF19LFszMDAsNjAsNjAsMV1dLFsxMCw5LCJnX3szLDJ9IiwwLHsibGFiZWxfcG9zaXRpb24iOjMwLCJjb2xvdXIiOlszMDAsNjAsNjBdfSxbMzAwLDYwLDYwLDFdXSxbMTYsMTAsImdfezQsMn0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsImNvbG91ciI6WzMwMCw2MCw2MF19LFszMDAsNjAsNjAsMV1dLFsxMSwxMiwiZ197MywzfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMCwiY29sb3VyIjpbMzAwLDYwLDYwXX0sWzMwMCw2MCw2MCwxXV0sWzE3LDExLCJnX3s0LDN9IiwwLHsibGFiZWxfcG9zaXRpb24iOjMwLCJjb2xvdXIiOlszMDAsNjAsNjBdfSxbMzAwLDYwLDYwLDFdXSxbMTgsMTMsImdfezQsNH0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsImNvbG91ciI6WzMwMCw2MCw2MF19LFszMDAsNjAsNjAsMV1dLFs5LDYsInFfezIsMn0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsImNvbG91ciI6WzMwMCw2MCw2MF19LFszMDAsNjAsNjAsMV1dLFsxMCw3LCJxX3szLDJ9IiwwLHsibGFiZWxfcG9zaXRpb24iOjMwLCJjb2xvdXIiOlszMDAsNjAsNjBdfSxbMzAwLDYwLDYwLDFdXSxbMTEsMTAsInFfezMsM30iLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsImNvbG91ciI6WzMwMCw2MCw2MF19LFszMDAsNjAsNjAsMV1dLFsyMywyMiwiZF5OXzMiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzB9XSxbMjIsMjEsImReTl8yIiwwLHsibGFiZWxfcG9zaXRpb24iOjMwfV0sWzIxLDIwLCJkXk5fMSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMH1dLFsyMCwxOSwiZF5OXzAiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzB9XSxbMjgsMTksIlxcb3ZlcmxpbmUge3BfMCd9IiwwLHsibGFiZWxfcG9zaXRpb24iOjMwfV0sWzI5LDMyLCJcXG92ZXJsaW5lIHtwXzEnfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMH1dLFszMCwzNCwiXFxvdmVybGluZSB7cF8yJ30iLDAseyJsYWJlbF9wb3NpdGlvbiI6MzB9XSxbMzEsMzcsIlxcb3ZlcmxpbmUge3BfMyd9IiwwLHsibGFiZWxfcG9zaXRpb24iOjMwfV0sWzMyLDI4LCJnJ197MSwxfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMH1dLFszMywzMiwiZydfezIsMX0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MzB9XSxbMzQsMjksImcnX3syLDJ9IiwwLHsibGFiZWxfcG9zaXRpb24iOjMwfV0sWzM1LDMzLCJnJ197MywxfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMH1dLFszNiwzNCwiZydfezMsMn0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MzB9XSxbMzcsMzAsImcnX3szLDN9IiwwLHsibGFiZWxfcG9zaXRpb24iOjMwfV0sWzI0LDM1LCJnJ197NCwxfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMH1dLFsyNiwzNywiZydfezQsM30iLDAseyJsYWJlbF9wb3NpdGlvbiI6MzB9XSxbMjcsMzEsImcnX3s0LDR9IiwwLHsibGFiZWxfcG9zaXRpb24iOjMwfV0sWzMyLDIwLCJxJ197MSwxfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMH1dLFszNCwzMywicSdfezIsMn0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MzB9XSxbMzMsMjEsInEnX3syLDF9IiwwLHsibGFiZWxfcG9zaXRpb24iOjMwfV0sWzM1LDIyLCJxJ197MywxfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMH1dLFsyNSwzNiwiZydfezQsMn0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MzB9XSxbMzYsMzUsInEnX3szLDJ9IiwwLHsibGFiZWxfcG9zaXRpb24iOjMwfV0sWzM3LDM2LCJxJ197MywzfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjozMH1dLFswLDE5LCJcXHZhcnBoaSBfMCAiLDAseyJjb2xvdXIiOlsxODAsNjAsNjBdfSxbMTgwLDYwLDYwLDFdXSxbMSwyMCwiXFx2YXJwaGlfMSIsMCx7ImNvbG91ciI6WzE4MCw2MCw2MF19LFsxODAsNjAsNjAsMV1dLFsyLDIxLCJcXHZhcnBoaSBfMiIsMCx7ImNvbG91ciI6WzE4MCw2MCw2MF19LFsxODAsNjAsNjAsMV1dLFszLDIyLCJcXHZhcnBoaSBfMyIsMCx7ImNvbG91ciI6WzE4MCw2MCw2MF19LFsxODAsNjAsNjAsMV1dLFs0LDI4LCJcXHBzaSBfMCIsMCx7ImNvbG91ciI6WzEyMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX0sWzEyMCw2MCw2MCwxXV0sWzUsMzIsIiIsMSx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDUsImdfezIsMX0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsImNvbG91ciI6WzMwMCw2MCw2MF19LFszMDAsNjAsNjAsMV1dLFs2LDMzLCIiLDEseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNywzNSwiIiwxLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsMjksIlxccHNpIF8xIiwwLHsiY29sb3VyIjpbMTIwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMTIwLDYwLDYwLDFdXSxbOSwzNCwiIiwxLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEwLDM2LCIiLDEseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTIsMzAsIlxccHNpIF8yIiwwLHsiY29sb3VyIjpbMTIwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMTIwLDYwLDYwLDFdXSxbMTEsMzcsIiIsMSx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMywzMSwiXFxwc2kgXzMiLDAseyJjb2xvdXIiOlsxMjAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFsxMjAsNjAsNjAsMV1dLFsxOCwyNywiIiwxLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzE3LDI2LCIiLDEseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTYsMjUsIiIsMSx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxNSwyNCwiIiwxLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzE0LDIzLCIiLDEseyJjb2xvdXIiOlsxODAsNjAsNjBdfV1d
+\begin{tikzcd}[ampersand replacement=\&, sep = small]
+	\textcolor{rgb,255:red,214;green,92;blue,214}{\cdots} \&\& \textcolor{rgb,255:red,214;green,92;blue,214}{{P_3}} \\
+	\& \cdots \&\& {Q_3} \\
+	\textcolor{rgb,255:red,214;green,92;blue,214}{\cdots} \&\& \textcolor{rgb,255:red,214;green,92;blue,214}{{K_{3,3}}} \&\& \textcolor{rgb,255:red,214;green,92;blue,214}{{P_2}} \\
+	\& \cdots \&\& {L_{3,3}} \&\& {Q_2} \\
+	\textcolor{rgb,255:red,214;green,92;blue,214}{\cdots} \&\& \textcolor{rgb,255:red,214;green,92;blue,214}{{K_{3,2}}} \&\& \textcolor{rgb,255:red,214;green,92;blue,214}{{K_{2,2}}} \&\& \textcolor{rgb,255:red,214;green,92;blue,214}{{P_1}} \\
+	\& \cdots \&\& {L_{3,2}} \&\& {L_{2,2}} \&\& {Q_1} \\
+	\textcolor{rgb,255:red,214;green,92;blue,214}{\cdots} \&\& \textcolor{rgb,255:red,214;green,92;blue,214}{{K_{3,1}}} \&\& \textcolor{rgb,255:red,214;green,92;blue,214}{{K_{2,1}}} \&\& \textcolor{rgb,255:red,214;green,92;blue,214}{{K_{1,1}}} \&\& \textcolor{rgb,255:red,214;green,92;blue,214}{{P_0 }} \\
+	\& \cdots \&\& {L_{3,1}} \&\& {L_{2,1}} \&\& {L_{1,1}} \&\& {Q_0} \\
+	\textcolor{rgb,255:red,214;green,92;blue,214}{\cdots} \&\& \textcolor{rgb,255:red,214;green,92;blue,214}{{M_3}} \&\& \textcolor{rgb,255:red,214;green,92;blue,214}{{M_2}} \&\& \textcolor{rgb,255:red,214;green,92;blue,214}{{M_1}} \&\& \textcolor{rgb,255:red,214;green,92;blue,214}{{M_0}} \\
+	\& \cdots \&\& {N_3} \&\& {N_2} \&\& {N_1} \&\& {N_0}
+	\arrow["{g_{4,4}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=1-1, to=1-3]
+	\arrow[color={rgb,255:red,92;green,214;blue,214}, dashed, from=1-1, to=2-2]
+	\arrow["{\psi _3}", color={rgb,255:red,92;green,214;blue,92}, dashed, from=1-3, to=2-4]
+	\arrow["{\overline {p_3}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=1-3, to=3-3]
+	\arrow["{g'_{4,4}}"{pos=0.3}, from=2-2, to=2-4]
+	\arrow["{\overline {p_3'}}"{pos=0.3}, from=2-4, to=4-4]
+	\arrow["{g_{4,3}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=3-1, to=3-3]
+	\arrow[color={rgb,255:red,92;green,214;blue,214}, dashed, from=3-1, to=4-2]
+	\arrow["{g_{3,3}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=3-3, to=3-5]
+	\arrow[color={rgb,255:red,92;green,214;blue,214}, dashed, from=3-3, to=4-4]
+	\arrow["{q_{3,3}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=3-3, to=5-3]
+	\arrow["{\psi _2}", color={rgb,255:red,92;green,214;blue,92}, dashed, from=3-5, to=4-6]
+	\arrow["{\overline {p_2}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=3-5, to=5-5]
+	\arrow["{g'_{4,3}}"{pos=0.3}, from=4-2, to=4-4]
+	\arrow["{g'_{3,3}}"{pos=0.3}, from=4-4, to=4-6]
+	\arrow["{q'_{3,3}}"{pos=0.3}, from=4-4, to=6-4]
+	\arrow["{\overline {p_2'}}"{pos=0.3}, from=4-6, to=6-6]
+	\arrow["{g_{4,2}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=5-1, to=5-3]
+	\arrow[color={rgb,255:red,92;green,214;blue,214}, dashed, from=5-1, to=6-2]
+	\arrow["{g_{3,2}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=5-3, to=5-5]
+	\arrow[color={rgb,255:red,92;green,214;blue,214}, dashed, from=5-3, to=6-4]
+	\arrow["{q_{3,2}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=5-3, to=7-3]
+	\arrow["{g_{2,2}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=5-5, to=5-7]
+	\arrow[color={rgb,255:red,92;green,214;blue,214}, dashed, from=5-5, to=6-6]
+	\arrow["{q_{2,2}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=5-5, to=7-5]
+	\arrow["{\psi _1}", color={rgb,255:red,92;green,214;blue,92}, dashed, from=5-7, to=6-8]
+	\arrow["{\overline {p_1}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=5-7, to=7-7]
+	\arrow["{g'_{4,2}}"{pos=0.3}, from=6-2, to=6-4]
+	\arrow["{g'_{3,2}}"{pos=0.3}, from=6-4, to=6-6]
+	\arrow["{q'_{3,2}}"{pos=0.3}, from=6-4, to=8-4]
+	\arrow["{g'_{2,2}}"{pos=0.3}, from=6-6, to=6-8]
+	\arrow["{q'_{2,2}}"{pos=0.3}, from=6-6, to=8-6]
+	\arrow["{\overline {p_1'}}"{pos=0.3}, from=6-8, to=8-8]
+	\arrow["{g_{4,1}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=7-1, to=7-3]
+	\arrow[color={rgb,255:red,92;green,214;blue,214}, dashed, from=7-1, to=8-2]
+	\arrow["{g_{3,1}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=7-3, to=7-5]
+	\arrow[color={rgb,255:red,92;green,214;blue,214}, dashed, from=7-3, to=8-4]
+	\arrow["{q_{3,1}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=7-3, to=9-3]
+	\arrow["{g_{2,1}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=7-5, to=7-7]
+	\arrow[color={rgb,255:red,92;green,214;blue,214}, dashed, from=7-5, to=8-6]
+	\arrow["{q_{2,1}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=7-5, to=9-5]
+	\arrow["{g_{1,1}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=7-7, to=7-9]
+	\arrow[color={rgb,255:red,92;green,214;blue,214}, dashed, from=7-7, to=8-8]
+	\arrow["{q_{1,1}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=7-7, to=9-7]
+	\arrow["{\psi _0}", color={rgb,255:red,92;green,214;blue,92}, dashed, from=7-9, to=8-10]
+	\arrow["{\overline {p_0}}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=7-9, to=9-9]
+	\arrow["{g'_{4,1}}"{pos=0.3}, from=8-2, to=8-4]
+	\arrow["{g'_{3,1}}"{pos=0.3}, from=8-4, to=8-6]
+	\arrow["{q'_{3,1}}"{pos=0.3}, from=8-4, to=10-4]
+	\arrow["{g'_{2,1}}"{pos=0.3}, from=8-6, to=8-8]
+	\arrow["{q'_{2,1}}"{pos=0.3}, from=8-6, to=10-6]
+	\arrow["{g'_{1,1}}"{pos=0.3}, from=8-8, to=8-10]
+	\arrow["{q'_{1,1}}"{pos=0.3}, from=8-8, to=10-8]
+	\arrow["{\overline {p_0'}}"{pos=0.3}, from=8-10, to=10-10]
+	\arrow["{d^M_3}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=9-1, to=9-3]
+	\arrow[color={rgb,255:red,92;green,214;blue,214}, from=9-1, to=10-2]
+	\arrow["{d^M_2}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=9-3, to=9-5]
+	\arrow["{\varphi _3}", color={rgb,255:red,92;green,214;blue,214}, from=9-3, to=10-4]
+	\arrow["{d^M_1}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=9-5, to=9-7]
+	\arrow["{\varphi _2}", color={rgb,255:red,92;green,214;blue,214}, from=9-5, to=10-6]
+	\arrow["{d^M_0}"{pos=0.3}, color={rgb,255:red,214;green,92;blue,214}, from=9-7, to=9-9]
+	\arrow["{\varphi_1}", color={rgb,255:red,92;green,214;blue,214}, from=9-7, to=10-8]
+	\arrow["{\varphi _0 }", color={rgb,255:red,92;green,214;blue,214}, from=9-9, to=10-10]
+	\arrow["{d^N_3}"{pos=0.3}, from=10-2, to=10-4]
+	\arrow["{d^N_2}"{pos=0.3}, from=10-4, to=10-6]
+	\arrow["{d^N_1}"{pos=0.3}, from=10-6, to=10-8]
+	\arrow["{d^N_0}"{pos=0.3}, from=10-8, to=10-10]
 \end{tikzcd}.
 		\end{equation}
-		由结果知, 所有链映射 $\pi$ 通过以上方式给出. 
-    \end{proof}
+		若 $\psi'$ 是另一组链映射. 下归纳地构造 $\psi - \psi' = sd+ds$.
+		\begin{enumerate}
+			\item (构造 $s_0$). 注意到 $p_0 ' \circ (\psi_0 - \psi' _0) = 0$. 依长正合类以及 $P_0$ 的提升性构造
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsNixbMiwxLCJRXzAgXFxvcGx1cyBOXzEgIl0sWzQsMSwiTl8wICJdLFs1LDEsIlxcLCJdLFswLDEsIkxfezEsMX0iXSxbMiwwLCJQXzAgIl0sWzAsMCwiUV8xIl0sWzAsMSwiKHBfMCcsIGRfMCBeTikiLDJdLFsxLDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDAsIlxcYmlub217ZydfezEsMX19ey1xJ197MSwxfX0iLDJdLFs0LDAsIlxcYmlub217XFxwc2kgXzAgLSBcXHBzaSBfMCAnfXswfSJdLFs0LDEsIjAiXSxbNCwzLCJ0XzAgIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMywiXFxvdmVybGluZSB7cCdfMX0iLDJdLFs0LDUsInNfMCIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	{Q_1} \&\& {P_0 } \\
+	{L_{1,1}} \&\& {Q_0 \oplus N_1 } \&\& {N_0 } \& {\,}
+	\arrow["{\overline {p'_1}}"', from=1-1, to=2-1]
+	\arrow["{s_0}"', dashed, from=1-3, to=1-1]
+	\arrow["{t_0 }"', dashed, from=1-3, to=2-1]
+	\arrow["{\binom{\psi _0 - \psi _0 '}{0}}", from=1-3, to=2-3]
+	\arrow["0", from=1-3, to=2-5]
+	\arrow["{\binom{g'_{1,1}}{-q'_{1,1}}}"', from=2-1, to=2-3]
+	\arrow["{(p_0', d_0 ^N)}"', from=2-3, to=2-5]
+	\arrow[dashed, from=2-5, to=2-6]
+\end{tikzcd}.
+			\end{equation}
+			此时 $(\psi_0 - \psi' _0) = (g'_{1,1} \overline {p_1'}) s_0$. 
+			\item (构造 $s_1$). 只需证明 $(\psi _1 - \psi _1' - s_0(g_{1,1} \overline {p_1}))$ 被 $g_{2,2}' \overline {p_2'}$ 分解. 由上一步的经验, 只需证明 $(\psi _1 - \psi _1' - s_0(g_{1,1} \overline {p_1}))$ 复合 $Q_1 \to N_1$ 后为 $0$. 直接地
+			\begin{equation}
+				q'_{1,1}\overline {p_1'}s_0(g_{1,1} \overline {p_1}) = q'_{1,1}t_0(g_{1,1} \overline {p_1}) = 0 (g_{1,1} \overline {p_1})  = 0.
+			\end{equation}
+			另一方面, $(q'_{1,1} \overline {p_1'})(\psi _1 - \psi _1') = 0$ 是显然的.
+			\item (构造 $s_k$). 只需证明 $(\psi _k - \psi _k' - s_{k-1}(g_{k,1} \overline {p_k}))$ 被 $g_{k+1,k+1}' \overline {p_{k+1}'}$ 分解. 由上一步的经验, 只需证明 $(\psi _k - \psi _k' - s_{k-1}(g_{k,1} \overline {p_k}))$ 复合 $Q_k \to N_k$ 后为 $0$. 直接地
+			\begin{equation}
+				q_{k,1}'\cdots q'_{k,k}\overline {p_k'}s_{k-1}(g_{k,1} \overline {p_k}) = q_{k,1}'\cdots q'_{k,k}t_{k-1}(g_{k,1} \overline {p_k}) = 0 (g_{k,1} \overline {p_k})  = 0.
+			\end{equation}
+			另一方面, $(q_{k,1}'\cdots q'_{k,k} \overline {p_k'})(\psi _k - \psi _k') = 0$ 是显然的.
+		\end{enumerate}
+	\end{proof}
 \end{proposition}
 
+\begin{corollary}
+	假定 $p : P \to X$ 与 $q : Q \to X$ 是上有界复形的投射分解. 则存在链映射 $\alpha : P \to Q$ 与 $\beta : Q \to X$ 使得 $q\alpha = p$ 且 $p\beta = q$. 特别地, $(\alpha,\beta)$ 是同伦等价.
+	\begin{proof}
+		由 \cref{prop:cm_htp} 知 $\alpha \beta$ 与 $\beta \alpha$ 同伦于恒等链映射.
+	\end{proof}
+\end{corollary}
+
+\begin{example}[轴复形的投射分解]
+	特别地, $M \in \mathcal{C}$ 的 $\xi$-投射分解形如
+	\begin{equation}
+		\cdots \to P_2 \xrightarrow{d_1} P_1 \xrightarrow{d_0} P_0 \xrightarrow{p} M \to 0,
+	\end{equation}
+	其中各 $P_i$ 是 $\xi$-投射对象, 且有 $\xi$-三角
+	\begin{equation}
+		K_{i+1} \xrightarrow{g_{i}} P_i \xrightarrow{p_{i-1}} K_i  \dashrightarrow
+	\end{equation}
+	满足 $d_i = g_i p_i$, $K_0 = M$ 与 $p_0 = p$. 由此可见, 轴复形的投射分解是唯一的, 且任意两个投射分解之间存在唯一的同伦等价.
+\end{example}
+
+\begin{definition}[$\mathrm{Hom}$-复形]
+	记 $\mathcal{C}$ 中的两个复形为 $M$ 与 $N$. 定义 $\mathrm{Hom}$-复形 $\mathcal{HOM}(M,N)$ 为如下复形:
+	\begin{enumerate}
+		\item 对象: 对于每个整数 $n$, 令
+		\begin{equation}
+			\mathcal{HOM}(M,N)_n = \prod_{k \in \mathbb{Z}} \mathrm{Hom}_{\mathcal{C}}(M_k, N_{k+n}).
+		\end{equation}
+		\item 微分: 对于每个 $f = (f_k)_{k \in \mathbb{Z}} \in \mathcal{HOM}(M,N)_n$, 其中 $f_k : M_k \to N_{k+n}$, 定义微分如下:
+		\begin{equation}
+			d^{\mathcal{HOM}(M,N)}_n(f_k) = d^N_{k+n} f_k - (-1)^n f_{k-1} d^M_k.
+		\end{equation}
+		简单地说, 若 $f$ 齐次, 则 $d^{\mathcal{HOM}(M,N)}(f) = [d,f] = d^Nf - (-1)^{|f|}fd^M$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}[$\xi xt_{\mathcal{P}(\xi)}$-函子]
+	假定 $M$ 是上有界投射复形, 定义
+	\begin{equation}
+		\xi xt_{\mathcal{P}(\xi)}^\bullet (M, N) := H^\bullet (\mathcal{HOM}(P(M),N)).
+	\end{equation}
+	以上 $P(M) \to M$ 是 $\xi$-投射分解. 该定义与 $\xi$-投射分解的选取无关 (\cref{prop:cm_htp}).
+\end{definition}
+
+\begin{proposition}\label{prop:ext_vanish}
+	假定 $M$ 是上有界投射复形, 若 $N$ 是 $\xi$-正合复形
+	\begin{equation}
+		% https://q.uiver.app/#q=WzAsOSxbMywwLCJOX2sgIl0sWzUsMCwiTl97ay0xfSAiXSxbMSwwLCJOX3trKzF9Il0sWzQsMSwiTF9rIl0sWzIsMSwiTF97aysxfSJdLFswLDEsIlxcY2RvdHMiXSxbMCwwLCJcXGNkb3RzIl0sWzYsMCwiXFxjZG90cyJdLFs2LDEsIlxcY2RvdHMiXSxbMCwxLCJkX3trLTF9Xk4iXSxbMiwwLCJkX2sgXk4iXSxbMCwzLCJwX2sgIl0sWzQsMCwiaV9rICJdLFsyLDQsInBfe2srMX0iXSxbMywxLCJpX3trLTF9Il0sWzYsMl0sWzEsN10sWzUsMl0sWzEsOF1d
+\begin{tikzcd}[ampersand replacement=\&]
+	\cdots \& {N_{k+1}} \&\& {N_k } \&\& {N_{k-1} } \& \cdots \\
+	\cdots \&\& {L_{k+1}} \&\& {L_k} \&\& \cdots
+	\arrow[from=1-1, to=1-2]
+	\arrow["{d_k ^N}", from=1-2, to=1-4]
+	\arrow["{p_{k+1}}", from=1-2, to=2-3]
+	\arrow["{d_{k-1}^N}", from=1-4, to=1-6]
+	\arrow["{p_k }", from=1-4, to=2-5]
+	\arrow[from=1-6, to=1-7]
+	\arrow[from=1-6, to=2-7]
+	\arrow[from=2-1, to=1-2]
+	\arrow["{i_k }", from=2-3, to=1-4]
+	\arrow["{i_{k-1}}", from=2-5, to=1-6]
+\end{tikzcd}.
+	\end{equation}
+	则 $\xi xt_{\mathcal{P}(\xi)}^n (M, N) = 0$ 恒成立.
+	\begin{proof}
+		只需证明 $\mathcal{HOM}(P(M), N)$ 无环. 不失一般性地, 只需证明 $H_0 (\mathcal{HOM}(P(M), N)) = 0$, 即链映射 $\varphi : P(M) \to N$ 必零伦. 下归纳地构造 $s_{k} : P_k \to N_{k+1}$ 使得 $\varphi = sd+ds$.
+		\begin{enumerate}
+			\item ($s_{0}$). 由 $i_{-1} p_0 \varphi _0 = 0$ 以及 $(P_0, i_{-1})$ 单, 得 $p_0 \varphi_0 = 0$, 从而存在 $s_0$ 使得 $i_1 s_0 = \varphi_0$:
+			\begin{equation}
+				% https://q.uiver.app/#q=WzAsNixbMywxLCJOX3stMX0iXSxbMywwLCIwIl0sWzEsMSwiTl8wICJdLFsxLDAsIlBfMCJdLFsyLDEsIkxfMCJdLFswLDEsIkxfMSJdLFszLDIsIlxcdmFycGhpXzAgIiwyXSxbMywxXSxbMSwwXSxbMiw0LCJwXzAiLDJdLFs0LDAsImlfey0xfSIsMl0sWzMsNCwiMCJdLFs1LDIsImlfMSIsMl0sWzMsNSwic18wICIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+\begin{tikzcd}[ampersand replacement=\&]
+	\& {P_0} \&\& 0 \\
+	{L_1} \& {N_0 } \& {L_0} \& {N_{-1}}
+	\arrow[from=1-2, to=1-4]
+	\arrow["{s_0 }"', dashed, from=1-2, to=2-1]
+	\arrow["{\varphi_0 }"', from=1-2, to=2-2]
+	\arrow["0", from=1-2, to=2-3]
+	\arrow[from=1-4, to=2-4]
+	\arrow["{i_1}"', from=2-1, to=2-2]
+	\arrow["{p_0}"', from=2-2, to=2-3]
+	\arrow["{i_{-1}}"', from=2-3, to=2-4]
+\end{tikzcd}.
+			\end{equation} 
+			\item ($s_{k}$). 假定已构造出 $s_{< k}$ 使得 $\varphi_{<k} = sd+ds$. 此时
+			\begin{equation}
+				d_{k-1}^N (\varphi _{k} - s_{k-1}d_{k-1}^P) = (\varphi _{k-1} - d_{k-1}^N s_{k-1}) d_{k-1}^P = s_{k-2} d_{k-2}^P d_{k-1}^P = 0.
+			\end{equation}
+			由 $(P_, i_{k-1})$ 单, 故 $p_k (\varphi _{k} - s_{k-1}d_{k-1}^P) = 0$, 从而存在 $s_k$ 使得 $i_k s_k = \varphi _{k} - s_{k-1}d_{k-1}^P$. 归纳构造完毕. 
+		\end{enumerate}
+	\end{proof}
+\end{proposition}
+
+\begin{proposition}\label{prop:ext_hom}
+	假若 $M$ 与 $N$ 都是上有界复形, 则
+	\begin{equation}
+		\xi xt_{\mathcal{P}(\xi)}^\bullet (M, N) \cong H^\bullet (\mathcal{HOM}(P(M),P(N))).
+	\end{equation}
+	其中, $P(M) \to M$ 与 $P(N) \to N$ 是上有界复形的任意 $\xi$-投射分解.
+	\begin{proof}
+		只需证明 $p_N: P(N) \to N$ 诱导的态射 $(p_N \circ - ): \mathcal{HOM}(P(M),P(N)) \to \mathcal{HOM}(P(M),N)$ 是拟同构. 注意到
+		\begin{equation}
+			\mathrm{Cone}((p_N)\circ -) \cong \mathcal{HOM}(P(M), \mathrm{Cone}(p_N)).
+		\end{equation}
+		由 \cref{prop:ext_vanish}, 上式的上同调全为零, 故 $(p_N \circ -)$ 是拟同构.
+	\end{proof}
+\end{proposition}
+
+\subsection{投射维数与生成子范畴}
+
+\begin{definition}[生成子范畴]
+	称 $\mathcal{P}(\xi)$ 是``生成的'', 若对 $M \in\mathcal{C}$, 
+\begin{equation}
+	M=0 \quad \iff \quad (-, M) : \mathcal{P}(\xi) \to 0.
+\end{equation}
+\end{definition}
+
+\begin{proposition}
+	若 $\mathcal{P}(\xi)$ 是生成的, 则对 $M \in\mathcal{C}$, $\xi xt_\mathcal{P}^{> n} (M, -) = 0$ 当且仅当 $pd_\xi M \leq n$.
+	\begin{proof}
+		
+	\end{proof}
+\end{proposition}
+
+\subsection{完全上同调}
+
+\begin{definition}[上有界态射]
+	给定复形 $M$ 与 $N$. 记 $\overline {\mathcal{HOM}} (M, N)$ 为上有界态射构成的子复形, 即 $f = (f_k)_{k \in \mathbb Z} \in \overline{\mathcal{HOM}} (M, N)$ 若对一切 $k$ 均有
+	\begin{equation}
+		f_k (M_i) = 0, \quad \forall i \gg 0.
+	\end{equation}
+\end{definition}
+
+\begin{remark}
+	简单地说, 上有界态射的每一分次均能零化复形的足够高分支.
+\end{remark}
+
+\begin{example}
+	若 $P(M)$ 或 $P(N)$ 下有界, 则 $\mathcal{HOM} (M, N) = \overline{\mathcal{HOM}} (M, N)$.
+\end{example}
+
+\begin{definition}[$\xi$-完全复形]
+	记 $\widetilde {\mathcal{HOM}}(-,?) := {\mathcal{HOM}(-, ?)} / {\overline{\mathcal{HOM}}(-,?)}$.
+\end{definition}
+
+\begin{definition}
+	假定 $P(M) \to M$ 与 $P(N) \to N$ 是上有界复形的投射分解. 定义三类上同调
+	\begin{enumerate}
+		\item $\xi xt_\mathcal{P} ^\bullet (M, N) := H^\bullet (\mathcal{HOM}(P(M),N))$;
+		\item $\overline {\xi xt}_\mathcal{P} ^\bullet (M, N) := H^\bullet (\overline{\mathcal{HOM}}(P(M),N))$;
+		\item $\widetilde {\xi xt}_\mathcal{P} ^\bullet (M, N) := H^\bullet (\widetilde{\mathcal{HOM}}(P(M),N))$.
+	\end{enumerate}
+\end{definition}
+
+\begin{remark}
+	这三类上同调可定义在 Hom-复形 $\mathcal{HOM}(P(M), P(N))$ 上, 见 \cref{prop:ext_hom}. 这些定义投射分解的选取无关, 见 \cref{prop:cm_htp}.
+\end{remark}
 
 
 

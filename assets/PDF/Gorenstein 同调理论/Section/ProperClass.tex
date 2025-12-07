@@ -356,6 +356,10 @@
     在原文中, 默认 $(-, \mathcal{W})$-正合的 $\mathbb E$-三角 (复形) 是 $\xi$-三角 (复形).
 \end{remark}
 
+\begin{remark}
+	给定完全 $\mathcal{P}(\xi)$-投射分解 $X_\bullet$, 态射 $d = gf$ 的选取未必唯一, 即 $\xi$-三角的拆解未必唯一. 然而, $(P, X_\bullet)$ 的满-单分解是唯一的, 即 $\xi$-三角在 $(\mathcal{P}(\xi), -)$ 下的的像唯一. 鉴于外三角范畴缺乏函子的满-单分解, $\mathcal{GP}(\xi)$ 更宜被定义为``能被中项为 $\mathcal{P}(\xi)$ 的 $(-, \mathcal{P}(\xi))$-正合 $\mathbb E$-三角双边无界延拓''.
+\end{remark}
+
 \begin{notation}
 	方便起见, 称一个 $\mathbb E$-单射 ($\mathbb E$-满射, 或扩张元) 是 $(-,\mathcal{W})$ 正合的, 若其所在的 $\mathbb E$-三角是 $(-,\mathcal{W})$ 正合的.
 \end{notation}
@@ -478,9 +482,9 @@
 \end{proposition}
 
 \begin{theorem}\label{thm:GP_W_exact}
-    给定 $\xi$-三角 $A \xrightarrow f B \xrightarrow g C \overset \delta \dashrightarrow$. 如 $C$ 是 $\mathcal{GP}(\xi)$ 的直和项, 则该三角是 $(-, \mathcal{P}(\xi))$-正合的.
+    给定 $\xi$-三角 $A \xrightarrow f B \xrightarrow g C \overset \delta \dashrightarrow$. 若 $C \in \mathcal{GP}(\xi)$, 则该三角是 $(-, \mathcal{P}(\xi))$-正合的.
     \begin{proof}
-        依照 \cref{prop:W_exact_2}, 只需考虑 $C \in \mathcal{GP}(\xi)$ 的情形. 由 $C$ 的定义作
+        由 $C$ 的定义作
         \begin{equation}
 % https://q.uiver.app/% https://q.uiver.app/#q=WzAsMTIsWzAsMiwiQSJdLFsxLDIsIkIiXSxbMiwyLCJDIixbMjcwLDYwLDYwLDFdXSxbMywyLCJcXCwgIl0sWzIsMCwiSyIsWzI3MCw2MCw2MCwxXV0sWzIsMSwiUCIsWzI3MCw2MCw2MCwxXV0sWzIsMywiXFwsICJdLFswLDEsIkEiXSxbMSwxLCJBIFxcb3BsdXMgUCJdLFszLDEsIlxcLCAiXSxbMSwwLCJLIixbMjcwLDYwLDYwLDFdXSxbMSwzLCJcXCwgIl0sWzEsMiwiZyIsMCx7ImNvbG91ciI6WzI0MCw2MCw2MF19LFsyNDAsNjAsNjAsMV1dLFsyLDMsIlxcZGVsdGEiLDAseyJjb2xvdXIiOlsyNDAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19LFsyNDAsNjAsNjAsMV1dLFs1LDIsInAiLDAseyJjb2xvdXIiOlswLDYwLDYwXX0sWzAsNjAsNjAsMV1dLFsyLDYsIlxcdmFyZXBzaWxvbiAiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMCw2MCw2MCwxXV0sWzcsMCwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNyw4LCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsNSwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDksIjAiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fSxbMCw2MCw2MCwxXV0sWzEwLDQsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEwLDgsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDEsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDExLCJcXHZhcmVwc2lsb24gJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDEsImYiLDAseyJjb2xvdXIiOlsyNDAsNjAsNjBdfSxbMjQwLDYwLDYwLDFdXSxbNCw1LCJpIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19LFswLDYwLDYwLDFdXV0=
 \begin{tikzcd}[ampersand replacement=\&]
@@ -683,7 +687,7 @@
 	\arrow["{\varepsilon _C}", color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=4-3]
 \end{tikzcd}.
         \end{equation}
-       	由 \cref{thm:GP_W_exact}, 上图除 $\varepsilon_B$ 外的五个扩张元都是 $(-, \mathcal{P}(\xi))$-正合的. \cref{thm:W_exact_3} 说明中间列 $(-,\mathcal{P}(\xi))$正合. \Cref{lem:GP_syzygy_closed} 说明 $B \in \mathcal{GP}(\xi)$.
+       	由 \cref{thm:GP_W_exact}, 上图除 $\varepsilon_B$ 外的五个扩张元都是 $(-, \mathcal{P}(\xi))$-正合的. \cref{thm:W_exact_3} 说明中间列 $(-,\mathcal{P}(\xi))$正合. 这说明 $B$ 可以通过中项为 $\mathcal{P}(\xi)$ 的 $\mathcal{P}(\xi)$-正合 $\mathbb E$-三角向右扩张. 对偶地, $B$ 可以同样地向左扩张. 这构造了 $\mathcal{P}(\xi)$-正合的完全 $\mathcal{P}(\xi)$-投射分解.
 
         假定 $B \in \mathcal{GP}(\xi)$, 作 $(-,\mathcal{P}(\xi))$-正合三角 $B \to Q_B \to B''\dashrightarrow$, 其中 $Q_B \in \mathcal{P}(\xi)$. ET4 给出下图:
         \begin{equation}
@@ -713,44 +717,43 @@
     \end{proof}
 \end{theorem}
 
-\begin{corollary}
-    $\mathcal{GP}(\xi)$ 对直和项封闭.
-    \begin{itemize}
-        \item 经典 Gorenstein 同调理论中的证明依赖 Eilenberg swindle 技巧, 此处应避免使用该技巧.
-    \end{itemize}
-    \begin{proof}
-        记 $(G \oplus G_0) \in \mathcal{GP}(\xi)$. 对 $(-, \mathcal{P}(\xi))$-正合的 $\mathbb E$-三角 $(G \oplus G') \to P \to G' \dashrightarrow$, 作 $\xi$-三角的交换图
-        \begin{equation}
-% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiR18wIl0sWzAsMSwiR1xcb3BsdXMgR18wIl0sWzAsMiwiRyIsWzI3MCw2MCw2MCwxXV0sWzEsMSwiUCJdLFsyLDEsIkcnIixbMjcwLDYwLDYwLDFdXSxbMywxLCJcXCwiXSxbMCwzLCJcXCwiXSxbMSwwLCJHXzAiXSxbMiwyLCJHJyIsWzI3MCw2MCw2MCwxXV0sWzMsMiwiXFwsIl0sWzEsMiwiSCJdLFsxLDMsIlxcLCJdLFswLDEsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzEsMywiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbMyw0LCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXX1dLFsyLDYsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDUsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDgsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsMTAsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTAsOCwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDksIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDAsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsMywiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsMTAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMCwxMSwiXFxkZWx0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDIsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV1d
+\begin{proposition}
+	$\mathcal{GP}(\xi)$ 对直和项封闭.
+	\begin{proof}
+		假定 $H \oplus H' \in \mathcal{GP}(\xi)$, 作下图
+		\begin{equation}
+			% https://q.uiver.app/#q=WzAsMTIsWzAsMCwiSCJdLFsxLDAsIkgiXSxbMCwxLCJIIFxcb3BsdXMgSCciXSxbMCwyLCJIJyJdLFsxLDEsIlAiXSxbMiwxLCJHIixbMjcwLDYwLDYwLDFdXSxbMSwyLCJNIl0sWzIsMiwiRyIsWzI3MCw2MCw2MCwxXV0sWzAsMywiXFwsICJdLFsxLDMsIlxcLCAiXSxbMywxLCJcXCwgIl0sWzMsMiwiXFwsICJdLFswLDEsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwyLCIiLDIseyJjb2xvdXIiOlswLDYwLDYwXX1dLFsyLDMsIiIsMix7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzMsOCwiIiwyLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDRdLFs0LDZdLFs2LDksIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDQsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzQsNSwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbNSwxMCwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDYsIiIsMSx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzYsNywiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF19XSxbNywxMSwiIiwxLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
 \begin{tikzcd}[ampersand replacement=\&]
-	{G_0} \& {G_0} \\
-	{G\oplus G_0} \& P \& \textcolor{rgb,255:red,153;green,92;blue,214}{{G'}} \& {\,} \\
-	\textcolor{rgb,255:red,153;green,92;blue,214}{G} \& H \& \textcolor{rgb,255:red,153;green,92;blue,214}{{G'}} \& {\,} \\
-	{\,} \& {\,}
+	H \& H \\
+	{H \oplus H'} \& P \& \textcolor{rgb,255:red,153;green,92;blue,214}{G} \& {\, } \\
+	{H'} \& M \& \textcolor{rgb,255:red,153;green,92;blue,214}{G} \& {\, } \\
+	{\, } \& {\, }
+	\arrow[equals, from=1-1, to=1-2]
 	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=1-1, to=2-1]
-	\arrow[equals, from=1-2, to=1-1]
-	\arrow[dashed, from=1-2, to=2-2]
+	\arrow[from=1-2, to=2-2]
 	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-1, to=2-2]
 	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-1, to=3-1]
 	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-2, to=2-3]
-	\arrow[dashed, from=2-2, to=3-2]
-	\arrow[dashed, from=2-3, to=2-4]
-	\arrow[equals, from=2-3, to=3-3]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-1, to=3-2]
-	\arrow[dashed, from=3-1, to=4-1]
-	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-2, to=3-3]
-	\arrow["\delta", dashed, from=3-2, to=4-2]
-	\arrow[dashed, from=3-3, to=3-4]
+	\arrow[from=2-2, to=3-2]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=2-3, to=2-4]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=3-1, to=3-2]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-1, to=4-1]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, from=3-2, to=3-3]
+	\arrow[dashed, from=3-2, to=4-2]
+	\arrow[equals, from=3-3, to=2-3]
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, dashed, from=3-3, to=3-4]
 \end{tikzcd}.
-        \end{equation}
-        其中 $H$ 是 $G$ 与 $G'$ 的扩张项, 从而属于 $\mathcal{GP}(\xi)$. 由 \cref{thm:GP_W_exact}, 所有三角都是 $(-, \mathcal{P}(\xi))$-正合的. 对 $\delta$ 所在的 $\mathbb E$-三角使用 \cref{lem:GP_syzygy_closed} 即可.
-    \end{proof}
-\end{corollary}
+		\end{equation} 
+		由 $3\times 3$ 引理知所有三角 $(-,\mathcal{P}(\xi))$-正合. 由同样构造得 $(-,\mathcal{P}(\xi))$-正合 $\xi$-三角 $H' \to P \to M' \dashrightarrow$. 由 $H' \oplus H \to P \oplus P \to M \oplus M' \dashrightarrow$ 是 $(-,\mathcal{P}(\xi))$-正合的, 从而 $M$ 是 $\mathcal{GP}(\xi)$ 的直和项. 由 \cref{prop:W_exact_2}, 指向 $\mathcal{GP}(\xi)$ 直和项的 $\xi$-三角也是 $(-,\mathcal{P}(\xi))$-正合的. 存在 $(-, \mathcal{P}(\xi))$-正合的 $\xi$-三角 $L \to Q \to H \dashrightarrow$ 使得 $L$ 是 $\mathcal{GP}(\xi)$ 的直和项.
+
+		综上, $\mathcal{GP}(\xi)$ 的直和项可向左且向右扩张为 $(-, \mathcal{P}(\xi))$-正合的 $\xi$-三角, 中间项是 $\mathcal{P}(\xi)$. 这说明 $\mathcal{GP}(\xi)$ 对直和项封闭.
+	\end{proof}
+\end{proposition}
 
 \begin{corollary}
 	给定 $\xi$-三角 $A \xrightarrow f B \xrightarrow g C \overset \delta \dashrightarrow$. 若 $A, B \in \mathcal{GP}(\xi)$, 则 $C \in \mathcal{GP}(\xi)$ 当且仅当 $\mathbb E$-三角是 $(-, \mathcal{P}(\xi))$-正合的.
 	\begin{proof}
-		由 \cref{thm:GP_W_exact} 可知必要性 ($\to$ 方向). 对充分性 ($\gets$ 方向), 作 $\xi$-三角的交换图
+		由 \cref{thm:GP_W_exact} 可知必要性 ($\to$ 方向). 对充分性 ($\gets$ 方向), 若 $\mathbb E$-三角是 $\mathcal{P}(\xi)$-正合的, 则其关于 $A \to P_A$ 的推出是总可裂短正合列. 作 $\xi$-三角的交换图:
 		\begin{equation}
 % https://q.uiver.app/#q=WzAsMTIsWzAsMCwiQSIsWzI3MCw2MCw2MCwxXV0sWzEsMCwiQiIsWzI3MCw2MCw2MCwxXV0sWzIsMCwiQyJdLFszLDAsIlxcLCJdLFswLDEsIlBfQSIsWzI3MCw2MCw2MCwxXV0sWzAsMiwiQSciLFsyNzAsNjAsNjAsMV1dLFswLDMsIlxcLCJdLFsxLDEsIlBfQSBcXG9wbHVzIEMiXSxbMiwxLCJDIl0sWzEsMiwiQSciLFsyNzAsNjAsNjAsMV1dLFszLDEsIlxcLCJdLFsxLDMsIlxcLCJdLFswLDEsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzQsNywiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDgsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw5LCIiLDAseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDIsIiIsMCx7ImNvbG91ciI6WzAsNjAsNjBdfV0sWzIsMywiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs4LDEwLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsNiwiIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzksMTEsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDRdLFs0LDVdLFsxLDcsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDksIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDgsIiIsMSx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
 \begin{tikzcd}[ampersand replacement=\&]
@@ -774,7 +777,7 @@
 	\arrow[dashed, from=3-2, to=4-2]
 \end{tikzcd}.
 		\end{equation}
-		由 \cref{thm:GP_resolving} 知 $P_A \oplus C \in \mathcal{GP}$, 再由 \cref{lem:GP_P_sum} 得 $C \in \mathcal{GP}$.
+		由 \cref{thm:GP_resolving} 知 $P_A \oplus C \in \mathcal{GP}(\xi)$, 再由 \cref{lem:GP_P_sum} 得 $C \in \mathcal{GP}(\xi)$.
 	\end{proof}
 \end{corollary}
 
@@ -919,7 +922,7 @@
 \end{lemma}
 
 \begin{corollary}
-	对不可裂的 $\xi$-三角 $A \to G \to C \dashrightarrow$, 若 $\mathcal{G}pd_\xi A = n+1$, 则 $\mathcal{G}pd_\xi A = n+2$.
+	对 $\xi$-三角 $A \to G \to C \dashrightarrow$, 若 $\mathcal{G}pd_\xi A = n+1$, 则 $\mathcal{G}pd_\xi A = n+2$.
 	\begin{proof}
 		假定 $\mathcal{G}pd_\xi A = n + 1$. 由定义, $\mathcal{G}pd_\xi C\leq n+2$. 由 $\mathfrak A(n)$ 知只能有 $\mathcal{G}pd_\xi C = n+2$.  
 	\end{proof}
@@ -1025,9 +1028,6 @@
 
 \begin{corollary}
 	由维数移动知 $\widetilde {\mathcal{P}(\xi)}$ 是厚子范畴. 所有 $\widetilde {\mathcal{P}(\xi)}$ 中的 $\mathbb E$-三角都是 $(\mathcal{GP}(\xi),-)$-正合的.
-	\begin{proof}
-		这蕴含在上述命题的证明中.
-	\end{proof}
 \end{corollary}
 
 \begin{proposition}
